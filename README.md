@@ -1,2 +1,1 @@
-# basicglitch-portfolio
-portfolio, e-commerce, commisioned art requests
+Portfolio website for basicglitch.art – artwork, animations, and experiments.
