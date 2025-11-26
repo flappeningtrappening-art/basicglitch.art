@@ -1,0 +1,45 @@
+[
+  {
+    "id": "ig-001",
+    "title": "IG Placeholder 1",
+    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
+    "categories": [
+      "Available for Purchase"
+    ],
+    "styles": [
+      "Neon",
+      "Glitch"
+    ],
+    "date": "2025-11-22",
+    "description": "Placeholder from Instagram post - replace with the uploaded image for the artwork."
+  },
+  {
+    "id": "ig-002",
+    "title": "IG Placeholder 2",
+    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
+    "categories": [
+      "Personal Projects"
+    ],
+    "styles": [
+      "Surrealism",
+      "Psychedelia"
+    ],
+    "date": "2025-11-12",
+    "description": "Placeholder: replace with the actual artwork image file uploaded to DeepSite."
+  },
+  {
+    "id": "ig-003",
+    "title": "IG Placeholder 3",
+    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
+    "categories": [
+      "Broboticus",
+      "Animation"
+    ],
+    "styles": [
+      "Geometric",
+      "Glitch"
+    ],
+    "date": "2025-10-04",
+    "description": "Placeholder: replace with actual artwork file."
+  }
+]
