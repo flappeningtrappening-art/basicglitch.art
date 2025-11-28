@@ -117,4 +117,18 @@ let touchEndX = 0;
 const lbContent = document.getElementById('lb-content');
 if(lbContent){
   lbContent.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, false);
-  lbContent.addEventListener('touchend', (e)=>{ touchEndX = e.changed
+  lbContent.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; if(touchEndX < touchStartX - 40) nextItem(); else if(touchEndX > touchStartX + 40) prevItem(); }, false);
+}
+
+let currentIndex = 0;
+
+(async()=>{ 
+  try{ 
+    window.GALLERY = await fetchGallery(); 
+    renderFilters(window.GALLERY); 
+    renderGrid(window.GALLERY); 
+  } catch(e){ 
+    document.getElementById('gallery-grid').innerHTML='<div class="card">Failed to load gallery.json — make sure file exists and is valid.</div>';
+    console.error(e); 
+  } 
+})();
