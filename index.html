@@ -13,46 +13,52 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">Basic.Glitch</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Main site navigation">
         <a href="#gallery">Gallery</a>
         <a href="#instagram">Instagram</a>
         <a href="#commissions">Commissions</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank">Ko-Fi</a>
+        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Ko-Fi</a>
       </nav>
     </div>
   </header>
+
   <main class="container main">
-    <section class="hero">
-      <h1 class="title">Basic.Glitch — Digital Art</h1>
+    <section class="hero" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="title">Basic.Glitch — Digital Art</h1>
       <p class="subtitle">Neon line-art, psychedelic surrealism, textured landscapes, and nature-fusion portraits — for collectors and dreamers.</p>
       <div class="cta-row">
         <a class="btn-neon" href="#gallery">View Gallery</a>
         <a class="btn-neon" href="#commissions">Commission</a>
-        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank">Support on Ko-Fi</a>
+        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Support on Ko-Fi</a>
       </div>
     </section>
-    <section id="gallery" class="section">
+
+    <section id="gallery" class="section" role="region" aria-labelledby="gallery-title">
       <div class="section-head">
-        <h2>Gallery</h2>
+        <h2 id="gallery-title">Gallery</h2>
         <div class="filters">
           <div id="category-filters" class="filter-group" aria-label="Categories"></div>
           <div id="style-filters" class="filter-group" aria-label="Styles"></div>
           <button id="clear-filters" class="btn-small">Clear</button>
         </div>
       </div>
-      <div id="gallery-grid" class="grid"></div>
+      <div id="gallery-grid" class="grid" aria-live="polite"></div>
     </section>
-    <section id="instagram" class="section">
-      <h2>Live — Instagram</h2>
+
+    <section id="instagram" class="section" role="region" aria-labelledby="instagram-title">
+      <h2 id="instagram-title">Live — Instagram</h2>
       <div class="card instagram-embed">
         <iframe src="//lightwidget.com/widgets/61fa31a1d8ad5ebb82aa967dfe674947.html"
-                scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+                scrolling="no" allowtransparency="true" class="lightwidget-widget">
+          <p>Instagram feed unavailable</p>
+        </iframe>
       </div>
     </section>
-    <section id="commissions" class="section">
-      <h2>Commissions</h2>
+
+    <section id="commissions" class="section" role="region" aria-labelledby="commissions-title">
+      <h2 id="commissions-title">Commissions</h2>
       <p class="muted">Click a tier to open Ko-Fi. For custom work, message me on Ko-Fi or email justin@basicglitch.art.</p>
       <div class="tiers grid-3">
         <div class="card tier">
@@ -60,46 +66,54 @@
           <p class="muted">1 character • dark/solid background • hi-res PNG</p>
           <div class="tier-actions">
             <span class="price">$40</span>
-            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank">Order</a>
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Order</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="about" class="section">
-      <h2>About</h2>
+
+    <section id="about" class="section" role="region" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
       <div class="card about-card">
         <img src="/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png" alt="Basic.Glitch avatar" class="avatar">
         <div>
           <h3 class="neon-text">Basic.Glitch</h3>
           <p class="muted">Basic.Glitch is the persona of Justin Lance, an Indiana native that relocated to various parts of Colorado then to Otero County, New Mexico. My experiences give birth to my art. I blend neon line-art, psychedelic surrealism, textured thread-painted landscapes, and nature-fusion portraits. Pieces are optimized for prints and digital displays. I always have been and always will be a basic glitch.</p>
           <div class="links">
-            <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank">Instagram</a>
-            <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank">Ko-Fi</a>
+            <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Ko-Fi</a>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact" class="section">
-      <h2>Contact</h2>
+
+    <section id="contact" class="section" role="region" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
       <div class="card text-center">
         <p class="muted">Email routed via Cloudflare Email Routing — primary: <strong>justin@basicglitch.art</strong></p>
         <div class="row">
           <a class="btn-neon" href="mailto:justin@basicglitch.art">Email Me</a>
-          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank">Start a Commission</a>
+          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Start a Commission</a>
         </div>
       </div>
     </section>
+
     <footer class="site-footer">
       <p>© <span id="year"></span> Basic.Glitch • <a href="https://basicglitch.art">basicglitch.art</a></p>
     </footer>
   </main>
+
   <div id="lightbox" class="lightbox hidden" aria-hidden="true">
-    <button id="lb-close" class="lb-btn">Close</button>
-    <button id="lb-prev" class="lb-nav">◀</button>
+    <button id="lb-close" class="lb-btn" aria-label="Close">Close</button>
+    <button id="lb-prev" class="lb-nav" aria-label="Previous">◀</button>
     <div id="lb-content" class="lb-content"></div>
-    <button id="lb-next" class="lb-nav">▶</button>
+    <button id="lb-next" class="lb-nav" aria-label="Next">▶</button>
   </div>
+
   <script src="app.js"></script>
-  <script> document.getElementById('year').innerText = new Date().getFullYear(); if(window.feather) feather.replace(); </script>
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    if(window.feather) feather.replace();
+  </script>
 </body>
 </html>
