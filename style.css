@@ -4,15 +4,18 @@
   --neon-cyan:#00F0FF; --neon-magenta:#FF1CCF; --accent: linear-gradient(90deg,var(--neon-cyan),var(--neon-magenta));
   --glass: rgba(255,255,255,0.03);
 }
+
 html,body{height:100%;margin:0;background:var(--bg);color:#e6eef8;font-family:Inter,system-ui,Arial;}
 .container{max-width:1100px;margin:0 auto;padding:20px;}
 .site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(5,6,10,0.6), rgba(5,6,10,0.35));border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{color:#fff;font-weight:600;font-size:1.05rem;text-decoration:none}
 .nav a{color:#cbd5e1;margin-right:14px;text-decoration:none}
-.nav a:hover{color:#fff}
-.btn-neon{border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--neon-cyan);background:transparent;text-decoration:none}
-.btn-small{border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;color:var(--neon-cyan);background:transparent}
+.nav a:hover, .nav a:focus{color:#fff; outline:none; box-shadow:0 0 0 2px var(--neon-cyan); border-radius:4px;}
+.btn-neon{border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--neon-cyan);background:transparent;text-decoration:none;}
+.btn-neon:focus{outline:none; box-shadow:0 0 0 2px var(--neon-cyan);}
+.btn-small{border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;color:var(--neon-cyan);background:transparent;}
+.btn-small:focus{outline:none; box-shadow:0 0 0 2px var(--neon-cyan);}
 .main{padding:36px 20px}
 .title{font-size:2.2rem;margin:0 0 8px;background:linear-gradient(90deg,var(--neon-cyan),var(--neon-magenta));-webkit-background-clip:text;color:transparent}
 .subtitle{color:var(--muted);max-width:780px;margin:0 auto 16px}
