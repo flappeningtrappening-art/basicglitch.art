@@ -1,45 +1,30 @@
 [
   {
-    "id": "ig-001",
-    "title": "IG Placeholder 1",
-    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
-    "categories": [
-      "Available for Purchase"
-    ],
-    "styles": [
-      "Neon",
-      "Glitch"
-    ],
+    "id": "art-001",
+    "title": "Neon Glitch Landscape",
+    "file": "/assets/images/gallery/art-001.jpg",
+    "categories": ["Available for Purchase"],
+    "styles": ["Neon", "Glitch"],
+    "date": "2025-11-28",
+    "description": "High-energy neon landscape with glitch effects.",
+    "price": 50
+  },
+  {
+    "id": "art-002",
+    "title": "Surreal Portrait",
+    "file": "/assets/images/gallery/art-002.jpg",
+    "categories": ["Personal Projects"],
+    "styles": ["Surrealism", "Psychedelia"],
     "date": "2025-11-22",
-    "description": "Placeholder from Instagram post - replace with the uploaded image for the artwork."
+    "description": "A surreal portrait blending human and natural forms."
   },
   {
-    "id": "ig-002",
-    "title": "IG Placeholder 2",
-    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
-    "categories": [
-      "Personal Projects"
-    ],
-    "styles": [
-      "Surrealism",
-      "Psychedelia"
-    ],
-    "date": "2025-11-12",
-    "description": "Placeholder: replace with the actual artwork image file uploaded to DeepSite."
-  },
-  {
-    "id": "ig-003",
-    "title": "IG Placeholder 3",
-    "file": "/mnt/data/be157146-279e-43ce-ba2e-41bda640beb8.png",
-    "categories": [
-      "Broboticus",
-      "Animation"
-    ],
-    "styles": [
-      "Geometric",
-      "Glitch"
-    ],
+    "id": "art-003",
+    "title": "Broboticus Animation Frame",
+    "file": "/assets/images/gallery/art-003.png",
+    "categories": ["Broboticus", "Animation"],
+    "styles": ["Geometric", "Glitch"],
     "date": "2025-10-04",
-    "description": "Placeholder: replace with actual artwork file."
+    "description": "Placeholder animation frame for Broboticus series."
   }
 ]
