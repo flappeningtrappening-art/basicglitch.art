@@ -1,4 +1,5 @@
-/* General body */
+/* ===================== General ===================== */
+/* Body */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #0b0b0b;
@@ -15,7 +16,7 @@ body {
   padding: 1rem;
 }
 
-/* Header */
+/* ===================== Header ===================== */
 .site-header {
   background: #050505;
   padding: 1rem 0;
@@ -47,87 +48,7 @@ body {
   color: #00fff7;
 }
 
-/* SVG Icons */
-.icon {
-  width: 20px;
-  height: 20px;
-  filter: brightness(1.2);
-}
-
-/* Buttons */
-.btn-neon {
-  background: transparent;
-  border: 2px solid #00fff7;
-  color: #00fff7;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.btn-neon:hover {
-  color: #0b0b0b;
-  background: #00fff7;
-  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero .title {
-  font-size: 2.5rem;
-  color: #00fff7;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
-}
-
-.hero .subtitle {
-  font-size: 1.25rem;
-  color: #a0a0a0;
-  margin-bottom: 2rem;
-}
-
-.cta-row a {
-  margin: 0.5rem;
-}
-
-/* Sections */
-.section {
-  margin: 4rem 0;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #00fff7;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
-}
-
-/* === Neon Icons & Buttons === */
-.icon {
-  width: 1.25em;       /* Adjust size as needed */
-  height: 1.25em;
-  vertical-align: middle;
-  fill: currentColor;   /* Matches the text color */
-  margin-right: 0.5em; /* Space between icon and text */
-  transition: all 0.3s ease;
-}
-
-/* Neon glow effect */
-.neon-icon {
-  color: #0ff; /* Cyan-ish neon default */
-  filter: drop-shadow(0 0 4px #0ff)
-          drop-shadow(0 0 10px #0ff)
-          drop-shadow(0 0 20px #0ff);
-}
-
+/* ===================== Buttons ===================== */
 .btn-neon {
   display: inline-flex;
   align-items: center;
@@ -151,7 +72,7 @@ body {
   box-shadow: 0 0 4px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
-/* For icons inside buttons */
+/* Icons inside buttons */
 .btn-neon .icon {
   transition: all 0.3s ease;
 }
@@ -163,6 +84,23 @@ body {
           drop-shadow(0 0 24px #0ff);
 }
 
+/* ===================== Inline SVG Icons ===================== */
+.icon {
+  width: 1.25em;       /* Adjust size as needed */
+  height: 1.25em;
+  vertical-align: middle; /* Align with text */
+  fill: currentColor;      /* Matches text color */
+  margin-right: 0.5em;     /* Space between icon and text */
+  transition: all 0.3s ease;
+}
+
+.neon-icon {
+  color: #0ff; /* Neon cyan default */
+  filter: drop-shadow(0 0 4px #0ff)
+          drop-shadow(0 0 10px #0ff)
+          drop-shadow(0 0 20px #0ff);
+}
+
 /* Optional: subtle hover for inline icons elsewhere */
 .icon:hover {
   transform: scale(1.1);
@@ -171,7 +109,41 @@ body {
           drop-shadow(0 0 24px #0ff);
 }
 
-/* Cards */
+/* ===================== Hero Section ===================== */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero .title {
+  font-size: 2.5rem;
+  color: #00fff7;
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+}
+
+.hero .subtitle {
+  font-size: 1.25rem;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
+
+.cta-row a {
+  margin: 0.5rem;
+}
+
+/* ===================== Sections ===================== */
+.section {
+  margin: 4rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #00fff7;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+}
+
+/* ===================== Cards ===================== */
 .card {
   background: #111;
   padding: 1rem;
@@ -189,14 +161,14 @@ body {
   overflow: hidden;
 }
 
-/* Grid */
+/* ===================== Grid ===================== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-/* About Card */
+/* ===================== About Card ===================== */
 .about-card {
   display: flex;
   gap: 2rem;
@@ -211,7 +183,7 @@ body {
   box-shadow: 0 0 10px #00fff7;
 }
 
-/* Tier Cards */
+/* ===================== Tier Cards ===================== */
 .tier {
   text-align: center;
 }
@@ -224,7 +196,7 @@ body {
   gap: 1rem;
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 .site-footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -233,7 +205,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Lightbox */
+/* ===================== Lightbox ===================== */
 .lightbox {
   position: fixed;
   top: 0;
@@ -268,7 +240,7 @@ body {
   box-shadow: 0 0 10px #00fff7;
 }
 
-/* Neon Text Utility */
+/* ===================== Neon Text Utility ===================== */
 .neon-text {
   color: #00fff7;
   text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
