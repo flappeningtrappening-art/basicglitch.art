@@ -5,39 +5,61 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Basic.Glitch — Digital Art Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-dark text-base">
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">Basic.Glitch</a>
       <nav class="nav" aria-label="Main site navigation">
-        <a href="#gallery"><img src="assets/icons/gallery.svg" alt="" class="icon"> Gallery</a>
-        <a href="#instagram"><img src="assets/icons/instagram.svg" alt="" class="icon"> Instagram</a>
-        <a href="#commissions"><img src="assets/icons/commissions.svg" alt="" class="icon"> Commissions</a>
-        <a href="#about"><img src="assets/icons/about.svg" alt="" class="icon"> About</a>
-        <a href="#contact"><img src="assets/icons/email.svg" alt="" class="icon"> Contact</a>
+        <a href="#gallery">
+          <img src="assets/icons/gallery.svg" alt="Gallery" class="icon neon-icon">Gallery
+        </a>
+        <a href="#instagram">
+          <img src="assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon">Instagram
+        </a>
+        <a href="#commissions">
+          <img src="assets/icons/commissions.svg" alt="Commissions" class="icon neon-icon">Commissions
+        </a>
+        <a href="#about">
+          <img src="assets/icons/about.svg" alt="About" class="icon neon-icon">About
+        </a>
+        <a href="#contact">
+          <img src="assets/icons/email.svg" alt="Contact" class="icon neon-icon">Contact
+        </a>
         <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-          <img src="assets/icons/kofi.svg" alt="" class="icon"> Ko-Fi
+          <img src="assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon">Ko-Fi
         </a>
       </nav>
     </div>
   </header>
 
   <main class="container main">
+
+    <!-- HERO SECTION -->
     <section class="hero" role="region" aria-labelledby="hero-title">
       <h1 id="hero-title" class="title">Basic.Glitch — Digital Art</h1>
       <p class="subtitle">Neon line-art, psychedelic surrealism, textured landscapes, and nature-fusion portraits — for collectors and dreamers.</p>
       <div class="cta-row">
-        <a class="btn-neon" href="#gallery">View Gallery</a>
-        <a class="btn-neon" href="#commissions">Commission</a>
-        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Support on Ko-Fi</a>
+        <a class="btn-neon" href="#gallery">
+          <img src="assets/icons/gallery.svg" alt="View Gallery" class="icon neon-icon">View Gallery
+        </a>
+        <a class="btn-neon" href="#commissions">
+          <img src="assets/icons/commissions.svg" alt="Commission" class="icon neon-icon">Commission
+        </a>
+        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
+          <img src="assets/icons/ko-fi.svg" alt="Support on Ko-Fi" class="icon neon-icon">Support on Ko-Fi
+        </a>
       </div>
     </section>
 
+    <!-- GALLERY SECTION -->
     <section id="gallery" class="section" role="region" aria-labelledby="gallery-title">
       <div class="section-head">
-        <h2 id="gallery-title">Gallery</h2>
+        <h2 id="gallery-title" class="section-title">Gallery</h2>
         <div class="filters">
           <div id="category-filters" class="filter-group" aria-label="Categories"></div>
           <div id="style-filters" class="filter-group" aria-label="Styles"></div>
@@ -47,21 +69,23 @@
       <div id="gallery-grid" class="grid" aria-live="polite"></div>
     </section>
 
+    <!-- INSTAGRAM SECTION -->
     <section id="instagram" class="section" role="region" aria-labelledby="instagram-title">
       <h2 id="instagram-title" class="section-title">Live — Instagram</h2>
       <div class="card instagram-embed">
-        <blockquote
+        <blockquote 
           class="instagram-media instagram-custom"
           data-instgrm-permalink="https://www.instagram.com/basic.glitch/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
-          style="background:#0c0c0c; border-radius:6px; box-shadow:0 0 15px rgba(0,255,255,0.4); margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"
+          style="background:#0b0b0b; border:0; border-radius:8px; box-shadow:0 0 10px #00fff7,0 0 20px #00fff7; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"
         ></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
     </section>
 
+    <!-- COMMISSIONS SECTION -->
     <section id="commissions" class="section" role="region" aria-labelledby="commissions-title">
-      <h2 id="commissions-title">Commissions</h2>
+      <h2 id="commissions-title" class="section-title">Commissions</h2>
       <p class="muted">Click a tier to open Ko-Fi. For custom work, message me on Ko-Fi or email justin@basicglitch.art.</p>
       <div class="tiers grid-3">
         <div class="card tier">
@@ -69,14 +93,17 @@
           <p class="muted">1 character • dark/solid background • hi-res PNG</p>
           <div class="tier-actions">
             <span class="price">$40</span>
-            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">Order</a>
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
+              <img src="assets/icons/ko-fi.svg" alt="Order" class="icon neon-icon">Order
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about" class="section" role="region" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+      <h2 id="about-title" class="section-title">About</h2>
       <div class="card about-card">
         <img src="assets/images/avatar.png" alt="Basic.Glitch avatar" class="avatar">
         <div>
@@ -84,34 +111,37 @@
           <p class="muted">Basic.Glitch is the persona of Justin Lance, an Indiana native that relocated to various parts of Colorado then to Otero County, New Mexico. My experiences give birth to my art. I blend neon line-art, psychedelic surrealism, textured thread-painted landscapes, and nature-fusion portraits. Pieces are optimized for prints and digital displays. I always have been and always will be a basic glitch.</p>
           <div class="links">
             <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener">
-              <img src="assets/icons/instagram.svg" alt="" class="icon"> Instagram
+              <img src="assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon">Instagram
             </a>
             <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-              <img src="assets/icons/kofi.svg" alt="" class="icon"> Ko-Fi
+              <img src="assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon">Ko-Fi
             </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section" role="region" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+      <h2 id="contact-title" class="section-title">Contact</h2>
       <div class="card text-center">
         <p class="muted">Email routed via Cloudflare Email Routing — primary: <strong>justin@basicglitch.art</strong></p>
         <div class="row">
           <a class="btn-neon" href="mailto:justin@basicglitch.art">
-            <img src="assets/icons/email.svg" alt="" class="icon"> Email Me
+            <img src="assets/icons/email.svg" alt="Email" class="icon neon-icon">Email Me
           </a>
           <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-            <img src="assets/icons/kofi.svg" alt="" class="icon"> Start a Commission
+            <img src="assets/icons/ko-fi.svg" alt="Start Commission" class="icon neon-icon">Start a Commission
           </a>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
       <p>© <span id="year"></span> Basic.Glitch • <a href="https://basicglitch.art">basicglitch.art</a></p>
     </footer>
+
   </main>
 
   <div id="lightbox" class="lightbox hidden" aria-hidden="true">
@@ -124,6 +154,7 @@
   <script src="app.js"></script>
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
+    if(window.feather) feather.replace();
   </script>
 </body>
 </html>
