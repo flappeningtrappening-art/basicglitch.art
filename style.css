@@ -10,12 +10,19 @@
   --bg-dark: #050505;
   --text: #e6e6e6;
   --neon: #00fff7;
+  --neon2: #00ffee;
+  --neon-strong: rgba(0, 255, 247, 0.55); 
   --neon-soft: rgba(0, 255, 247, 0.4);
   --neon-faint: rgba(0, 255, 247, 0.20);
+  --neon2-strong: rgba(0, 255, 062, 0.55); 
+  --neon2-soft: rgba(0, 255, 062, 0.4);
+  --neon2-faint: rgba(0, 255, 062, 0.20); 
   --card-bg: #0b0b0b;
   --border: #111;
   --glow-strong: 0 0 10px var(--neon), 0 0 18px var(--neon-soft);
   --glow-soft: 0 0 6px var(--neon-soft), 0 0 12px var(--neon-faint);
+  --glow2-strong: 0 0 10px var(--neon2), 0 0 18px var(--neon2-soft);
+  --glow2-soft: 0 0 6px var(neon2-soft), 0 0 12px var(--neon2-faint); 
 }
 
 body {
@@ -55,8 +62,8 @@ img { display: block; }
 .brand {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--neon);
-  text-shadow: var(--glow-soft);
+  color: var(--neon2);
+  text-shadow: var(--glow2-soft);
 }
 
 .nav {
@@ -76,7 +83,7 @@ img { display: block; }
 }
 
 .nav a:hover {
-  color: var(--neon);
+  color: var(--neon2);
   text-shadow: var(--glow-soft);
 }
 
@@ -145,7 +152,8 @@ a:hover .icon.neon-icon,
   font-size: 1.25rem;
   max-width: 680px;
   margin: 0.5rem auto 2rem auto;
-  color: #ccc;
+  color: # var(--neon2);
+  text-shadow: var(--glow2-faint); 
 }
 
 .cta-row {
@@ -172,7 +180,7 @@ a:hover .icon.neon-icon,
   background: url('/assets/images/circuit-overlay.png');
   background-size: 120%;
   background-repeat: repeat;
-  opacity: 0.18;
+  opacity: 0.10;
   mix-blend-mode: lighten;
   pointer-events: none;
   transition: 0.25s ease;
