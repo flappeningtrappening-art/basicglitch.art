@@ -48,6 +48,157 @@ body {
   color: #00fff7;
 }
 
+/* ---------- Theme tuning (override earlier values) ---------- */
+:root{
+  --neon-color: #00fff7;
+  --neon-glow-strength: 0.35; /* 0 = no glow, 1 = full. 0.35 = subtle/moderate */
+  --bg-dark: #0b0b0b;
+}
+
+/* Reduce glow by scaling the drop-shadow intensity using the variable */
+.neon-icon,
+.btn-neon {
+  --g: calc(var(--neon-glow-strength) * 1); /* helper */
+  filter: drop-shadow(0 0 calc(6px * var(--g)) var(--neon-color))
+          drop-shadow(0 0 calc(12px * var(--g)) var(--neon-color));
+}
+
+/* Slightly soften general neon text glow */
+.title, .section-title, .neon-text {
+  text-shadow: 0 0 calc(4px * var(--neon-glow-strength)) var(--neon-color),
+               0 0 calc(8px * var(--neon-glow-strength)) var(--neon-color);
+}
+
+/* Normalize icon visuals (images) - for <img class="icon"> fallback */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  display: inline-block;
+  object-fit: contain;
+  filter: brightness(1) contrast(1.05) drop-shadow(0 0 calc(6px * var(--neon-glow-strength)) var(--neon-color));
+  transform-origin: center center;
+}
+
+/* If you later inline SVGs, this will normalize stroke widths a bit */
+.icon svg, .icon-inline {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1;
+}
+
+/* Header / hero background areas */
+.header-bg, .hero-bg {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* dark overlay so text stays readable */
+.header-bg::after,
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ensure content sits above bg overlay */
+.header-bg > .container,
+.hero-bg > .container { position: relative; z-index: 1; }
+
+/* Decorative circuit pattern overlay (subtle) */
+.circuit-overlay {
+  position:absolute; inset:0; pointer-events:none; z-index:0;
+  background-image: url('/assets/images/circuit-glitch.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.14; /* subtle */
+  mix-blend-mode: screen;
+  transform: translateY(-5%); /* slight offset */
+  filter: blur(1px);
+}
+
+/* hero tweaks: vertically balance title/subtitle */
+.hero { padding: 6rem 1rem; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:1rem; }
+
+/* Use the empty space to the right as decorative area by limiting hero content width */
+.hero .container { max-width: 900px; }
+
+/* Instagram feed container dark border fix */
+.instagram-embed iframe,
+.instagram-embed blockquote {
+  background-color: #070707 !important;
+  border-radius: 6px !important;
+  border: none !important;
+}
+
+/* Make the white instagram inner frame darker via CSS override (when possible) */
+.instagram-embed iframe { background-color: transparent !important; }
+
+/* Avatar hexagon + subtle glitch trail */
+.avatar-hex {
+  width: 120px; height: 120px; position:relative; display:inline-block;
+}
+.avatar-hex img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  border-radius: 6px;
+  border: 3px solid rgba(0,255,247,0.25);
+  box-shadow: 0 0 calc(8px * var(--neon-glow-strength)) var(--neon-color);
+}
+
+/* small hexagons chain */
+.avatar-hex::before,
+.avatar-hex::after {
+  content:"";
+  position:absolute;
+  width:36px; height:36px;
+  border:2px solid rgba(0,255,247,0.12);
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  top:50%; transform:translateY(-50%); left:110%;
+  opacity:0; animation: hexTrail 3.8s linear infinite;
+}
+.avatar-hex::after { left:145%; width:28px; height:28px; animation-delay:0.6s; }
+
+/* animated neon glitch lines behind avatar (subtle) */
+.avatar-hex .glitch-lines {
+  position:absolute; inset: -30% -30% auto auto; width:260px; height:260px; z-index:-1;
+  background-image: linear-gradient(90deg, rgba(0,255,247,0.04), rgba(0,255,247,0.02));
+  filter: blur(8px) contrast(1.2);
+  opacity:0.45;
+  animation: glitchShift 6s infinite linear;
+}
+
+/* keyframes */
+@keyframes hexTrail {
+  0% { opacity:0; transform:translateY(-50%) translateX(0) scale(0.8) rotate(0deg); }
+  10% { opacity:1; transform:translateY(-50%) translateX(6px) scale(1.0) rotate(2deg); }
+  60% { opacity:0.7; transform:translateY(-50%) translateX(36px) scale(1.05) rotate(-1deg); }
+  100% { opacity:0; transform:translateY(-50%) translateX(60px) scale(1.1) rotate(0deg); }
+}
+@keyframes glitchShift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-3px) translateX(3px); }
+  100% { transform: translateY(0); }
+}
+
+/* Small tweak for Ko-Fi styling so it can match nav spacing but stay emphasized */
+.nav a.btn-neon {
+  padding: 0.45em 0.9em;
+  margin-left: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* If you want the Ko-Fi to not have the full box in header, use this (optional) */
+/* .nav a.btn-neon { border: 1px solid rgba(0,255,247,0.22); background: transparent; box-shadow: none; } */
+
 /* ===================== Buttons ===================== */
 .btn-neon {
   display: inline-flex;
