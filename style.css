@@ -1,398 +1,273 @@
-/* ===================== General ===================== */
-/* Body */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #0b0b0b;
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+/* ============================================================
+   BASIC.GLITCH.ART — FINAL CONSOLIDATED STYLE SHEET
+   ============================================================ */
+
+/* ---------------------------
+   GLOBAL COLOR/BASE STYLES
+   --------------------------- */
+
+:root {
+  --bg-dark: #050505;
+  --text: #e6e6e6;
+  --neon: #00fff7;
+  --neon-soft: rgba(0, 255, 247, 0.4);
+  --neon-faint: rgba(0, 255, 247, 0.20);
+  --card-bg: #0b0b0b;
+  --border: #111;
+  --glow-strong: 0 0 10px var(--neon), 0 0 18px var(--neon-soft);
+  --glow-soft: 0 0 6px var(--neon-soft), 0 0 12px var(--neon-faint);
 }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+}
+
+img { display: block; }
 
 /* Container */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  width: min(1200px, 92%);
+  margin: auto;
+  padding: 2rem 0;
 }
 
-/* ===================== Header ===================== */
+/* -----------------------------------------------------------
+   HEADER
+   ----------------------------------------------------------- */
+
 .site-header {
-  background: #050505;
-  padding: 1rem 0;
-  border-bottom: 1px solid #111;
+  width: 100%;
+  padding: 1.2rem 0;
+  position: relative;
+  background: rgba(5,5,5,0.7);
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .brand {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #00fff7;
-  text-decoration: none;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--neon);
+  text-shadow: var(--glow-soft);
+}
+
+.nav {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
 }
 
 .nav a {
-  margin-left: 1rem;
-  color: #e0e0e0;
-  text-decoration: none;
-  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
+  color: var(--text);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .nav a:hover {
-  color: #00fff7;
+  color: var(--neon);
+  text-shadow: var(--glow-soft);
 }
 
-/* ---------- Theme tuning (override earlier values) ---------- */
-:root{
-  --neon-color: #00fff7;
-  --neon-glow-strength: 0.35; /* 0 = no glow, 1 = full. 0.35 = subtle/moderate */
-  --bg-dark: #0b0b0b;
-}
-
-/* Reduce glow by scaling the drop-shadow intensity using the variable */
-.neon-icon,
-.btn-neon {
-  --g: calc(var(--neon-glow-strength) * 1); /* helper */
-  filter: drop-shadow(0 0 calc(6px * var(--g)) var(--neon-color))
-          drop-shadow(0 0 calc(12px * var(--g)) var(--neon-color));
-}
-
-/* Slightly soften general neon text glow */
-.title, .section-title, .neon-text {
-  text-shadow: 0 0 calc(4px * var(--neon-glow-strength)) var(--neon-color),
-               0 0 calc(8px * var(--neon-glow-strength)) var(--neon-color);
-}
-
-/* Normalize icon visuals (images) - for <img class="icon"> fallback */
-.icon {
-  width: 1.25em;
-  height: 1.25em;
-  vertical-align: middle;
-  margin-right: 0.5em;
-  display: inline-block;
-  object-fit: contain;
-  filter: brightness(1) contrast(1.05) drop-shadow(0 0 calc(6px * var(--neon-glow-strength)) var(--neon-color));
-  transform-origin: center center;
-}
-
-/* If you later inline SVGs, this will normalize stroke widths a bit */
-.icon svg, .icon-inline {
-  vector-effect: non-scaling-stroke;
-  stroke-width: 1;
-}
-
-/* Header / hero background areas */
-.header-bg, .hero-bg {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--bg-dark);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* dark overlay so text stays readable */
-.header-bg::after,
-.hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6));
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ensure content sits above bg overlay */
-.header-bg > .container,
-.hero-bg > .container { position: relative; z-index: 1; }
-
-/* Decorative circuit pattern overlay (subtle) */
-.circuit-overlay {
-  position:absolute; inset:0; pointer-events:none; z-index:0;
-  background-image: url('/assets/images/circuit-glitch.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.14; /* subtle */
-  mix-blend-mode: screen;
-  transform: translateY(-5%); /* slight offset */
-  filter: blur(1px);
-}
-
-/* hero tweaks: vertically balance title/subtitle */
-.hero { padding: 6rem 1rem; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:1rem; }
-
-/* Use the empty space to the right as decorative area by limiting hero content width */
-.hero .container { max-width: 900px; }
-
-/* Instagram feed container dark border fix */
-.instagram-embed iframe,
-.instagram-embed blockquote {
-  background-color: #070707 !important;
-  border-radius: 6px !important;
-  border: none !important;
-}
-
-/* Make the white instagram inner frame darker via CSS override (when possible) */
-.instagram-embed iframe { background-color: transparent !important; }
-
-/* Avatar hexagon + subtle glitch trail */
-.avatar-hex {
-  width: 120px; height: 120px; position:relative; display:inline-block;
-}
-.avatar-hex img {
-  width:100%; height:100%; object-fit:cover; display:block;
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
-  border-radius: 6px;
-  border: 3px solid rgba(0,255,247,0.25);
-  box-shadow: 0 0 calc(8px * var(--neon-glow-strength)) var(--neon-color);
-}
-
-/* small hexagons chain */
-.avatar-hex::before,
-.avatar-hex::after {
-  content:"";
-  position:absolute;
-  width:36px; height:36px;
-  border:2px solid rgba(0,255,247,0.12);
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
-  top:50%; transform:translateY(-50%); left:110%;
-  opacity:0; animation: hexTrail 3.8s linear infinite;
-}
-.avatar-hex::after { left:145%; width:28px; height:28px; animation-delay:0.6s; }
-
-/* animated neon glitch lines behind avatar (subtle) */
-.avatar-hex .glitch-lines {
-  position:absolute; inset: -30% -30% auto auto; width:260px; height:260px; z-index:-1;
-  background-image: linear-gradient(90deg, rgba(0,255,247,0.04), rgba(0,255,247,0.02));
-  filter: blur(8px) contrast(1.2);
-  opacity:0.45;
-  animation: glitchShift 6s infinite linear;
-}
-
-/* keyframes */
-@keyframes hexTrail {
-  0% { opacity:0; transform:translateY(-50%) translateX(0) scale(0.8) rotate(0deg); }
-  10% { opacity:1; transform:translateY(-50%) translateX(6px) scale(1.0) rotate(2deg); }
-  60% { opacity:0.7; transform:translateY(-50%) translateX(36px) scale(1.05) rotate(-1deg); }
-  100% { opacity:0; transform:translateY(-50%) translateX(60px) scale(1.1) rotate(0deg); }
-}
-@keyframes glitchShift {
-  0% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(-3px) translateX(3px); }
-  100% { transform: translateY(0); }
-}
-
-/* Small tweak for Ko-Fi styling so it can match nav spacing but stay emphasized */
-.nav a.btn-neon {
-  padding: 0.45em 0.9em;
-  margin-left: 0.8rem;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
-
-/* If you want the Ko-Fi to not have the full box in header, use this (optional) */
-/* .nav a.btn-neon { border: 1px solid rgba(0,255,247,0.22); background: transparent; box-shadow: none; } */
-
-/* ===================== Buttons ===================== */
+/* Ko-Fi special button */
 .btn-neon {
   display: inline-flex;
   align-items: center;
-  padding: 0.5em 1em;
-  background: none;
-  border: 2px solid #0ff;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--neon);
   border-radius: 6px;
-  color: #0ff;
-  font-weight: 600;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
+  color: var(--neon);
+  text-shadow: var(--glow-soft);
+  background: rgba(0,255,247,0.06);
+  transition: 0.2s ease;
 }
 
-.btn-neon:hover,
-.btn-neon:focus {
-  color: #fff;
-  border-color: #0ff;
-  text-shadow: 0 0 4px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-  box-shadow: 0 0 4px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+.btn-neon:hover {
+  background: rgba(0,255,247,0.15);
+  box-shadow: var(--glowsoft);
 }
 
-/* Icons inside buttons */
-.btn-neon .icon {
-  transition: all 0.3s ease;
+/* -----------------------------------------------------------
+   ICONS — unified brightness / line-weight balancing
+   ----------------------------------------------------------- */
+
+.icon.neon-icon {
+  width: 22px;
+  height: 22px;
+  filter:
+    drop-shadow(0 0 3px rgba(0,255,247,0.35))
+    drop-shadow(0 0 6px rgba(0,255,247,0.20));
+  opacity: 0.92;
+  transition: 0.2s ease;
 }
 
-.btn-neon:hover .icon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #0ff)
-          drop-shadow(0 0 12px #0ff)
-          drop-shadow(0 0 24px #0ff);
+a:hover .icon.neon-icon,
+.btn-neon:hover .icon.neon-icon {
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 4px rgba(0,255,247,0.6))
+    drop-shadow(0 0 10px rgba(0,255,247,0.4));
 }
 
-/* ===================== Inline SVG Icons ===================== */
-.icon {
-  width: 1.25em;       /* Adjust size as needed */
-  height: 1.25em;
-  vertical-align: middle; /* Align with text */
-  fill: currentColor;      /* Matches text color */
-  margin-right: 0.5em;     /* Space between icon and text */
-  transition: all 0.3s ease;
-}
+/* -----------------------------------------------------------
+   HERO SECTION
+   ----------------------------------------------------------- */
 
-.neon-icon {
-  color: #0ff; /* Neon cyan default */
-  filter: drop-shadow(0 0 4px #0ff)
-          drop-shadow(0 0 10px #0ff)
-          drop-shadow(0 0 20px #0ff);
-}
-
-/* Optional: subtle hover for inline icons elsewhere */
-.icon:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 6px #0ff)
-          drop-shadow(0 0 12px #0ff)
-          drop-shadow(0 0 24px #0ff);
-}
-
-/* ===================== Hero Section ===================== */
 .hero {
+  min-height: 60vh;
+  padding: 5rem 0;
   text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero .title {
-  font-size: 2.5rem;
-  color: #00fff7;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
-}
-
-.hero .subtitle {
-  font-size: 1.25rem;
-  color: #a0a0a0;
-  margin-bottom: 2rem;
-}
-
-.cta-row a {
-  margin: 0.5rem;
-}
-
-/* ===================== Sections ===================== */
-.section {
-  margin: 4rem 0;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #00fff7;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
-}
-
-/* ===================== Cards ===================== */
-.card {
-  background: #111;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-  margin-bottom: 2rem;
-}
-
-/* Instagram Embed Neon */
-.instagram-embed {
-  border: 1px solid #00fff7;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-  padding: 0.5rem;
+  position: relative;
   overflow: hidden;
 }
 
-/* ===================== Grid ===================== */
+.title {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: var(--neon);
+  text-shadow: var(--glow-soft);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  max-width: 680px;
+  margin: 0.5rem auto 2rem auto;
+  color: #ccc;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* -----------------------------------------------------------
+   BACKGROUND + GLITCH OVERLAY (HEADER/HERO)
+   ----------------------------------------------------------- */
+
+.glitch-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.circuit-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/circuit-overlay.png');
+  background-size: 120%;
+  background-repeat: repeat;
+  opacity: 0.18;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+/* -----------------------------------------------------------
+   GUITARBOT FOREGROUND SPRITE
+   ----------------------------------------------------------- */
+
+.guitarbot-foreground {
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  width: clamp(160px, 22vw, 300px);
+  opacity: 0.95;
+  filter: drop-shadow(0 0 12px rgba(0,255,247,0.8));
+  z-index: 999;
+  pointer-events: none;
+}
+
+.guitarbot-foreground.animated {
+  animation: guitarbotFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes guitarbotFloat {
+  0%   { transform: translateY(0px) }
+  50%  { transform: translateY(-18px) }
+  100% { transform: translateY(0px) }
+}
+
+/* -----------------------------------------------------------
+   CARD / GRID / GENERAL COMPONENTS
+   ----------------------------------------------------------- */
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: var(--glow-soft);
+  color: var(--neon);
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,255,247,0.12);
+}
+
+/* Gallery grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-/* ===================== About Card ===================== */
-.about-card {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.about-card img.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 2px solid #00fff7;
-  box-shadow: 0 0 10px #00fff7;
-}
-
-/* ===================== Tier Cards ===================== */
-.tier {
-  text-align: center;
-}
-
-.tier-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* ===================== Footer ===================== */
-.site-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #111;
-  color: #888;
-  font-size: 0.9rem;
-}
-
-/* ===================== Lightbox ===================== */
+/* Lightbox */
 .lightbox {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(11, 11, 11, 0.95);
+  inset: 0;
+  background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9000;
 }
 
-.lightbox.hidden {
-  display: none;
+.lightbox.hidden { display: none; }
+
+.lb-content img {
+  max-width: 90vw;
+  max-height: 80vh;
 }
 
-.lb-btn {
-  background: transparent;
-  border: 2px solid #00fff7;
-  color: #00fff7;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0.5rem;
-  font-weight: bold;
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2.4rem 0;
+  color: #777;
 }
 
-.lb-btn:hover {
-  background: #00fff7;
-  color: #0b0b0b;
-  box-shadow: 0 0 10px #00fff7;
-}
+/* -----------------------------------------------------------
+   RESPONSIVE TWEAKS
+   ----------------------------------------------------------- */
 
-/* ===================== Neon Text Utility ===================== */
-.neon-text {
-  color: #00fff7;
-  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+@media (max-width: 700px) {
+  .title { font-size: 2.2rem; }
+  .subtitle { font-size: 1.05rem; }
+  .nav { flex-wrap: wrap; justify-content: center; }
 }
