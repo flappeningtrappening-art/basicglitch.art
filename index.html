@@ -105,7 +105,7 @@
     <section id="about" class="section" role="region" aria-labelledby="about-title">
       <h2 id="about-title" class="section-title">About</h2>
       <div class="card about-card">
-        <img src="assets/images/avatar.png" alt="Basic.Glitch avatar" class="avatar">
+        <img src="assets/images/guitarbot.png" alt="Basic.Glitch avatar" class="avatar">
         <div>
           <h3 class="neon-text">Basic.Glitch</h3>
           <p class="muted">Basic.Glitch is the persona of Justin Lance, an Indiana native that relocated to various parts of Colorado then to Otero County, New Mexico. My experiences give birth to my art. I blend neon line-art, psychedelic surrealism, textured thread-painted landscapes, and nature-fusion portraits. Pieces are optimized for prints and digital displays. I always have been and always will be a basic glitch.</p>
@@ -152,9 +152,95 @@
   </div>
 
   <script src="app.js"></script>
-  <script>
-    document.getElementById('year').innerText = new Date().getFullYear();
-    if(window.feather) feather.replace();
-  </script>
+
+<script>
+  // Set footer year
+  document.getElementById('year').innerText = new Date().getFullYear();
+</script>
+
+<script>
+/* ===========================================
+   BASIC.GLITCH.ART — DYNAMIC BACKGROUND ENGINE
+   Weighted randomizer + guitarbot foreground
+   =========================================== */
+
+(function(){
+  /* ---------------------------
+     1. Weighted image selection
+     --------------------------- */
+
+  const backgrounds = [
+    { src: 'assets/images/mountains.png', weight: 0.40 },       // 40%
+    { src: 'assets/images/circuit-glitch.png', weight: 0.30 },  // 30%
+    { src: 'assets/images/guitarbot.png', weight: 0.30 }        // 30%
+  ];
+
+  function weightedPick(list){
+    let sum = list.reduce((a,b)=>a+b.weight, 0);
+    let r = Math.random() * sum;
+    for(const item of list){
+      if(r < item.weight) return item.src;
+      r -= item.weight;
+    }
+    return list[0].src;
+  }
+
+  const chosenBG = weightedPick(backgrounds);
+
+
+  /* -------------------------------------------------
+     2. Place background in HERO or HEADER
+        (60% hero, 40% header)
+     ------------------------------------------------- */
+  const placeInHero = Math.random() < 0.60;
+
+  const target = placeInHero
+    ? document.querySelector('.hero')
+    : document.querySelector('.site-header');
+
+  if(target){
+    target.classList.add('glitch-bg');
+    target.style.backgroundImage = `url("${chosenBG}")`;
+
+    /* glitch-overlay element */
+    const overlay = document.createElement('div');
+    overlay.className = 'circuit-overlay';
+    target.appendChild(overlay);
+  }
+
+
+  /* -------------------------------------------------
+     3. Guitarbot foreground (40% chance)
+        If chosen, 67% chance to animate
+     ------------------------------------------------- */
+
+  const guitarbotAppears = Math.random() < 0.40;
+
+  if(guitarbotAppears){
+    const animate = Math.random() < 0.67;
+
+    const bot = document.createElement('img');
+    bot.src = 'assets/images/guitarbot.png';
+    bot.alt = "Guitarbot Broboticus";
+    bot.className = 'guitarbot-foreground' + (animate ? ' animated' : '');
+    document.body.appendChild(bot);
+  }
+
+
+  /* -------------------------------------------------
+     4. Subtle parallax on the overlay
+     ------------------------------------------------- */
+
+  window.addEventListener('scroll', () => {
+    const ov = document.querySelector('.circuit-overlay');
+    if(!ov) return;
+
+    const y = window.scrollY * 0.05;
+    ov.style.transform = `translateY(${ -6 - y }%)`;
+  });
+
+})();
+</script>
+
 </body>
 </html>
