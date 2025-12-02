@@ -107,6 +107,25 @@ img { display: block; }
   box-shadow: var(--glowsoft);
 }
 
+.btn-neon2 {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.4rem;
+   padding: 0.4rem 0.8rem;
+   border: 1px solid var(--neon2);
+   border-radius: 6px;
+   text-decoration: none;
+   color: var(--neon2);
+   text-shadow: var(--glow2-soft);
+   background: rgba(0,255,062,0.06);
+   transition: 0.2s ease;
+}
+
+.btn-neon:hover {
+   background: rgba(0,255,062,0.06);
+   transition: 0.2s ease;
+}
+
 /* -----------------------------------------------------------
    ICONS — unified brightness / line-weight balancing
    ----------------------------------------------------------- */
@@ -128,6 +147,24 @@ a:hover .icon.neon-icon,
     drop-shadow(0 0 4px rgba(0,255,247,0.6))
     drop-shadow(0 0 10px rgba(0,255,247,0.4));
 }
+
+.icon.neon2-icon2 {
+   width: 22px;
+   height: 22px;
+   filter:
+     drop-shadow(0 0 3px rgba(0,255,062,0.35))
+     drop-shadow(0 0 6px rgba(0,255,062,0.20));
+   opacity: 0.92;
+   transition: 0.2s ease;
+}
+
+a2:hover .icon.neon2-icon2,
+ .btn-neon2:hover . icon.neon2.icon2 {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 4px rgba(0,255,062,0.6))
+      drop-shadow(0 0 10px rgba(0,255,062,0.4));
+ }
 
 /* -----------------------------------------------------------
    HERO SECTION
