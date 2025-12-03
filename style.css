@@ -1,318 +1,146 @@
-/* ============================================================
-   BASIC.GLITCH.ART — FINAL CONSOLIDATED STYLE SHEET
-   ============================================================ */
-
-/* ---------------------------
-   GLOBAL COLOR/BASE STYLES
-   --------------------------- */
+/* =====================
+   FONT IMPORTS
+   ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Exo+2:wght@300;400;600&display=swap');
 
 :root {
-  --bg-dark: #050505;
-  --text: #e6e6e6;
-  --neon: #00fff7;
-  --neon2: #00ffee;
-  --neon-strong: rgba(0, 255, 247, 0.55); 
-  --neon-soft: rgba(0, 255, 247, 0.4);
-  --neon-faint: rgba(0, 255, 247, 0.20);
-  --neon2-strong: rgba(0, 255, 062, 0.55); 
-  --neon2-soft: rgba(0, 255, 062, 0.4);
-  --neon2-faint: rgba(0, 255, 062, 0.20); 
-  --card-bg: #0b0b0b;
-  --border: #111;
-  --glow-strong: 0 0 10px var(--neon), 0 0 18px var(--neon-soft);
-  --glow-soft: 0 0 6px var(--neon-soft), 0 0 12px var(--neon-faint);
-  --glow2-strong: 0 0 10px var(--neon2), 0 0 18px var(--neon2-soft);
-  --glow2-soft: 0 0 6px var(neon2-soft), 0 0 12px var(--neon2-faint); 
+  --bg: #000000;
+  --fg: #d5ffff;
+  --accent: #00f5ff;
+  --accent2: #39ff14;
+  --panel: #050505;
+  --border: #0d0d0d;
+  --font-main: 'Exo 2', sans-serif;
+  --font-title: 'Orbitron', sans-serif;
+  --font-alt: 'Audiowide', sans-serif;
 }
 
+/* =====================
+   GLOBAL
+   ===================== */
 body {
-  background: var(--bg-dark);
-  color: var(--text);
-  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
   margin: 0;
+  font-family: var(--font-main);
+  line-height: 1.4;
 }
 
-img { display: block; }
-
-/* Container */
-.container {
-  width: min(1200px, 92%);
-  margin: auto;
-  padding: 2rem 0;
+a {
+  color: var(--accent);
+  text-decoration: none;
 }
 
-/* -----------------------------------------------------------
+/* =====================
    HEADER
-   ----------------------------------------------------------- */
-
+   ===================== */
 .site-header {
-  width: 100%;
-  padding: 1.2rem 0;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
   position: relative;
-  background: rgba(5,5,5,0.7);
-  backdrop-filter: blur(6px);
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--neon2);
-  text-shadow: var(--glow2-soft);
-}
-
-.nav {
-  display: flex;
-  gap: 1.4rem;
-  align-items: center;
-}
-
-.nav a {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--text);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.nav a:hover {
-  color: var(--neon2);
-  text-shadow: var(--glow-soft);
-}
-
-/* Ko-Fi special button */
-.btn-neon {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--neon);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--neon);
-  text-shadow: var(--glow-soft);
-  background: rgba(0,255,247,0.06);
-  transition: 0.2s ease;
-}
-
-.btn-neon:hover {
-  background: rgba(0,255,247,0.15);
-  box-shadow: var(--glowsoft);
-}
-
-.btn-neon2 {
-   display: inline-flex;
-   align-items: center;
-   gap: 0.4rem;
-   padding: 0.4rem 0.8rem;
-   border: 1px solid var(--neon2);
-   border-radius: 6px;
-   text-decoration: none;
-   color: var(--neon2);
-   text-shadow: var(--glow2-soft);
-   background: rgba(0,255,062,0.06);
-   transition: 0.2s ease;
-}
-
-.btn-neon2:hover {
-   background: rgba(0,255,062,0.06);
-   transition: 0.2s ease;
-}
-
-/* -----------------------------------------------------------
-   ICONS — unified brightness / line-weight balancing
-   ----------------------------------------------------------- */
-
-.icon.neon-icon {
-  width: 22px;
-  height: 22px;
-  filter:
-    drop-shadow(0 0 3px rgba(0,255,247,0.35))
-    drop-shadow(0 0 6px rgba(0,255,247,0.20));
-  opacity: 0.92;
-  transition: 0.2s ease;
-}
-
-a:hover .icon.neon-icon,
-.btn-neon:hover .icon.neon-icon {
-  opacity: 1;
-  filter:
-    drop-shadow(0 0 4px rgba(0,255,247,0.6))
-    drop-shadow(0 0 10px rgba(0,255,247,0.4));
-}
-
-.icon.neon2-icon2 {
-   width: 22px;
-   height: 22px;
-   filter:
-     drop-shadow(0 0 3px rgba(0,255,062,0.35))
-     drop-shadow(0 0 6px rgba(0,255,062,0.20));
-   opacity: 0.92;
-   transition: 0.2s ease;
-}
-
-a2:hover .icon.neon2-icon2,
- .btn-neon2:hover . icon.neon2.icon2 {
-    opacity: 1;
-    filter:
-      drop-shadow(0 0 4px rgba(0,255,062,0.6))
-      drop-shadow(0 0 10px rgba(0,255,062,0.4));
- }
-
-/* -----------------------------------------------------------
-   HERO SECTION
-   ----------------------------------------------------------- */
-
-.hero {
-  min-height: 60vh;
-  padding: 5rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.title {
-  font-size: 3rem;
-  margin-bottom: 1.2rem;
-  color: var(--neon);
-  text-shadow: var(--glow-soft);
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  max-width: 680px;
-  margin: 0.5rem auto 2rem auto;
-  color: # var(--neon2);
-  text-shadow: var(--glow2-faint); 
-}
-
-.cta-row {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* -----------------------------------------------------------
-   BACKGROUND + GLITCH OVERLAY (HEADER/HERO)
-   ----------------------------------------------------------- */
-
-.glitch-bg {
-  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
+  background-position: center;
 }
 
-.circuit-overlay {
-  position: absolute;
-  inset: 0;
-  background: url('/assets/images/circuit-overlay.png');
-  background-size: 120%;
-  background-repeat: repeat;
-  opacity: 0.10;
-  mix-blend-mode: lighten;
-  pointer-events: none;
-  transition: 0.25s ease;
+.site-title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-weight: 700;
 }
 
-/* -----------------------------------------------------------
-   GUITARBOT FOREGROUND SPRITE
-   ----------------------------------------------------------- */
-
-.guitarbot-foreground {
-  position: fixed;
-  bottom: 0;
-  right: 2%;
-  width: clamp(160px, 22vw, 300px);
-  opacity: 0.95;
-  filter: drop-shadow(0 0 12px rgba(0,255,247,0.8));
-  z-index: 999;
-  pointer-events: none;
+/* =====================
+   HERO SECTION
+   ===================== */
+.hero-title {
+  font-family: var(--font-title);
+  color: var(--accent2);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.guitarbot-foreground.animated {
-  animation: guitarbotFloat 4.5s ease-in-out infinite;
+.hero-subtext {
+  font-family: var(--font-main);
+  color: var(--fg);
+  max-width: 600px;
+  margin: auto;
 }
 
-@keyframes guitarbotFloat {
-  0%   { transform: translateY(0px) }
-  50%  { transform: translateY(-18px) }
-  100% { transform: translateY(0px) }
-}
-
-/* -----------------------------------------------------------
-   CARD / GRID / GENERAL COMPONENTS
-   ----------------------------------------------------------- */
-
-.section {
-  padding: 4rem 0;
-}
-
+/* =====================
+   SECTION HEADERS
+   ===================== */
 .section-title {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-shadow: var(--glow-soft);
-  color: var(--neon);
+  font-family: var(--font-alt);
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
-.card {
-  background: var(--card-bg);
-  padding: 1.8rem;
+/* =====================
+   PANELS
+   ===================== */
+.panel {
+  background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,255,247,0.12);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem auto;
+  max-width: 900px;
 }
 
-/* Gallery grid */
-.grid {
-  display: grid;
-  gap: 1rem;
+/* =====================
+   RANDOMIZED BACKGROUND OVERLAY
+   ===================== */
+.circuit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+  pointer-events: none;
+  transition: transform 0.5s ease-out;
 }
 
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* =====================
+   IMAGE GALLERY ELEMENTS
+   ===================== */
+.gallery-img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border);
 }
 
-/* Lightbox */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9000;
+/* =====================
+   GUITARBOT ANIMATION
+   ===================== */
+.guitarbot-floating {
+  position: absolute;
+  animation: floaty 6s ease-in-out infinite;
+  width: 260px;
+  right: 2rem;
+  top: 2rem;
+  opacity: 0.85;
 }
 
-.lightbox.hidden { display: none; }
-
-.lb-content img {
-  max-width: 90vw;
-  max-height: 80vh;
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
 }
 
-/* Footer */
-.site-footer {
+/* =====================
+   FOOTER
+   ===================== */
+footer {
   text-align: center;
-  padding: 2.4rem 0;
-  color: #777;
-}
-
-/* -----------------------------------------------------------
-   RESPONSIVE TWEAKS
-   ----------------------------------------------------------- */
-
-@media (max-width: 700px) {
-  .title { font-size: 2.2rem; }
-  .subtitle { font-size: 1.05rem; }
-  .nav { flex-wrap: wrap; justify-content: center; }
+  padding: 2rem 0;
+  font-family: var(--font-main);
+  color: var(--fg);
+  opacity: 0.7;
 }
