@@ -121,7 +121,7 @@ img { display: block; }
    transition: 0.2s ease;
 }
 
-.btn-neon:hover {
+.btn-neon2:hover {
    background: rgba(0,255,062,0.06);
    transition: 0.2s ease;
 }
