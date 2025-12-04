@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Basic.Glitch — Digital Art Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-dark text-base">
 
@@ -16,51 +17,38 @@
     <div class="container header-inner">
       <a class="brand" href="#">Basic.Glitch</a>
       <nav class="nav" aria-label="Main site navigation">
-        <a href="#gallery">
-          <img src="/assets/icons/gallery.svg" alt="Gallery" class="icon neon-icon">Gallery
-        </a>
-        <a href="#instagram">
-          <img src="/assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon">Instagram
-        </a>
-        <a href="#commissions">
-          <img src="/assets/icons/commisions.svg" alt="Commissions" class="icon neon-icon">Commissions
-        </a>
-        <a href="#about">
-          <img src="/assets/icons/about.svg" alt="About" class="icon neon-icon">About
-        </a>
-        <a href="#contact">
-          <img src="/assets/icons/email.svg" alt="Contact" class="icon neon-icon">Contact
-        </a>
+        <a href="#gallery"><img src="assets/icons/gallery.svg" alt="Gallery" class="icon neon-icon">Gallery</a>
+        <a href="#instagram"><img src="assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon">Instagram</a>
+        <a href="#commissions"><img src="assets/icons/commisions.svg" alt="Commissions" class="icon neon-icon">Commissions</a>
+        <a href="#about"><img src="assets/icons/about.svg" alt="About" class="icon neon-icon">About</a>
+        <a href="#contact"><img src="assets/icons/email.svg" alt="Contact" class="icon neon-icon">Contact</a>
         <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-          <img src="/assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon">Ko-Fi
+          <img src="assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon">Ko-Fi
         </a>
       </nav>
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container main">
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (randomized background may be applied here) -->
     <section class="hero" role="region" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="title">Basic.Glitch — Digital Art</h1>
-      <p class="subtitle">Neon line-art, psychedelia, surrealism, landscapes, robots, and nature; Fusion, without confusion. Art that gives rise to commmunity, where the soul can be itself, where everyone that was there can be present in our future.</p>
-      <div class="cta-row">
-        <a class="btn-neon" href="#gallery">
-          <img src="/assets/icons/gallery.svg" alt="View Gallery" class="icon neon-icon">View Gallery
-        </a>
-        <a class="btn-neon" href="#commissions">
-          <img src="/assets/icons/commisions.svg" alt="Commission" class="icon neon-icon">Commission
-        </a>
-        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-          <img src="/assets/icons/ko-fi.svg" alt="Support on Ko-Fi" class="icon neon-icon">Support on Ko-Fi
-        </a>
+      <div class="hero-inner">
+        <h1 id="hero-title" class="title">Basic.Glitch — Digital Art</h1>
+        <p class="subtitle">Neon line-art, psychedelic surrealism, textured landscapes, and nature-fusion portraits — for collectors and dreamers.</p>
+        <div class="cta-row">
+          <a class="btn-neon" href="#gallery"><img src="assets/icons/gallery.svg" class="icon neon-icon" alt="">View Gallery</a>
+          <a class="btn-neon" href="#commissions"><img src="assets/icons/commisions.svg" class="icon neon-icon" alt="">Commission</a>
+          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="">Support on Ko-Fi</a>
+        </div>
       </div>
     </section>
 
-    <!-- GALLERY SECTION -->
+    <!-- GALLERY -->
     <section id="gallery" class="section" role="region" aria-labelledby="gallery-title">
       <div class="section-head">
-        <h2 id="gallery-title" class="section-title">Gallery</h2>
+        <h2 id="gallery-title">Gallery</h2>
         <div class="filters">
           <div id="category-filters" class="filter-group" aria-label="Categories"></div>
           <div id="style-filters" class="filter-group" aria-label="Styles"></div>
@@ -70,11 +58,11 @@
       <div id="gallery-grid" class="grid" aria-live="polite"></div>
     </section>
 
-    <!-- INSTAGRAM SECTION -->
+    <!-- INSTAGRAM -->
     <section id="instagram" class="section" role="region" aria-labelledby="instagram-title">
       <h2 id="instagram-title" class="section-title">Live — Instagram</h2>
       <div class="card instagram-embed">
-        <blockquote 
+        <blockquote
           class="instagram-media instagram-custom"
           data-instgrm-permalink="https://www.instagram.com/basic.glitch/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
@@ -84,67 +72,58 @@
       </div>
     </section>
 
-    <!-- COMMISSIONS SECTION -->
+    <!-- COMMISSIONS -->
     <section id="commissions" class="section" role="region" aria-labelledby="commissions-title">
       <h2 id="commissions-title" class="section-title">Commissions</h2>
-      <p class="muted">Click a tier to open Ko-Fi. For custom work, message me on Ko-Fi or email justin@basicglitch.art.</p>
+      <p class="muted">Click a tier to open Ko-Fi. For custom work, message me on Ko-Fi or email <strong>justin@basicglitch.art</strong>.</p>
       <div class="tiers grid-3">
         <div class="card tier">
           <h3>Neon Line-Art Character</h3>
           <p class="muted">1 character • dark/solid background • hi-res PNG</p>
           <div class="tier-actions">
             <span class="price">$40</span>
-            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-              <img src="/assets/icons/ko-fi.svg" alt="Order" class="icon neon-icon">Order
-            </a>
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="">Order</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about" class="section" role="region" aria-labelledby="about-title">
       <h2 id="about-title" class="section-title">About</h2>
       <div class="card about-card">
-        <img src="/assets/images/guitarbot.png" alt="Basic.Glitch avatar" class="avatar">
+        <img src="assets/images/avatar.png" alt="Basic.Glitch avatar" class="avatar">
         <div>
           <h3 class="neon-text">Basic.Glitch</h3>
-          <p class="muted">Basic.Glitch is the persona of Justin Lance, a Newburgh, Indiana native that relocated to various parts of Colorado then to Otero County, New Mexico. My experiences give birth to my art. I blend neon line-art, psychedelic surrealism, textured thread-painted landscapes, and nature-fusion portraits. Pieces are optimized for prints and digital displays. I always have been and always will be a basic glitch.</p>
+          <p class="muted">Basic.Glitch is the persona of Justin Lance... (short bio)</p>
           <div class="links">
-            <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener">
-              <img src="/assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon">Instagram
-            </a>
-            <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-              <img src="/assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon">Ko-Fi
-            </a>
+            <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" class="icon neon-icon" alt="">Instagram</a>
+            <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="">Ko-Fi</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section id="contact" class="section" role="region" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Contact</h2>
       <div class="card text-center">
         <p class="muted">Email routed via Cloudflare Email Routing — primary: <strong>justin@basicglitch.art</strong></p>
         <div class="row">
-          <a class="btn-neon" href="mailto:justin@basicglitch.art">
-            <img src="/assets/icons/email.svg" alt="Email" class="icon neon-icon">Email Me
-          </a>
-          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-            <img src="/assets/icons/ko-fi.svg" alt="Start Commission" class="icon neon-icon">Start a Commission
-          </a>
+          <a class="btn-neon" href="mailto:justin@basicglitch.art"><img src="assets/icons/email.svg" class="icon neon-icon" alt="">Email Me</a>
+          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="">Start a Commission</a>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Basic.Glitch • <a href="https://basicglitch.art">basicglitch.art</a></p>
-    </footer>
-
   </main>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Basic.Glitch • <a href="https://basicglitch.art">basicglitch.art</a></p>
+  </footer>
+
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox hidden" aria-hidden="true">
     <button id="lb-close" class="lb-btn" aria-label="Close">Close</button>
     <button id="lb-prev" class="lb-nav" aria-label="Previous">◀</button>
@@ -152,96 +131,18 @@
     <button id="lb-next" class="lb-nav" aria-label="Next">▶</button>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Robot foreground image element (will be chosen at runtime) -->
+  <img id="robot-foreground" class="robot-foreground" src="" alt="" style="display:none;">
 
-<script>
-  // Set footer year
-  document.getElementById('year').innerText = new Date().getFullYear();
-</script>
+  <!-- Canvas for shader-like effects (pointer-events none) -->
+  <canvas id="robot-effect-canvas"></canvas>
 
-<script>
-/* ===========================================
-   BASIC.GLITCH.ART — DYNAMIC BACKGROUND ENGINE
-   Weighted randomizer + guitarbot foreground
-   =========================================== */
-
-(function(){
-  /* ---------------------------
-     1. Weighted image selection
-     --------------------------- */
-
-  const backgrounds = [
-    { src: '/assets/images/mountains.png', weight: 0.40 },       // 40%
-    { src: '/assets/images/circuit-glitch.png', weight: 0.30 },  // 30%
-    { src: '/assets/images/guitarbot.png', weight: 0.30 }        // 30%
-  ];
-
-  function weightedPick(list){
-    let sum = list.reduce((a,b)=>a+b.weight, 0);
-    let r = Math.random() * sum;
-    for(const item of list){
-      if(r < item.weight) return item.src;
-      r -= item.weight;
-    }
-    return list[0].src;
-  }
-
-  const chosenBG = weightedPick(backgrounds);
-
-
-  /* -------------------------------------------------
-     2. Place background in HERO or HEADER
-        (60% hero, 40% header)
-     ------------------------------------------------- */
-  const placeInHero = Math.random() < 0.60;
-
-  const target = placeInHero
-    ? document.querySelector('.hero')
-    : document.querySelector('.site-header');
-
-  if(target){
-    target.classList.add('glitch-bg');
-    target.style.backgroundImage = `url("${chosenBG}")`;
-
-    /* glitch-overlay element */
-    const overlay = document.createElement('div');
-    overlay.className = 'circuit-overlay';
-    target.appendChild(overlay);
-  }
-
-
-  /* -------------------------------------------------
-     3. Guitarbot foreground (40% chance)
-        If chosen, 67% chance to animate
-     ------------------------------------------------- */
-
-  const guitarbotAppears = Math.random() < 0.40;
-
-  if(guitarbotAppears){
-    const animate = Math.random() < 0.67;
-
-    const bot = document.createElement('img');
-    bot.src = '/assets/images/guitarbot.png';
-    bot.alt = "Guitarbot Broboticus";
-    bot.className = 'guitarbot-foreground' + (animate ? ' animated' : '');
-    document.body.appendChild(bot);
-  }
-
-
-  /* -------------------------------------------------
-     4. Subtle parallax on the overlay
-     ------------------------------------------------- */
-
-  window.addEventListener('scroll', () => {
-    const ov = document.querySelector('.circuit-overlay');
-    if(!ov) return;
-
-    const y = window.scrollY * 0.05;
-    ov.style.transform = `translateY(${ -6 - y }%)`;
-  });
-
-})();
-</script>
+  <!-- Scripts -->
+  <script src="app.js"></script> <!-- your gallery loader (existing) -->
+  <script src="robot.js"></script> <!-- robot / randomizer / interactions -->
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
