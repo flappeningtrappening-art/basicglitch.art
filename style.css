@@ -1,146 +1,126 @@
-/* =====================
-   FONT IMPORTS
-   ===================== */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Exo+2:wght@300;400;600&display=swap');
+/* ============================================================
+   BASIC.GLITCH.ART — CONSOLIDATED STYLE SHEET
+   ============================================================ */
 
-:root {
-  --bg: #000000;
-  --fg: #d5ffff;
-  --accent: #00f5ff;
-  --accent2: #39ff14;
-  --panel: #050505;
-  --border: #0d0d0d;
-  --font-main: 'Exo 2', sans-serif;
+/* ---------------------------
+   GLOBAL COLOR/BASE STYLES
+   --------------------------- */
+:root{
+  --bg-dark: #050505;
+  --text: #e6e6e6;
+  --neon: #00fff7;
+  --neon2: #00ffee;
+  --neon-strong: rgba(0,255,247,0.55);
+  --neon-soft: rgba(0,255,247,0.35);
+  --neon2-strong: rgba(0,255,062,0.55);
+  --neon2-soft: rgba(0,255,062,0.35);
+  --card-bg: #0b0b0b;
+  --border: #111;
+  --glow-soft: 0 0 6px var(--neon-soft), 0 0 12px rgba(0,255,247,0.12);
+  --glow2-soft: 0 0 6px var(--neon2-soft), 0 0 12px rgba(0,255,062,0.12);
+  --font-main: 'Exo 2', Arial, sans-serif;
   --font-title: 'Orbitron', sans-serif;
-  --font-alt: 'Audiowide', sans-serif;
+  --font-alt: 'Audiowide', cursive;
 }
 
-/* =====================
-   GLOBAL
-   ===================== */
-body {
-  background: var(--bg);
-  color: var(--fg);
-  margin: 0;
-  font-family: var(--font-main);
-  line-height: 1.4;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg-dark);
+  color:var(--text);
+  font-family:var(--font-main);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
+.container{width:min(1200px,92%);margin:0 auto;padding:2rem 0}
 
-/* =====================
+/* ---------------------------
    HEADER
-   ===================== */
-.site-header {
-  padding: 1rem;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  background-size: cover;
-  background-position: center;
+   --------------------------- */
+.site-header{
+  width:100%;
+  padding:1rem 0;
+  background:rgba(5,5,5,0.65);
+  backdrop-filter:blur(6px);
+  position:relative;
 }
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{font-family:var(--font-alt);font-size:1.6rem;color:var(--neon2);text-shadow:var(--glow2-soft)}
 
-.site-title {
-  font-family: var(--font-title);
-  font-size: 1.6rem;
-  color: var(--accent);
-  font-weight: 700;
-}
+/* NAV */
+.nav{display:flex;gap:1.2rem;align-items:center}
+.nav a{display:flex;align-items:center;gap:.4rem;color:var(--text);text-decoration:none;font-weight:500;transition:color .18s ease}
+.nav a:hover{color:var(--neon2);text-shadow:var(--glow2-soft)}
 
-/* =====================
-   HERO SECTION
-   ===================== */
-.hero-title {
-  font-family: var(--font-title);
-  color: var(--accent2);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
+/* COHERENT ICON STYLE */
+.icon.neon-icon{width:20px;height:20px;vertical-align:middle;opacity:.95;filter:drop-shadow(0 0 4px rgba(0,255,247,0.22));transition:all .18s ease}
+.nav a:hover .icon.neon-icon{filter:drop-shadow(0 0 8px rgba(0,255,247,0.32));opacity:1}
 
-.hero-subtext {
-  font-family: var(--font-main);
-  color: var(--fg);
-  max-width: 600px;
-  margin: auto;
-}
+/* BUTTONS */
+.btn-neon{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .7rem;border-radius:6px;border:1px solid var(--neon);color:var(--neon);background:rgba(0,255,247,0.04);text-decoration:none;font-weight:600;transition:all .18s}
+.btn-neon:hover{background:rgba(0,255,247,0.14);box-shadow:var(--glow-soft);color:#fff}
+.btn-neon2{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .7rem;border-radius:6px;border:1px solid var(--neon2);color:var(--neon2);background:rgba(0,255,62,0.03);text-decoration:none;font-weight:600;transition:all .18s}
+.btn-small{border:1px solid rgba(255,255,255,0.04);padding:.4rem .6rem;border-radius:6px;color:var(--neon);background:transparent}
 
-/* =====================
-   SECTION HEADERS
-   ===================== */
-.section-title {
-  text-align: center;
-  font-family: var(--font-alt);
-  color: var(--accent);
-  font-size: 1.4rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
+/* ---------------------------
+   HERO
+   --------------------------- */
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:3.5rem 0}
+.title{font-family:var(--font-title);font-size:2.8rem;margin:0 0 .6rem;color:var(--neon);text-shadow:var(--glow-soft)}
+.subtitle{color:rgba(230,230,230,0.85);max-width:760px;margin:0 auto 1.6rem;font-size:1.1rem}
 
-/* =====================
-   PANELS
-   ===================== */
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 1rem;
-  border-radius: 6px;
-  margin: 1rem auto;
-  max-width: 900px;
-}
+/* CTA */
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* =====================
-   RANDOMIZED BACKGROUND OVERLAY
-   ===================== */
-.circuit-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.14;
-  pointer-events: none;
-  transition: transform 0.5s ease-out;
-}
+/* ---------------------------
+   BACKGROUND + GLITCH OVERLAY
+   --------------------------- */
+.glitch-bg{background-position:center;background-size:cover;background-repeat:no-repeat;position:relative}
+.circuit-overlay{position:absolute;inset:0;background-image:url('/assets/images/circuit-overlay.png');background-size:120%;background-repeat:repeat;opacity:0.10;mix-blend-mode:lighten;pointer-events:none;transition:transform .25s ease}
 
-/* =====================
-   IMAGE GALLERY ELEMENTS
-   ===================== */
-.gallery-img {
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
+/* ---------------------------
+   ROBOT FOREGROUND
+   --------------------------- */
+.robot-foreground{position:fixed;bottom:4%;right:2%;width:clamp(160px,22vw,320px);z-index:9999;pointer-events:auto;filter:drop-shadow(0 0 14px rgba(0,255,247,0.9));opacity:0.98;transition:transform .25s ease}
+.robot-foreground.animated{animation:guitarbotFloat 4.5s ease-in-out infinite}
+@keyframes guitarbotFloat{0%{transform:translateY(0)}50%{transform:translateY(-16px)}100%{transform:translateY(0)}}
 
-/* =====================
-   GUITARBOT ANIMATION
-   ===================== */
-.guitarbot-floating {
-  position: absolute;
-  animation: floaty 6s ease-in-out infinite;
-  width: 260px;
-  right: 2rem;
-  top: 2rem;
-  opacity: 0.85;
-}
+/* Click effect classes */
+.effect-neonpulse{animation:neonPulse .6s ease-out}
+@keyframes neonPulse{0%{transform:scale(1);filter:brightness(2)}100%{transform:scale(1);filter:none}}
+.effect-glitchburst{animation:glitchBurst .35s steps(2) forwards}
+@keyframes glitchBurst{0%{filter:hue-rotate(25deg) contrast(180%)}50%{filter:hue-rotate(-40deg) contrast(300%)}100%{filter:none}}
+.effect-rgb{animation:rgbSplit .45s ease-out}
+@keyframes rgbSplit{0%{filter:drop-shadow(6px 0 #ff2d2d) drop-shadow(-6px 0 #2d8bff)}100%{filter:none}}
+.effect-ripple{animation:ripplePulse .6s ease-out}
+@keyframes ripplePulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:1}}
 
-@keyframes floaty {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
-  100% { transform: translateY(0); }
-}
+/* ---------------------------
+   PANELS, CARDS, GRID
+   --------------------------- */
+.section{padding:3rem 0}
+.section-title{text-align:center;margin-bottom:1.2rem;font-family:var(--font-alt);font-size:1.4rem;color:var(--neon);text-shadow:var(--glow-soft)}
+.card{background:var(--card-bg);padding:1.4rem;border:1px solid var(--border);border-radius:12px;box-shadow:0 0 8px rgba(0,255,247,0.06)}
+.grid{display:grid;gap:1rem}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 
-/* =====================
-   FOOTER
-   ===================== */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  font-family: var(--font-main);
-  color: var(--fg);
-  opacity: 0.7;
+/* AVATAR */
+.about-card{display:flex;gap:1.25rem;align-items:center}
+.avatar{width:120px;height:120px;border-radius:999px;object-fit:cover;border:2px solid var(--neon)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.88);display:flex;align-items:center;justify-content:center;z-index:10000}
+.lightbox.hidden{display:none}
+.lb-content img{max-width:90vw;max-height:85vh}
+
+/* FOOTER */
+.site-footer{text-align:center;padding:2rem 0;color:#888}
+
+/* RESPONSIVE */
+@media (max-width:800px){
+  .title{font-size:2rem}
+  .hero{padding:2.5rem 0}
+  .robot-foreground{width:clamp(120px,30vw,220px);right:3%}
+  .nav{flex-wrap:wrap;justify-content:center}
 }
