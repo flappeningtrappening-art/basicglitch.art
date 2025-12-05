@@ -47,7 +47,7 @@ function setHeroBackground(){
    Fetch gallery.json
    --------------------------- */
 async function fetchGallery(){
-  const res = await fetch(GALLERY_JSON, {cache:'no-store'});
+  const res = await fetch('/data/gallery.json'), {cache:'no-store'});
   if(!res.ok)
     console.error('gallery.json not found at', GALLERY_JSON);
     return [];
