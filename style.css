@@ -172,8 +172,11 @@ a:hover .icon.neon-icon, .btn-neon:hover .icon.neon-icon{transform:scale(1.06);f
 }
 
 .instagram-widget {
-    display: flex;
-    justify-content: center;
+    border: 2px solid #1a1a1a;            /* gunmetal/black border */
+    box-shadow: 0 0 12px #0ff,            /* neon cyan glow */
+                inset 0 0 8px #0ff;       /* inner neon */
+    border-radius: 10px;
+    background: #0a0a0a;                  /* dark background */
 }
 
 /* Optional frame glow for embedded widget */
