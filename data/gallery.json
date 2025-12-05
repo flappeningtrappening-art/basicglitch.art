@@ -1,5 +1,15 @@
 [
   {
+    "id": "test-001",
+    "title": "Test Image",
+    "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fronalpstock_big.jpg/800px-Fronalpstock_big.jpg",
+    "categories": ["Test"],
+    "styles": ["Test"],
+    "date": "",
+    "description": "Path verification test",
+    "price": 0
+  },
+  {
     "id": "gaia-001",
     "title": "Gaia of the Wasteland",
     "file": "/assets/images/gallery/gaia_of_the_wasteland.jpg",
