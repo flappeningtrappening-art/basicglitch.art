@@ -1,30 +1,149 @@
 [
   {
-    "id": "art-001",
-    "title": "Neon Glitch Landscape",
-    "file": "/assets/images/gallery/art-001.jpg",
-    "categories": ["Available for Purchase"],
-    "styles": ["Neon", "Glitch"],
-    "date": "2025-11-28",
-    "description": "High-energy neon landscape with glitch effects.",
-    "price": 50
+    "file": "gaia_of_the_wasteland.jpg",
+    "title": "Gaia Of The Wasteland",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
   },
   {
-    "id": "art-002",
-    "title": "Surreal Portrait",
-    "file": "/assets/images/gallery/art-002.jpg",
-    "categories": ["Personal Projects"],
-    "styles": ["Surrealism", "Psychedelia"],
-    "date": "2025-11-22",
-    "description": "A surreal portrait blending human and natural forms."
+    "file": "guitarbot_og.jpg",
+    "title": "Guitarbot Og",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
   },
   {
-    "id": "art-003",
-    "title": "Broboticus Animation Frame",
-    "file": "/assets/images/gallery/art-003.png",
-    "categories": ["Broboticus", "Animation"],
-    "styles": ["Geometric", "Glitch"],
-    "date": "2025-10-04",
-    "description": "Placeholder animation frame for Broboticus series."
+    "file": "spiral_geometry.jpg",
+    "title": "Spiral Geometry",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "artist_broboticus_og.jpg",
+    "title": "Artist Broboticus Og",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "starbot_waiting_in_the_sky.jpg",
+    "title": "Starbot Waiting In The Sky",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "a_mycological_phenomenon.jpg",
+    "title": "A Mycological Phenomenon",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "floral.jpg",
+    "title": "Floral",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "ranchboticus.jpg",
+    "title": "Ranchboticus",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "balletboticus.jpg",
+    "title": "Balletboticus",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "vitruvian_broboticus_og.jpg",
+    "title": "Vitruvian Broboticus Og",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "robotosaurus_wrecks.jpg",
+    "title": "Robotosaurus Wrecks",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "cubist_chef.jpg",
+    "title": "Cubist Chef",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "mycology_yourcology.jpg",
+    "title": "Mycology Yourcology",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "pachydermis.jpg",
+    "title": "Pachydermis",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "karateboticus1.jpg",
+    "title": "Karateboticus1",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "chefboticus.jpg",
+    "title": "Chefboticus",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "aesthetic_sangre_de_cristo.jpg",
+    "title": "Aesthetic Sangre De Cristo",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "glowspore.jpg",
+    "title": "Glowspore",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "literal_traphouse.jpg",
+    "title": "Literal Traphouse",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "aesthetic_laser_colorado.jpg",
+    "title": "Aesthetic Laser Colorado",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
+  },
+  {
+    "file": "dust_to_dust.jpg",
+    "title": "Dust To Dust",
+    "category": "Uncategorized",
+    "style": "Unknown",
+    "description": "Description coming soon."
   }
 ]
