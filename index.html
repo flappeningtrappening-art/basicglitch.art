@@ -1,280 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- CRITICAL: Single viewport meta tag with proper settings -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-  <meta name="description" content="Digital art portfolio of Basic.Glitch featuring neon line-art, psychedelic surrealism, and nature-fusion portraits">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Basic.Glitch — Digital Art Portfolio</title>
+  <meta name="description" content="Neon line-art, psychedelic surrealism, textured landscapes, commissions and prints by Basic.Glitch">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- fonts (Orbitron, Exo 2, Audiowide) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&family=Audiowide&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Preload critical assets -->
-  <link rel="preload" href="app.js" as="script">
-  <link rel="preload" href="robot.js" as="script">
-  <style>
-    /* Critical mobile-first CSS (will load immediately) */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      position: relative;
-    }
-    
-    /* Hide content until JS loads to prevent layout shift */
-    .js-loading #gallery-grid,
-    .js-loading #robot-effect-canvas {
-      opacity: 0;
-    }
-  </style>
 </head>
-<body class="bg-dark text-base js-loading">
-
-  <!-- MOBILE NAV TOGGLE (Hidden on desktop) -->
-  <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </button>
-
-  <!-- HEADER -->
-  <header class="site-header" id="site-header">
+<body>
+  <!-- Header -->
+  <header class="site-header" id="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="#" aria-label="Basic.Glitch Home">Basic.Glitch</a>
-      <nav class="nav" aria-label="Main site navigation" id="main-nav">
-        <a href="#gallery" class="nav-link"><img src="assets/icons/gallery.svg" alt="Gallery" class="icon neon-icon" loading="lazy"><span class="nav-text">Gallery</span></a>
-        <a href="#instagram" class="nav-link"><img src="assets/icons/instagram.svg" alt="Instagram" class="icon neon-icon" loading="lazy"><span class="nav-text">Instagram</span></a>
-        <a href="#commissions" class="nav-link"><img src="assets/icons/commisions.svg" alt="Commissions" class="icon neon-icon" loading="lazy"><span class="nav-text">Commissions</span></a>
-        <a href="#about" class="nav-link"><img src="assets/icons/about.svg" alt="About" class="icon neon-icon" loading="lazy"><span class="nav-text">About</span></a>
-        <a href="#contact" class="nav-link"><img src="assets/icons/email.svg" alt="Contact" class="icon neon-icon" loading="lazy"><span class="nav-text">Contact</span></a>
-        <a class="btn-neon nav-link nav-cta" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener">
-          <img src="assets/icons/ko-fi.svg" alt="Ko-Fi" class="icon neon-icon" loading="lazy"><span class="nav-text">Ko-Fi</span>
-        </a>
+      <a class="brand" href="/">Basic.Glitch</a>
+
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="nav" role="navigation" aria-label="Main navigation">
+        <a class="nav-link" href="#gallery"><img class="icon" src="/assets/icons/gallery.svg" alt=""><span>Gallery</span></a>
+        <a class="nav-link" href="#instagram"><img class="icon" src="/assets/icons/instagram.svg" alt=""><span>Instagram</span></a>
+        <a class="nav-link" href="#commissions"><img class="icon" src="/assets/icons/commisions.svg" alt=""><span>Commissions</span></a>
+        <a class="nav-link" href="#about"><img class="icon" src="/assets/icons/about.svg" alt=""><span>About</span></a>
+        <a class="nav-link" href="#contact"><img class="icon" src="/assets/icons/email.svg" alt=""><span>Contact</span></a>
+        <a class="btn-neon nav-cta" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""><span>Ko-Fi</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container main">
-
-    <!-- HERO SECTION -->
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <h1 id="hero-title" class="title">Basic.Glitch — Digital Art</h1>
-        <p class="subtitle">Neon line-art, psychedelic surrealism, textured landscapes, and nature-fusion portraits — for collectors and dreamers.</p>
-        <div class="cta-row">
-          <a class="btn-neon btn-responsive" href="#gallery"><img src="assets/icons/gallery.svg" class="icon neon-icon" alt="" loading="lazy"><span>View Gallery</span></a>
-          <a class="btn-neon btn-responsive" href="#commissions"><img src="assets/icons/commisions.svg" class="icon neon-icon" alt="" loading="lazy"><span>Commission</span></a>
-          <a class="btn-neon btn-responsive" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="" loading="lazy"><span>Support on Ko-Fi</span></a>
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="hero" role="region" aria-label="Hero">
+    <div class="hero-bg"></div> <!-- background image injected here -->
+    <div class="hero-overlay"></div> <!-- dimming overlay (controls opacity) -->
+    <div class="container hero-inner">
+      <h1 class="title">Basic.Glitch — Digital Art</h1>
+      <p class="subtitle">Neon line-art, psychedelic surrealism, textured landscapes &amp; nature-fusion portraits — for collectors and dreamers.</p>
+      <div class="cta-row">
+        <a class="btn-neon" href="#gallery"><img class="icon" src="/assets/icons/gallery.svg" alt=""> View Gallery</a>
+        <a class="btn-neon" href="#commissions"><img class="icon" src="/assets/icons/commisions.svg" alt=""> Commission</a>
+        <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Support on Ko-Fi</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section" role="region" aria-labelledby="gallery-title">
+  <!-- Filters + Gallery -->
+  <main class="container main" id="main">
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
       <div class="section-head">
-        <h2 id="gallery-title" class="section-title">Gallery</h2>
+        <h2 id="gallery-title">Gallery</h2>
+
         <div class="filters">
-          <div id="category-filters" class="filter-group" aria-label="Categories">
-            <!-- Will be populated by JS -->
-            <span class="filter-label">Categories:</span>
+          <div class="filter-column">
+            <h4>Categories</h4>
+            <div id="category-filters" class="filter-group" aria-label="Category filters"></div>
           </div>
-          <div id="style-filters" class="filter-group" aria-label="Styles">
-            <!-- Will be populated by JS -->
-            <span class="filter-label">Styles:</span>
+          <div class="filter-column">
+            <h4>Styles</h4>
+            <div id="style-filters" class="filter-group" aria-label="Style filters"></div>
           </div>
           <div class="filter-actions">
-            <button id="clear-filters" class="btn-small btn-mobile-friendly">Clear Filters</button>
-            <button id="mobile-filter-toggle" class="btn-small btn-mobile-friendly" aria-label="Show filters">Filters</button>
+            <button id="clear-filters" class="btn-small">Clear</button>
           </div>
         </div>
       </div>
-      <div id="gallery-grid" class="grid gallery-grid-responsive" aria-live="polite">
-        <!-- Gallery items will be loaded here -->
-        <div class="gallery-loading">
-          <p>Loading gallery...</p>
+
+      <div id="gallery-grid" class="grid gallery-grid" aria-live="polite">
+        <!-- JS injects cards here -->
+      </div>
+    </section>
+
+    <!-- Instagram / secondary block -->
+    <section id="instagram" class="section" aria-labelledby="instagram-title">
+      <h2 id="instagram-title">Live — Instagram</h2>
+      <div class="instagram-row">
+        <div class="instagram-card card">
+          <div class="instagram-frame">
+            <!-- keep the iframe src protocol-relative (instagram embed script will populate) -->
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/basic.glitch/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+          </div>
+        </div>
+
+        <div class="instagram-side card" id="instagram-side">
+          <!-- Option: randomized robot / promotional area or product mockups -->
+          <div class="side-placeholder">
+            <img id="side-robot" src="/assets/images/guitarbot.png" alt="Robot placeholder" loading="lazy">
+            <p class="muted">Featured — Broboticus</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- INSTAGRAM -->
-    <section id="instagram" class="section" role="region" aria-labelledby="instagram-title">
-      <h2 id="instagram-title" class="section-title">Live — Instagram</h2>
-      <div class="card instagram-embed instagram-responsive">
-        <blockquote
-          class="instagram-media instagram-custom"
-          data-instgrm-permalink="https://www.instagram.com/basic.glitch/?utm_source=ig_embed&amp;utm_campaign=loading"
-          data-instgrm-version="14"
-          style="background:#0b0b0b; border:0; border-radius:8px; box-shadow:0 0 10px #00fff7,0 0 20px #00fff7; margin:0 auto; max-width:540px; min-width:250px; padding:0; width:100%;"
-        >
-          <p>Loading Instagram feed...</p>
-        </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
-      </div>
-    </section>
+    <!-- Commissions -->
+    <section id="commissions" class="section" aria-labelledby="commissions-title">
+      <h2 id="commissions-title">Commissions</h2>
+      <p class="muted">Click a tier to open Ko-Fi. For custom requests message me on Ko-Fi or email <strong>justin@basicglitch.art</strong>.</p>
 
-    <!-- COMMISSIONS -->
-    <section id="commissions" class="section" role="region" aria-labelledby="commissions-title">
-      <h2 id="commissions-title" class="section-title">Commissions</h2>
-      <p class="muted commission-subtitle">Click a tier to open Ko-Fi. For custom work, message me on Ko-Fi or email <strong>justin@basicglitch.art</strong>.</p>
-      <div class="tiers grid-3 tiers-responsive">
-        <div class="card tier tier-responsive">
+      <div class="tiers grid-3">
+        <!-- Example tiers (repeatable) -->
+        <div class="card tier">
           <h3>Neon Line-Art Character</h3>
-          <p class="muted">1 character • dark/solid background • hi-res PNG</p>
+          <p class="muted">1 character • hi-res PNG • $40</p>
           <div class="tier-actions">
-            <span class="price">$40</span>
-            <a class="btn-neon btn-responsive" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="" loading="lazy"><span>Order</span></a>
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Order</a>
           </div>
         </div>
-        <!-- Add more tiers as needed -->
+
+        <div class="card tier">
+          <h3>Surreal Portrait (detailed)</h3>
+          <p class="muted">Complex composition • print-ready • $120</p>
+          <div class="tier-actions">
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Order</a>
+          </div>
+        </div>
+
+        <div class="card tier">
+          <h3>Textured Landscape</h3>
+          <p class="muted">High-res textile / tapestry-ready • $80</p>
+          <div class="tier-actions">
+            <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Order</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section" role="region" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About</h2>
-      <div class="card about-card about-responsive">
-        <div class="avatar-container">
-          <img src="assets/images/artist_broboticus_avatar.png" alt="Basic.Glitch avatar" class="avatar" loading="lazy">
-        </div>
-        <div class="about-content">
-          <h3 class="neon-text">Basic.Glitch</h3>
-          <p class="muted">Basic.Glitch is the persona of Justin Lance, a digital artist creating immersive, otherworldly art that blends organic textures with cybernetic elements.</p>
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="card about-card">
+        <img src="/assets/images/artist_broboticus_avatar.png" alt="Avatar" class="avatar" loading="lazy">
+        <div>
+          <h3 class="neon-text">Basic.Glitch (Justin Lance)</h3>
+          <p class="muted">I blend neon line-art, psychedelic surrealism, textured landscapes, and nature-fusion portraits. Pieces are optimized for digital and prints.</p>
           <div class="links">
-            <a class="btn-small btn-mobile-friendly" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" class="icon neon-icon" alt="" loading="lazy"><span>Instagram</span></a>
-            <a class="btn-small btn-mobile-friendly" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="" loading="lazy"><span>Ko-Fi</span></a>
+            <a class="btn-small" href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/instagram.svg" alt=""> Instagram</a>
+            <a class="btn-small" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Ko-Fi</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section" role="region" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title">Contact</h2>
-      <div class="card text-center contact-responsive">
-        <p class="muted">Email routed via Cloudflare Email Routing — primary: <strong>justin@basicglitch.art</strong></p>
-        <div class="row contact-buttons">
-          <a class="btn-neon btn-responsive" href="mailto:justin@basicglitch.art"><img src="assets/icons/email.svg" class="icon neon-icon" alt="" loading="lazy"><span>Email Me</span></a>
-          <a class="btn-neon btn-responsive" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img src="assets/icons/ko-fi.svg" class="icon neon-icon" alt="" loading="lazy"><span>Start a Commission</span></a>
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="card text-center">
+        <p class="muted">Email routed via Cloudflare: <strong>justin@basicglitch.art</strong></p>
+        <div class="row">
+          <a class="btn-neon" href="mailto:justin@basicglitch.art"><img class="icon" src="/assets/icons/email.svg" alt=""> Email Me</a>
+          <a class="btn-neon" href="https://ko-fi.com/basicglitch" target="_blank" rel="noopener"><img class="icon" src="/assets/icons/ko-fi.svg" alt=""> Start a Commission</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year">2024</span> Basic.Glitch • <a href="https://basicglitch.art">basicglitch.art</a></p>
-      <p class="footer-note">Optimized for all devices</p>
-    </div>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-    <div class="lightbox-overlay" id="lightbox-overlay"></div>
-    <div class="lightbox-container">
-      <div class="lightbox-header">
-        <button id="lb-close" class="lb-btn" aria-label="Close lightbox">×</button>
-        <h3 id="lightbox-title" class="lightbox-title"></h3>
-      </div>
-      <div class="lightbox-body">
-        <button id="lb-prev" class="lb-nav lb-prev" aria-label="Previous image">◀</button>
-        <div id="lb-content" class="lb-content"></div>
-        <button id="lb-next" class="lb-nav lb-next" aria-label="Next image">▶</button>
-      </div>
-      <div class="lightbox-footer">
-        <p id="lightbox-description" class="lightbox-description"></p>
-      </div>
-    </div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-modal="true">
+    <button id="lb-close" class="lb-btn" aria-label="Close">×</button>
+    <button id="lb-prev" class="lb-nav lb-prev" aria-label="Previous">◀</button>
+    <div id="lb-content" class="lb-content"></div>
+    <button id="lb-next" class="lb-nav lb-next" aria-label="Next">▶</button>
   </div>
 
-  <!-- Robot foreground image element -->
+  <!-- Robot foreground control; robot.js handles its behavior -->
   <img id="robot-foreground" class="robot-foreground" src="" alt="" style="display:none;" loading="lazy">
-
-  <!-- Canvas for shader-like effects -->
-  <canvas id="robot-effect-canvas" class="robot-canvas-responsive"></canvas>
 
   <!-- Scripts -->
   <script src="app.js" defer></script>
   <script src="robot.js" defer></script>
+  <!-- Instagram embed (script will read blockquote and populate) -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
   <script>
-    // Remove loading class when JS is ready
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.remove('js-loading');
-      
-      // Set current year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Mobile menu toggle
-      const mobileToggle = document.getElementById('mobile-menu-toggle');
-      const mainNav = document.getElementById('main-nav');
-      const siteHeader = document.getElementById('site-header');
-      
-      if (mobileToggle && mainNav) {
-        mobileToggle.addEventListener('click', function() {
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !isExpanded);
-          mainNav.classList.toggle('nav-open');
-          siteHeader.classList.toggle('header-mobile-open');
-          
-          // Toggle hamburger animation
-          this.classList.toggle('toggle-active');
-        });
-        
-        // Close menu when clicking a link
-        mainNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            mainNav.classList.remove('nav-open');
-            siteHeader.classList.remove('header-mobile-open');
-            mobileToggle.classList.remove('toggle-active');
-          });
-        });
-      }
-      
-      // Mobile filter toggle
-      const filterToggle = document.getElementById('mobile-filter-toggle');
-      const filters = document.querySelector('.filters');
-      
-      if (filterToggle && filters) {
-        filterToggle.addEventListener('click', function() {
-          filters.classList.toggle('filters-open');
-        });
-      }
-      
-      // Close filters when clicking outside
-      document.addEventListener('click', function(event) {
-        if (filters && filterToggle && !filters.contains(event.target) && !filterToggle.contains(event.target)) {
-          filters.classList.remove('filters-open');
-        }
-      });
-    });
-    
-    // Handle window resize for responsive behaviors
-    window.addEventListener('resize', function() {
-      // Close mobile menu on resize to desktop
-      if (window.innerWidth > 768) {
-        const mobileToggle = document.getElementById('mobile-menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        const siteHeader = document.getElementById('site-header');
-        
-        if (mainNav && mainNav.classList.contains('nav-open')) {
-          mainNav.classList.remove('nav-open');
-          siteHeader.classList.remove('header-mobile-open');
-          if (mobileToggle) {
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            mobileToggle.classList.remove('toggle-active');
-          }
-        }
-      }
+    /* small runtime: set year and feather if used */
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.createElement('div');
+      y.style.display='none';
+      // set year in footer (if you later include dynamic year)
     });
   </script>
-
 </body>
 </html>
+
+
