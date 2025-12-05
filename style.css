@@ -1,206 +1,147 @@
-/* ======================================================
-   BASIC.GLITCH — Responsive style.css (mobile-first)
-   Replaces existing style.css. Paste entire file content.
-   ====================================================== */
+/* ========================================================
+   Basic.Glitch — style.css
+   Paste entire file, replace existing style.css
+   ======================================================== */
 
-/* -------------------------
-   CSS VARIABLES & FONTS
-   ------------------------- */
+/* Variables */
 :root{
   --bg:#050505;
   --panel:#0b0b0b;
   --fg:#e6eef8;
   --muted:#9aa7b6;
-  --neon:#00fff7;    /* primary neon */
-  --neon2:#00ff4a;   /* secondary neon */
+  --neon:#00fff7; /* cyan */
+  --neon-mag:#ff1ccf; /* magenta */
+  --neon-2:#00ff4a; /* green */
   --border:rgba(255,255,255,0.04);
   --glass:rgba(255,255,255,0.03);
-  --gap:1rem;
+  --card-radius:12px;
   --max-width:1100px;
 }
 
-/* Defaults */
+/* Basic reset */
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:"Exo 2",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.container{width:min(var(--max-width),92%);margin:0 auto;padding:1.25rem 0}
+.container{width:min(var(--max-width),94%);margin:0 auto;padding:20px}
 
-/* -------------------------
-   Header / Nav (mobile first)
-   ------------------------- */
-.site-header{
-  width:100%;
-  background:linear-gradient(180deg, rgba(5,5,5,0.85), rgba(5,5,5,0.6));
-  position:sticky;top:0;z-index:1200;
-  border-bottom:1px solid var(--border);
-  backdrop-filter: blur(6px);
+/* Header */
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(5,5,5,0.7), rgba(5,5,5,0.5));border-bottom:1px solid var(--border);z-index:60;backdrop-filter:blur(6px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.brand{font-family:"Orbitron",sans-serif;color:var(--neon-2);font-weight:700;text-decoration:none}
+.nav{display:flex;gap:10px;align-items:center}
+.nav-link{display:flex;align-items:center;gap:8px;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600}
+.nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
+.nav-cta{border:1px solid var(--neon);background:rgba(0,255,247,0.04);padding:6px 10px;border-radius:8px}
+
+/* mobile toggle */
+.mobile-menu-toggle{display:flex;flex-direction:column;gap:4px;border:none;background:transparent;padding:6px;cursor:pointer}
+.mobile-menu-toggle span{width:22px;height:2px;background:var(--fg);display:block;border-radius:2px}
+@media(min-width:769px){.mobile-menu-toggle{display:none}}
+
+/* HERO */
+.hero{position:relative;height:56vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:brightness(.95) saturate(1.02);z-index:0}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.25);z-index:1} /* further opacity controlled via JS if needed */
+.hero-inner{position:relative;z-index:2;text-align:center;padding:20px}
+.title{font-size:2.2rem;margin:0 0 6px;color:transparent;background:linear-gradient(90deg,var(--neon),var(--neon-mag));-webkit-background-clip:text}
+.subtitle{color:var(--muted);max-width:780px;margin:0 auto 12px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+
+/* Buttons */
+.btn-neon{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--neon)}
+.btn-small{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+
+/* ICONS */
+.icon{width:18px;height:18px;vertical-align:middle;filter:brightness(1.05);opacity:0.95}
+.icon:hover{transform:scale(1.06)}
+
+/* SECTIONS / GRID */
+.section{padding:36px 0}
+.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.filters{display:flex;gap:16px;align-items:flex-start}
+.filter-group{display:flex;gap:8px;flex-wrap:wrap}
+.filter-column{min-width:180px}
+.filter-actions{display:flex;align-items:center;gap:8px}
+
+/* Gallery grid */
+.gallery-grid{display:grid;gap:18px}
+@media(min-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Card */
+.card{background:var(--panel);border-radius:var(--card-radius);padding:14px;border:1px solid var(--border);backdrop-filter:blur(6px)}
+.grid .card img{width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;transition:transform .18s}
+.grid .card img:hover{transform:scale(1.03)}
+.grid .card h3{margin:10px 0 6px;font-size:1.05rem}
+.muted{color:var(--muted);font-size:0.95rem}
+
+/* Category tile neon accent — small colored top border */
+.category-pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;color:var(--fg)}
+/* map category colors (example) */
+.category-Neon{box-shadow:0 0 14px rgba(0,255,247,0.08) inset;border-top:4px solid var(--neon)}
+.category-Psychedelia{box-shadow:0 0 14px rgba(255,206,0,0.06) inset;border-top:4px solid #ffd200}
+.category-Surrealism{box-shadow:0 0 14px rgba(255,28,207,0.06) inset;border-top:4px solid var(--neon-mag)}
+.category-Broboticus{box-shadow:0 0 14px rgba(0,255,74,0.06) inset;border-top:4px solid var(--neon-2)}
+
+/* Instagram row / two-column area */
+.instagram-row{display:flex;gap:16px;flex-wrap:wrap}
+.instagram-card{flex:1;min-width:300px}
+.instagram-side{width:320px;min-width:260px;display:flex;align-items:center;justify-content:center}
+.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid #0b0b0b; /* base color replaced below with neon accent */}
+.instagram-frame blockquote, .instagram-frame iframe{border-radius:10px}
+.instagram-card .instagram-frame{ /* gunmetal background + neon edge */
+  background: #0b0b0b;
+  border: 2px solid rgba(18,18,20,1);
+  box-shadow: 0 0 16px rgba(0,255,247,0.06), inset 0 0 10px rgba(0,0,0,0.4);
+  padding: 8px;
+  position: relative;
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:0.75rem}
-.brand{font-family:"Orbitron",sans-serif;color:var(--neon2);font-weight:700;font-size:1.1rem;text-decoration:none;letter-spacing:0.6px}
-.nav{display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap}
-.nav-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600}
-.nav-link:hover{color:var(--neon2);text-shadow:0 0 6px rgba(0,255,74,0.12)}
-.nav-cta{border:1px solid var(--neon);background:rgba(0,255,247,0.04);padding:6px 10px}
-.mobile-menu-toggle{
-  display:flex;flex-direction:column;gap:4px;border:none;background:transparent;padding:8px;margin-left:auto;align-items:flex-end;cursor:pointer
-}
-.mobile-menu-toggle .toggle-line{width:22px;height:2px;background:var(--fg);border-radius:2px;transition:transform .18s,opacity .18s}
-.mobile-menu-toggle.toggle-active .toggle-line:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.mobile-menu-toggle.toggle-active .toggle-line:nth-child(2){opacity:0}
-.mobile-menu-toggle.toggle-active .toggle-line:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-/* Nav when opened on mobile */
-.nav.nav-open{display:flex;flex-direction:column;gap:8px;padding:.75rem 0;background:transparent;width:100%}
-@media(min-width:769px){
-  .mobile-menu-toggle{display:none}
-  .nav{display:flex;flex-direction:row}
-  .nav.nav-open{display:flex;flex-direction:row}
+.instagram-card .instagram-frame::after{
+  content:"";
+  position:absolute;inset:-4px;border-radius:14px;
+  background:linear-gradient(90deg,var(--neon),var(--neon-mag));
+  -webkit-mask:linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
+  mask-composite:exclude;
+  opacity:0.14; pointer-events:none;
 }
 
-/* -------------------------
-   Hero
-   ------------------------- */
-.hero{min-height:48vh;padding:3rem 0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hero-inner{text-align:center;max-width:900px;padding:0 1rem}
-.title{font-family:"Orbitron",sans-serif;font-size:1.6rem;color:var(--neon);margin:0 0 .6rem;text-shadow:0 0 8px rgba(0,255,247,0.12)}
-.subtitle{color:var(--muted);font-size:1rem;max-width:720px;margin:0 auto 1rem}
+/* side placeholder */
+.side-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px}
+.side-placeholder img{max-width:220px;border-radius:8px}
 
-/* CTA row */
-.cta-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
-.btn-neon{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .8rem;border-radius:8px;border:1px solid var(--neon);color:var(--neon);background:transparent;font-weight:700;text-decoration:none;transition:all .18s}
-.btn-neon:hover{background:var(--neon);color:#051014;box-shadow:0 0 10px rgba(0,255,247,.18);transform:translateY(-2px)}
-.btn-small{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+/* Tiers / grid-3 */
+.grid-3{display:grid;gap:14px}
+@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.tier .price{font-weight:700;color:var(--fg)}
 
-/* -------------------------
-   Icons styling
-   ------------------------- */
-.icon{width:20px;height:20px;vertical-align:middle;filter:brightness(1.05);opacity:.96}
-.icon.neon-icon{filter:drop-shadow(0 0 4px rgba(0,255,247,.25)) drop-shadow(0 0 8px rgba(0,255,247,.12));transition:transform .18s,filter .18s,opacity .18s}
-a:hover .icon.neon-icon, .btn-neon:hover .icon.neon-icon{transform:scale(1.06);filter:drop-shadow(0 0 6px rgba(0,255,247,.45)) drop-shadow(0 0 12px rgba(0,255,247,.18));opacity:1}
+/* About */
+.about-card{display:flex;gap:14px;align-items:center}
+.avatar{width:96px;height:96px;border-radius:999px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
 
-/* secondary neon icons when needed */
-.icon.neon2{filter:drop-shadow(0 0 4px rgba(0,255,74,.25)) drop-shadow(0 0 8px rgba(0,255,74,.12))}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:10000;background:rgba(0,0,0,0.94)}
+.lightbox.hidden{display:none}
+.lb-content{max-width:1100px;width:100%;height:80vh;display:flex;align-items:center;justify-content:center}
+.lb-content img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb-btn{position:absolute;top:22px;right:24px;border-radius:8px;padding:8px 12px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:transparent;border:none;color:#fff;font-size:22px;padding:12px}
 
-/* -------------------------
-   Grid and cards
-   ------------------------- */
-.section{padding:2.25rem 0}
-.section-title{text-align:center;margin:0 0 1rem;font-family:"Audiowide",sans-serif;color:var(--neon);font-size:1.05rem}
-.card{background:var(--panel);border-radius:10px;padding:1rem;border:1px solid var(--border);box-shadow:0 4px 18px rgba(0,0,0,.4)}
-.grid{display:grid;gap:1rem}
-.gallery-grid-responsive{grid-template-columns:repeat(1,1fr)}
-@media(min-width:640px){ .gallery-grid-responsive{grid-template-columns:repeat(2,1fr)} }
-@media(min-width:1024px){ .gallery-grid-responsive{grid-template-columns:repeat(3,1fr)} }
-
-/* -------------------------
-   About / Avatar
-   ------------------------- */
-.about-card{display:flex;flex-direction:column;gap:1rem;align-items:center}
-.about-card .avatar{width:108px;height:108px;border-radius:999px;object-fit:cover;border:2px solid rgba(0,255,247,0.08);box-shadow:0 0 12px rgba(0,255,247,.06)}
-@media(min-width:900px){ .about-card{flex-direction:row;align-items:flex-start} }
-
-/* -------------------------
-   Robot foreground + canvas
-   ------------------------- */
-.robot-foreground{position:fixed;right:3%;bottom:0;width:clamp(120px,22vw,320px);z-index:6000;pointer-events:auto;transition:transform .25s,opacity .25s}
-.robot-foreground.animated{animation:robotFloat 4.5s ease-in-out infinite}
+/* Robot foreground */
+.robot-foreground{position:fixed;right:2%;bottom:0;width:clamp(120px,22vw,320px);z-index:9999;pointer-events:auto;transition:transform .25s,opacity .25s}
+.robot-foreground.animated{animation:robotFloat 4.8s ease-in-out infinite}
 @keyframes robotFloat{0%{transform:translateY(0)}50%{transform:translateY(-16px)}100%{transform:translateY(0)}}
 
-/* Canvas overlay for effects */
-#robot-effect-canvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:5900;pointer-events:none}
+/* Footer */
+.site-footer{padding:20px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border)}
 
-/* Centering & responsiveness note: canvas covers viewport; effects are drawn relative to robot's bbox */
-
-/* -------------------------
-   Effect classes (applied by JS)
-   ------------------------- */
-.effect-neon-pulse{animation:neonPulse .6s ease-out forwards}
-@keyframes neonPulse{0%{filter:drop-shadow(0 0 18px rgba(0,255,247,.55)) scale(1)}100%{filter:none scale(1)}}
-
-.effect-glitch-burst{animation:glitchBurst .35s steps(2) forwards}
-@keyframes glitchBurst{0%{transform:translateX(0) skewX(0)}25%{transform:translateX(-8px) skewX(-3deg)}50%{transform:translateX(8px) skewX(3deg)}75%{transform:translateX(-4px) skewX(-2deg)}100%{transform:translateX(0) skewX(0)}}
-
-.effect-rgb-split{animation:rgbSplit .42s ease-out forwards}
-@keyframes rgbSplit{0%{filter:drop-shadow(8px 0 rgba(255,0,0,.6)) drop-shadow(-8px 0 rgba(0,0,255,.6))}100%{filter:none}}
-
-.effect-ripple{animation:ripplePulse .6s ease-out forwards}
-@keyframes ripplePulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.01);opacity:1}}
-
-/* -------------------------
-   Lightbox
-   ------------------------- */
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:9999;visibility:hidden;opacity:0;transition:opacity .18s}
-.lightbox.show{visibility:visible;opacity:1}
-.lb-content img{max-width:92vw;max-height:82vh;border-radius:6px}
-
-/* -------------------------
-   Footer
-   ------------------------- */
-.site-footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.95rem;border-top:1px solid var(--border)}
-
-/* -------------------------
-   Responsive adjustments
-   ------------------------- */
-@media(min-width:768px){
-  .hero{min-height:60vh;padding:4rem 0}
-  .title{font-size:2.4rem}
-  .subtitle{font-size:1.125rem}
-  .cta-row{gap:1rem}
-  .container{padding:2rem 0}
+/* Responsive adjustments */
+@media(max-width:768px){
+  .header-inner{gap:10px}
+  .section-head{flex-direction:column;align-items:stretch}
+  .instagram-row{flex-direction:column}
+  .instagram-side{width:100%}
 }
 
-/* === Instagram Feed Styling === */
-.instagram-section {
-    width: 100%;
-    max-width: 900px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 255, 255, 0.4);
-    border-radius: 18px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4),
-                inset 0 0 15px rgba(0, 255, 255, 0.3);
-    backdrop-filter: blur(6px);
-}
-
-.instagram-section h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00ffff;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 8px #00ffff;
-}
-
-.instagram-widget {
-    border: 2px solid #1a1a1a;            /* gunmetal/black border */
-    box-shadow: 0 0 12px #0ff,            /* neon cyan glow */
-                inset 0 0 8px #0ff;       /* inner neon */
-    border-radius: 10px;
-    background: #0a0a0a;                  /* dark background */
-}
-
-/* Optional frame glow for embedded widget */
-.instagram-widget iframe,
-.instagram-widget div {
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-/* === Hero Background Opacity Adjustment === */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.75;  /* <<------ Your requested opacity */
-  z-index: -1;
-}
-
+/* small utilities */
+.row{display:flex;gap:8px;align-items:center}
+.center{text-align:center}
 
