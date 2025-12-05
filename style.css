@@ -186,3 +186,21 @@ a:hover .icon.neon-icon, .btn-neon:hover .icon.neon-icon{transform:scale(1.06);f
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
+/* === Hero Background Opacity Adjustment === */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;  /* <<------ Your requested opacity */
+  z-index: -1;
+}
+
+
