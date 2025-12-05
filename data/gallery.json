@@ -1,18 +1,8 @@
 [
   {
-    "id": "test-001",
-    "title": "Test Image",
-    "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fronalpstock_big.jpg/800px-Fronalpstock_big.jpg",
-    "categories": ["Test"],
-    "styles": ["Test"],
-    "date": "",
-    "description": "Path verification test",
-    "price": 0
-  },
-  {
     "id": "gaia-001",
     "title": "Gaia of the Wasteland",
-    "file": "/assets/images/gallery/gaia_of_the_wasteland.jpg",
+    "file": "/assets/images/gallery/gaia_of_the_wasteland.png",
     "categories": ["Available for Purchase"],
     "styles": ["Surrealism", "Psychedelia"],
     "date": "2025-10-04",
@@ -22,7 +12,7 @@
   {
     "id": "guitarbot-001",
     "title": "Guitarbot",
-    "file": "/assets/images/gallery/guitarbot_og.jpg",
+    "file": "/assets/images/gallery/guitarbot_og.png",
     "categories": ["Broboticus"],
     "styles": ["Neon", "Animation"],
     "date": "2025-11-02",
@@ -32,7 +22,7 @@
   {
     "id": "spiral-001",
     "title": "Spiral Geometry",
-    "file": "/assets/images/gallery/spiral_geometry.jpg",
+    "file": "/assets/images/gallery/spiral_geometry.png",
     "categories": ["Personal Projects"],
     "styles": ["Geometric", "Glitch"],
     "date": "2025-08-12",
@@ -42,7 +32,7 @@
   {
     "id": "aesthetic-001",
     "title": "Sangre De Cristos — Neon",
-    "file": "/assets/images/gallery/aesthetic_sangre_de_cristo.jpg",
+    "file": "/assets/images/gallery/aesthetic_sangre_de_cristo.png",
     "categories": ["Available for Purchase"],
     "styles": ["Neon", "Landscape"],
     "date": "2025-09-10",
@@ -52,7 +42,7 @@
   {
     "id": "floral-001",
     "title": "Floral",
-    "file": "/assets/images/gallery/floral.jpg",
+    "file": "/assets/images/gallery/floral.png",
     "categories": ["Personal Projects"],
     "styles": ["Psychedelia"],
     "date": "2025-07-06",
@@ -62,7 +52,7 @@
   {
     "id": "brobot-001",
     "title": "Broboticus DJ",
-    "file": "/assets/images/gallery/artist_broboticus_og.jpg",
+    "file": "/assets/images/gallery/artist_broboticus_og.png",
     "categories": ["Broboticus"],
     "styles": ["Character", "Neon"],
     "date": "2025-11-22",
@@ -73,7 +63,7 @@
   {
     "id": "starbot-001",
     "title": "Starbot Waiting In The Sky",
-    "file": "/assets/images/gallery/starbot_waiting_in_the_sky.jpg",
+    "file": "/assets/images/gallery/starbot_waiting_in_the_sky.png",
     "categories": ["Broboticus"],
     "styles": ["Surrealism"],
     "date": "",
@@ -83,7 +73,7 @@
   {
     "id": "myco-001",
     "title": "A Mycological Phenomenon",
-    "file": "/assets/images/gallery/a_mycological_phenomenon.jpg",
+    "file": "/assets/images/gallery/a_mycological_phenomenon.png",
     "categories": ["Experimental"],
     "styles": ["Psychedelia"],
     "date": "",
@@ -93,7 +83,7 @@
   {
     "id": "ranchbot-001",
     "title": "Ranchboticus",
-    "file": "/assets/images/gallery/ranchboticus.jpg",
+    "file": "/assets/images/gallery/ranchboticus.png",
     "categories": ["Broboticus"],
     "styles": ["Character"],
     "date": "",
@@ -103,7 +93,7 @@
   {
     "id": "balletbot-001",
     "title": "Balletboticus",
-    "file": "/assets/images/gallery/balletboticus.jpg",
+    "file": "/assets/images/gallery/balletboticus.png",
     "categories": ["Broboticus"],
     "styles": ["Character"],
     "date": "",
@@ -113,7 +103,7 @@
   {
     "id": "vitruvian-001",
     "title": "Vitruvian Broboticus",
-    "file": "/assets/images/gallery/vitruvian_broboticus_og.jpg",
+    "file": "/assets/images/gallery/vitruvian_broboticus_og.png",
     "categories": ["Broboticus"],
     "styles": ["Surrealism"],
     "date": "",
@@ -123,7 +113,7 @@
   {
     "id": "robotosaurus-001",
     "title": "Robotosaurus Wrecks",
-    "file": "/assets/images/gallery/robotosaurus_wrecks.jpg",
+    "file": "/assets/images/gallery/robotosaurus_wrecks.png",
     "categories": ["Experimental"],
     "styles": ["Character"],
     "date": "",
@@ -133,7 +123,7 @@
   {
     "id": "cubist-001",
     "title": "Cubist Chef",
-    "file": "/assets/images/gallery/cubist_chef.jpg",
+    "file": "/assets/images/gallery/cubist_chef.png",
     "categories": ["Experimental"],
     "styles": ["Cubism"],
     "date": "",
@@ -143,7 +133,7 @@
   {
     "id": "mycology-001",
     "title": "Mycology Yourcology",
-    "file": "/assets/images/gallery/mycology_yourcology.jpg",
+    "file": "/assets/images/gallery/mycology_yourcology.png",
     "categories": ["Experimental"],
     "styles": ["Psychedelia"],
     "date": "",
@@ -153,7 +143,7 @@
   {
     "id": "pachydermis-001",
     "title": "Pachydermis",
-    "file": "/assets/images/gallery/pachydermis.jpg",
+    "file": "/assets/images/gallery/pachydermis.png",
     "categories": ["Experimental"],
     "styles": ["Surrealism"],
     "date": "",
@@ -163,7 +153,7 @@
   {
     "id": "karatebot-001",
     "title": "Karateboticus",
-    "file": "/assets/images/gallery/karateboticus1.jpg",
+    "file": "/assets/images/gallery/karateboticus1.png",
     "categories": ["Broboticus"],
     "styles": ["Character"],
     "date": "",
@@ -173,7 +163,7 @@
   {
     "id": "chefbot-001",
     "title": "Chefboticus",
-    "file": "/assets/images/gallery/chefboticus.jpg",
+    "file": "/assets/images/gallery/chefboticus.png",
     "categories": ["Broboticus"],
     "styles": ["Character"],
     "date": "",
@@ -183,7 +173,7 @@
   {
     "id": "glowspore-001",
     "title": "Glowspore",
-    "file": "/assets/images/gallery/glowspore.jpg",
+    "file": "/assets/images/gallery/glowspore.png",
     "categories": ["Experimental"],
     "styles": ["Psychedelia"],
     "date": "",
@@ -193,7 +183,7 @@
   {
     "id": "traphouse-001",
     "title": "Literal Traphouse",
-    "file": "/assets/images/gallery/literal_traphouse.jpg",
+    "file": "/assets/images/gallery/literal_traphouse.png",
     "categories": ["Experimental"],
     "styles": ["Surrealism"],
     "date": "",
@@ -203,7 +193,7 @@
   {
     "id": "laser-001",
     "title": "Aesthetic Laser Colorado",
-    "file": "/assets/images/gallery/aesthetic_laser_colorado.jpg",
+    "file": "/assets/images/gallery/aesthetic_laser_colorado.png",
     "categories": ["Landscape"],
     "styles": ["Neon"],
     "date": "",
@@ -213,7 +203,7 @@
   {
     "id": "dust-001",
     "title": "Dust To Dust",
-    "file": "/assets/images/gallery/dust_to_dust.jpg",
+    "file": "/assets/images/gallery/dust_to_dust.png",
     "categories": ["Landscape"],
     "styles": ["Surrealism"],
     "date": "",
