@@ -181,3 +181,58 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:
 .row{display:flex;gap:8px;align-items:center}
 .center{text-align:center}
 
+/* ✅ GLOBAL CLICK FIX — removes invisible UI blockers */
+.hero::before,
+.hero::after,
+.site-header::before,
+.site-header::after,
+.section::before,
+.section::after,
+.card::before,
+.card::after {
+  pointer-events: none !important;
+}
+
+/* ✅ Make absolutely sure ALL buttons are clickable */
+button,
+a,
+.filter-group button,
+#category-filters button,
+#style-filters button,
+.gallery-card button,
+.gallery-card a,
+.about a,
+.contact a {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
+}
+
+/* ✅ Filters container must never block clicks */
+.filters,
+.filter-group,
+.filter-column {
+  position: relative;
+  z-index: 40;
+  pointer-events: auto !important;
+}
+
+/* ✅ Guitarbot hover/click fix */
+.corner-guitarbot,
+.corner-guitarbot * {
+  pointer-events: auto !important;
+  z-index: 60;
+}
+
+#broboticus-dj,
+#broboticus-dj * {
+  pointer-events:auto !important;
+  z-index: 60;
+}
+
+.broboticus-dj,
+.broboticus-dj * {
+  pointer-events: auto !important;
+  z-index: 60;
+}
+
