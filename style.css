@@ -217,32 +217,14 @@ a,
   pointer-events: auto !important;
 }
 
-/* ✅ Guitarbot hover/click fix */
-.corner-guitarbot,
-.corner-guitarbot * {
-  pointer-events: auto !important;
-  z-index: 60;
-}
-
-/* ENABLE SIDE ROBOT + FOREGROUND ROBOT INTERACTION */
+/* === ROBOT INTERACTION MASTER FIX === */
 #side-robot,
-#side-robot *,
 #robot-foreground,
-#robot-foreground * {
-  pointer-events: auto !important;
-  z-index: 80;
+#broboticus-dj,
+.broboticus-dj,
+.corner-guitarbot {
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 100;
   position: relative;
 }
-
-#broboticus-dj,
-#broboticus-dj * {
-  pointer-events:auto !important;
-  z-index: 60;
-}
-
-.broboticus-dj,
-.broboticus-dj * {
-  pointer-events: auto !important;
-  z-index: 60;
-}
-
