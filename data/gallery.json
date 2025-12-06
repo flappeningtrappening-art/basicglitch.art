@@ -6,8 +6,8 @@
     "categories": ["Available for Purchase"],
     "styles": ["Surrealism", "Psychedelia"],
     "date": "2025-10-04",
-    "description": "An experimental landscape in neon thread textures.",
-    "price": 60
+    "description": "Fusion of nature and natural form.",
+    "price": 200
   },
   {
     "id": "guitarbot-001",
@@ -16,7 +16,7 @@
     "categories": ["Broboticus"],
     "styles": ["Neon", "Animation"],
     "date": "2025-11-02",
-    "description": "Guitarbot rocking the neon mountains.",
+    "description": "Guitarbot is called on and on across the universe.",
     "price": 40
   },
   {
@@ -26,7 +26,7 @@
     "categories": ["Personal Projects"],
     "styles": ["Geometric", "Glitch"],
     "date": "2025-08-12",
-    "description": "Geometric spiral with glitch texture."
+    "description": "Freeform geometry and symmetry."
   },
   {
     "id": "aesthetic-001",
@@ -35,7 +35,8 @@
     "categories": ["Available for Purchase"],
     "styles": ["Neon", "Landscape"],
     "date": "2025-09-10",
-    "description": "Neon mountains inspired by Colorado."
+    "description": "Neon mountains inspired by Colorado. Much A E S T H E T I C",
+    "price": 120
   },
   {
     "id": "floral-001",
@@ -44,7 +45,8 @@
     "categories": ["Personal Projects"],
     "styles": ["Psychedelia"],
     "date": "2025-07-06",
-    "description": "Patterned floral with psychedelic colors."
+    "description": "Patterned floral with elegant gradient and flowing form.",
+    "price": 80
   },
   {
     "id": "brobot-001",
@@ -53,7 +55,7 @@
     "categories": ["Broboticus"],
     "styles": ["Character", "Neon"],
     "date": "2025-11-22",
-    "description": "Original Broboticus DJ portrait.",
-    "price": 75
+    "description": "He's a musician and an artist!?!? What-a-robot!!!.",
+    "price": 40
   }
 ]
