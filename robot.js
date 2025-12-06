@@ -1,91 +1,92 @@
-/* robot.js — robot foreground randomizer + interactions + small effects */
+/* robot.js — multi-robot randomizer + interactions + effects */
 
 // Config
 const ROBOT_IMAGES = [
   { src: '/assets/images/guitarbot.png', id: 'guitarbot', audioPath: '/assets/audio/guitarbot/' },
   { src: '/assets/images/broboticus_og.png', id: 'broboticus', audioPath: '/assets/audio/broboticus/' }
 ];
-const ROBOT_PROBABILITY = 0.5; // 50% chance to show foreground on page load
-const ROBOT_ANIM_PROB = 0.67; // if shown, 67% chance to animate (float)
-const AUDIO_POOL_COUNT = 3; // expects files named broboticus_1.mp3 ... broboticus_3.mp3
+
+const ROBOT_PROBABILITY = 0.75; // chance to show robots
+const ROBOT_ANIM_PROB = 0.75;
+const AUDIO_POOL_COUNT = 3;
 
 // utility
 function randBool(p){ return Math.random() < p; }
 
-// create or attach robot element
+// ✅ APPLY TO BOTH ROBOTS
 document.addEventListener('DOMContentLoaded', ()=>{
-  const show = randBool(ROBOT_PROBABILITY);
-  const robotEl = document.getElementById('robot-foreground');
-  if(!robotEl) return;
+  const robots = document.querySelectorAll('#robot-foreground, #side-robot');
+  if(!robots.length) return;
 
-  if(!show){
-    robotEl.style.display = 'none';
-    return;
-  }
+  robots.forEach(robotEl => {
+    if(!randBool(ROBOT_PROBABILITY)){
+      robotEl.style.display = 'none';
+      return;
+    }
 
-  // choose a robot at random (50/50)
-  const pick = ROBOT_IMAGES[Math.floor(Math.random()*ROBOT_IMAGES.length)];
-  robotEl.src = pick.src;
-  robotEl.dataset.robotId = pick.id;
-  robotEl.style.display = 'block';
+    const pick = ROBOT_IMAGES[Math.floor(Math.random()*ROBOT_IMAGES.length)];
+    robotEl.src = pick.src;
+    robotEl.dataset.robotId = pick.id;
+    robotEl.style.display = 'block';
+    robotEl.style.cursor = 'pointer';
 
-  // decide if animated float
-  if(randBool(ROBOT_ANIM_PROB)) robotEl.classList.add('animated');
+    if(randBool(ROBOT_ANIM_PROB)){
+      robotEl.classList.add('animated');
+    }
 
-  // pointer interaction: click to trigger sound + effect
-  robotEl.style.cursor = 'pointer';
-  robotEl.addEventListener('click', ()=> {
-    triggerRobotAction(pick);
+    robotEl.addEventListener('click', ()=> {
+      triggerRobotAction(pick);
+    });
+
+    robotEl.addEventListener('touchstart', ()=> {
+      triggerRobotAction(pick);
+    }, {passive:true});
   });
-
-  // mobile tap also handled by click; optionally add touchstart
-  robotEl.addEventListener('touchstart', ()=> {
-    triggerRobotAction(pick);
-  }, {passive:true});
 });
 
-// Plays a random sound from robot audio folder and triggers a visual effect.
+// ✅ SOUND + VISUAL FX
 function triggerRobotAction(robot){
-  // sound selection
-  // expect files named e.g. guitarbot_1.mp3 .. guitarbot_3.mp3 (adjust AUDIO_POOL_COUNT)
-  const max = AUDIO_POOL_COUNT;
-  const n = Math.floor(Math.random()*max) + 1;
+  const n = Math.floor(Math.random()*AUDIO_POOL_COUNT) + 1;
   const file = `${robot.audioPath}${robot.id}_${n}.mp3`;
 
-  // create audio element and play
   try{
     const a = new Audio(file);
     a.volume = 0.7;
-    a.play().catch(err=>{ console.warn('audio play failed', err); });
+    a.play().catch(err=>console.warn(err));
 
-    // choose a visual effect randomly
     const effects = ['effect-neon-pulse','effect-glitch-burst','effect-rgb-split','effect-ripple'];
     const pick = effects[Math.floor(Math.random()*effects.length)];
     applyVisualEffect(pick);
+
   }catch(e){
     console.warn('audio error', e);
   }
 }
 
+// ✅ APPLY FX TO HERO + BOTH ROBOTS
 function applyVisualEffect(cls){
-  // apply to hero and robot to keep consistent visual
   const hero = document.querySelector('.hero');
-  const robotEl = document.getElementById('robot-foreground');
+  const robots = document.querySelectorAll('#robot-foreground, #side-robot');
+
   if(hero) hero.classList.add(cls);
-  if(robotEl) robotEl.classList.add(cls);
+  robots.forEach(r => r.classList.add(cls));
 
   setTimeout(()=>{
     if(hero) hero.classList.remove(cls);
-    if(robotEl) robotEl.classList.remove(cls);
+    robots.forEach(r => r.classList.remove(cls));
   }, 900);
 }
 
-/* Optional: keyboard shortcut to audition robots (for testing) */
+// ✅ KEYBOARD TEST
 document.addEventListener('keydown', (e)=>{
-  if(e.key === 'r'){ // press 'r' to trigger robot action if present
-    const robotEl = document.getElementById('robot-foreground');
-    if(robotEl && robotEl.dataset.robotId){
-      triggerRobotAction({ id: robotEl.dataset.robotId, audioPath: `/assets/audio/${robotEl.dataset.robotId}/`, src: robotEl.src });
+  if(e.key === 'r'){
+    const r = document.querySelector('#robot-foreground, #side-robot');
+    if(r && r.dataset.robotId){
+      triggerRobotAction({
+        id:r.dataset.robotId,
+        audioPath:`/assets/audio/${r.dataset.robotId}/`,
+        src:r.src
+      });
     }
   }
 });
