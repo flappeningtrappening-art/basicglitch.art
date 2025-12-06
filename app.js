@@ -119,15 +119,30 @@ function renderGrid(items){
 
   items.forEach(it=>{
     const card = el('div',{className:'card gallery-card'});
-    // thumbnail fallback logic
-    const filename = (it.file || '').split('/').pop();
-    let thumbUrl = THUMB_BASE + filename;
-    // image element
-    const img = el('img',{src:thumbUrl, alt: it.title || '', loading:'lazy'});
-    // fallback: if thumbnail 404, browser will log; we also attempt lazy switch to full
+    
+     // thumbnail fallback logic
+    const rawFile = (it.file || '').split('/').pop();
+    const baseName = rawFile.replace(/\.(png|jpg|jpeg|webp)$/i, '');
+
+    const thumbJpg = THUMB_BASE + baseName + '.jpg';
+    const thumbPng = THUMB_BASE + baseName + '.png';
+
+    const img = el('img',{
+      src: thumbJpg,
+      alt: it.title || '',
+      loading: 'lazy'
+    });
+
     img.onerror = function(){
       img.onerror = null;
-      img.src = it.file || (GALLERY_BASE + filename);
+
+      // Try PNG thumbnail next
+      if(img.src.includes('.jpg')){
+        img.src = thumbPng;
+      } else {
+        // Finally fallback to full image
+        img.src = it.file;
+      }
     };
 
     // title + meta
