@@ -43,16 +43,20 @@ function setHeroBackground(){
   }
 }
 
-/* ---------------------------
-   Fetch gallery.json
-   --------------------------- */
 async function fetchGallery(){
-  const res = await fetch('/data/gallery.json'), {cache:'no-store'});
-  if(!res.ok)
-    console.error('gallery.json not found at', /data/gallery.json');
+  try{
+    const res = await fetch('/data/gallery.json', { cache:'no-store' });
+
+    if(!res.ok){
+      console.error('gallery.json not found at /data/gallery.json');
+      return [];
+    }
+
+    return await res.json();
+  }catch(err){
+    console.error('Fetch failed:', err);
     return [];
   }
-  return res.json();
 }
 
 /* ---------------------------
