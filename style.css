@@ -48,7 +48,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.25);z-index:1} /* further opacity controlled via JS if needed */
 .hero-inner{position:relative;z-index:2;text-align:center;padding:20px}
 .title{font-size:4.4rem;margin:0 0 6px;color:transparent;background:linear-gradient(90deg,var(--neon),var(--neon-mag));-webkit-background-clip:text}
-.subtitle{font-size:2.2rem;margin:0 0 6px;color:transparent;background:linear-gradient(180deg,var(--neon-mag),var(--neon));max-width:780px;margin:0 auto 12px}
+.subtitle{font-size:2.2rem;margin:0 0 6px;color:transparent;background:linear-gradient(90deg,var(--neon-mag),var(--neon));-webkit-background-clip:text;max-width:780px;margin:0 auto 12px}
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
 
 /* Buttons */
