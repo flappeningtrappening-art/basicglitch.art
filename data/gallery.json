@@ -26,8 +26,7 @@
     "categories": ["Personal Projects"],
     "styles": ["Geometric", "Glitch"],
     "date": "2025-08-12",
-    "description": "Geometric spiral with glitch texture.",
-    "price": 0
+    "description": "Geometric spiral with glitch texture."
   },
   {
     "id": "aesthetic-001",
@@ -36,8 +35,7 @@
     "categories": ["Available for Purchase"],
     "styles": ["Neon", "Landscape"],
     "date": "2025-09-10",
-    "description": "Neon mountains inspired by Colorado.",
-    "price": 50
+    "description": "Neon mountains inspired by Colorado."
   },
   {
     "id": "floral-001",
@@ -46,8 +44,7 @@
     "categories": ["Personal Projects"],
     "styles": ["Psychedelia"],
     "date": "2025-07-06",
-    "description": "Patterned floral with psychedelic colors.",
-    "price": 0
+    "description": "Patterned floral with psychedelic colors."
   },
   {
     "id": "brobot-001",
@@ -57,157 +54,6 @@
     "styles": ["Character", "Neon"],
     "date": "2025-11-22",
     "description": "Original Broboticus DJ portrait.",
-    "price": 45
-  },
-
-  {
-    "id": "starbot-001",
-    "title": "Starbot Waiting In The Sky",
-    "file": "/assets/images/gallery/starbot_waiting_in_the_sky.png",
-    "categories": ["Broboticus"],
-    "styles": ["Surrealism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "myco-001",
-    "title": "A Mycological Phenomenon",
-    "file": "/assets/images/gallery/a_mycological_phenomenon.png",
-    "categories": ["Experimental"],
-    "styles": ["Psychedelia"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "ranchbot-001",
-    "title": "Ranchboticus",
-    "file": "/assets/images/gallery/ranchboticus.png",
-    "categories": ["Broboticus"],
-    "styles": ["Character"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "balletbot-001",
-    "title": "Balletboticus",
-    "file": "/assets/images/gallery/balletboticus.png",
-    "categories": ["Broboticus"],
-    "styles": ["Character"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "vitruvian-001",
-    "title": "Vitruvian Broboticus",
-    "file": "/assets/images/gallery/vitruvian_broboticus_og.png",
-    "categories": ["Broboticus"],
-    "styles": ["Surrealism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "robotosaurus-001",
-    "title": "Robotosaurus Wrecks",
-    "file": "/assets/images/gallery/robotosaurus_wrecks.png",
-    "categories": ["Experimental"],
-    "styles": ["Character"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "cubist-001",
-    "title": "Cubist Chef",
-    "file": "/assets/images/gallery/cubist_chef.png",
-    "categories": ["Experimental"],
-    "styles": ["Cubism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "mycology-001",
-    "title": "Mycology Yourcology",
-    "file": "/assets/images/gallery/mycology_yourcology.png",
-    "categories": ["Experimental"],
-    "styles": ["Psychedelia"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "pachydermis-001",
-    "title": "Pachydermis",
-    "file": "/assets/images/gallery/pachydermis.png",
-    "categories": ["Experimental"],
-    "styles": ["Surrealism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "karatebot-001",
-    "title": "Karateboticus",
-    "file": "/assets/images/gallery/karateboticus1.png",
-    "categories": ["Broboticus"],
-    "styles": ["Character"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "chefbot-001",
-    "title": "Chefboticus",
-    "file": "/assets/images/gallery/chefboticus.png",
-    "categories": ["Broboticus"],
-    "styles": ["Character"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "glowspore-001",
-    "title": "Glowspore",
-    "file": "/assets/images/gallery/glowspore.png",
-    "categories": ["Experimental"],
-    "styles": ["Psychedelia"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "traphouse-001",
-    "title": "Literal Traphouse",
-    "file": "/assets/images/gallery/literal_traphouse.png",
-    "categories": ["Experimental"],
-    "styles": ["Surrealism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "laser-001",
-    "title": "Aesthetic Laser Colorado",
-    "file": "/assets/images/gallery/aesthetic_laser_colorado.png",
-    "categories": ["Landscape"],
-    "styles": ["Neon"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
-  },
-  {
-    "id": "dust-001",
-    "title": "Dust To Dust",
-    "file": "/assets/images/gallery/dust_to_dust.png",
-    "categories": ["Landscape"],
-    "styles": ["Surrealism"],
-    "date": "",
-    "description": "Description coming soon.",
-    "price": 0
+    "price": 75
   }
 ]
