@@ -11,7 +11,12 @@
   --muted:#9aa7b6;
   --neon:#00fff7; /* cyan */
   --neon-mag:#ff1ccf; /* magenta */
-  --neon-2:#00ff4a; /* green */
+  --neon-2:#00ff3e; /* green */
+  --neon-org:#ff5f1f; /* orange */
+  --neon-limon:#d0ff00; /* yellowgreen */
+  --neon-blu:#0a7aff; /* azureblue */ 
+  --neon-yel:#ffff00; /* yellow */
+  --neon-pur:#c724ff; /* purple */ 
   --border:rgba(255,255,255,0.04);
   --glass:rgba(255,255,255,0.03);
   --card-radius:12px;
@@ -43,7 +48,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.25);z-index:1} /* further opacity controlled via JS if needed */
 .hero-inner{position:relative;z-index:2;text-align:center;padding:20px}
 .title{font-size:4.4rem;margin:0 0 6px;color:transparent;background:linear-gradient(90deg,var(--neon),var(--neon-mag));-webkit-background-clip:text}
-.subtitle{color:var(--muted);max-width:780px;margin:0 auto 12px}
+.subtitle{font-size:2.2rem;margin:0 0 6px;color:transparent;background:linear-gradient(180deg,var(--neon-mag),var(--neon));max-width:780px;margin:0 auto 12px}
 .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
 
 /* Buttons */
@@ -113,10 +118,14 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:
 /* Category tile neon accent — small colored top border */
 .category-pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;color:var(--fg)}
 /* map category colors (example) */
-.category-Neon{box-shadow:0 0 14px rgba(0,255,247,0.08) inset;border-top:4px solid var(--neon)}
-.category-Psychedelia{box-shadow:0 0 14px rgba(255,206,0,0.06) inset;border-top:4px solid #ffd200}
-.category-Surrealism{box-shadow:0 0 14px rgba(255,28,207,0.06) inset;border-top:4px solid var(--neon-mag)}
-.category-Broboticus{box-shadow:0 0 14px rgba(0,255,74,0.06) inset;border-top:4px solid var(--neon-2)}
+.category-Neon{box-shadow:0 0 14px rgba(255,255,0,0.08) inset;border-top:4px solid var(--neon-yel)}
+.category-Psychedelia{box-shadow:0 0 14px rgba(199,36,255,0.08) inset;border-top:4px solid var(--neon-pur)}
+.category-Surrealism{box-shadow:0 0 14px rgba(10,122,255,0.08) inset;border-top:4px solid var(--neon-blu)}
+.category-Broboticus{box-shadow:0 0 14px rgba(255,95,31,0.08) inset;border-top:4px solid var(--neon-org)}
+.category-Animation{box-shadow:0 0 14px rgba(255,28,207,0.08) inset;border-top:4px solid var(--neon-mag)}
+.category-Geometric{box-shadow:0 0 14px rgba(0,255,247,0.08) inset;border-top:4px solid var(--neon)}
+.category-Glitch{box-shadow:0 0 14px rgba(0,255,62,0.08) inset;border-top:4px solid var(--neon-2)}
+.category-Landscape{box-shadow:0 0 14px rgba(208,255,0,0.08) inset;border-top:4px solid var(--neon-limon)}
 
 /* Instagram row / two-column area */
 .instagram-row{display:flex;gap:16px;flex-wrap:wrap}
