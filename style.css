@@ -224,6 +224,16 @@ a,
   z-index: 60;
 }
 
+/* ENABLE SIDE ROBOT + FOREGROUND ROBOT INTERACTION */
+#side-robot,
+#side-robot *,
+#robot-foreground,
+#robot-foreground * {
+  pointer-events: auto !important;
+  z-index: 80;
+  position: relative;
+}
+
 #broboticus-dj,
 #broboticus-dj * {
   pointer-events:auto !important;
