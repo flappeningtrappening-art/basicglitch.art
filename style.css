@@ -25,7 +25,14 @@
 
 /* Basic reset */
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:"Exo 2",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  font-family:"Exo 2",Inter,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+
 .container{
   width:100%;
   max-width: var(--max-width); 
