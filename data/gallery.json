@@ -6,7 +6,7 @@
     "categories": ["Available for Purchase"],
     "styles": ["Surrealism", "Psychedelia"],
     "date": "2025-10-04",
-    "description": "Fusion of nature and natural form.",
+    "description": "Fusion of nature and human form.",
     "price": 200
   },
   {
@@ -50,12 +50,12 @@
   },
   {
     "id": "brobot-001",
-    "title": "Broboticus DJ",
+    "title": "Brobarticus",
     "file": "/assets/images/gallery/artist_broboticus_og.png",
     "categories": ["Broboticus"],
     "styles": ["Character", "Neon"],
     "date": "2025-11-22",
-    "description": "He's a musician and an artist!?!? What-a-robot!!!.",
+    "description": "He's a musician and an artist!?!? Whatta robot!!!",
     "price": 40
   }
 ]
