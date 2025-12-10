@@ -7,9 +7,10 @@
    CONFIGURATION
 -------------------------------- */
 const headerColors = {
-  'glitch-circuit': '--neon-2',      
-  'mountains': '--neon-mag',         
-  'default': '--neon-blu'            
+  'glitch1': '--neon-limon',      
+  'glitch2': '--neon',         
+  'glitch3': '--neon-mag',
+  'default': '--neon-pur' 
 }; // fallback to 'default' if dataset.bg is missing
   const bgType = hero.dataset.bg || 'default';
   const neonVar = headerColors[bgType] || headerColors['default'];
