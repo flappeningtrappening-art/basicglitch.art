@@ -30,21 +30,35 @@ function unique(arr){ return [...new Set(arr.flat())]; }
 function setHeroBackground(){
   if(HERO_CHOICES.length === 0) return;
 
-  // pick random index 0-3 for 4 images
-  const pick = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
+  // 1. Pick a random object from the array
+  const pickObject = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
+  
+  // 2. Extract the path and the key from the chosen object
+  const pickPath = pickObject.path;
+  const pickKey = pickObject.key; // This will be 'glitch1', 'glitch2', etc.
 
+  // 3. Select HTML elements
   const heroBg = document.querySelector('.hero-bg');
   const header = document.querySelector('.site-header');
   const hero = document.getElementById('hero');
 
+  // 4. Apply the image path (using pickPath)
   if(heroBg) heroBg.style.backgroundImage = `url("${pickPath}")`;
   if(header){
+    // Update header styling - use the pickPath here too
     header.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.6), rgba(5,5,5,0.35)), url("${pickPath}")`;
     header.style.backgroundSize = 'cover';
     header.style.backgroundPosition = 'center';
     header.style.backgroundBlendMode = 'overlay';
     header.style.opacity = '1';
   }
+
+  // 5. Update dataset.bg with the specific key (using pickKey)
+  if(hero) {
+    // This is the CRITICAL line that passes the color choice to dynamic-effects.js
+    hero.dataset.bg = pickKey; 
+  }
+}
 
   // Update dataset.bg so dynamic-effects.js can read it
   if(hero) {
