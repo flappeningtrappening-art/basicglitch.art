@@ -1,8 +1,8 @@
 [
   {
-    "id": "gaia-001",
+    "id": "enviro-001",
     "title": "Gaia of the Wasteland",
-    "file": "/assets/images/gallery/gaia_of_the_wasteland.png",
+    "file": "/assets/images/raw/gaia_of_the_wasteland.png",
     "categories": ["Available for Purchase"],
     "styles": ["Surrealism", "Psychedelia"],
     "date": "2025-10-04",
@@ -12,7 +12,7 @@
   {
     "id": "guitarbot-001",
     "title": "Guitarbot",
-    "file": "/assets/images/gallery/guitarbot_og.png",
+    "file": "/assets/images/raw/guitarbot_og.png",
     "categories": ["Broboticus"],
     "styles": ["Neon", "Animation"],
     "date": "2025-11-02",
@@ -22,7 +22,7 @@
   {
     "id": "spiral-001",
     "title": "Spiral Geometry",
-    "file": "/assets/images/gallery/spiral_geometry.png",
+    "file": "/assets/images/raw/spiral_geometry.png",
     "categories": ["Personal Projects"],
     "styles": ["Geometric", "Glitch"],
     "date": "2025-08-12",
@@ -31,7 +31,7 @@
   {
     "id": "aesthetic-001",
     "title": "Sangre De Cristos — Neon",
-    "file": "/assets/images/gallery/aesthetic_sangre_de_cristo.png",
+    "file": "/assets/images/raw/aesthetic_sangre_de_cristo.png",
     "categories": ["Available for Purchase"],
     "styles": ["Neon", "Landscape"],
     "date": "2025-09-10",
@@ -41,7 +41,7 @@
   {
     "id": "floral-001",
     "title": "Floral",
-    "file": "/assets/images/gallery/floral.png",
+    "file": "/assets/images/raw/floral.png",
     "categories": ["Personal Projects"],
     "styles": ["Psychedelia"],
     "date": "2025-07-06",
@@ -51,11 +51,161 @@
   {
     "id": "brobot-001",
     "title": "Brobarticus",
-    "file": "/assets/images/gallery/artist_broboticus_og.png",
-    "categories": ["Broboticus"],
+    "file": "/assets/images/raw/artist_broboticus_og.png",
+    "categories": ["Available for Purchase", "Broboticus"],
     "styles": ["Character", "Neon"],
     "date": "2025-11-22",
     "description": "He's a musician and an artist!?!? Whatta robot!!!",
     "price": 40
-  }
+  },
+  {
+    "id": "shroom-001",
+    "title": "A Mycological Phenomenon",
+    "file": "assets/images/raw/a_mycological_phenomenon.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Surrealism", "Psychedelia"],
+    "date": "2025-04-19",
+    "description": "Embroidered texture surreal landscape",
+    "price": 200
+  },
+  {
+    "id": "aesthetic-002",
+    "title": "Sangre De Cristos - Night",
+    "file": "assets/images/raw/aesthetic_laser_colorado.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Neon", "Landscape,],
+    "date": "2025-06-24",
+    "description": "Nighttime aesthetic from Colorado",
+    "price": 120
+  },
+  {
+    "id": "brobot-002",
+    "title": "The Bolts and Nutcracker",
+    "file": "assets/images/raw/balletboticus.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Character"],
+    "date": "2025-12-07",
+    "description": "High class Broboticus",
+    "price": 80
+  },
+  {
+    "id": "brobot-003",
+    "title": "Iron Chef",
+    "file": "assets/images/raw/chefboticus.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Character", "Neon"],
+    "date": "2025-12-05",
+    "description": "Welcome to Kitchen Stadium",
+    "price": 60
+  },
+  {
+    "id": "cube-001",
+    "title": "Cubist Chef",
+    "file": "assets/images/raw/cubist_chef.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Character", "Surrealism"],
+    "date": "2025-08-04",
+    "description": "Cubist Cuisine",
+    "price": 140
+  },
+  {
+    "id": "enviro-002",
+    "title": "Dust to Dust",
+    "file": "assets/images/raw/dust_to_dust.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Surrealism", "Landscape"],
+    "date": "2025-02-14",
+    "description": "Mother Earth is hurting",
+    "price": 200
+  },
+  {
+    "id": "brobot-004",
+    "title": "Night-Fishing the Arkansas River",
+    "file": "assets/images/raw/fishboticus.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Character"],
+    "date": "2025-12-04",
+    "description": "Calm night-fishing in the Arkansas River",
+    "price": 80
+  },
+  {
+    "id": "shroom-003",
+    "title": "Glowspore",
+    "file": "assets/images/raw/glowspore.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Neon", "Psychedelia", "Landscape"],
+    "date": "2025-07-17",
+    "description": "Minimalist glowing mushroom scene",
+    "price": 40
+  },
+  {
+    "id": "brobot-005",
+    "title": "Karateboticus",
+    "file": "assets/images/raw/karateboticus1.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Character", "Neon"],
+    "date": "2025-12-02",
+    "description": "Sweep the leg!",
+    "price": 80
+  },
+  {
+    "id": "trap-001",
+    "title": "Literal Traphouse",
+    "file": "assets/images/raw/literal_traphouse.png",
+    "categories": ["Personal Project", "Available for Purchase"],
+    "styles": ["Neon"],
+    "date": "2023-10-30",
+    "description": "Figurative traphouse",
+    "price": 80
+  },
+  {
+    "id": "shroom-002",
+    "title": "Mycology Yourcology",
+    "file": "assets/images/raw/mycology_yourcology.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Surrealism", "Psychedelia", "Landscape"],
+    "date": "2025-05-15",
+    "description": "Embroidered texture mushroom landscape",
+    "price": 200
+  },
+  {
+    "id": "boho-001",
+    "title": "Pachydermis",
+    "file": "assets/images/raw/pachydermis.png",
+    "categories": ["Available for Purchase"],
+    "styles": ["Psychedelia", "Surrealism"],
+    "date": "2025-02-02",
+    "description": "Boho elephant with a touch of Timothy Leary",
+    "price":160
+  },
+  {
+    "id": "brobot-006",
+    "title": "Rancher Broboticus",
+    "file": "assets/images/raw/ranchboticus.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Character", "Neon"],
+    "date": "2025-10-13",
+    "description": "Roboto Rancheros",
+    "price": 40
+  },
+  {
+    "id": "brobot-007",
+    "title": "There's a Star-Bot Waiting in the Sky",
+    "file": "assets/images/raw/starbot_waiting_in_the_sky.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Neon", "Character", "Psychedelia"],
+    "date": "2025-11-28",
+    "description": "Like David Bowie imagined",
+    "price": 80
+  },
+  {
+    "id": "brobot-008",
+    "title": "Vitruvian Broboticus",
+    "file": "assets/images/raw/vitruvian_broboticus.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Surrealism", "Character"],
+    "date": "2025-10-15",
+    "description": "DaVinci's idea of the perfect robot",
+    "price":100
+  },
 ]
