@@ -7,10 +7,10 @@ const GALLERY_JSON = '/assets/data/gallery.json';
 const GALLERY_BASE = '/assets/images/raw/'; // full images
 const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  '/assets/images/hero/glitch1.png',
-  '/assets/images/hero/glitch2.png',
-  '/assets/images/hero/glitch3.jpg', // JPG is fine, the path just needs to be correct!
-  '/assets/images/hero/glitch4.png'
+  { path: '/assets/images/hero/glitch1.png', key: 'glitch-azure' },
+  { path: '/assets/images/hero/glitch2.png', key: 'glitch-default' },
+  { path: '/assets/images/hero/glitch3.jpg', key: 'glitch-orng' },
+  { path: '/assets/images/hero/glitch4.png', key: 'glitch-limon' }
 ];
 
 /* ---------------------------
@@ -37,9 +37,9 @@ function setHeroBackground(){
   const header = document.querySelector('.site-header');
   const hero = document.getElementById('hero');
 
-  if(heroBg) heroBg.style.backgroundImage = `url("${pick}")`;
+  if(heroBg) heroBg.style.backgroundImage = `url("${pickPath}")`;
   if(header){
-    header.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.6), rgba(5,5,5,0.35)), url("${pick}")`;
+    header.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.6), rgba(5,5,5,0.35)), url("${pickPath}")`;
     header.style.backgroundSize = 'cover';
     header.style.backgroundPosition = 'center';
     header.style.backgroundBlendMode = 'overlay';
