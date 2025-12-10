@@ -11,7 +11,7 @@ const headerColors = {
   'mountains': '--neon-mag',         
   'default': '--neon-blu'            
 }; // fallback to 'default' if dataset.bg is missing
-  const bgType = hero.dataset.bg || ['default'];
+  const bgType = hero.dataset.bg || 'default';
   const neonVar = headerColors[bgType] || headerColors['default'];
   setCSSVar(headerTitle, 'color', `var(${neonVar})`);
 
