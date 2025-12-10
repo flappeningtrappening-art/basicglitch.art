@@ -1,120 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Glitch Art</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Basic Glitch Art</title>
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+<!-- Stylesheet -->
+<link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- JavaScript -->
-  <script src="./assets/js/app.js" defer></script>
-  <script src="./assets/js/dynamic-effects.js" defer></script>
+<!-- JavaScript -->
+<script src="./assets/js/app.js" defer></script>
+<script src="./assets/js/dynamic-effects.js" defer></script>
 
-  <style>
-    /* Force all icons small */
-    header nav img,
-    .commission-tier .icon,
-    .about-icons .icon {
-      width: 32px !important;
-      height: 32px !important;
+<script>
+  // Random hero background selection (25% chance each)
+  const HERO_CHOICES = [
+    './assets/images/mountains.png',
+    './assets/images/circuit-glitch.png',
+    './assets/images/hero2.png',
+    './assets/images/hero3.png'
+  ];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroBg = document.querySelector('.hero-bg');
+    if(heroBg){
+      const pick = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
+      heroBg.style.backgroundImage = `url("${pick}")`;
     }
-  </style>
+  });
+</script>
+
+<style>
+  /* Force icons to small size */
+  header nav img,
+  .commission-tier .icon,
+  .about-icons .icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+</style>
 </head>
-
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner container">
-      <a href="#" class="brand">Basic Glitch Art</a>
-      <nav class="nav">
-        <a href="#gallery" class="nav-link">
-          <img src="./assets/icons/gallery.svg" alt="Gallery Icon"> Gallery
-        </a>
-        <a href="#commissions" class="nav-link">
-          <img src="./assets/icons/commissions.svg" alt="Commissions Icon"> Commissions
-        </a>
-        <a href="#about" class="nav-link">
-          <img src="./assets/icons/about.svg" alt="About Icon"> About
-        </a>
-        <a href="#contact" class="nav-link">
-          <img src="./assets/icons/contact.svg" alt="Contact Icon"> Contact
-        </a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" data-bg="default">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-inner container">
-      <h1 class="title">Welcome to Basic Glitch Art</h1>
-      <p class="subtitle">Handcrafted digital chaos — unique glitch art, tech-fusion creations, and more.</p>
-    </div>
-  </section>
+<!-- HEADER / NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="#" class="brand">Basic Glitch Art</a>
+    <nav class="nav">
+      <a class="nav-link" href="#gallery"><img src="./assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
+      <a class="nav-link" href="#commissions"><img src="./assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
+      <a class="nav-link" href="#about"><img src="./assets/icons/about.svg" alt="About Icon"> About</a>
+      <a class="nav-link" href="#contact"><img src="./assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p>A curated selection of glitch artwork.</p>
-      <div id="gallery-grid" class="gallery-grid"></div>
-    </div>
-  </section>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner container">
+    <h1 class="title">Welcome to Basic Glitch Art</h1>
+    <p class="subtitle">Handcrafted digital chaos — unique glitch art, tech-fusion creations, and more.</p>
+  </div>
+</section>
 
-  <!-- COMMISSIONS -->
-  <section class="section" id="commissions">
-    <div class="container">
-      <h2>Commissions</h2>
+<!-- GALLERY SECTION -->
+<section class="section" id="gallery">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p>A curated selection of glitch artwork.</p>
+    <div id="gallery-grid" class="gallery-grid"></div>
+  </div>
+</section>
 
-      <div class="commission-tier">
+<!-- COMMISSIONS SECTION -->
+<section class="section" id="commissions">
+  <div class="container">
+    <h2>Commissions</h2>
+    <div class="grid-3">
+      <div class="commission-tier tier">
         <h3>Basic Tier</h3>
         <p>Simple glitch effects, recolors, distortion, overlays.</p>
         <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
       </div>
-
-      <div class="commission-tier">
+      <div class="commission-tier tier">
         <h3>Advanced Tier</h3>
         <p>Layered glitch compositions, multistep distortions, color remaps.</p>
         <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
       </div>
-
-      <div class="commission-tier">
+      <div class="commission-tier tier">
         <h3>Premium Tier</h3>
         <p>Full custom glitch art, AI-hybrid distortion, effects, and processing.</p>
         <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <h2>About the Artist</h2>
-      <img src="./assets/images/about/artist_avatar.png" alt="Artist Avatar" class="avatar">
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+  <div class="container">
+    <h2>About the Artist</h2>
+    <div class="about-card">
+      <img class="avatar" src="./assets/images/about/artist_avatar.png" alt="Artist Avatar">
       <p>
         BasicGlitch is the artistic persona of Justin Lance, Newburgh, Indiana native
         with ties to multiple locales in Colorado, currently residing in Tularosa, New Mexico.
       </p>
-      <div class="about-icons">
-        <a href="https://instagram.com" target="_blank">
-          <img class="icon" src="./assets/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://ko-fi.com" target="_blank">
-          <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
-        </a>
-      </div>
     </div>
-  </section>
+    <div class="about-icons">
+      <a href="https://instagram.com" target="_blank">
+        <img class="icon" src="./assets/icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://ko-fi.com" target="_blank">
+        <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: justin@basicglitch.art</p>
-    </div>
-  </section>
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Email: justin@basicglitch.art</p>
+  </div>
+</section>
+
 </body>
 </html>
