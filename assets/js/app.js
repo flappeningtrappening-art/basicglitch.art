@@ -23,17 +23,15 @@ function el(tag, props={}, children=[]){
 function unique(arr){ return [...new Set(arr.flat())]; }
 
 /* ---------------------------
-   Hero randomizer (header + hero same image)
-   - choose between HERO_CHOICES only
-   - apply as background for .hero-bg and header background accent
+   Hero randomizer
    --------------------------- */
 function setHeroBackground(){
+  if(HERO_CHOICES.length === 0) return;
   const pick = HERO_CHOICES[Math.floor(Math.random()*HERO_CHOICES.length)];
   const heroBg = document.querySelector('.hero-bg');
   const header = document.querySelector('.site-header');
 
   if(heroBg) heroBg.style.backgroundImage = `url("${pick}")`;
-  // dimmed overlay already present in CSS; keep it at ~0.25. If you want darker: change overlay opacity.
   if(header){
     header.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.6), rgba(5,5,5,0.35)), url("${pick}")`;
     header.style.backgroundSize = 'cover';
@@ -43,15 +41,16 @@ function setHeroBackground(){
   }
 }
 
+/* ---------------------------
+   Fetch gallery data
+   --------------------------- */
 async function fetchGallery(){
   try{
-    const res = await fetch('/data/gallery.json', { cache:'no-store' });
-
+    const res = await fetch(GALLERY_JSON, { cache:'no-store' });
     if(!res.ok){
-      console.error('gallery.json not found at /data/gallery.json');
+      console.error(`gallery.json not found at ${GALLERY_JSON}`);
       return [];
     }
-
     return await res.json();
   }catch(err){
     console.error('Fetch failed:', err);
@@ -70,23 +69,30 @@ function renderFilters(data){
 
   const catWrap = document.getElementById('category-filters');
   const styleWrap = document.getElementById('style-filters');
+  if(!catWrap || !styleWrap) return;
   catWrap.innerHTML=''; styleWrap.innerHTML='';
 
   cats.forEach(c=>{
-    const b = el('button',{className:'btn-small'},[c]);
+    const b = el('button',{className:'btn-small', type:'button'},[c]);
     b.addEventListener('click', ()=> toggleFilter('category', c, b));
     catWrap.appendChild(b);
   });
   styles.forEach(s=>{
-    const b = el('button',{className:'btn-small'},[s]);
+    const b = el('button',{className:'btn-small', type:'button'},[s]);
     b.addEventListener('click', ()=> toggleFilter('style', s, b));
     styleWrap.appendChild(b);
   });
 
-  document.getElementById('clear-filters').addEventListener('click', ()=> {
-    filters = {category:[], style:[]};
-    renderGrid(window.GALLERY);
-  });
+  const clearBtn = document.getElementById('clear-filters');
+  if(clearBtn){
+    clearBtn.addEventListener('click', ()=>{
+      filters = {category:[], style:[]};
+      // reset button opacities
+      Array.from(catWrap.children).forEach(b=>b.style.opacity=1);
+      Array.from(styleWrap.children).forEach(b=>b.style.opacity=1);
+      renderGrid(window.GALLERY);
+    });
+  }
 }
 
 function toggleFilter(type, value, btn){
@@ -105,12 +111,10 @@ function applyFilters(){
 
 /* ---------------------------
    Render gallery grid
-   Each item expected: { id, title, file, categories:[], styles:[], date, description, price }
-   - Thumbs are expected at THUMB_BASE + filename
-   - If thumbnail not found, fallback to the full image.
    --------------------------- */
 function renderGrid(items){
   const grid = document.getElementById('gallery-grid');
+  if(!grid) return;
   grid.innerHTML = '';
   if(!items.length){
     grid.appendChild(el('div',{className:'card'},[el('div',{},['No pieces match those filters.'])]));
@@ -119,14 +123,12 @@ function renderGrid(items){
 
   items.forEach(it=>{
     const card = el('div',{className:'card gallery-card'});
-    
-     // thumbnail fallback logic
+
+    // thumbnail fallback
     const rawFile = (it.file || '').split('/').pop();
     const baseName = rawFile.replace(/\.(png|jpg|jpeg|webp)$/i, '');
-
     const thumbJpg = THUMB_BASE + baseName + '.jpg';
     const thumbPng = THUMB_BASE + baseName + '.png';
-
     const img = el('img',{
       src: thumbJpg,
       alt: it.title || '',
@@ -135,45 +137,30 @@ function renderGrid(items){
 
     img.onerror = function(){
       img.onerror = null;
-
-      // Try PNG thumbnail next
-      if(img.src.includes('.jpg')){
-        img.src = thumbPng;
-      } else {
-        // Finally fallback to full image
-        img.src = it.file;
-      }
+      if(img.src.endsWith('.jpg')) img.src = thumbPng;
+      else if(img.src.endsWith('.png')) img.src = it.file || '';
     };
 
-    // title + meta
     const h3 = el('h3',{},[it.title || 'Untitled']);
     const meta = el('p',{className:'muted'},[(it.categories||[]).join(' • ')]);
-
-    // color class for category accent (pick first category)
     if(it.categories && it.categories.length){
-      const catClass = 'category-' + it.categories[0].replace(/\s+/g,'');
-      h3.classList.add(catClass);
+      h3.classList.add('category-'+it.categories[0].replace(/\s+/g,''));
     }
 
-    // actions
     const actions = el('div',{className:'row'});
-    const viewBtn = el('button',{className:'btn-small'},['View']);
+    const viewBtn = el('button',{className:'btn-small', type:'button'},['View']);
     viewBtn.addEventListener('click', ()=> openLightbox(it.id));
     const orderLink = el('a',{className:'btn-small', href:'https://ko-fi.com/basicglitch', target:'_blank', rel:'noopener'},['Order']);
-    actions.appendChild(viewBtn);
-    actions.appendChild(orderLink);
+    actions.appendChild(viewBtn); actions.appendChild(orderLink);
 
-    // description small
     const desc = el('p',{className:'muted'},[it.description || '']);
 
-    // assemble
     card.appendChild(img);
     card.appendChild(h3);
     card.appendChild(meta);
     card.appendChild(desc);
     card.appendChild(actions);
 
-    // data attributes for filtering (optional)
     card.dataset.id = it.id;
     grid.appendChild(card);
   });
@@ -188,6 +175,7 @@ function openLightbox(id){
   if(!item) return;
   const lb = document.getElementById('lightbox');
   const content = document.getElementById('lb-content');
+  if(!lb || !content) return;
   content.innerHTML = '';
   const img = document.createElement('img');
   img.src = item.file;
@@ -197,21 +185,34 @@ function openLightbox(id){
   lb.setAttribute('aria-hidden','false');
   currentIndex = window.GALLERY.indexOf(item);
 }
-function closeLightbox(){ const lb=document.getElementById('lightbox'); lb.classList.add('hidden'); lb.setAttribute('aria-hidden','true'); }
+function closeLightbox(){
+  const lb=document.getElementById('lightbox');
+  if(lb){ lb.classList.add('hidden'); lb.setAttribute('aria-hidden','true'); }
+}
 function prevItem(){ if(currentIndex > 0) openLightbox(window.GALLERY[currentIndex-1].id); }
-function nextItem(){ if(currentIndex < window.GALLERY.length - 1) openLightbox(window.GALLERY[currentIndex+1].id); }
+function nextItem(){ if(currentIndex < window.GALLERY.length-1) openLightbox(window.GALLERY[currentIndex+1].id); }
 
 /* keyboard & touch */
-document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') prevItem(); if(e.key==='ArrowRight') nextItem(); });
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') prevItem();
+  if(e.key==='ArrowRight') nextItem();
+});
+
 const lbContent = document.getElementById('lb-content');
 if(lbContent){
   let touchStartX = 0, touchEndX = 0;
-  lbContent.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, false);
-  lbContent.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; if(touchEndX <= touchStartX - 40) nextItem(); if(touchEndX >= touchStartX + 40) prevItem(); }, false);
+  const swipeThreshold = 50;
+  lbContent.addEventListener('touchstart', e=>{ touchStartX = e.changedTouches[0].screenX; }, false);
+  lbContent.addEventListener('touchend', e=>{
+    touchEndX = e.changedTouches[0].screenX;
+    if(touchEndX <= touchStartX - swipeThreshold) nextItem();
+    if(touchEndX >= touchStartX + swipeThreshold) prevItem();
+  }, false);
 }
 
-/* attach lightbox UI controls */
-document.addEventListener('DOMContentLoaded', ()=> {
+/* attach lightbox UI controls and mobile nav toggle */
+document.addEventListener('DOMContentLoaded', ()=>{
   const closeBtn = document.getElementById('lb-close');
   const prevBtn = document.getElementById('lb-prev');
   const nextBtn = document.getElementById('lb-next');
@@ -219,16 +220,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
   if(prevBtn) prevBtn.addEventListener('click', prevItem);
   if(nextBtn) nextBtn.addEventListener('click', nextItem);
 
-  // mobile nav toggle
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const mainNav = document.getElementById('main-nav');
-  const siteHeader = document.getElementById('site-header');
+  const siteHeader = document.querySelector('.site-header') || document.getElementById('site-header');
   if(mobileToggle){
     mobileToggle.addEventListener('click', ()=>{
-      const open = mainNav.classList.toggle('nav-open');
+      const open = mainNav?.classList.toggle('nav-open');
       mobileToggle.classList.toggle('toggle-active');
       mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      siteHeader.classList.toggle('header-mobile-open', open);
+      if(siteHeader) siteHeader.classList.toggle('header-mobile-open', open);
     });
   }
 });
@@ -239,7 +239,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 (async function init(){
   try{
     setHeroBackground();
-
     const data = await fetchGallery();
     window.GALLERY = data || [];
     renderFilters(window.GALLERY);
