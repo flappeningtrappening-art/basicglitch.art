@@ -3,9 +3,9 @@
 /* ---------------------------
    Config - adjust paths if needed
    --------------------------- */
-const GALLERY_JSON = '/data/gallery.json';
-const GALLERY_BASE = '/assets/images/gallery/'; // full images
-const THUMB_BASE = '/assets/images/gallery/thumbs/'; // thumbnails
+const GALLERY_JSON = '/assets/data/gallery.json';
+const GALLERY_BASE = '/assets/images/raw/'; // full images
+const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
   '/assets/images/mountains.png',
   '/assets/images/circuit-glitch.png'
