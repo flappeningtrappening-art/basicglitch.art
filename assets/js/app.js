@@ -63,10 +63,10 @@ function setHeroBackground(){
   // Update dataset.bg so dynamic-effects.js can read it
   if(hero) {
     let bgKey = 'default';
-    if(pick.includes('glitch1')) bgKey = 'neon-pur';
+    if(pick.includes('glitch1')) bgKey = 'neon-limon';
     else if(pick.includes('glitch2')) bgKey = 'neon';
     else if(pick.includes('glitch3')) bgKey = 'neon-mag';
-    else if(pick.includes('glitch4')) bgKey = 'neon-limon';
+    else if(pick.includes('glitch4')) bgKey = 'neon-pur';
     hero.dataset.bg = bgKey;
   }
 }
