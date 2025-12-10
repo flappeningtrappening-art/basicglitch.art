@@ -12,24 +12,6 @@
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
 
-<script>
-  // Random hero background selection (25% chance each)
-  const HERO_CHOICES = [
-    './assets/images/glitch1.png',
-    './assets/images/glitch2.png',
-    './assets/images/glitch3.jpg',
-    './assets/images/glitch4.png'
-  ];
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const heroBg = document.querySelector('.hero-bg');
-    if(heroBg){
-      const pick = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
-      heroBg.style.backgroundImage = `url("${pick}")`;
-    }
-  });
-</script>
-
 <style>
   /* Force icons to small size */
   header nav img,
