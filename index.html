@@ -22,11 +22,78 @@
             height: 32px !important;
         }
 
-        /* Fix hero robot sizing */
-        #side-robot {
-            width: clamp(150px, 20vw, 300px);
+        /* HERO BACKGROUND EFFECTS (4 random options) */
+
+        .bg-glitch-rgb {
+            background: linear-gradient(135deg, #ff004c 0%, #00eaff 100%);
+            background-size: 200% 200%;
+            animation: rgbShift 6s infinite alternate;
+        }
+
+        .bg-glitch-static {
+            background: repeating-linear-gradient(
+                0deg,
+                #111,
+                #111 2px,
+                #1a1a1a 2px,
+                #1a1a1a 4px
+            );
+            filter: contrast(1.2);
+        }
+
+        .bg-glitch-scanline {
+            background: #000;
+            position: relative;
+        }
+        .bg-glitch-scanline::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.05) 0px,
+                rgba(255,255,255,0.05) 1px,
+                rgba(0,0,0,0) 2px
+            );
+            pointer-events: none;
+        }
+
+        .bg-glitch-blocks {
+            background: repeating-linear-gradient(
+                45deg,
+                #0d0d0d 0px,
+                #0d0d0d 20px,
+                #191919 20px,
+                #191919 40px
+            );
+        }
+
+        @keyframes rgbShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Hero general styling */
+        #hero {
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
         }
     </style>
+
+    <script>
+        /* RANDOM HERO BACKGROUND PICKER */
+        document.addEventListener("DOMContentLoaded", () => {
+            const backgrounds = [
+                "bg-glitch-rgb",
+                "bg-glitch-static",
+                "bg-glitch-scanline",
+                "bg-glitch-blocks"
+            ];
+            const hero = document.querySelector("#hero");
+            hero.classList.add(backgrounds[Math.floor(Math.random() * backgrounds.length)]);
+        });
+    </script>
 </head>
 
 <body>
@@ -43,76 +110,3 @@
             <a href="#commissions"><img src="./assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
             <a href="#about"><img src="./assets/icons/about.svg" alt="About Icon"> About</a>
             <a href="#contact"><img src="./assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="hero" data-bg="default">
-        <h1>Welcome to Basic Glitch Art</h1>
-        <p>Handcrafted digital chaos — unique glitch art, tech-fusion creations, and more.</p>
-
-        <img id="side-robot" src="./assets/images/hero/guitarbot.png" alt="Guitarbot Robot">
-    </section>
-
-    <!-- GALLERY SECTION -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <p>A curated selection of glitch artwork.</p>
-
-        <div id="gallery-grid"></div>
-    </section>
-
-    <!-- COMMISSIONS SECTION -->
-    <section id="commissions">
-        <h2>Commissions</h2>
-
-        <div class="commission-tier">
-            <h3>Basic Tier</h3>
-            <p>Simple glitch effects, recolors, distortion, overlays.</p>
-            <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
-        </div>
-
-        <div class="commission-tier">
-            <h3>Advanced Tier</h3>
-            <p>Layered glitch compositions, multistep distortions, color remaps.</p>
-            <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
-        </div>
-
-        <div class="commission-tier">
-            <h3>Premium Tier</h3>
-            <p>Full custom glitch art, AI-hybrid distortion, effects, and processing.</p>
-            <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2>About the Artist</h2>
-
-        <img src="./assets/images/about/artist_broboticus_avatar.png"
-             alt="Artist Avatar"
-             class="avatar">
-
-        <p>
-            BasicGlitch is the artistic persona of Justin Lance, Newburgh, Indiana native
-            with ties to multiple locales in Colorado, currently residing in Tularosa, New Mexico.
-        </p>
-
-        <div class="about-icons">
-            <a href="https://instagram.com" target="_blank">
-                <img class="icon" src="./assets/icons/instagram.svg" alt="Instagram">
-            </a>
-            <a href="https://ko-fi.com" target="_blank">
-                <img class="icon" src="./assets/icons/ko-fi.svg" alt="Ko-fi">
-            </a>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: contact@basicglitch.art</p>
-    </section>
-
-</body>
-</html>
