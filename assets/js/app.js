@@ -30,6 +30,7 @@ function setHeroBackground(){
   const pick = HERO_CHOICES[Math.floor(Math.random()*HERO_CHOICES.length)];
   const heroBg = document.querySelector('.hero-bg');
   const header = document.querySelector('.site-header');
+  const hero = document.getElementById('hero'); // <-- added
 
   if(heroBg) heroBg.style.backgroundImage = `url("${pick}")`;
   if(header){
@@ -38,6 +39,15 @@ function setHeroBackground(){
     header.style.backgroundPosition = 'center';
     header.style.backgroundBlendMode = 'overlay';
     header.style.opacity = '1';
+  }
+
+  // Update dataset.bg so dynamic-effects.js can read it
+  if(hero) {
+    // determine key based on filename
+    let bgKey = 'default';
+    if(pick.includes('mountains')) bgKey = 'mountains';
+    else if(pick.includes('circuit-glitch')) bgKey = 'glitch-circuit';
+    hero.dataset.bg = bgKey;
   }
 }
 
@@ -124,46 +134,15 @@ function renderGrid(items){
   items.forEach(it=>{
     const card = el('div',{className:'card gallery-card'});
 
-    // thumbnail fallback
-    const rawFile = (it.file || '').split('/').pop();
-    const baseName = rawFile.replace(/\.(png|jpg|jpeg|webp)$/i, '');
-    const thumbJpg = THUMB_BASE + baseName + '.jpg';
-    const thumbPng = THUMB_BASE + baseName + '.png';
-    const img = el('img',{
-      src: thumbJpg,
-      alt: it.title || '',
-      loading: 'lazy'
-    });
-
-    img.onerror = function(){
-      img.onerror = null;
-      if(img.src.endsWith('.jpg')) img.src = thumbPng;
-      else if(img.src.endsWith('.png')) img.src = it.file || '';
-    };
-
-    const h3 = el('h3',{},[it.title || 'Untitled']);
-    const meta = el('p',{className:'muted'},[(it.categories||[]).join(' • ')]);
-    if(it.categories && it.categories.length){
-      h3.classList.add('category-'+it.categories[0].replace(/\s+/g,''));
-    }
-
-    const actions = el('div',{className:'row'});
-    const viewBtn = el('button',{className:'btn-small', type:'button'},['View']);
-    viewBtn.addEventListener('click', ()=> openLightbox(it.id));
-    const orderLink = el('a',{className:'btn-small', href:'https://ko-fi.com/basicglitch', target:'_blank', rel:'noopener'},['Order']);
-    actions.appendChild(viewBtn); actions.appendChild(orderLink);
-
-    const desc = el('p',{className:'muted'},[it.description || '']);
-
-    card.appendChild(img);
-    card.appendChild(h3);
-    card.appendChild(meta);
-    card.appendChild(desc);
-    card.appendChild(actions);
-
-    card.dataset.id = it.id;
+    // Set dataset for dynamic-effects.js
+    card.dataset.id = it.id || '';
+    card.dataset.style = (it.styles && it.styles[0]) || ''; // pick first style
+    card.dataset.category = (it.categories && it.categories[0]) || ''; // pick first category
     grid.appendChild(card);
   });
+
+  // Apply dynamic effects after grid renders
+  if(typeof updateGalleryBorders === 'function') updateGalleryBorders();
 }
 
 /* ---------------------------
