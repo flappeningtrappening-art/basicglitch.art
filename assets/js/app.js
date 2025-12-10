@@ -7,10 +7,10 @@ const GALLERY_JSON = '/assets/data/gallery.json';
 const GALLERY_BASE = '/assets/images/raw/'; // full images
 const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  '/assets/images/hero/mountains.png',
-  '/assets/images/hero/circuit-glitch.png',
   '/assets/images/hero/glitch1.png',
-  '/assets/images/hero/glitch2.png'
+  '/assets/images/hero/glitch2.png',
+  '/assets/images/hero/glitch3.jpg',
+  '/assets/images/hero/glitch4.png'
 ]; // 4 options for random hero background
 
 /* ---------------------------
