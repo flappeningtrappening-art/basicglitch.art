@@ -1,21 +1,23 @@
 /* ========================================================
-   dynamic-effects.js (PATCHED SAFE VERSION)
-   Stable neon styling without visual chaos
+   dynamic-effects.js
+   Handles header neon colors and gallery card border logic.
+   Broboticus spawning and animation removed by request.
 ======================================================== */
 
 /* -------------------------------
    CONFIGURATION
 -------------------------------- */
 const headerColors = {
-  'glitch-circuit': '--neon-2',
-  'mountains': '--neon-mag',
-  'default': '--neon-blu'
+  'glitch-circuit': '--neon-2',      // green
+  'mountains': '--neon-mag',         // magenta
+  'default': '--neon-blu'            // fallback blue
 };
 
 const styleColors = {
   'Neon': '--neon-yel',
   'Psychedelia': '--neon-pur',
   'Surrealism': '--neon-blu',
+  'Broboticus': '--neon-org',
   'Animation': '--neon-mag',
   'Geometric': '--neon',
   'Glitch': '--neon-2',
@@ -29,35 +31,44 @@ const categoryBorderColors = {
 };
 
 /* -------------------------------
-   HEADER NEON SAFE FIX
+   UTILITY FUNCTIONS
+-------------------------------- */
+function setCSSVar(element, varName, value) {
+  if (!element) return;
+  element.style.setProperty(varName, value);
+}
+
+/* -------------------------------
+   HEADER NEON DYNAMIC COLOR
 -------------------------------- */
 function updateHeaderNeon() {
   const headerTitle = document.querySelector('.brand');
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('#hero');
 
   if (!headerTitle || !hero) return;
 
   const bgType = hero.dataset.bg || 'default';
-  const neonVar = headerColors[bgType] || headerColors.default;
-
-  headerTitle.style.color = `var(${neonVar})`;
+  const neonVar = headerColors[bgType] || headerColors['default'];
+  setCSSVar(headerTitle, 'color', `var(${neonVar})`);
 }
 
 /* -------------------------------
-   GALLERY CARD BORDER FIX
+   GALLERY CARD BORDER COLORS
 -------------------------------- */
 function updateGalleryBorders() {
   const cards = document.querySelectorAll('.gallery-card');
 
   cards.forEach(card => {
-    const style = card.getAttribute('data-style');
-    const category = card.getAttribute('data-category');
+    const style = card.dataset.style;
+    const category = card.dataset.category;
 
-    const img = card.querySelector('img');
     const styleColorVar = styleColors[style] || '--neon';
+    const img = card.querySelector('img');
 
     if (img) {
-      img.style.border = `2px solid var(${styleColorVar})`;
+      img.style.borderColor = `var(${styleColorVar})`;
+      img.style.borderWidth = '2px';
+      img.style.borderStyle = 'solid';
     }
 
     const cardColor = categoryBorderColors[category] || 'var(--fg)';
@@ -73,4 +84,5 @@ function initDynamicEffects() {
   updateGalleryBorders();
 }
 
+/* Run on DOM ready */
 document.addEventListener('DOMContentLoaded', initDynamicEffects);
