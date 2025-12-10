@@ -7,10 +7,10 @@ const GALLERY_JSON = '/assets/data/gallery.json';
 const GALLERY_BASE = '/assets/images/raw/'; // full images
 const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  { path: '/assets/images/hero/glitch1.png', key: 'glitch-azure' },
-  { path: '/assets/images/hero/glitch2.png', key: 'glitch-default' },
-  { path: '/assets/images/hero/glitch3.jpg', key: 'glitch-orng' },
-  { path: '/assets/images/hero/glitch4.png', key: 'glitch-limon' }
+  { path: '/assets/images/hero/glitch1.png', key: 'glitch1' },
+  { path: '/assets/images/hero/glitch2.png', key: 'glitch2' },
+  { path: '/assets/images/hero/glitch3.jpg', key: 'glitch3' },
+  { path: '/assets/images/hero/glitch4.png', key: 'glitch-default' }
 ];
 
 /* ---------------------------
