@@ -9,9 +9,9 @@ const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
   '/assets/images/hero/glitch1.png',
   '/assets/images/hero/glitch2.png',
-  '/assets/images/hero/glitch3.jpg',
+  '/assets/images/hero/glitch3.jpg', // JPG is fine, the path just needs to be correct!
   '/assets/images/hero/glitch4.png'
-]; // 4 options for random hero background
+];
 
 /* ---------------------------
    Utility helpers
@@ -49,10 +49,10 @@ function setHeroBackground(){
   // Update dataset.bg so dynamic-effects.js can read it
   if(hero) {
     let bgKey = 'default';
-    if(pick.includes('mountains')) bgKey = 'mountains';
-    else if(pick.includes('circuit-glitch')) bgKey = 'glitch-circuit';
-    else if(pick.includes('glitch1')) bgKey = 'glitch1';
-    else if(pick.includes('glitch2')) bgKey = 'glitch2';
+    if(pick.includes('glitch1')) bgKey = 'neon-pur';
+    else if(pick.includes('glitch2')) bgKey = 'neon';
+    else if(pick.includes('glitch3')) bgKey = 'neon-mag';
+    else if(pick.includes('glitch4')) bgKey = 'neon-limon';
     hero.dataset.bg = bgKey;
   }
 }
