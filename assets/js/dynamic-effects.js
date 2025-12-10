@@ -10,11 +10,10 @@ const headerColors = {
   'glitch-circuit': '--neon-2',      
   'mountains': '--neon-mag',         
   'default': '--neon-blu'            
-  // fallback to 'default' if dataset.bg is missing
-  const bgType = hero.dataset.bg || 'default';
+}; // fallback to 'default' if dataset.bg is missing
+  const bgType = hero.dataset.bg || ['default'];
   const neonVar = headerColors[bgType] || headerColors['default'];
   setCSSVar(headerTitle, 'color', `var(${neonVar})`);
-}
 
 /* -------------------------------
    GALLERY CARD BORDER COLORS
