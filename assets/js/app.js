@@ -7,9 +7,11 @@ const GALLERY_JSON = '/assets/data/gallery.json';
 const GALLERY_BASE = '/assets/images/raw/'; // full images
 const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  '/assets/images/mountains.png',
-  '/assets/images/circuit-glitch.png'
-]; // only these two randomized between header & hero
+  '/assets/images/hero/mountains.png',
+  '/assets/images/hero/circuit-glitch.png',
+  '/assets/images/hero/glitch1.png',
+  '/assets/images/hero/glitch2.png'
+]; // 4 options for random hero background
 
 /* ---------------------------
    Utility helpers
@@ -27,10 +29,13 @@ function unique(arr){ return [...new Set(arr.flat())]; }
    --------------------------- */
 function setHeroBackground(){
   if(HERO_CHOICES.length === 0) return;
-  const pick = HERO_CHOICES[Math.floor(Math.random()*HERO_CHOICES.length)];
+
+  // pick random index 0-3 for 4 images
+  const pick = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
+
   const heroBg = document.querySelector('.hero-bg');
   const header = document.querySelector('.site-header');
-  const hero = document.getElementById('hero'); // <-- added
+  const hero = document.getElementById('hero');
 
   if(heroBg) heroBg.style.backgroundImage = `url("${pick}")`;
   if(header){
@@ -43,10 +48,11 @@ function setHeroBackground(){
 
   // Update dataset.bg so dynamic-effects.js can read it
   if(hero) {
-    // determine key based on filename
     let bgKey = 'default';
     if(pick.includes('mountains')) bgKey = 'mountains';
     else if(pick.includes('circuit-glitch')) bgKey = 'glitch-circuit';
+    else if(pick.includes('glitch1')) bgKey = 'glitch1';
+    else if(pick.includes('glitch2')) bgKey = 'glitch2';
     hero.dataset.bg = bgKey;
   }
 }
@@ -97,7 +103,6 @@ function renderFilters(data){
   if(clearBtn){
     clearBtn.addEventListener('click', ()=>{
       filters = {category:[], style:[]};
-      // reset button opacities
       Array.from(catWrap.children).forEach(b=>b.style.opacity=1);
       Array.from(styleWrap.children).forEach(b=>b.style.opacity=1);
       renderGrid(window.GALLERY);
@@ -136,12 +141,11 @@ function renderGrid(items){
 
     // Set dataset for dynamic-effects.js
     card.dataset.id = it.id || '';
-    card.dataset.style = (it.styles && it.styles[0]) || ''; // pick first style
-    card.dataset.category = (it.categories && it.categories[0]) || ''; // pick first category
+    card.dataset.style = (it.styles && it.styles[0]) || '';
+    card.dataset.category = (it.categories && it.categories[0]) || '';
     grid.appendChild(card);
   });
 
-  // Apply dynamic effects after grid renders
   if(typeof updateGalleryBorders === 'function') updateGalleryBorders();
 }
 
