@@ -68,14 +68,21 @@ function setHeroBackground(){
 }
 
   // Update dataset.bg so dynamic-effects.js can read it
-  if(hero) {
-    let bgKey = 'default';
-  }  if(pickKey) = (pickObject.key includes('glitch1')) bgKey = 'neon-limon'; {
-        else if(pickObject.key includes('glitch2')) bgKey = 'neon';
-        else if(pickObject.key includes('glitch3')) bgKey = 'neon-mag';
-        else if(pickObject.key includes('glitch4')) bgKey = 'neon-pur';
-  } hero.dataset.bg = bgKey;
+  if (hero && pickKey) {
+  let bgKey = 'default';
   
+  if (pickKey.includes('glitch1')) {
+    bgKey = 'neon-limon';
+  } else if (pickKey.includes('glitch2')) {
+    bgKey = 'neon';
+  } else if (pickKey.includes('glitch3')) {
+    bgKey = 'neon-mag';
+  } else if (pickKey.includes('glitch4')) {
+    bgKey = 'neon-pur';
+  }
+  
+  hero.dataset.bg = bgKey;
+}
 
 /* ---------------------------
    Fetch gallery data
