@@ -91,7 +91,7 @@ async function fetchGallery(){
     }
     return await res.json();
   }catch(err){
-    console.error('Fetch failed:', err);
+    console.error('Fetch failed':, err);
     return [];
   }
 }
