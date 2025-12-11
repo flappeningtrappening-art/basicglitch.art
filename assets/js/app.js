@@ -59,29 +59,24 @@ function setHeroBackground(){
     header.style.opacity = '1';
   }
 
-  // 5. Update dataset.bg with the specific key (using pickKey)
-  if(hero) {
-    // This is the CRITICAL line. It passes the value 'glitch1' (or 'glitch2', etc.)
-    // directly to the HTML attribute data-bg.
-    hero.dataset.bg = pickKey; // <-- ONLY THIS LINE IS NEEDED HERE
+  // 5. Update dataset.bg so dynamic-effects.js can read it
+  if(hero && pickKey) {
+    let bgKey = 'default';
+    
+    // Map the pickKey to the appropriate bgKey for dynamic-effects.js
+    if (pickKey.includes('glitch1')) {
+      bgKey = 'neon-limon';
+    } else if (pickKey.includes('glitch2')) {
+      bgKey = 'neon';
+    } else if (pickKey.includes('glitch3')) {
+      bgKey = 'neon-mag';
+    } else if (pickKey.includes('glitch4') || pickKey.includes('glitch-default')) {
+      // Note: Your HERO_CHOICES has 'glitch-default' for glitch4
+      bgKey = 'neon-pur';
+    }
+    
+    hero.dataset.bg = bgKey;
   }
-}
-
-  // Update dataset.bg so dynamic-effects.js can read it
-  if (pickObject && pickObject.key) {
-  let bgKey = 'default';
-  
-  if (pickKey.includes('glitch1')) {
-    bgKey = 'neon-limon';
-  } else if (pickKey.includes('glitch2')) {
-    bgKey = 'neon';
-  } else if (pickKey.includes('glitch3')) {
-    bgKey = 'neon-mag';
-  } else if (pickKey.includes('glitch4')) {
-    bgKey = 'neon-pur';
-  }
-  
-  hero.dataset.bg = bgKey;
 }
 
 /* ---------------------------
