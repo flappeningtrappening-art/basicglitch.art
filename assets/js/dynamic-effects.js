@@ -14,7 +14,11 @@ const headerColors = {
 }; // fallback to 'default' if dataset.bg is missing
   const bgType = hero.dataset.bg || 'default';
   const neonVar = headerColors[bgType] || headerColors['default'];
-  setCSSVar(headerTitle, 'color', `var(${neonVar})`);
+  function setCSSVar(element, property, value) {
+    if (element && element.style) {
+        element.style.setProperty(property, value);
+    }
+}
 
 /* -------------------------------
    GALLERY CARD BORDER COLORS
