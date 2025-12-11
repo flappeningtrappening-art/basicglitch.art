@@ -22,6 +22,11 @@ function el(tag, props={}, children=[]){
   (children||[]).forEach(c => e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
   return e;
 }
+function setCSSVar(element, property, value) {
+    if (element && element.style) {
+        element.style.setProperty(property, value);
+    }
+}
 function unique(arr){ return [...new Set(arr.flat())]; }
 
 /* ---------------------------
