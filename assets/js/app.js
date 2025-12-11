@@ -33,24 +33,25 @@ function unique(arr){ return [...new Set(arr.flat())]; }
    Hero randomizer
    --------------------------- */
 function setHeroBackground(){
+  // Check if there are choices available
   if(HERO_CHOICES.length === 0) return;
 
-  // 1. Pick a random object from the array
+  // 1. Pick a random object from the array (e.g., { path: '...', key: 'glitch1' })
   const pickObject = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
   
   // 2. Extract the path and the key from the chosen object
   const pickPath = pickObject.path;
-  const pickKey = pickObject.key; // This will be 'glitch1', 'glitch2', etc.
+  const pickKey = pickObject.key; // This holds the exact key (e.g., 'glitch1')
 
   // 3. Select HTML elements
   const heroBg = document.querySelector('.hero-bg');
   const header = document.querySelector('.site-header');
-  const hero = document.getElementById('hero');
+  const hero = document.getElementById('hero'); // Now finds the element with id="hero"
 
   // 4. Apply the image path (using pickPath)
   if(heroBg) heroBg.style.backgroundImage = `url("${pickPath}")`;
   if(header){
-    // Update header styling - use the pickPath here too
+    // Update header styling - using the path from the object
     header.style.backgroundImage = `linear-gradient(180deg, rgba(5,5,5,0.6), rgba(5,5,5,0.35)), url("${pickPath}")`;
     header.style.backgroundSize = 'cover';
     header.style.backgroundPosition = 'center';
@@ -60,20 +61,21 @@ function setHeroBackground(){
 
   // 5. Update dataset.bg with the specific key (using pickKey)
   if(hero) {
-    // This is the CRITICAL line that passes the color choice to dynamic-effects.js
-    hero.dataset.bg = pickKey; 
+    // This is the CRITICAL line. It passes the value 'glitch1' (or 'glitch2', etc.)
+    // directly to the HTML attribute data-bg.
+    hero.dataset.bg = pickKey; // <-- ONLY THIS LINE IS NEEDED HERE
   }
 }
 
   // Update dataset.bg so dynamic-effects.js can read it
   if(hero) {
     let bgKey = 'default';
-    if(pick.includes('glitch1')) bgKey = 'neon-limon';
-    else if(pick.includes('glitch2')) bgKey = 'neon';
-    else if(pick.includes('glitch3')) bgKey = 'neon-mag';
-    else if(pick.includes('glitch4')) bgKey = 'neon-pur';
-    hero.dataset.bg = bgKey;
-  }
+  }  if(pickKey = pickObject.key includes('glitch1')) bgKey = 'neon-limon';
+        else if(pickObject.key includes('glitch2')) bgKey = 'neon';
+        else if(pickObject.key includes('glitch3')) bgKey = 'neon-mag';
+        else if(pickObject.key includes('glitch4')) bgKey = 'neon-pur';
+     hero.dataset.bg = bgKey;
+  
 
 /* ---------------------------
    Fetch gallery data
