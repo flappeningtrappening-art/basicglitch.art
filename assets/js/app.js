@@ -68,7 +68,7 @@ function setHeroBackground(){
 }
 
   // Update dataset.bg so dynamic-effects.js can read it
-  if (pickObject.path && pickObject.key) {
+  if (pickObject && pickObject.key) {
   let bgKey = 'default';
   
   if (pickKey.includes('glitch1')) {
