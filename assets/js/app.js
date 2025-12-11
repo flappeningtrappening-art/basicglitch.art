@@ -69,7 +69,6 @@ function setHeroBackground(){
     else if(pick.includes('glitch4')) bgKey = 'neon-pur';
     hero.dataset.bg = bgKey;
   }
-}
 
 /* ---------------------------
    Fetch gallery data
