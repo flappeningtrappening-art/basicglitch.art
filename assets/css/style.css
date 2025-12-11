@@ -58,7 +58,7 @@ html,body{
 /* HERO */
 .hero{min-height:70vh;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:white}
 .hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:brightness(.95) saturate(1.02);z-index:0}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.25);z-index:1} /* further opacity controlled via JS if needed */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.05);z-index:1} /* further opacity controlled via JS if needed */
 .hero-inner{position:relative;z-index:2;text-align:center;padding:20px;color: var(--fg);}
 
 .title {
