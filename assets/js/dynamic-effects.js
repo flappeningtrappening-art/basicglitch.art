@@ -12,35 +12,39 @@ const headerColors = {
   'glitch2': '--neon',
   'glitch3': '--neon-mag',
   'glitch-default': '--neon-pur',
-  
-  // FIX 1: You must define the 'default' key for the fallback logic to work
-  'default': '--neon-2' // Use the color variable you want for the fallback here
+  'default': '--neon-2'
 };
 
+const styleColors = {
+  // Define your style mappings here
+  'Neon': '--neon',
+  'Character': '--neon-2',
+  'Landscape': '--neon-mag'
+  // Add more as needed
+};
+
+const categoryBorderColors = {
+  // Define your category mappings here
+  'Available for Purchase': 'var(--neon-limon)',
+  'Broboticus': 'var(--neon-pur)'
+  // Add more as needed
+};
 
 /* -------------------------------
-   MAIN EFFECT LOGIC
+   HEADER NEON UPDATE FUNCTION
 -------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Define the elements needed to run the effect
-    //    (This fixes the "hero is not defined" error)
-    const hero = document.getElementById('hero');
-    const headerTitle = document.querySelector('.title'); // Check this selector in index.html
+function updateHeaderNeon() {
+  const hero = document.getElementById('hero');
+  const headerTitle = document.querySelector('.title'); // Adjust selector if needed
 
-    // Safety check: ensure required elements exist AND setCSSVar is available (from app.js)
-    if (hero && headerTitle && typeof setCSSVar === 'function') {
-        
-        // 2. Read the color key set by app.js (e.g., 'glitch1')
-        const bgType = hero.dataset.bg || 'default';
-        
-        // 3. Look up the CSS variable (e.g., '--neon-limon') using the key
-        const neonVar = headerColors[bgType] || headerColors['default'];
+  if (hero && headerTitle && typeof setCSSVar === 'function') {
+    const bgType = hero.dataset.bg || 'default';
+    const neonVar = headerColors[bgType] || headerColors['default'];
+    
+    setCSSVar(headerTitle, 'color', `var(${neonVar})`);
+  }
+}
 
-        // 4. Apply the color variable to the title element
-        //    (setCSSVar must be defined in app.js)
-        setCSSVar(headerTitle, 'color', `var(${neonVar})`);
-    }
-});
 /* -------------------------------
    GALLERY CARD BORDER COLORS
 -------------------------------- */
