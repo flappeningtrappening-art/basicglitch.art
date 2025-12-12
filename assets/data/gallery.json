@@ -208,4 +208,14 @@
     "description": "DaVinci's idea of the perfect robot",
     "price": 100
   }
+  {
+    "id": "brobot-009",
+    "title": "Brobotosaurus Wrex",
+    "file": "assets/images/raw/brobotosaurus_wrex.png",
+    "categories": ["Available for Purchase", "Broboticus"],
+    "styles": ["Surrealism", "Character"],
+    "date": "2025-10-02",
+    "description": "Brobotosaurs never existed",
+    "price": 160
+  }
 ]
