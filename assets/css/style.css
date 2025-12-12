@@ -135,6 +135,26 @@ html,body{
   filter: brightness(1.05);
 }
 
+/* Gallery card layout fix */
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gallery-card .muted {
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+
+/* Price styling */
+.price {
+  font-weight: 600;
+  color: var(--neon-2);
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
 .gallery-card::before,
 .gallery-card::after {
    pointer-events: none;
