@@ -52,6 +52,21 @@
   <div class="container">
     <h2>Gallery</h2>
     <p>A curated selection of glitch artwork.</p>
+    <div class="filters">
+      <div class="filter-group">
+        <div class="filter-column">
+          <label>Category</label>
+          <div id="category-filters"></div>
+        </div>
+        <div class="filter-column">
+          <label>Style</label>
+          <div id="style-filters"></div>
+        </div>
+        <div class="filter-actions">
+          <button id="clear-filters" class="btn-small">Clear</button>
+        </div>
+      </div>
+    </div>
     <div id="gallery-grid" class="gallery-grid"></div>
   </div>
 </section>
@@ -109,6 +124,14 @@
     <p>Email: justin@basicglitch.art</p>
   </div>
 </section>
+
+  <!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden" aria-hidden="true">
+  <div class="lb-content" id="lb-content"></div>
+  <button id="lb-close" class="lb-btn">×</button>
+  <button id="lb-prev" class="lb-nav" style="left: 20px;">‹</button>
+  <button id="lb-next" class="lb-nav" style="right: 20px;">›</button>
+</div>
 
 </body>
 </html>
