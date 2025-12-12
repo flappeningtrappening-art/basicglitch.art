@@ -159,12 +159,49 @@ function renderGrid(items){
   }
 
   items.forEach(it=>{
-    const card = el('div',{className:'card gallery-card'});
-
+    // Get the first category for CSS class and pill
+    const firstCategory = (it.categories && it.categories[0]) || 'Glitch';
+    const categoryClass = 'category-' + firstCategory.replace(/\s+/g, '-');
+    
+    // CRITICAL: Construct thumbnail path from id
+    // thumbnails are: /assets/images/gallery-thumbs/[id].jpg
+    const thumbSrc = THUMB_BASE + it.id + '.jpg';
+    
+    // Full image is already in it.file
+    const largeSrc = it.file.startsWith('/') ? it.file : '/' + it.file;
+    
+    // Create card with content
+    const card = el('div',{
+      className: `card gallery-card ${categoryClass}`,
+      onclick: () => openLightbox(it.id)
+    }, [
+      // Image - using thumbnail
+      el('img', {
+        src: thumbSrc,
+        alt: it.title || 'Glitch artwork',
+        loading: 'lazy',
+        className: 'gallery-image',
+        'data-large': largeSrc // Store full-size image for lightbox
+      }),
+      
+      // Title
+      el('h3', {}, [it.title || 'Untitled']),
+      
+      // Description
+      el('p', {className: 'muted'}, [it.description || 'A glitch artwork piece']),
+      
+      // Price if available
+      ...(it.price ? [el('p', {className: 'price'}, [`$${it.price}`])] : []),
+      
+      // Category pill
+      el('div', {className: 'category-pill'}, [firstCategory])
+    ]);
+    
     // Set dataset for dynamic-effects.js
     card.dataset.id = it.id || '';
     card.dataset.style = (it.styles && it.styles[0]) || '';
-    card.dataset.category = (it.categories && it.categories[0]) || '';
+    card.dataset.category = firstCategory;
+    
     grid.appendChild(card);
   });
 
@@ -178,14 +215,29 @@ let currentIndex = 0;
 function openLightbox(id){
   const item = window.GALLERY.find(i => i.id === id);
   if(!item) return;
+  
   const lb = document.getElementById('lightbox');
   const content = document.getElementById('lb-content');
   if(!lb || !content) return;
+  
   content.innerHTML = '';
   const img = document.createElement('img');
-  img.src = item.file;
+  
+  // Use the full image path from JSON
+  img.src = item.file.startsWith('/') ? item.file : '/' + item.file;
   img.alt = item.title || '';
+  
+  // Add title and description to lightbox
+  const title = document.createElement('h3');
+  title.textContent = item.title || '';
+  
+  const desc = document.createElement('p');
+  desc.textContent = item.description || '';
+  
+  content.appendChild(title);
   content.appendChild(img);
+  content.appendChild(desc);
+  
   lb.classList.remove('hidden');
   lb.setAttribute('aria-hidden','false');
   currentIndex = window.GALLERY.indexOf(item);
