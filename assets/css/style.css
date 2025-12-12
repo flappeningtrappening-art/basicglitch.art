@@ -1,3 +1,7 @@
+/* TEMPORARY: Add to find what's overflowing */
+* {
+  outline: 1px solid red !important;
+}
 /* ========================================================
    Basic.Glitch — style.css
    Paste entire file, replace existing style.css
