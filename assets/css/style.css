@@ -112,6 +112,20 @@ img{
 .filter-column{min-width:180px}
 .filter-actions{display:flex;align-items:center;gap:8px}
 
+/* GALLERY SECTION TITLE FIX */
+#gallery h2,
+#gallery p {
+  color: var(--fg) !important;
+}
+
+/* GALLERY IMAGE TITLES */
+.gallery-card h3 {
+  color: var(--fg) !important;
+  margin: 12px 0 6px;
+  font-size: 1.1rem;
+}
+
+
 /* Gallery grid */
 .gallery-grid{display:grid;gap:18px}
 @media(min-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
@@ -228,6 +242,104 @@ img{
 .grid-3{display:grid;gap:14px}
 @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 .tier .price{font-weight:700;color:var(--fg)}
+
+/* COMMISSIONS SECTION */
+#commissions {
+  color: var(--fg);
+}
+
+.commission-tier {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.commission-tier:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon);
+}
+
+.commission-tier h3 {
+  color: var(--neon-2);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.commission-tier p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.commission-tier .icon {
+  width: 48px;
+  height: 48px;
+  margin-top: 15px;
+  filter: brightness(1.1);
+}
+
+/* ABOUT SECTION */
+#about {
+  color: var(--fg);
+}
+
+.about-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 25px 0;
+}
+
+.about-card .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--neon);
+}
+
+.about-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.about-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.about-icons .icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.about-icons .icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* CONTACT SECTION */
+#contact {
+  color: var(--fg);
+  text-align: center;
+}
+
+#contact p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
 
 /* About */
 .about-card{display:flex;gap:14px;align-items:center}
