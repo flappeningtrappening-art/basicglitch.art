@@ -23,6 +23,27 @@
   --max-width:1100px;
 }
 
+/* BASE TEXT COLORS - FIX INHERITANCE */
+body {
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* Reset all headings to theme color */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fg);
+}
+
+/* Reset paragraphs */
+p {
+  color: var(--muted);
+}
+
+/* Links */
+a {
+  color: var(--neon-2);
+}
+
 /* Basic reset */
 *{box-sizing:border-box}
 html,body{
