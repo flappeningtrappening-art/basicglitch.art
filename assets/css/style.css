@@ -313,50 +313,32 @@ body, html {
  overflow-x: hidden;
 }
 
-/* Fix navigation overflow on mobile */
+/* Alternative: Wrap navigation links */
 @media (max-width: 768px) {
-  .site-header {
-    overflow-x: auto; /* Allows horizontal scroll if needed, but better to fix layout */
-    -webkit-overflow-scrolling: touch;
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
   }
   
-  .header-inner {
-    min-width: 100%;
-    flex-wrap: nowrap; /* Changed from wrap to nowrap */
-    padding: 10px 15px;
-    overflow: visible;
+  .brand {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
   }
   
   .nav {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 5px; /* Space for scroll if needed */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  .nav::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
   }
   
   .nav-link {
-    flex-shrink: 0; /* Prevents links from shrinking */
-    white-space: nowrap;
-    padding: 8px 12px;
+    padding: 6px 10px;
     font-size: 0.9rem;
-  }
-  
-  /* Optional: Add fade effect to indicate more content */
-  .nav::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    background: linear-gradient(to right, transparent, var(--bg));
-    pointer-events: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
   }
 }
