@@ -21,22 +21,24 @@
   --glass:rgba(255,255,255,0.03);
   --card-radius:12px;
   --max-width:1100px;
+  --stroke-width:2px;
+  --stroke-color:0a7aff; 
 }
 
 /* BASE TEXT COLORS - FIX INHERITANCE */
 body {
-  color: var(--fg);
+  color: var(--neon);
   background: var(--bg);
 }
 
 /* Reset all headings to theme color */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--fg);
+  color: var(--neon);
 }
 
 /* Reset paragraphs */
 p {
-  color: var(--muted);
+  color: var(--neon-blu);
 }
 
 /* Links */
@@ -73,7 +75,7 @@ img{
 /* Header */
 .site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(5,5,5,0.7), rgba(5,5,5,0.5));border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(8px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
-.brand{font-family:"Orbitron",sans-serif;color:var(--neon-2);font-weight:700;text-decoration:none}
+.brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
 .nav{display:flex;gap:10px;align-items:center}
 .nav-link{display:flex;align-items:center;gap:8px;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600}
 .nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
@@ -229,11 +231,11 @@ img{
 .instagram-row{display:flex;gap:16px;flex-wrap:wrap}
 .instagram-card{flex:1;min-width:300px}
 .instagram-side{width:320px;min-width:260px;display:flex;align-items:center;justify-content:center}
-.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid #0b0b0b; /* base color replaced below with neon accent */}
+.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid var(--neon);
 .instagram-frame blockquote, .instagram-frame iframe{border-radius:10px}
 .instagram-card .instagram-frame{ /* gunmetal background + neon edge */
   background: #0b0b0b;
-  border: 2px solid rgba(18,18,20,1);
+  border: 2px solid var(--neon);
   box-shadow: 0 0 16px rgba(0,255,247,0.06), inset 0 0 10px rgba(0,0,0,0.4);
   padding: 8px;
   position: relative;
@@ -266,12 +268,12 @@ img{
 
 /* COMMISSIONS SECTION */
 #commissions {
-  color: var(--fg);
+  color: var(--neon);
 }
 
 .commission-tier {
   background: var(--panel);
-  border: 1px solid var(--border);
+  border: 1px solid var(--neon);
   border-radius: var(--card-radius);
   padding: 20px;
   text-align: center;
@@ -280,7 +282,7 @@ img{
 
 .commission-tier:hover {
   transform: translateY(-4px);
-  border-color: var(--neon);
+  border-color: var(--neon-blu);
 }
 
 .commission-tier h3 {
@@ -290,7 +292,7 @@ img{
 }
 
 .commission-tier p {
-  color: var(--muted);
+  color: var(--neon-pur);
   line-height: 1.5;
 }
 
