@@ -129,16 +129,6 @@
     "price": 80
   },
   {
-    "id": "shroom-003",
-    "title": "Glowspore",
-    "file": "assets/images/raw/glowspore.png",
-    "categories": ["Available for Purchase"],
-    "styles": ["Neon", "Psychedelia", "Landscape"],
-    "date": "2025-07-17",
-    "description": "Minimalist glowing mushroom scene",
-    "price": 40
-  },
-  {
     "id": "brobot-005",
     "title": "Karateboticus",
     "file": "assets/images/raw/karateboticus1.png",
