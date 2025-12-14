@@ -266,41 +266,155 @@ img{
 @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 .tier .price{font-weight:700;color:var(--fg)}
 
-/* COMMISSIONS SECTION */
-#commissions {
-  color: var(--neon);
+/* 3D CARD STYLES */
+.commissions-3d {
+  padding: 4rem 2rem;
+  background: #0a0a0a;
+  min-height: 100vh;
+  perspective: 1000px;
 }
 
-.commission-tier {
-  background: var(--panel);
-  border: 1px solid var(--neon);
-  border-radius: var(--card-radius);
-  padding: 20px;
+.glitch-title {
+  font-family: 'Press Start 2P', monospace;
   text-align: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  font-size: 2.5rem;
+  color: #0f0;
+  margin-bottom: 3rem;
+  position: relative;
+  animation: glitch 2s infinite;
 }
 
-.commission-tier:hover {
-  transform: translateY(-4px);
-  border-color: var(--neon-blu);
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
 
-.commission-tier h3 {
-  color: var(--neon-2);
-  margin-bottom: 10px;
-  font-size: 1.3rem;
+.cards-3d-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-.commission-tier p {
-  color: var(--neon-pur);
-  line-height: 1.5;
+.card-3d {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
 }
 
-.commission-tier .icon {
-  width: 48px;
-  height: 48px;
-  margin-top: 15px;
-  filter: brightness(1.1);
+.card-3d:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #00ffff;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  border: 2px solid #ff00ff;
+  transform: rotateY(180deg);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.4),
+    inset 0 0 20px rgba(255, 0, 255, 0.1);
+}
+
+.card-label {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ffff;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.card-3d h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+  margin: 1rem 0;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+}
+
+.price {
+  font-family: 'Audiowide', cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+  margin: 1rem 0;
+}
+
+.card-cta {
+  font-family: 'Exo 2', sans-serif;
+  color: #888;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.card-back h4 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #ff00ff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.card-back li {
+  color: #ccc;
+  padding: 0.5rem 0;
+  font-family: 'Exo 2', sans-serif;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.card-btn {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 0.8rem 2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.card-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 /* ABOUT SECTION */
