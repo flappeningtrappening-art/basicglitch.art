@@ -417,11 +417,10 @@ img {
 
 /* CARDS CONTAINER */
 .cyber-cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1600px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -436,7 +435,8 @@ img {
 }
 
 .card-recommended {
-  transform: translateY(-20px);
+  transform: scale(1.05) translateY(-20px);
+  z-index: 5;
 }
 
 .recommended-badge {
@@ -455,6 +455,7 @@ img {
   z-index: 10;
   text-transform: uppercase;
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  pointer-events: none;
 }
 
 /* 3D WRAPPER - THIS IS KEY */
@@ -666,22 +667,28 @@ img {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1100px) {
+@media (max-width: 1400px) {
   .cyber-cards-container {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   
   .card-recommended {
-    transform: none;
+    transform: scale(1.05) translateY(0);
     order: -1;
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
-  .cyber-card {
-    width: 300px;
-    height: 420px;
+  .cyber-cards-container {
+    grid-template-columns: 1fr;
   }
+  
+  .card-recommended {
+    grid-column: span 1;
+  }
+}
   
   .cyber-title {
     font-size: 2.5rem;
