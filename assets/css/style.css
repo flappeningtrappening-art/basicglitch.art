@@ -231,7 +231,7 @@ img{
 .instagram-row{display:flex;gap:16px;flex-wrap:wrap}
 .instagram-card{flex:1;min-width:300px}
 .instagram-side{width:320px;min-width:260px;display:flex;align-items:center;justify-content:center}
-.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid var(--neon);
+.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid var(--neon)}
 .instagram-frame blockquote, .instagram-frame iframe{border-radius:10px}
 .instagram-card .instagram-frame{ /* gunmetal background + neon edge */
   background: #0b0b0b;
