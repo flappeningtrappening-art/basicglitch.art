@@ -2,6 +2,15 @@
    Basic.Glitch — style.css
    ======================================================== */
 
+/* TEMPORARY - See what's white */
+* {
+  outline: 1px solid red !important;
+}
+
+.hero, .hero-overlay, .site-header {
+  outline: 5px solid blue !important;
+}
+
 /* Variables */
 :root {
   --bg: #050505;
