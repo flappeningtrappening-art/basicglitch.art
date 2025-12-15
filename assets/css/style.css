@@ -807,4 +807,18 @@ body, html {
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.03);
   }
+
+   /* TEMPORARY TEST - Add at the end of your CSS */
+  .cyber-card {
+    outline: 2px solid red; /* Will show card boundaries */
+  }
+
+  .card-3d-wrapper {
+    outline: 2px solid lime; /* Will show 3D wrapper boundaries */
+  }
+
+  /* Force a flip to test - remove after testing */
+  .cyber-card:nth-child(1) .card-3d-wrapper {
+    transform: rotateY(180deg) !important;
+  }
 }
