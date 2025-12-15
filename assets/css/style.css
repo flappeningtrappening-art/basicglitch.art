@@ -25,27 +25,6 @@
   --stroke-color:0a7aff; 
 }
 
-/* BASE TEXT COLORS - FIX INHERITANCE */
-body {
-  color: var(--neon);
-  background: var(--bg);
-}
-
-/* Reset all headings to theme color */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--neon);
-}
-
-/* Reset paragraphs */
-p {
-  color: var(--neon-blu);
-}
-
-/* Links */
-a {
-  color: var(--neon-2);
-}
-
 /* Basic reset */
 *{box-sizing:border-box}
 html,body{
@@ -54,23 +33,9 @@ html,body{
   max-width:100%;
   height:100%;
   margin:0;
-  background:var(--bg);
   font-family:"Exo 2",Inter,Arial,sans-serif;
   -webkit-font-smoothing:antialiased
 }
-
-.container{
-  width:100%;
-  max-width: var(--max-width); 
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-} 
 
 /* =========================================== */
 /* GLOBAL GRID BACKGROUND - FOR ENTIRE SITE    */
@@ -78,7 +43,6 @@ img{
 
 body {
   position: relative;
-  background: #0a0a0a;
   color: #fff;
   overflow-x: hidden;
 }
@@ -126,7 +90,39 @@ body::after {
   100% { 
     background-position: 60px 60px, 60px 60px;
   }
+
+/* BASE TEXT COLORS - FIX INHERITANCE */
+body {
+  color: var(--neon);
 }
+
+/* Reset all headings to theme color */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neon);
+}
+
+/* Reset paragraphs */
+p {
+  color: var(--neon-blu);
+}
+
+/* Links */
+a {
+  color: var(--neon-2);
+}  
+
+.container{
+  width:100%;
+  max-width: var(--max-width); 
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+} 
 
 /* Header */
 .site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(5,5,5,0.7), rgba(5,5,5,0.5));border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(8px)}
