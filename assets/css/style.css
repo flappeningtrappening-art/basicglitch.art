@@ -127,7 +127,7 @@ img {
 }
 
 /* Header */
-.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(5,5,5,0.7), rgba(5,5,5,0.5));border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(8px)}
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.6));border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
 .brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
 .nav{display:flex;gap:10px;align-items:center}
@@ -143,7 +143,7 @@ img {
 /* HERO */
 .hero{min-height:70vh;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:white}
 .hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:brightness(.95) saturate(1.02);z-index:0}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.05);z-index:1} /* further opacity controlled via JS if needed */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1} /* further opacity controlled via JS if needed */
 .hero-inner{position:relative;z-index:2;text-align:center;padding:20px;color: var(--fg);}
 
 .title {
