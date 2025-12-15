@@ -43,7 +43,7 @@ html,body{
 
 body {
   position: relative;
-  color: #fff;
+  color: var(--neon);
   overflow-x: hidden;
 }
 
@@ -93,10 +93,6 @@ body::after {
 }   
 
 /* BASE TEXT COLORS - FIX INHERITANCE */
-body {
-  color: var(--neon);
-}
-
 /* Reset all headings to theme color */
 h1, h2, h3, h4, h5, h6 {
   color: var(--neon);
