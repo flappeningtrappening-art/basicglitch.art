@@ -90,6 +90,7 @@ body::after {
   100% { 
     background-position: 60px 60px, 60px 60px;
   }
+}   
 
 /* BASE TEXT COLORS - FIX INHERITANCE */
 body {
