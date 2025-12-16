@@ -30,6 +30,34 @@ function setCSSVar(element, property, value) {
 function unique(arr){ return [...new Set(arr.flat())]; }
 
 /* ---------------------------
+   3D Card Compatibility Helper
+   --------------------------- */
+function initialize3DCardCompatibility() {
+  // Ensure lightbox works with 3D transformed elements
+  document.addEventListener('click', function(e) {
+    const card = e.target.closest('.neon-3d-card');
+    if (card && e.target.tagName === 'IMG') {
+      // If clicking an image inside a 3D card, temporarily flatten it
+      // for better lightbox transition
+      card.style.transform = 'translateZ(0)';
+      card.style.transition = 'transform 0.2s ease';
+      
+      // Restore after a short delay
+      setTimeout(() => {
+        card.style.transform = '';
+        card.style.transition = '';
+      }, 50);
+    }
+  });
+  
+  // Make sure lightbox z-index is above everything
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.style.zIndex = '10000';
+  }
+}
+
+/* ---------------------------
    Hero randomizer
    --------------------------- */
 function setHeroBackground(){
@@ -220,6 +248,13 @@ function openLightbox(id){
   const content = document.getElementById('lb-content');
   if(!lb || !content) return;
   
+  // TEMPORARILY REMOVE 3D TRANSFORM from clicked card for better lightbox experience
+  const clickedCard = document.querySelector(`.gallery-card[data-id="${id}"]`);
+  if (clickedCard) {
+    clickedCard.style.transform = 'none';
+    clickedCard.style.transition = 'none';
+  }
+  
   content.innerHTML = '';
   const img = document.createElement('img');
   
@@ -243,8 +278,17 @@ function openLightbox(id){
   currentIndex = window.GALLERY.indexOf(item);
 }
 function closeLightbox(){
-  const lb=document.getElementById('lightbox');
-  if(lb){ lb.classList.add('hidden'); lb.setAttribute('aria-hidden','true'); }
+  const lb = document.getElementById('lightbox');
+  if(lb){ 
+    lb.classList.add('hidden'); 
+    lb.setAttribute('aria-hidden','true'); 
+    
+    // RESTORE 3D TRANSFORM when lightbox closes
+    document.querySelectorAll('.gallery-card').forEach(card => {
+      card.style.transform = '';
+      card.style.transition = '';
+    });
+  }
 }
 function prevItem(){ if(currentIndex > 0) openLightbox(window.GALLERY[currentIndex-1].id); }
 function nextItem(){ if(currentIndex < window.GALLERY.length-1) openLightbox(window.GALLERY[currentIndex+1].id); }
@@ -300,6 +344,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     window.GALLERY = data || [];
     renderFilters(window.GALLERY);
     renderGrid(window.GALLERY);
+    initialize3DCardCompatibility(); // ADDED: Initialize 3D card compatibility
   }catch(err){
     console.error(err);
     const grid = document.getElementById('gallery-grid');
