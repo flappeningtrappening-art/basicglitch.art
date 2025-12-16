@@ -83,8 +83,8 @@ body {
       90deg,
       transparent,
       transparent 59px,
-      var(--neon-mag) 59px,
-      var(--neon) 60px,
+      var(--neon) 59px,
+      var(--neon-mag) 60px,
       transparent 60px,
       transparent 120px
     ),
@@ -103,7 +103,7 @@ body {
   background-position: center center;
   z-index: 0;
   animation: gridMovePrimary 30s linear infinite;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 /* SECONDARY GRID (::after) - Purple → Lime Green - moves up-left */
@@ -124,8 +124,8 @@ body {
       0deg,
       transparent,
       transparent 29px,
-      var(--neon-pur) 29px,
-      var(--neon-limon) 30px,
+      var(--neon-limon) 29px,
+      var(--neon-pur) 30px,
       transparent 30px,
       transparent 60px
     );
@@ -134,7 +134,7 @@ body {
   background-position: center center;
   z-index: 0;
   animation: gridMoveSecondary 25s linear infinite;
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 /* =========================================== */
