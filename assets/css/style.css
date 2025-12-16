@@ -59,7 +59,7 @@ body {
 .neon-grid-section {
   position: relative;
   background: #000 !important; /* Solid black background */
-  min-height: 50vh; /* Reduced from 100vh for flexibility */
+  min-height: 100vh; /* Reduced from 100vh for flexibility */
   overflow: hidden;
 }
 
