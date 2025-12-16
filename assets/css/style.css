@@ -71,37 +71,69 @@ body {
   width: 200%;
   height: 200%;
   
-  /* CREATE 1PX GRID LINES WITH GRADIENT COLORS */
+  /* PRIMARY GRID: Magenta → Cyan (top-left to bottom-right) */
   background-image: 
-    /* Vertical lines pattern: 1px line every 60px */
+    /* Vertical lines - PRIMARY */
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 59px,
-      /* Line color gradients from magenta to cyan */
       var(--neon-mag) 59px,
       var(--neon) 60px,
       transparent 60px,
       transparent 120px
     ),
-    /* Horizontal lines pattern: 1px line every 60px */
+    /* Horizontal lines - PRIMARY */
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 59px,
-      /* Line color gradients from magenta to cyan */
       var(--neon-mag) 59px,
       var(--neon) 60px,
       transparent 60px,
       transparent 120px
+    ),
+    
+    /* SECONDARY GRID: Purple → Lime Green (top-right to bottom-left) */
+    /* Vertical lines - SECONDARY (offset by 30px) */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 29px,
+      var(--neon-pur) 29px,
+      var(--neon-limon) 30px,
+      transparent 30px,
+      transparent 60px
+    ),
+    /* Horizontal lines - SECONDARY (offset by 30px) */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 29px,
+      var(--neon-pur) 29px,
+      var(--neon-limon) 30px,
+      transparent 30px,
+      transparent 60px
     );
   
-  background-size: 120px 120px; /* Double size for the pattern */
-  background-position: center center;
+  background-size: 
+    120px 120px, /* Primary grid */
+    60px 60px,   /* Secondary grid (half size) */
+    120px 120px, /* Primary grid */
+    60px 60px;   /* Secondary grid (half size) */
+  
+  background-position: 
+    center center,
+    center center,
+    center center,
+    center center;
+  
   z-index: 0;
-  animation: gridMove 30s linear infinite;
+  animation: 
+    gridMove 30s linear infinite,        /* Primary grid moves normally */
+    gridMoveReverse 25s linear infinite; /* Secondary grid moves opposite */
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.25; /* Lower opacity since we have two grids */
   mix-blend-mode: screen;
 }
 
