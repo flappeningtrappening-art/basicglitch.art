@@ -295,7 +295,7 @@ img {
 #gallery p {
   color: var(--fg) !important;
   position: relative; /* Ensure text appears above grid */
-  z-index: 1;
+  z-index: 4;
 }
 
 /* Gallery grid */
@@ -328,7 +328,7 @@ img {
   opacity: 1 !important;
   max-height: none !important;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .gallery-card:hover img {
@@ -341,7 +341,7 @@ img {
   margin: 12px 0 6px;
   font-size: 1.1rem;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .gallery-card .muted {
@@ -350,7 +350,7 @@ img {
   color: var(--muted);
   font-size: 0.95rem;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* Price styling */
@@ -360,7 +360,7 @@ img {
   margin: 8px 0;
   font-size: 0.95rem;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* =========================================== */
