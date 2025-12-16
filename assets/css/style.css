@@ -63,15 +63,20 @@ body {
   overflow: hidden;
 }
 
-.neon-grid-section::before {
+.neon-grid-section::before,
+.neon-grid-section::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 200%;
   height: 200%;
-  
-  /* PRIMARY GRID: Magenta → Cyan (top-left to bottom-right) */
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* PRIMARY GRID (::before) - Magenta → Cyan - moves down-right */
+.neon-grid-section::before {
   background-image: 
     /* Vertical lines - PRIMARY */
     repeating-linear-gradient(
@@ -92,9 +97,18 @@ body {
       var(--neon) 60px,
       transparent 60px,
       transparent 120px
-    ),
-    
-    /* SECONDARY GRID: Purple → Lime Green (top-right to bottom-left) */
+    );
+  
+  background-size: 120px 120px;
+  background-position: center center;
+  z-index: 0;
+  animation: gridMovePrimary 30s linear infinite;
+  opacity: 0.2;
+}
+
+/* SECONDARY GRID (::after) - Purple → Lime Green - moves up-left */
+.neon-grid-section::after {
+  background-image: 
     /* Vertical lines - SECONDARY (offset by 30px) */
     repeating-linear-gradient(
       90deg,
@@ -116,25 +130,11 @@ body {
       transparent 60px
     );
   
-  background-size: 
-    120px 120px, /* Primary grid */
-    60px 60px,   /* Secondary grid (half size) */
-    120px 120px, /* Primary grid */
-    60px 60px;   /* Secondary grid (half size) */
-  
-  background-position: 
-    center center,
-    center center,
-    center center,
-    center center;
-  
+  background-size: 60px 60px;
+  background-position: center center;
   z-index: 0;
-  animation: 
-    gridMove 30s linear infinite,        /* Primary grid moves normally */
-    gridMoveReverse 25s linear infinite; /* Secondary grid moves opposite */
-  pointer-events: none;
-  opacity: 0.25; /* Lower opacity since we have two grids */
-  mix-blend-mode: screen;
+  animation: gridMoveSecondary 25s linear infinite;
+  opacity: 0.15;
 }
 
 /* =========================================== */
@@ -426,50 +426,22 @@ img {
 /* COMMISSIONS SECTION - Now uses neon grid    */
 /* =========================================== */
 
-.cyber-commissions {
-  position: relative;
-  background: #000 !important; /* Solid black background */
-  padding: 5rem 2rem;
-  min-height: 100vh;
-  overflow: hidden;
+@keyframes gridMovePrimary {
+  0% { 
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% { 
+    background-position: 120px 120px, 120px 120px;
+  }
 }
 
-.cyber-commissions::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  
-  /* SAME THIN 1PX GRID AS OTHER SECTIONS */
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 59px,
-      var(--neon-mag) 59px,
-      var(--neon) 60px,
-      transparent 60px,
-      transparent 120px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 59px,
-      var(--neon-mag) 59px,
-      var(--neon) 60px,
-      transparent 60px,
-      transparent 120px
-    );
-  
-  background-size: 120px 120px;
-  background-position: center center;
-  z-index: 0;
-  animation: gridMove 30s linear infinite;
-  pointer-events: none;
-  opacity: 0.3;
-  mix-blend-mode: screen;
+@keyframes gridMoveSecondary {
+  0% { 
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% { 
+    background-position: -60px -60px, -60px -60px;
+  }
 }
 
 /* Ensure content sits above grid */
@@ -890,21 +862,21 @@ img {
 /* ANIMATIONS & GRID MOVEMENT                 */
 /* =========================================== */
 
-@keyframes gridMove {
+@keyframes gridMovePrimary {
   0% { 
     background-position: 0px 0px, 0px 0px;
   }
   100% { 
-    background-position: 60px 60px, 60px 60px;
+    background-position: 120px 120px, 120px 120px;
   }
 }
 
-@keyframes gridMoveReverse {
+@keyframes gridMoveSecondary {
   0% { 
-    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-position: 0px 0px, 0px 0px;
   }
   100% { 
-    background-position: -60px -60px, -60px -60px, -60px -60px, -60px -60px;
+    background-position: -60px -60px, -60px -60px;
   }
 }
 
