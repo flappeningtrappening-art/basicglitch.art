@@ -776,73 +776,13 @@ img {
 /* Footer */
 .site-footer{padding:20px 0;color:var(--muted);text-align:center;border-top:1px solid var(--border)}
 
-/* Responsive adjustments */
-@media(max-width:768px){
-  .header-inner{gap:10px}
-  .section-head{flex-direction:column;align-items:stretch}
-  .instagram-row{flex-direction:column}
-  .instagram-side{width:100%}
-}
+/* =========================================== */
+/* RESPONSIVE ADJUSTMENTS                     */
+/* =========================================== */
 
-/* small utilities */
-.row{display:flex;gap:8px;align-items:center}
-.center{text-align:center}
-
-/* ✅ GLOBAL CLICK FIX — removes invisible UI blockers */
-.hero::before,
-.hero::after,
-.site-header::before,
-.site-header::after,
-.section::before,
-.section::after,
-.card::before,
-.card::after {
-  pointer-events: none !important;
-}
-
-/* ✅ Make absolutely sure ALL buttons are clickable */
-button,
-a,
-.filter-group button,
-#category-filters button,
-#style-filters button,
-.gallery-card button,
-.gallery-card a,
-.about a,
-.contact a {
-  position: relative;
-  z-index: 50;
-  pointer-events: auto !important;
-}
-
-/* ✅ Filters container must never block clicks */
-.filters,
-.filter-group,
-.filter-column {
-  position: relative;
-  z-index: 40;
-  pointer-events: auto !important;
-}
-
-/* === ROBOT INTERACTION MASTER FIX === */
-#side-robot,
-#robot-foreground,
-#broboticus-dj,
-.broboticus-dj,
-.corner-guitarbot {
-  pointer-events: auto;
-  cursor: pointer;
-  z-index: 10;
-  position: relative;
-}
-
-body, html {
- overflow-x: hidden;
-}
-
-/* Alternative: Wrap navigation links */
 @media (max-width: 768px) {
   .header-inner {
+    gap: 10px;
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
@@ -868,32 +808,102 @@ body, html {
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.03);
   }
-
-  /* =========================================== */
-  /* BACKGROUND FIX - Add at END of CSS          */
-  /* =========================================== */
-
-  /* 1. Fix hero (most important) */
-  .hero-overlay {
-    background: rgba(0, 0, 0, 0.8) !important;
+  
+  .section-head {
+    flex-direction: column;
+    align-items: stretch;
   }
-
-  /* 2. Apply dark background to all sections */
-  section {
-    background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000 100%) !important;
+  
+  .instagram-row {
+    flex-direction: column;
   }
-
-  /* 3. Fix header */
-  .site-header {
-    background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)) !important;
-    backdrop-filter: blur(10px) !important;
+  
+  .instagram-side {
+    width: 100%;
   }
+}
 
-  /* 4. Make grid more visible */
-  body::before {
-    opacity: 1 !important;
-    background-image: 
-      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px) !important;
-  } 
+/* =========================================== */
+/* UTILITIES                                  */
+/* =========================================== */
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+/* =========================================== */
+/* CLICK & INTERACTION FIXES                  */
+/* =========================================== */
+
+.hero::before,
+.hero::after,
+.site-header::before,
+.site-header::after,
+.section::before,
+.section::after,
+.card::before,
+.card::after {
+  pointer-events: none !important;
+}
+
+button,
+a,
+.filter-group button,
+#category-filters button,
+#style-filters button,
+.gallery-card button,
+.gallery-card a,
+.about a,
+.contact a {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
+}
+
+.filters,
+.filter-group,
+.filter-column {
+  position: relative;
+  z-index: 40;
+  pointer-events: auto !important;
+}
+
+#side-robot,
+#robot-foreground,
+#broboticus-dj,
+.broboticus-dj,
+.corner-guitarbot {
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+/* =========================================== */
+/* BACKGROUND FIXES (GLOBAL)                  */
+/* =========================================== */
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+section:not(.cyber-commissions) {
+  background: radial-gradient(circle at 50% 0%, rgba(10,10,20,0.9) 0%, rgba(0,0,0,0.85) 100%) !important;
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)) !important;
+  backdrop-filter: blur(12px) !important;
 }
