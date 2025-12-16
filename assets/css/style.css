@@ -37,10 +37,12 @@ html, body {
   margin: 0;
   font-family: "Audiowide", Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background: var(--bg); /* Ensure dark base background */
 }
 
 /* =========================================== */
-/* GLOBAL GRID BACKGROUND - FOR ENTIRE SITE    */
+/* REMOVED: Global body grid background       */
+/* (Now section-specific for better control)  */
 /* =========================================== */
 
 body {
@@ -49,81 +51,124 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
+/* =========================================== */
+/* NEW: REUSABLE NEON GRID SECTION CLASS      */
+/* (Applied to all sections except header/hero) */
+/* =========================================== */
+
+.neon-grid-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000 100%);
+  min-height: 50vh; /* Reduced from 100vh for flexibility */
+  overflow: hidden;
+}
+
+.neon-grid-section::before {
   content: '';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 200%;
   height: 200%;
   
-  /* Magenta (left) → Cyan (right) gradient grid */
+  /* UPDATED: Gradient neon grid from --neon-mag to --neon */
   background-image: 
     linear-gradient(
       90deg,
-      rgba(255, 28, 207, 0.7) 1px,  /* Left: magenta */
-      transparent 1px,
-      transparent calc(100% - 1px),
-      rgba(0, 255, 247, 0.7) 1px    /* Right: cyan */
+      var(--neon-mag) 1px,                    /* Left: solid neon-mag */
+      color-mix(in srgb, var(--neon-mag) 40%, transparent) 30px, /* Gradient fade */
+      transparent calc(50% - 0.5px),          /* Middle transparent */
+      color-mix(in srgb, var(--neon) 40%, transparent) 30px,    /* Gradient fade in */
+      var(--neon) 1px                         /* Right: solid neon */
     ),
     linear-gradient(
       0deg,
-      rgba(255, 28, 207, 0.85) 1px,  /* Top: magenta */
-      transparent 1px,
-      transparent calc(100% - 1px),
-      rgba(0, 255, 247, 0.85) 1px    /* Bottom: cyan */
+      var(--neon-mag) 1px,                    /* Top: solid neon-mag */
+      color-mix(in srgb, var(--neon-mag) 40%, transparent) 30px,
+      transparent calc(50% - 0.5px),
+      color-mix(in srgb, var(--neon) 40%, transparent) 30px,
+      var(--neon) 1px                         /* Bottom: solid neon */
     );
   
   background-size: 60px 60px;
   background-position: center center;
-  z-index: -2;
+  z-index: 0; /* Behind content but above section background */
   animation: gridMove 30s linear infinite;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.7; /* Slightly reduced opacity */
   mix-blend-mode: screen;
 }
 
-/* Keep the radial gradient overlay (optional) */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(0, 0, 0, 0.85) 0%,
-    transparent 25%
-  );
-  z-index: -1;
-  pointer-events: none;
+/* =========================================== */
+/* NEW: REUSABLE 3D CARD CLASS                */
+/* =========================================== */
+
+.neon-3d-card {
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
 }
 
-@keyframes gridMove {
-  0% { 
-    background-position: 0px 0px, 0px 0px;
-  }
-  100% { 
-    background-position: 60px 60px, 60px 60px;
-  }
+.neon-3d-card .card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.neon-3d-card:hover .card-3d-wrapper {
+  transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+}
+
+.neon-3d-card .card-front,
+.neon-3d-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.neon-3d-card .card-front {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  transform: rotateY(0deg);
+}
+
+.neon-3d-card .card-back {
+  background: rgba(20, 10, 40, 0.95);
+  border: 2px solid rgba(var(--neon-mag), 0.4);
+  transform: rotateY(180deg);
+  display: none; /* Hide back by default, show on full flip if needed */
+}
+
+/* Full flip variant (like commissions cards) */
+.neon-3d-card.flip-on-hover:hover .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
+.neon-3d-card.flip-on-hover .card-back {
+  display: flex; /* Show back for flip cards */
 }
 
 /* =========================================== */
 /* TEXT STYLES                                */
 /* =========================================== */
 
-/* Reset all headings to theme color */
 h1, h2, h3, h4, h5, h6 {
   color: var(--neon);
 }
 
-/* Reset paragraphs */
 p {
   color: var(--neon-blu);
 }
 
-/* Links */
 a {
   color: var(--neon-2);
 }
@@ -141,7 +186,10 @@ img {
   height: auto;
 }
 
-/* Header */
+/* =========================================== */
+/* HEADER (UNCHANGED)                         */
+/* =========================================== */
+
 .site-header{position:sticky;top:0;background:rgba(0,0,0,0.9)};border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
 .brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
@@ -150,21 +198,22 @@ img {
 .nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
 .nav-cta{border:1px solid var(--neon);background:rgba(0,255,247,0.04);padding:6px 10px;border-radius:8px}
 
-/* mobile toggle */
 .mobile-menu-toggle{display:flex;flex-direction:column;gap:4px;border:none;background:transparent;padding:6px;cursor:pointer}
 .mobile-menu-toggle span{width:22px;height:2px;background:var(--fg);display:block;border-radius:2px}
 @media(min-width:769px){.mobile-menu-toggle{display:none}}
 
-/* HERO */
+/* =========================================== */
+/* HERO SECTION (UNCHANGED)                   */
+/* =========================================== */
+
 .hero{min-height:70vh;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:white}
 .hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:brightness(.95) saturate(1.02);z-index:0}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1} /* further opacity controlled via JS if needed */
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1}
 .hero-inner{position:relative;z-index:2;text-align:center;padding:20px;color: var(--fg);}
 
 .title {
   font-size: clamp(2.6rem, 9vw, 7.7rem);
   margin: 0 0 6px;
-
   color: transparent !important;
   background: linear-gradient(90deg, var(--neon), var(--neon-pur), var(--neon-mag)) !important;
   -webkit-background-clip: text !important;
@@ -177,7 +226,6 @@ img {
   font-size: clamp(1.6rem, 6vw, 4.4rem);
   margin: 0 auto 12px;
   max-width: 780px;
-
   color: transparent !important;
   background: linear-gradient(90deg, var(--neon), var(--neon-mag), var(--neon-org)) !important;
   -webkit-background-clip: text !important;
@@ -196,69 +244,75 @@ img {
 .icon{width:18px;height:18px;vertical-align:middle;filter:brightness(1.05);opacity:0.95}
 .icon:hover{transform:scale(1.06)}
 
-/* SECTIONS / GRID */
-.section{padding:36px 0}
-.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.filters{display:flex;gap:16px;align-items:flex-start}
-.filter-group{display:flex;gap:8px;flex-wrap:wrap}
-.filter-column{min-width:180px}
-.filter-actions{display:flex;align-items:center;gap:8px}
+/* =========================================== */
+/* GALLERY SECTION (UPDATED)                  */
+/* =========================================== */
 
-/* GALLERY SECTION TITLE FIX */
+#gallery {
+  /* ADDED: Neon grid background */
+  composes: neon-grid-section;
+}
+
 #gallery h2,
 #gallery p {
   color: var(--fg) !important;
+  position: relative; /* Ensure text appears above grid */
+  z-index: 1;
 }
-
-/* GALLERY IMAGE TITLES */
-.gallery-card h3 {
-  color: var(--fg) !important;
-  margin: 12px 0 6px;
-  font-size: 1.1rem;
-}
-
 
 /* Gallery grid */
 .gallery-grid{display:grid;gap:18px}
 @media(min-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
 
-/* Card */
-.card{
-  background:var(--panel);
-  border-radius:var(--card-radius);
-  padding:14px;
-  border:1px solid var(--border);
-  backdrop-filter:blur(6px)}
-/* ✅ THIS IS THE ACTUAL GALLERY CARD IMAGE FIX */
+/* UPDATED: Gallery cards with 3D effect */
+.gallery-card {
+  composes: neon-3d-card;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--panel);
+  border-radius: var(--card-radius);
+  padding: 14px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* UPDATED: Gallery card image */
 .gallery-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
-  transition: transform .18s ease, filter .18s ease;
+  transition: transform .3s ease, filter .3s ease;
   opacity: 1 !important;
   max-height: none !important;
   position: relative;
-  z-index: 20;
+  z-index: 2;
 }
 
 .gallery-card:hover img {
-  transform: scale(1.03);
-  filter: brightness(1.05);
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
-/* Gallery card layout fix */
-.gallery-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.gallery-card h3 {
+  color: var(--fg) !important;
+  margin: 12px 0 6px;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .gallery-card .muted {
   flex-grow: 1;
   margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Price styling */
@@ -267,54 +321,46 @@ img {
   color: var(--neon-2);
   margin: 8px 0;
   font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
 }
 
-.gallery-card::before,
-.gallery-card::after {
-   pointer-events: none;
+/* =========================================== */
+/* INSTAGRAM SECTION (UPDATED)                */
+/* =========================================== */
+
+/* ADDED: Container for Instagram section */
+.instagram-section {
+  composes: neon-grid-section;
 }
 
-.gallery-card button,
-.gallery-card a {
-   position: relative;
-   z-index: 5;
-   pointer-events: auto;
-}
-
-.grid .card h3{ margin:10px 0 6px;font-size:1.05rem }
-.muted{ color:var(--muted);font-size:0.95rem }
-
-/* Category tile neon accent — small colored top border */
-.category-pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;color:var(--fg)}
-/* map category colors (example) */
-.category-Neon{box-shadow:0 0 14px rgba(255,255,0,0.08) inset;border-top:4px solid var(--neon-yel)}
-.category-Psychedelia{box-shadow:0 0 14px rgba(199,36,255,0.08) inset;border-top:4px solid var(--neon-pur)}
-.category-Surrealism{box-shadow:0 0 14px rgba(10,122,255,0.08) inset;border-top:4px solid var(--neon-blu)}
-.category-Broboticus{box-shadow:0 0 14px rgba(255,95,31,0.08) inset;border-top:4px solid var(--neon-org)}
-.category-Animation{box-shadow:0 0 14px rgba(255,28,207,0.08) inset;border-top:4px solid var(--neon-mag)}
-.category-Geometric{box-shadow:0 0 14px rgba(0,255,247,0.08) inset;border-top:4px solid var(--neon)}
-.category-Glitch{box-shadow:0 0 14px rgba(0,255,62,0.08) inset;border-top:4px solid var(--neon-2)}
-.category-Landscape{box-shadow:0 0 14px rgba(208,255,0,0.08) inset;border-top:4px solid var(--neon-limon)}
-
-/* Instagram row / two-column area */
 .instagram-row{display:flex;gap:16px;flex-wrap:wrap}
-.instagram-card{flex:1;min-width:300px}
+.instagram-card{
+  composes: neon-3d-card;
+  flex:1;
+  min-width:300px;
+  background: var(--panel);
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
 .instagram-side{width:320px;min-width:260px;display:flex;align-items:center;justify-content:center}
-.instagram-frame{background:#0b0b0b;border-radius:12px;padding:8px;border:2px solid var(--neon)}
-.instagram-frame blockquote, .instagram-frame iframe{border-radius:10px}
-.instagram-card .instagram-frame{ /* gunmetal background + neon edge */
+
+/* UPDATED: Instagram frame with 3D enhancement */
+.instagram-frame {
   background: #0b0b0b;
+  border-radius: 12px;
+  padding: 8px;
   border: 2px solid var(--neon);
   box-shadow: 0 0 16px rgba(0,255,247,0.06), inset 0 0 10px rgba(0,0,0,0.4);
-  padding: 8px;
   position: relative;
-}
-
-.instagram-card .instagram-frame {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-.instagram-card .instagram-frame::after {
+.instagram-frame::after {
   content: "";
   position: absolute;
   inset: -4px;
@@ -326,43 +372,32 @@ img {
   pointer-events: none;
 }
 
+.instagram-frame blockquote, 
+.instagram-frame iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* side placeholder */
 .side-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px}
 .side-placeholder img{max-width:220px;border-radius:8px}
 
-/* Tiers / grid-3 */
-.grid-3{display:grid;gap:14px}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.tier .price{font-weight:700;color:var(--fg)}
+/* =========================================== */
+/* COMMISSIONS SECTION (UPDATED)              */
+/* =========================================== */
 
-/* PASTE THIS in your style.css */
 .cyber-commissions {
+  composes: neon-grid-section;
   padding: 5rem 2rem;
-  background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000 100%);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-/* Animated grid background */
-.cyber-commissions::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background-image: 
-    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 20s linear infinite;
-}
-
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-50px, -50px); }
-}
+/* REMOVED: Duplicate grid animation from .cyber-commissions::before */
+/* (Now using the reusable .neon-grid-section class) */
 
 .cyber-header {
   text-align: center;
@@ -441,7 +476,7 @@ img {
   z-index: 2;
 }
 
-/* INDIVIDUAL CARD */
+/* INDIVIDUAL CARD - Already has 3D, keeping as is */
 .cyber-card {
   width: 320px;
   height: 450px;
@@ -681,99 +716,140 @@ img {
     inset 0 0 80px rgba(255, 0, 255, 0.1);
 }
 
-/* RESPONSIVE */
-@media (max-width: 1400px) {
-  .cyber-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  .card-recommended {
-    transform: scale(1.05) translateY(0);
-    order: -1;
-    grid-column: span 2;
-  }
-}
+/* =========================================== */
+/* ABOUT SECTION (UPDATED)                    */
+/* =========================================== */
 
-@media (max-width: 768px) {
-  .cyber-cards-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .card-recommended {
-    grid-column: span 1;
-  }
-}
-  
-  .cyber-title {
-    font-size: 2.5rem;
-  }
-}
-
-/* ABOUT SECTION */
 #about {
+  composes: neon-grid-section;
   color: var(--fg);
+  padding: 4rem 2rem;
 }
 
+/* UPDATED: About card with 3D effect */
 .about-card {
+  composes: neon-3d-card;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
-  padding: 25px;
+  padding: 2rem;
   display: flex;
   align-items: center;
-  gap: 25px;
-  margin: 25px 0;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  min-height: 200px;
 }
 
 .about-card .avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--neon);
+  box-shadow: 0 0 20px rgba(0, 255, 247, 0.3);
+  flex-shrink: 0;
 }
 
 .about-card p {
   color: var(--muted);
-  line-height: 1.6;
-  font-size: 1.05rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
   margin: 0;
+  flex-grow: 1;
 }
 
 .about-icons {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .about-icons .icon {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .about-icons .icon:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  transform: scale(1.15);
+  filter: brightness(1.3) drop-shadow(0 0 8px currentColor);
 }
 
-/* CONTACT SECTION */
+/* =========================================== */
+/* CONTACT SECTION (UPDATED)                  */
+/* =========================================== */
+
 #contact {
+  composes: neon-grid-section;
   color: var(--fg);
   text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+#contact h2 {
+  position: relative;
+  z-index: 2;
 }
 
 #contact p {
   color: var(--muted);
   font-size: 1.1rem;
   margin-top: 10px;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* About */
-.about-card{display:flex;gap:14px;align-items:center}
-.avatar{width:96px;height:96px;border-radius:999px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+/* =========================================== */
+/* ANIMATIONS & GRID MOVEMENT                 */
+/* =========================================== */
+
+@keyframes gridMove {
+  0% { 
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% { 
+    background-position: 60px 60px, 60px 60px;
+  }
+}
+
+/* REMOVED: Old body grid animation keyframes */
+/* (Now using the reusable class animation) */
+
+/* =========================================== */
+/* SECTIONS / GRID                            */
+/* =========================================== */
+
+.section{padding:36px 0}
+.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.filters{display:flex;gap:16px;align-items:flex-start}
+.filter-group{display:flex;gap:8px;flex-wrap:wrap}
+.filter-column{min-width:180px}
+.filter-actions{display:flex;align-items:center;gap:8px}
+
+/* Tiers / grid-3 */
+.grid-3{display:grid;gap:14px}
+@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.tier .price{font-weight:700;color:var(--fg)}
+
+/* Category tile neon accent — small colored top border */
+.category-pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;color:var(--fg)}
+/* map category colors (example) */
+.category-Neon{box-shadow:0 0 14px rgba(255,255,0,0.08) inset;border-top:4px solid var(--neon-yel)}
+.category-Psychedelia{box-shadow:0 0 14px rgba(199,36,255,0.08) inset;border-top:4px solid var(--neon-pur)}
+.category-Surrealism{box-shadow:0 0 14px rgba(10,122,255,0.08) inset;border-top:4px solid var(--neon-blu)}
+.category-Broboticus{box-shadow:0 0 14px rgba(255,95,31,0.08) inset;border-top:4px solid var(--neon-org)}
+.category-Animation{box-shadow:0 0 14px rgba(255,28,207,0.08) inset;border-top:4px solid var(--neon-mag)}
+.category-Geometric{box-shadow:0 0 14px rgba(0,255,247,0.08) inset;border-top:4px solid var(--neon)}
+.category-Glitch{box-shadow:0 0 14px rgba(0,255,62,0.08) inset;border-top:4px solid var(--neon-2)}
+.category-Landscape{box-shadow:0 0 14px rgba(208,255,0,0.08) inset;border-top:4px solid var(--neon-limon)}
 
 /* Lightbox */
 .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:10000;background:rgba(0,0,0,0.94)}
@@ -835,6 +911,43 @@ img {
   
   .instagram-side {
     width: 100%;
+  }
+  
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .about-card .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cyber-title {
+    font-size: 2.5rem;
+  }
+  
+  .cyber-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-recommended {
+    grid-column: span 1;
+    transform: scale(1.02) translateY(0);
+  }
+}
+
+@media (max-width: 1400px) {
+  .cyber-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .card-recommended {
+    transform: scale(1.05) translateY(0);
+    order: -1;
+    grid-column: span 2;
   }
 }
 
@@ -912,11 +1025,8 @@ body, html {
   background: rgba(0, 0, 0, 0.8) !important;
 }
 
-section:not(.cyber-commissions) {
-  background: radial-gradient(circle at 50% 0%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.9) 100%) !important;
-  position: relative;
-  z-index: 1;
-}
+/* REMOVED: Old section background overrides */
+/* (Now using .neon-grid-section class) */
 
 .site-header {
   background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)) !important;
