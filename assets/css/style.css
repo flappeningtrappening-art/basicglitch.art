@@ -58,8 +58,8 @@ body {
 
 .neon-grid-section {
   position: relative;
-  background: #000 !important; /* Solid black background */
-  min-height: 100vh; /* Reduced from 100vh for flexibility */
+  background: #000 !important;
+  min-height: 50vh;
   overflow: hidden;
 }
 
@@ -75,23 +75,22 @@ body {
   mix-blend-mode: screen;
 }
 
-/* PRIMARY GRID (::before) - Magenta → Cyan - moves down-right */
+/* PRIMARY GRID - Magenta → Cyan - moves DOWN-RIGHT */
 .neon-grid-section::before {
+  /* 60px grid cells, 1px lines */
   background-image: 
-    /* Vertical lines - PRIMARY */
     repeating-linear-gradient(
       90deg,
-      transparent,
+      transparent 0px,
       transparent 59px,
-      var(--neon) 59px,
-      var(--neon-mag) 60px,
+      var(--neon-mag) 59px,
+      var(--neon) 60px,
       transparent 60px,
       transparent 120px
     ),
-    /* Horizontal lines - PRIMARY */
     repeating-linear-gradient(
       0deg,
-      transparent,
+      transparent 0px,
       transparent 59px,
       var(--neon-mag) 59px,
       var(--neon) 60px,
@@ -99,42 +98,49 @@ body {
       transparent 120px
     );
   
-  background-size: 60px 60px;
+  background-size: 120px 120px;
   background-position: center center;
   z-index: 0;
-  animation: gridMovePrimary 30s linear infinite;
-  opacity: 0.1;
+  animation: gridMoveDownRight 40s linear infinite;
+  opacity: 0.15;
 }
 
-/* SECONDARY GRID (::after) - Purple → Lime Green - moves up-left */
+/* SECONDARY GRID - Purple → Lime Green - moves UP-LEFT (offset by half-cell) */
 .neon-grid-section::after {
+  /* Same 60px grid cells, but offset by 30px (half-cell) */
   background-image: 
-    /* Vertical lines - SECONDARY (offset by 30px) */
     repeating-linear-gradient(
       90deg,
-      transparent,
+      transparent 0px,
       transparent 29px,
       var(--neon-pur) 29px,
       var(--neon-limon) 30px,
       transparent 30px,
-      transparent 60px
+      transparent 90px,
+      var(--neon-pur) 89px,
+      var(--neon-limon) 90px,
+      transparent 90px,
+      transparent 120px
     ),
-    /* Horizontal lines - SECONDARY (offset by 30px) */
     repeating-linear-gradient(
       0deg,
-      transparent,
+      transparent 0px,
       transparent 29px,
       var(--neon-limon) 29px,
       var(--neon-pur) 30px,
       transparent 30px,
-      transparent 60px
+      transparent 90px,
+      var(--neon-limon) 89px,
+      var(--neon-pur) 90px,
+      transparent 90px,
+      transparent 120px
     );
   
-  background-size: 60px 60px;
-  background-position: center center;
+  background-size: 120px 120px;
+  background-position: 30px 30px;
   z-index: 0;
-  animation: gridMoveSecondary 25s linear infinite;
-  opacity: 0.1;
+  animation: gridMoveUpLeft 35s linear infinite;
+  opacity: 0.15;
 }
 
 /* =========================================== */
@@ -862,21 +868,21 @@ img {
 /* ANIMATIONS & GRID MOVEMENT                 */
 /* =========================================== */
 
-@keyframes gridMovePrimary {
+@keyframes gridMoveDownRight {
   0% { 
     background-position: 0px 0px, 0px 0px;
   }
   100% { 
-    background-position: 60px 60px, 60px 60px;
+    background-position: 120px 120px, 120px 120px;
   }
 }
 
-@keyframes gridMoveSecondary {
+@keyframes gridMoveUpLeft {
   0% { 
-    background-position: 0px 0px, 0px 0px;
+    background-position: 30px 30px, 30px 30px;
   }
   100% { 
-    background-position: -60px -60px, -60px -60px;
+    background-position: -90px -90px, -90px -90px;
   }
 }
 
