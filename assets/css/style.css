@@ -899,6 +899,15 @@ img {
   }
 }
 
+@keyframes gridMoveReverse {
+  0% { 
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% { 
+    background-position: -60px -60px, -60px -60px, -60px -60px, -60px -60px;
+  }
+}
+
 /* REMOVED: Old body grid animation keyframes */
 /* (Now using the reusable class animation) */
 
