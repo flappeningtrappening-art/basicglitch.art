@@ -58,7 +58,7 @@ body {
 
 .neon-grid-section {
   position: relative;
-  background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000 100%);
+  background: #000 !important; /* Solid black background */
   min-height: 50vh; /* Reduced from 100vh for flexibility */
   overflow: hidden;
 }
@@ -71,31 +71,31 @@ body {
   width: 200%;
   height: 200%;
   
-  /* UPDATED: Gradient neon grid from --neon-mag to --neon */
+  /* SINGLE GRADIENT ACROSS ENTIRE SCREEN: Magenta (top-left) to Cyan (bottom-right) */
   background-image: 
+    /* Vertical grid lines - fade from magenta to cyan across screen */
     linear-gradient(
-      90deg,
-      var(--neon-mag) 1px,                    /* Left: solid neon-mag */
-      color-mix(in srgb, var(--neon-mag) 40%, transparent) 30px, /* Gradient fade */
-      transparent calc(50% - 0.5px),          /* Middle transparent */
-      color-mix(in srgb, var(--neon) 40%, transparent) 30px,    /* Gradient fade in */
-      var(--neon) 1px                         /* Right: solid neon */
+      to right,
+      var(--neon-mag) 0%,
+      var(--neon) 100%
     ),
+    /* Horizontal grid lines - fade from magenta to cyan across screen */
     linear-gradient(
-      0deg,
-      var(--neon-mag) 1px,                    /* Top: solid neon-mag */
-      color-mix(in srgb, var(--neon-mag) 40%, transparent) 30px,
-      transparent calc(50% - 0.5px),
-      color-mix(in srgb, var(--neon) 40%, transparent) 30px,
-      var(--neon) 1px                         /* Bottom: solid neon */
+      to bottom,
+      var(--neon-mag) 0%,
+      var(--neon) 100%
     );
   
-  background-size: 60px 60px;
+  /* Create the grid pattern */
+  background-size: 
+    60px 1px, /* Vertical lines: 60px spacing, 1px thick */
+    1px 60px; /* Horizontal lines: 1px thick, 60px spacing */
+  
   background-position: center center;
   z-index: 0; /* Behind content but above section background */
   animation: gridMove 30s linear infinite;
   pointer-events: none;
-  opacity: 0.7; /* Slightly reduced opacity */
+  opacity: 0.3; /* Lower opacity for subtle grid */
   mix-blend-mode: screen;
 }
 
@@ -385,19 +385,56 @@ img {
 .side-placeholder img{max-width:220px;border-radius:8px}
 
 /* =========================================== */
-/* COMMISSIONS SECTION (UPDATED)              */
+/* COMMISSIONS SECTION - Now uses neon grid    */
 /* =========================================== */
 
 .cyber-commissions {
-  composes: neon-grid-section;
+  position: relative;
+  background: #000 !important; /* Solid black background */
   padding: 5rem 2rem;
   min-height: 100vh;
-  position: relative;
   overflow: hidden;
 }
 
-/* REMOVED: Duplicate grid animation from .cyber-commissions::before */
-/* (Now using the reusable .neon-grid-section class) */
+.cyber-commissions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  
+  /* SAME GRADIENT AS OTHER SECTIONS: Magenta (top-left) to Cyan (bottom-right) */
+  background-image: 
+    linear-gradient(
+      to right,
+      var(--neon-mag) 0%,
+      var(--neon) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--neon-mag) 0%,
+      var(--neon) 100%
+    );
+  
+  /* Create the grid pattern */
+  background-size: 
+    60px 1px, /* Vertical lines: 60px spacing, 1px thick */
+    1px 60px; /* Horizontal lines: 1px thick, 60px spacing */
+  
+  background-position: center center;
+  z-index: 0;
+  animation: gridMove 30s linear infinite;
+  pointer-events: none;
+  opacity: 0.3; /* Lower opacity for subtle grid */
+  mix-blend-mode: screen;
+}
+
+/* Ensure content sits above grid */
+.cyber-commissions > * {
+  position: relative;
+  z-index: 1;
+}
 
 .cyber-header {
   text-align: center;
