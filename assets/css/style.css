@@ -2,15 +2,6 @@
    Basic.Glitch — style.css
    ======================================================== */
 
-/* TEMPORARY - See what's white */
-* {
-  outline: 1px solid red !important;
-}
-
-.hero, .hero-overlay, .site-header {
-  outline: 5px solid blue !important;
-}
-
 /* Variables */
 :root {
   --bg: #050505;
@@ -877,4 +868,32 @@ body, html {
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.03);
   }
+
+  /* =========================================== */
+  /* BACKGROUND FIX - Add at END of CSS          */
+  /* =========================================== */
+
+  /* 1. Fix hero (most important) */
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* 2. Apply dark background to all sections */
+  section {
+    background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000 100%) !important;
+  }
+
+  /* 3. Fix header */
+  .site-header {
+    background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  /* 4. Make grid more visible */
+  body::before {
+    opacity: 1 !important;
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px) !important;
+  } 
 }
