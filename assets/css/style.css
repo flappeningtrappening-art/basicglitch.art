@@ -94,7 +94,7 @@ body::after {
   background: radial-gradient(
     ellipse at 50% 0%,
     rgba(0, 0, 0, 0.85) 0%,
-    transparent 60%
+    transparent 25%
   );
   z-index: -1;
   pointer-events: none;
@@ -142,7 +142,7 @@ img {
 }
 
 /* Header */
-.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.6));border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
+.site-header{position:sticky;top:0;background:rgba(0,0,0,0.9)};border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
 .brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
 .nav{display:flex;gap:10px;align-items:center}
