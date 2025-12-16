@@ -71,31 +71,37 @@ body {
   width: 200%;
   height: 200%;
   
-  /* SINGLE GRADIENT ACROSS ENTIRE SCREEN: Magenta (top-left) to Cyan (bottom-right) */
+  /* CREATE 1PX GRID LINES WITH GRADIENT COLORS */
   background-image: 
-    /* Vertical grid lines - fade from magenta to cyan across screen */
-    linear-gradient(
-      to right,
-      var(--neon-mag) 0%,
-      var(--neon) 100%
+    /* Vertical lines pattern: 1px line every 60px */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      /* Line color gradients from magenta to cyan */
+      var(--neon-mag) 59px,
+      var(--neon) 60px,
+      transparent 60px,
+      transparent 120px
     ),
-    /* Horizontal grid lines - fade from magenta to cyan across screen */
-    linear-gradient(
-      to bottom,
-      var(--neon-mag) 0%,
-      var(--neon) 100%
+    /* Horizontal lines pattern: 1px line every 60px */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      /* Line color gradients from magenta to cyan */
+      var(--neon-mag) 59px,
+      var(--neon) 60px,
+      transparent 60px,
+      transparent 120px
     );
   
-  /* Create the grid pattern */
-  background-size: 
-    60px 1px, /* Vertical lines: 60px spacing, 1px thick */
-    1px 60px; /* Horizontal lines: 1px thick, 60px spacing */
-  
+  background-size: 120px 120px; /* Double size for the pattern */
   background-position: center center;
-  z-index: 0; /* Behind content but above section background */
+  z-index: 0;
   animation: gridMove 30s linear infinite;
   pointer-events: none;
-  opacity: 0.3; /* Lower opacity for subtle grid */
+  opacity: 0.3;
   mix-blend-mode: screen;
 }
 
