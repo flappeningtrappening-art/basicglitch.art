@@ -410,29 +410,33 @@ img {
   width: 200%;
   height: 200%;
   
-  /* SAME GRADIENT AS OTHER SECTIONS: Magenta (top-left) to Cyan (bottom-right) */
+  /* SAME THIN 1PX GRID AS OTHER SECTIONS */
   background-image: 
-    linear-gradient(
-      to right,
-      var(--neon-mag) 0%,
-      var(--neon) 100%
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      var(--neon-mag) 59px,
+      var(--neon) 60px,
+      transparent 60px,
+      transparent 120px
     ),
-    linear-gradient(
-      to bottom,
-      var(--neon-mag) 0%,
-      var(--neon) 100%
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      var(--neon-mag) 59px,
+      var(--neon) 60px,
+      transparent 60px,
+      transparent 120px
     );
   
-  /* Create the grid pattern */
-  background-size: 
-    60px 1px, /* Vertical lines: 60px spacing, 1px thick */
-    1px 60px; /* Horizontal lines: 1px thick, 60px spacing */
-  
+  background-size: 120px 120px;
   background-position: center center;
   z-index: 0;
   animation: gridMove 30s linear infinite;
   pointer-events: none;
-  opacity: 0.3; /* Lower opacity for subtle grid */
+  opacity: 0.3;
   mix-blend-mode: screen;
 }
 
