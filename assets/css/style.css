@@ -134,7 +134,7 @@ body {
   background-position: center center;
   z-index: 0;
   animation: gridMoveSecondary 25s linear infinite;
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 /* =========================================== */
