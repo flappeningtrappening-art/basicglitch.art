@@ -432,26 +432,33 @@ img {
 /* COMMISSIONS SECTION - Now uses neon grid    */
 /* =========================================== */
 
-@keyframes gridMovePrimary {
+@keyframes gridMoveDownRight {
   0% { 
     background-position: 0px 0px, 0px 0px;
   }
   100% { 
-    background-position: 60px 60px, 60px 60px;
+    background-position: 120px 120px, 120px 120px;
   }
 }
 
-@keyframes gridMoveSecondary {
+@keyframes gridMoveUpLeft {
   0% { 
-    background-position: 0px 0px, 0px 0px;
+    background-position: 30px 30px, 30px 30px;
   }
   100% { 
-    background-position: -60px -60px, -60px -60px;
+    background-position: -90px -90px, -90px -90px;
   }
 }
 
-/* Ensure content sits above grid */
-.cyber-commissions > * {
+/* =========================================== */
+/* COMMISSIONS SECTION                        */
+/* =========================================== */
+
+.cyber-commissions {
+  position: relative;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  overflow: hidden;
   position: relative;
   z-index: 1;
 }
@@ -991,29 +998,70 @@ img {
   }
   
   .cyber-title {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Smaller on mobile */
   }
   
+  .cyber-subtitle {
+    font-size: 0.9rem; /* Smaller on mobile */
+    letter-spacing: 0.2em;
+  }
+  
+  /* FIX: Commissions cards mobile scaling */
   .cyber-cards-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .cyber-card {
+    width: 100% !important;
+    max-width: 320px;
+    height: 400px; /* Slightly shorter on mobile */
+    margin: 0 auto;
   }
   
   .card-recommended {
-    grid-column: span 1;
-    transform: scale(1.02) translateY(0);
+    transform: scale(1) !important; /* Remove scale on mobile */
+    order: 0 !important;
+    grid-column: span 1 !important;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 1.5rem !important; /* Less padding on mobile */
+  }
+  
+  .card-title {
+    font-size: 1.5rem !important; /* Smaller title */
+  }
+  
+  .card-price {
+    font-size: 2.5rem !important; /* Smaller price */
+  }
+  
+  .feature {
+    font-size: 0.85rem !important; /* Smaller text */
+    padding: 0.5rem 0 !important;
   }
 }
 
 @media (max-width: 1400px) {
   .cyber-cards-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+  
+  .cyber-card {
+    width: 100% !important;
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .card-recommended {
-    transform: scale(1.05) translateY(0);
-    order: -1;
-    grid-column: span 2;
+    transform: scale(1.02) translateY(0);
+    order: 0;
+    grid-column: span 1;
   }
 }
 
