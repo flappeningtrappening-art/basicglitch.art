@@ -200,12 +200,21 @@ img {
 }
 
 /* HEADER */
-.site-header{position:sticky;top:0;background:rgba(0,0,0,0.9);border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
+.site-header{position:sticky;top:0;background:rgba(0,0,0,0.9);border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px); width: 100%;}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
-.brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
-.nav{display:flex;gap:10px;align-items:center}
-.nav-link{display:flex;align-items:center;gap:8px;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600}
+.brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none; flex-shrink: 0;}
+.nav{display:flex;gap:8px;align-items:center; flex-wrap: wrap; justify-content: flex-end;}
+.nav-link{display:flex;align-items:center;gap:6px;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600; font-size: 0.9rem; white-space: nowrap;}
 .nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
+.nav-link img { width: 20px !important; height: 20px !important; }
+
+/* Force icons to small size - GLOBAL OVERRIDE */
+header nav img,
+.commission-tier .icon,
+.about-icons .icon {
+  width: 24px !important;
+  height: 24px !important;
+}
 
 /* HERO */
 .hero{min-height:70vh;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:white}
@@ -449,8 +458,13 @@ img {
 
 /* RESPONSIVE FIXES */
 @media (max-width: 768px) {
-  .container { padding: 15px; }
-  .header-inner { flex-direction: column; align-items: center; }
+  .container { padding: 10px; width: 100%; }
+  .header-inner { flex-direction: column; align-items: center; gap: 15px; padding: 15px 5px; }
+  .nav { justify-content: center; width: 100%; gap: 5px; }
+  .nav-link { padding: 4px 6px; font-size: 0.8rem; }
+  .nav-link img { width: 16px !important; height: 16px !important; }
+  .brand { font-size: 1.2rem; }
+  
   .cyber-title { font-size: 2.2rem; }
   .cyber-cards-container { 
     grid-template-columns: 1fr; 
