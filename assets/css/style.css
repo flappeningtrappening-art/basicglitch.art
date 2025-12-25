@@ -335,7 +335,8 @@ header nav img,
   position: relative;
   text-align: center;
   width: 100%;
-  overflow-wrap: break-word; /* Allow wrapping */
+  overflow-wrap: anywhere; /* Standard wrapping */
+  word-break: normal; /* Do not break in middle of words */
 }
 
 .cyber-text {
