@@ -341,11 +341,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
 (async function init(){
   try{
     setHeroBackground();
-    const data = await fetchGallery();
-    window.GALLERY = data || [];
-    renderFilters(window.GALLERY);
-    renderGrid(window.GALLERY);
-    initialize3DCardCompatibility(); // ADDED: Initialize 3D card compatibility
+    
+    // Only fetch/render gallery if the grid exists (i.e., we are on gallery.html)
+    if(document.getElementById('gallery-grid')) {
+      const data = await fetchGallery();
+      window.GALLERY = data || [];
+      renderFilters(window.GALLERY);
+      renderGrid(window.GALLERY);
+      initialize3DCardCompatibility(); // ADDED: Initialize 3D card compatibility
+    }
     
     // ANTI-SPAM: Decrypt email on interaction
     const emailLink = document.getElementById('secure-contact');
