@@ -50,15 +50,29 @@ html, body {
   color: var(--fg);
 }
 
-/* GLOBAL ICON GLOW */
+/* GLOBAL ICON GLOW & SIZE */
 img[src*=".svg"], .icon {
+  width: 24px; /* Standard size */
+  height: 24px;
   filter: drop-shadow(0 0 5px var(--neon));
   transition: filter 0.3s ease, transform 0.3s ease;
+  object-fit: contain;
 }
 
 img[src*=".svg"]:hover, .icon:hover {
   filter: drop-shadow(0 0 12px var(--neon));
   transform: scale(1.1);
+}
+
+.about-icons .icon {
+  width: 48px; /* Larger icons for the about section specifically */
+  height: 48px;
+}
+
+.nav-link img {
+  width: 18px; /* Smaller icons for navigation */
+  height: 18px;
+  margin-right: 6px;
 }
 
 body {
