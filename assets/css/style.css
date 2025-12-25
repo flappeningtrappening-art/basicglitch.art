@@ -653,15 +653,18 @@ img {
 
 .footer-link {
   color: var(--neon);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  transition: color 0.3s;
+  transition: all 0.3s;
+  padding: 0 5px;
 }
 
 .footer-link:hover {
   color: var(--neon-mag);
   text-shadow: 0 0 8px var(--neon-mag);
+  text-decoration-color: var(--neon-mag);
 }
 
 @keyframes gridMoveDownRight {
