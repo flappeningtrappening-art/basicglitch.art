@@ -107,64 +107,91 @@
       </h2>
       <p class="cyber-subtitle">Robotic Personality & Digital Leisure</p>
     </div>
-    <div class="case-grid">
-      <img class="case-img" src="/assets/images/raw/artist_broboticus_og.png" alt="Brobarticus">
-      <img class="case-img" src="/assets/images/raw/guitarbot_og.png" alt="Guitarbot">
-      <img class="case-img" src="/assets/images/raw/chefboticus.png" alt="Chef Brobot">
+        <div class="case-grid">
+          <img class="case-img clickable-preview" src="/assets/images/raw/artist_broboticus_og.png" alt="Brobarticus" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/guitarbot_og.png" alt="Guitarbot" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/chefboticus.png" alt="Chef Brobot" onclick="openPortfolioLightbox(this)">
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="/collection.html?id=broboticus" class="btn-small">VIEW FULL COLLECTION</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CASE STUDY 2: TECH-NOIR HORIZONS -->
+    <section class="case-study" style="min-height: auto;">
+      <div class="container">
+        <div class="cyber-header">
+          <h2 class="cyber-title">
+            <span class="cyber-text cyber-text-mag" data-text="TECH NOIR HORIZONS">TECH NOIR HORIZONS</span>
+          </h2>
+          <p class="cyber-subtitle">Reimagining Natural Landscapes</p>
+        </div>
+        <div class="case-grid">
+          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_sangre_de_cristo.png" alt="Sangre Neon" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_laser_colorado.png" alt="Laser Colorado" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/dust_to_dust.png" alt="Dust to Dust" onclick="openPortfolioLightbox(this)">
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="/collection.html?id=neon" class="btn-small">VIEW FULL COLLECTION</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CASE STUDY 3: THE PSYCHEDELIC VOID -->
+    <section class="case-study neon-grid-section" style="min-height: auto;">
+      <div class="container">
+        <div class="cyber-header">
+          <h2 class="cyber-title">
+            <span class="cyber-text cyber-text-pur" data-text="THE PSYCHEDELIC VOID">THE PSYCHEDELIC VOID</span>
+          </h2>
+          <p class="cyber-subtitle">Geometric symmetry & abstract patterns</p>
+        </div>
+        <div class="case-grid">
+          <img class="case-img clickable-preview" src="/assets/images/raw/literal_traphouse.png" alt="Traphouse" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/spiral_geometry.png" alt="Spiral" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/floral.png" alt="Floral Glitch" onclick="openPortfolioLightbox(this)">
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="/collection.html?id=abstract" class="btn-small">VIEW FULL COLLECTION</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="portfolio-cta">
+      <div class="container">
+        <h2 style="margin-bottom: 2rem;">Ready to create something unique?</h2>
+        <a href="/commissions.html" class="btn-neon" style="font-size: 1.2rem; padding: 1rem 2rem;">START YOUR PROJECT</a>
+      </div>
+    </section>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+      <div class="lb-content" id="lb-content"></div>
+      <button id="lb-close" class="lb-btn">×</button>
+      <button id="lb-prev" class="lb-nav" style="left: 20px;">‹</button>
+      <button id="lb-next" class="lb-nav" style="right: 20px;">›</button>
     </div>
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="/collection.html?id=broboticus" class="btn-small">VIEW FULL COLLECTION</a>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDY 2: TECH-NOIR HORIZONS -->
-<section class="case-study" style="min-height: auto;">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text cyber-text-mag" data-text="TECH NOIR HORIZONS">TECH NOIR HORIZONS</span>
-      </h2>
-      <p class="cyber-subtitle">Reimagining Natural Landscapes</p>
-    </div>
-    <div class="case-grid">
-      <img class="case-img" src="/assets/images/raw/aesthetic_sangre_de_cristo.png" alt="Sangre Neon">
-      <img class="case-img" src="/assets/images/raw/aesthetic_laser_colorado.png" alt="Laser Colorado">
-      <img class="case-img" src="/assets/images/raw/dust_to_dust.png" alt="Dust to Dust">
-    </div>
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="/collection.html?id=neon" class="btn-small">VIEW FULL COLLECTION</a>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDY 3: THE PSYCHEDELIC VOID -->
-<section class="case-study neon-grid-section" style="min-height: auto;">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text cyber-text-pur" data-text="THE PSYCHEDELIC VOID">THE PSYCHEDELIC VOID</span>
-      </h2>
-      <p class="cyber-subtitle">Geometric symmetry & abstract patterns</p>
-    </div>
-    <div class="case-grid">
-      <img class="case-img" src="/assets/images/raw/literal_traphouse.png" alt="Traphouse">
-      <img class="case-img" src="/assets/images/raw/spiral_geometry.png" alt="Spiral">
-      <img class="case-img" src="/assets/images/raw/floral.png" alt="Floral Glitch">
-    </div>
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="/collection.html?id=abstract" class="btn-small">VIEW FULL COLLECTION</a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="portfolio-cta">
-  <div class="container">
-    <h2 style="margin-bottom: 2rem;">Ready to create something unique?</h2>
-    <a href="/commissions.html" class="btn-neon" style="font-size: 1.2rem; padding: 1rem 2rem;">START YOUR PROJECT</a>
-  </div>
-</section>
-
-</body>
-</html>
+    
+    <script>
+      // Simple helper for portfolio page images
+      function openPortfolioLightbox(img) {
+        const lb = document.getElementById('lightbox');
+        const content = document.getElementById('lb-content');
+        content.innerHTML = '';
+        const newImg = document.createElement('img');
+        newImg.src = img.src;
+        newImg.alt = img.alt;
+        const title = document.createElement('h3');
+        title.textContent = img.alt;
+        content.appendChild(title);
+        content.appendChild(newImg);
+        lb.classList.remove('hidden');
+        lb.setAttribute('aria-hidden','false');
+      }
+    </script>
+    
+    </body>
+    </html>
+    
