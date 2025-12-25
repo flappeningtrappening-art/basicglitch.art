@@ -695,6 +695,18 @@ img {
   margin-top: 1rem;
 }
 
+/* ------------------------------------------------------------------------
+   UX FIX: Display correct hint based on device input (Hover vs Touch)
+   ------------------------------------------------------------------------ */
+.desktop-msg { display: inline; }
+.mobile-msg { display: none; }
+
+/* If the device has no hover capability (tablets/phones), swap the messages */
+@media (hover: none) {
+  .desktop-msg { display: none; }
+  .mobile-msg { display: inline; }
+}
+
 /* BACK SIDE */
 .card-back {
   background: rgba(20, 10, 40, 0.95);

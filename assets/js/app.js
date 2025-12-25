@@ -346,6 +346,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
     renderFilters(window.GALLERY);
     renderGrid(window.GALLERY);
     initialize3DCardCompatibility(); // ADDED: Initialize 3D card compatibility
+    
+    // ANTI-SPAM: Decrypt email on interaction
+    const emailLink = document.getElementById('secure-contact');
+    if(emailLink) {
+      const revealEmail = () => {
+        const u = emailLink.dataset.user;
+        const d = emailLink.dataset.domain;
+        const addr = `${u}@${d}`;
+        emailLink.href = `mailto:${addr}`;
+        emailLink.textContent = addr;
+        emailLink.classList.remove('glitch-link');
+        // Remove listeners once decrypted
+        emailLink.removeEventListener('mouseover', revealEmail);
+        emailLink.removeEventListener('click', revealEmail);
+      };
+      
+      emailLink.addEventListener('mouseover', revealEmail);
+      emailLink.addEventListener('click', revealEmail);
+      // Also decrypt after 3 seconds automatically for usability
+      setTimeout(revealEmail, 3000);
+    }
   }catch(err){
     console.error(err);
     const grid = document.getElementById('gallery-grid');
