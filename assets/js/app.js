@@ -333,9 +333,9 @@ const COLLECTION_CONFIG = {
     filter: (item) => (item.categories||[]).includes('Broboticus')
   },
   'neon': {
-    title: 'Tech-Noir Horizons',
-    desc: 'Surreal landscapes bathed in Tech-Noir light.',
-    filter: (item) => ((item.styles||[]).includes('Landscape') || (item.styles||[]).includes('Neon')) && !(item.categories||[]).includes('Broboticus')
+    title: 'Environmental Horizons',
+    desc: 'Atmospheric landscapes and digital environments.',
+    filter: (item) => (item.styles||[]).includes('Landscape') && !(item.categories||[]).includes('Broboticus')
   },
   'abstract': {
     title: 'The Abstract Void',
