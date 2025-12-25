@@ -627,6 +627,43 @@ img {
   backdrop-filter: blur(12px) !important;
 }
 
+/* FOOTER */
+.site-footer {
+  padding: 60px 20px;
+  background: rgba(0,0,0,0.8);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-inner p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.footer-link {
+  color: var(--neon);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--neon-mag);
+  text-shadow: 0 0 8px var(--neon-mag);
+}
+
 @keyframes gridMoveDownRight {
   0% { background-position: 0px 0px; }
   100% { background-position: 120px 120px; }
