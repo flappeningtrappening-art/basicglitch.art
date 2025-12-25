@@ -198,7 +198,6 @@ function renderGrid(items){
     // Create card with content
     const card = el('div',{
       className: `card gallery-card ${categoryClass}`,
-      onclick: () => openLightbox(it.id)
     }, [
       // Image - using thumbnail
       el('img', {
@@ -222,6 +221,9 @@ function renderGrid(items){
       // Category pill
       el('div', {className: 'category-pill'}, [firstCategory])
     ]);
+
+    // Use addEventListener for better mobile support
+    card.addEventListener('click', () => openLightbox(it.id));
     
     // Set dataset for dynamic-effects.js
     card.dataset.id = it.id || '';
