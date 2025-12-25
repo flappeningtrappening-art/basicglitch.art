@@ -385,6 +385,9 @@ img {
 .cyber-text-pur { -webkit-text-stroke: 1.5px var(--neon-pur); text-stroke: 1.5px var(--neon-pur); }
 .cyber-text-pur::before { color: var(--neon-pur); text-shadow: 0 0 20px var(--neon-pur); }
 
+.cyber-text-blu { -webkit-text-stroke: 1.5px var(--neon-blu); text-stroke: 1.5px var(--neon-blu); }
+.cyber-text-blu::before { color: var(--neon-blu); text-shadow: 0 0 20px var(--neon-blu); }
+
 @keyframes glitch {
   0%, 100% { clip-path: inset(0 0 95% 0); transform: translate(0); }
   5% { clip-path: inset(25% 0 30% 0); transform: translate(-2px, 2px); }
