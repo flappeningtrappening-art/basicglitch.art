@@ -333,19 +333,69 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 /* ---------------------------
+   COLLECTION ENGINE
+   --------------------------- */
+const COLLECTION_CONFIG = {
+  'broboticus': {
+    title: 'The Broboticus Series',
+    desc: 'An ongoing study of robotic personality and leisure.',
+    filter: (item) => (item.categories||[]).includes('Broboticus')
+  },
+  'neon': {
+    title: 'Neon Horizons',
+    desc: 'Surreal landscapes bathed in Tech-Noir light.',
+    filter: (item) => (item.styles||[]).includes('Landscape') || (item.styles||[]).includes('Neon')
+  },
+  'abstract': {
+    title: 'The Abstract Void',
+    desc: 'Geometric errors and psychedelic datamoshing.',
+    filter: (item) => (item.styles||[]).includes('Psychedelia') || (item.styles||[]).includes('Geometric')
+  }
+};
+
+function initCollectionPage(data) {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const config = COLLECTION_CONFIG[id];
+  
+  if (!config) {
+    document.getElementById('collection-title').textContent = 'ARCHIVE NOT FOUND';
+    document.getElementById('collection-desc').textContent = 'The requested data stream appears corrupted.';
+    return;
+  }
+  
+  // Set Header
+  document.getElementById('collection-title').textContent = config.title;
+  document.getElementById('collection-desc').textContent = config.desc;
+  document.title = `${config.title} | Basic Glitch Art`;
+  
+  // Filter Data
+  const items = data.filter(config.filter);
+  renderGrid(items);
+}
+
+/* ---------------------------
    Init
    --------------------------- */
 (async function init(){
   try{
     setHeroBackground();
     
-    // Only fetch/render gallery if the grid exists (i.e., we are on gallery.html)
-    if(document.getElementById('gallery-grid')) {
-      const data = await fetchGallery();
-      window.GALLERY = data || [];
+    // FETCH DATA ONCE
+    const data = await fetchGallery();
+    window.GALLERY = data || [];
+
+    // ROUTER LOGIC
+    if(document.getElementById('collection-view')) {
+      // We are on collection.html
+      initCollectionPage(window.GALLERY);
+      initialize3DCardCompatibility();
+    } 
+    else if(document.getElementById('gallery-grid')) {
+      // We are on gallery.html
       renderFilters(window.GALLERY);
       renderGrid(window.GALLERY);
-      initialize3DCardCompatibility(); // ADDED: Initialize 3D card compatibility
+      initialize3DCardCompatibility();
     }
     
     // ANTI-SPAM: Decrypt email on interaction
