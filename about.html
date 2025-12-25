@@ -47,7 +47,7 @@
       </h2>
       <p class="cyber-subtitle">The Digital Visionary: Justin Lance</p>
     </div>
-    <div class="about-card neon-3d-card">
+    <div class="about-card">
       <img class="avatar" src="/assets/images/about/artist_broboticus_avatar.png" alt="Artist Avatar">
       <div class="bio-text">
         <p>
@@ -85,13 +85,8 @@
     <div class="instagram-row">
       <div class="instagram-card neon-3d-card" style="padding: 0; overflow: hidden; border: 2px solid var(--neon-mag); width: 100%; max-width: 800px; margin: 0 auto;">
         <a href="https://www.instagram.com/basic.glitch" target="_blank" style="display: block; position: relative;">
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--bg);">
-            <img src="/assets/images/raw/artist_broboticus_og.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-            <img src="/assets/images/raw/aesthetic_sangre_de_cristo.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-            <img src="/assets/images/raw/gaia_of_the_wasteland.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-            <img src="/assets/images/raw/guitarbot_og.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-            <img src="/assets/images/raw/dust_to_dust.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-            <img src="/assets/images/raw/literal_traphouse.png" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
+          <div id="insta-feed-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--bg);">
+            <!-- Random images will be injected here -->
           </div>
           <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
             <span class="btn-neon">VIEW ON INSTAGRAM</span>
@@ -101,6 +96,51 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const rawImages = [
+      'gaia_of_the_wasteland.png',
+      'guitarbot_og.png',
+      'spiral_geometry.png',
+      'artist_broboticus_og.png',
+      'starbot_waiting_in_the_sky.png',
+      'a_mycological_phenomenon.png',
+      'floral.png',
+      'ranchboticus.png',
+      'balletboticus.png',
+      'vitruvian_broboticus_og.png',
+      'brobotosaurus_wrex.png',
+      'cubist_chef.png',
+      'mycology_yourcology.png',
+      'pachydermis.png',
+      'karateboticus1.png',
+      'chefboticus.png',
+      'aesthetic_sangre_de_cristo.png',
+      'glowspore.png',
+      'literal_traphouse.png',
+      'fishboticus.png',
+      'aesthetic_laser_colorado.png',
+      'dust_to_dust.png'
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const grid = document.getElementById('insta-feed-grid');
+    if (grid) {
+      const selected = shuffle([...rawImages]).slice(0, 6);
+      grid.innerHTML = selected.map(img => `
+        <img src="/assets/images/raw/${img}" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
+      `).join('');
+    }
+  });
+</script>
 
 </body>
 </html>

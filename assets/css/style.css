@@ -545,6 +545,50 @@ img {
 .lb-content h3 { margin-top: 20px; color: var(--neon); }
 .lb-content p { color: var(--muted); text-align: center; }
 
+/* ABOUT PAGE STYLES */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  background: transparent; /* Fully transparent */
+  border: 2px solid var(--neon); 
+  border-radius: 15px;
+  margin: 0 auto 3rem auto;
+  max-width: 900px;
+  backdrop-filter: none; /* Removed blur to let grid come through clearly */
+  cursor: default;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid var(--neon);
+  box-shadow: 0 0 20px var(--neon);
+  object-fit: cover;
+  margin-bottom: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bio-text {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.bio-text p {
+  margin-bottom: 1.2rem;
+}
+
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 /* RESPONSIVE FIXES */
 @media (max-width: 768px) {
   .container { padding: 10px; width: 100%; }
