@@ -203,7 +203,7 @@ function renderGrid(items){
       // Image - using thumbnail
       el('img', {
         src: thumbSrc,
-        alt: it.title || 'Glitch artwork',
+        alt: `${it.title} - ${it.description} | Basic Glitch Art`, // SEO Optimized Alt Tag
         title: it.description || it.title || 'Glitch artwork', // Added for SEO & Tooltip
         loading: 'lazy',
         className: 'gallery-image',
