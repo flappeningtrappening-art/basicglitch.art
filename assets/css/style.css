@@ -29,6 +29,14 @@
   box-sizing: border-box;
 }
 
+/* ACCESSIBILITY: Keyboard Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 4px;
+  box-shadow: 0 0 10px var(--neon);
+  border-radius: 4px;
+}
+
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -234,7 +242,7 @@ img {
 /* HEADER (UNCHANGED)                         */
 /* =========================================== */
 
-.site-header{position:sticky;top:0;background:rgba(0,0,0,0.9)};border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
+.site-header{position:sticky;top:0;background:rgba(0,0,0,0.9);border-bottom:1px solid var(--border);z-index:999;backdrop-filter:blur(10px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
 .brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none}
 .nav{display:flex;gap:10px;align-items:center}

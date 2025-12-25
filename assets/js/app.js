@@ -207,6 +207,7 @@ function renderGrid(items){
       el('img', {
         src: thumbSrc,
         alt: it.title || 'Glitch artwork',
+        title: it.description || it.title || 'Glitch artwork', // Added for SEO & Tooltip
         loading: 'lazy',
         className: 'gallery-image',
         'data-large': largeSrc // Store full-size image for lightbox
