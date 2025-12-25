@@ -184,48 +184,37 @@ function renderGrid(items){
   }
 
   items.forEach(it=>{
-    // Get the first category for CSS class and pill
+    // Get the first category for CSS class
     const firstCategory = (it.categories && it.categories[0]) || 'Glitch';
     const categoryClass = 'category-' + firstCategory.replace(/\s+/g, '-');
     
-    // CRITICAL: Construct thumbnail path from id
-    // thumbnails are: /assets/images/gallery-thumbs/[id].jpg
     const thumbSrc = THUMB_BASE + it.id + '.jpg';
-    
-    // Full image is already in it.file
     const largeSrc = it.file.startsWith('/') ? it.file : '/' + it.file;
     
-    // Create card with content
+    // Create card with simplified content (Only Image and Title)
     const card = el('div',{
       className: `card gallery-card ${categoryClass}`,
     }, [
-      // Image - using thumbnail
+      // Image
       el('img', {
         src: thumbSrc,
-        alt: `${it.title} - ${it.description} | Basic Glitch Art`, // SEO Optimized Alt Tag
-        title: it.description || it.title || 'Glitch artwork', // Added for SEO & Tooltip
+        alt: `${it.title} | Basic Glitch Art`,
         loading: 'lazy',
         className: 'gallery-image',
-        'data-large': largeSrc // Store full-size image for lightbox
+        'data-large': largeSrc
       }),
       
       // Title
-      el('h3', {}, [it.title || 'Untitled']),
-      
-      // Description
-      el('p', {className: 'muted'}, [it.description || 'A glitch artwork piece']),
-      
-      // Price if available
-      ...(it.price ? [el('p', {className: 'price'}, [`$${it.price}`])] : []),
-      
-      // Category pill
-      el('div', {className: 'category-pill'}, [firstCategory])
+      el('h3', { style: 'text-align: center; margin-top: 15px;' }, [it.title || 'Untitled'])
     ]);
 
-    // Use addEventListener for better mobile support
-    card.addEventListener('click', () => openLightbox(it.id));
+    // Robust click listener for Lightbox
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(it.id);
+    });
     
-    // Set dataset for dynamic-effects.js
+    // Set dataset for effects
     card.dataset.id = it.id || '';
     card.dataset.style = (it.styles && it.styles[0]) || '';
     card.dataset.category = firstCategory;

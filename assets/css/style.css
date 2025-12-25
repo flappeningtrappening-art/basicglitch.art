@@ -38,7 +38,7 @@
 }
 
 html, body {
-  overflow-x: hidden; /* CRITICAL: Prevent horizontal scroll */
+  overflow-x: hidden;
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -71,7 +71,7 @@ body {
   background: #000 !important;
   min-height: 50vh;
   overflow: hidden;
-  width: 100%; /* Ensure full width */
+  width: 100%;
 }
 
 .neon-grid-section::before,
@@ -83,36 +83,31 @@ body {
   width: 200%;
   height: 200%;
   pointer-events: none;
-  background: linear-gradient(to bottom, 
-    var(--neon) 0%, 
-    var(--neon-mag) 50%, 
-    var(--neon-pur) 100%
-  );
   z-index: 0;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
+/* Updated Grid logic: uses linear-gradient for guaranteed squareness */
 .neon-grid-section::before {
-  -webkit-mask-image: 
-    repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 60px);
-  mask-image: 
-    repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 60px);
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 247, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 247, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px; /* Square grid */
   animation: gridMoveDownRight 40s linear infinite;
+  
+  /* Applying the 3-color gradient via mask-composite */
+  background-attachment: local;
+  border-image: linear-gradient(to bottom, var(--neon), var(--neon-mag), var(--neon-pur)) 1;
 }
 
+/* Depth layer - slightly different color/speed */
 .neon-grid-section::after {
-  -webkit-mask-image: 
-    repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 60px);
-  mask-image: 
-    repeating-linear-gradient(90deg, #000 0px, #000 1px, transparent 1px, transparent 60px),
-    repeating-linear-gradient(0deg, #000 0px, #000 1px, transparent 1px, transparent 60px);
-  -webkit-mask-position: 30px 30px;
-  mask-position: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 28, 207, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 28, 207, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: 30px 30px;
   animation: gridMoveUpLeft 35s linear infinite;
-  opacity: 0.1;
 }
 
 /* 3D CARD */
@@ -139,30 +134,39 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* CRITICAL: Hide the other side */
+  backface-visibility: hidden; 
   -webkit-backface-visibility: hidden;
   border-radius: 15px;
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   top: 0;
   left: 0;
+  background: rgba(10, 15, 30, 0.95);
+  border: 2px solid var(--border);
 }
 
 .card-front {
-  background: rgba(10, 15, 30, 0.9);
-  border: 2px solid rgba(0, 255, 247, 0.4);
   transform: rotateY(0deg);
   z-index: 2;
 }
 
 .card-back {
-  background: rgba(20, 10, 40, 0.95);
-  border: 2px solid rgba(255, 28, 207, 0.4);
-  transform: rotateY(180deg); /* Start rotated */
+  transform: rotateY(180deg);
   z-index: 1;
+}
+
+/* Subtle scanline effect for cards */
+.card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 3;
 }
 
 /* TYPOGRAPHY */
@@ -202,15 +206,6 @@ img {
 .nav{display:flex;gap:8px;align-items:center; flex-wrap: wrap; justify-content: flex-end;}
 .nav-link{display:flex;align-items:center;gap:6px;color:var(--fg);text-decoration:none;padding:6px 8px;border-radius:8px;font-weight:600; font-size: 0.9rem; white-space: nowrap;}
 .nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
-.nav-link img { width: 20px !important; height: 20px !important; }
-
-/* Force icons to small size - GLOBAL OVERRIDE */
-header nav img,
-.commission-tier .icon,
-.about-icons .icon {
-  width: 24px !important;
-  height: 24px !important;
-}
 
 /* HERO */
 .hero{min-height:70vh;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;color:white}
@@ -308,7 +303,7 @@ header nav img,
   border: 1px solid var(--border);
   backdrop-filter: blur(6px);
   overflow: hidden;
-  cursor: pointer; /* Signify clickability */
+  cursor: pointer;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 10;
@@ -340,13 +335,13 @@ header nav img,
 
 .cyber-title {
   font-family: 'Orbitron', monospace;
-  font-size: clamp(1.5rem, 8vw, 3.5rem); /* Dynamic scaling */
+  font-size: clamp(1.5rem, 8vw, 3.5rem); 
   margin-bottom: 1rem;
   position: relative;
   text-align: center;
   width: 100%;
-  overflow-wrap: anywhere; /* Standard wrapping */
-  word-break: normal; /* Do not break in middle of words */
+  overflow-wrap: anywhere; 
+  word-break: normal; 
 }
 
 .cyber-text {
@@ -354,7 +349,7 @@ header nav img,
   -webkit-text-stroke: 1.5px var(--neon);
   text-stroke: 1.5px var(--neon);
   position: relative;
-  display: inline; /* Changed from inline-block to allow wrapping */
+  display: inline; 
 }
 
 .cyber-text::before {
@@ -399,8 +394,8 @@ header nav img,
   gap: 2rem;
   max-width: 1600px;
   margin: 0 auto;
-  justify-content: center; /* Center the grid items horizontally */
-  justify-items: center;   /* Center individual items within cells */
+  justify-content: center; 
+  justify-items: center;   
   z-index: 2;
 }
 
@@ -412,46 +407,6 @@ header nav img,
 }
 
 .card-recommended { transform: scale(1.05) translateY(-20px); z-index: 5; }
-
-.card-3d-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.cyber-card:hover .card-3d-wrapper {
-  transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; 
-  -webkit-backface-visibility: hidden;
-  border-radius: 15px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  background: rgba(10, 15, 30, 0.95);
-  border: 2px solid var(--border);
-}
-
-.card-front {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  z-index: 1;
-}
 
 .card-tier-label {
   font-family: 'Share Tech Mono', monospace;
@@ -529,19 +484,52 @@ header nav img,
 [data-tier="singularity"] .card-title { -webkit-text-stroke: 1px var(--neon-pur); text-shadow: 0 0 10px var(--neon-pur); }
 [data-tier="singularity"] .back-title { color: var(--neon-pur); }
 
-/* ABOUT */
-#about { padding: 4rem 2rem; }
-.about-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--card-radius);
-  padding: 2rem;
+.card-hint {
+  font-family: 'Rajdhani', sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+}
+
+.desktop-msg { display: inline; }
+.mobile-msg { display: none; }
+@media (hover: none) {
+  .desktop-msg { display: none; }
+  .mobile-msg { display: inline; }
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin: 2rem auto;
-  max-width: 900px;
+  justify-content: center;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
+.lightbox.hidden { display: none !important; }
+.lb-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lb-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 247, 0.3);
+}
+.lb-content h3 { margin-top: 20px; color: var(--neon); }
+.lb-content p { color: var(--muted); text-align: center; }
 
 /* RESPONSIVE FIXES */
 @media (max-width: 768px) {
@@ -552,23 +540,19 @@ header nav img,
   .nav-link img { width: 16px !important; height: 16px !important; }
   .brand { font-size: 1.2rem; }
   
-  /* Cyber titles handle scaling via clamp() now */
   .cyber-cards-container { 
     grid-template-columns: 1fr; 
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    padding: 0 20px;
   }
   .cyber-card { 
-    width: 90vw !important; /* Force fit width */
-    max-width: 340px; 
+    width: 100% !important;
+    max-width: 320px; 
     height: 500px; 
     margin: 0 auto; 
   }
   .card-front, .card-back { padding: 1.5rem !important; }
   .about-card { flex-direction: column; text-align: center; }
-  
-  /* Ensure no overflow on case grids */
   .case-grid { grid-template-columns: 1fr !important; }
   .case-img { height: auto !important; }
 }
