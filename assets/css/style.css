@@ -403,45 +403,121 @@ header nav img,
 
 .card-recommended { transform: scale(1.05) translateY(-20px); z-index: 5; }
 
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cyber-card:hover .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
 .card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
   border-radius: 15px;
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  top: 0;
+  left: 0;
+  background: rgba(10, 15, 30, 0.95);
+  border: 2px solid var(--border);
 }
 
 .card-front {
-  background: rgba(10, 15, 30, 0.9);
-  border: 2px solid rgba(0, 255, 255, 0.4);
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1), inset 0 0 60px rgba(0, 255, 255, 0.05);
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card-tier-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-align: center;
 }
 
 .card-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;
-  color: #fff;
+  font-size: 1.8rem;
+  color: var(--fg);
   text-align: center;
-  margin: 1rem 0;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  margin: 0.5rem 0;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow-wrap: anywhere;
 }
 
 .card-price {
   font-family: 'Audiowide', cursive;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
-  color: transparent;
-  background: linear-gradient(45deg, #00ffff, #ff00ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  color: var(--fg);
+  margin: 1rem 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
+
+.card-features {
+  margin: 1.5rem 0;
+  flex-grow: 1;
+}
+
+.feature {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--muted);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.back-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.back-details p {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--fg);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* TIER SPECIFIC ACCENTS */
+[data-tier="nano"] .card-front, [data-tier="nano"] .card-back { border-color: var(--neon); }
+[data-tier="nano"] .card-title { -webkit-text-stroke: 1px var(--neon); text-shadow: 0 0 10px var(--neon); }
+[data-tier="nano"] .back-title { color: var(--neon); }
+
+[data-tier="binary"] .card-front, [data-tier="binary"] .card-back { border-color: var(--neon-blu); }
+[data-tier="binary"] .card-title { -webkit-text-stroke: 1px var(--neon-blu); text-shadow: 0 0 10px var(--neon-blu); }
+[data-tier="binary"] .back-title { color: var(--neon-blu); }
+
+[data-tier="quantum"] .card-front, [data-tier="quantum"] .card-back { border-color: var(--neon-mag); }
+[data-tier="quantum"] .card-title { -webkit-text-stroke: 1px var(--neon-mag); text-shadow: 0 0 10px var(--neon-mag); }
+[data-tier="quantum"] .back-title { color: var(--neon-mag); }
+
+[data-tier="singularity"] .card-front, [data-tier="singularity"] .card-back { border-color: var(--neon-pur); }
+[data-tier="singularity"] .card-title { -webkit-text-stroke: 1px var(--neon-pur); text-shadow: 0 0 10px var(--neon-pur); }
+[data-tier="singularity"] .back-title { color: var(--neon-pur); }
 
 /* ABOUT */
 #about { padding: 4rem 2rem; }
