@@ -350,8 +350,8 @@ const COLLECTION_CONFIG = {
     filter: (item) => (item.styles||[]).includes('Landscape') && !(item.categories||[]).includes('Broboticus')
   },
   'abstract': {
-    title: 'The Abstract Void',
-    desc: 'Geometric errors and psychedelic datamoshing.',
+    title: 'The Psychedelic Void',
+    desc: 'Geometric symmetry and vibrant psychedelia.',
     filter: (item) => (item.styles||[]).includes('Psychedelia') || (item.styles||[]).includes('Geometric')
   }
 };
