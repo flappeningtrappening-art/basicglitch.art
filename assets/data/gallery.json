@@ -1,5 +1,15 @@
 [
   {
+    "id": "pup-001",
+    "title": "The Royale with Kibble",
+    "file": "assets/images/raw/pup-fiction-scene1.png",
+    "categories": ["Pup Fiction", "Available for Purchase"],
+    "styles": ["Neon", "Cinematic"],
+    "date": "2025-12-25",
+    "description": "Scene 1 from the Pup Fiction series. A high-saturation cinematic homage.",
+    "price": 100
+  },
+  {
     "id": "enviro-001",
     "title": "Gaia of the Wasteland",
     "file": "/assets/images/raw/gaia_of_the_wasteland.png",
