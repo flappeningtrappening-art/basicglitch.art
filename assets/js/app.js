@@ -127,22 +127,15 @@ async function fetchGallery(){
 /* ---------------------------
    Filters & Rendering
    --------------------------- */
-let filters = { category: [], style: [] };
+let filters = { style: [] };
 
 function renderFilters(data){
-  const cats = unique(data.map(i=>i.categories||[]));
   const styles = unique(data.map(i=>i.styles||[]));
 
-  const catWrap = document.getElementById('category-filters');
   const styleWrap = document.getElementById('style-filters');
-  if(!catWrap || !styleWrap) return;
-  catWrap.innerHTML=''; styleWrap.innerHTML='';
+  if(!styleWrap) return;
+  styleWrap.innerHTML='';
 
-  cats.forEach(c=>{
-    const b = el('button',{className:'btn-small', type:'button'},[c]);
-    b.addEventListener('click', ()=> toggleFilter('category', c, b));
-    catWrap.appendChild(b);
-  });
   styles.forEach(s=>{
     const b = el('button',{className:'btn-small', type:'button'},[s]);
     b.addEventListener('click', ()=> toggleFilter('style', s, b));
@@ -152,7 +145,7 @@ function renderFilters(data){
   const clearBtn = document.getElementById('clear-filters');
   if(clearBtn){
     clearBtn.addEventListener('click', ()=>{
-      filters = {category:[], style:[]};
+      filters = {style:[]};
       document.querySelectorAll('.btn-small').forEach(b => b.classList.remove('active'));
       renderGrid(window.GALLERY);
     });
@@ -174,7 +167,6 @@ function toggleFilter(type, value, btn){
 }
 function applyFilters(){
   let items = window.GALLERY.slice();
-  if(filters.category.length) items = items.filter(it => filters.category.some(c => (it.categories||[]).includes(c)));
   if(filters.style.length) items = items.filter(it => filters.style.some(s => (it.styles||[]).includes(s)));
   renderGrid(items);
 }
