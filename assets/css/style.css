@@ -648,13 +648,14 @@ img {
 
 .card-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #fff;
   text-align: center;
   margin: 1rem 0;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  overflow-wrap: break-word; /* Ensure long words wrap if necessary */
 }
 
 .card-price {
