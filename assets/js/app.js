@@ -153,8 +153,7 @@ function renderFilters(data){
   if(clearBtn){
     clearBtn.addEventListener('click', ()=>{
       filters = {category:[], style:[]};
-      Array.from(catWrap.children).forEach(b=>b.style.opacity=1);
-      Array.from(styleWrap.children).forEach(b=>b.style.opacity=1);
+      document.querySelectorAll('.btn-small').forEach(b => b.classList.remove('active'));
       renderGrid(window.GALLERY);
     });
   }
@@ -163,8 +162,14 @@ function renderFilters(data){
 function toggleFilter(type, value, btn){
   const arr = filters[type];
   const idx = arr.indexOf(value);
-  if(idx === -1){ arr.push(value); btn.style.opacity = 1; }
-  else { arr.splice(idx,1); btn.style.opacity = 0.6; }
+  if(idx === -1){ 
+    arr.push(value); 
+    btn.classList.add('active'); 
+  }
+  else { 
+    arr.splice(idx,1); 
+    btn.classList.remove('active'); 
+  }
   applyFilters();
 }
 function applyFilters(){
