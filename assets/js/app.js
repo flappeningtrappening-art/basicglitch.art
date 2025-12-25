@@ -174,7 +174,7 @@ function applyFilters(){
 /* ---------------------------
    Render gallery grid
    --------------------------- */
-function renderGrid(items){
+function renderGrid(items, simplified = false){
   const grid = document.getElementById('gallery-grid');
   if(!grid) return;
   grid.innerHTML = '';
@@ -191,10 +191,8 @@ function renderGrid(items){
     const thumbSrc = THUMB_BASE + it.id + '.jpg';
     const largeSrc = it.file.startsWith('/') ? it.file : '/' + it.file;
     
-    // Create card with simplified content (Only Image and Title)
-    const card = el('div',{
-      className: `card gallery-card ${categoryClass}`,
-    }, [
+    // Construct Card Contents
+    const cardChildren = [
       // Image
       el('img', {
         src: thumbSrc,
@@ -203,10 +201,24 @@ function renderGrid(items){
         className: 'gallery-image',
         'data-large': largeSrc
       }),
-      
       // Title
-      el('h3', { style: 'text-align: center; margin-top: 15px;' }, [it.title || 'Untitled'])
-    ]);
+      el('h3', { style: simplified ? 'text-align: center; margin-top: 15px;' : 'margin-top: 15px;' }, [it.title || 'Untitled'])
+    ];
+
+    // Add Description and Price if NOT simplified
+    if (!simplified) {
+      if (it.description) {
+        cardChildren.push(el('p', { className: 'muted', style: 'font-size: 0.9rem; margin: 10px 0;' }, [it.description]));
+      }
+      if (it.price) {
+        cardChildren.push(el('p', { className: 'price', style: 'color: var(--neon-2); font-weight: bold;' }, [`$${it.price}`]));
+      }
+    }
+    
+    // Create card
+    const card = el('div',{
+      className: `card gallery-card ${categoryClass}`,
+    }, cardChildren);
 
     // Robust click listener for Lightbox
     card.addEventListener('click', (e) => {
@@ -362,7 +374,7 @@ function initCollectionPage(data) {
   
   // Filter Data
   const items = data.filter(config.filter);
-  renderGrid(items);
+  renderGrid(items, true); // SIMPLIFIED VIEW FOR PORTFOLIO
 }
 
 /* ---------------------------
@@ -385,7 +397,7 @@ function initCollectionPage(data) {
     else if(document.getElementById('gallery-grid')) {
       // We are on gallery.html
       renderFilters(window.GALLERY);
-      renderGrid(window.GALLERY);
+      renderGrid(window.GALLERY, false); // FULL VIEW FOR GALLERY
       initialize3DCardCompatibility();
     }
     
