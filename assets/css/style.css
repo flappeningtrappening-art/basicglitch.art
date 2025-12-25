@@ -334,10 +334,12 @@ header nav img,
 
 .cyber-title {
   font-family: 'Orbitron', monospace;
-  font-size: 3.5rem;
+  font-size: clamp(1.5rem, 8vw, 3.5rem); /* Dynamic scaling */
   margin-bottom: 1rem;
   position: relative;
-  text-align: center; /* Center force */
+  text-align: center;
+  width: 100%;
+  overflow-wrap: break-word; /* Allow wrapping */
 }
 
 .cyber-text {
@@ -345,7 +347,7 @@ header nav img,
   -webkit-text-stroke: 1.5px var(--neon);
   text-stroke: 1.5px var(--neon);
   position: relative;
-  display: inline-block;
+  display: inline; /* Changed from inline-block to allow wrapping */
 }
 
 .cyber-text::before {
@@ -353,10 +355,12 @@ header nav img,
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   color: var(--neon);
   z-index: -1;
   text-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon);
   animation: glitch 3s infinite;
+  pointer-events: none;
 }
 
 .cyber-text-mag { -webkit-text-stroke: 1.5px var(--neon-mag); text-stroke: 1.5px var(--neon-mag); }
@@ -465,7 +469,7 @@ header nav img,
   .nav-link img { width: 16px !important; height: 16px !important; }
   .brand { font-size: 1.2rem; }
   
-  .cyber-title { font-size: 2.2rem; }
+  /* Cyber titles handle scaling via clamp() now */
   .cyber-cards-container { 
     grid-template-columns: 1fr; 
     width: 100%;
