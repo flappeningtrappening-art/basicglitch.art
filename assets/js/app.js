@@ -402,24 +402,27 @@ function initCollectionPage(data) {
     }
     
     // ANTI-SPAM: Decrypt email on interaction
-    const emailLink = document.getElementById('secure-contact');
-    if(emailLink) {
-      const revealEmail = () => {
-        const u = emailLink.dataset.user;
-        const d = emailLink.dataset.domain;
-        const addr = `${u}@${d}`;
-        emailLink.href = `mailto:${addr}`;
-        emailLink.textContent = addr;
-        emailLink.classList.remove('glitch-link');
-        // Remove listeners once decrypted
-        emailLink.removeEventListener('mouseover', revealEmail);
-        emailLink.removeEventListener('click', revealEmail);
-      };
-      
-      emailLink.addEventListener('mouseover', revealEmail);
-      emailLink.addEventListener('click', revealEmail);
-      // Also decrypt after 3 seconds automatically for usability
-      setTimeout(revealEmail, 3000);
+    const emailLinks = document.querySelectorAll('.secure-contact-link');
+    if(emailLinks.length > 0) {
+      emailLinks.forEach(link => {
+        const revealEmail = () => {
+          const u = link.dataset.user;
+          const d = link.dataset.domain;
+          if(!u || !d) return;
+          const addr = `${u}@${d}`;
+          link.href = `mailto:${addr}`;
+          link.textContent = addr;
+          link.classList.remove('glitch-link');
+          // Remove listeners once decrypted
+          link.removeEventListener('mouseover', revealEmail);
+          link.removeEventListener('click', revealEmail);
+        };
+        
+        link.addEventListener('mouseover', revealEmail);
+        link.addEventListener('click', revealEmail);
+        // Also decrypt after 3 seconds automatically for usability
+        setTimeout(revealEmail, 3000);
+      });
     }
   }catch(err){
     console.error(err);
