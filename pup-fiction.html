@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Bungee&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rationale&family=Wallpoet&family=Michroma&family=Monoton&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">  
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary SEO -->
+<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.png">
+<link rel="canonical" href="https://basicglitch.art/pup-fiction.html">
+<title>Pup Fiction Collection | Pulp Fiction Parody Art | BasicGlitch</title>
+<meta name="description" content="The complete Pup Fiction collection by BasicGlitch. A neon-noir, surrealist homage to Quentin Tarantino's masterpiece, re-imagined with a canine cast.">
+<meta name="keywords" content="Pup Fiction, Pulp Fiction Parody Art, Royale with Cheese, Pumpkin and Honey Bunny, Neon Surrealism, Digital Art Series">
+<meta name="author" content="Justin Lance">
+
+<!-- Social Media / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://basicglitch.art/pup-fiction.html">
+<meta property="og:title" content="Pup Fiction Collection | Neon Noir Parody Art">
+<meta property="og:description" content="Witness the cult classic re-imagined. The Pup Fiction series blends cinema history with surrealist canine chaos.">
+<meta property="og:image" content="https://basicglitch.art/assets/images/raw/pup-fiction-scene1.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://basicglitch.art/pup-fiction.html">
+<meta property="twitter:title" content="Pup Fiction Collection | Neon Noir Parody Art">
+<meta property="twitter:description" content="Witness the cult classic re-imagined. The Pup Fiction series blends cinema history with surrealist canine chaos.">
+<meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/pup-fiction-scene1.png">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- JavaScript -->
+<script src="./assets/js/app.js" defer></script>
+<script src="./assets/js/dynamic-effects.js" defer></script>
+
+<style>
+  .collection-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/assets/images/raw/pup-fiction-scene1.png') no-repeat center center/cover;
+    position: relative;
+    border-bottom: 2px solid var(--neon-blu);
+  }
+  .collection-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+  .collection-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: var(--neon-blu);
+    text-shadow: 0 0 20px var(--neon-blu);
+    margin-bottom: 1rem;
+  }
+  .collection-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-family: 'Exo 2', sans-serif;
+  }
+  
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 0;
+  }
+  
+  .series-card {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+  }
+  .series-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blu);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  
+  .card-img-container {
+    height: 250px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .series-card:hover .card-img {
+    transform: scale(1.1);
+  }
+  
+  .placeholder-overlay {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.8),
+      rgba(0,0,0,0.8) 10px,
+      rgba(20,20,20,0.8) 10px,
+      rgba(20,20,20,0.8) 20px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--muted);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .lock-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+  }
+  
+  .card-info {
+    padding: 20px;
+    text-align: center;
+  }
+  .card-title {
+    color: var(--neon);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  
+  .buy-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: 1px solid var(--neon-blu);
+    color: var(--neon-blu);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+  }
+  .buy-btn:hover {
+    background: var(--neon-blu);
+    color: #000;
+  }
+  
+  .disabled-btn {
+    border-color: #444;
+    color: #666;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="/" class="brand">Basic Glitch Art</a>
+    <nav class="nav">
+      <a class="nav-link" href="/gallery.html"><img src="/assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
+      <a class="nav-link" href="/portfolio.html"><img src="/assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
+      <a class="nav-link" href="/commissions.html"><img src="/assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
+      <a class="nav-link" href="/apparel.html"><img src="/assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
+      <a class="nav-link" href="/about.html"><img src="/assets/icons/about.svg" alt="About Icon"> About</a>
+      <a class="nav-link" href="/contact.html"><img src="/assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="collection-hero">
+  <div class="hero-content">
+    <h1 class="collection-title">PUP FICTION</h1>
+    <p class="collection-intro">
+      A 9-part cinematic journey into the Neon Surreal. <br>
+      Classic scenes. Canine cast. Digital chaos.
+    </p>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="section container">
+  <div class="series-grid">
+  
+    <!-- ITEM 1: DINER ROBBERY (Live) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <img src="/assets/images/raw/pup-fiction-scene1.png" alt="Pumpkin and Honey Puppy and the Diner Robbery" class="card-img" onclick="openLightbox(this)">
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Pumpkin and Honey Puppy and the Diner Robbery</h3>
+        <p class="card-meta">SCENE 001 // PROLOGUE</p>
+        <a href="/contact.html?subject=Purchase%20Inquiry:%20Diner%20Robbery" class="buy-btn">BUY PRINT / LICENSE</a>
+      </div>
+    </article>
+    
+    <!-- ITEM 2: ROYALE WITH FLEAS (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Royale with Fleas</h3>
+        <p class="card-meta">SCENE 002 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 3: EZEKIEL 25:17 (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Ezekiel 25:17</h3>
+        <p class="card-meta">SCENE 003 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 4: JACK RUSSEL TERRIER SLIMS (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Jack Russel Terrier Slims Twist Contest</h3>
+        <p class="card-meta">SCENE 004 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 5: MIA OD'S (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Mia OD's on Vincent's Kibble</h3>
+        <p class="card-meta">SCENE 005 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 6: GOLD WATCH (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">The Gold Watch</h3>
+        <p class="card-meta">SCENE 006 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 7: PAWN SHOP GIMP PUP (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Pawn Shop Gimp Pup</h3>
+        <p class="card-meta">SCENE 007 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 8: DEAD PUGGER STORAGE (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Dead Pugger Storage</h3>
+        <p class="card-meta">SCENE 008 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+    
+    <!-- ITEM 9: WOLF THE PUP (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">The Wolf; The Pup</h3>
+        <p class="card-meta">SCENE 009 // IN PRODUCTION</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+
+    <!-- ITEM 10: LOUDEST BARK (Placeholder) -->
+    <article class="series-card">
+      <div class="card-img-container">
+        <div class="placeholder-overlay">
+          <span style="font-size: 2rem;">🔒</span>
+          <span>DECRYPTING...</span>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3 class="card-title">Pumpkin and Honey Puppy and the Loudest Bark</h3>
+        <p class="card-meta">SCENE 010 // EPILOGUE</p>
+        <span class="buy-btn disabled-btn">COMING SOON</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden" aria-hidden="true">
+  <div class="lb-content" id="lb-content"></div>
+  <button id="lb-close" class="lb-btn">×</button>
+</div>
+
+<script>
+  function openLightbox(img) {
+    const lb = document.getElementById('lightbox');
+    const content = document.getElementById('lb-content');
+    content.innerHTML = '';
+    const newImg = document.createElement('img');
+    newImg.src = img.src;
+    newImg.alt = img.alt;
+    content.appendChild(newImg);
+    lb.classList.remove('hidden');
+    lb.setAttribute('aria-hidden','false');
+  }
+  
+  document.getElementById('lb-close').addEventListener('click', () => {
+     document.getElementById('lightbox').classList.add('hidden');
+  });
+</script>
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <p>© 2025 BASIC GLITCH ART | ALL RIGHTS RESERVED</p>
+    <div class="footer-links">
+      <a href="/terms.html" class="footer-link">Terms & Licensing</a>
+      <a href="/contact.html" class="footer-link">Contact</a>
+      <a href="/about.html" class="footer-link">About the Artist</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

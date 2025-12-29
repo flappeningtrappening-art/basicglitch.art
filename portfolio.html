@@ -9,12 +9,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Primary SEO -->
-<link rel="icon" type="image/png" href="/assets/images/about/artist_broboticus_avatar.png">
+<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.png">
 <link rel="canonical" href="https://basicglitch.art/portfolio.html">
 <title>Art Portfolio | Case Studies in Psychedelia & Cyberpunk | Basic Glitch Art</title>
 <meta name="description" content="Explore the digital art portfolio of Justin Lance (BasicGlitch), featuring the Broboticus series, Neon Landscapes, and the new Pup Fiction cinematic homages.">
 <meta name="keywords" content="digital art portfolio, character design case study, glitch art projects, neon art collection">
 <meta name="author" content="Justin Lance">
+
+<!-- Social Media / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://basicglitch.art/portfolio.html">
+<meta property="og:title" content="Art Portfolio | Case Studies in Psychedelia & Cyberpunk">
+<meta property="og:description" content="Deep dives into the creative process. Case studies in Neon Surrealism, Character Design, and Glitch Aesthetics.">
+<meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://basicglitch.art/portfolio.html">
+<meta property="twitter:title" content="Art Portfolio | Case Studies in Psychedelia & Cyberpunk">
+<meta property="twitter:description" content="Deep dives into the creative process. Case studies in Neon Surrealism, Character Design, and Glitch Aesthetics.">
+<meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="assets/css/style.css">
@@ -92,6 +106,7 @@
       <a class="nav-link" href="/gallery.html"><img src="/assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
       <a class="nav-link" href="/portfolio.html"><img src="/assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
       <a class="nav-link" href="/commissions.html"><img src="/assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
+      <a class="nav-link" href="/apparel.html"><img src="/assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
       <a class="nav-link" href="/about.html"><img src="/assets/icons/about.svg" alt="About Icon"> About</a>
       <a class="nav-link" href="/contact.html"><img src="/assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
     </nav>
@@ -166,12 +181,49 @@
           </h2>
           <p class="cyber-subtitle">Cinematic homages with a canine twist</p>
         </div>
+        
+        <!-- Visible SEO Description -->
+        <div style="max-width: 800px; margin: 0 auto 30px; text-align: center; color: #ccc;">
+          <p>
+            "Pumpkin and Honey Puppy and the Diner Robbery" is the debut piece in the <strong>Pup Fiction</strong> series. 
+            Reimagining the iconic prologue, this digital illustration captures the chaotic energy of the diner hold-up with a high-saturation <strong>neon noir</strong> aesthetic.
+          </p>
+        </div>
+
         <div class="case-grid">
-          <img class="case-img clickable-preview" src="/assets/images/raw/pup-fiction-scene1.png" alt="The Royale with Fleas - Pup Fiction Movie Parody Art by BasicGlitch" onclick="openPortfolioLightbox(this)">
+          <figure style="margin: 0; width: 100%;">
+            <img class="case-img clickable-preview" src="/assets/images/raw/pup-fiction-scene1.png" alt="Pumpkin and Honey Puppy and the Diner Robbery - Pup Fiction Parody Art by BasicGlitch" onclick="openPortfolioLightbox(this)">
+            <figcaption style="text-align: center; color: var(--neon-blu); margin-top: 10px; font-family: 'Share Tech Mono', monospace;">
+              "Pumpkin and Honey Puppy and the Diner Robbery" — Prologue
+            </figcaption>
+          </figure>
           <!-- Add more Pup Fiction scenes here as they are completed -->
         </div>
+
+        <!-- JSON-LD Structured Data for this Artwork -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VisualArtwork",
+          "name": "Pumpkin and Honey Puppy and the Diner Robbery",
+          "alternateName": "Pup Fiction Prologue",
+          "artist": {
+            "@type": "Person",
+            "name": "Justin Lance",
+            "alternateName": "BasicGlitch"
+          },
+          "artform": "Digital Art",
+          "material": "Digital",
+          "description": "A surreal digital parody of the Pulp Fiction diner robbery scene featuring canine characters.",
+          "image": "https://basicglitch.art/assets/images/raw/pup-fiction-scene1.png",
+          "dateCreated": "2025-12-25",
+          "genre": ["Parody", "Surrealism", "Pop Art"],
+          "keywords": "Pup Fiction, Pulp Fiction Parody, Pumpkin and Honey Bunny, Digital Art, Neon Noir"
+        }
+        </script>
+
         <div style="text-align: center; margin-top: 30px;">
-          <a href="/collection.html?id=pup-fiction" class="btn-small">VIEW FULL COLLECTION</a>
+          <a href="/pup-fiction.html" class="btn-small">VIEW FULL COLLECTION</a>
         </div>
       </div>
     </section>
