@@ -388,6 +388,18 @@ img {
 .cyber-text-blu { -webkit-text-stroke: 1.5px var(--neon-blu); text-stroke: 1.5px var(--neon-blu); }
 .cyber-text-blu::before { color: var(--neon-blu); text-shadow: 0 0 20px var(--neon-blu); }
 
+.cyber-text-grn { -webkit-text-stroke: 1.5px var(--neon-2); text-stroke: 1.5px var(--neon-2); }
+.cyber-text-grn::before { color: var(--neon-2); text-shadow: 0 0 20px var(--neon-2); }
+
+.cyber-text-org { -webkit-text-stroke: 1.5px var(--neon-org); text-stroke: 1.5px var(--neon-org); }
+.cyber-text-org::before { color: var(--neon-org); text-shadow: 0 0 20px var(--neon-org); }
+
+.cyber-text-lim { -webkit-text-stroke: 1.5px var(--neon-limon); text-stroke: 1.5px var(--neon-limon); }
+.cyber-text-lim::before { color: var(--neon-limon); text-shadow: 0 0 20px var(--neon-limon); }
+
+.cyber-text-yel { -webkit-text-stroke: 1.5px var(--neon-yel); text-stroke: 1.5px var(--neon-yel); }
+.cyber-text-yel::before { color: var(--neon-yel); text-shadow: 0 0 20px var(--neon-yel); }
+
 @keyframes glitch {
   0%, 100% { clip-path: inset(0 0 95% 0); transform: translate(0); }
   5% { clip-path: inset(25% 0 30% 0); transform: translate(-2px, 2px); }
