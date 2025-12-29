@@ -1,12 +1,12 @@
 [
   {
     "id": "pup-001",
-    "title": "The Royale with Fleas",
+    "title": "Pumpkin and Honey Puppy and the Diner Robbery",
     "file": "assets/images/raw/pup-fiction-scene1.png",
     "categories": ["Pup Fiction", "Available for Purchase"],
     "styles": ["Neon", "Cinematic"],
     "date": "2025-12-25",
-    "description": "Scene 1 from the Pup Fiction series. A high-saturation cinematic homage.",
+    "description": "Prologue: Pumpkin and Honey Puppy execute the diner robbery.",
     "price": 100
   },
   {
