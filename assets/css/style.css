@@ -54,13 +54,13 @@ html, body {
 img[src*=".svg"], .icon {
   width: 24px; /* Standard size */
   height: 24px;
-  filter: drop-shadow(0 0 5px var(--neon));
+  filter: invert(1) drop-shadow(0 0 5px var(--neon));
   transition: filter 0.3s ease, transform 0.3s ease;
   object-fit: contain;
 }
 
 img[src*=".svg"]:hover, .icon:hover {
-  filter: drop-shadow(0 0 12px var(--neon));
+  filter: invert(1) drop-shadow(0 0 12px var(--neon));
   transform: scale(1.1);
 }
 
