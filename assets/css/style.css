@@ -124,12 +124,14 @@ body {
 }
 
 /* 3D CARD */
-.neon-3d-card, .cyber-card {
+.cyber-card {
   perspective: 1000px;
   position: relative;
   cursor: pointer;
   width: 320px;
   height: 450px;
+  border-radius: 15px;
+  overflow: hidden; /* Fixes background bleeding at corners */
 }
 
 .card-3d-wrapper {
@@ -140,8 +142,7 @@ body {
   transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.cyber-card:hover .card-3d-wrapper,
-.neon-3d-card:hover .card-3d-wrapper {
+.cyber-card:hover .card-3d-wrapper {
   transform: rotateY(180deg);
 }
 
@@ -155,6 +156,7 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center horizontally */
   justify-content: space-between;
   overflow: hidden;
   top: 0;
@@ -425,7 +427,7 @@ img {
   margin: 0.5rem 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  overflow-wrap: anywhere;
+  width: 100%;
 }
 
 .card-price {
@@ -441,6 +443,9 @@ img {
   margin: 1.5rem 0;
   flex-grow: 1;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature {
@@ -451,6 +456,7 @@ img {
   font-size: 0.9rem;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
 }
 
 .back-title {
@@ -463,6 +469,9 @@ img {
 
 .back-details {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .back-details p {
@@ -473,6 +482,7 @@ img {
   font-size: 0.85rem;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
 }
 
 .cyber-button {
@@ -524,24 +534,18 @@ img {
   margin-top: 1rem;
 }
 
-.desktop-msg { display: inline; }
-.mobile-msg { display: none; }
-@media (hover: none) {
-  .desktop-msg { display: none; }
-  .mobile-msg { display: inline; }
-}
-
 /* 3D CAROUSEL STYLES */
 .carousel-scene {
   position: relative;
   width: 100%;
   height: 600px;
-  perspective: 1500px;
+  perspective: 2000px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
   margin: 40px 0;
+  pointer-events: none; /* Allow events to reach controls below */
 }
 
 .carousel {
@@ -550,6 +554,7 @@ img {
   position: absolute;
   transform-style: preserve-3d;
   transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none; /* Controlled by children */
 }
 
 .carousel-cell {
@@ -572,39 +577,31 @@ img {
   box-shadow: 0 0 30px var(--neon);
 }
 
-.carousel-cell .cyber-card {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
 .carousel-controls {
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  right: 0;
+  position: relative;
+  margin-top: -40px;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   z-index: 1000;
   pointer-events: auto;
 }
 
 .carousel-btn {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   border: 2px solid var(--neon);
   color: var(--neon);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .carousel-btn:hover {
@@ -618,6 +615,7 @@ img {
   .carousel-scene { height: 500px; }
   .carousel { width: 280px; height: 400px; }
   .carousel-cell { width: 280px; height: 400px; }
+  .cyber-card { width: 280px; height: 400px; }
 }
 
 /* FOOTER */
