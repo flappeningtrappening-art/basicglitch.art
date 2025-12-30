@@ -57,3 +57,6 @@ GEMINI.md
 
 # Private Legal Templates
 legal/
+notes/*
+!notes/*/
+!notes/*/ .gitkeep
