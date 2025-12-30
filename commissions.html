@@ -247,9 +247,9 @@
       // Responsive Radius Calculation
       const getRadius = () => {
         const width = window.innerWidth;
-        if (width < 600) return 280;
-        if (width < 900) return 350;
-        return 450; // Desktop default
+        if (width < 600) return 300;
+        if (width < 900) return 400;
+        return 500; // Increased for better spacing
       };
       
       let radius = getRadius();
@@ -259,8 +259,9 @@
         const angle = theta * selectedIndex * -1;
         carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
         
-        // Update active state
+        // Update active state based on index
         cells.forEach((cell, i) => {
+          // Find the index that is currently front (0 angle relative to viewer)
           const normalizedIndex = ((selectedIndex % cellCount) + cellCount) % cellCount;
           if (i === normalizedIndex) {
             cell.classList.add('is-active');
