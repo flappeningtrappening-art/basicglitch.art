@@ -506,7 +506,7 @@ img {
 [data-tier="binary"] .back-title { color: var(--neon-blu); }
 
 [data-tier="synthweave"] .card-front, [data-tier="synthweave"] .card-back { border-color: var(--neon-org); }
-[data-tier="synthweave"] .card-title { -webkit-text-stroke: 1px var(--neon-org); text-shadow: 0 0 10px var(--neon-org); }
+[data-tier="synthweave"] .card-title { -webkit-text-stroke: 1px var(--neon-org); text-shadow: 0 0 10px var(--neon-org); font-size: 1.5rem; }
 [data-tier="synthweave"] .back-title { color: var(--neon-org); }
 
 [data-tier="quantum"] .card-front, [data-tier="quantum"] .card-back { border-color: var(--neon-mag); }
