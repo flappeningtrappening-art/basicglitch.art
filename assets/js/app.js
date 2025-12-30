@@ -60,6 +60,15 @@ function initialize3DCardCompatibility() {
 /* ---------------------------
    Hero randomizer
    --------------------------- */
+function setBrandColor(){
+  const brand = document.querySelector('.brand');
+  if(brand){
+    // Pick 1-8
+    const num = Math.floor(Math.random() * 8) + 1;
+    brand.classList.add(`brand-neon-${num}`);
+  }
+}
+
 function setHeroBackground(){
   // Check if there are choices available
   if(HERO_CHOICES.length === 0) return;
@@ -382,6 +391,7 @@ function initCollectionPage(data) {
    --------------------------- */
 (async function init(){
   try{
+    setBrandColor();
     setHeroBackground();
     
     // FETCH DATA ONCE
