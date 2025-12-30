@@ -1,6 +1,6 @@
 from krita import *
 
-def create_quantum_quadrants():
+def setup_quantum_quadrants():
     doc = Krita.instance().activeDocument()
     if not doc: return
     
@@ -11,15 +11,16 @@ def create_quantum_quadrants():
     root.addChildNode(group, None)
     
     # 1. The Source Layer (What you draw on)
-    source = doc.createPaintLayer("DRAW HERE (Top Left)", "RGBA", "U8")
+    source = doc.createPaintLayer("QUADRANT 1: Source (Draw Here)", "RGBA", "U8")
     group.addChildNode(source, None)
     
-    # Note: Full 'Clone Layer' setup via API requires specific node types.
-    # For now, this script sets up the layer structure for your composition.
     print("--- QUANTUM QUADRANTS SETUP ---")
-    print("1. Draw in the 'DRAW HERE' layer.")
+    print("1. Draw in the Source layer.")
     print("2. Duplicate this layer 3 times.")
-    print("3. Apply: Mirror Horizontal, Mirror Vertical, and Rotate 180 to the copies.")
-    print("4. This creates Non-Euclidean 'Impossible' Symmetry.")
+    print("3. Apply transformations to the copies:")
+    print("   - Copy 2: Mirror Horizontal")
+    print("   - Copy 3: Mirror Vertical")
+    print("   - Copy 4: Rotate 180 degrees")
+    print("This creates Non-Euclidean 'Impossible' Symmetry.")
 
-create_quantum_quadrants()
+setup_quantum_quadrants()
