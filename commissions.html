@@ -36,6 +36,108 @@
 <!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
+
+<style>
+  /* INLINE CACHE-BUSTING STYLES FOR CAROUSEL */
+  .carousel-scene {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 40px 0;
+    perspective: 2000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel {
+    width: 320px;
+    height: 450px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .carousel-cell {
+    position: absolute;
+    width: 320px;
+    height: 450px;
+    left: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    transition: opacity 0.5s, transform 1s;
+    pointer-events: none;
+  }
+
+  .carousel-cell.is-active {
+    pointer-events: auto;
+    z-index: 100;
+    opacity: 1 !important;
+  }
+
+  .carousel-cell.is-active .cyber-card {
+    box-shadow: 0 0 40px var(--neon);
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .carousel-btn {
+    background: rgba(0,0,0,0.7);
+    border: 2px solid var(--neon);
+    color: var(--neon);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+
+  .carousel-btn:hover {
+    background: var(--neon);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon);
+    transform: scale(1.1);
+  }
+
+  /* Fix for broken card structure */
+  .card-front, .card-back {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .feature, .back-details p {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-scene { height: 500px; }
+    .carousel { width: 280px; height: 400px; }
+    .carousel-cell { width: 280px; height: 400px; }
+    .carousel-controls { gap: 40px; }
+  }
+</style>
 </head>
 <body>
 
@@ -63,11 +165,10 @@
     <p class="cyber-subtitle">SELECT YOUR DIGITAL PACKAGE</p>
   </div>
   
-  <!-- 3D CAROUSEL SCENE -->
   <div class="carousel-scene">
     <div class="carousel">
       
-      <!-- CARD 1: NANO -->
+      <!-- TIER 1 -->
       <div class="carousel-cell" data-tier="nano">
         <div class="cyber-card">
           <div class="card-3d-wrapper">
@@ -80,10 +181,7 @@
                 <div class="feature">◈ FOCUSED SURREAL SUBJECT</div>
                 <div class="feature">◈ 1 REVISION</div>
               </div>
-              <div class="card-hint">
-                <span class="desktop-msg">HOVER_TO_ROTATE</span>
-                <span class="mobile-msg">TAP_TO_FLIP</span>
-              </div>
+              <div class="card-hint">ROTATION_ENABLED</div>
             </div>
             <div class="card-back">
               <div class="back-title">SPECIFICATIONS</div>
@@ -93,16 +191,15 @@
                 <p>• PNG + JPG</p>
                 <p>• PERSONAL USE</p>
               </div>
-              <a href="/contact.html?subject=Commission%20Inquiry:%20NANO" class="cyber-button" style="text-decoration: none; display: inline-block; text-align: center;">SELECT_TIER</a>
+              <a href="/contact.html?subject=Commission%20Inquiry:%20NANO" class="cyber-button">SELECT_TIER</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 2: BINARY -->
+      <!-- TIER 2 -->
       <div class="carousel-cell" data-tier="binary">
         <div class="cyber-card">
-          <div class="recommended-badge">POPULAR</div>
           <div class="card-3d-wrapper">
             <div class="card-front">
               <div class="card-tier-label">TIER_02</div>
@@ -113,10 +210,7 @@
                 <div class="feature">◈ ADVANCED TECH-NOIR FX</div>
                 <div class="feature">◈ UNLIMITED REVISIONS</div>
               </div>
-              <div class="card-hint">
-                <span class="desktop-msg">HOVER_TO_ROTATE</span>
-                <span class="mobile-msg">TAP_TO_FLIP</span>
-              </div>
+              <div class="card-hint">ROTATION_ENABLED</div>
             </div>
             <div class="card-back">
               <div class="back-title">SPECIFICATIONS</div>
@@ -124,13 +218,15 @@
                 <p>• 7 DAY DELIVERY</p>
                 <p>• 8K MASTER RESOLUTION</p>
                 <p>• ALL SOURCE FILES (.PSD)</p>
-<a href="/contact.html?subject=Commission%20Inquiry:%20BINARY" class="cyber-button" style="text-decoration: none; display: inline-block; text-align: center;">SELECT_TIER</a>
+                <p>• COMMERCIAL RIGHTS</p>
+              </div>
+              <a href="/contact.html?subject=Commission%20Inquiry:%20BINARY" class="cyber-button">SELECT_TIER</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 3: SYNTHWEAVE -->
+      <!-- TIER 3 -->
       <div class="carousel-cell" data-tier="synthweave">
         <div class="cyber-card">
           <div class="card-3d-wrapper">
@@ -143,10 +239,7 @@
                 <div class="feature">◈ FRONT & BACK LAYOUTS</div>
                 <div class="feature">◈ READY FOR PRODUCTION</div>
               </div>
-              <div class="card-hint">
-                <span class="desktop-msg">HOVER_TO_ROTATE</span>
-                <span class="mobile-msg">TAP_TO_FLIP</span>
-              </div>
+              <div class="card-hint">ROTATION_ENABLED</div>
             </div>
             <div class="card-back">
               <div class="back-title">SPECIFICATIONS</div>
@@ -156,13 +249,13 @@
                 <p>• REALISTIC MOCKUPS</p>
                 <p>• COMMERCIAL LICENSE</p>
               </div>
-              <a href="/contact.html?subject=Commission%20Inquiry:%20SYNTHWEAVE" class="cyber-button" style="text-decoration: none; display: inline-block; text-align: center;">SELECT_TIER</a>
+              <a href="/contact.html?subject=Commission%20Inquiry:%20SYNTHWEAVE" class="cyber-button">SELECT_TIER</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 4: QUANTUM -->
+      <!-- TIER 4 -->
       <div class="carousel-cell" data-tier="quantum">
         <div class="cyber-card">
           <div class="card-3d-wrapper">
@@ -175,10 +268,7 @@
                 <div class="feature">◈ 1 PREMIUM HOODIE/SHIRT</div>
                 <div class="feature">◈ CUSTOM BRANDING INCLUDED</div>
               </div>
-              <div class="card-hint">
-                <span class="desktop-msg">HOVER_TO_ROTATE</span>
-                <span class="mobile-msg">TAP_TO_FLIP</span>
-              </div>
+              <div class="card-hint">ROTATION_ENABLED</div>
             </div>
             <div class="card-back">
               <div class="back-title">SPECIFICATIONS</div>
@@ -188,13 +278,13 @@
                 <p>• SHIPPING INCLUDED (US)</p>
                 <p>• FULL RIGHTS</p>
               </div>
-              <a href="/contact.html?subject=Commission%20Inquiry:%20QUANTUM" class="cyber-button" style="text-decoration: none; display: inline-block; text-align: center;">SELECT_TIER</a>
+              <a href="/contact.html?subject=Commission%20Inquiry:%20QUANTUM" class="cyber-button">SELECT_TIER</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CARD 5: SINGULARITY -->
+      <!-- TIER 5 -->
       <div class="carousel-cell" data-tier="singularity">
         <div class="cyber-card">
           <div class="card-3d-wrapper">
@@ -207,10 +297,7 @@
                 <div class="feature">◈ 1 LARGE TAPESTRY/CANVAS</div>
                 <div class="feature">◈ PRIORITY COMMS LINE</div>
               </div>
-              <div class="card-hint">
-                <span class="desktop-msg">HOVER_TO_ROTATE</span>
-                <span class="mobile-msg">TAP_TO_FLIP</span>
-              </div>
+              <div class="card-hint">ROTATION_ENABLED</div>
             </div>
             <div class="card-back">
               <div class="back-title">SPECIFICATIONS</div>
@@ -220,89 +307,21 @@
                 <p>• PHYSICAL CENTERPIECE</p>
                 <p>• LIFETIME ARCHIVE</p>
               </div>
-              <a href="/contact.html?subject=Commission%20Inquiry:%20SINGULARITY" class="cyber-button" style="text-decoration: none; display: inline-block; text-align: center;">SELECT_TIER</a>
+              <a href="/contact.html?subject=Commission%20Inquiry:%20SINGULARITY" class="cyber-button">SELECT_TIER</a>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-    
   </div>
 
-  <!-- CONTROLS -->
   <div class="carousel-controls">
     <button class="carousel-btn prev-btn">‹</button>
     <button class="carousel-btn next-btn">›</button>
   </div>
 
-  <script>
-    // 3D Carousel Logic
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.querySelector('.carousel');
-      const cells = carousel.querySelectorAll('.carousel-cell');
-      const cellCount = cells.length; // 5
-      let selectedIndex = 0;
-      
-      // Responsive Radius Calculation
-      const getRadius = () => {
-        const width = window.innerWidth;
-        if (width < 600) return 300;
-        if (width < 900) return 400;
-        return 500; // Increased for better spacing
-      };
-      
-      let radius = getRadius();
-      const theta = 360 / cellCount;
-      
-      const rotateCarousel = () => {
-        const angle = theta * selectedIndex * -1;
-        carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
-        
-        // Update active state based on index
-        cells.forEach((cell, i) => {
-          // Find the index that is currently front (0 angle relative to viewer)
-          const normalizedIndex = ((selectedIndex % cellCount) + cellCount) % cellCount;
-          if (i === normalizedIndex) {
-            cell.classList.add('is-active');
-            cell.style.opacity = '1';
-          } else {
-            cell.classList.remove('is-active');
-            cell.style.opacity = '0.3';
-          }
-        });
-      };
-      
-      const updateLayout = () => {
-        radius = getRadius();
-        cells.forEach((cell, i) => {
-          const cellAngle = theta * i;
-          cell.style.transform = `rotateY(${cellAngle}deg) translateZ(${radius}px)`;
-        });
-        rotateCarousel();
-      };
-
-      window.addEventListener('resize', updateLayout);
-      
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      
-      prevBtn.addEventListener('click', () => {
-        selectedIndex--;
-        rotateCarousel();
-      });
-      
-      nextBtn.addEventListener('click', () => {
-        selectedIndex++;
-        rotateCarousel();
-      });
-      
-      // Initialize
-      updateLayout();
-    });
-  </script>
-
-  <!-- LICENSING & USAGE SECTION -->
+  <!-- USAGE SECTION -->
   <div class="container" style="margin-top: 80px; padding-bottom: 80px;">
     <div class="cyber-header" style="margin-bottom: 40px;">
       <h3 class="cyber-title" style="font-size: 1.8rem;">
@@ -313,15 +332,15 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; background: rgba(0,0,0,0.4); padding: 40px; border: 1px solid var(--border); border-radius: 8px;">
       <div class="usage-tier">
         <h4 style="color: var(--neon); font-family: 'Orbitron', sans-serif; margin-bottom: 15px;">PERSONAL USE</h4>
-        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Includes high-resolution files for your private collection. Perfect for wallpapers, social media profile icons, or a single physical print for your home. No commercial redistribution allowed.</p>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Includes high-resolution files for your private collection. Perfect for wallpapers, social media profile icons, or a single physical print for your home.</p>
       </div>
       <div class="usage-tier">
         <h4 style="color: var(--neon-mag); font-family: 'Orbitron', sans-serif; margin-bottom: 15px;">COMMERCIAL LICENSE</h4>
-        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Grants rights for use in branding, album artwork, book covers, or marketing materials. Includes high-fidelity source files (.PSD) for professional integration. Artist retains copyright.</p>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Grants rights for use in branding, album artwork, book covers, or marketing materials. Includes high-fidelity source files (.PSD).</p>
       </div>
       <div class="usage-tier">
         <h4 style="color: var(--neon-pur); font-family: 'Orbitron', sans-serif; margin-bottom: 15px;">PHYSICAL & EXCLUSIVE</h4>
-        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Premium physical products (Hoodies, Tapestries) included in Tiers 03 and 04. These are one-off productions or limited runs, ensuring your commissioned piece remains a unique artifact.</p>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Premium physical products included in Tiers 04 and 05. These are limited runs, ensuring your commissioned piece remains unique.</p>
       </div>
     </div>
     
@@ -341,6 +360,62 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const cells = Array.from(carousel.querySelectorAll('.carousel-cell'));
+    const cellCount = cells.length;
+    let selectedIndex = 0;
+    const theta = 360 / cellCount;
+
+    const getRadius = () => {
+      const width = window.innerWidth;
+      if (width < 600) return 280;
+      if (width < 900) return 380;
+      return 480;
+    };
+
+    function rotateCarousel() {
+      const radius = getRadius();
+      const angle = theta * selectedIndex * -1;
+      carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+      
+      cells.forEach((cell, i) => {
+        const normalizedIndex = ((selectedIndex % cellCount) + cellCount) % cellCount;
+        if (i === normalizedIndex) {
+          cell.classList.add('is-active');
+          cell.style.opacity = '1';
+        } else {
+          cell.classList.remove('is-active');
+          cell.style.opacity = '0.2';
+        }
+      });
+    }
+
+    function initLayout() {
+      const radius = getRadius();
+      cells.forEach((cell, i) => {
+        const cellAngle = theta * i;
+        cell.style.transform = `rotateY(${cellAngle}deg) translateZ(${radius}px)`;
+      });
+      rotateCarousel();
+    }
+
+    document.querySelector('.prev-btn').addEventListener('click', () => {
+      selectedIndex--;
+      rotateCarousel();
+    });
+
+    document.querySelector('.next-btn').addEventListener('click', () => {
+      selectedIndex++;
+      rotateCarousel();
+    });
+
+    window.addEventListener('resize', initLayout);
+    initLayout();
+  });
+</script>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
