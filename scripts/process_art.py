@@ -12,8 +12,15 @@ THUMB_DIR = os.path.join(BASE_DIR, "assets/images/gallery-thumbs")
 JSON_FILE = os.path.join(BASE_DIR, "assets/data/gallery.json")
 
 def process_art():
+    import sys
     print("--- Basic Glitch Art Processor ---")
-    input_path = input("Drag and drop the new image file here (or type path): ").strip().replace("'", "")
+    
+    # Check if path was passed as argument, otherwise ask
+    if len(sys.argv) > 1:
+        input_path = sys.argv[1]
+        print(f"Automated trigger: {input_path}")
+    else:
+        input_path = input("Drag and drop the new image file here (or type path): ").strip().replace("'", "")
     
     if not os.path.exists(input_path):
         print(f"[ERROR] File not found: {input_path}")
