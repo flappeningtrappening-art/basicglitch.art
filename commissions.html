@@ -77,7 +77,15 @@
 
   .carousel-cell.is-active .cyber-card {
     box-shadow: 0 0 40px var(--neon);
+    transition: box-shadow 0.5s ease;
   }
+
+  /* TIER SPECIFIC GLOWS */
+  [data-tier="nano"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon), inset 0 0 15px rgba(0, 255, 247, 0.2); }
+  [data-tier="binary"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-blu), inset 0 0 15px rgba(10, 122, 255, 0.2); }
+  [data-tier="synthweave"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-org), inset 0 0 15px rgba(255, 95, 31, 0.2); }
+  [data-tier="quantum"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-mag), inset 0 0 15px rgba(255, 28, 207, 0.2); }
+  [data-tier="singularity"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-pur), inset 0 0 15px rgba(199, 36, 255, 0.2); }
 
   .carousel-controls {
     display: flex;
