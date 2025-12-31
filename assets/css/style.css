@@ -656,6 +656,44 @@ img {
 .lb-content h3 { margin-top: 20px; color: var(--neon); }
 .lb-content p { color: var(--muted); text-align: center; }
 
+/* LIGHTBOX NAVIGATION ICONS */
+.lb-btn, .lb-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  position: absolute;
+  z-index: 10001;
+}
+
+.lb-btn {
+  top: 20px;
+  right: 20px;
+}
+
+.lb-nav {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lb-btn:hover, .lb-nav:hover {
+  transform: scale(1.2); 
+}
+
+.lb-nav:hover {
+  transform: translateY(-50%) scale(1.2); 
+}
+
+.lb-btn img, .lb-nav img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1) drop-shadow(0 0 5px var(--neon));
+}
+
 /* ABOUT PAGE STYLES */
 .about-card {
   display: flex;
