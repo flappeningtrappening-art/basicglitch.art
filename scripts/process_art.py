@@ -2,6 +2,8 @@
 import os
 import json
 import shutil
+import sys
+import select
 from PIL import Image
 from datetime import datetime
 
@@ -11,56 +13,84 @@ RAW_DIR = os.path.join(BASE_DIR, "assets/images/raw")
 THUMB_DIR = os.path.join(BASE_DIR, "assets/images/gallery-thumbs")
 JSON_FILE = os.path.join(BASE_DIR, "assets/data/gallery.json")
 
-def process_art():
-    import sys
-    print("--- Basic Glitch Art Processor ---")
+def get_input_with_timeout(prompt, default_value, timeout=5):
+    """
+    Tries to get input from user. 
+    If not interactive (background) or times out, returns default.
+    """
+    # Check if we have a valid TTY (terminal)
+    if not sys.stdin.isatty():
+        return default_value
+
+    print(f"{prompt} [Default: {default_value}] ", end='', flush=True)
     
-    # Check if path was passed as argument, otherwise ask
+    # Wait for input with timeout
+    rlist, _, _ = select.select([sys.stdin], [], [], timeout)
+    if rlist:
+        data = sys.stdin.readline().strip()
+        if data:
+            return data
+    else:
+        print(f"\n[Timeout] Using default: {default_value}")
+    
+    return default_value
+
+def process_art():
+    print(f"--- Basic Glitch Art Processor [{datetime.now()}] ---")
+    
+    # Check if path was passed as argument
     if len(sys.argv) > 1:
         input_path = sys.argv[1]
-        print(f"Automated trigger: {input_path}")
+        print(f"Triggered for: {input_path}")
     else:
-        input_path = input("Drag and drop the new image file here (or type path): ").strip().replace("'", "")
-    
+        print("Usage: process_art.py <path_to_image>")
+        return
+
     if not os.path.exists(input_path):
         print(f"[ERROR] File not found: {input_path}")
         return
 
-    # 1. Get info from user
-    title = input("Enter Title: ")
-    description = input("Enter Description: ")
-    price = input("Enter Price (leave blank for none): ")
-    styles_input = input("Enter Styles (comma separated, e.g. Neon, Surrealism): ")
+    # Default Metadata
+    default_title = os.path.splitext(os.path.basename(input_path))[0].replace("_", " ").title()
+    
+    # Get Metadata (Timeout logic prevents hanging in background)
+    title = get_input_with_timeout("Enter Title:", default_title)
+    description = get_input_with_timeout("Enter Description:", "Neon Surrealism Piece")
+    price = get_input_with_timeout("Enter Price:", "")
+    styles_input = get_input_with_timeout("Styles (comma sep):", "Neon, Glitch")
+    
     styles = [s.strip() for s in styles_input.split(",")]
     
     # 2. Generate unique ID and Filename
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     ext = os.path.splitext(input_path)[1]
-    filename = f"{title.lower().replace(' ', '_')}_{timestamp}{ext}"
+    clean_title = title.lower().replace(' ', '_')
+    filename = f"{clean_title}_{timestamp}{ext}"
     target_raw_path = os.path.join(RAW_DIR, filename)
     
     # 3. Copy to Raw directory
-    shutil.copy(input_path, target_raw_path)
-    print(f"[1/3] Copied to assets/images/raw/{filename}")
+    try:
+        shutil.copy(input_path, target_raw_path)
+        print(f"[1/3] Copied to assets/images/raw/{filename}")
+    except Exception as e:
+        print(f"[ERROR] Copy failed: {e}")
+        return
 
     # 4. Create Thumbnail
+    art_id = f"art-{timestamp}"
     try:
         with Image.open(input_path) as img:
-            # Generate ID based on filename for thumbnail
-            art_id = f"art-{timestamp}"
             thumb_filename = f"{art_id}.jpg"
             thumb_path = os.path.join(THUMB_DIR, thumb_filename)
             
-            # Maintain aspect ratio, max width 600
             img.thumbnail((600, 600))
-            # Convert to RGB if needed (for JPG save)
             if img.mode != 'RGB':
                 img = img.convert('RGB')
             img.save(thumb_path, "JPEG", quality=85)
-            print(f"[2/3] Created thumbnail: assets/images/gallery-thumbs/{thumb_filename}")
+            print(f"[2/3] Created thumbnail: {thumb_filename}")
     except Exception as e:
-        print(f"[ERROR] Failed to create thumbnail: {e}")
-        return
+        print(f"[ERROR] Thumbnail failed: {e}")
+        # Proceed anyway, not fatal
 
     # 5. Update gallery.json
     try:
@@ -77,19 +107,22 @@ def process_art():
             "description": description
         }
         if price:
-            new_entry["price"] = int(price)
+            try:
+                new_entry["price"] = int(price)
+            except:
+                pass # Ignore bad price input
 
-        gallery_data.insert(0, new_entry) # Add to start of list
+        gallery_data.insert(0, new_entry) 
 
         with open(JSON_FILE, 'w') as f:
             json.dump(gallery_data, f, indent=2)
         print(f"[3/3] Updated gallery.json")
 
     except Exception as e:
-        print(f"[ERROR] Failed to update JSON: {e}")
+        print(f"[ERROR] JSON Update failed: {e}")
         return
 
-    print(f"\n[SUCCESS] '{title}' is now live locally! Just have Gemini push the changes.")
+    print(f"\n[SUCCESS] '{title}' is live! ID: {art_id}")
 
 if __name__ == "__main__":
     process_art()
