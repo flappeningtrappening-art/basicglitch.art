@@ -3,8 +3,8 @@
 
 // Config
 const ROBOT_IMAGES = [
-  { src: '/assets/images/guitarbot.png', id: 'guitarbot', audioPath: '/assets/audio/guitarbot/' },
-  { src: '/assets/images/broboticus_og.png', id: 'broboticus', audioPath: '/assets/audio/broboticus/' }
+  { src: '/assets/images/raw/guitarbot_og.png', id: 'guitarbot', audioPath: '/assets/audio/guitarbot/' },
+  { src: '/assets/images/raw/artist_broboticus_og.png', id: 'broboticus', audioPath: '/assets/audio/broboticus/' }
 ];
 
 const ROBOT_PROBABILITY = 0.75; // chance to show robots

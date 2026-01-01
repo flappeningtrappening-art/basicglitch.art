@@ -205,7 +205,7 @@ function renderGrid(items, simplified = false){
       // Image
       el('img', {
         src: thumbSrc,
-        alt: `${it.title} | Basic Glitch Art`,
+        alt: `${it.title} | BasicGlitch`,
         loading: 'lazy',
         className: 'gallery-image',
         'data-large': largeSrc
@@ -379,7 +379,7 @@ function initCollectionPage(data) {
   // Set Header
   document.getElementById('collection-title').textContent = config.title;
   document.getElementById('collection-desc').textContent = config.desc;
-  document.title = `${config.title} | Basic Glitch Art`;
+  document.title = `${config.title} | BasicGlitch`;
   
   // Filter Data
   const items = data.filter(config.filter);

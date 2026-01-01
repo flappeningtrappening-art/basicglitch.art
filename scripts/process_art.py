@@ -36,7 +36,7 @@ def get_input_with_timeout(prompt, default_value, timeout=5):
     return default_value
 
 def process_art():
-    print(f"--- Basic Glitch Art Processor [{datetime.now()}] ---")
+    print(f"--- BasicGlitch Art Processor [{datetime.now()}] ---")
     
     # Check if path was passed as argument
     if len(sys.argv) > 1:

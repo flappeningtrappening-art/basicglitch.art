@@ -5,7 +5,7 @@
 WATCH_DIR="/media/sf_minty_windows"
 SCRIPT_PATH="$HOME/monetization/basic-glitch-art/scripts/process_art.py"
 
-echo "--- Basic Glitch: Monitoring $WATCH_DIR ---"
+echo "--- BasicGlitch: Monitoring $WATCH_DIR ---"
 echo "Waiting for Krita exports..."
 
 # Monitor for new files or modified files being closed
