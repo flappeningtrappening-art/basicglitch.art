@@ -9,7 +9,7 @@ FILENAME="basicglitch_backup_$DATE.tar.gz"
 # Ensure backup directory exists on the host
 mkdir -p "$BACKUP_DEST"
 
-echo "--- Basic Glitch Backup System ---"
+echo "--- BasicGlitch Backup System ---"
 echo "Targeting: $BACKUP_DEST/$FILENAME"
 
 # Create the compressed backup

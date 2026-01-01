@@ -16,22 +16,22 @@
 <!-- Primary SEO -->
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.png">
 <link rel="canonical" href="https://basicglitch.art/">
-<title>BasicGlitch - Surrealism and Psychedelic Art, Commissions, Portfolio, and Apparel</title>
-<meta name="description" content="Handcrafted digital visions by Justin Lance (BasicGlitch). Specializing in Neon Surrealism, Cyberpunk Character Design, Geometric Abstraction, and Tech-Noir Landscapes.">
-<meta name="keywords" content="psychedelic art, surrealism, cyberpunk character design, tech-noir, geometric art, digital art commissions, Justin Lance, abstract art">
-<meta name="author" content="Justin Lance">
+<title>BasicGlitch | Cyber-Eclectic Surrealism</title>
+<meta name="description" content="Handcrafted digital visions by BasicGlitch. Specializing in Neon Surrealism, Cyberpunk Character Design, Geometric Abstraction, and Tech-Noir Landscapes.">
+<meta name="keywords" content="psychedelic art, surrealism, cyberpunk character design, tech-noir, geometric art, digital art commissions, abstract art, BasicGlitch">
+<meta name="author" content="BasicGlitch">
 
 <!-- Social Media / Open Graph (Discord, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/">
-<meta property="og:title" content="Basic Glitch | Digital Surrealism & Tech-Noir">
+<meta property="og:title" content="BasicGlitch | Cyber-Eclectic Surrealism">
 <meta property="og:description" content="Handcrafted digital chaos. Specializing in Psychedelic Surrealism, Cyberpunk Characters, and Tech-Noir Landscapes.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://basicglitch.art/">
-<meta property="twitter:title" content="Basic Glitch | Digital Surrealism">
+<meta property="twitter:title" content="BasicGlitch | Cyber-Eclectic Surrealism">
 <meta property="twitter:description" content="Handcrafted digital chaos. Exploring Psychedelic, Surreal, and Tech-Noir visions.">
 <meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
@@ -41,14 +41,14 @@
 <!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
+<script src="./assets/js/robot.js" defer></script>
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Justin Lance",
-  "alternateName": "BasicGlitch",
+  "name": "BasicGlitch",
   "url": "https://basicglitch.art",
   "jobTitle": "Digital Artist",
   "image": "https://basicglitch.art/assets/images/about/artist_broboticus_avatar.png",
@@ -111,7 +111,7 @@
 <!-- HEADER / NAVIGATION -->
 <header class="site-header">
   <div class="header-inner container">
-    <a href="/" class="brand">Basic Glitch</a>
+    <a href="/" class="brand">BasicGlitch</a>
     <nav class="nav">
       <a class="nav-link" href="/gallery.html"><img src="/assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
       <a class="nav-link" href="/portfolio.html"><img src="/assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
@@ -131,9 +131,12 @@
 
   <div class="hero-overlay"></div>
 
+  <!-- Interactive Robot Element -->
+  <img id="robot-foreground" class="robot-foreground animated" src="" alt="Interactive Artist Bot" style="display: none; position: absolute; bottom: 0; right: 5%; height: 60vh; z-index: 5; pointer-events: auto;">
+
   <div class="hero-inner container">
 
-    <h1 class="title">Welcome to Basic Glitch</h1>
+    <h1 class="title">Welcome to BasicGlitch</h1>
 
     <p class="subtitle">Digital Surrealism, Tech-Noir Landscapes, and Psychedelic Character Design.</p>
 
@@ -153,7 +156,7 @@
 
   <div class="footer-inner container">
 
-    <p>© 2025 BASIC GLITCH ART | ALL RIGHTS RESERVED</p>
+    <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
 
     <div class="footer-links">
 

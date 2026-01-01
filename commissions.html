@@ -11,22 +11,22 @@
 <!-- Primary SEO -->
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.png">
 <link rel="canonical" href="https://basicglitch.art/commissions.html">
-<title>Commission Art | Custom Surreal & Tech-Noir Illustrations | Basic Glitch</title>
+<title>Commissions | Custom Surreal & Tech-Noir Art | BasicGlitch</title>
 <meta name="description" content="Commission custom digital psychedelic art, cyberpunk portraits, and Tech-Noir visions. View pricing tiers.">
-<meta name="keywords" content="art commissions, digital art pricing, surrealism services, buy digital art">
-<meta name="author" content="Justin Lance">
+<meta name="keywords" content="art commissions, digital art pricing, surrealism services, buy digital art, BasicGlitch">
+<meta name="author" content="BasicGlitch">
 
 <!-- Social Media / Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/commissions.html">
-<meta property="og:title" content="Commission Art | Custom Surreal & Tech-Noir Illustrations">
+<meta property="og:title" content="Commissions | Custom Surreal & Tech-Noir Art | BasicGlitch">
 <meta property="og:description" content="Hire BasicGlitch for custom album art, book covers, game assets, and digital surrealism.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://basicglitch.art/commissions.html">
-<meta property="twitter:title" content="Commission Art | Custom Surreal & Tech-Noir Illustrations">
+<meta property="twitter:title" content="Commissions | Custom Surreal & Tech-Noir Art | BasicGlitch">
 <meta property="twitter:description" content="Hire BasicGlitch for custom album art, book covers, game assets, and digital surrealism.">
 <meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
@@ -36,130 +36,13 @@
 <!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
-
-<style>
-  /* INLINE CACHE-BUSTING STYLES FOR CAROUSEL */
-  .carousel-scene {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 40px 0;
-    perspective: 2000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .carousel {
-    width: 320px;
-    height: 450px;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-  .carousel-cell {
-    position: absolute;
-    width: 320px;
-    height: 450px;
-    left: 0;
-    top: 0;
-    transform-style: preserve-3d;
-    transition: opacity 0.5s, transform 1s;
-    pointer-events: none;
-  }
-
-  .carousel-cell.is-active {
-    pointer-events: auto;
-    z-index: 100;
-    opacity: 1 !important;
-  }
-
-  .carousel-cell.is-active .cyber-card {
-    box-shadow: 0 0 40px var(--neon);
-    transition: box-shadow 0.5s ease;
-  }
-
-  /* TIER SPECIFIC GLOWS */
-  [data-tier="nano"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon), inset 0 0 15px rgba(0, 255, 247, 0.2); }
-  [data-tier="binary"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-blu), inset 0 0 15px rgba(10, 122, 255, 0.2); }
-  [data-tier="synthweave"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-org), inset 0 0 15px rgba(255, 95, 31, 0.2); }
-  [data-tier="quantum"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-mag), inset 0 0 15px rgba(255, 28, 207, 0.2); }
-  [data-tier="singularity"].is-active .cyber-card { box-shadow: 0 0 40px var(--neon-pur), inset 0 0 15px rgba(199, 36, 255, 0.2); }
-
-  /* CARD BACK COLOR INFUSION */
-  [data-tier="nano"] .card-back { background: rgba(0, 255, 247, 0.08); box-shadow: inset 0 0 30px rgba(0, 255, 247, 0.15); }
-  [data-tier="binary"] .card-back { background: rgba(10, 122, 255, 0.08); box-shadow: inset 0 0 30px rgba(10, 122, 255, 0.15); }
-  [data-tier="synthweave"] .card-back { background: rgba(255, 95, 31, 0.08); box-shadow: inset 0 0 30px rgba(255, 95, 31, 0.15); }
-  [data-tier="quantum"] .card-back { background: rgba(255, 28, 207, 0.08); box-shadow: inset 0 0 30px rgba(255, 28, 207, 0.15); }
-  [data-tier="singularity"] .card-back { background: rgba(199, 36, 255, 0.08); box-shadow: inset 0 0 30px rgba(199, 36, 255, 0.15); }
-
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    margin-top: 20px;
-    padding-bottom: 50px;
-  }
-
-  .carousel-btn {
-    background: rgba(0,0,0,0.7);
-    border: 2px solid var(--neon);
-    color: var(--neon);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    font-size: 2.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Orbitron', sans-serif;
-    transition: all 0.3s;
-    z-index: 1000;
-  }
-
-  .carousel-btn:hover {
-    background: var(--neon);
-    color: #000;
-    box-shadow: 0 0 20px var(--neon);
-    transform: scale(1.1);
-  }
-
-  /* Fix for broken card structure */
-  .card-front, .card-back {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    text-align: center !important;
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 15px !important;
-    padding: 2rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .feature, .back-details p {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  @media (max-width: 768px) {
-    .carousel-scene { height: 500px; }
-    .carousel { width: 280px; height: 400px; }
-    .carousel-cell { width: 280px; height: 400px; }
-    .carousel-controls { gap: 40px; }
-  }
-</style>
 </head>
 <body>
 
 <!-- HEADER / NAVIGATION -->
 <header class="site-header">
   <div class="header-inner container">
-    <a href="/" class="brand">Basic Glitch</a>
+    <a href="/" class="brand">BasicGlitch</a>
     <nav class="nav">
       <a class="nav-link" href="/gallery.html"><img src="/assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
       <a class="nav-link" href="/portfolio.html"><img src="/assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
@@ -374,7 +257,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner container">
-    <p>© 2025 BASIC GLITCH ART | ALL RIGHTS RESERVED</p>
+    <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
     <div class="footer-links">
       <a href="/terms.html" class="footer-link">Terms & Licensing</a>
       <a href="/contact.html" class="footer-link">Contact</a>
