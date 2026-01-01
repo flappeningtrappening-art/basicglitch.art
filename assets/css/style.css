@@ -733,6 +733,20 @@ img {
   .cyber-card { width: 280px; height: 400px; }
   .container { padding: 10px; width: 100%; }
   .about-card { padding: 1.5rem; }
+  
+  /* Section Guardian Mobile Fixes */
+  .section-guardian {
+    height: 40vh !important; /* Smaller on mobile */
+    opacity: 0.4; /* More subtle */
+  }
+  
+  .guardian-container {
+    pointer-events: none; /* Don't block clicks to buttons underneath */
+  }
+  
+  .section-guardian {
+    pointer-events: auto; /* Re-enable clicks on the image itself */
+  }
 }
 
 /* FOOTER */
