@@ -324,12 +324,21 @@ if(lbContent){
 
 /* attach lightbox UI controls and mobile nav toggle */
 document.addEventListener('DOMContentLoaded', ()=>{
+  const lightbox = document.getElementById('lightbox');
   const closeBtn = document.getElementById('lb-close');
   const prevBtn = document.getElementById('lb-prev');
   const nextBtn = document.getElementById('lb-next');
+  
   if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
   if(prevBtn) prevBtn.addEventListener('click', prevItem);
   if(nextBtn) nextBtn.addEventListener('click', nextItem);
+
+  // Close on background click
+  if(lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) closeLightbox();
+    });
+  }
 
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const mainNav = document.getElementById('main-nav');
