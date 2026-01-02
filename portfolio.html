@@ -124,9 +124,11 @@
       <p class="cyber-subtitle">Robotic Personality & Digital Leisure</p>
     </div>
         <div class="case-grid">
-          <img class="case-img clickable-preview" src="/assets/images/raw/artist_broboticus_og.png" alt="Brobarticus" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/guitarbot_og.png" alt="Guitarbot" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/chefboticus.png" alt="Chef Brobot" onclick="openPortfolioLightbox(this)">
+            <div class="case-study-media">
+              <img class="case-img clickable-preview" src="/assets/images/raw/artist_broboticus_og.png" alt="Brobarticus (Self Portrait)" data-id="brobot-001" onclick="openLightbox(this.dataset.id)">
+            </div>
+          <img class="case-img clickable-preview" src="/assets/images/raw/guitarbot_og.png" alt="Guitarbot" data-id="guitarbot-001" onclick="openLightbox(this.dataset.id)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/chefboticus.png" alt="Chef Brobot" data-id="brobot-003" onclick="openLightbox(this.dataset.id)">
         </div>
         <div style="text-align: center; margin-top: 30px; position: relative; z-index: 10;">
           <a href="/collection.html?id=broboticus" class="btn-small">VIEW FULL COLLECTION</a>
@@ -149,9 +151,9 @@
           <p class="cyber-subtitle">Atmospheric Landscapes & Digital Environments</p>
         </div>
         <div class="case-grid">
-          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_sangre_de_cristo.png" alt="Sangre Neon" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_laser_colorado.png" alt="Laser Colorado" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/dust_to_dust.png" alt="Dust to Dust" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_sangre_de_cristo.png" alt="Sangre Neon" data-id="aesthetic-001" onclick="openLightbox(this.dataset.id)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/aesthetic_laser_colorado.png" alt="Laser Colorado" data-id="aesthetic-002" onclick="openLightbox(this.dataset.id)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/dust_to_dust.png" alt="Dust to Dust" data-id="enviro-002" onclick="openLightbox(this.dataset.id)">
         </div>
         <div style="text-align: center; margin-top: 30px;">
           <a href="/collection.html?id=neon" class="btn-small">VIEW FULL COLLECTION</a>
@@ -168,9 +170,9 @@
           <p class="cyber-subtitle">Geometric symmetry & abstract patterns</p>
         </div>
         <div class="case-grid">
-          <img class="case-img clickable-preview" src="/assets/images/raw/literal_traphouse.png" alt="Traphouse" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/spiral_geometry.png" alt="Spiral" onclick="openPortfolioLightbox(this)">
-          <img class="case-img clickable-preview" src="/assets/images/raw/floral.png" alt="Floral Glitch" onclick="openPortfolioLightbox(this)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/literal_traphouse.png" alt="Traphouse" data-id="trap-001" onclick="openLightbox(this.dataset.id)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/spiral_geometry.png" alt="Spiral" data-id="spiral-001" onclick="openLightbox(this.dataset.id)">
+          <img class="case-img clickable-preview" src="/assets/images/raw/floral.png" alt="Floral Glitch" data-id="floral-001" onclick="openLightbox(this.dataset.id)">
         </div>
         <div style="text-align: center; margin-top: 30px;">
           <a href="/collection.html?id=abstract" class="btn-small">VIEW FULL COLLECTION</a>
@@ -198,7 +200,7 @@
 
         <div class="case-grid">
           <figure style="margin: 0; width: 100%;">
-            <img class="case-img clickable-preview" src="/assets/images/raw/pup-fiction-scene1.png" alt="Pumpkin and Honey Puppy and the Diner Robbery - Pup Fiction Parody Art by BasicGlitch" onclick="openPortfolioLightbox(this)">
+            <img class="case-img clickable-preview" src="/assets/images/raw/pup-fiction-scene1.png" alt="Pumpkin and Honey Puppy and the Diner Robbery - Pup Fiction Parody Art by BasicGlitch" data-id="pup-001" onclick="openLightbox(this.dataset.id)">
             <figcaption style="text-align: center; color: var(--neon-blu); margin-top: 10px; font-family: 'Share Tech Mono', monospace;">
               "Pumpkin and Honey Puppy and the Diner Robbery" — Prologue
             </figcaption>
@@ -248,24 +250,6 @@
       <button id="lb-prev" class="lb-nav" style="left: 20px;"><img src="/assets/icons/back.svg" alt="Previous" style="width: 24px; filter: invert(1);"></button>
       <button id="lb-next" class="lb-nav" style="right: 20px;"><img src="/assets/icons/forward.svg" alt="Next" style="width: 24px; filter: invert(1);"></button>
     </div>
-    
-    <script>
-      // Simple helper for portfolio page images
-      function openPortfolioLightbox(img) {
-        const lb = document.getElementById('lightbox');
-        const content = document.getElementById('lb-content');
-        content.innerHTML = '';
-        const newImg = document.createElement('img');
-        newImg.src = img.src;
-        newImg.alt = img.alt;
-        const title = document.createElement('h3');
-        title.textContent = img.alt;
-        content.appendChild(title);
-        content.appendChild(newImg);
-        lb.classList.remove('hidden');
-        lb.setAttribute('aria-hidden','false');
-      }
-    </script>
     
 <footer class="site-footer">
   <div class="footer-inner container">
