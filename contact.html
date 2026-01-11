@@ -115,6 +115,36 @@
       </div>
 
     </div>
+
+    <!-- QUICK TRANSMISSION FORM -->
+    <div style="margin-top: 80px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <div class="cyber-header">
+        <h2 class="cyber-title">
+          <span class="cyber-text cyber-text-blu" data-text="QUICK TRANSMISSION">QUICK TRANSMISSION</span>
+        </h2>
+        <p class="cyber-subtitle">Send a direct signal to the mainframe</p>
+      </div>
+      
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="background: rgba(0,0,0,0.4); padding: 30px; border: 1px solid var(--border); border-radius: 12px; backdrop-filter: blur(5px);">
+        <div style="display: grid; gap: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <input type="text" name="name" placeholder="CODENAME / NAME" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono';">
+            <input type="email" name="email" placeholder="RETURN FREQUENCY (EMAIL)" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono';">
+          </div>
+          <select name="subject" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted); font-family: 'Share Tech Mono';">
+            <option value="" disabled selected>SELECT TRANSMISSION TYPE</option>
+            <option value="Commission Inquiry">COMMISSION INQUIRY</option>
+            <option value="Print/Merch Question">PRINT / MERCH QUESTION</option>
+            <option value="Collaboration">COLLABORATION PROPOSAL</option>
+            <option value="Other">OTHER</option>
+          </select>
+          <textarea name="message" rows="5" placeholder="ENCRYPTED MESSAGE CONTENT..." required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono'; resize: vertical;"></textarea>
+          
+          <button type="submit" class="cyber-button" style="border-color: var(--neon-blu); color: var(--neon-blu);">TRANSMIT SIGNAL</button>
+        </div>
+        <p id="contact-status" style="margin-top: 15px; font-family: 'Share Tech Mono'; text-align: center; height: 20px;"></p>
+      </form>
+    </div>
   </div>
 </section>
 

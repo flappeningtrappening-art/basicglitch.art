@@ -5,18 +5,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Main fonts for commissions section -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<!-- Main fonts consolidated -->
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
 
-<!-- Additional fonts for other sections -->
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Bungee&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rationale&family=Wallpoet&family=Michroma&family=Monoton&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">  
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="index, follow">
+
+<!-- Preload Hero Assets -->
+<link rel="preload" href="/assets/images/raw/guitarbot_og.png" as="image">
 
 <!-- Primary SEO -->
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.png">
 <link rel="canonical" href="https://basicglitch.art/">
-<title>BasicGlitch | Cyber-Eclectic Surrealism</title>
+<title>BasicGlitch | Cyber-Eclectic Digital Surrealism Art</title>
 <meta name="description" content="Handcrafted digital visions by BasicGlitch. Specializing in Neon Surrealism, Cyberpunk Character Design, Geometric Abstraction, and Tech-Noir Landscapes.">
 <meta name="keywords" content="psychedelic art, surrealism, cyberpunk character design, tech-noir, geometric art, digital art commissions, abstract art, BasicGlitch">
 <meta name="author" content="BasicGlitch">
@@ -24,16 +27,16 @@
 <!-- Social Media / Open Graph (Discord, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/">
-<meta property="og:title" content="BasicGlitch | Cyber-Eclectic Surrealism">
+<meta property="og:title" content="BasicGlitch | Cyber-Eclectic Digital Surrealism Art">
 <meta property="og:description" content="Handcrafted digital chaos. Specializing in Psychedelic Surrealism, Cyberpunk Characters, and Tech-Noir Landscapes.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://basicglitch.art/">
-<meta property="twitter:title" content="BasicGlitch | Cyber-Eclectic Surrealism">
-<meta property="twitter:description" content="Handcrafted digital chaos. Exploring Psychedelic, Surreal, and Tech-Noir visions.">
-<meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://basicglitch.art/">
+<meta name="twitter:title" content="BasicGlitch | Cyber-Eclectic Digital Surrealism Art">
+<meta name="twitter:description" content="Handcrafted digital chaos. Exploring Psychedelic, Surreal, and Tech-Noir visions.">
+<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.png">
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="assets/css/style.css">
@@ -49,9 +52,11 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "BasicGlitch",
+  "description": "Digital artist specializing in Psychedelic Surrealism, Cyberpunk Character Design, and Tech-Noir Landscapes. Available for commissions.",
   "url": "https://basicglitch.art",
   "jobTitle": "Digital Artist",
   "image": "https://basicglitch.art/assets/images/about/artist_broboticus_avatar.png",
+  "areaServed": "Worldwide",
   "knowsAbout": ["Psychedelic Art", "Digital Surrealism", "Geometric Abstraction", "Cyberpunk Aesthetics", "Tech-Noir", "Character Design"],
   "sameAs": [
     "https://www.instagram.com/basic.glitch",
@@ -125,6 +130,7 @@
 
 <!-- HERO SECTION -->
 
+<main>
 <section class="hero" id="hero">
 
   <div class="hero-bg"></div>
@@ -133,12 +139,12 @@
 
   <!-- Hero Section Guardian -->
   <div class="guardian-container" style="position: absolute; bottom: 0; right: 2%; z-index: 1; opacity: 0.7; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
-    <img id="guardian-guitarbot" class="section-guardian" src="/assets/images/raw/guitarbot_og.png" alt="Hero Guardian" data-robot-id="guitarbot" style="height: 75vh; width: auto; cursor: pointer; transform-origin: bottom center;">
+    <img id="guardian-guitarbot" class="section-guardian" src="/assets/images/raw/guitarbot_og.png" alt="Guitarbot - Cyberpunk robot character digital art by BasicGlitch" data-robot-id="guitarbot" style="height: 75vh; width: auto; cursor: pointer; transform-origin: bottom center;">
   </div>
 
   <div class="hero-inner container">
 
-    <h1 class="title">Welcome to BasicGlitch</h1>
+    <h1 class="title">BasicGlitch | Cyber-Eclectic Digital Surrealism</h1>
 
     <p class="subtitle">Digital Surrealism, Tech-Noir Landscapes, and Psychedelic Character Design.</p>
 
@@ -151,6 +157,22 @@
   </div>
 
 </section>
+
+<!-- EMAIL SIGNUP -->
+<section class="email-signup neon-grid-section" id="signup" style="padding: 60px 20px; text-align: center;">
+  <div class="container">
+    <div class="cyber-header">
+       <h2 class="cyber-title"><span class="cyber-text cyber-text-grn" data-text="JOIN THE RESISTANCE">JOIN THE RESISTANCE</span></h2>
+       <p class="cyber-subtitle">GET EXCLUSIVE DROPS & FREE WALLPAPERS</p>
+    </div>
+    <form id="signup-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+       <input type="email" name="email" placeholder="ENTER_EMAIL_ADDRESS" required style="flex: 1; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid var(--neon-2); color: white; font-family: 'Share Tech Mono'; min-width: 250px;">
+       <button type="submit" class="btn-neon" style="border-color: var(--neon-2); color: var(--neon-2);">SUBSCRIBE</button>
+    </form>
+    <p id="signup-status" style="margin-top: 15px; font-family: 'Share Tech Mono'; height: 20px;"></p>
+  </div>
+</section>
+</main>
 
 
 

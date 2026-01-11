@@ -21,7 +21,17 @@
   --card-radius: 12px;
   --max-width: 1100px;
   --stroke-width: 2px;
-  --stroke-color: 0a7aff;
+  --stroke-color: #0a7aff;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Basic reset */
@@ -516,6 +526,10 @@ img {
 [data-tier="nano"] .card-front, [data-tier="nano"] .card-back { border-color: var(--neon); }
 [data-tier="nano"] .card-title { -webkit-text-stroke: 1px var(--neon); text-shadow: 0 0 10px var(--neon); }
 [data-tier="nano"] .back-title { color: var(--neon); }
+
+[data-tier="broboticus"] .card-front, [data-tier="broboticus"] .card-back { border-color: var(--neon-2); }
+[data-tier="broboticus"] .card-title { -webkit-text-stroke: 1px var(--neon-2); text-shadow: 0 0 10px var(--neon-2); }
+[data-tier="broboticus"] .back-title { color: var(--neon-2); }
 
 [data-tier="binary"] .card-front, [data-tier="binary"] .card-back { border-color: var(--neon-blu); }
 [data-tier="binary"] .card-title { -webkit-text-stroke: 1px var(--neon-blu); text-shadow: 0 0 10px var(--neon-blu); }
