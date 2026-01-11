@@ -396,6 +396,73 @@ function initCollectionPage(data) {
 }
 
 /* ---------------------------
+   FORMS HANDLING (AJAX)
+   --------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = [
+    { id: 'signup-form', statusId: 'signup-status' },
+    { id: 'contact-form', statusId: 'contact-status' }
+  ];
+
+  forms.forEach(({ id, statusId }) => {
+    const form = document.getElementById(id);
+    const status = document.getElementById(statusId);
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Basic feedback
+        status.textContent = 'TRANSMITTING...';
+        status.style.color = 'var(--neon)';
+        
+        const data = new FormData(form);
+        const action = form.action; // Get URL from HTML form action attribute
+
+        // Validation: Check if default ID is still present
+        if (action.includes('YOUR_FORM_ID')) {
+           status.textContent = 'ERROR: CONFIGURATION MISSING (Set Formspree ID)';
+           status.style.color = 'red';
+           return;
+        }
+
+        try {
+          const response = await fetch(action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            status.textContent = 'TRANSMISSION RECEIVED. WELCOME TO THE GRID.';
+            status.style.color = 'var(--neon-2)';
+            form.reset();
+          } else {
+            const result = await response.json();
+            if (Object.hasOwn(result, 'errors')) {
+              status.textContent = result.errors.map(error => error.message).join(", ");
+            } else {
+              status.textContent = 'TRANSMISSION FAILED. RETRY.';
+            }
+            status.style.color = 'var(--neon-org)';
+          }
+        } catch (error) {
+          status.textContent = 'NETWORK ERROR. SIGNAL LOST.';
+          status.style.color = 'red';
+        }
+        
+        // Clear status after 5s
+        setTimeout(() => {
+          if (status.textContent.includes('RECEIVED')) status.textContent = '';
+        }, 5000);
+      });
+    }
+  });
+});
+
+/* ---------------------------
    Init
    --------------------------- */
 (async function init(){

@@ -72,8 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
   addGuardianStyles();
   
   const guardians = document.querySelectorAll('.section-guardian');
+  const visibilityMap = new Map(); // Track visibility state
+
+  // Efficient visibility tracking
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      visibilityMap.set(entry.target, entry.isIntersecting);
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% visible
   
   guardians.forEach(guardian => {
+    observer.observe(guardian);
     const robotId = guardian.dataset.robotId;
     const config = ROBOT_ASSETS[robotId];
 
@@ -85,15 +94,22 @@ document.addEventListener('DOMContentLoaded', () => {
       guardian.classList.add('guardian-active');
       setTimeout(() => guardian.classList.remove('guardian-active'), 600);
     });
+  });
 
-    // Keyboard support
-    document.addEventListener('keydown', (e) => {
-      if ((e.key === 'r' || e.key === 'R') && isElementInViewport(guardian)) {
-        triggerGuardianAction(robotId, config);
-        guardian.classList.add('guardian-active');
-        setTimeout(() => guardian.classList.remove('guardian-active'), 600);
-      }
-    });
+  // Global Keyboard support (Single Listener)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'r' || e.key === 'R') {
+      guardians.forEach(guardian => {
+        if (visibilityMap.get(guardian)) {
+          const robotId = guardian.dataset.robotId;
+          const config = ROBOT_ASSETS[robotId];
+          
+          triggerGuardianAction(robotId, config);
+          guardian.classList.add('guardian-active');
+          setTimeout(() => guardian.classList.remove('guardian-active'), 600);
+        }
+      });
+    }
   });
 });
 
@@ -155,14 +171,4 @@ function applyGridEffect(type, color) {
       section.style.setProperty('--neon-glow', '');
     });
   }, 1000);
-}
-
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
 }
