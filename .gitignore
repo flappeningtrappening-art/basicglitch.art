@@ -60,3 +60,4 @@ legal/
 notes/*
 !notes/*/
 !notes/*/ .gitkeep
+.env

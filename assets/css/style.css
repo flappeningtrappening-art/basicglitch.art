@@ -268,6 +268,9 @@ img {
   -webkit-text-fill-color: transparent !important;
 }
 
+/* FILTER DEFINITION */
+.svg-filter { position: absolute; width: 0; height: 0; pointer-events: none; }
+
 /* BUTTONS */
 .btn-neon {
   display: inline-flex;
@@ -290,6 +293,27 @@ img {
   background: rgba(0, 255, 247, 0.15);
   box-shadow: 0 0 20px var(--neon);
   transform: translateY(-2px);
+  filter: url('#glitch-filter');
+}
+
+.nav-link:hover {
+  color: var(--neon-2);
+  text-shadow: 0 0 8px rgba(0,255,74,0.08);
+  filter: url('#glitch-filter');
+}
+
+/* SCROLL GLITCH ANIMATION */
+@keyframes scrollGlitchAnim {
+  0% { transform: translate(0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
+  40% { transform: translate(2px, -2px); filter: hue-rotate(180deg); }
+  60% { transform: translate(-2px, 2px); filter: hue-rotate(270deg); }
+  80% { transform: translate(2px, -2px); filter: hue-rotate(0deg); }
+  100% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+
+.scroll-glitch-active body {
+  animation: scrollGlitchAnim 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .btn-small {
