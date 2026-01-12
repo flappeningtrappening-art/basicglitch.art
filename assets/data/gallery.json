@@ -160,7 +160,7 @@
   {
     "id": "brobot-001",
     "title": "Brobarticus",
-     "file": "assets/images/raw/artist_broboticus_og.png",
+    "file": "assets/images/raw/artist_broboticus_avatar.png",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -170,18 +170,16 @@
       "Neon"
     ],
     "date": "2025-11-22",
-    "description": "A neon-lit, glitch-infused portrait of a robotic DJ, its green outlines pulsing against a dark backdrop, blending retro-futuristic energy with dreamlike dissonance.",
+    "description": "The official self-portrait of Broboticus. A glitch-infused study of robotic identity, merging wireframe aesthetics with a soulful, digital gaze.",
     "price": 40,
-    "alt_text": "Neon green outline of a robot wearing a beanie and headphones, operating a DJ turntable setup with circular and oval shapes, against a dark background.",
+    "alt_text": "Close-up portrait of a robot with neon green outlines, wearing headphones and a beanie, set against a dark background.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "neon aesthetics",
-      "glitch art",
-      "robot DJ",
-      "digital surrealism",
-      "neon glitch",
-      "surreal digital art",
-      "cyberpunk art"
+      "broboticus",
+      "robot avatar",
+      "digital identity",
+      "glitch portrait",
+      "neon character",
+      "cyber-eclectic"
     ]
   },
   {
