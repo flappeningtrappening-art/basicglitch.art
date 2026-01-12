@@ -205,7 +205,7 @@ function renderGrid(items, simplified = false){
       // Image
       el('img', {
         src: thumbSrc,
-        alt: `${it.title} | BasicGlitch`,
+        alt: it.alt_text || `${it.title} | BasicGlitch`, // Use new enriched alt_text
         loading: 'lazy',
         className: 'gallery-image',
         'data-large': largeSrc
