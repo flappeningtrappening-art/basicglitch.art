@@ -149,5 +149,15 @@
 </section>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
+
+<!-- SVG Filters (Hidden) -->
+<svg class="svg-filter">
+  <defs>
+    <filter id="glitch-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
 </body>
 </html>

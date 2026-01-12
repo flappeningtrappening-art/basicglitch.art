@@ -253,3 +253,23 @@ if (typeof window !== 'undefined') {
   window.updateGalleryBorders = updateGalleryBorders;
   window.enhanceSectionBackgrounds = enhanceSectionBackgrounds;
 }
+
+// Mouse movement for gradient shift
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+    
+    document.body.style.setProperty('--mouse-x', x);
+    document.body.style.setProperty('--mouse-y', y);
+});
+
+// Scroll Glitch Effect
+let isScrolling;
+window.addEventListener('scroll', () => {
+    document.body.classList.add('scroll-glitch-active');
+    
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+        document.body.classList.remove('scroll-glitch-active');
+    }, 150); // Stop glitch 150ms after scrolling stops
+}, { passive: true });
