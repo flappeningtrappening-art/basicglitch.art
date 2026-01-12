@@ -28,7 +28,7 @@
   {
     "id": "enviro-001",
     "title": "Gaia of the Wasteland",
-    "file": "/assets/images/raw/gaia_of_the_wasteland.png",
+     "file": "assets/images/raw/gaia_of_the_wasteland.png",
     "categories": [
       "Available for Purchase"
     ],
@@ -56,7 +56,7 @@
   {
     "id": "guitarbot-001",
     "title": "Guitarbot",
-    "file": "/assets/images/raw/guitarbot_og.png",
+     "file": "assets/images/raw/guitarbot_og.png",
     "categories": [
       "Broboticus"
     ],
@@ -82,7 +82,7 @@
   {
     "id": "spiral-001",
     "title": "Spiral Geometry",
-    "file": "/assets/images/raw/spiral_geometry.png",
+     "file": "assets/images/raw/spiral_geometry.png",
     "categories": [
       "Personal Projects"
     ],
@@ -109,7 +109,7 @@
   {
     "id": "aesthetic-001",
     "title": "Sangre De Cristos \u2014 Neon",
-    "file": "/assets/images/raw/aesthetic_sangre_de_cristo.png",
+     "file": "assets/images/raw/aesthetic_sangre_de_cristo.png",
     "categories": [
       "Available for Purchase"
     ],
@@ -135,7 +135,7 @@
   {
     "id": "floral-001",
     "title": "Floral",
-    "file": "/assets/images/raw/floral.png",
+     "file": "assets/images/raw/floral.png",
     "categories": [
       "Personal Projects"
     ],
@@ -160,7 +160,7 @@
   {
     "id": "brobot-001",
     "title": "Brobarticus",
-    "file": "/assets/images/raw/artist_broboticus_og.png",
+     "file": "assets/images/raw/artist_broboticus_og.png",
     "categories": [
       "Available for Purchase",
       "Broboticus"

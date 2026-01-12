@@ -43,14 +43,14 @@
 <!-- HEADER / NAVIGATION -->
 <header class="site-header">
   <div class="header-inner container">
-    <a href="/" class="brand">BasicGlitch</a>
+    <a href="" class="brand">BasicGlitch</a>
     <nav class="nav">
-      <a class="nav-link" href="/gallery.html"><img src="/assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
-      <a class="nav-link" href="/portfolio.html"><img src="/assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="/commissions.html"><img src="/assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
-      <a class="nav-link" href="/apparel.html"><img src="/assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
-      <a class="nav-link" href="/about.html"><img src="/assets/icons/about.svg" alt="About Icon"> About</a>
-      <a class="nav-link" href="/contact.html"><img src="/assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
+      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
+      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
+      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
+      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt="About Icon"> About</a>
+      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
     </nav>
   </div>
 </header>
@@ -60,7 +60,7 @@
 <section class="section neon-grid-section" id="about" style="margin-top: 0; padding-top: 40px; position: relative;">
   <!-- Section Guardian -->
   <div class="guardian-container" style="position: absolute; bottom: 0; left: 0; z-index: 1; opacity: 0.5;">
-    <img id="guardian-about" class="section-guardian" src="/assets/images/raw/artist_broboticus_og.png" alt="Guardian Bot" data-robot-id="broboticus" style="height: 450px; width: auto; cursor: pointer; transform-origin: bottom left;">
+    <img id="guardian-about" class="section-guardian" src="assets/images/raw/artist_broboticus_og.png" alt="Guardian Bot" data-robot-id="broboticus" style="height: 450px; width: auto; cursor: pointer; transform-origin: bottom left;">
   </div>
   
   <div class="container" style="position: relative; z-index: 2;">
@@ -71,7 +71,7 @@
       <p class="cyber-subtitle">The Digital Visionary: BasicGlitch</p>
     </div>
     <div class="about-card">
-      <img class="avatar" src="/assets/images/about/artist_broboticus_avatar.png" alt="Artist Avatar">
+      <img class="avatar" src="assets/images/about/artist_broboticus_avatar.png" alt="Artist Avatar">
       <div class="bio-text">
         <p>
           For BasicGlitch, the digital canvas began with a simple revelation: the power of the <strong>UNDO</strong>. This freedom to iterate without fear allowed for the evolution of a complex, signature line style that bridges the gap between structured reality and digital chaos. Known in the physical world as Justin Lance, the persona <strong>BasicGlitch</strong> crafts visions that refuse to be boring—rejecting traditional norms in favor of high-saturation Tech-Noir environments and playful cinematic homages.
@@ -86,10 +86,10 @@
     </div>
     <div class="about-icons">
       <a href="https://instagram.com" target="_blank">
-        <img class="icon" src="/assets/icons/instagram.svg" alt="Instagram">
+        <img class="icon" src="assets/icons/instagram.svg" alt="Instagram">
       </a>
       <a href="https://ko-fi.com" target="_blank">
-        <img class="icon" src="/assets/icons/ko-fi.svg" alt="Ko-fi">
+        <img class="icon" src="assets/icons/ko-fi.svg" alt="Ko-fi">
       </a>
     </div>
   </div>
@@ -160,7 +160,7 @@
     if (grid) {
       const selected = shuffle([...rawImages]).slice(0, 6);
       grid.innerHTML = selected.map(img => `
-        <img src="/assets/images/raw/${img}" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
+        <img src="assets/images/raw/${img}" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
       `).join('');
     }
   });

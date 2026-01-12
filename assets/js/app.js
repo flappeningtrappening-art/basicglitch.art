@@ -3,14 +3,14 @@
 /* ---------------------------
    Config - adjust paths if needed
    --------------------------- */
-const GALLERY_JSON = '/assets/data/gallery.json';
-const GALLERY_BASE = '/assets/images/raw/'; // full images
-const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
+const GALLERY_JSON = 'assets/data/gallery.json';
+const GALLERY_BASE = 'assets/images/raw/'; // full images
+const THUMB_BASE = 'assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  { path: '/assets/images/hero/glitch1.png', key: 'glitch1' },
-  { path: '/assets/images/hero/glitch2.png', key: 'glitch2' },
-  { path: '/assets/images/hero/glitch3.jpg', key: 'glitch3' },
-  { path: '/assets/images/hero/glitch4.png', key: 'glitch-default' }
+  { path: 'assets/images/hero/glitch1.png', key: 'glitch1' },
+  { path: 'assets/images/hero/glitch2.png', key: 'glitch2' },
+  { path: 'assets/images/hero/glitch3.jpg', key: 'glitch3' },
+  { path: 'assets/images/hero/glitch4.png', key: 'glitch-default' }
 ];
 
 /* ---------------------------
@@ -198,7 +198,7 @@ function renderGrid(items, simplified = false){
     const categoryClass = 'category-' + firstCategory.replace(/\s+/g, '-');
     
     const thumbSrc = THUMB_BASE + it.id + '.jpg';
-    const largeSrc = it.file.startsWith('/') ? it.file : '/' + it.file;
+    const largeSrc = it.file;
     
     // Construct Card Contents
     const cardChildren = [
@@ -269,7 +269,7 @@ function openLightbox(id){
   const img = document.createElement('img');
   
   // Use the full image path from JSON
-  img.src = item.file.startsWith('/') ? item.file : '/' + item.file;
+  img.src = item.file;
   img.alt = item.title || '';
   
   // Add title and description to lightbox
