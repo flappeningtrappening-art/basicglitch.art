@@ -3,8 +3,8 @@
 
 // Config
 const ROBOT_ASSETS = {
-  'guitarbot': { audioPath: '/assets/audio/guitarbot/', color: 'var(--neon-mag)' },
-  'broboticus': { audioPath: '/assets/audio/broboticus/', color: 'var(--neon)' }
+  'guitarbot': { audioPath: 'assets/audio/guitarbot/', color: 'var(--neon-mag)' },
+  'broboticus': { audioPath: 'assets/audio/broboticus/', color: 'var(--neon)' }
 };
 
 const AUDIO_POOL_COUNT = 3;
