@@ -46,3 +46,20 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
 - **Speed Demon Caching:** Edge Cache TTL (1 Month), Browser TTL (1 Day), Serve Stale Content enabled.
 - **Ghostly Analytics:** Privacy-first JS beacon injected across all site pages.
 - **Email Routing:** Aliases forwarding to personal inbox: `studio@`, `commissions@`, `licensing@`, `management@`, `press@`.
+## 7. Session Updates (2026-01-11)
+- **Monetization & Lead Gen:**
+    - Added **"Broboticus" Commission Tier** ($99) to `commissions.html`.
+    - Implemented **Email Signup Forms** (Newsletter & Contact) using **Formspree** (Endpoint: `https://formspree.io/f/mbddjdyg`).
+    - Added AJAX form handling in `app.js` to prevent page reloads.
+- **Visual Design & FX:**
+    - Implemented **SVG Glitch Filters** for hover states (buttons/links) and a subtle **Scroll Glitch** animation.
+    - Standardized internal image paths (removed leading slashes) to fix local preview/loading issues.
+    - Updated **Portfolio Grid** layout and reordered the "Broboticus" series (Avatar is now 2nd).
+- **SEO & Content:**
+    - Enriched `gallery.json` with AI-generated descriptions and alt text using **Z.AI GLM-4.6v-flash**.
+    - Updated metadata, `sitemap.xml`, and `alt` attributes across the site.
+    - Corrected "Pup Fiction" descriptions to clarify it is a parody series.
+- **Infrastructure:**
+    - Refactored `robot.js` to use `IntersectionObserver`.
+    - Added `thumbnail_generator.py` script for Krita.
+    - Secured API keys using `.env` and `.gitignore`.
