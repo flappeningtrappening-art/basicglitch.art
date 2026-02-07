@@ -9,6 +9,11 @@
 -------------------------------- */
 const headerColors = {
   // Map keys from app.js to the actual CSS variables
+  'neon-limon': '--neon-limon',
+  'neon': '--neon',
+  'neon-mag': '--neon-mag',
+  'neon-pur': '--neon-pur',
+  'neon-2': '--neon-2',
   'glitch1': '--neon-limon',
   'glitch2': '--neon',
   'glitch3': '--neon-mag',

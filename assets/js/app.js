@@ -10,7 +10,8 @@ const HERO_CHOICES = [
   { path: 'assets/images/hero/glitch1.png', key: 'glitch1' },
   { path: 'assets/images/hero/glitch2.png', key: 'glitch2' },
   { path: 'assets/images/hero/glitch3.jpg', key: 'glitch3' },
-  { path: 'assets/images/hero/glitch4.png', key: 'glitch-default' }
+  { path: 'assets/images/hero/glitch4.png', key: 'glitch-default' },
+  { path: 'assets/images/hero/glitch_ai.png', key: 'glitch-ai' }
 ];
 
 /* ---------------------------
@@ -110,6 +111,8 @@ function setHeroBackground(){
     } else if (pickKey.includes('glitch4') || pickKey.includes('glitch-default')) {
       // Note: Your HERO_CHOICES has 'glitch-default' for glitch4
       bgKey = 'neon-pur';
+    } else if (pickKey.includes('glitch-ai')) {
+      bgKey = 'neon-2'; // Green/Matrix style
     }
     
     hero.dataset.bg = bgKey;
@@ -436,7 +439,14 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           if (response.ok) {
-            status.textContent = 'TRANSMISSION RECEIVED. WELCOME TO THE GRID.';
+            if (id === 'signup-form') {
+              status.innerHTML = 'SIGNAL RECEIVED. <span style="color: var(--neon-2)">REDIRECTING TO SECURE DOWNLOAD...</span>';
+              setTimeout(() => {
+                window.location.href = 'download-wallpapers.html';
+              }, 2000);
+            } else {
+              status.textContent = 'TRANSMISSION RECEIVED. WELCOME TO THE GRID.';
+            }
             status.style.color = 'var(--neon-2)';
             form.reset();
           } else {
@@ -453,9 +463,11 @@ document.addEventListener('DOMContentLoaded', () => {
           status.style.color = 'red';
         }
         
-        // Clear status after 5s
+        // Clear status after 5s (but not for redirecting forms)
         setTimeout(() => {
-          if (status.textContent.includes('RECEIVED')) status.textContent = '';
+          if (status.textContent.includes('RECEIVED') && id !== 'signup-form') {
+            status.textContent = '';
+          }
         }, 5000);
       });
     }
