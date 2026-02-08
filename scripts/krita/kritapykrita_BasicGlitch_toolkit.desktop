@@ -4,5 +4,5 @@ ServiceTypes=Krita/PythonPlugin
 X-KDE-Library=BasicGlitch_toolkit
 X-Python-2-Compatible=false
 Name=BasicGlitch Toolkit
-Comment=The official Neon Mesa & BasicGlitch production suite.
+Comment=Official production suite for BasicGlitch.
 EnabledByDefault=true
