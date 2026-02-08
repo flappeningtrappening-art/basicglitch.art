@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Service
-ServiceTypes=Krita/PythonPlugin
-X-KDE-Library=BasicGlitch_toolkit
-X-Python-2-Compatible=false
-Name=BasicGlitch Toolkit
-Comment=The official Neon Mesa & BasicGlitch production suite.
-EnabledByDefault=true
