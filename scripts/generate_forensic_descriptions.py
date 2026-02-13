@@ -35,7 +35,8 @@ def generate_analysis(item):
     3. Use terms like: 'digital entropy', 'forensic marker', 'quantum superposition', 'cyber-eclectic', 'tech-noir', 'visual autopsy', 'signal-to-noise ratio'.
     4. Focus on the 'Foundry' philosophy: processing raw chaos into high-fidelity artistic intelligence.
     5. Mention why it's perfect for high-end home offices or gaming sanctuaries.
-    6. Output the analysis in HTML <p> tags.
+    6. IMPORTANT: Occasionally hide a 'Forensic Fragment' in the text (e.g., [FRAGMENT: SIGNAL_77] or [FRAGMENT: DECAY_0]). These are for the ARG.
+    7. Output the analysis in HTML <p> tags.
     """
     
     try:

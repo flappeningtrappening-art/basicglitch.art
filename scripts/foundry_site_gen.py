@@ -27,7 +27,8 @@ def get_template(item):
     slug = slugify(item['title'])
     title = f"{item['title']} | Cyber-Eclectic Digital Surrealism | BasicGlitch"
     description = item.get('description', f"Explore {item['title']}, a unique piece of digital surrealism by BasicGlitch. Available as wall art, clothing, and tapestries.")
-    image_url = item['file'] # Correct key is 'file'
+    image_url = item['file'] # This will be the WebP path now
+    master_png = image_url.rsplit('.', 1)[0] + ".png"
     
     # Forensic Content (Target: 300+ words)
     # If the item has a 'forensic_analysis' key, use it; otherwise use the expanded placeholder
@@ -66,8 +67,10 @@ def get_template(item):
     .forensic-description p {{ margin-bottom: 25px; }}
     .forensic-description em {{ color: var(--neon-mag); font-style: normal; font-weight: bold; }}
     .art-details {{ padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; }}
+    .lore-terminal-btn {{ margin-top: 20px; font-family: 'Share Tech Mono', monospace; color: var(--muted); cursor: pointer; font-size: 0.8rem; border: none; background: none; }}
 </style>
 <script src="../assets/js/app.js?v=1.1" defer></script>
+<script src="../assets/js/terminal.js" defer></script>
 </head>
 <body class="bg-tech-noir">
 
@@ -89,7 +92,11 @@ def get_template(item):
       
       <!-- Image Column -->
       <div class="art-frame" style="border: 1px solid var(--border); padding: 10px; background: rgba(0,0,0,0.4);">
-        <img src="../{image_url}" alt="{item['title']} - {item.get('style', 'Digital Art')} by BasicGlitch" style="width: 100%; height: auto; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
+        <picture>
+            <source srcset="../{image_url}" type="image/webp">
+            <img src="../{master_png}" alt="{item['title']} - {item.get('style', 'Digital Art')} by BasicGlitch" style="width: 100%; height: auto; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
+        </picture>
+        <button class="lore-terminal-btn" onclick="openTerminal()">ACCESS_TERMINAL_V1.0.4</button>
       </div>
 
       <!-- Content Column -->
@@ -106,8 +113,8 @@ def get_template(item):
         <div style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
             <h3 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 20px;">ACQUIRE THIS VISION</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <a href="../contact.html?subject=Inquiry: {item['title']}" class="btn-neon" style="text-align: center;">DIGITAL LICENSE</a>
-                <a href="../apparel.html" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag);">APPAREL & PRINTS</a>
+                <a href="../{master_png}" download class="btn-neon" style="text-align: center;">MASTER_PNG</a>
+                <a href="../contact.html?subject=Inquiry: {item['title']}" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag);">APPAREL & PRINTS</a>
             </div>
         </div>
       </div>
