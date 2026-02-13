@@ -40,4 +40,14 @@ class GlitchFix(Extension):
         except Exception as e:
             print(f"Error: {e}")
 
+def run():
+    """Manually register glitch tools menu"""
+    # This script is an Extension, so it runs on startup usually.
+    # But if run manually, we can try to re-trigger the action creation.
+    win = Krita.instance().activeWindow()
+    if win:
+        ext = GlitchFix(Krita.instance())
+        ext.createActions(win)
+        print("✅ Glitch Menu manually re-registered.")
+
 Krita.instance().addExtension(GlitchFix(Krita.instance()))

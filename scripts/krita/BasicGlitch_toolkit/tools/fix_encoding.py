@@ -50,4 +50,13 @@ def main():
         print("\n??  Some files failed. Try Option 2 below.")
 
 if __name__ == "__main__":
+
+    main()
+
+
+
+def run():
+
+    """Run the encoding fixer"""
+
     main()

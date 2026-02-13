@@ -1,28 +1,38 @@
 from krita import *
 from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QMessageBox
+import traceback
 
 def run():
     doc = Krita.instance().activeDocument()
     if not doc:
-        print("No document open")
+        QMessageBox.warning(None, "BasicGlitch", "No document open!")
         return
     
-    # Create a paint layer
-    layer = doc.createPaintLayer("FX: CRT Scanlines", "RGBA", "U8", "multiply", 30)
-    doc.rootNode().addChildNode(layer, None)
+    print("📺 APPLYING CRT SCANLINES...")
     
-    # Get paint device to draw on
-    paint_device = layer.paintDevice()
-    
-    # Draw scanlines (every 4 pixels)
-    color = QColor(0, 0, 0, 128)  # Semi-transparent black
-    
-    for y in range(0, doc.height(), 4):
-        # Draw 2-pixel thick line
-        for line_y in range(y, min(y + 2, doc.height())):
-            for x in range(doc.width()):
-                paint_device.setPixel(x, line_y, color.rgba())
-    
-    layer.updateProjection()
-    print("✅ CRT Scanlines drawn (every 4px, 2px thick)")
-    print("   Adjust layer opacity in Layers docker")
+    try:
+        config = InfoObject()
+        # We use the 'grid' generator to simulate scanlines
+        config.setProperty("grid_size", 4)
+        config.setProperty("line_width", 2.0)
+        config.setProperty("color", QColor(0, 0, 0))
+        config.setProperty("vertical", False) # Horizontal lines only
+        
+        # Fixed for Krita 5.2: requires (name, generator, info, selection)
+        empty_selection = Selection()
+        layer = doc.createFillLayer("FX: CRT Scanlines", "grid", config, empty_selection)
+        layer.setBlendingMode("multiply")
+        layer.setOpacity(30)
+        
+        doc.rootNode().addChildNode(layer, None)
+        print("✅ CRT Scanlines applied via Procedural Grid.")
+        doc.refreshProjection()
+        
+    except Exception as e:
+        error_msg = f"❌ Scanline Error: {str(e)}\n\n{traceback.format_exc()}"
+        print(error_msg)
+        QMessageBox.critical(None, "BasicGlitch Error", error_msg)
+
+if __name__ == "__main__":
+    run()

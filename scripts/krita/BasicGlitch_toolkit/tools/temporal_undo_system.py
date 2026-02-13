@@ -13,11 +13,15 @@ def run():
     
     print("⏳ TEMPORAL UNDO SYSTEM - SNAPSHOT START")
     
-    # Define snapshot directory
-    # We save to the project's 'notes/snapshots' for cross-partition safety
-    snapshot_dir = os.path.expanduser("~/monetization/basic-glitch-art/notes/snapshots/")
+    # Define snapshot directory - TARGETING THE SHARED FOLDER ON WINDOWS
+    snapshot_dir = r"C:\Users\basic.glitch\Desktop\minty_windows\foundry_transfer\snapshots"
     if not os.path.exists(snapshot_dir):
-        os.makedirs(snapshot_dir)
+        try:
+            os.makedirs(snapshot_dir)
+        except:
+            # Fallback to standard AppData if shared drive unreachable
+            snapshot_dir = os.path.join(os.environ['APPDATA'], 'krita', 'snapshots')
+            if not os.path.exists(snapshot_dir): os.makedirs(snapshot_dir)
         
     # Create unique timestamped filename
     timestamp = time.strftime('%Y%m%d_%H%M%S')

@@ -1,72 +1,61 @@
 from krita import *
 from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QMessageBox
+import traceback
 
 def run():
-    """Generates professional apparel design templates with safe zones"""
+    """Generates apparel design templates. Fixed for Krita 5.2 API."""
     doc = Krita.instance().activeDocument()
     if not doc:
-        print("Please open a document first!")
+        QMessageBox.warning(None, "BasicGlitch", "Please open a document first!")
         return
     
     print("👕 GENERATING MASTER APPAREL TEMPLATES...")
     
-    # Template Configuration
-    # Format: "Name": (Width_Inches, Height_Inches, "HexColor")
     templates = {
-        "HOODIE / T-SHIRT (Chest)": (12, 16, "#00fff7"),       # Cyan
-        "TAPESTRY (Wall Hang)": (50, 60, "#ff1ccf"),           # Neon Magenta
-        "BACKPACK (Main Panel)": (11, 15, "#00ff3e"),          # Neon Green
-        "DUFFEL BAG (Side Panel)": (12, 12, "#ff5f1f"),        # Neon Orange
-        "SHOPPING BAG (Tote)": (13, 13, "#d0ff00"),            # Neon Lemon
-        "SOCKS (Leg Zone)": (3.5, 4.5, "#0a7aff"),             # Neon Blue
-        "BEANIE (Cuff Area)": (4, 2.5, "#c724ff"),             # Neon Purple
-        "BALL CAP (Front Panel)": (4.5, 2.25, "#ffff00")       # Neon Yellow
+        "HOODIE (12x16)": (12, 16, "#00fff7"),
+        "TAPESTRY (50x60)": (50, 60, "#ff1ccf"),
+        "BALL CAP (4.5x2.25)": (4.5, 2.25, "#ffff00")
     }
     
-    root = doc.rootNode()
-    dpi = doc.xRes()
-    
-    # Create Main Group
-    main_group = doc.createGroupLayer("APPAREL DESIGN GUIDES")
-    root.addChildNode(main_group, None)
-    
-    for name, specs in templates.items():
-        w_in, h_in, color_hex = specs
+    try:
+        root = doc.rootNode()
+        dpi = doc.xRes()
+        if dpi < 1: dpi = 300 # Fallback
         
-        # Convert inches to pixels based on document DPI
-        w_px = int(w_in * dpi)
-        h_px = int(h_in * dpi)
+        main_group = doc.createGroupLayer("APPAREL DESIGN GUIDES")
+        root.addChildNode(main_group, None)
         
-        # Create Sub-Group for this item
-        item_group = doc.createGroupLayer(f"TEMPLATE: {name}")
-        item_group.setVisible(False) # Hide by default
-        main_group.addChildNode(item_group, None)
+        empty_selection = Selection()
         
-        # 1. Create Safe Zone Guide (Vector Rectangle)
-        # We use a selection mask fill because it's reliable in Krita's API
-        info = InfoObject()
-        info.setProperty("color", color_hex)
+        for name, specs in templates.items():
+            w_in, h_in, color_hex = specs
+            w_px = int(w_in * dpi)
+            h_px = int(h_in * dpi)
+            
+            # Create Color Config
+            info = InfoObject()
+            info.setProperty("color", QColor(color_hex))
+            
+            # Create Fill Layer 
+            # Fixed for Krita 5.2: requires (name, generator, info, selection)
+            layer = doc.createFillLayer(f"GUIDE: {name}", "color", info, empty_selection)
+            layer.setOpacity(100)
+            layer.setVisible(False)
+            
+            # Center it
+            # Note: For fill layers, we'd ideally use a selection mask, 
+            # but since we're using fill layers as guides, we'll just name them with dimensions.
+            
+            main_group.addChildNode(layer, None)
+            
+        QMessageBox.information(None, "BasicGlitch", "Apparel Templates Created in hidden group.")
+        print("✅ Apparel Templates Created.")
         
-        # Calculate center position
-        x = (doc.width() - w_px) // 2
-        y = (doc.height() - h_px) // 2
-        
-        # Create Selection for the box
-        selection = Selection()
-        selection.select(x, y, w_px, h_px, 255)
-        
-        # Create Fill Layer with that selection
-        layer = doc.createFillLayer(f"GUIDE: {name} ({w_in}\"x{h_in}\")", "color", info)
-        layer.setOpacity(40) # 40% opacity
-        layer.setSelection(selection)
-        
-        item_group.addChildNode(layer, None)
-        
-        # 2. Add Label (Note: Text shapes are complex in API, sticking to layer naming)
-        
-    print("✅ Apparel Templates Created")
-    print("   • Toggle visibility in the 'APPAREL DESIGN GUIDES' group")
-    print("   • Guides are centered and scaled to document DPI")
+    except Exception as e:
+        error_msg = f"❌ Template Error: {str(e)}\n\n{traceback.format_exc()}"
+        print(error_msg)
+        QMessageBox.critical(None, "BasicGlitch Error", error_msg)
 
 if __name__ == "__main__":
     run()

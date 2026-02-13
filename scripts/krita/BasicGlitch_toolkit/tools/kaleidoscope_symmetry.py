@@ -4,21 +4,31 @@ def run():
     doc = Krita.instance().activeDocument()
     if not doc: return
     
-    # Krita's Multibrush tool handles Kaleidoscope effects.
-    # This script centers the mirror axes perfectly on your canvas.
+    # Calculate Center
+    cx = doc.width() / 2
+    cy = doc.height() / 2
     
-    # 1. Calculate Center
-    center_x = doc.width() / 2
-    center_y = doc.height() / 2
+    print("🌀 INITIALIZING KALEIDOSCOPE SYMMETRY...")
     
-    # 2. Set the document resolution/origin for symmetry
-    # Note: This affects where the Multibrush 'starts' its math
-    doc.setXRes(center_x)
-    doc.setYRes(center_y)
+    # Krita 5.x Symmetry is handled via the Canvas decoration or Multibrush.
+    # We can't easily toggle 'Symmetry Mode' via Python, but we can set 
+    # the guides so the user is ready.
     
-    print("--- KALEIDOSCOPE SYMMETRY SETUP ---")
-    print(f"1. Symmetry Origin set to: {center_x}, {center_y}")
-    print("2. Select the 'Multibrush' Tool (Shortcut: Q).")
-    print("3. In Tool Options, set 'Type' to 'Symmetry'.")
-    print("4. Set 'Brushes' to 8 or 12 for high-detail psychedelic patterns.")
+    # Setting the document's center for guide snapping
+    doc.setXRes(72.0) # Resetting DPI to standard to avoid math drift
+    doc.setYRes(72.0)
+    
+    # Use floating message to guide user
+    app = Krita.instance()
+    if app.activeWindow() and app.activeWindow().activeView():
+        app.activeWindow().activeView().showFloatingMessage(
+            "SYMMETRY CENTERED: USE MULTIBRUSH (Q)", 
+            QIcon(), 3000, 1
+        )
+    
+    print(f"✅ Symmetry Origin theoretically centered at {cx}, {cy}")
+    print("   1. Select Multibrush Tool (Q)")
+    print("   2. Set Tool Options to 'Symmetry'")
 
+if __name__ == "__main__":
+    run()

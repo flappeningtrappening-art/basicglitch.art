@@ -64,7 +64,7 @@ def run():
         # Move node to group
         parent = node.parentNode()
         if parent and parent != group:
-            parent.removeChild(node)
+            parent.removeChildNode(node)
             group.addChildNode(node, None)
     
     print(f"✅ Organized {layer_count} layers into categories")

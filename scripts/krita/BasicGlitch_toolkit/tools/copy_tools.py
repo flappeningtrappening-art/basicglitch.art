@@ -90,4 +90,13 @@ def test_menu():
             print(f"  ❌ {filename}: Can't import - {e}")
 
 if __name__ == "__main__":
+
+    main()
+
+
+
+def run():
+
+    """Run the copy tools script"""
+
     main()

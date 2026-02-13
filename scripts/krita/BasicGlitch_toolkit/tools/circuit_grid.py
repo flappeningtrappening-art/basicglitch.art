@@ -1,17 +1,18 @@
 from krita import *
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QMessageBox
+import traceback
 
 def run():
     """Circuit Grid: High-performance Procedural Grid Generation"""
     app = Krita.instance()
     doc = app.activeDocument()
     if not doc:
-        print("No document open")
+        QMessageBox.warning(None, "BasicGlitch", "No document open!")
         return
     
     print("⚡ GENERATING CIRCUIT GRID...")
     
-    # Use Krita's built-in 'grid' generator for Fill Layers
-    # This is much faster and more 'Krita-native' than vector objects
     try:
         config = InfoObject()
         config.setProperty("subdivision", 1)
@@ -19,21 +20,21 @@ def run():
         config.setProperty("grid_size", 50)
         config.setProperty("color", QColor(0, 200, 255, 120)) # Cyan
         
-        # Create the Fill Layer
-        grid_layer = doc.createFillLayer("TECH: Circuit Grid", "grid", config)
+        # Fixed for Krita 5.2: requires (name, generator, info, selection)
+        empty_selection = Selection()
+        grid_layer = doc.createFillLayer("TECH: Circuit Grid", "grid", config, empty_selection)
         grid_layer.setBlendingMode("screen")
         grid_layer.setOpacity(150) # ~60%
         
         doc.rootNode().addChildNode(grid_layer, None)
         
         print("✅ Circuit Grid generated via Procedural Fill")
-        print("   • Grid Size: 50px")
-        print("   • Mode: Screen")
-        print("   • Resolution: Lossless (Procedural)")
+        doc.refreshProjection()
         
     except Exception as e:
-        print(f"❌ Failed to use Grid Generator: {e}")
-        print("   Falling back to legacy Vector mapping...")
+        error_msg = f"❌ Grid Gen Error: {str(e)}\n\n{traceback.format_exc()}"
+        print(error_msg)
+        QMessageBox.critical(None, "BasicGlitch Error", error_msg)
 
 if __name__ == "__main__":
     run()
