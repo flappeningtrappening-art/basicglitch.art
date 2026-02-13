@@ -63,6 +63,12 @@ def process_new_files():
             local_path = os.path.join(LOCAL_RAW, filename)
             shutil.move(os.path.join(raw_incoming, filename), local_path)
             
+            # 1b. Create WebP version for high performance
+            webp_filename = filename.rsplit('.', 1)[0] + ".webp"
+            webp_path = os.path.join(LOCAL_RAW, webp_filename)
+            print(f"Optimizing vision for web: {webp_filename}")
+            os.system(f"convert '{local_path}' -quality 85 '{webp_path}'")
+            
             # 2. Extract Title
             title = filename.split('.')[0].replace('_', ' ').title()
             art_id = f"art-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
@@ -70,8 +76,8 @@ def process_new_files():
             # 3. AI Analysis (300 Words)
             analysis = generate_forensic_analysis(title)
             
-            # 4. Update Gallery JSON
-            update_gallery(art_id, title, f"assets/images/raw/{filename}", analysis)
+            # 4. Update Gallery JSON (Use WebP for the website)
+            update_gallery(art_id, title, f"assets/images/raw/{webp_filename}", analysis)
             new_art_found = True
 
     if new_art_found:
