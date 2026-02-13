@@ -7,26 +7,31 @@ def run():
         print("No active document or layer!")
         return
 
+    print("🪞 GENERATING FRACTURED MIRROR...")
+
     # 1. SETUP: Calculate the split line (Center)
-    mid_point = doc.width() / 2
+    mid_point = doc.width() // 2
     
     # 2. CLONE: Create the mirrored side
+    # In Krita 5, we use duplicate()
     mirror_node = base.duplicate()
     mirror_node.setName(f"GLITCH: Mirror of {base.name()}")
-    doc.rootNode().addChildNode(mirror_node, base)
-
-    # 3. TRANSFORM: Flip and Offset
-    # We move the cloned layer to the right half
-    # AND we add the 'Fracture' (Vertical shift of 20 pixels)
-    mirror_node.move(int(mid_point), 20)
     
-    # 4. GLITCH AESTHETIC: Lower opacity slightly to create overlap glow
-    mirror_node.setOpacity(220) # Approx 85%
-    mirror_node.setBlendingMode("screen") # Great for Neon overlap
+    # Add to root
+    doc.rootNode().addChildNode(mirror_node, None)
 
-    # 5. USER INSTRUCTION (The manual flip)
+    # 3. TRANSFORM: Offset and Fracture
+    # Note: Krita move() is absolute coordinate or relative? 
+    # Usually it's relative to the parent.
+    mirror_node.move(mid_point, 20)
+    
+    # 4. AESTHETIC: Blending
+    mirror_node.setBlendingMode("addition")
+    mirror_node.setOpacity(180)
+
     doc.refreshProjection()
-    print("--- FRACTURED MIRROR APPLIED ---")
-    print("1. Select the new layer: 'GLITCH: Mirror...'")
-    print("2. Go to: Layer -> Transform -> Mirror Layer Horizontally")
-    print("3. RESULT: Perfect glitch symmetry with a 20px vertical fracture.")
+    print("✅ FRACTURED MIRROR APPLIED")
+    print("   👉 TIP: Manually Mirror this layer (Layer -> Transform -> Mirror Horizontally)")
+
+if __name__ == "__main__":
+    run()

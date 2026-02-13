@@ -45,8 +45,9 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
 ## 6. Cloudflare Infrastructure
 - **Speed Demon Caching:** Edge Cache TTL (1 Month), Browser TTL (1 Day), Serve Stale Content enabled.
 - **Ghostly Analytics:** Privacy-first JS beacon injected across all site pages.
-- **Email Routing:** Aliases forwarding to personal inbox: `studio@`, `commissions@`, `licensing@`, `management@`, `press@`.
-## 7. Session Updates (2026-01-11)
+    - **Email Routing:** Aliases forwarding to personal inbox: `studio@`, `commissions@`, `licensing@`, `management@`, `press@`.
+    - **Discord Integration (Mainframe):** Recommended connecting Formspree to a Discord Webhook (named "BasicGlitch Mainframe") to receive real-time alerts for signups and inquiries, bypassing email spam filters.
+## 7. Previous Session Updates (2026-01-11)
 - **Monetization & Lead Gen:**
     - Added **"Broboticus" Commission Tier** ($99) to `commissions.html`.
     - Implemented **Email Signup Forms** (Newsletter & Contact) using **Formspree** (Endpoint: `https://formspree.io/f/mbddjdyg`).
@@ -63,3 +64,21 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
     - Refactored `robot.js` to use `IntersectionObserver`.
     - Added `thumbnail_generator.py` script for Krita.
     - Secured API keys using `.env` and `.gitignore`.
+
+## 8. Recovery Session Updates (2026-02-08)
+- **Lead Gen & Value Delivery:**
+    - **Instant Bundle:** Created `download-wallpapers.html` featuring 4K+ exclusive assets (`sangre_de_cristo_midnight_v2`, `marilyn_monbroe`, `the_screambot`).
+    - **Automated Hand-off:** Updated `app.js` to automatically redirect users to the download portal after Formspree signup (2s delay).
+    - **Cache Busting:** Implemented `?v=1.1` script versioning in `index.html` to force deployment updates.
+- **Krita Toolkit (Quantum Engineering):**
+    - **Auto-Load Solved:** Created `kritapykrita_BasicGlitch_toolkit.desktop` and refactored `__init__.py` to ensure the plugin loads permanently in Krita's "Scripts" menu.
+    - **Unified Toolbelt:** Consolidated all 20+ scripts into `BasicGlitch_toolkit/tools/` with a dynamic, self-healing registration engine.
+    - **Functional Repairs:** Upgraded complex tools (`Neural Style Transfer Bridge`, `Temporal Undo`, `RGB Glitch`, `CRT Scanlines`) for Krita 5.2/Windows compatibility.
+    - **Apparel Expansion:** Upgraded `master_apparel.py` with centered, DPI-aware templates for tapestries, backpacks, duffel bags, tote bags, socks, and beanies.
+- **Infrastructure & Pipeline:**
+    - **One-Click Sync:** Developed `distribute_toolkit.sh` (Linux) and `Install_System.bat` (Windows) to synchronize the production pipeline across partitions via the shared folder.
+    - **Documentation:** Authored a comprehensive `README.md` for the Krita toolkit detailing usage and effects.
+        - **System Hardening:** Identified and resolved "silent crash" bugs caused by redundant `__init__.py` files in the root `pykrita` directory.
+    - **Known Issues / Debugging:**
+        - **Fractal Detail Generator:** Reported issue where layers are created but appear empty or incorrectly named (both named "Fractal Details") and the "Verification Grid" is missing. Requires property name verification for Krita 5.2.
+    

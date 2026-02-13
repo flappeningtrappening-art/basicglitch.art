@@ -10,7 +10,7 @@ import os
 # 4. Transfers all to Shared Drive for Linux Ingestion
 # ========================================================
 
-SHARED_DRIVE_ROOT = "C:/sf_minty_windows/foundry_transfer"
+SHARED_DRIVE_ROOT = "C:/Users/basic.glitch/Desktop/minty_windows/foundry_transfer"
 
 def ensure_dirs():
     """Creates the folder structure on the shared drive if missing."""
@@ -20,30 +20,25 @@ def ensure_dirs():
             os.makedirs(path)
 
 def save_version(doc, folder_name, suffix, max_size=None, quality=100, is_jpg=False):
-    """Resizes and saves a specific version of the artwork."""
+    """Saves a specific version of the artwork. Note: Scaling the live doc is risky, so we scale, export, and scale back."""
     
-    # Clone to avoid destroying the open document
-    clone = doc.clone()
+    original_w = doc.width()
+    original_h = doc.height()
     
     # Resize Logic
-    if max_size:
-        current_w = clone.width()
-        current_h = clone.height()
+    if max_size and (original_w > max_size or original_h > max_size):
+        if original_w > original_h:
+            new_w = max_size
+            new_h = int(original_h * (max_size / original_w))
+        else:
+            new_h = max_size
+            new_w = int(original_w * (max_size / original_h))
         
-        if current_w > max_size or current_h > max_size:
-            if current_w > current_h:
-                new_w = max_size
-                new_h = int(current_h * (max_size / current_w))
-            else:
-                new_h = max_size
-                new_w = int(current_w * (max_size / current_h))
-            
-            clone.scale(new_w, new_h, 72) # 72 DPI for web
+        doc.scale(new_w, new_h, 72) 
     
-    # Filename Logic (Clean Spaces)
+    # Filename Logic
     clean_name = doc.name().replace(" ", "_").lower()
-    if clean_name.endswith(".kra"):
-        clean_name = clean_name[:-4]
+    if clean_name.endswith(".kra"): clean_name = clean_name[:-4]
         
     ext = ".jpg" if is_jpg else ".png"
     filename = f"{clean_name}{suffix}{ext}"
@@ -53,19 +48,22 @@ def save_version(doc, folder_name, suffix, max_size=None, quality=100, is_jpg=Fa
     info = InfoObject()
     if is_jpg:
         info.setProperty("quality", quality)
-        info.setProperty("optimize", True)
     else:
-        info.setProperty("compression", 9) # Max PNG compression
-        info.setProperty("interlaced", False)
+        info.setProperty("compression", 9)
         
     # Save
-    clone.setBatchmode(True)
-    if clone.exportImage(full_path, info):
-        print(f"[SUCCESS] Saved {folder_name.upper()}: {filename}")
+    if doc.exportImage(full_path, info):
+        print(f"[SUCCESS] Saved: {filename}")
     else:
-        print(f"[ERROR] Failed to save {filename}")
+        print(f"[ERROR] Failed: {filename}")
         
-    clone.close()
+    # Restore scale if we changed it
+    if max_size and (original_w > max_size or original_h > max_size):
+        doc.scale(original_w, original_h, 72)
+
+def run():
+    """Entry point for Krita loader"""
+    run_pipeline()
 
 def run_pipeline():
     doc = Krita.instance().activeDocument()
@@ -75,6 +73,9 @@ def run_pipeline():
 
     print("--- STARTING FOUNDRY EXPORT PIPELINE ---")
     ensure_dirs()
+    
+    # In Krita 5, we can't always clone reliably in Python.
+    # We will export the current document state instead.
     
     # 1. Export RAW (Full Resolution, PNG)
     save_version(doc, "raw", "", max_size=None, is_jpg=False)
@@ -86,8 +87,9 @@ def run_pipeline():
     save_version(doc, "thumbs", "", max_size=600, quality=85, is_jpg=True)
     
     print("--- PIPELINE COMPLETE: Ready for Linux Ingestion ---")
-    MessageBox = Krita.instance().messageBox
-    MessageBox("Foundry Export Complete!
-Files transferred to shared drive.", "Success")
+    # Fixed MessageBox call
+    from PyQt5.QtWidgets import QMessageBox
+    QMessageBox.information(None, "Foundry Exporter", "Export Complete! Check your shared drive.")
 
-run_pipeline()
+if __name__ == "__main__":
+    run()

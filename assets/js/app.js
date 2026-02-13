@@ -232,10 +232,12 @@ function renderGrid(items, simplified = false){
       className: `card gallery-card ${categoryClass}`,
     }, cardChildren);
 
-    // Robust click listener for Lightbox
+    // Slugify helper for linking
+    const slug = it.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+
+    // Primary click goes to the individual page
     card.addEventListener('click', (e) => {
-      e.preventDefault();
-      openLightbox(it.id);
+      window.location.href = `art/${slug}.html`;
     });
     
     // Set dataset for effects
