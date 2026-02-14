@@ -3,7 +3,7 @@
 /* ---------------------------
    Config - adjust paths if needed
    --------------------------- */
-const FORGE_API = 'http://localhost:3400'; // SWAP THIS with your Cloudflare URL later
+const FORGE_API = 'https://lonely-consult-jewish-relates.trycloudflare.com'; 
 const GALLERY_JSON = 'assets/data/gallery.json';
 const GALLERY_BASE = 'assets/images/raw/'; // full images
 const THUMB_BASE = 'assets/images/gallery-thumbs/'; // thumbnails
