@@ -3,6 +3,7 @@
 /* ---------------------------
    Config - adjust paths if needed
    --------------------------- */
+const FORGE_API = 'http://localhost:3400'; // SWAP THIS with your Cloudflare URL later
 const GALLERY_JSON = 'assets/data/gallery.json';
 const GALLERY_BASE = 'assets/images/raw/'; // full images
 const THUMB_BASE = 'assets/images/gallery-thumbs/'; // thumbnails
@@ -498,7 +499,7 @@ async function runNeuralForge() {
   if(log) log.style.display = 'none';
 
   try {
-    const response = await fetch('http://localhost:3400/visualForgeFlow', {
+    const response = await fetch(`${FORGE_API}/visualForgeFlow`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
