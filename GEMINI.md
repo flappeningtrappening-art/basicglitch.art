@@ -79,6 +79,17 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
     - **One-Click Sync:** Developed `distribute_toolkit.sh` (Linux) and `Install_System.bat` (Windows) to synchronize the production pipeline across partitions via the shared folder.
     - **Documentation:** Authored a comprehensive `README.md` for the Krita toolkit detailing usage and effects.
         - **System Hardening:** Identified and resolved "silent crash" bugs caused by redundant `__init__.py` files in the root `pykrita` directory.
-    - **Known Issues / Debugging:**
-        - **Fractal Detail Generator:** Reported issue where layers are created but appear empty or incorrectly named (both named "Fractal Details") and the "Verification Grid" is missing. Requires property name verification for Krita 5.2.
+## 9. Full-Spectrum Automation (2026-02-13)
+- **Neural Forge (AI Integration):**
+    - Created `forge.html` featuring a terminal-style UI for user-driven image generation.
+    - Integrated `visualForgeFlow` into the Genkit Server (Port 3400) using Gemini-Flash.
+    - Added `runNeuralForge` to `app.js` for seamless frontend-to-backend communication.
+- **V3 Ingestion Engine Upgrade:**
+    - **Technical Polish:** Implemented automated WebP conversion in `ingest_art.py`, reducing image size by ~70% for SEO performance.
+    - **Market Readiness:** Added automated POD metadata generation. The system now creates `pod_market_master.csv` with optimized titles, tags, and descriptions for bulk uploads.
+    - **Deep Lore ARG:** Integrated a hidden Forensic Terminal (`terminal.js`). Gemini now occasionally hides "Forensic Fragments" in the 300-word art analyses to trigger ARG rewards.
+- **POD Pipeline:**
+    - Developed `pod_signup_assistant.py` to automate tedious account creation data entry.
+    - Developed `pod_upload_assistant.py` for "Metadata Injection," allowing rapid listing across Redbubble, TeePublic, and Society6.
+- **Navigation:** Unified "Neural Forge" access across all 13 site pages.
     

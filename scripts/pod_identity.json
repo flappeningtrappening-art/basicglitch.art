@@ -1,0 +1,20 @@
+{
+    "common": {
+        "username": "BasicGlitch",
+        "email": "justin@basicglitch.art",
+        "password": "Coral&sophiA19822003?",
+        "full_name": "Jeremy Lance"
+    },
+    "redbubble": {
+        "url": "https://www.redbubble.com/auth/login"
+    },
+    "society6": {
+        "url": "https://society6.com/login"
+    },
+    "teepublic": {
+        "url": "https://www.teepublic.com/login"
+    },
+    "fourthwall": {
+        "url": "https://fourthwall.com/"
+    }
+}
