@@ -520,7 +520,15 @@ async function runNeuralForge() {
       img.src = vision.imageUrl;
       img.onload = () => {
         img.style.display = 'block';
-        if(status) status.style.display = 'none'; // Hide status only when image is ready
+        if(status) status.style.display = 'none'; 
+      };
+      img.onerror = () => {
+        console.error("FORGE_IMAGE_LOAD_ERROR: ", vision.imageUrl);
+        if(placeholder) {
+          placeholder.textContent = "IMAGE_RENDER_FAILED (Try a different seed)";
+          placeholder.style.display = 'block';
+        }
+        if(status) status.style.display = 'none';
       };
     }
     
