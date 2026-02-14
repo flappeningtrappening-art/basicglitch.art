@@ -516,8 +516,12 @@ async function runNeuralForge() {
     const vision = result.result;
 
     if(img) {
+      // Set source but wait for load
       img.src = vision.imageUrl;
-      img.style.display = 'block';
+      img.onload = () => {
+        img.style.display = 'block';
+        if(status) status.style.display = 'none'; // Hide status only when image is ready
+      };
     }
     
     if(log) {
@@ -531,7 +535,6 @@ async function runNeuralForge() {
       placeholder.textContent = "FORGE_FAILURE: " + err.message;
       placeholder.style.display = 'block';
     }
-  } finally {
     if(status) status.style.display = 'none';
   }
 }
