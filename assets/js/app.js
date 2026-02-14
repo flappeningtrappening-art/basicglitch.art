@@ -525,7 +525,7 @@ async function runNeuralForge() {
       img.onerror = () => {
         console.error("FORGE_IMAGE_LOAD_ERROR: ", vision.imageUrl);
         if(placeholder) {
-          placeholder.textContent = "IMAGE_RENDER_FAILED (Try a different seed)";
+          placeholder.innerHTML = `IMAGE_RENDER_FAILED<br><a href="${vision.imageUrl}" target="_blank" style="color: var(--neon); font-size: 1rem; text-decoration: underline;">VIEW_EXTERNAL_LINK</a>`;
           placeholder.style.display = 'block';
         }
         if(status) status.style.display = 'none';
