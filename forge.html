@@ -131,58 +131,5 @@
   </div>
 </footer>
 
-<script>
-  async function runNeuralForge() {
-    const seed = document.getElementById('neural-seed').value;
-    const type = document.getElementById('infusion-type').value;
-    const status = document.getElementById('forge-status-msg');
-    const placeholder = document.getElementById('forge-placeholder');
-    const img = document.getElementById('forge-result-img');
-    const log = document.getElementById('forensic-log');
-
-    if (!seed) {
-      alert("SIGNAL ERROR: Neural Seed required.");
-      return;
-    }
-
-    status.style.display = 'block';
-    placeholder.style.display = 'none';
-    img.style.display = 'none';
-    log.style.display = 'none';
-
-    try {
-      // Direct call to Genkit Flow Server
-      const response = await fetch('http://localhost:3400/visualForgeFlow', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          data: {
-            neuralSeed: seed,
-            infusionType: type
-          }
-        })
-      });
-
-      if (!response.ok) throw new Error("TRANSMISSION_FAILED");
-
-      const result = await response.json();
-      const vision = result.result;
-
-      img.src = vision.imageUrl;
-      img.style.display = 'block';
-      
-      log.innerHTML = `<div style="color: var(--neon); margin-bottom: 10px;">>> FORENSIC_ANALYSIS_COMPLETE</div>` + vision.forensicLog;
-      log.style.display = 'block';
-
-    } catch (err) {
-      console.error(err);
-      placeholder.textContent = "FORGE_FAILURE: " + err.message;
-      placeholder.style.display = 'block';
-    } finally {
-      status.style.display = 'none';
-    }
-  }
-</script>
-
 </body>
 </html>
