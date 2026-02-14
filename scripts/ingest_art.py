@@ -3,13 +3,12 @@ import json
 import shutil
 import re
 import datetime
+import csv
 import google.generativeai as genai
 from dotenv import load_dotenv
 
 # ========================================================
-# FOUNDRY INGESTION ENGINE (V2 - AI ENHANCED)
-# ========================================================
-# Monitors shared drive, processes new art with Gemini, and deploys.
+# FOUNDRY INGESTION ENGINE (V3 - MARKET READY)
 # ========================================================
 
 load_dotenv()
@@ -20,6 +19,44 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHARED_TRANSFER = "/media/sf_minty_windows/foundry_transfer"
 LOCAL_RAW = os.path.join(BASE_DIR, "assets/images/raw")
 GALLERY_JSON = os.path.join(BASE_DIR, "assets/data/gallery.json")
+MARKET_CSV = os.path.join(BASE_DIR, "assets/data/pod_market_master.csv")
+
+def generate_market_metadata(title):
+    print(f"Generating POD Market Data for: {title}...")
+    model = genai.GenerativeModel('models/gemini-flash-latest')
+    
+    prompt = f"""
+    You are a POD (Print on Demand) Marketing Expert for 'BasicGlitch'.
+    Create metadata for a new art piece titled '{title}'.
+    
+    Aesthetic: Cyber-Eclectic, Tech-Noir, Neon, PCB design.
+    
+    Return ONLY a JSON object with these keys:
+    - short_desc: A punchy 2-sentence marketing description.
+    - tags: 15-20 highly relevant SEO tags (comma separated).
+    - search_title: An SEO-optimized title for Redbubble/Society6.
+    """
+    
+    try:
+        response = model.generate_content(prompt)
+        # Extract JSON from response
+        json_match = re.search(r'\{.*\}', response.text, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group())
+    except:
+        return {
+            "short_desc": f"Exclusive digital surrealism from the BasicGlitch foundry. {title} signal captured.",
+            "tags": "cyberpunk, tech-noir, neon, digital art, surrealism, pcb, circuitry, robot, basicglitch",
+            "search_title": f"{title} | Cyberpunk Neon Glitch Art"
+        }
+
+def update_market_csv(title, metadata, image_path):
+    file_exists = os.path.isfile(MARKET_CSV)
+    with open(MARKET_CSV, 'a', newline='') as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(['Original Title', 'Market Title', 'Description', 'Tags', 'Local File'])
+        writer.writerow([title, metadata['search_title'], metadata['short_desc'], metadata['tags'], image_path])
 
 def generate_forensic_analysis(title):
     print(f"Generating forensic analysis for: {title}...")
@@ -34,7 +71,8 @@ def generate_forensic_analysis(title):
     2. Tone: Aggressive, technical, professional, and surreal.
     3. Use terms like: 'digital entropy', 'forensic marker', 'quantum superposition', 'cyber-eclectic', 'tech-noir', 'visual autopsy'.
     4. Focus on the 'Foundry' philosophy: processing raw chaos into high-fidelity artistic intelligence.
-    5. Output the analysis in HTML <p> tags.
+    5. IMPORTANT: Occasionally hide a 'Forensic Fragment' in the text (e.g., [FRAGMENT: SIGNAL_77] or [FRAGMENT: DECAY_0]). These are for the ARG.
+    6. Output the analysis in HTML <p> tags.
     """
     
     try:
@@ -75,6 +113,10 @@ def process_new_files():
             
             # 3. AI Analysis (300 Words)
             analysis = generate_forensic_analysis(title)
+            
+            # 3b. Generate POD Market Data
+            market_data = generate_market_metadata(title)
+            update_market_csv(title, market_data, f"assets/images/raw/{filename}")
             
             # 4. Update Gallery JSON (Use WebP for the website)
             update_gallery(art_id, title, f"assets/images/raw/{webp_filename}", analysis)

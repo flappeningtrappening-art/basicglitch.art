@@ -479,6 +479,62 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ---------------------------
    Init
    --------------------------- */
+async function runNeuralForge() {
+  const seedInput = document.getElementById('neural-seed');
+  const typeInput = document.getElementById('infusion-type');
+  const status = document.getElementById('forge-status-msg');
+  const placeholder = document.getElementById('forge-placeholder');
+  const img = document.getElementById('forge-result-img');
+  const log = document.getElementById('forensic-log');
+
+  if (!seedInput || !seedInput.value) {
+    alert("SIGNAL ERROR: Neural Seed required.");
+    return;
+  }
+
+  if(status) status.style.display = 'block';
+  if(placeholder) placeholder.style.display = 'none';
+  if(img) img.style.display = 'none';
+  if(log) log.style.display = 'none';
+
+  try {
+    const response = await fetch('http://localhost:3400/visualForgeFlow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        data: {
+          neuralSeed: seedInput.value,
+          infusionType: typeInput.value
+        }
+      })
+    });
+
+    if (!response.ok) throw new Error("TRANSMISSION_FAILED");
+
+    const result = await response.json();
+    const vision = result.result;
+
+    if(img) {
+      img.src = vision.imageUrl;
+      img.style.display = 'block';
+    }
+    
+    if(log) {
+      log.innerHTML = `<div style="color: var(--neon); margin-bottom: 10px;">>> FORENSIC_ANALYSIS_COMPLETE</div>` + vision.forensicLog;
+      log.style.display = 'block';
+    }
+
+  } catch (err) {
+    console.error(err);
+    if(placeholder) {
+      placeholder.textContent = "FORGE_FAILURE: " + err.message;
+      placeholder.style.display = 'block';
+    }
+  } finally {
+    if(status) status.style.display = 'none';
+  }
+}
+
 (async function init(){
   try{
     setBrandColor();

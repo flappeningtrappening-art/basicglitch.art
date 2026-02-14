@@ -79,6 +79,7 @@ def get_template(item):
     <a href="../index.html" class="brand">BasicGlitch</a>
     <nav class="nav">
       <a class="nav-link" href="../gallery.html">Gallery</a>
+      <a class="nav-link" href="../forge.html">Neural Forge</a>
       <a class="nav-link" href="../commissions.html">Commissions</a>
       <a class="nav-link" href="../apparel.html">Apparel</a>
       <a class="nav-link" href="../about.html">About</a>
@@ -168,6 +169,7 @@ def update_sitemap(new_urls):
     static_pages = [
         ("https://basicglitch.art/", 1.0),
         ("https://basicglitch.art/gallery.html", 0.8),
+        ("https://basicglitch.art/forge.html", 0.9),
         ("https://basicglitch.art/portfolio.html", 0.9),
         ("https://basicglitch.art/pup-fiction.html", 0.9),
         ("https://basicglitch.art/commissions.html", 0.9),
