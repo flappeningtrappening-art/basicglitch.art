@@ -11,8 +11,7 @@ const HERO_CHOICES = [
   { path: 'assets/images/hero/glitch1.png', key: 'glitch1' },
   { path: 'assets/images/hero/glitch2.png', key: 'glitch2' },
   { path: 'assets/images/hero/glitch3.jpg', key: 'glitch3' },
-  { path: 'assets/images/hero/glitch4.png', key: 'glitch-default' },
-  { path: 'assets/images/hero/glitch_ai.png', key: 'glitch-ai' }
+  { path: 'assets/images/hero/glitch4.png', key: 'glitch-default' }
 ];
 
 /* ---------------------------

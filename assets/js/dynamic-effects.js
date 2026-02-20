@@ -114,39 +114,61 @@ function updateGalleryBorders() {
    3D CARD COMPATIBILITY HELPERS
 -------------------------------- */
 function initialize3DEffects() {
-  // Add CSS for neon glow effects that work with 3D transforms
+  // Glow intensity and color are now handled via CSS for better performance
   const style = document.createElement('style');
   style.textContent = `
     .neon-3d-card {
       --neon-glow-color: var(--neon);
       --neon-glow-intensity: 0.4;
+      position: relative;
+      overflow: hidden; /* Clips the racing tracer */
     }
     
+    /* The Racing Tracer (Tron/Snake Style) */
     .neon-3d-card::before {
       content: '';
       position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: var(--neon-glow-color);
-      border-radius: calc(var(--card-radius) + 2px);
-      opacity: var(--neon-glow-intensity);
-      filter: blur(10px);
-      z-index: -1;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: conic-gradient(
+        transparent 70%, 
+        var(--neon-glow-color) 85%,
+        transparent 100%
+      );
+      animation: snake-rotate 1.5s linear infinite;
+      z-index: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      opacity: var(--neon-glow-intensity);
     }
-    
-    .neon-3d-card:hover::before {
-      opacity: calc(var(--neon-glow-intensity) + 0.3);
-      filter: blur(15px);
+
+    @keyframes snake-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    
-    /* Ensure gallery images have proper glow */
-    .gallery-card img {
+
+    /* Ensure card content is above tracer */
+    .neon-3d-card > * {
       position: relative;
       z-index: 2;
+    }
+
+    /* Hover State Intensity */
+    .neon-3d-card:hover::before {
+      --neon-glow-intensity: 0.8;
+      animation-duration: 0.8s; /* Faster when hovered */
+    }
+    
+    /* Dark overlay to make content readable and tracer look like a border */
+    .neon-3d-card::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--panel);
+      border-radius: calc(var(--card-radius) - 1px);
+      z-index: 1;
+      pointer-events: none;
     }
   `;
   document.head.appendChild(style);
