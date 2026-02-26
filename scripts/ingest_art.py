@@ -20,6 +20,7 @@ SHARED_TRANSFER = "/media/sf_minty_windows"
 LOCAL_RAW = os.path.join(BASE_DIR, "assets/images/raw")
 GALLERY_JSON = os.path.join(BASE_DIR, "assets/data/gallery.json")
 MARKET_CSV = os.path.join(BASE_DIR, "assets/data/pod_market_master.csv")
+THUMB_DIR = os.path.join(BASE_DIR, "assets/images/gallery-thumbs")
 
 def generate_market_metadata(title):
     print(f"Generating POD Market Data for: {title}...")
@@ -129,6 +130,11 @@ def process_new_files():
                 # 2. Extract Title
                 title = filename.split('.')[0].replace('_', ' ').replace('-', ' ').title()
                 art_id = f"art-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
+                
+                # 2b. Generate Thumbnail (600x600 centered)
+                thumb_path = os.path.join(THUMB_DIR, f"{art_id}.jpg")
+                print(f"Generating gallery thumbnail: {art_id}.jpg")
+                os.system(f"convert '{local_path}' -resize 600x600^ -gravity center -extent 600x600 '{thumb_path}'")
                 
                 # 3. AI Analysis (300 Words)
                 analysis = generate_forensic_analysis(title)
