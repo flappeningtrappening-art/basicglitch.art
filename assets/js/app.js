@@ -202,28 +202,35 @@ function renderGrid(items, simplified = false){
     
     const thumbSrc = THUMB_BASE + it.id + '.jpg';
     const largeSrc = it.file;
+    const isVideo = it.type === 'video' || largeSrc.toLowerCase().endsWith('.mp4') || largeSrc.toLowerCase().endsWith('.mov');
     
     // Construct Card Contents
     const cardChildren = [
       // Image
       el('img', {
         src: thumbSrc,
-        alt: it.alt_text || `${it.title} | BasicGlitch`, // Use new enriched alt_text
+        alt: it.alt_text || `${it.title} | BasicGlitch`,
         loading: 'lazy',
         className: 'gallery-image',
         'data-large': largeSrc
-      }),
-      // Title
-      el('h3', { style: simplified ? 'text-align: center; margin-top: 15px;' : 'margin-top: 15px;' }, [it.title || 'Untitled'])
+      })
     ];
 
-    // Add Description and Price if NOT simplified
+    // Add Video Indicator
+    if (isVideo) {
+      cardChildren.push(el('div', {
+        className: 'video-badge',
+        style: 'position: absolute; top: 10px; left: 10px; background: var(--neon-mag); color: #000; padding: 2px 8px; font-family: "Share Tech Mono"; font-size: 0.7rem; font-weight: bold; border-radius: 2px; z-index: 2;'
+      }, ['MOTION_SIGNAL']));
+    }
+
+    // Title
+    cardChildren.push(el('h3', { style: simplified ? 'text-align: center; margin-top: 15px;' : 'margin-top: 15px;' }, [it.title || 'Untitled']));
+
+    // Add Description if NOT simplified
     if (!simplified) {
       if (it.description) {
         cardChildren.push(el('p', { className: 'muted', style: 'font-size: 0.9rem; margin: 10px 0;' }, [it.description]));
-      }
-      if (it.price) {
-        cardChildren.push(el('p', { className: 'price', style: 'color: var(--neon-2); font-weight: bold;' }, [`$${it.price}`]));
       }
     }
     
@@ -271,11 +278,27 @@ function openLightbox(id){
   }
   
   content.innerHTML = '';
-  const img = document.createElement('img');
   
-  // Use the full image path from JSON
-  img.src = item.file;
-  img.alt = item.title || '';
+  const isVideo = item.type === 'video' || item.file.toLowerCase().endsWith('.mp4') || item.file.toLowerCase().endsWith('.mov');
+  
+  if (isVideo) {
+    const video = document.createElement('video');
+    video.src = item.file;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.controls = true;
+    video.style.maxWidth = '100%';
+    video.style.maxHeight = '80vh';
+    video.style.boxShadow = '0 0 30px rgba(0,0,0,0.8)';
+    content.appendChild(video);
+  } else {
+    const img = document.createElement('img');
+    img.src = item.file;
+    img.alt = item.title || '';
+    content.appendChild(img);
+  }
   
   // Add title and description to lightbox
   const title = document.createElement('h3');
@@ -285,7 +308,6 @@ function openLightbox(id){
   desc.textContent = item.description || '';
   
   content.appendChild(title);
-  content.appendChild(img);
   content.appendChild(desc);
   
   lb.classList.remove('hidden');

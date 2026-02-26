@@ -91,12 +91,19 @@ def get_template(item):
   <div class="container art-showcase">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; align-items: start;">
       
-      <!-- Image Column -->
+      <!-- Image/Video Column -->
       <div class="art-frame" style="border: 1px solid var(--border); padding: 10px; background: rgba(0,0,0,0.4);">
+        {f'''
+        <video autoplay loop muted playsinline controls style="width: 100%; height: auto; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
+            <source src="../{image_url}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        ''' if item.get('type') == 'video' or image_url.lower().endswith(('.mp4', '.mov')) else f'''
         <picture>
             <source srcset="../{image_url}" type="image/webp">
             <img src="../{master_png}" alt="{item['title']} - {item.get('style', 'Digital Art')} by BasicGlitch" style="width: 100%; height: auto; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
         </picture>
+        '''}
         <button class="lore-terminal-btn" onclick="openTerminal()">ACCESS_TERMINAL_V1.0.4</button>
       </div>
 

@@ -60,3 +60,4 @@ notes/*
 !notes/*/
 !notes/*/ .gitkeep
 .env
+assets/videos/basicglitch_neon_1440p_optimized.mp4
