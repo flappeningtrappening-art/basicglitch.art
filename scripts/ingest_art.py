@@ -8,7 +8,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 
 # ========================================================
-# FOUNDRY INGESTION ENGINE (V3 - MARKET READY)
+# FOUNDRY INGESTION ENGINE (V3.1 - SELECTIVE SCAN)
 # ========================================================
 
 load_dotenv()
@@ -16,7 +16,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SHARED_TRANSFER = "/media/sf_minty_windows/foundry_transfer"
+SHARED_TRANSFER = "/media/sf_minty_windows"
 LOCAL_RAW = os.path.join(BASE_DIR, "assets/images/raw")
 GALLERY_JSON = os.path.join(BASE_DIR, "assets/data/gallery.json")
 MARKET_CSV = os.path.join(BASE_DIR, "assets/data/pod_market_master.csv")
@@ -87,40 +87,59 @@ def process_new_files():
         print(f"Error: Shared folder not found at {SHARED_TRANSFER}")
         return
 
-    raw_incoming = os.path.join(SHARED_TRANSFER, "raw")
-    if not os.path.exists(raw_incoming):
-        return
-
+    # ONLY scan specific folders to avoid root clutter
+    scan_paths = [
+        os.path.join(SHARED_TRANSFER, "savannah-grid"),
+        os.path.join(SHARED_TRANSFER, "transfer2website")
+    ]
+    
     new_art_found = False
     
-    for filename in os.listdir(raw_incoming):
-        if filename.endswith((".png", ".jpg", ".jpeg")):
-            print(f"Detected new signal: {filename}")
+    for scan_path in scan_paths:
+        if not os.path.exists(scan_path):
+            print(f"Skipping missing path: {scan_path}")
+            continue
             
-            # 1. Move to local raw
-            local_path = os.path.join(LOCAL_RAW, filename)
-            shutil.move(os.path.join(raw_incoming, filename), local_path)
+        print(f"Scanning: {scan_path}")
+        for filename in os.listdir(scan_path):
+            file_full_path = os.path.join(scan_path, filename)
             
-            # 1b. Create WebP version for high performance
-            webp_filename = filename.rsplit('.', 1)[0] + ".webp"
-            webp_path = os.path.join(LOCAL_RAW, webp_filename)
-            print(f"Optimizing vision for web: {webp_filename}")
-            os.system(f"convert '{local_path}' -quality 85 '{webp_path}'")
-            
-            # 2. Extract Title
-            title = filename.split('.')[0].replace('_', ' ').title()
-            art_id = f"art-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
-            
-            # 3. AI Analysis (300 Words)
-            analysis = generate_forensic_analysis(title)
-            
-            # 3b. Generate POD Market Data
-            market_data = generate_market_metadata(title)
-            update_market_csv(title, market_data, f"assets/images/raw/{filename}")
-            
-            # 4. Update Gallery JSON (Use WebP for the website)
-            update_gallery(art_id, title, f"assets/images/raw/{webp_filename}", analysis)
-            new_art_found = True
+            # Skip directories
+            if not os.path.isfile(file_full_path):
+                continue
+                
+            if filename.lower().endswith((".png", ".jpg", ".jpeg")):
+                print(f"Detected new signal: {filename}")
+                
+                # Check if it already exists locally to avoid duplicates
+                local_path = os.path.join(LOCAL_RAW, filename)
+                if os.path.exists(local_path):
+                    print(f"Skipping duplicate: {filename}")
+                    continue
+
+                # 1. Move to local raw
+                shutil.move(file_full_path, local_path)
+                
+                # 1b. Create WebP version for high performance
+                webp_filename = filename.rsplit('.', 1)[0] + ".webp"
+                webp_path = os.path.join(LOCAL_RAW, webp_filename)
+                print(f"Optimizing vision for web: {webp_filename}")
+                os.system(f"convert '{local_path}' -quality 85 '{webp_path}'")
+                
+                # 2. Extract Title
+                title = filename.split('.')[0].replace('_', ' ').replace('-', ' ').title()
+                art_id = f"art-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
+                
+                # 3. AI Analysis (300 Words)
+                analysis = generate_forensic_analysis(title)
+                
+                # 3b. Generate POD Market Data
+                market_data = generate_market_metadata(title)
+                update_market_csv(title, market_data, f"assets/images/raw/{filename}")
+                
+                # 4. Update Gallery JSON (Use WebP for the website)
+                update_gallery(art_id, title, f"assets/images/raw/{webp_filename}", analysis)
+                new_art_found = True
 
     if new_art_found:
         print("Regenerating site and syncing mainframe...")
