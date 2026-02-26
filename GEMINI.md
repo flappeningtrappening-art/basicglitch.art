@@ -13,7 +13,7 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
 - **The Neon Grid:** A signature animated background using `linear-gradient` and `background-size` to create a moving 3D floor effect.
 - **Interactive Glitch Engine:** A re-activated and enhanced `robot.js` system that features floating, interactive bots (Broboticus/Guitarbot). Clicking these bots triggers audio pulses and site-wide visual grid glitches.
 - **Randomized Instagram Feed:** A client-side JavaScript engine that shuffles images from `assets/images/raw` to provide a dynamic "Social Feed" feel on every page load.
-- **Cyber-Commission Tiers:** 5-tier service menu (Nano, Binary, Synthweave, Quantum, Singularity) with interactive 3D card flips.
+- **Cyber-Commission Tiers:** 6-tier service menu (Nano, Broboticus, Binary, Synthweave, Quantum, Singularity) with interactive 3D card flips.
 
 ## 4. Recent Updates & Fixes
 - **Brand & Persona Unification:**
@@ -49,7 +49,7 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
     - **Discord Integration (Mainframe):** Recommended connecting Formspree to a Discord Webhook (named "BasicGlitch Mainframe") to receive real-time alerts for signups and inquiries, bypassing email spam filters.
 ## 7. Previous Session Updates (2026-01-11)
 - **Monetization & Lead Gen:**
-    - Added **"Broboticus" Commission Tier** ($99) to `commissions.html`.
+    - Added **"Broboticus" Commission Tier** ($125) to `commissions.html`.
     - Implemented **Email Signup Forms** (Newsletter & Contact) using **Formspree** (Endpoint: `https://formspree.io/f/mbddjdyg`).
     - Added AJAX form handling in `app.js` to prevent page reloads.
 - **Visual Design & FX:**
