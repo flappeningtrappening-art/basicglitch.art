@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="index, follow">
+
+<!-- Primary SEO -->
+<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
+<link rel="canonical" href="https://basicglitch.art/broboticus.html">
+<title>Broboticus | Case Study 42 | BasicGlitch</title>
+<meta name="description" content="Meet Broboticus — the original robot character created by BasicGlitch for March of the Robots. Read the full lore behind Case Study 42: Robotic Leisure and Acclimation to Human Society.">
+<meta name="keywords" content="Broboticus, Case Study 42, robot character art, digital art character lore, BasicGlitch original character, robot NFT, March of the Robots">
+<meta name="author" content="BasicGlitch">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://basicglitch.art/broboticus.html">
+<meta property="og:title" content="Broboticus | Case Study 42 | BasicGlitch">
+<meta property="og:description" content="The field reports don't cover everything. Read the full Case Study 42 lore — Broboticus and his acclimation to human society, one leisure activity at a time.">
+<meta property="og:image" content="https://basicglitch.art/assets/images/raw/vitruvian_broboticus_og.webp">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://basicglitch.art/broboticus.html">
+<meta name="twitter:title" content="Broboticus | Case Study 42 | BasicGlitch">
+<meta name="twitter:description" content="The field reports don't cover everything. Read the full Case Study 42 lore.">
+<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/vitruvian_broboticus_og.webp">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="./assets/js/app.js" defer></script>
+<script src="./assets/js/dynamic-effects.js" defer></script>
+
+<style>
+  /* ── LORE PAGE STYLES ── */
+
+  .lore-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .lore-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 40%, rgba(0,255,62,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,255,247,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 50% at 20% 80%, rgba(199,36,255,0.05) 0%, transparent 60%);
+    animation: heroAura 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroAura {
+    0%   { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+
+  .lore-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,62,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,62,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .lore-hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 120px 20px 60px;
+    max-width: 900px;
+  }
+
+  .classified-stamp {
+    display: inline-block;
+    border: 3px solid var(--neon-org);
+    color: var(--neon-org);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    padding: 6px 18px;
+    margin-bottom: 30px;
+    transform: rotate(-1.5deg);
+    opacity: 0.9;
+    text-transform: uppercase;
+  }
+
+  .lore-hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    color: var(--neon-2);
+    text-shadow:
+      0 0 20px var(--neon-2),
+      0 0 60px rgba(0,255,62,0.4),
+      0 0 120px rgba(0,255,62,0.2);
+    line-height: 1;
+    margin: 0 0 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .lore-hero-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: var(--neon);
+    letter-spacing: 0.25em;
+    margin-bottom: 40px;
+    opacity: 0.8;
+  }
+
+  .lore-hero-image {
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px var(--neon-2)) drop-shadow(0 0 60px rgba(0,255,62,0.3));
+    animation: broFloat 4s ease-in-out infinite;
+    margin: 20px auto;
+    display: block;
+  }
+
+  @keyframes broFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-16px); }
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--neon-2);
+    display: block;
+    text-shadow: 0 0 10px var(--neon-2);
+  }
+
+  .hero-stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ── LORE SECTIONS ── */
+
+  .lore-section {
+    position: relative;
+    padding: 80px 20px;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  .lore-section:nth-child(even) {
+    background: #020202;
+  }
+
+  .lore-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--neon-2), transparent);
+    opacity: 0.4;
+  }
+
+  .lore-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .lore-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    color: var(--neon-org);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .lore-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin: 0 0 30px;
+    line-height: 1.2;
+  }
+
+  .lore-heading.grn  { color: var(--neon-2);   text-shadow: 0 0 15px rgba(0,255,62,0.4); }
+  .lore-heading.cyn  { color: var(--neon);      text-shadow: 0 0 15px rgba(0,255,247,0.4); }
+  .lore-heading.mag  { color: var(--neon-mag);  text-shadow: 0 0 15px rgba(255,28,207,0.4); }
+  .lore-heading.pur  { color: var(--neon-pur);  text-shadow: 0 0 15px rgba(199,36,255,0.4); }
+  .lore-heading.org  { color: var(--neon-org);  text-shadow: 0 0 15px rgba(255,95,31,0.4); }
+
+  .lore-body {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--fg);
+    opacity: 0.9;
+  }
+
+  .lore-body p {
+    margin: 0 0 1.4em;
+  }
+
+  .lore-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── FIELD REPORTS GRID ── */
+
+  .field-reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .field-report-card {
+    background: var(--glass);
+    border: 1px solid rgba(0,255,62,0.15);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .field-report-card:hover {
+    border-color: var(--neon-2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,255,62,0.1);
+  }
+
+  .field-report-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .field-report-card:hover::before {
+    opacity: 1;
+  }
+
+  .report-number {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--neon-org);
+    letter-spacing: 0.3em;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .report-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--neon-2);
+    margin-bottom: 10px;
+  }
+
+  .report-finding {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .report-status {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+
+  .status-complete {
+    background: rgba(0,255,62,0.1);
+    color: var(--neon-2);
+    border: 1px solid rgba(0,255,62,0.3);
+  }
+
+  .status-origin {
+    background: rgba(255,95,31,0.1);
+    color: var(--neon-org);
+    border: 1px solid rgba(255,95,31,0.3);
+  }
+
+  .status-nft {
+    background: rgba(199,36,255,0.1);
+    color: var(--neon-pur);
+    border: 1px solid rgba(199,36,255,0.3);
+  }
+
+  /* ── SPECS TABLE ── */
+
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Share Tech Mono', monospace;
+    margin-top: 30px;
+  }
+
+  .specs-table tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .specs-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .specs-table td {
+    padding: 14px 10px;
+    font-size: 0.875rem;
+    vertical-align: top;
+  }
+
+  .specs-table td:first-child {
+    color: var(--neon);
+    width: 40%;
+    letter-spacing: 0.1em;
+  }
+
+  .specs-table td:last-child {
+    color: var(--muted);
+  }
+
+  /* ── NFT CALLOUT ── */
+
+  .nft-callout {
+    background: linear-gradient(135deg,
+      rgba(199,36,255,0.08) 0%,
+      rgba(0,255,62,0.05) 50%,
+      rgba(0,255,247,0.08) 100%);
+    border: 1px solid rgba(199,36,255,0.25);
+    border-radius: var(--card-radius);
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .nft-callout::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--card-radius) + 2px);
+    background: linear-gradient(135deg, var(--neon-pur), var(--neon-2), var(--neon));
+    z-index: -1;
+    opacity: 0.15;
+    animation: nftPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes nftPulse {
+    0%, 100% { opacity: 0.1; }
+    50%       { opacity: 0.25; }
+  }
+
+  .nft-callout-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--neon-pur);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .nft-callout-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .nft-callout-title span {
+    color: var(--neon-pur);
+    text-shadow: 0 0 15px rgba(199,36,255,0.5);
+  }
+
+  .nft-callout-body {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.75;
+  }
+
+  .nft-callout-btn {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #000;
+    background: var(--neon-pur);
+    padding: 14px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(199,36,255,0.4);
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+
+  .nft-callout-btn:hover {
+    box-shadow: 0 0 40px rgba(199,36,255,0.7);
+    transform: translateY(-2px);
+  }
+
+  /* ── DIVIDER ── */
+
+  .lore-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-2), transparent);
+    opacity: 0.2;
+    margin: 0;
+  }
+
+  /* ── GALLERY STRIP ── */
+
+  .lore-gallery-strip {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-2) transparent;
+  }
+
+  .lore-gallery-strip::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .lore-gallery-strip::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .lore-gallery-strip::-webkit-scrollbar-thumb {
+    background: var(--neon-2);
+    border-radius: 2px;
+  }
+
+  .lore-gallery-thumb {
+    flex: 0 0 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(0,255,62,0.2);
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  .lore-gallery-thumb:hover {
+    border-color: var(--neon-2);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,255,62,0.2);
+  }
+
+  /* ── BLOCKQUOTE ── */
+
+  .lore-quote {
+    border-left: 3px solid var(--neon-2);
+    padding: 16px 24px;
+    margin: 30px 0;
+    background: rgba(0,255,62,0.03);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .lore-quote p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--neon);
+    font-style: italic;
+    margin: 0 0 8px;
+    line-height: 1.7;
+  }
+
+  .lore-quote cite {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+  }
+
+  /* ── RESPONSIVE ── */
+
+  @media (max-width: 600px) {
+    .hero-stats { gap: 24px; }
+    .lore-section { padding: 60px 16px; }
+    .nft-callout { padding: 36px 20px; }
+    .field-reports-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="index.html" class="brand">BasicGlitch</a>
+    <nav class="nav">
+      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
+      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
+      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
+      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
+      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt="About Icon"> About</a>
+      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="lore-hero">
+    <div class="lore-hero-bg"></div>
+    <div class="lore-hero-grid"></div>
+    <div class="lore-hero-inner">
+      <div class="classified-stamp">⬛ CLASSIFIED ARCHIVE — CASE STUDY 42</div>
+      <h1 class="lore-hero-title">BROBOTICUS</h1>
+      <p class="lore-hero-subtitle">ROBOTIC LEISURE &amp; ACCLIMATION TO HUMAN SOCIETY</p>
+      <img
+        src="assets/images/raw/vitruvian_broboticus_og.webp"
+        alt="Vitruvian Broboticus — the proportional diagram of the character"
+        class="lore-hero-image"
+      >
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-value">42</span>
+          <span class="hero-stat-label">Case Study No.</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">11+</span>
+          <span class="hero-stat-label">Field Reports</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">2024</span>
+          <span class="hero-stat-label">First Transmission</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">∞</span>
+          <span class="hero-stat-label">Leisure Capacity</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── ORIGIN ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <span class="lore-label">// ORIGIN_LOG.001</span>
+      <h2 class="lore-heading grn">The First Transmission</h2>
+      <div class="lore-body">
+        <p>In 2024, an Instagram contest called March of the Robots issued a simple directive: draw a robot. What BasicGlitch drew instead was a character — beanie on, headphones on, hands at the decks, rendered in single-weight neon green on absolute black. No background. No context. Just the character, fully formed in his first appearance, already doing exactly what he was always going to do.</p>
+        <p>The contest gave him a reason to exist. The drawing gave him everything else.</p>
+        <p>His name is Broboticus. He is the subject of Case Study 42: Robotic Leisure and Acclimation to Human Society — an ongoing archive of field reports documenting what happens when a robot decides to try everything.</p>
+      </div>
+
+      <div class="lore-quote">
+        <p>"He wasn't designed to fit in. He was designed to figure out what fitting in even means — and then do it at maximum commitment."</p>
+        <cite>— BasicGlitch, on the character's operating philosophy</cite>
+      </div>
+
+      <img
+        src="assets/images/raw/artist_broboticus_og.webp"
+        alt="Broboticus Original — the first drawing entered in March of the Robots 2024"
+        style="width: 100%; max-width: 340px; display: block; margin: 30px auto 0; border-radius: 8px; border: 1px solid rgba(0,255,62,0.2); filter: drop-shadow(0 0 20px rgba(0,255,62,0.15));"
+      >
+      <p style="text-align:center; font-family:'Share Tech Mono',monospace; font-size:0.7rem; color:var(--muted); letter-spacing:0.2em; margin-top:12px;">FIELD_REPORT_00 — ORIGINAL DRAWING — MARCH OF THE ROBOTS 2024</p>
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── TECHNICAL SPECIFICATIONS ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <span class="lore-label">// TECHNICAL_READOUT.042</span>
+      <h2 class="lore-heading cyn">Known Specifications</h2>
+      <div class="lore-body">
+        <p>The following data has been extracted from available field reports and visual documentation. Some fields remain contested. The research team notes that Broboticus has not cooperated with formal measurement attempts.</p>
+      </div>
+
+      <table class="specs-table">
+        <tr>
+          <td>DESIGNATION</td>
+          <td>Broboticus (also: Brobarticus, Brobassicus, Chefboticus, Balletboticus, Fishboticus, Ranchboticus, Karateboticus — context dependent)</td>
+        </tr>
+        <tr>
+          <td>CASE STUDY NO.</td>
+          <td>42</td>
+        </tr>
+        <tr>
+          <td>FIRST DOCUMENTED</td>
+          <td>March of the Robots, 2024</td>
+        </tr>
+        <tr>
+          <td>HEAD UNIT</td>
+          <td>Square chassis. Dual circular optical sensors. Integrated speaker grille. Antenna. Beanie (permanently attached — origin unknown).</td>
+        </tr>
+        <tr>
+          <td>CHEST PANEL</td>
+          <td>Variable. Documented configurations include: turntable/vinyl playback system, DJ mixer with faders, broadcast radio unit, cooking apparatus interface, ON AIR indicator.</td>
+        </tr>
+        <tr>
+          <td>HEADPHONE STATUS</td>
+          <td>Always present. Always on.</td>
+        </tr>
+        <tr>
+          <td>DOMINANT COLOR</td>
+          <td>Neon green (#00ff3e). Exceptions noted in Cubist Chef, Brobotosaurus Wrex, and Marilyn Monbroe variants.</td>
+        </tr>
+        <tr>
+          <td>KNOWN SKILLS</td>
+          <td>DJing, bass guitar, painting, ballet, karate, baking, ranching, night fishing, T-Rex riding, interstellar broadcast</td>
+        </tr>
+        <tr>
+          <td>FIRMWARE VERSION</td>
+          <td>Unknown. Estimated 3+ updates based on skill acquisition rate.</td>
+        </tr>
+        <tr>
+          <td>THREAT LEVEL</td>
+          <td>Zero. Enthusiastic. Occasionally holding a revolver for artistic reasons.</td>
+        </tr>
+        <tr>
+          <td>CURRENT STATUS</td>
+          <td>Active. Acclimating. Probably fishing.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── FIELD REPORTS ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <span class="lore-label">// ARCHIVE — FIELD_REPORTS</span>
+      <h2 class="lore-heading mag">The Case Study 42 Archive</h2>
+      <div class="lore-body">
+        <p>Each piece in the Broboticus body of work constitutes a formal field report — a documented instance of the subject engaging with human leisure activities. Reports are numbered but not always chronological. The research team has stopped questioning the order.</p>
+      </div>
+
+      <div class="field-reports-grid">
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_00</span>
+          <div class="report-title">Brobotosaurus Wrex</div>
+          <div class="report-finding">Origin event. Subject documented astride a saddled Tyrannosaurus Rex in a futurist cityscape, vintage microphone raised. Flying saucers present. Scale of subject's ambition confirmed.</div>
+          <span class="report-status status-origin">ORIGIN EVENT</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_01</span>
+          <div class="report-title">Broboticus (The Original)</div>
+          <div class="report-finding">First contact. Subject at DJ decks, beanie worn, headphones engaged. No background. No context needed. The character arrived fully formed.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_02</span>
+          <div class="report-title">Vitruvian Broboticus</div>
+          <div class="report-finding">Proportional mapping complete. Vinyl record, left hand. Headphones, right hand. Circle and square confirmed. Da Vinci's parallel thesis acknowledged.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_03</span>
+          <div class="report-title">Iron Chef (Chefboticus)</div>
+          <div class="report-finding">Subject reports to kitchen. Rolling pin acquired. Cookie tray loaded. Chef's toque at slight angle. Batter assessed: perfect. Kitchen is just another arena.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_04</span>
+          <div class="report-title">Guitarbot (Brobassicus)</div>
+          <div class="report-finding">Subject discovered bass frequencies. Cosmic starfield background. Decision confirmed: rhythm is the most important thing in the universe. Transmitting on all channels.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_05</span>
+          <div class="report-title">Karateboticus</div>
+          <div class="report-finding">Three simultaneous instances documented mid-kata. Red, orange, yellow outlines. Cyan splatter field consistent with high-velocity technique. Dojo notified.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_06</span>
+          <div class="report-title">There's a Star-Bot Waiting in the Sky</div>
+          <div class="report-finding">Subject located in orbit. Wireframe rendering, extreme close-up, low angle. Rainbow neon spectrum confirmed. Cosmic transmission ongoing. He has been up there this whole time.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_07</span>
+          <div class="report-title">The Bolts and Nutcracker (Balletboticus)</div>
+          <div class="report-finding">Subject in tree pose. Two instances, magenta crackle background. Commitment to form: total. Estimated firmware updates since training began: three.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_08</span>
+          <div class="report-title">Brobarticus — The Artist</div>
+          <div class="report-finding">Subject painting self-portrait. Lab coat on. Record spinning. Subject has discovered recursion. The machine that makes art about the machine that makes art.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_09</span>
+          <div class="report-title">Rancher Broboticus</div>
+          <div class="report-finding">Subject has acquired a horse. BROBOTICUS chest panel confirmed. Hat: small, perfect. Fist: raised. City skyline visible behind. Ranching confirmed competent.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_10</span>
+          <div class="report-title">Sunflowerboticus</div>
+          <div class="report-finding">Subject located in Van Gogh's Sunflowers under Starry Night sky. ON AIR panel lit. Telephone receiver held. Record player present. Has been broadcasting for six hours.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORT_11</span>
+          <div class="report-title">Night-Fishing the Arkansas River</div>
+          <div class="report-finding">Subject at river's edge. Midnight. Crescent moon. Red eyes fixed on line. Six hours elapsed. Not leaving. Field report notes only: Broboticus finds the water calming.</div>
+          <span class="report-status status-complete">DOCUMENTED</span>
+        </div>
+
+        <div class="field-report-card">
+          <span class="report-number">// FIELD_REPORTS_??</span>
+          <div class="report-title">Additional Reports Pending</div>
+          <div class="report-finding">The research team continues to observe. New leisure activities are being acquired. Further documentation forthcoming. The study is ongoing.</div>
+          <span class="report-status status-nft">INCOMING</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── GALLERY STRIP ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <span class="lore-label">// VISUAL_ARCHIVE — ALL KNOWN APPEARANCES</span>
+      <h2 class="lore-heading pur">The Visual Record</h2>
+      <div class="lore-body">
+        <p>Every documented appearance of Broboticus, rendered across multiple visual languages — neon line art, cubist oil painting, Warhol screen-print, Renaissance diagram, and full comic book color. The character remains consistent. The medium changes to fit the mission.</p>
+      </div>
+    </div>
+    <div class="lore-gallery-strip" style="padding: 0 calc((100vw - 860px)/2); margin-top: 30px;" role="region" aria-label="Broboticus visual archive">
+      <img src="assets/images/raw/artist_broboticus_og.webp"       alt="Broboticus Original — March of the Robots 2024"     class="lore-gallery-thumb">
+      <img src="assets/images/raw/vitruvian_broboticus_og.webp"    alt="Vitruvian Broboticus"                                class="lore-gallery-thumb">
+      <img src="assets/images/raw/brobotosaurus_wrex.webp"         alt="Brobotosaurus Wrex — Case Study 42 origin event"     class="lore-gallery-thumb">
+      <img src="assets/images/raw/guitarbot_og.webp"               alt="Guitarbot Brobassicus"                               class="lore-gallery-thumb">
+      <img src="assets/images/raw/artist_broboticus_avatar.webp"   alt="Brobarticus — The Artist"                           class="lore-gallery-thumb">
+      <img src="assets/images/raw/chefboticus.webp"                alt="Iron Chef Chefboticus"                              class="lore-gallery-thumb">
+      <img src="assets/images/raw/balletboticus.webp"              alt="The Bolts and Nutcracker — Balletboticus"           class="lore-gallery-thumb">
+      <img src="assets/images/raw/karateboticus1.webp"             alt="Karateboticus"                                      class="lore-gallery-thumb">
+      <img src="assets/images/raw/ranchboticus.webp"               alt="Rancher Broboticus"                                 class="lore-gallery-thumb">
+      <img src="assets/images/raw/fishboticus.webp"                alt="Night-Fishing the Arkansas River"                   class="lore-gallery-thumb">
+      <img src="assets/images/raw/starbot_waiting_in_the_sky.webp" alt="There's a Star-Bot Waiting in the Sky"             class="lore-gallery-thumb">
+      <img src="assets/images/raw/cubist_chef.webp"                alt="Cubist Chef"                                        class="lore-gallery-thumb">
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── MASTERS REMIXED ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <span class="lore-label">// APPENDIX — MASTERS_REMIXED</span>
+      <h2 class="lore-heading org">Art History Has Been Notified</h2>
+      <div class="lore-body">
+        <p>Part of understanding human society is understanding what humans consider important. Broboticus has studied the canon. He has opinions. The Masters Remixed sub-series documents his formal response to five of the most recognized works in Western art history — rendered not as parody but as parallel argument. Each piece takes the original's visual logic and runs it through the Broboticus filter without apology.</p>
+        <p>Da Vinci mapped the ideal human form. Broboticus holds a vinyl record and a pair of headphones. The proportions check out. Munch's figure screams at the universe. Broboticus holds his head in a similar posture and leaks cyan coolant from his optical units, because the signal is overwhelming and he hasn't found the right filter yet. Warhol repeated a face until the person disappeared into the image. Broboticus replaces the face with his chest panel and throws double rock horns. The argument is the same. The conclusion is better.</p>
+        <p>Grant Wood's stoic farmer stands before a white farmhouse holding a pitchfork. Broboticus stands in his place holding a wrench. The woman beside him has seen stranger things. The house is fine.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="lore-divider"></div>
+
+  <!-- ── NFT CALLOUT ── -->
+  <section class="lore-section">
+    <div class="lore-container">
+      <div class="nft-callout">
+        <span class="nft-callout-label">// INCOMING_TRANSMISSION — NFT DROP</span>
+        <h2 class="nft-callout-title">Case Study 42:<br><span>Broboticus — NFT Collection</span></h2>
+        <p class="nft-callout-body">The full Case Study 42 archive is being prepared as a limited NFT collection. Each token represents a verified field report — a single leisure activity documented, minted, and owned. The collection will include the complete visual archive plus exclusive animated variants. Minting details forthcoming. Get on the list.</p>
+        <a href="contact.html?subject=Case%20Study%2042%20NFT%20Interest" class="nft-callout-btn">NOTIFY ME AT DROP</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
+    <div class="footer-links">
+      <a href="terms.html" class="footer-link">Terms &amp; Licensing</a>
+      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="about.html" class="footer-link">About the Artist</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script>
+
+<!-- SVG Filters -->
+<svg class="svg-filter">
+  <defs>
+    <filter id="glitch-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
+</body>
+</html>
