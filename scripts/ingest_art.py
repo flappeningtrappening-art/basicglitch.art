@@ -5,16 +5,24 @@ import re
 import datetime
 import csv
 import subprocess
+import litellm
+import requests
 import google.generativeai as genai
 from dotenv import load_dotenv
 
 # ========================================================
-# FOUNDRY INGESTION ENGINE (V3.2 - MOTION SUPPORT)
+# FOUNDRY INGESTION ENGINE (V5.0 - LEAD-GEN ENABLED)
 # ========================================================
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+ZHIPUAI_API_KEY = os.getenv("ZHIPUAI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
+
+# litellm configuration for GLM-4.6v-flash
+litellm.api_key = ZHIPUAI_API_KEY
+GLM_MODEL = "openai/glm-4.6v-flash"
+GLM_BASE_URL = "https://open.bigmodel.cn/api/paas/v4/"
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHARED_TRANSFER = "/media/sf_minty_windows"
@@ -23,15 +31,34 @@ LOCAL_VIDEOS = os.path.join(BASE_DIR, "assets/videos")
 GALLERY_JSON = os.path.join(BASE_DIR, "assets/data/gallery.json")
 MARKET_CSV = os.path.join(BASE_DIR, "assets/data/pod_market_master.csv")
 THUMB_DIR = os.path.join(BASE_DIR, "assets/images/gallery-thumbs")
+SOCIAL_DRAFT_DIR = os.path.join(BASE_DIR, "assets/data/social_drafts")
+FOUNDRY_X_URL = "http://localhost:3400/foundryX"
 
 # Create missing directories
-for d in [LOCAL_RAW, LOCAL_VIDEOS, THUMB_DIR]:
+for d in [LOCAL_RAW, LOCAL_VIDEOS, THUMB_DIR, SOCIAL_DRAFT_DIR]:
     if not os.path.exists(d):
         os.makedirs(d)
 
+def generate_social_strike(title, short_desc):
+    """Calls Foundry X to draft a viral thread for the new asset."""
+    print(f"Drafting Viral Strike for: {title}...")
+    try:
+        payload = {
+            "topic": f"A new digital artifact from the BasicGlitch Foundry titled '{title}'. Context: {short_desc}",
+            "samples": "Obsidian Scribe Standard"
+        }
+        res = requests.post(FOUNDRY_X_URL, json=payload, timeout=30)
+        if res.status_code == 200:
+            draft = res.json().get('thread')
+            filename = f"strike_{title.replace(' ', '_').lower()}.txt"
+            with open(os.path.join(SOCIAL_DRAFT_DIR, filename), "w") as f:
+                f.write(draft)
+            print(f"✅ Social Strike Drafted: {filename}")
+    except Exception as e:
+        print(f"⚠️ Social Drafting Failed (Bypassing): {e}")
+
 def generate_market_metadata(title, is_video=False):
-    print(f"Generating POD Market Data for: {title}...")
-    model = genai.GenerativeModel('models/gemini-flash-latest')
+    print(f"Generating POD Market Data for: {title} via GLM-Flash...")
     
     medium = "Motion Art / Animation" if is_video else "Digital Surrealism"
     
@@ -48,11 +75,18 @@ def generate_market_metadata(title, is_video=False):
     """
     
     try:
-        response = model.generate_content(prompt)
-        json_match = re.search(r'\{.*\}', response.text, re.DOTALL)
+        response = litellm.completion(
+            model=GLM_MODEL,
+            api_base=GLM_BASE_URL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7
+        )
+        content = response.choices[0].message.content
+        json_match = re.search(r'\{.*\}', content, re.DOTALL)
         if json_match:
             return json.loads(json_match.group())
-    except:
+    except Exception as e:
+        print(f"GLM Metadata Failed: {e}")
         return {
             "short_desc": f"Exclusive {medium} from the BasicGlitch foundry. {title} signal captured.",
             "tags": "cyberpunk, tech-noir, neon, digital art, surrealism, pcb, circuitry, robot, basicglitch, motion art",
@@ -68,8 +102,7 @@ def update_market_csv(title, metadata, image_path):
         writer.writerow([title, metadata['search_title'], metadata['short_desc'], metadata['tags'], image_path])
 
 def generate_forensic_analysis(title, is_video=False):
-    print(f"Generating forensic analysis for: {title}...")
-    model = genai.GenerativeModel('models/gemini-flash-latest')
+    print(f"Generating forensic analysis for: {title} via GLM-Flash...")
     
     medium_context = "This temporal sequence" if is_video else "This visual artifact"
     
@@ -87,10 +120,15 @@ def generate_forensic_analysis(title, is_video=False):
     """
     
     try:
-        response = model.generate_content(prompt)
-        return response.text
+        response = litellm.completion(
+            model=GLM_MODEL,
+            api_base=GLM_BASE_URL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7
+        )
+        return response.choices[0].message.content
     except Exception as e:
-        print(f"AI Analysis Failed: {e}")
+        print(f"GLM Analysis Failed: {e}")
         return f"<p>Forensic analysis for {title} is pending deeper scrutiny. This piece represents a significant anomaly in the digital signal.</p>"
 
 def process_new_files():
@@ -164,6 +202,9 @@ def process_new_files():
                 # 6. POD Market Data
                 market_data = generate_market_metadata(title, is_video)
                 update_market_csv(title, market_data, final_file_path)
+                
+                # NEW: Lead-Gen Drafting
+                generate_social_strike(title, market_data.get('short_desc', ''))
                 
                 # 7. Update Gallery JSON
                 update_gallery(art_id, title, final_file_path, analysis, is_video)

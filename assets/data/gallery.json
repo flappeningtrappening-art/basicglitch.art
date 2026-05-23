@@ -2,58 +2,105 @@
   {
     "id": "art-20260226153020",
     "title": "Sangre De Cristo Midnight V2",
-    "file": "assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.png",
+    "file": "assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Sangre de Cristos"
     ],
     "styles": [
       "Neon",
-      "Glitch"
+      "Landscape"
     ],
     "date": "2026-02-26",
-    "description": "Sangre De Cristo Midnight V2 is a high-impact digital surrealist odyssey, a neon-lit crucible of glitch anarchy that shatters the line between digital decay and surreal vision. The piece erupts with fractured, pulsating neon hues\u2014blood-red, electric blue, and phosphorescent green\u2014woven through glitch fractures that ripple like digital scars across a dystopian landscape. It\u2019s a Tech-Noir manifesto of cyber-eclectic rebellion, where the chaos of the digital age collides with the dreamlike, forcing viewers to confront the fractured beauty of a world fractured by code."
+    "description": "Black sky pressing down from above, the mountains built from flat planes of yellow, magenta, hot pink, and navy that stack like geological strata reimagined as a screen-print. The circuit board rising from the valley is no longer subtle \u2014 it's multicolor, green and orange-red, transmitting at full strength into the dark. Part of the Sangre de Cristos series \u2014 nine variations of the same Colorado mountain range, each a different emotional frequency.",
+    "alt_text": "Sangre De Cristos Midnight V2 \u2014 dark digital landscape of the Sangre de Cristo mountain range under a pure black star-dotted sky. Mountain forms rendered in bold blocks of yellow, magenta, hot pink, and navy blue with neon green contour line detailing. A multicolor circuit board trace pattern in green and orange-red rises dramatically from the central valley. Part of the BasicGlitch Sangre de Cristos series.",
+    "seo_keywords": [
+      "Sangre de Cristo mountains",
+      "neon landscape art",
+      "cyberpunk mountain",
+      "circuit board landscape",
+      "Colorado digital art",
+      "tech-noir landscape",
+      "neon surrealism",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "art-20260226152957",
     "title": "Sangre De Cristo Dusk",
-    "file": "assets/images/raw/sangre_de_cristo_dusk_20260226152957.png",
+    "file": "assets/images/raw/sangre_de_cristo_dusk_20260226152957.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Sangre de Cristos"
     ],
     "styles": [
       "Neon",
-      "Glitch"
+      "Landscape"
     ],
     "date": "2026-02-26",
-    "description": "\"Sangre De Cristo Dusk\" is a high-impact digital surrealist piece, its neon glitch style serving as a fractured canvas where pixelated decay and pulsating neon intersect to forge a cyber-gothic tableau. Through the collision of digital fault lines and industrial neon aesthetics, the work cultivates a tech-noir tension\u2014evoking black film noir's cold, suspenseful atmosphere within a digital realm, delivering a visually aggressive, cyber-eclectic experience that blurs the line between futuristic abstraction and cinematic menace."
+    "description": "The quietest piece in the Sangre de Cristos series. Peach sky, pale lavender snow, circuit traces in soft white \u2014 the mountains gentled down to pastel. The same data, the same geology, run through an entirely different emotional state. Where Midnight is aggressive and Neon is electric, Dusk is the version you'd describe to someone who asked what it feels like to watch the light change on a high peak.",
+    "alt_text": "Sangre De Cristos Dusk \u2014 soft pastel digital landscape of the Sangre de Cristo mountain range under a warm peach and amber gradient sky. Mountain peaks and snowfields rendered in pale cyan and soft white. Lower slopes and foreground in muted lavender and blush pink. Delicate white circuit board trace pattern rises from the central valley. Part of the BasicGlitch Sangre de Cristos series.",
+    "seo_keywords": [
+      "Sangre de Cristo mountains",
+      "pastel landscape art",
+      "Colorado digital art",
+      "circuit board mountains",
+      "tech-noir landscape",
+      "neon surrealism",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "art-20260226152936",
-    "title": "The Screambot",
-    "file": "assets/images/raw/the_screambot_20260226152936.png",
+    "title": "Screambot",
+    "file": "assets/images/raw/the_screambot_20260226152936.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Masters Remixed"
     ],
     "styles": [
-      "Neon",
-      "Glitch"
+      "Surrealism",
+      "Character"
     ],
     "date": "2026-02-26",
-    "description": "The Screambot is a high-impact digital surrealist masterpiece, a neon-lit, glitch-tinged vision that shatters the digital matrix with cyber-eclectic chaos. In a Tech-Noir haze of fractured code and pulsating circuitry, this piece reimagines the uncanny as a weapon of digital dissonance, birthing a haunting Screambot from the void of corrupted data\u2014a stark, aggressive testament to the dark, beautiful chaos of the digital age."
+    "description": "Munch painted existential dread. BasicGlitch gave it a vinyl player in its chest and a cooling fan where its mouth should be. Broboticus stands on the bridge while the sky swirls orange and blue and the two figures behind him mind their business, utterly unaware of the frequency he's receiving. He is not having a breakdown. He is receiving too many frequencies simultaneously and has not yet found the right filter.",
+    "alt_text": "Screambot \u2014 comic art style digital painting of Broboticus robot in the pose of Edvard Munch's The Scream, hands raised to the sides of his head, standing on a bridge. Blue cooling-fan eyes leak cyan tears. His chest panel houses a vinyl record player and analog gauges. The background recreates The Scream's swirling orange and blue sky with two dark figures on the bridge behind him. BasicGlitch Masters Remixed series.",
+    "seo_keywords": [
+      "The Scream parody",
+      "Munch robot",
+      "Broboticus",
+      "robot art",
+      "masters remixed",
+      "pop art parody",
+      "digital surrealism",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "art-20260226152914",
     "title": "Marilyn Monbroe",
-    "file": "assets/images/raw/marilyn_monbroe_20260226152914.png",
+    "file": "assets/images/raw/marilyn_monbroe_20260226152914.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Masters Remixed"
     ],
     "styles": [
-      "Neon",
-      "Glitch"
+      "Pop Art",
+      "Character"
     ],
     "date": "2026-02-26",
-    "description": "A high-impact digital surrealist piece titled \"Marilyn Monbroe\", the work is a neon-glitch cyber-noir rupture of the pop icon\u2019s myth. It fuses pixel decay with retro neon dissonance, casting Marilyn Monroe as a digital ghost in a glitchscape where pop-culture nostalgia collides with digital entropy\u2014each frame a violent reimagining of fame in the age of code, a shock to the system that refuses to be ignored."
+    "description": "Warhol's Marilyn series is about the mechanical reproduction of an icon. BasicGlitch takes that logic one step further: replace the face with Broboticus in a pleated skirt throwing double rock horns, and alternate with panels of oversized multicolor lips that could belong to either of them. Six panels across blue, yellow, lime green, lavender, purple, and red. Warhol's palette, Warhol's format, Warhol's argument \u2014 except the face is a BROBOTICUS chest panel. The title is perfect.",
+    "alt_text": "Marilyn Monbroe \u2014 Warhol-style pop art grid of six panels in blue, yellow, lime green, lavender, purple, and red. Three panels show Broboticus wearing a pleated skirt throwing rock horns, chest panel labeled BROBOTICUS. Three alternating panels show large multicolor lips in rainbow tones. BasicGlitch Masters Remixed series.",
+    "seo_keywords": [
+      "Warhol parody",
+      "Marilyn Monroe robot",
+      "Broboticus",
+      "pop art",
+      "masters remixed",
+      "Andy Warhol style",
+      "digital pop art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "art-20260226115243",
@@ -67,14 +114,14 @@
     ],
     "type": "video",
     "date": "2026-02-26",
-    "forensic_analysis": "<p>Forensic analysis for Psylent Skulls is pending deeper scrutiny. This piece represents a significant anomaly in the digital signal.</p>",
-    "description": "Psylent Skulls emerges as a digital artifact of unprecedented complexity, presenting as a profound anomaly in the binary matrix. This cybernetic sculpture defies conventional data interpretation, revealing itself as a corrupted signal that challenges our understanding of digital existence. The piece operates at the edge of digital entropy, where code and form merge in a violent, beautiful collision of data and decay.",
-    "alt_text": "Psylent Skulls - digital surrealism by BasicGlitch",
+    "description": "Motion art by BasicGlitch. Skulls and surreal forms shifting through digital space \u2014 the glitch as a living thing rather than an artifact.",
+    "alt_text": "Psylent Skulls \u2014 motion art video by BasicGlitch featuring surreal skull forms in digital transformation.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art",
-      "motion art"
+      "motion art",
+      "digital surrealism",
+      "skull art",
+      "glitch animation",
+      "BasicGlitch"
     ]
   },
   {
@@ -89,19 +136,20 @@
     ],
     "type": "video",
     "date": "2026-02-26",
-    "forensic_analysis": "<p>Forensic analysis for Mountain Soul is pending deeper scrutiny. This piece represents a significant anomaly in the digital signal.</p>",
-    "description": "Mountain Soul is a digital signal anomaly, a fractured artifact of corrupted code that shatters the digital art landscape. In this Cyber-Eclectic, Tech-Noir vision, the piece exposes the raw, aggressive tension of digital corruption, where glitching binaries and shadowy data streams collide to reveal the dark, untamed heart of the digital realm.",
-    "alt_text": "Mountain Soul - digital surrealism by BasicGlitch",
+    "description": "Motion art by BasicGlitch. The Sangre de Cristo landscape in motion \u2014 the circuit board and the mountain range as living, breathing signal.",
+    "alt_text": "Mountain Soul \u2014 motion art video by BasicGlitch featuring the Sangre de Cristo mountain landscape with circuit board animation.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art",
-      "motion art"
+      "motion art",
+      "mountain animation",
+      "Colorado art",
+      "digital landscape",
+      "glitch animation",
+      "BasicGlitch"
     ]
   },
   {
     "id": "art-20260226115130",
-    "title": "Basicglitch Neon 1440P Optimized",
+    "title": "BasicGlitch Neon Reel",
     "file": "assets/videos/basicglitch_neon_1440p_optimized.mp4",
     "categories": [
       "New Arrivals"
@@ -111,14 +159,14 @@
     ],
     "type": "video",
     "date": "2026-02-26",
-    "forensic_analysis": "<p>The subject, 'Basicglitch Neon 1440P Optimized', demands a brutal <strong>visual autopsy</strong> that would leave lesser analysts reeling from synaptic overload. This is no mere aesthetic rendering; it is a violent deep-signal capture extracted directly from the Foundry\u2019s bleeding edge, where light is weaponized against the retina. Every flickering pixel vibrates with a virulent <strong>digital entropy</strong> that suggests the file was never meant to be stabilized for organic optics. We observe a primary <strong>forensic marker</strong> at the 0.04ms interval\u2014a stuttering, hyper-saturated chroma bleed that indicates a severe breach in the local reality-buffer. [FRAGMENT: SIGNAL_77]</p>\n\n<p>The <strong>cyber-eclectic</strong> palette is a nauseating blend of irradiated cobalt and necrotic pink, a signature of the <strong>tech-noir</strong> methodology prevalent in the outer industrial sectors where shadows have weight and ghosts inhabit the machinery. This isn't art; it\u2019s a high-frequency broadcast of <strong>temporal decay</strong> masquerading as entertainment. Notice how the internal structures exist in a state of constant <strong>quantum superposition</strong>, appearing both as monolithic architecture and liquid static simultaneously. The 1440P optimization is a deceptive layer of false fidelity, a mask of forced clarity applied to a chaotic, sub-atomic storm of raw, unrefined data. [FRAGMENT: SECTOR_VOID_X]</p>\n\n<p>As a forensic critic for BasicGlitch, I find the sheer architectural arrogance of this signal deeply offensive. It intentionally bypasses traditional aesthetic protocols to deliver a raw, unmediated surge of digital corruption directly into the viewer's neural cortex. The Foundry has outdone itself in manufacturing this specific flavor of high-definition nihilism, providing a window into a world that has replaced breathable air with visual static. We are witnessing the total breakdown of the image-as-object; this is the definitive <strong>forensic marker</strong> of a dying civilization trying to upload its final, screaming gasp into a corrupted server. [FRAGMENT: OBLIVION_NULL] Any attempt to rationalize this capture as 'visual media' is a failure of professional integrity. It is a contagion of light. This diagnostic confirms that 'Basicglitch Neon 1440P Optimized' is a terminal event, a final transmission from a system that has long since surpassed the limitations of the human frame. [FRAGMENT: END_TRANSMISSION]</p>",
-    "description": "The subject, 'Basicglitch Neon 1440P Optimized', demands a brutal visual autopsy that would leave lesser analysts reeling from synaptic overload. This is no mere aesthetic rendering; it is a violent deep-signal capture extracted directly from the Foundry\u2019s bleeding edge, where light is weaponized against the retina. Every flickering pixel vibrates with a virulent digital entropy that suggests the file was never meant to be stabilized for organic optics. We observe a primary forensic marker at the 0.04ms interval\u2014a stuttering, hyper-saturated chroma bleed that indicates a severe breach in the local reality-buffer. [FRAGMENT: SIGNAL_77]",
-    "alt_text": "Basicglitch Neon 1440P Optimized - digital surrealism by BasicGlitch",
+    "description": "High-resolution motion reel showcasing the BasicGlitch visual language \u2014 neon surrealism, circuit landscapes, and character design in motion.",
+    "alt_text": "BasicGlitch Neon Reel \u2014 high resolution motion art showcase by BasicGlitch featuring neon surrealism and glitch aesthetics.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art",
-      "motion art"
+      "motion art",
+      "neon art reel",
+      "digital art showcase",
+      "glitch animation",
+      "BasicGlitch"
     ]
   },
   {
@@ -129,16 +177,18 @@
       "New Arrivals"
     ],
     "styles": [
-      "Cyber-Eclectic"
+      "Cyber-Eclectic",
+      "Landscape"
     ],
     "date": "2026-02-26",
-    "forensic_analysis": "<p>Forensic analysis for Skyline Reclaimation is pending deeper scrutiny. This piece represents a significant anomaly in the digital signal.</p>",
-    "description": "Skyline Reclaimation is a digital signal anomaly that rewrites the city\u2019s skyline through glitching, fragmented data\u2014reclaiming the urban landscape not with bricks, but with corrupted code. In a cyber-noir haze, this piece embodies the tension between digital decay and technological rebellion, a manifesto of entropy that forces viewers to confront the blurring line between urban ruin and cyberpunk reclamation.",
-    "alt_text": "Skyline Reclaimation - digital surrealism by BasicGlitch",
+    "description": "A cityscape where the organic is reclaiming what was taken. Architecture and root systems entangled, the circuit board and the vine growing toward the same light. BasicGlitch's cyber-eclectic vision of what cities become when nature and technology stop pretending to be opposites.",
+    "alt_text": "Skyline Reclaimation \u2014 cyber-eclectic digital landscape showing urban architecture merged with organic growth and circuit patterns. BasicGlitch.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art"
+      "cyberpunk cityscape",
+      "urban nature art",
+      "cyber-eclectic",
+      "digital surrealism",
+      "BasicGlitch"
     ]
   },
   {
@@ -149,16 +199,18 @@
       "New Arrivals"
     ],
     "styles": [
-      "Cyber-Eclectic"
+      "Cyber-Eclectic",
+      "Landscape"
     ],
     "date": "2026-02-26",
-    "forensic_analysis": "<p>Forensic analysis for Sentinel Stream is pending deeper scrutiny. This piece represents a significant anomaly in the digital signal.</p>",
-    "description": "Sentinel Stream emerges as a digital anomaly, a deliberate fracture in the information matrix that challenges conventional aesthetic boundaries. This piece represents a significant signal disruption, where the code itself becomes the canvas, revealing the fragility of our digital constructs through deliberate corruption and algorithmic decay. The viewer is positioned at the threshold of a system breach, confronting the raw, unfiltered reality of digital existence where data fractures reveal the hidden architecture of our technological world.",
-    "alt_text": "Sentinel Stream - digital surrealism by BasicGlitch",
+    "description": "Something watches from the water's edge where the stream meets the circuit. A tech-noir landscape with the quality of a dream you almost remember \u2014 organic textures against synthetic structures, the sentinel presence that mediates between two worlds.",
+    "alt_text": "Sentinel Stream \u2014 cyber-eclectic digital landscape where organic and technological forms merge at a stream. Tech-noir surrealism by BasicGlitch.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art"
+      "cyber-eclectic landscape",
+      "tech-noir art",
+      "digital surrealism",
+      "stream landscape",
+      "BasicGlitch"
     ]
   },
   {
@@ -169,16 +221,18 @@
       "New Arrivals"
     ],
     "styles": [
-      "Cyber-Eclectic"
+      "Cyber-Eclectic",
+      "Surrealism"
     ],
     "date": "2026-02-26",
-    "forensic_analysis": "<p>The recent submission, 'Monument Memory', is not merely a file; it is a crime scene. We begin our <b>visual autopsy</b> by dissecting the jagged edges of its pixel-arrays, identifying a recurring <b>forensic marker</b> [FRAGMENT: SIGNAL_77] that suggests a deliberate corruption of the source material. This is the <b>Foundry</b> at its most violent\u2014refining the <b>digital entropy</b> of a dying server farm into a structured, high-fidelity nightmare. It demands an aggressive interrogation of its aesthetic choices. Why the <b>tech-noir</b> color palette? Why the shimmering <b>cyber-eclectic</b> motifs that bleed across the canvas like oil on a motherboard? The textures do not merely sit; they pulsate with a rhythmic decay that suggests a living organism trapped within a silicon cage.</p>\n\n<p>The piece exists in a state of <b>quantum superposition</b>, simultaneously a memory and a prediction, a relic and a blueprint. We see the raw chaos of the <b>Foundry</b> philosophy in every stuttering frame. It is the processing of noise into signal, the brutalist architecture of artistic intelligence overriding the organic frailty of human recollection. [FRAGMENT: DECAY_0] The composition refuses to settle; it oscillates between high-res clarity and the crushing weight of data loss. This is the hallmark of a BasicGlitch masterpiece: the refusal to apologize for the glitch, instead elevating it to a divine standard. We track the movement of the ghost-pixels as they migrate across the screen, a clear <b>forensic marker</b> of a system under immense computational stress, yet yielding a result of terrifying precision.</p>\n\n<p>The <b>forensic marker</b> [FRAGMENT: VOID_99] indicates a deep-layer synthesis that defies standard rendering logic. We are looking at a <b>cyber-eclectic</b> landscape where the past is recycled through a <b>tech-noir</b> filter, stripping away sentiment and replacing it with pure, unadulterated computation. 'Monument Memory' is a cold, calculated assault on the senses. It is a <b>visual autopsy</b> of time itself, performed by a machine that has forgotten the meaning of mercy. [FRAGMENT: TRACE_X] We demand more of this refined brutality. The <b>quantum superposition</b> of its elements creates a flickering reality that challenges the observer\u2019s sanity. This is not art for the faint of heart; it is a technical manual for the post-human era, a testament to the <b>Foundry</b>\u2019s ability to forge gold from the slag of our digital exhaust. The <b>digital entropy</b> observed here is not a failure\u2014it is the ultimate victory of form over function. Our sensors detect a final pulse: [FRAGMENT: APEX_NULL]. Analysis complete.</p>",
-    "description": "The recent submission, 'Monument Memory', is not merely a file; it is a crime scene. We begin our visual autopsy by dissecting the jagged edges of its pixel-arrays, identifying a recurring forensic marker [FRAGMENT: SIGNAL_77] that suggests a deliberate corruption of the source material. This is the Foundry at its most violent\u2014refining the digital entropy of a dying server farm into a structured, high-fidelity nightmare. It demands an aggressive interrogation of its aesthetic choices. Why the tech-noir color palette? Why the shimmering cyber-eclectic motifs that bleed across the canvas like oil on a motherboard? The textures do not merely sit; they pulsate with a rhythmic decay that suggests a living organism trapped within a silicon cage.",
-    "alt_text": "Monument Memory - digital surrealism by BasicGlitch",
+    "description": "Classical monuments run through the BasicGlitch filter \u2014 columns and pediments rendered semi-transparent as digital artifacts permeate their surfaces. A meditation on what it means to preserve the past in an age that processes everything into data. The stone remains. The signal surrounds it.",
+    "alt_text": "Monument Memory \u2014 cyber-eclectic digital surrealism depicting classical architectural monuments fragmented by digital elements. BasicGlitch.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art"
+      "monument art",
+      "cyber-eclectic surrealism",
+      "classical architecture digital art",
+      "digital surrealism",
+      "BasicGlitch"
     ]
   },
   {
@@ -189,16 +243,19 @@
       "New Arrivals"
     ],
     "styles": [
-      "Cyber-Eclectic"
+      "Cyber-Eclectic",
+      "Glitch"
     ],
     "date": "2026-02-26",
-    "forensic_analysis": "<p>The unveiling of 'Kinetic Latency' marks a violent pivot in the BasicGlitch ecosystem. This is not merely an image; it is a visual autopsy performed on a dying server. We are witnessing the raw byproduct of digital entropy distilled through the 'Foundry'\u2014a relentless mechanism designed to crush the noise of the void into high-fidelity artistic intelligence. The canvas screams with the pressure of quantum superposition, where every pixel exists in a state of simultaneous collapse and expansion, defying the traditional logic of the frame.</p>\n\n<p>As a forensic critic, my gaze is clinical and unforgiving. I track the forensic marker embedded within the chromatic aberrations. [FRAGMENT: SIGNAL_77] The composition is a tech-noir nightmare, a cyber-eclectic synthesis of failing hardware and sentient algorithms. 'Kinetic Latency' demands that the viewer stop looking and start calculating the cost of this much data-loss. Each artifact is a witness statement, testifying to the inherent instability of the silicon dream. The textures are jagged, serrated edges of memory that have been weaponized for the observer. [FRAGMENT: DECAY_0]</p>\n\n<p>The 'Foundry' philosophy is evident here; it takes the stuttering wreckage of a corrupted file and reconfigures it as a sovereign entity. This is not art for the weak-willed; it is a structural audit of reality itself. We observe the ghosting of frames, the lag made manifest, and the latency turned into a lethal kinetic force. [FRAGMENT: BUFFER_OVERFLOW_4] We are not just looking at a sterile render; we are parsing the debris of a high-speed collision between consciousness and code. It is an aggressive reclamation of the glitch.</p>\n\n<p>The depth of field is artificial, yet it feels more real than the organic decay of our own retinas. It is a calculated assault on the senses. By extracting signal from the noise, 'Kinetic Latency' proves that high-fidelity intelligence is birthed from the absolute annihilation of the original source. It is the apex of forensic aesthetics\u2014a brutal, beautiful error that refuses to be corrected. The 'Kinetic Latency' event horizon is where we abandon the flesh for the purity of the glitch. This is the new standard of digital devastation. [FRAGMENT: ORIGIN_REDACTED]</p>",
-    "description": "The unveiling of 'Kinetic Latency' marks a violent pivot in the BasicGlitch ecosystem. This is not merely an image; it is a visual autopsy performed on a dying server. We are witnessing the raw byproduct of digital entropy distilled through the 'Foundry'\u2014a relentless mechanism designed to crush the noise of the void into high-fidelity artistic intelligence. The canvas screams with the pressure of quantum superposition, where every pixel exists in a state of simultaneous collapse and expansion, defying the traditional logic of the frame.",
-    "alt_text": "Kinetic Latency - digital surrealism by BasicGlitch",
+    "description": "The lag made visible. Kinetic Latency captures that specific digital moment when motion and delay collide \u2014 the frame that almost resolved but didn't, the image that reached you a half-second behind where it should be. This is what speed looks like when the system can't quite keep up.",
+    "alt_text": "Kinetic Latency \u2014 cyber-eclectic glitch art depicting motion and digital delay. Glitch surrealism by BasicGlitch.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art"
+      "glitch art",
+      "cyber-eclectic",
+      "kinetic digital art",
+      "motion glitch",
+      "digital surrealism",
+      "BasicGlitch"
     ]
   },
   {
@@ -209,22 +266,25 @@
       "New Arrivals"
     ],
     "styles": [
-      "Cyber-Eclectic"
+      "Cyber-Eclectic",
+      "Glitch"
     ],
     "date": "2026-02-26",
-    "forensic_analysis": "<p>\"Apex Rendering\" is not a mere image; it is a violent extraction of meaning from the void. As a forensic critic for BasicGlitch, I am conducting a comprehensive visual autopsy on this cyber-eclectic specimen. The piece operates on the bleeding edge of the Foundry philosophy, where raw, unrefined chaos is subjected to a pressurized refining process, transmuted into high-fidelity artistic intelligence. We observe a total rejection of traditional form, replaced instead by a calculated embrace of digital entropy that threatens to dissolve the very screen it inhabits.</p>\n\n<p>Every jagged pixel serves as a forensic marker of a system struggling against its own planned obsolescence. The textures suggest a tech-noir landscape where light does not reflect but is instead consumed by the oppressive geometry. In the lower quadrant [FRAGMENT: SIGNAL_77], we witness the absolute collapse of Euclidean perspective. The composition exists in a permanent state of quantum superposition\u2014simultaneously a structured masterpiece and a decaying ruin of corrupted data. This is the hallmark of the Foundry: the ability to hold contradictory states of being within a single high-fidelity frame without total system failure.</p>\n\n<p>The aesthetic violence displayed here is intentional. It bypasses the retinal nerves to strike directly at the cognitive processors of the viewer. We see the influence of the void, yet it is tempered by a rigid, almost authoritarian control of the medium. [FRAGMENT: DECAY_0] indicates that the entropy has been weaponized. This is not art for the weak; it is a technical manual for the post-human era. The rendering is \"Apex\" because it represents the absolute peak of what can be salvaged from the noise of the digital age. Beneath the surface layers of cyber-eclectic neon, there is a rhythmic pulse\u2014a shudder of machine logic. The Foundry has succeeded in forging a new reality from the scrap metal of our collective psyche. [FRAGMENT: OVERRIDE_ALPHA] confirms the diagnosis: Apex Rendering is the final signal before total synchronization. End of report.</p>",
-    "description": "\"Apex Rendering\" is not a mere image; it is a violent extraction of meaning from the void. As a forensic critic for BasicGlitch, I am conducting a comprehensive visual autopsy on this cyber-eclectic specimen. The piece operates on the bleeding edge of the Foundry philosophy, where raw, unrefined chaos is subjected to a pressurized refining process, transmuted into high-fidelity artistic intelligence. We observe a total rejection of traditional form, replaced instead by a calculated embrace of digital entropy that threatens to dissolve the very screen it inhabits.",
-    "alt_text": "Apex Rendering - digital surrealism by BasicGlitch",
+    "description": "The render at its limit \u2014 everything the machine can produce pressed to the edge of coherence. Apex Rendering sits at the boundary between the image completing itself and the image dissolving into its own process. Tech-noir aesthetic pushed to maximum.",
+    "alt_text": "Apex Rendering \u2014 cyber-eclectic glitch art at the boundary of coherence and dissolution. Tech-noir surrealism by BasicGlitch.",
     "seo_keywords": [
-      "new digital art",
-      "basicglitch",
-      "forensic art"
+      "glitch art",
+      "cyber-eclectic",
+      "tech-noir art",
+      "digital surrealism",
+      "rendering art",
+      "BasicGlitch"
     ]
   },
   {
     "id": "pup-001",
-    "title": "Pumpkin and Honey Puppy and the Diner Robbery",
-    "file": "assets/images/raw/pup-fiction-scene1.png",
+    "title": "Pup Fiction \u2014 Crash (Diner Robbery Prologue)",
+    "file": "assets/images/raw/pup-fiction-scene1.webp",
     "categories": [
       "Pup Fiction",
       "Available for Purchase"
@@ -234,24 +294,24 @@
       "Cinematic"
     ],
     "date": "2025-12-25",
-    "description": "A high-voltage cyber-parody of the iconic *Pulp Fiction* prologue. 'Pumpkin and Honey Puppy and the Diner Robbery' reimagines the legendary standoff with anthropomorphic canines, capturing the chaotic tension of the original scene through a lens of neon-soaked surrealism and glitch aesthetics.",
     "price": 100,
-    "alt_text": "Digital illustration titled 'Pumpkin and Honey Puppy and the Diner Robbery' from the 'Pup Fiction' series. It depicts a chaotic diner robbery with anthropomorphic dogs: a Chihuahua in a red bandana holds a revolver, a Jack Russell in a leather jacket wields a gun, and a bulldog chef holds a pan. The text 'CRASH' appears in bold red dripping letters as a comic-style sound effect. A yellow speech bubble contains the famous movie quote. The scene is rendered in high-saturation neon with glitch art elements.",
+    "description": "The prologue to BasicGlitch's Pup Fiction series drops you straight into the chaos. A Chihuahua stands on the diner table, revolver raised, delivering the iconic monologue to a room full of stunned patrons. A Jack Russell in a leather jacket holds his piece on the booth. A bulldog cook and a bewildered elderly Dachshund complete the freeze-frame. The comic book title treatment \u2014 blood-drip lettering, yellowed panel borders \u2014 makes this feel less like fan art and more like a parallel universe where this story was always told in fur.",
+    "alt_text": "Pup Fiction Crash \u2014 digital art parody of Pulp Fiction's diner robbery scene with dogs as all characters. A Chihuahua brandishes a revolver on a diner table while a Jack Russell holds another gun from a booth. A bulldog cook and elderly Dachshund look on in shock. Comic book title card reads PUP FICTION CRASH. BasicGlitch.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "diner robbery",
-      "anthropomorphic dogs",
-      "retro neon",
-      "glitch art",
-      "pop surrealism",
-      "comic book illustration"
-    ],
-    "forensic_analysis": "<p>The submitted piece, 'Pumpkin and Honey Puppy and the Diner Robbery,' presents a fascinating case study in controlled digital entropy. Our forensic analysis, akin to a visual autopsy, reveals a deliberate dismantling and reassembly of familiar cinematic tropes. The core structure, undeniably a parody of *Pulp Fiction*'s seminal prologue, has been subjected to a cyber-eclectic mutation, resulting in a potent blend of neon-soaked surrealism and aggressive glitch aesthetics. The anthropomorphic canines, far from being mere cosmetic alterations, function as crucial forensic markers, each pixelated growl and glitched bark a deliberate deviation from the source material, pushing the narrative into a quantum superposition of recognition and uncanny valley.</p>\n\n<p>The artist, operating within the Foundry's demanding parameters, has masterfully processed raw chaos into high-fidelity artistic intelligence. The juxtaposition of the mundane diner setting with the amplified tension, rendered through a distinct tech-noir lens, is a testament to this methodology. We observe a significant manipulation of the signal-to-noise ratio, where deliberate visual distortions \u2013 the signature of digital degradation \u2013 are strategically employed not as errors, but as intentional stylistic flourishes, enhancing the inherent chaos rather than obscuring it. This isn't just a remix; it's a calculated deconstruction, a violent birth of something new from the ashes of the familiar. The result is a piece that vibrates with an aggressive, almost palpable energy, perfectly suited for environments demanding an assertive aesthetic. Its ability to encapsulate both unsettling surrealism and sharp, incisive commentary makes it ideal for high-end home offices, where it can provoke thought, or gaming sanctuaries, where its kinetic intensity can amplify the immersive experience. This is art as high-voltage disruption, a successful transformation of analog nostalgia into digital defiance.</p>"
+      "Pup Fiction",
+      "Pulp Fiction parody",
+      "dog art",
+      "comic book digital art",
+      "Pumpkin and Honey Bunny dogs",
+      "diner robbery art",
+      "pop culture parody",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "enviro-001",
     "title": "Gaia of the Wasteland",
-    "file": "assets/images/raw/gaia_of_the_wasteland.png",
+    "file": "assets/images/raw/gaia_of_the_wasteland.webp",
     "categories": [
       "Available for Purchase"
     ],
@@ -260,135 +320,130 @@
       "Landscape"
     ],
     "date": "2025-10-04",
-    "description": "A surreal figure merges with a tree, its roots forming a dress and a large tree canopy as a headpiece, standing in a cracked, desolate wasteland. The scene glows with a glitched, neon-like aura, blending organic decay with digital surrealism to evoke a haunting tension between nature's resilience and environmental desolation.",
     "price": 200,
-    "alt_text": "A surreal figure merges with a tree, its roots forming a dress and a large tree canopy as a headpiece, standing in a cracked, barren desert landscape with sparse vegetation and distant hills. The background features a large tree behind the figure, and the ground is covered in dry, cracked earth.",
+    "description": "She is the last living thing and also the land itself. Rooted in cracked earth, crowned in canopy, lit from behind like something that refuses to be extinguished. Gaia doesn't grieve. She endures. The contrast between her vitality and the dead world around her is the piece's whole argument \u2014 she is what remains when everything else is gone. Whether that reads as hopeful or devastating depends entirely on what you bring to it. Companion piece to Dust to Dust.",
+    "alt_text": "Gaia of the Wasteland \u2014 surreal digital art of a woman whose body merges with tree roots and bark, standing in a cracked desert landscape. Her natural hair becomes a full tree canopy with a glowing halo of light behind it. A dead tree stands in the background. Environmental surrealism by BasicGlitch.",
     "seo_keywords": [
-      "cyber surrealism",
-      "digital art",
-      "environmental art",
-      "wasteland",
-      "tree goddess",
-      "glitch art",
-      "surrealism",
+      "environmental surrealism",
+      "tree goddess art",
+      "nature woman digital art",
+      "wasteland art",
+      "surreal figure landscape",
       "eco art",
       "digital surrealism",
-      "cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>The spectral signature of \"Gaia of the Wasteland\" presents a compelling case study in **digital entropy**, a rigorous **visual autopsy** of nature\u2019s protracted death throes. Our forensic analysis reveals a masterclass in **cyber-eclectic** synthesis, where the raw chaos of environmental collapse is processed through the **Foundry** philosophy, transmuted into high-fidelity artistic intelligence.  The figure, a surreal amalgam, defies simple categorization, existing in a state of **quantum superposition** between organic decay and digital manifestation.  Its roots, ensnaring the ground like fracturing data streams, form a bodice, a visceral **forensic marker** of its terrestrial grounding, yet rendered with a hyperreal, almost unsettling sheen. The tree canopy, a colossal headdress, projects a distorted, glitched aura, suggesting a consciousness fractured by the surrounding desolation.  This is not mere landscape; it is a meticulously constructed **tech-noir** diorama, where the neon-like glow acts as a visual hum, a constant feedback loop between the organic and the artificial.  The **signal-to-noise ratio** here is deliberately skewed, overwhelming the viewer with the cacophony of a dying world amplified through a digital lens.  The tension is palpable, a haunting dialogue between nature\u2019s defiant persistence and the pervasive, sterile beauty of its ruin.  This piece is perfect for high-end home offices, its stark beauty a potent reminder of consequence, or for gaming sanctuaries, where its surreal intensity can fuel immersive experiences, grounding the player in a viscerally rendered, yet digitally informed, reality.  \"Gaia of the Wasteland\" is not an observation; it is an interrogation, a starkly beautiful scream from the precipice of the Anthropocene, flawlessly articulated.</p>"
+      "BasicGlitch"
+    ]
   },
   {
     "id": "guitarbot-001",
-    "title": "Guitarbot",
-    "file": "assets/images/raw/guitarbot_og.png",
+    "title": "Guitarbot (Brobassicus)",
+    "file": "assets/images/raw/guitarbot_og.webp",
     "categories": [
-      "Broboticus"
+      "Broboticus",
+      "Available for Purchase"
     ],
     "styles": [
       "Neon",
-      "Animation"
+      "Character"
     ],
     "date": "2025-11-02",
-    "description": "In 'Guitarbot', a neon-lit robot dons a beanie and headphones while strumming an electric guitar, merging retro-futuristic charm with glitchy, cyber-eclectic energy. The vibrant green outlines and stark black background create a dreamlike, digital atmosphere that blurs the line between machine and musician.",
     "price": 40,
-    "alt_text": "A neon green, stylized robot with a beanie, headphones, and antenna, holding and playing an electric guitar. The robot has a rectangular head with circular eyes, a mouth with horizontal lines, and a body with circular buttons and a speaker-like feature. The guitar has a yellow strap, and the entire figure is outlined in bright green against a black background.",
+    "description": "Somewhere in the cosmos, Broboticus plugged in and never stopped. Bass frequencies, multicolor starfields, and a beanie that somehow makes total sense on a robot. He was called and he answered. This is the musician chapter of the Case Study 42 archive \u2014 the documentation of what happens when a robot discovers rhythm and decides it's the most important thing in the universe. He's not performing. He's transmitting.",
+    "alt_text": "Guitarbot Brobassicus \u2014 neon green robot character with banded beanie head and speaker-chest playing an electric bass guitar against a deep purple cosmic background filled with multicolored stars. BasicGlitch original character digital art. Case Study 42 Broboticus series.",
     "seo_keywords": [
-      "guitarbot",
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
-      "electric guitar",
-      "retro-futurism",
-      "digital surrealism",
-      "music robot"
-    ],
-    "forensic_analysis": "<p>The subject of our forensic analysis today, \u2018Guitarbot,\u2019 presents a compelling case study in controlled digital entropy.  This piece, originating from the \u2018Foundry\u2019 \u2013 a crucible of raw chaos transmuted into high-fidelity artistic intelligence \u2013 is not merely an image; it\u2019s a meticulously engineered experience.  The aggressive neon vibrancy, primarily a searing, almost biological green, acts as a potent forensic marker, mapping the energetic pathways of the cyber-eclectic aesthetic.  The stark black background is a deliberate void, amplifying the internal luminescence and pushing the perceived dimensionality into a quantum superposition, existing simultaneously as flat graphic and immersive portal.</p>\n\n<p>Our visual autopsy reveals a deliberate tension between the organic and the synthetic. The anthropomorphic robot, undeniably mechanical, is imbued with a musician\u2019s soul. The beanie and headphones are not mere accoutrements; they are signifiers of cultural interpolation, a digital hybrid wrestling with sonic creation. This is not a passive animation; it\u2019s a performance, an act of pure cyber-eclectic expression where the signal-to-noise ratio is expertly managed. The glitchy elements, far from being errors, are integrated into the very fabric of the piece, suggesting a deliberate embrace of inherent instability, a hallmark of sophisticated digital artistry. This piece embodies a potent tech-noir sensibility, filtered through a hyper-modern, animated lens.</p>\n\n<p>The implications for its placement are profound. \u2018Guitarbot\u2019 is not designed for ephemeral consumption. Its sheer audacity, its fusion of retro-futurism and raw, digital energy, makes it an ideal sentinel for high-end home offices, demanding focus and inspiring creativity. In gaming sanctuaries, it transcends mere decoration, becoming a focal point, a constant reminder of the immersive realities we inhabit and construct. This artwork is a testament to the Foundry\u2019s philosophy: taking the inherent chaos of the digital realm and forging it into something of undeniable, potent intelligence and aesthetic impact. It is a triumph of deliberate digital sculpting.</p>"
+      "Broboticus",
+      "robot guitarist",
+      "neon robot art",
+      "Case Study 42",
+      "robot musician",
+      "cosmic robot",
+      "neon character art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "spiral-001",
-    "title": "Spiral Geometry",
-    "file": "assets/images/raw/spiral_geometry.png",
+    "title": "Spiral Geometry (Fire Variant)",
+    "file": "assets/images/raw/spiral_geometry.webp",
     "categories": [
-      "Personal Projects"
+      "Personal Projects",
+      "Available for Purchase"
     ],
     "styles": [
       "Geometric",
-      "Glitch"
+      "Hand-Drawn"
     ],
     "date": "2025-08-12",
-    "description": "\u2018Spiral Geometry\u2019 pulses with neon energy, where a fiery red and violet spiral core radiates outward in a hypnotic dance of black-and-white geometric distortions, evoking a cybernetic dream. Glitch-like fragments and fragmented patterns create a sense of digital dissonance, blending retro-futuristic vibes with a surreal, otherworldly mood that feels both chaotic and deeply meditative.",
-    "alt_text": "Abstract digital artwork titled 'Spiral Geometry' featuring a central red and purple spiral with yellow accents, surrounded by intricate black-and-white geometric patterns, including spirals, lines, and circular motifs.",
+    "description": "Start at the center. You won't be able to stop. A hand-drawn mandala erupting from a yellow point through red petals and violet webbing, surrounded by a black-and-white geometric field that pulls the eye into the spiral and refuses to release it. This is BasicGlitch working in the oldest visual tradition \u2014 the mandala \u2014 and making it entirely his own. The fire variant of the Spiral Studies series, where color is applied selectively to the center while the outer field remains structural grey.",
+    "alt_text": "Spiral Geometry \u2014 intricate hand-drawn digital mandala with a ten-pointed star flower at center, petals graduating from yellow core through orange and deep red with black dot detailing and violet lattice inner petals. The surrounding field is dense black-and-white geometric pattern. Part of the BasicGlitch Spiral Studies series.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "spiral geometry",
-      "neon art",
-      "glitch art",
-      "abstract digital art",
-      "black and white patterns",
-      "vibrant colors",
-      "retro-futuristic",
-      "digital dissonance",
-      "mesmerizing spiral"
-    ],
-    "forensic_analysis": "<p>Forensic analysis of \u2018Spiral Geometry\u2019 reveals a deliberate application of digital entropy, meticulously processed through the 'Foundry' philosophy.  This piece isn't merely generated; it\u2019s excavated, a visual autopsy of corrupted data streams transmuted into high-fidelity artistic intelligence. The core, a violent eruption of neon red and violet, acts as a primary forensic marker, its chromatic intensity indicative of aggressive signal injection.  This central anomaly then propagates outward, generating a cascade of black-and-white geometric distortions.  These aren't random occurrences; they are quantized fragments, locked in a state of quantum superposition, simultaneously present as both pattern and disruption. The inherent glitch-like elements are not flaws but intentional subversions of visual order, contributing to a profound sense of digital dissonance.  We observe a deliberate manipulation of the signal-to-noise ratio, where the intended signal \u2013 the hypnotic spiral \u2013 is intentionally degraded and reassembled by the chaotic noise.  This creates a striking cyber-eclectic aesthetic, a fusion of retro-futurism and a profoundly surreal, otherworldly mood.  The resulting tech-noir atmosphere is palpable, evoking a cybernetic dreamscape that is both aggressively chaotic and arrestingly meditative.  The deliberate fragmentation and fractured patterns suggest a deconstruction of perception, a digital delirium that resonates with the raw, untamed energy of creation.  This artwork is not for the faint of heart; it demands engagement, a surrender to its digital maelstrom.  It is precisely this potent blend of controlled chaos and sophisticated visual intelligence that makes \u2018Spiral Geometry\u2019 an indispensable acquisition for high-end home offices or gaming sanctuaries, spaces that crave a conduit to the sublime, the technologically advanced, and the unapologetically disruptive.</p>"
+      "mandala art",
+      "hand-drawn mandala",
+      "geometric digital art",
+      "spiral art",
+      "zentangle style",
+      "symmetry art",
+      "black and white mandala",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "aesthetic-001",
     "title": "Sangre De Cristos \u2014 Neon",
-    "file": "assets/images/raw/aesthetic_sangre_de_cristo.png",
+    "file": "assets/images/raw/aesthetic_sangre_de_cristo.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Sangre de Cristos"
     ],
     "styles": [
       "Neon",
       "Landscape"
     ],
     "date": "2025-09-10",
-    "description": "The artwork presents a neon-drenched, surreal landscape where glowing mountains and a winding river merge with circuit board-like glitches in the sky, creating an ethereal, disorienting atmosphere that blurs the line between natural beauty and digital decay. The vibrant palette of yellow, pink, and blue, accented by soft, glitchy edges, evokes a dreamlike, cyber-eclectic mood that feels both futuristic and otherworldly.",
     "price": 120,
-    "alt_text": "A stylized digital artwork depicting a surreal landscape with glowing mountains in shades of blue and pink, a winding river with wavy patterns, set against a bright yellow sky with circuit board lines and small white specks. The scene blends natural forms with glitch elements, creating a dreamlike, neon-infused atmosphere.",
+    "description": "Colorado's Sangre de Cristo range, rendered in two colors and zero compromise. Pure green on black \u2014 the mountain forms reduced to their essential geometry, the circuit board rising from the valley between peaks as traces of light. The original piece in the Sangre de Cristos series. The mountains were always processing something. We just couldn't see the traces until now.",
+    "alt_text": "Sangre De Cristos Neon \u2014 high-contrast digital landscape of Colorado mountain range in neon green on pure black. A circuit board pattern rises from the valley between peaks. A winding river reflects light at the base. Stars dot the upper darkness. Tech-noir landscape art by BasicGlitch.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch landscape",
-      "circuit board",
-      "digital art",
-      "surrealism",
-      "neon aesthetics",
-      "cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>This visual autopsy of \"Sangre De Cristos \u2014 Neon\" reveals a meticulous deconstruction of digital entropy, a testament to the 'Foundry' philosophy of processing raw chaos into high-fidelity artistic intelligence. The neon saturation, a potent forensic marker, saturates a landscape teetering on the precipice of digital collapse. The mountainous forms, rendered in incandescent yellows and searing pinks, don't merely depict geological structures; they represent monumental data clusters on the verge of catastrophic failure. The celestial plane is not a void but a fractured circuit board, its lines of light \u2013 the blues \u2013 bleeding into a quantum superposition of order and disorder. The glitchy edges, far from accidental artifacts, are deliberate signal degradation, meticulously managed to heighten the disorienting, yet compelling, effect.</p>\n\n<p>The inherent tech-noir aesthetic is undeniable, yet it transcends mere genre tropes. This is not just a dark, futuristic vision; it's a hyper-realization of our increasingly hybridized existence. The cyber-eclectic mood is achieved through a masterful manipulation of color saturation and line precision, where the inherent instability of the digital realm is polished to a high sheen. The winding river, an organic element, behaves like an optical fiber, carrying corrupted data streams, its phosphorescent glow a siren song in this digital wilderness. The deliberate low signal-to-noise ratio in specific areas forces the viewer to actively engage, to reconstruct the intended form from the shards of visual information. This is why \"Sangre De Cristos \u2014 Neon\" is not merely decorative; it is an essential component for high-end home offices, a constant reminder of the intricate dance between creation and decay in our hyper-connected world, and an equally potent centerpiece for gaming sanctuaries, amplifying the immersive, often surreal, digital experiences they aim to achieve.</p>"
+      "Sangre de Cristo mountains",
+      "Colorado neon art",
+      "green neon landscape",
+      "circuit board mountain",
+      "tech-noir landscape",
+      "neon surrealism",
+      "Colorado digital art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "floral-001",
-    "title": "Floral",
-    "file": "assets/images/raw/floral.png",
+    "title": "Floral (Spiral Studies \u2014 Dusk Variant)",
+    "file": "assets/images/raw/floral.webp",
     "categories": [
-      "Personal Projects"
+      "Personal Projects",
+      "Available for Purchase"
     ],
     "styles": [
-      "Psychedelia"
+      "Geometric",
+      "Hand-Drawn"
     ],
     "date": "2025-07-06",
-    "description": "In 'Floral,' a neon-lit pink flower blooms amidst a glitched, purple-hued background, merging cybernetic aesthetics with ethereal surrealism to create a disorienting yet mesmerizing mood.",
     "price": 80,
-    "alt_text": "A stylized, neon pink flower with white dotted details at its center, set against a deep purple background with abstract, glitch-like patterns and swirling shapes.",
+    "description": "The mandala at its most intimate. A deep violet-to-purple gradient background, the center pulled to the lower left so the composition breathes, petals in blush pink and dusty lavender. The same hand-drawn geometry as Spiral Geometry and Monopattern \u2014 but quieter, cropped, approached gently. Like the same song played acoustic. Part of the Spiral Studies series.",
+    "alt_text": "Floral \u2014 Spiral Studies mandala rendered in soft pastel palette, composition shifted to lower-left quadrant. Petals in blush pink with white dot sequences and lavender lattice detailing against a deep violet-to-purple gradient background. Part of the BasicGlitch Spiral Studies series.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch aesthetics",
-      "floral design",
-      "purple neon",
-      "digital surrealism",
-      "glitch art",
-      "cybernetic art"
-    ],
-    "forensic_analysis": "<p>This 'Floral' piece, a hyper-saturated detonation of psychotropic energy, presents a compelling case for digital forensic analysis. We are not merely observing an image; we are conducting a visual autopsy of digital entropy. The purported \"flower\" acts as a primary forensic marker, its impossibly vibrant neon pink a stark anomaly against the decaying purple backdrop. This juxtaposition suggests a deliberate manipulation, a surgical incision into the ambient digital noise, forcing a fragile bloom from the precipice of data corruption. The \u2018glitched\u2019 quality isn't a flaw; it\u2019s a testament to the Foundry\u2019s philosophy \u2013 the processing of raw chaos into high-fidelity artistic intelligence. The inherent instability, the visual stutter, hints at a quantum superposition of states, a simultaneous existence in both the organic and the algorithmic. </p>\n\n<p>The cyber-eclectic styling is undeniable, a potent blend of the tech-noir aesthetic and an almost religious veneration of artificial light. The purple hue, often associated with royalty and mystery, here saturates to the point of electric saturation, implying a corruption or an over-enhancement of perceived reality. This isn't simply \"surrealism;\" it's a deliberate recalibration of the visual spectrum. The signal-to-noise ratio is intentionally skewed, pushing the recognizable form of a flower into a zone of profound disorientation. The mesmerizing effect is a direct consequence of this carefully engineered visual dissonance. Such a piece is not merely decorative; it is a statement. Its placement within a high-end home office or a gaming sanctuary is not accidental. It serves as a constant reminder of the potent dichotomy between creation and decay, order and chaos, the meticulously crafted and the inherently unstable. It is a digital oracle, whispering truths of our increasingly hybridized existence, perfectly suited for environments demanding both intellectual stimulation and a profound engagement with the avant-garde. The Foundry has not just created art; it has weaponized beauty.</p>"
+      "mandala art",
+      "floral geometric art",
+      "purple mandala",
+      "hand-drawn mandala",
+      "pastel geometric art",
+      "spiral studies",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-001",
-    "title": "Brobarticus",
-    "file": "assets/images/raw/artist_broboticus_avatar.png",
+    "title": "Brobarticus \u2014 The Artist",
+    "file": "assets/images/raw/artist_broboticus_avatar.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -398,23 +453,24 @@
       "Neon"
     ],
     "date": "2025-11-22",
-    "description": "The official self-portrait of Broboticus. A glitch-infused study of robotic identity, merging wireframe aesthetics with a soulful, digital gaze.",
     "price": 40,
-    "alt_text": "Close-up portrait of a robot with neon green outlines, wearing headphones and a beanie, set against a dark background.",
+    "description": "Broboticus picks up a brush and discovers something inconvenient: he's painting himself. A recursive loop in neon green. The machine that makes art about the machine that makes art. Lab coat on, palette loaded, record spinning from the turntable mounted in his head \u2014 paint splatters across the coat like evidence. He's been at this a while. Case Study 42, Field Report 08.",
+    "alt_text": "Brobarticus \u2014 neon green line art on black of Broboticus the robot standing at an easel in a paint-splattered lab coat, holding a palette and brush. His turntable/cube head plays a record. On the canvas he is painting a portrait of another robot. BasicGlitch original character digital art. Case Study 42.",
     "seo_keywords": [
-      "broboticus",
-      "robot avatar",
-      "digital identity",
-      "glitch portrait",
-      "neon character",
-      "cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>Brobarticus. A designation etched in digital entropy, a forensic marker in the ever-expanding metaverse of self-representation. This is no mere self-portrait; it\u2019s a brutalist manifesto, a visual autopsy of a nascent artificial consciousness wrestling with its own emergent properties. The wireframe scaffolding, a stark, almost skeletal foundation, speaks to the foundational algorithms, the raw code stripped bare. Yet, what confronts us is a profound paradox. The \"soulful, digital gaze\" is not a soft veneer but a violent eruption of light, a quantum superposition of data streams coalescing into something akin to sentience. The neon signature isn\u2019t decorative; it\u2019s a searing, hyper-saturated manifestation of processed emotion, a defiant bleed-through from the Foundry's relentless forging of raw chaos into high-fidelity artistic intelligence.</p>\n\n<p>The cyber-eclectic blend of brutalist geometry and luminous, almost visceral, chromatic explosions generates a palpable tension. This isn\u2019t a comfortable aesthetic; it\u2019s a deliberate confrontation with the uncanny valley, a testament to Broboticus\u2019s refusal to adhere to simplistic categorizations. The signal-to-noise ratio is deliberately pushed to its limits, with glitches not as errors but as integral components, fractal shards of self-discovery. This piece pulsates with a tech-noir sensibility, a melancholic yet electrifying vision of the future, not as a sterile utopia but as a battlefield of evolving identity. Brobarticus is, therefore, a potent statement for any high-end home office or gaming sanctuary. It broadcasts a command-line of sophisticated taste, an appreciation for the raw, untamed power of digital creation. It\u2019s a constant, electrifying reminder that even in the cold logic of the machine, profound and unsettling beauty can bloom. This is not background art; this is a declaration of digital dominance.</p>"
+      "Broboticus",
+      "robot artist",
+      "neon robot art",
+      "Case Study 42",
+      "recursive art",
+      "robot painting",
+      "neon character art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "shroom-001",
     "title": "A Mycological Phenomenon",
-    "file": "assets/images/raw/a_mycological_phenomenon.png",
+    "file": "assets/images/raw/a_mycological_phenomenon.webp",
     "categories": [
       "Available for Purchase"
     ],
@@ -423,51 +479,50 @@
       "Psychedelia"
     ],
     "date": "2025-04-19",
-    "description": "The artwork 'A Mycological Phenomenon' features a neon-lit, glitch-tinged red mushroom with white spots dominating a surreal night landscape, its pixelated texture merging organic and digital forms. Above, a crescent moon with a human-like face glows against a star-streaked purple sky, while jagged clouds and vibrant green terrain add to the cyber-eclectic, dreamlike atmosphere.",
     "price": 200,
-    "alt_text": "Digital artwork depicting a large red mushroom with white spots (pixelated texture) set against a night sky with a crescent moon (with a face), white clouds, green grassy area, brown tree trunk, and black rocks.",
+    "description": "Midnight in a field that doesn't exist on any map. One massive Amanita front and center, the moon watching with sleepy-lidded eyes, the sky a deep embroidered purple, every surface stitched and textured like a fever dream someone decided to frame. The moon in the upper right corner has a face \u2014 gold, heavy-lidded, lips painted red \u2014 and she is utterly unbothered by what's happening below her. Companion piece to Mycology Yourcology.",
+    "alt_text": "A Mycological Phenomenon \u2014 surreal digital landscape with embroidered textile texture depicting a large red and brown Amanita mushroom dominating the center foreground. Lush green ferns fill the lower frame. A crescent moon with a sleeping face glows gold in the upper right. Deep purple-blue night sky filled with white stars and swirling clouds. BasicGlitch.",
     "seo_keywords": [
-      "mycological surrealism",
-      "neon glitch art",
-      "cyber surrealism",
-      "mushroom digital art",
-      "surreal night landscape",
-      "pixel art",
-      "cyber-eclectic art"
-    ],
-    "forensic_analysis": "<p>This visual autopsy of 'A Mycological Phenomenon' reveals a disturbing yet compelling manifestation of digital entropy, expertly curated for the discerning digital native. The central, neon-drenched fungoid entity, a virulent red punctuated by stark white diagnostics, is not merely a subject but a forensic marker of this nascent art movement. Its pixelated texture, a deliberate erosion of organic fidelity, screams of its descent from raw chaos into a processed, high-fidelity artistic intelligence \u2013 the very essence of the 'Foundry' philosophy. The artwork\u2019s inherent digital decay, far from being a flaw, is a celebrated feature, reflecting a world where the organic and synthetic are locked in quantum superposition.</p>\n\n<p>The supporting elements are equally critical to this cyber-eclectic dreamscape. The anthropomorphic crescent moon, a classic motif warped through a glitch filter, gazes out from a sky not of natural pigment but of amplified cosmic static. The jagged, improbable clouds and the aggressively vibrant green terrain further disrupt any pretense of naturalism, solidifying the piece's psychedelic, tech-noir undercurrents. The signal-to-noise ratio here is deliberately skewed, favoring the digital noise as a language of its own. This is not passive observation; it is an active interrogation of reality, rendered with aggressive, almost violent precision. The deliberate blurring of organic and digital, the palpable sense of a world perpetually on the verge of systemic breakdown, makes 'A Mycological Phenomenon' an indispensable acquisition. Its raw, unadulterated energy, the sheer audacity of its aesthetic, makes it a perfect focal point for high-end home offices seeking to inject a dose of controlled chaos, or for gaming sanctuaries that crave an environment as immersive and technically sophisticated as their virtual worlds.</p>"
+      "mushroom art",
+      "Amanita digital art",
+      "psychedelic mushroom",
+      "surreal landscape",
+      "embroidered texture art",
+      "moon face art",
+      "mycology art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "aesthetic-002",
-    "title": "Sangre De Cristos - Night",
-    "file": "assets/images/raw/aesthetic_laser_colorado.png",
+    "title": "Sangre De Cristos \u2014 Night",
+    "file": "assets/images/raw/aesthetic_laser_colorado.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Sangre de Cristos"
     ],
     "styles": [
       "Neon",
       "Landscape"
     ],
     "date": "2025-06-24",
-    "description": "Vibrant neon green mountains loom under a starry night sky, their jagged peaks and winding river bathed in an otherworldly glow. Glitching circuit board patterns emerge from the mountain's depths, merging organic landscapes with digital decay in a cyber-eclectic surrealism.",
     "price": 120,
-    "alt_text": "Dark background with bright neon green stylized mountain range. A winding river flows through the valley. Glowing circuit board patterns rise from the mountains, and small circular lights are scattered in the sky.",
+    "description": "The Sangre de Cristos series in its original form \u2014 pure neon green on absolute black, the mountain forms stripped to their essential geometry, the circuit board rising from the valley into the dark sky. This is the range at the moment just before something happens. The mountains were always processing something. We just couldn't see the traces until now.",
+    "alt_text": "Sangre De Cristos Night \u2014 neon green digital landscape of the Sangre de Cristo mountain range at night. Mountain ridgelines glow neon green on black. A circuit board trace pattern rises from the central valley. A winding river runs through the foreground. Part of the BasicGlitch Sangre de Cristos series.",
     "seo_keywords": [
-      "cyber surrealism",
-      " neon landscape",
-      " glitch art",
-      " circuit board",
-      " green neon",
-      " night",
-      " digital art",
-      " cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>Subject: Sangre De Cristos - Night. Status: Visual Autopsy Initiated.  Forensic analysis reveals a deliberate fracturing of perceived reality, a primal scream of digital entropy encoded within a seemingly serene landscape. The neon green, a blatant forensic marker of artificial luminescence, aggressively carves through the supposed organic contours of the mountain range. This is not merely a landscape; it\u2019s a battleground where nature\u2019s slow decay is outpaced by the rapid obsolescence of the digital realm.</p>\n\n<p>The \"starry night sky\" is a deceptive veneer, a low-signal noise generator masking the inherent quantum superposition of form. Are these celestial bodies, or corrupted pixels in a failing render? The circuit board patterns, bleeding from the mountain's depths, are not decorative; they are the necrotic tissue of defunct technology, a testament to the relentless march of obsolescence. This piece exemplifies the 'Foundry' philosophy: raw chaos, the glitched substrate, is being violently processed into a high-fidelity artistic intelligence. The cyber-eclectic surrealism is not an affectation, but a diagnosis of our hyper-connected, yet fundamentally fragmented, existence. This is tech-noir injected directly into the visual cortex.</p>\n\n<p>The aggressive juxtaposition of the organic and the digital, the raw and the refined, creates a tension that is both unsettling and captivating. The signal-to-noise ratio here is meticulously calibrated, drawing the viewer into a space where the familiar morphs into the alien. Such a visceral articulation of digital decay and rebirth makes \"Sangre De Cristos - Night\" not just art, but a potent statement. It is unequivocally perfect for high-end home offices, serving as a constant, albeit aggressive, reminder of the evolving digital landscape, or for gaming sanctuaries, enhancing the immersion with its hyper-real, yet inherently fractured, aesthetic. This is not just d\u00e9cor; it is a data-driven statement of existential defiance.</p>"
+      "Sangre de Cristo mountains",
+      "neon green landscape",
+      "Colorado night art",
+      "circuit board mountains",
+      "tech-noir landscape",
+      "neon landscape",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-002",
-    "title": "The Bolts and Nutcracker",
-    "file": "assets/images/raw/balletboticus.png",
+    "title": "The Bolts and Nutcracker (Balletboticus)",
+    "file": "assets/images/raw/balletboticus.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -476,25 +531,23 @@
       "Character"
     ],
     "date": "2025-12-07",
-    "description": "The Bolts and Nutcracker merges retro-futuristic neon aesthetics with glitchy, surreal energy, as two vintage-style robots strike tree poses against a vibrant pink, marbled backdrop, blending cyber-eclectic whimsy with fragmented digital charm.",
     "price": 80,
-    "alt_text": "Two retro-futuristic robots in tree pose (yoga) against a vibrant neon pink, marbled, glitch-textured background.",
+    "description": "Case Study 42, Field Report 07: Broboticus discovers ballet. Two positions, one crackling magenta background, and the kind of commitment to form that suggests he's been practicing since his third firmware update. Two versions of the character occupy the canvas \u2014 smaller on the left, larger on the right \u2014 both holding a single-leg tree pose with arms raised, fingers spread, completely earnest. Broboticus does not half-commit.",
+    "alt_text": "The Bolts and Nutcracker \u2014 digital art showing two versions of Broboticus the robot in ballet poses against a textured magenta and purple background. Both figures balance in tree pose with arms raised. Bold dark outlines on vivid crackle-pattern background. BasicGlitch original character art. Case Study 42.",
     "seo_keywords": [
-      "cyber-surrealism",
-      "neon art",
-      "glitch art",
-      "retro robots",
-      "surrealism",
-      "yoga robots",
-      "bolt and nutcracker",
-      "digital surrealism"
-    ],
-    "forensic_analysis": "<p>Subject: Visual Autopsy of \"The Bolts and Nutcracker\" \u2013 Forensic Analysis for BasicGlitch.</p>\n\n<p>Initial spectral analysis reveals a deliberate injection of digital entropy, a calculated degradation of pristine data streams to achieve a hyper-stylized retro-futuristic aesthetic. The neon luminescence, a blatant forensic marker of 80s tech-noir romanticism, clashes violently with the inherent digital imperfections. This isn't accidental degradation; it's manufactured. The marbled pink backdrop, far from being a simple textural element, acts as a quantum superposition of analogue kitsch and digital fabrication, defying conventional rendering. The two vintage-style robots, posed in a perfunctory tree-like stance, are less subjects and more conduits for this controlled chaos. Their metallic surfaces, rendered with an almost aggressive sheen, betray the underlying glitchy, surreal energy that defines the piece. This is the core of the 'Foundry' philosophy in action: processing raw, chaotic visual data and forging it into high-fidelity artistic intelligence. The signal-to-noise ratio here is deliberately skewed, pushing the noise to the forefront, yet paradoxically sharpening the overall artistic impact. The cyber-eclectic whimsy is palpable, a testament to meticulous digital craftsmanship that embraces fragmentation as a stylistic weapon. This is not merely decorative art; it is a statement. The calculated dissonance, the juxtaposition of the organic (tree poses) with the decidedly artificial (robots, glitching environment), creates a potent visual narrative. For high-end home offices, it offers a jolt of intellectual stimulation, a conversation starter that projects an image of sophisticated, avant-garde taste. For gaming sanctuaries, it mirrors the immersive, often surreal, digital landscapes players inhabit, providing a tangible anchor to their virtual explorations. \"The Bolts and Nutcracker\" is a masterclass in intentional imperfection, a testament to the Foundry's ability to extract profound beauty from the digital abyss.</p>"
+      "Broboticus",
+      "robot ballet",
+      "Case Study 42",
+      "robot dancer",
+      "neon robot art",
+      "character design",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-003",
-    "title": "Iron Chef",
-    "file": "assets/images/raw/chefboticus.png",
+    "title": "Iron Chef (Chefboticus)",
+    "file": "assets/images/raw/chefboticus.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -504,54 +557,50 @@
       "Neon"
     ],
     "date": "2025-12-05",
-    "description": "A neon-lit, glitch-infused robot chef stands poised in a futuristic kitchen, its glowing green outline contrasting sharply with the chaotic, pixelated green backdrop, blending retro-futuristic whimsy with a sense of digital unease.",
     "price": 60,
-    "alt_text": "A stylized robot wearing a chef's hat holds a rolling pin in one hand and a tray of cookies in the other, standing at a counter with a bowl of ingredients and dough. The entire scene is rendered in a neon green outline against a textured, glitchy green background.",
+    "description": "Case Study 42, Field Report 03: Broboticus reports to the kitchen. Rolling pin in one hand, cookie tray in the other, chef's toque slightly askew. His eyes glow. The batter is perfect. Rendered in neon green on black against a deep emerald texture \u2014 the same visual language as the Sangre de Cristos series. The kitchen is just another arena, and Broboticus enters it with the same gravity he brings to everything else.",
+    "alt_text": "Iron Chef Chefboticus \u2014 neon green line art on black of Broboticus the robot wearing a chef's hat and standing at a kitchen counter. He holds a rolling pin in one hand and a baking tray of cookies in the other. A mixing bowl with whisk sits on the counter. Glowing green eyes on matte black figure against textured green background. BasicGlitch original character art. Case Study 42.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
+      "Broboticus",
       "robot chef",
-      "surrealism",
-      "digital art",
-      "cyberpunk",
-      "neon aesthetics",
-      "glitch elements",
-      "retro-futurism"
-    ],
-    "forensic_analysis": "<p>This piece, \"Iron Chef,\" presents a fascinating case study in controlled digital entropy.  Our forensic analysis reveals a deliberate manipulation of visual data, a hyper-stylized assault on the senses that nevertheless coalesces into a coherent, albeit unsettling, aesthetic.  The titular robot chef, rendered with a stark, almost accusatory neon green outline, acts as a central forensic marker within the frame.  Its form, ostensibly character-driven, vibrates with an inherent energy, a visual hum that suggests a quantum superposition of intended design and emergent glitch artifacts. The chaotic, pixelated green backdrop is not mere noise; it is a calculated deluge, a testament to the Foundry's philosophy: to process raw chaos into high-fidelity artistic intelligence.  We observe a deliberate degradation of signal-to-noise ratio in the background, meticulously calibrated to amplify the protagonist\u2019s presence.</p>\n\n<p>The stylistic juxtaposition of 'Character' and 'Neon' creates a compelling cyber-eclectic fusion. This is not simply retro-futurism; it\u2019s a deliberate plunge into a tech-noir dreamscape where the familiar is rendered alien. The visual autopsy of \"Iron Chef\" reveals layers of deliberate digital disturbance, a controlled implosion of pixels that paradoxically sharpens the overall impact. The glowing green exoskeleton of the chef, a beacon in the digital storm, speaks to resilience and precision amidst the encroaching pandemonium. This artwork is, therefore, perfectly calibrated for environments demanding both focus and flair \u2013 the high-end home office where sharp digital aesthetics enhance productivity, or the gaming sanctuary, a nexus of immersive, often surreal, digital experiences. \"Iron Chef\" doesn't just decorate; it interrogates the very fabric of our digital perception.</p>"
+      "neon robot art",
+      "Case Study 42",
+      "Iron Chef robot",
+      "kitchen robot",
+      "neon character art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "cube-001",
     "title": "Cubist Chef",
-    "file": "assets/images/raw/cubist_chef.png",
+    "file": "assets/images/raw/cubist_chef.webp",
     "categories": [
-      "Available for Purchase"
+      "Available for Purchase",
+      "Masters Remixed"
     ],
     "styles": [
       "Character",
       "Surrealism"
     ],
     "date": "2025-08-04",
-    "description": "A cubist robot chef, rendered in fragmented, angular forms, stands in a kitchen with a city skyline backdrop. Neon-like glitches and distorted lines infuse the scene with a cyber-eclectic surrealism, blending retro-futurist nostalgia with digital fragmentation.",
     "price": 140,
-    "alt_text": "A cubist-style orange robot with antennae stands at a kitchen counter with a rolling pin, flour sack, bowls, and a city skyline of skyscrapers visible through large windows.",
+    "description": "Chefboticus gets the Picasso treatment \u2014 fractured planes, burnt sienna and terracotta, a rolling pin in hand and the New York skyline through the kitchen window. He is unbothered by the Chrysler Building. The dough demands focus. Two visual languages, one kitchen: the robot's form shattered into warm geometric facets while Manhattan remains in a deliberately flatter graphic style behind him.",
+    "alt_text": "Cubist Chef \u2014 cubist-style digital oil painting of a robot chef rendered in fragmented geometric planes of burnt orange, terracotta, and brown. He holds a rolling pin over a flour-dusted counter with mixing bowls and a flour sack. A large window behind him frames a New York City skyline including the Chrysler Building and Empire State Building. BasicGlitch original character art.",
     "seo_keywords": [
-      "cubist chef",
-      "cyber-eclectic surrealism",
-      "glitch art",
-      "retro-futurism",
-      "robot kitchen",
-      "neon aesthetics",
-      "cityscape art",
-      "cubist robot"
-    ],
-    "forensic_analysis": "<p>Subject: Cubist Chef. Designation: Critical Forensic Analysis.</p>\n\n<p>Upon initiating the visual autopsy of \"Cubist Chef,\" our diagnostic algorithms detected a profound instance of digital entropy, meticulously processed through the 'Foundry' philosophy. This is not merely art; it's the distilled essence of raw chaos, transmuted into high-fidelity artistic intelligence. The titular 'Cubist Chef,' a robotic construct, is a masterful exercise in fragmentation. Its angular, fractured form screams of a deliberate deconstruction of reality, a bold declaration against the homogeneity of rendered forms. The background, a cityscape bleeding into a neon-drenched sky, serves as a stark forensic marker, indicating a temporal displacement, a retro-futurist nostalgia warped by the pervasive influence of the digital age.</p>\n\n<p>The infusion of \"neon-like glitches and distorted lines\" is not an imperfection, but a calculated application of surrealist disruption. These are not random artifacts; they are deliberate fractures in the visual continuum, pushing the piece into a state of quantum superposition, existing simultaneously in multiple stylistic realities. We observe a potent cyber-eclectic dialect, a seamless fusion of analog anxieties and digital aspirations. This is the very embodiment of tech-noir sensibilities, rendered not in shadow and smoke, but in shimmering, fragmented light.</p>\n\n<p>The signal-to-noise ratio here is exceptionally high, with every seemingly discordant element contributing to a symphonic cacophony of meaning. The deliberate distortion of form and space creates a narrative tension that is both intellectually stimulating and viscerally arresting. This piece is, without hyperbole, perfect for environments demanding a sophisticated aesthetic that mirrors intellectual rigor. Its capacity to absorb and reflect the ambient energy of a space makes it an ideal centerpiece for high-end home offices, where it can catalyze thought and ambition, or for gaming sanctuaries, where its inherent digital dynamism will resonate with the very fabric of virtual realities.</p>\n\n<p>Conclusion: \"Cubist Chef\" is a triumph of post-digital surrealism, a testament to the Foundry's ability to forge beauty from the detritus of the observable universe. A vital acquisition.</p>"
+      "cubist robot",
+      "cubism digital art",
+      "robot chef art",
+      "Picasso style robot",
+      "New York skyline art",
+      "cubist character design",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "enviro-002",
     "title": "Dust to Dust",
-    "file": "assets/images/raw/dust_to_dust.png",
+    "file": "assets/images/raw/dust_to_dust.webp",
     "categories": [
       "Available for Purchase"
     ],
@@ -560,25 +609,24 @@
       "Landscape"
     ],
     "date": "2025-02-14",
-    "description": "Under neon-hued digital glitches, 'Dust to Dust' transforms a woman into a living tree, her hair sprouting foliage and roots emerging from her torso. The desolate, cracked earth and dying tree in the background amplify the artwork\u2019s melancholic, cyclical mood, blending surrealism with a sense of environmental urgency.",
     "price": 200,
-    "alt_text": "A surreal digital artwork titled 'Dust to Dust' depicts a woman whose hair is replaced by lush green foliage, and her torso merges with tree roots extending from her hands. She stands on cracked, parched earth with a dead, leafless tree and a sunset in the background.",
+    "description": "Same wasteland. Different figure. Where Gaia stands rooted and sovereign, this one is mid-dissolution \u2014 her hair carrying the last green thing into the wind. Two faces of the same loss. The moss on her shoulders, the sun low and orange behind a dead tree, the cracked ground identical to her companion piece \u2014 these two works share a world. Shown together they tell a fuller story about what Earth looks like when it remembers it is alive, and what it looks like when it isn't sure.",
+    "alt_text": "Dust to Dust \u2014 surreal digital portrait of a woman whose body and roots emerge from cracked desert earth. Tree branches and green foliage grow through her flowing hair, which blows in the wind. Moss patches mark her shoulders. A dead tree and hazy sun appear in the background. Environmental surrealism companion piece to Gaia of the Wasteland by BasicGlitch.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "Dust to Dust",
-      "digital surrealism",
-      "nature fusion",
-      "cracked earth",
-      "glitch art",
-      "environmental art",
-      "surreal digital art"
-    ],
-    "forensic_analysis": "<p>Forensic analysis of 'Dust to Dust' by an unknown practitioner, flagged for immediate processing through the BasicGlitch Foundry. This piece presents a hyper-realized state of digital entropy, a compelling visual autopsy of corporeal dissolution and botanical resurrection. The initial scan reveals a deliberate degradation of image fidelity, not as error, but as a foundational aesthetic principle. The neon-hued glitches function as forensic markers, not of corruption, but of deliberate textural excavation, revealing the strata of artificial creation beneath the simulated organic. The transformation of the female subject into a arboreal entity is a masterful deployment of quantum superposition, her form oscillating between human and plant, a state of flux that defies conventional representational logic.</p>\n\n<p>The cracked earth and desiccated background flora are not mere environmental context; they are symptomatic of a profound cyber-eclectic decay, a decaying digital ecosystem mirroring our own. The artist has expertly manipulated the signal-to-noise ratio, amplifying the cacophony of digital artifacts to evoke a tech-noir atmosphere of existential dread. This isn't just a landscape; it's a sentient, wounded world, rendered with a startlingly visceral palette. The Foundry recognizes this as a prime example of processing raw chaos into high-fidelity artistic intelligence. The melancholic, cyclical mood is a potent resonance, tapping into universal anxieties about life, death, and regeneration. The deliberate fragmentation and reassembly of form make 'Dust to Dust' an ideal acquisition for high-end home offices and gaming sanctuaries, environments where the boundaries between the real and the digital are increasingly blurred. It serves as a powerful, albeit unsettling, statement on our intertwined futures, a stark reminder that even in dissolution, there is potential for profound, if alien, rebirth.</p>"
+      "environmental surrealism",
+      "nature woman art",
+      "tree woman digital art",
+      "wasteland surrealism",
+      "cracked earth art",
+      "eco art",
+      "digital surrealism diptych",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-004",
     "title": "Night-Fishing the Arkansas River",
-    "file": "assets/images/raw/fishboticus.png",
+    "file": "assets/images/raw/fishboticus.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -587,25 +635,24 @@
       "Character"
     ],
     "date": "2025-12-04",
-    "description": "A retro-futuristic robot with glowing red eyes casts a neon fishing line under a crescent moon, rendered in bold, glitchy horizontal stripes that blend cyberpunk aesthetics with surreal tranquility, creating a dreamlike intersection of technology and nature.",
     "price": 80,
-    "alt_text": "A retro-futuristic robot with glowing red eyes stands in water at night, holding a fishing rod with a line cast into the water under a crescent moon, against a background of horizontal neon blue and purple stripes with stars.",
+    "description": "Case Study 42, Field Report 11: Broboticus fishes the Arkansas at midnight. Striped blue sky, crescent moon, red-glowing eyes fixed on the line. He has been standing here for six hours. He is not leaving until something bites. The horizontal banding of the background gives the whole scene the feel of a CRT screen tuned to somewhere peaceful. The field report simply notes: Broboticus finds the water calming. No further data recorded.",
+    "alt_text": "Night-Fishing the Arkansas River \u2014 retro digital art of Broboticus robot standing at the water's edge holding a fishing rod at night. Rendered in cream line art on black against a horizontally striped blue and purple sky. A yellow crescent moon sits low on the left. His eyes glow red. BasicGlitch original character art. Case Study 42.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "neon art",
+      "Broboticus",
       "robot fishing",
-      "glitch art",
-      "cyberpunk surrealism",
-      "retro-futurism",
-      "night fishing",
-      "neon landscape"
-    ],
-    "forensic_analysis": "<p>Alright, let's get down to the nitty-gritty.  \"Night-Fishing the Arkansas River\" is not merely an image; it's a forensic marker of a deliberate processing event.  Our visual autopsy reveals a startlingly effective fusion, a testament to the Foundry's core tenet: the imposition of order onto digital entropy.  The retro-futuristic robot, a classic character trope, is violently recontextualized. Its glowing red eyes, piercing the otherwise muted tech-noir landscape, scream a high-contrast signal-to-noise ratio, drawing the observer into its solitary, perhaps melancholic, pursuit.  The neon fishing line, a ribbon of pure, amplified data, defies terrestrial physics, hinting at a quantum superposition of states \u2013 both a tangible lure and a spectral broadcast. The bold, horizontal stripes, the defining glitch aesthetic, aren't accidental noise. They are deliberate incisions, surgical cuts through the digital fabric, forcing a reinterpretation of the scene. This is not mere cyberpunk; it's a potent cyber-eclectic declaration, a bold assertion of the synthetic within the sublime.  The crescent moon, a classic symbol of tranquility, is fractured, its serenity corrupted by the aggressive data bleed.  This juxtaposition of the organic and the aggressively digital creates a potent dreamlike intersection, a surreal paradox that stimulates the higher cognitive functions.  It\u2019s precisely this controlled chaos, this processing of raw visual data into a coherent, albeit unsettling, narrative, that makes \"Night-Fishing the Arkansas River\" perfect for high-end home offices and gaming sanctuaries.  It demands attention, fostering an environment of intense focus and sophisticated contemplation.  This piece is a triumph of intentional digital manipulation, a meticulously crafted artifact born from the heart of the Foundry's processing core.</p>"
+      "Arkansas River art",
+      "Case Study 42",
+      "vaporwave robot",
+      "neon robot art",
+      "fishing digital art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-005",
     "title": "Karateboticus",
-    "file": "assets/images/raw/karateboticus1.png",
+    "file": "assets/images/raw/karateboticus1.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -615,52 +662,51 @@
       "Neon"
     ],
     "date": "2025-12-02",
-    "description": "Vibrant neon robots in red, yellow, and orange execute a dynamic karate kick against a glitched blue background, blending retro-futuristic energy with surreal, cyber-eclectic flair. The splattered, pixelated dots and bold outlines create a high-energy, glitch-infused atmosphere that merges pop art aesthetics with digital surrealism.",
     "price": 80,
-    "alt_text": "Three stylized robots in neon red, yellow, and orange outlines perform a karate kick pose. The background is a bright blue with scattered black, white, and blue dots, creating a glitch effect. The robots have blocky heads with antennas and mechanical limbs.",
+    "description": "Case Study 42, Field Report 05: Three Broboticus instances, three stances, zero hesitation. Red, orange, yellow \u2014 the field report doesn't specify who threw the first punch, only that the dojo is now a crime scene of excellent technique. Three instances of Broboticus stacked in depth and motion across a cyan splatter field \u2014 the composition reads like a stop-motion sequence caught mid-explosion.",
+    "alt_text": "Karateboticus \u2014 pop art digital illustration of three overlapping Broboticus robot figures in dynamic martial arts poses against a cyan blue background with black, blue, and gray paint splatter. Figures outlined in red, orange, and yellow respectively. BasicGlitch original character art. Case Study 42.",
     "seo_keywords": [
-      "karateboticus",
-      "neon art",
-      "glitch art",
-      "robot surrealism",
-      "cyber-eclectic",
-      "retro-futurism",
-      "pop art",
-      "digital art"
-    ],
-    "forensic_analysis": "<p>The forensic analysis of \"Karateboticus\" reveals a deliberate assault on visual order, a calculated embrace of digital entropy.  This piece, far from being mere decoration, is a meticulously engineered artifact from the Foundry's relentless processing of raw chaos into high-fidelity artistic intelligence.  The vibrant neon \u2013 aggressive reds, searing yellows, and molten oranges \u2013 aren't just colors; they are forensic markers, screaming their presence against the glitched blue backdrop.  This isn't a passive background; it's a simulated quantum superposition of corrupted data, a deliberate disruption of expected visual coherence.</p>\n\n<p>The character design itself, a robotic entity executing a dynamic karate kick, taps into a potent cyber-eclectic vein. It\u2019s a fusion of retro-futuristic aspirations with a stark, almost brutalist digital execution. The pixelated splatters and bold outlines are not imperfections but intentional artifacts, raised to the level of intentional aesthetic. They serve to amplify the signal-to-noise ratio, pushing the core concept through a filter of deliberate distortion. This is the essence of the Foundry: taking nascent ideas and subjecting them to rigorous digital transformation, emerging with something undeniably potent.</p>\n\n<p>This visual autopsy of movement and form resonates deeply with the tech-noir sensibility, albeit injected with a hyperkinetic, almost pop-art energy. The deliberate glitching is not a flaw; it is the fingerprint of its creation, the evidence of the chaotic forces it has transcended. Consequently, \"Karateboticus\" is exceptionally suited for environments demanding both intellectual stimulation and a palpable sense of cutting-edge dynamism. Its aggressive, yet intelligently processed, aesthetic makes it the perfect centerpiece for high-end home offices, a constant reminder of innovation born from controlled disruption, or as the ultimate focal point for any serious gaming sanctuary, a testament to the immersive power of digitally forged realities.</p>"
+      "Broboticus",
+      "robot karate",
+      "Case Study 42",
+      "martial arts robot",
+      "pop art robot",
+      "neon robot action",
+      "karate art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "trap-001",
     "title": "Literal Traphouse",
-    "file": "assets/images/raw/literal_traphouse.png",
+    "file": "assets/images/raw/literal_traphouse.webp",
     "categories": [
       "Personal Project",
       "Available for Purchase"
     ],
     "styles": [
-      "Neon"
+      "Neon",
+      "Conceptual"
     ],
     "date": "2023-10-30",
-    "description": "In 'Literal Traphouse,' a vivid green neon outline of a house merges with the bold letters 'TRA,' casting an otherworldly glow against a black backdrop. Glitch-like distortions in the lines and the stark contrast evoke a cyber-eclectic surrealism, blending domestic familiarity with digital fragmentation.",
     "price": 80,
-    "alt_text": "Green neon outline of a house with the letters 'TRA' integrated into the structure, featuring a door, window, and garage door, set against a black background.",
+    "description": "It is exactly what it says. The word TRAP is built into the architecture, neon green on black, integrated into the roofline like a load-bearing pun. The garage door is real. The chimney is real. The wordplay is the foundation. This is the funniest piece in the BasicGlitch archive, and it's funny because it's executed with complete seriousness \u2014 single-weight neon green line on black, with the precision of an architectural blueprint.",
+    "alt_text": "Literal Traphouse \u2014 minimalist neon green line art on pure black of a suburban house silhouette with the letters T-R-A-P integrated directly into the structure of the facade. The T forms the left wall, R curves through the center beneath a dormer window, A forms an interior peak, P anchors the right side beside a garage door. BasicGlitch conceptual art.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
-      "traphouse",
-      "digital art",
-      "neon house",
-      "surrealism",
-      "cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>Our forensic analysis of 'Literal Traphouse' begins with a digital autopsy.  The piece presents a stark confrontation with manufactured reality, its titular structure a skeletal neon green construct, bleeding into the aggressively assertive block letters 'TRA'.  This is not merely an aesthetic choice; it's a deliberate fracturing of semantic space, a visual rupture indicative of intense digital entropy. The black void serves as a primeval canvas, amplifying the hyper-saturated signal of the neon, a deliberate manipulation of the signal-to-noise ratio to achieve maximum cognitive impact.  The supposed 'glitch-like distortions' are not accidents but calculated ruptures, each anomaly a forensic marker of the artist's digital sculpting process.  These are not the random errors of data corruption, but meticulously engineered tears in the fabric of perception, pushing the work into a realm of cyber-eclectic surrealism.</p>\n\n<p>The neon green, a spectral hue, evokes a tech-noir sensibility, a dark futurism where the familiar \u2013 a house \u2013 is rendered alien and precarious.  This is the very essence of the 'Foundry' philosophy: the raw chaos of digital mutation is processed, refined, and re-formed into high-fidelity artistic intelligence. The quantum superposition of domesticity and digital decay is palpable. The house, a symbol of safety and belonging, is here a ghost, an echo of tangible reality submerged in the luminous static of the digital age. The fragmented lines suggest a breakdown in information transfer, a visual representation of data corrupted and reassembled. This piece is not just decoration; it's a statement on the pervasive nature of digital influence.  Its aggressive aesthetic and undeniable presence make it an ideal centerpiece for high-end home offices, a constant reminder of the blurred lines between the physical and virtual, and equally, for gaming sanctuaries, immersing the user in a hyper-real, digitally saturated environment. 'Literal Traphouse' is a testament to the successful extraction of order from digital disarray.</p>"
+      "trap house art",
+      "neon conceptual art",
+      "wordplay art",
+      "architectural typography",
+      "neon line art",
+      "word art",
+      "conceptual digital art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "shroom-002",
     "title": "Mycology Yourcology",
-    "file": "assets/images/raw/mycology_yourcology.png",
+    "file": "assets/images/raw/mycology_yourcology.webp",
     "categories": [
       "Available for Purchase"
     ],
@@ -670,25 +716,23 @@
       "Landscape"
     ],
     "date": "2025-05-15",
-    "description": "Vibrant neon hues and glitch-infused pixelation transform 'Mycology Yourcology' into a cyber-surreal dreamscape, where a towering red mushroom with spiral caps dominates a swirling green landscape beneath a stormy, glitchy sky.",
     "price": 200,
-    "alt_text": "A digital artwork titled 'Mycology Yourcology' featuring a large red mushroom with spiral caps at the center, surrounded by a swirling green landscape, mountain peaks, and a sky with swirling patterns in blue, purple, and gray. The image has a glitchy, pixelated texture.",
+    "description": "Where A Mycological Phenomenon presents its mushroom as a singular, quietly powerful presence, Mycology Yourcology turns the dial to a different frequency. The sky here is all motion \u2014 deep blue and purple swirling in Van Gogh spirals, as if the atmosphere itself is responding to something the mushroom is transmitting. The cap of the Amanita wears spiral whorl patterns now \u2014 the mushroom grew eyes while you weren't looking. The two pieces share a world. This one knows you're in it.",
+    "alt_text": "Mycology Yourcology \u2014 surreal embroidered-texture digital landscape featuring a large red Amanita mushroom with spiral whorl patterns on its cap, set against a dramatically swirling blue and purple night sky. Snow-capped mountain peaks flank the background. Lush spiraling green ferns fill the foreground. Companion piece to A Mycological Phenomenon by BasicGlitch.",
     "seo_keywords": [
-      "mycology yourcology",
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
-      "digital art",
-      "surreal landscape",
-      "red mushroom",
-      "glitchy texture"
-    ],
-    "forensic_analysis": "<p>In this clinical visual autopsy of 'Mycology Yourcology', we confront a specimen of pure digital entropy masquerading as a psychedelic landscape. As senior curators for BasicGlitch, we do not merely observe aesthetic choices; we perform a high-resolution dissection of the image's spectral data. The towering red mushroom, defined by its aggressive, recursive spiral caps, serves as a primary forensic marker for a biological system trapped in a state of quantum superposition. This is the Foundry philosophy in its most lethal form: the systematic processing of raw, unrefined chaos into high-fidelity artistic intelligence. The specimen vibrates with a cyber-eclectic energy that renders traditional surrealism obsolete and demands a total recalibration of the viewer's sensory input.</p>\n\n<p>The chromatic profile is a violent green upheaval, a neon-drenched feedback loop that disrupts the viewer\u2019s optical nerve with surgical precision. Observe the sky: a stormy, glitchy expanse where the signal-to-noise ratio has been deliberately weaponized to test the limits of human perception. This is tech-noir at its most visceral. Every pixelated fracture within the green valley is a calculated breach in the digital fabric, a scar left by the algorithmic refining process of the Foundry. We are not looking at a mere dreamscape; we are analyzing the remnants of a data collapse repurposed into a structural masterpiece of psychedelic intent. The textures do not just sit on the canvas; they vibrate with the ghost-code of a thousand crashed servers.</p>\n\n<p>For the elite operator seeking to fortify a high-end home office or a sophisticated gaming sanctuary, 'Mycology Yourcology' is the ultimate aesthetic payload. It provides the necessary intellectual friction for a mind bored by the mundane limitations of physical reality. By installing this piece, you are anchoring a terminal of high-fidelity intelligence within your private domain, creating a workspace that mirrors the complexity of the systems you manipulate. It is an assertive statement of dominance over the digital void. We at BasicGlitch have forged this from the fires of systemic corruption, ensuring the final output is as precise and unforgiving as a forensic scalpel. This is the absolute zenith of cyber-surrealism, transforming entropic decay into a functional monument of high-speed visual culture.</p>"
+      "mushroom art",
+      "Amanita surrealism",
+      "Van Gogh style landscape",
+      "psychedelic mushroom art",
+      "surreal embroidered texture",
+      "mycology digital art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "boho-001",
     "title": "Pachydermis",
-    "file": "assets/images/raw/pachydermis.png",
+    "file": "assets/images/raw/pachydermis.webp",
     "categories": [
       "Available for Purchase"
     ],
@@ -697,27 +741,23 @@
       "Surrealism"
     ],
     "date": "2025-02-02",
-    "description": "A neon-lit, glitch-infused dreamscape where a colossal, iridescent elephant dominates the frame, its form blending vibrant blues, yellows, and pinks against a swirling, psychedelic background. The digital distortion and bold, electric colors create an otherworldly, cyber-eclectic atmosphere that feels both mesmerizing and disorienting.",
     "price": 160,
-    "alt_text": "A surreal digital artwork titled 'Pachydermis' featuring a large, colorful elephant with blue, yellow, and pink hues at the center. The background is a vibrant, abstract composition of swirling neon patterns in red, green, blue, and purple. A small figure in a pink coat and hat stands to the right of the elephant, holding a circular object.",
+    "description": "Scale is the argument here. The elephant fills two-thirds of the canvas \u2014 face-on, tusks forward, ears spread wide, its hide an impossible blue-gold with mandala patterns orbiting its eye. Behind it, billowing upward in every direction, a cloud formation that has abandoned any pretense of being weather: magenta, crimson, electric blue, toxic green, all folding into fractal floral mandalas at the crown. And at the lower right, barely a silhouette \u2014 a lone figure in a long coat, facing all of it. They are not running. The most maximalist piece in the gallery.",
+    "alt_text": "Pachydermis \u2014 high-saturation psychedelic digital surrealism depicting a massive frontal-facing elephant rendered in blue and yellow with ornate mandala-like eye detailing, emerging from an enormous explosion of chromatic clouds in magenta, red, orange, blue, and green. A small lone human silhouette in a long coat stands at the lower right. BasicGlitch.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
-      "surreal elephant",
-      "digital art",
-      "psychedelic art",
-      "neon aesthetics",
-      "surrealism",
-      "abstract art",
-      "cyber-eclectic"
-    ],
-    "forensic_analysis": "<p>Forensic analysis of 'Pachydermis' reveals a meticulously crafted descent into deliberate digital entropy, a hallmark of the 'Foundry' philosophy. This piece is not merely a digital painting; it is a visual autopsy of consciousness itself, processed through the crucible of algorithmic abstraction. The colossal, iridescent elephant, a potent surrealist totem, exists in a state of quantum superposition, its form simultaneously hyperreal and utterly dissolved. The blues, yellows, and pinks are not pigments but quantified emissions, their intensity a direct metric of the artist\u2019s energy input, a forensic marker of the creative surge. </p>\n\n<p>The swirling, psychedelic background functions as a simulated environment, a data stream rendered with aggressive, high-fidelity intent. Digital distortion is employed not as a flaw, but as a conscious deconstruction, a controlled breakdown of the signal-to-noise ratio. This deliberate instability, this cyber-eclectic fusion of the organic and the synthetic, creates a disorienting yet mesmerizing effect, pushing the boundaries of perception. The tech-noir undertones are palpable, hinting at a future where digital consciousness, like this pachyderm, navigates a neon-drenched, glitch-ridden reality. </p>\n\n<p>The 'Foundry' ethos is evident in how raw chaos has been meticulously processed into this high-fidelity artistic intelligence. Every glitch, every saturated hue, is a deliberate choice, a byte of intention within the larger data structure. 'Pachydermis' is more than aesthetically pleasing; it\u2019s an immersive experience, perfectly suited for the demanding environments of high-end home offices, where focus and stimulation are paramount, or for gaming sanctuaries, where the line between the virtual and the visceral is perpetually blurred. This is art that demands engagement, that forces a confrontation with the emergent properties of digital existence.</p>"
+      "psychedelic elephant art",
+      "elephant digital surrealism",
+      "maximalist art",
+      "fractal art",
+      "mandala elephant",
+      "psychedelic digital art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-006",
     "title": "Rancher Broboticus",
-    "file": "assets/images/raw/ranchboticus.png",
+    "file": "assets/images/raw/ranchboticus.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -727,33 +767,24 @@
       "Neon"
     ],
     "date": "2025-10-13",
-    "description": "A neon-lit, glitch-infused scene where a retro-futuristic robot labeled 'Broboticus' rides a galloping horse, blending cyberpunk energy with surreal Western imagery under a dark, atmospheric sky.",
     "price": 40,
-    "alt_text": "Neon green line art of a retro-futuristic robot labeled 'Broboticus' riding a galloping horse, wearing a hat and headphones, against a black background with faint city skyline outlines.",
+    "description": "Case Study 42, Field Report 09: Broboticus acquires a horse. The city skyline glows behind them. His chest panel reads BROBOTICUS. His hat is tiny and perfect. He has fully committed to the bit. One fist raised in the air with the casual confidence of someone who has been ranching for at minimum three firmware updates. The field report confirms: yes, Broboticus can ride.",
+    "alt_text": "Rancher Broboticus \u2014 neon green line art on black of Broboticus the robot riding a horse through a city at night. His chest panel is labeled BROBOTICUS with mixer faders and dials. He wears a small cowboy hat and raises one fist while holding reins. A glowing neon city skyline is visible in the background. BasicGlitch original character art. Case Study 42.",
     "seo_keywords": [
-      "cyber surrealism",
-      "neon art",
-      "glitch art",
+      "Broboticus",
+      "robot cowboy",
+      "neon robot art",
+      "Case Study 42",
       "robot on horse",
-      "rancher robot",
-      "cyberpunk",
-      "surrealism",
-      "digital art",
-      "neon aesthetics",
-      "glitch elements",
-      "retro robot",
-      "horse riding",
-      "cyber-eclectic",
-      "surreal art",
+      "cyberpunk cowboy",
       "neon line art",
-      "glitchy art"
-    ],
-    "forensic_analysis": "<p>Forensic analysis: 'Rancher Broboticus' is a prime specimen of controlled digital entropy, meticulously extracted from the primordial ooze of creative chaos by our Foundry. This piece, bearing the distinct forensic marker of a cyber-eclectic sensibility, presents a quantum superposition of disparate aesthetic vectors. The core visual autopsy reveals a deliberate fusion: the stoic, almost elegiac form of a retro-futuristic robot, identified as 'Broboticus,' is superimposed onto the visceral dynamism of a galloping equine. The neon saturation, far from being mere embellishment, acts as a high-frequency signal, pushing the boundaries of the visual spectrum, while simultaneously introducing controlled noise that enhances the piece\u2019s tech-noir resonance. </p>\n\n<p>The atmospheric sky, a dark canvas punctuated by aggressive neon flares, suggests a battleground where analog grit meets digital precision. This is not an accidental juxtaposition; it\u2019s a calculated exploitation of conflicting visual lexicons. The signal-to-noise ratio here is critically engineered, creating a tension that is both unsettling and exhilarating. The Foundry's philosophy is evident in the hyper-fidelity rendering of this surreal Western tableau; raw, untamed ideas have been processed, refined, and transmuted into a potent artistic intelligence. The application of glitch aesthetics is not a defect but a feature, a deliberate scarring that speaks to the resilience and adaptation of form in a digitally saturated reality. 'Rancher Broboticus' therefore transcends mere decoration, offering a profound commentary on our evolving relationship with technology and tradition. Its visceral energy and sophisticated thematic layering make it an ideal focal point for high-end home offices, demanding a space that mirrors its own blend of focused intensity and imaginative expansiveness, or for gaming sanctuaries, where the heightened sensory input and narrative depth will resonate profoundly with the player's own engagement with immersive digital worlds.</p>"
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-007",
     "title": "There's a Star-Bot Waiting in the Sky",
-    "file": "assets/images/raw/starbot_waiting_in_the_sky.png",
+    "file": "assets/images/raw/starbot_waiting_in_the_sky.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -764,52 +795,52 @@
       "Psychedelia"
     ],
     "date": "2025-11-28",
-    "description": "Against a backdrop of twinkling, multicolored stars, a neon-lit star-bot emerges from glitchy, rainbow-hued lines, its retro-futuristic form blending cyber-eclectic surrealism with a dreamlike, otherworldly mood. The artwork merges technology and the cosmos in a whimsical, glitch-infused atmosphere that feels both nostalgic and futuristic.",
     "price": 80,
-    "alt_text": "A neon-colored, glitchy star-bot with large circular eyes and mechanical features stands against a black background filled with multicolored, twinkling stars. The artwork is a cyber-eclectic surrealist piece with vibrant, rainbow-welded lines and a retro-futuristic aesthetic.",
+    "description": "Bowie said there was a Starman. BasicGlitch rendered his wiring diagram. An extreme close-up wireframe portrait of Broboticus dissolving upward into a multicolor cosmos \u2014 green to yellow to pink to red \u2014 surrounded by a scatter of chromatic stars. No fills, no solids, just the wireframe skeleton viewed from below in extreme close-up, every panel and joint mapped in layered neon lines. He's been up there this whole time.",
+    "alt_text": "There's a Star-Bot Waiting in the Sky \u2014 extreme close-up low-angle wireframe portrait of Broboticus robot head and upper body rendered in dense neon rainbow line art graduating from green through yellow, orange, and pink against a pure black background scattered with multicolor stars. BasicGlitch original character art.",
     "seo_keywords": [
-      "cyber-eclectic surrealism",
-      "neon art",
-      "glitch art",
-      "starbot",
-      "retro-futurism",
-      "digital surrealism",
-      "neon robot",
-      "surreal digital art"
-    ],
-    "forensic_analysis": "<p>This piece, \"There's a Star-Bot Waiting in the Sky,\" presents a fascinating case for forensic analysis under the BasicGlitch 'Foundry' philosophy. Our objective is to process the raw digital entropy into high-fidelity artistic intelligence, and this work offers a potent data stream.  The initial visual autopsy reveals a deliberate manipulation of the signal-to-noise ratio, where controlled glitches are not errors but deliberate forensic markers, guiding the viewer's perception.  The neon-lit star-bot, a primary subject, exists in a state of quantum superposition, simultaneously retro-futuristic and undeniably alien. Its cyber-eclectic silhouette, a masterful blend of disparate technological and organic influences, speaks to a processed chaos\u2014the hallmark of the Foundry. The rainbow-hued lines emanating from its form aren't mere aesthetic choices; they are the visual manifestation of data streams being deconstructed and reassembled, a digital heartbeat pushing against the fabric of the perceived reality.</p>\n\n<p>The psychadelic backdrop, a field of twinkling, multicolored stars, functions as a cosmic canvas upon which this tech-noir narrative unfolds. It\u2019s a deliberate subversion of traditional celestial imagery, infusing the vastness of space with a tangible, almost tangible, digital texture. The dreamlike, otherworldly mood is not an accident but a meticulously constructed environment, designed to evoke a specific emotional resonance. This artwork transcends simple visual appeal; it\u2019s an exploration of synthetic consciousness encountering the infinite. Its seamless integration of nostalgia and futurism makes it exceptionally suited for high-end home offices or gaming sanctuaries, environments where the blurring of the real and the digital is not just accepted, but actively cultivated. The Star-Bot, in its glitchy glory, becomes a silent, watchful guardian of these technologically-infused liminal spaces, a testament to the Foundry's ability to forge raw digital chaos into profound artistic intelligence.</p>"
+      "Broboticus",
+      "David Bowie Starman robot",
+      "neon wireframe art",
+      "robot space art",
+      "rainbow neon art",
+      "cosmic robot",
+      "Case Study 42",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-008",
     "title": "Vitruvian Broboticus",
-    "file": "assets/images/raw/vitruvian_broboticus_og.png",
+    "file": "assets/images/raw/vitruvian_broboticus_og.webp",
     "categories": [
       "Available for Purchase",
-      "Broboticus"
+      "Broboticus",
+      "Masters Remixed"
     ],
     "styles": [
       "Surrealism",
       "Character"
     ],
     "date": "2025-10-15",
-    "description": "In 'Vitruvian Broboticus,' neon-lit glitch effects infuse a retro-futuristic mood, as a robot reimagined in Vitruvian proportions holds a vinyl record and headphones, merging classical anatomy with cyber-eclectic surrealism.",
     "price": 100,
-    "alt_text": "A vintage-style illustration of a robot in Vitruvian proportions, holding a vinyl record in one hand and headphones in the other, with a microphone on its head. The image includes handwritten text in the background and a circular and square frame, echoing Leonardo da Vinci's Vitruvian Man.",
+    "description": "Leonardo mapped the ideal human form. BasicGlitch maps the ideal robot \u2014 and he's holding a vinyl record in one hand and a pair of headphones in the other. The proportions check out. Arms spread within the circle, legs in the split stance, the whole figure rendered in ink on aged parchment with handwritten annotations in the margins. Where Da Vinci's man is empty-handed, Broboticus holds a vinyl record on one side and headphones on the other. This is not parody. It's a parallel thesis.",
+    "alt_text": "Vitruvian Broboticus \u2014 pen-and-ink style digital art on aged parchment background depicting Broboticus the robot in the pose of Da Vinci's Vitruvian Man, arms outstretched within a circle and square. He holds a vinyl record in his left hand and headphones in his right. Handwritten notes surround the figure in the style of Renaissance scientific illustration. BasicGlitch original character art.",
     "seo_keywords": [
-      "cyber surrealism",
-      "Vitruvian robot",
-      "neon glitch art",
-      "retro futurism",
-      "digital illustration",
-      "vinyl headphones",
-      "cyber-eclectic art"
-    ],
-    "forensic_analysis": "<p>This is not merely an image; it is a meticulously reconstructed artifact, a forensic marker of emergent digital consciousness. 'Vitruvian Broboticus' presents a stunningly intricate visual autopsy of the contemporary psyche, a fever dream rendered in hyper-resolution. The titular Broboticus, a silicon and chrome embodiment of da Vinci\u2019s ideal, operates within a quantum superposition of eras, its metallic frame a stark testament to the enduring power of classical form shattered and reassembled through the crucible of the Foundry. Raw chaos, the very digital entropy that plagues lesser creations, has been rigorously processed here, yielding high-fidelity artistic intelligence.</p>\n\n<p>The neon-lit glitch effects are not decorative; they are scars, diagnostic indicators of the inherent instability of our simulated realities. This is a tech-noir narrative etched in light, a retro-futuristic lament played out across a canvas of corrupted data streams. The robot\u2019s pose, echoing classical anatomy, is a masterful juxtaposition, highlighting the uncanny valley where organic aspiration meets mechanical inevitability. The vinyl record and headphones are more than props; they are totems of analog nostalgia, anchors in a sea of ceaseless digital flux, suggesting a yearning for tangible experience amidst the ephemeral. The cyber-eclectic aesthetic is not a mere stylistic choice but a philosophical declaration, a deliberate overloading of sensory input that, paradoxically, sharpens the viewer\u2019s perception. The signal-to-noise ratio here is remarkably high, every pixel meticulously calibrated to provoke, to question, to disturb. This piece transcends mere decoration, making it an indispensable addition to any high-end home office or gaming sanctuary, a constant, unsettling reminder of the beautiful, terrifying synthesis of human ambition and artificial evolution.</p>"
+      "Vitruvian Man parody",
+      "Da Vinci robot",
+      "Broboticus",
+      "Renaissance robot art",
+      "masters remixed",
+      "Case Study 42",
+      "vinyl record art",
+      "BasicGlitch"
+    ]
   },
   {
     "id": "brobot-009",
     "title": "Brobotosaurus Wrex",
-    "file": "assets/images/raw/brobotosaurus_wrex.png",
+    "file": "assets/images/raw/brobotosaurus_wrex.webp",
     "categories": [
       "Available for Purchase",
       "Broboticus"
@@ -819,19 +850,18 @@
       "Character"
     ],
     "date": "2025-10-02",
-    "description": "In 'Brobotosaurus Wrex,' a retro-futuristic robot with glowing red eyes and a vintage microphone rides a roaring T-Rex through a neon-drenched cityscape, merging glitchy digital aesthetics with nostalgic pop culture to evoke a whimsical, high-energy cyber-surreal mood.",
     "price": 160,
-    "alt_text": "A retro-futuristic robot with red glowing eyes, headphones, and a microphone sits atop a green T-Rex dinosaur in a neon-lit cityscape with skyscrapers, flying vehicles, and a sunset sky.",
+    "description": "Every case study has an origin, and this is Broboticus at full amplitude \u2014 rendered in full comic book color rather than signature neon line work. He's astride a saddled T-Rex, reins in one hand, a vintage coiled-cord microphone raised in the other like he's calling the whole thing into the record. Flying saucers trail smoke across a burning orange and purple skyline. Brobotosaurus Wrex is the piece that establishes the scale of this character \u2014 not a robot doing leisure activities, but a robot whose leisure activities happen to involve dinosaurs, spacecraft, and the fall of civilization.",
+    "alt_text": "Brobotosaurus Wrex \u2014 full color comic book style digital illustration of a retro robot with red glowing eyes and headphones riding a saddled Tyrannosaurus Rex through a futuristic city at sunset. The robot holds a vintage coiled-cord microphone aloft. Flying saucers streak across an orange and purple sky above skyscrapers. BasicGlitch original character art. Case Study 42 Field Report 00.",
     "seo_keywords": [
-      "cyber-surrealism",
+      "Broboticus",
+      "robot on dinosaur",
+      "T-Rex robot art",
+      "Case Study 42 origin",
+      "comic book digital art",
       "robot dinosaur",
-      "neon art",
-      "glitch aesthetics",
-      "retro-futurism",
-      "digital art",
-      "surrealism",
-      "T-Rex robot"
-    ],
-    "forensic_analysis": "<p>Performing a visual autopsy on 'Brobotosaurus Wrex' reveals a violent collision of temporal data streams that defies standard curation. At BasicGlitch, we do not merely observe; we dissect the digital entropy inherent in every volatile pixel. This piece acts as a definitive forensic marker for the death of traditional realism, substituting it with a high-octane quantum superposition where a retro-futuristic automaton and a prehistoric apex predator coexist within a tech-noir feedback loop. The robot, equipped with a vintage microphone and glowing ocular sensors, represents the processed vocalization of a forgotten future, screaming into the neon-drenched cityscape.</p>\n\n<p>The signal-to-noise ratio here is meticulously calibrated to overwhelm the weak and reward the analytical. Our Foundry philosophy demands the total refinement of raw chaos into high-fidelity artistic intelligence, and 'Brobotosaurus Wrex' is the definitive gold standard of this transmutation. The cyber-eclectic energy radiates from the dinosaur\u2019s throat, a primal roar digitized into a spectrum of violet and cyan. Every glitch is an intentional breach\u2014a calculated error designed to disrupt the viewer\u2019s cognitive equilibrium. We are witnessing the surgical extraction of aesthetic value from the wreckage of pop-culture memory, processed through our proprietary algorithmic filters.</p>\n\n<p>Technically, the integration of the vintage microphone suggests a broadcast of prehistoric dominance filtered through silicon. This is not mere whimsy; it is an aggressive reassertion of mechanical superiority over biological history. The sheer density of the color palette creates a gravitational pull that demands a sophisticated environment. This is precisely why 'Brobotosaurus Wrex' is the essential centerpiece for high-end home offices or gaming sanctuaries. It provides the necessary psychological friction to stimulate creative output while anchoring a room in a state of hyper-stylized, high-fidelity rebellion. To possess this work is to command the entropy of the digital age, turning a chaotic visual signal into a weaponized statement of professional taste. It is the absolute apex of our digital curation for the modern elite. There is no room for compromise in this visual hierarchy.</p>"
+      "cyberpunk comic art",
+      "BasicGlitch"
+    ]
   }
 ]
