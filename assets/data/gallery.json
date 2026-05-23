@@ -24,7 +24,9 @@
       "neon surrealism",
       "BasicGlitch"
     ],
-    "series": []
+    "series": [
+      "SANGRE DE CRISTOS SERIES"
+    ]
   },
   {
     "id": "art-20260226152957",
@@ -50,7 +52,9 @@
       "neon surrealism",
       "BasicGlitch"
     ],
-    "series": []
+    "series": [
+      "SANGRE DE CRISTOS SERIES"
+    ]
   },
   {
     "id": "art-20260226152936",
@@ -79,6 +83,7 @@
     ],
     "forensic_analysis": "Munch's figure screams because the universe is too much. Broboticus screams \u2014 or holds his head in the approximate posture of screaming, his speaker-grille mouth fixed in its usual grid \u2014 because the signal is overwhelming. The sky behind him swirls in the original's violent orange and blue, the fjord winds in the distance, the two background figures remain as indifferent as ever to someone else's crisis. What BasicGlitch adds: a vinyl record spinning in the chest cavity, analog gauges mid-reading, and two cyan tears running from the cooling-fan eyes. He is not having a breakdown. He is receiving too many frequencies simultaneously and has not yet found the right filter. The bridge has seen this before.",
     "series": [
+      "CASE STUDY 42 \u2014 BROBOTICUS",
       "MASTERS REMIXED"
     ]
   },
@@ -109,6 +114,7 @@
     ],
     "forensic_analysis": "The Warhol Marilyn series is about the mechanical reproduction of an icon \u2014 the same face, repeated, flattened, color-shifted until the person disappears into the image. BasicGlitch takes that logic one step further: replace the face with Broboticus in a pleated skirt throwing double rock horns, and alternate with panels of oversized multicolor lips that could belong to either of them. The six-panel grid runs across blue, yellow, lime green, lavender, purple, and red \u2014 Warhol's palette, Warhol's format, Warhol's argument about what fame does to a face. Except the face is a BROBOTICUS chest panel. The lips are whoever's lips you need them to be. The title is perfect.",
     "series": [
+      "CASE STUDY 42 \u2014 BROBOTICUS",
       "MASTERS REMIXED"
     ]
   },
@@ -655,6 +661,7 @@
     ],
     "forensic_analysis": "Where Iron Chef renders Chefboticus in neon green line art, Cubist Chef applies an entirely different visual philosophy \u2014 the robot's form is shattered into warm geometric facets of burnt orange, terracotta, and wood-brown, assembled in the manner of Analytical Cubism. His grin is intact. His grip on the rolling pin is firm. Behind him, the kitchen gives way to an enormous window, and through it: Manhattan. The Chrysler Building and Empire State Building are rendered in a deliberately flatter, more graphic style that creates a striking push-pull with the heavily fractured robot in the foreground. Two visual languages, one kitchen, one baker who is absolutely not letting the skyline distract him from the dough.",
     "series": [
+      "CASE STUDY 42 \u2014 BROBOTICUS",
       "MASTERS REMIXED"
     ]
   },
@@ -833,7 +840,10 @@
       "BasicGlitch"
     ],
     "forensic_analysis": "Scale is the argument here. The elephant fills two-thirds of the canvas \u2014 face-on, tusks forward, ears spread wide, its hide an impossible blue-gold with mandala patterns orbiting its eye like a third chakra awakening. Behind it, billowing upward in every direction, is a cloud formation that has abandoned any pretense of being weather and become something else entirely: magenta, crimson, electric blue, toxic green, all folding into fractal floral mandalas at the crown. And at the lower right, barely a silhouette \u2014 a lone figure in a long coat and wide-brimmed hat, holding what might be a bag, facing all of it. They are not running. This is the most maximalist, most saturated, most uncompromising piece in the gallery. Next to the quiet architecture of Literal Traphouse or the still water of Night-Fishing the Arkansas, it lands like a frequency shift. The full spectrum, all at once.",
-    "series": []
+    "series": [
+      "CYBER SAVANNA",
+      "PACHYDERMIS TRIPTYCH"
+    ]
   },
   {
     "id": "brobot-006",
@@ -1039,9 +1049,7 @@
     "date": "2026-02-26",
     "file": "assets/images/raw/sangre_de_cristos_midnightdawn.webp",
     "id": "art-sangre_de_cristos_midnightdawn",
-    "series": [
-      "SANGRE DE CRISTOS SERIES"
-    ]
+    "series": []
   },
   {
     "title": "Sangre De Cristos \u2014 Circuits",
@@ -1114,6 +1122,7 @@
     "file": "assets/images/raw/american-gothbotic2.webp",
     "id": "art-american-gothbotic2",
     "series": [
+      "CASE STUDY 42 \u2014 BROBOTICUS",
       "MASTERS REMIXED"
     ]
   },
