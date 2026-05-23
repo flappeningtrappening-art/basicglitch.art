@@ -94,7 +94,7 @@
 │ 119       <a href="" class="brand">BasicGlitch</a>                                                                                                         │
 │ 120       <nav class="nav">                                                                                                                                │
 │ 121         <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>                                    │
-│ 122 -       <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>                                      │
+│ 122 -       <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>                                      │
 │ 122         <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>                                 │
 │ 123         <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>                    │
 │ 124         <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>                          │
@@ -134,7 +134,7 @@
 │     center; justify-content: center; background: #000; border: 1px solid var(--border); position: relative; overflow: hidden;">                            │
 │ 187 -       <div id="forge-placeholder" style="color: #222; font-family: 'Orbitron'; font-size: 1.5rem; text-align: center; padding:                       │
 │     40px;">AWAITING_SIGNAL_INPUT</div>                                                                                                                     │
-│ 188 -       <img id="forge-result-img" src="" alt="Neural Forge Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px          │
+│ 188 -       <img id="forge-result-img" src="" alt=" Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px          │
 │     rgba(0,0,0,0.9);">                                                                                                                                     │
 │ 189 -     </div>                                                                                                                                           │
 │ 190 -                                                                                                                                                      │
@@ -148,23 +148,23 @@
 │ 163     <div class="container">                                                                                                                            │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ ✓  Shell grep -n "Neural Forge" basic-glitch-art/*.html [current working directory /home/blitz/monetization] (Searching for any remaining references to t… │
+│ ✓  Shell grep -n "" basic-glitch-art/*.html [current working directory /home/blitz/monetization] (Searching for any remaining references to t… │
 │                                                                                                                                                            │
-│ basic-glitch-art/about.html:49:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>             │
-│ basic-glitch-art/apparel.html:53:      <a class="nav-link" href="/forge.html"><img src="/assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>         │
-│ basic-glitch-art/commissions.html:49:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>       │
-│ basic-glitch-art/contact.html:47:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>           │
-│ basic-glitch-art/gallery.html:48:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>           │
-│ basic-glitch-art/portfolio.html:108:      <a class="nav-link" href="/forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>       │
+│ basic-glitch-art/about.html:49:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>             │
+│ basic-glitch-art/apparel.html:53:      <a class="nav-link" href="/forge.html"><img src="/assets/icons/grid.svg" alt="Forge Icon"> </a>         │
+│ basic-glitch-art/commissions.html:49:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>       │
+│ basic-glitch-art/contact.html:47:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>           │
+│ basic-glitch-art/gallery.html:48:      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>           │
+│ basic-glitch-art/portfolio.html:108:      <a class="nav-link" href="/forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>       │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ ✓  Shell find basic-glitch-art -maxdepth 1 -name "*.html" -exec sed -i '/forge.html/d' {} + [current working directory /home/blitz/monetization] (Executi… │
 │                                                                                                                                                            │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ ✓  Shell cd basic-glitch-art && git add . && git commit -m "Decommissioned Neural Forge: Removed page, homepage widget, and navigation links. [2026-02-13… │
+│ ✓  Shell cd basic-glitch-art && git add . && git commit -m "Decommissioned : Removed page, homepage widget, and navigation links. [2026-02-13… │
 │                                                                                                                                                            │
-│ [main d52eb65] Decommissioned Neural Forge: Removed page, homepage widget, and navigation links. [2026-02-13]                                              │
+│ [main d52eb65] Decommissioned : Removed page, homepage widget, and navigation links. [2026-02-13]                                              │
 │  8 files changed, 175 deletions(-)                                                                                                                         │
 │  delete mode 100644 forge.html                                                                                                                             │
 │ Enumerating objects: 17, done.                                                                                                                             │
@@ -199,7 +199,7 @@
        * Killed the local Production Server on Port 3400.
        * Removed the foundry_keepalive.sh script.
    2. UI/UX:
-       * Removed the "Neural Forge" widget from the Home Page.
+       * Removed the "" widget from the Home Page.
        * Purged all navigation links to the forge from every page on the site (about, apparel, commissions, etc.).
    3. Synchronization:
        * Committed and pushed all cleanup changes to GitHub. The live site on Cloudflare is now streamlined.
@@ -398,7 +398,7 @@
 │ Author: flappeningtrappening-art <flappeningtrappening@gmail.com>                                                                                          │
 │ Date:   Sat Feb 14 13:06:42 2026 -0700                                                                                                                     │
 │                                                                                                                                                            │
-│     Decommissioned Neural Forge: Removed page, homepage widget, and navigation links. [2026-02-13]                                                         │
+│     Decommissioned : Removed page, homepage widget, and navigation links. [2026-02-13]                                                         │
 │                                                                                                                                                            │
 │ diff --git a/index.html b/index.html                                                                                                                       │
 │ index 2166e63..37ccf78 100644                                                                                                                              │
@@ -408,7 +408,7 @@
 │      <a href="" class="brand">BasicGlitch</a>                                                                                                              │
 │      <nav class="nav">                                                                                                                                     │
 │        <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>                                         │
-│ -      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>                                           │
+│ -      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>                                           │
 │        <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>                                      │
 │        <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>                         │
 │        <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>                               │
@@ -448,7 +448,7 @@
 │ justify-content: center; background: #000; border: 1px solid var(--border); position: relative; overflow: hidden;">                                        │
 │ -      <div id="forge-placeholder" style="color: #222; font-family: 'Orbitron'; font-size: 1.5rem; text-align: center; padding:                            │
 │ 40px;">AWAITING_SIGNAL_INPUT</div>                                                                                                                         │
-│ -      <img id="forge-result-img" src="" alt="Neural Forge Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px               │
+│ -      <img id="forge-result-img" src="" alt=" Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px               │
 │ rgba(0,0,0,0.9);">                                                                                                                                         │
 │ -    </div>                                                                                                                                                │
 │ -                                                                                                                                                          │
@@ -485,7 +485,7 @@
 │ Author: flappeningtrappening-art <flappeningtrappening@gmail.com>                                                                                          │
 │ Date:   Fri Feb 13 20:03:20 2026 -0700                                                                                                                     │
 │                                                                                                                                                            │
-│     UI Update: Integrated Neural Forge V1 widget into homepage and switched to public Cloudflare API. [2026-02-13]                                         │
+│     UI Update: Integrated  V1 widget into homepage and switched to public Cloudflare API. [2026-02-13]                                         │
 │                                                                                                                                                            │
 │ diff --git a/index.html b/index.html                                                                                                                       │
 │ index bbf2912..9df5fd5 100644                                                                                                                              │
@@ -527,7 +527,7 @@
 │ justify-content: center; background: #000; border: 1px solid var(--border); position: relative; overflow: hidden;">                                        │
 │ +      <div id="forge-placeholder" style="color: #222; font-family: 'Orbitron'; font-size: 1.5rem; text-align: center; padding:                            │
 │ 40px;">AWAITING_SIGNAL_INPUT</div>                                                                                                                         │
-│ +      <img id="forge-result-img" src="" alt="Neural Forge Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px               │
+│ +      <img id="forge-result-img" src="" alt=" Result" style="max-width: 100%; height: auto; display: none; box-shadow: 0 0 40px               │
 │ rgba(0,0,0,0.9);">                                                                                                                                         │
 │ +    </div>                                                                                                                                                │
 │ +                                                                                                                                                          │
@@ -554,7 +554,7 @@
 │      <a href="" class="brand">BasicGlitch</a>                                                                                                              │
 │      <nav class="nav">                                                                                                                                     │
 │        <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>                                         │
-│ +      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> Neural Forge</a>                                           │
+│ +      <a class="nav-link" href="forge.html"><img src="assets/icons/grid.svg" alt="Forge Icon"> </a>                                           │
 │        <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>                                      │
 │        <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>                         │
 │        <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>                               │
@@ -951,9 +951,9 @@
 ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ ✓  Shell git -C basic-glitch-art log --oneline index.html [current working directory /home/blitz/monetization] (Viewing the commit history of index.html … │
 │                                                                                                                                                            │
-│ d52eb65 (HEAD -> main, origin/main, origin/HEAD) Decommissioned Neural Forge: Removed page, homepage widget, and navigation links. [2026-02-13]            │
+│ d52eb65 (HEAD -> main, origin/main, origin/HEAD) Decommissioned : Removed page, homepage widget, and navigation links. [2026-02-13]            │
 │ 5a6bd3e Cache Buster: Update app.js to v1.2 for new tunnel URL synchronization. [2026-02-13]                                                               │
-│ 6d43408 UI Update: Integrated Neural Forge V1 widget into homepage and switched to public Cloudflare API. [2026-02-13]                                     │
+│ 6d43408 UI Update: Integrated  V1 widget into homepage and switched to public Cloudflare API. [2026-02-13]                                     │
 │ cc19935 Production Shift: Full-spectrum automation and POD pipeline initialization. [2026-02-13]                                                           │
 │ 3e8f6a0 feat: implement exclusive wallpaper bundle with automated redirect and high-res assets                                                             │
 │ 55b4394 fix: Standardized all internal paths and reordered Broboticus grid                                                                                 │

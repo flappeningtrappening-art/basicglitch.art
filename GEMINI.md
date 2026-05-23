@@ -80,7 +80,7 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
     - **Documentation:** Authored a comprehensive `README.md` for the Krita toolkit detailing usage and effects.
         - **System Hardening:** Identified and resolved "silent crash" bugs caused by redundant `__init__.py` files in the root `pykrita` directory.
 ## 9. Full-Spectrum Automation (2026-02-13)
-- **Neural Forge (AI Integration):**
+- ** (AI Integration):**
     - Created `forge.html` featuring a terminal-style UI for user-driven image generation.
     - Integrated `visualForgeFlow` into the Genkit Server (Port 3400) using Gemini-Flash.
     - Added `runNeuralForge` to `app.js` for seamless frontend-to-backend communication.
@@ -91,7 +91,7 @@ A high-saturation, immersive digital portfolio for the artistic persona **BasicG
 - **POD Pipeline:**
     - Developed `pod_signup_assistant.py` to automate tedious account creation data entry.
     - Developed `pod_upload_assistant.py` for "Metadata Injection," allowing rapid listing across Redbubble, TeePublic, and Society6.
-- **Navigation:** Unified "Neural Forge" access across all 13 site pages.
+- **Navigation:** Unified "" access across all 13 site pages.
 
 ## 10. Museum & Outreach Pivot (2026-02-26)
 - **Museum-Grade Gallery:**
