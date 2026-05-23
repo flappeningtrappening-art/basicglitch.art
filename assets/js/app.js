@@ -135,23 +135,3 @@ async function fetchGallery(){
     return [];
   }
 }
-
-/* ---------------------------
-   Filters & Rendering
-   --------------------------- */
-let filters = { style: [] };
-
-function renderFilters(data){
-  const styles = unique(data.map(i=>i.styles||[]));
-
-  
-const styleWrap = document.getElementById('style-filters');
-const seriesFilter = document.createElement('select');
-seriesFilter.id = 'series-filter';
-seriesFilter.innerHTML = '<option value="All">All Series</option><option value="SANGRE DE CRISTOS SERIES">SANGRE DE CRISTOS SERIES</option><option value="CASE STUDY 42 — BROBOTICUS">CASE STUDY 42 — BROBOTICUS</option><option value="MASTERS REMIXED">MASTERS REMIXED</option><option value="PUP FICTION">PUP FICTION</option><option value="CYBER SAVANNA">CYBER SAVANNA</option><option value="PACHYDERMIS TRIPTYCH">PACHYDERMIS TRIPTYCH</option><option value="SPIRAL STUDIES">SPIRAL STUDIES</option><option value="SKULLASTIC ENDEAVOR">SKULLASTIC ENDEAVOR</option><option value="MYCOLOGY SERIES">MYCOLOGY SERIES</option><option value="GAIA DIPTYCH">GAIA DIPTYCH</option><option value="HAND-DRAWN INK">HAND-DRAWN INK</option><option value="PERSONAL / AUTOBIOGRAPHICAL">PERSONAL / AUTOBIOGRAPHICAL</option>';
-styleWrap.appendChild(seriesFilter);
-
-seriesFilter.addEventListener('change', (e) => {
-    filters.series = e.target.value === 'All' ? [] : [e.target.value];
-    renderGallery();
-});
