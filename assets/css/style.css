@@ -859,7 +859,7 @@ img {
 /* NANO BANANA INTEGRATION */
 .bg-tech-noir {
   background-color: #000;
-  background-image: url('../images/patterns/tech_noir_seamless.png');
+  background-image: url('../images/patterns/tech_noir_seamless.webp');
   background-repeat: repeat;
   background-size: 512px;
   background-blend-mode: color-dodge;
@@ -873,7 +873,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../images/raw/pup-fiction-scene1.png') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../images/raw/pup-fiction-scene1.webp') no-repeat center center/cover;
   position: relative;
   border-bottom: 2px solid var(--neon-blu);
   text-align: center;

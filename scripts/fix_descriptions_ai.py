@@ -14,17 +14,24 @@ model = "glm-4.6v-flash"
 
 GALLERY_FILE = "/home/blitz/monetization/basic-glitch-art/assets/data/gallery.json"
 
-async def generate_description(title, analysis):
+async def generate_description(item):
+    title = item['title']
+    styles = ", ".join(item.get('styles', []))
+    alt_text = item.get('alt_text', 'N/A')
+    
     prompt = f"""
-    You are the Forensic Critic for BasicGlitch art.
-    Based on the following Forensic Analysis for the piece "{title}", write a concise, compelling one-paragraph description (2-3 sentences) for the art gallery.
+    You are a professional art curator for the 'BasicGlitch' gallery.
+    Based on the following visual details (Alt Text) for the piece "{title}", write a concise, compelling one-paragraph description (2-3 sentences).
     
-    The tone should be 'Cyber-Eclectic' and 'Tech-Noir'. Use high-impact, professional, and slightly aggressive artistic terminology.
+    Title: {title}
+    Styles: {styles}
+    Literal Visual Content: {alt_text}
     
-    Forensic Analysis:
-    {analysis}
-    
-    Output ONLY the one-paragraph description.
+    Requirements:
+    1. Ground the description in the actual subjects described in the Alt Text.
+    2. Tone: Professional and artistically descriptive. Do not use filler buzzwords like 'digital entropy' unless they are central to the piece.
+    3. VARIETY: Each description should reflect the specific piece's unique theme (e.g., character design, landscape, or cinematic parody).
+    4. Output ONLY the one-paragraph description.
     """
     
     try:
@@ -48,18 +55,13 @@ async def main():
     
     updated = False
     for item in data:
-        desc = item.get('description', '')
-        # Check if it has a placeholder description
-        if "New forensic entry" in desc or "Neon Surrealism Piece" in desc:
-            analysis = item.get('forensic_analysis')
-            context = analysis if analysis else f"A high-impact digital surrealist piece titled {item['title']} in the style of {', '.join(item.get('styles', []))}."
-            
-            print(f"Generating real description for: {item['title']}...")
-            new_desc = await generate_description(item['title'], context)
-            if new_desc:
-                item['description'] = new_desc
-                updated = True
-                print(f"DONE: {new_desc[:50]}...")
+        # Update all items to replace the old 'Taco Bell' style descriptions
+        print(f"Generating unique description for: {item['title']}...")
+        new_desc = await generate_description(item)
+        if new_desc:
+            item['description'] = new_desc
+            updated = True
+            print(f"DONE: {new_desc[:50]}...")
     
     if updated:
         with open(GALLERY_FILE, 'w') as f:
