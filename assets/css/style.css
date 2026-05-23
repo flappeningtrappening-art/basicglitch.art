@@ -997,3 +997,10 @@ img {
   border-color: var(--muted);
   color: var(--muted);
 }
+/* Fix for commission nav alignment */
+.commission-tier-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
