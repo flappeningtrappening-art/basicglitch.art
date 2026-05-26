@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- In your HTML <head> section -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Main fonts consolidated -->
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#050505">
 <meta name="robots" content="index, follow">
-
-<!-- Preload Hero Assets -->
 <link rel="preload" href="assets/images/raw/guitarbot_og.webp" as="image">
-
-<!-- Primary SEO -->
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/">
 <title>BasicGlitch | Cyber-Eclectic Digital Surrealism Art</title>
 <meta name="description" content="Handcrafted digital visions by BasicGlitch. Specializing in Neon Surrealism, Cyberpunk Character Design, Geometric Abstraction, and Tech-Noir Landscapes.">
 <meta name="keywords" content="psychedelic art, surrealism, cyberpunk character design, tech-noir, geometric art, digital art commissions, abstract art, BasicGlitch">
 <meta name="author" content="BasicGlitch">
-
-<!-- Social Media / Open Graph (Discord, Facebook, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/">
 <meta property="og:title" content="BasicGlitch | Cyber-Eclectic Digital Surrealism Art">
 <meta property="og:description" content="Handcrafted digital chaos. Specializing in Psychedelic Surrealism, Cyberpunk Characters, and Tech-Noir Landscapes.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://basicglitch.art/">
 <meta name="twitter:title" content="BasicGlitch | Cyber-Eclectic Digital Surrealism Art">
 <meta name="twitter:description" content="Handcrafted digital chaos. Exploring Psychedelic, Surreal, and Tech-Noir visions.">
 <meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Stylesheet -->
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="./assets/js/app.js" defer></script>
+<script src="./assets/js/dynamic-effects.js" defer></script>
+<script src="./assets/js/robot.js" defer></script>
 
-<!-- JavaScript -->
-<script src="./assets/js/app.js?v=1.3" defer></script>
-<script src="./assets/js/dynamic-effects.js?v=1.1" defer></script>
-<script src="./assets/js/robot.js?v=1.1" defer></script>
-
-<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,281 +38,502 @@
   "description": "Digital artist specializing in Psychedelic Surrealism, Cyberpunk Character Design, and Tech-Noir Landscapes. Available for commissions.",
   "url": "https://basicglitch.art",
   "jobTitle": "Digital Artist",
-  "image": "https://basicglitch.art/assets/images/about/artist_broboticus_avatar.webp",
+  "image": "https://basicglitch.art/assets/images/raw/artist_broboticus_og.webp",
   "areaServed": "Worldwide",
-  "knowsAbout": ["Psychedelic Art", "Digital Surrealism", "Geometric Abstraction", "Cyberpunk Aesthetics", "Tech-Noir", "Character Design"],
   "sameAs": [
     "https://www.instagram.com/basic.glitch",
     "https://github.com/flappeningtrappening-art"
-  ],
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://basicglitch.art"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Digital Art Commissions",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "NANO - Digital Icon/Profile"
-        },
-        "price": "50.00",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "BINARY - Full Character Design"
-        },
-        "price": "300.00",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "QUANTUM - Fine Art Scene"
-        },
-        "price": "550.00",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "SINGULARITY - 1-of-1 Masterpiece"
-        },
-        "price": "1200.00",
-        "priceCurrency": "USD"
-      }
-    ]
-  }
+  ]
 }
 </script>
+
+<style>
+/* ── INDEX-ONLY OVERRIDES ── */
+
+/* HERO TITLE — fix kerning and gradient wash */
+.hero .title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3.2rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0 0 16px;
+  color: transparent !important;
+  background: linear-gradient(135deg,
+    var(--neon) 0%,
+    var(--neon-pur) 45%,
+    var(--neon-mag) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+  /* Prevent gradient from washing out thin strokes */
+  filter: drop-shadow(0 0 30px rgba(0,255,247,0.2));
+}
+
+/* HERO SUBTITLE — smaller, cleaner, monospace label not a second headline */
+.hero .subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin: 0 auto 36px;
+  max-width: 700px;
+  color: var(--muted) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  opacity: 0.85;
+}
+
+/* HERO — taller so it fills viewport properly */
+.hero {
+  min-height: 92vh;
+}
+
+/* HERO INNER — push content down from top, give Guitarbot room */
+.hero-inner {
+  padding-bottom: 80px;
+}
+
+/* ARCHIVE SECTION — tighter, more intentional */
+.archive-section {
+  position: relative;
+  padding: 80px 20px;
+  background: #000;
+  overflow: hidden;
+}
+
+.archive-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,255,247,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,247,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMoveDownRight 40s linear infinite;
+  pointer-events: none;
+}
+
+/* ARCHIVE CARDS — consistent aspect ratio, proper class-based styling */
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(10,10,15,0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.archive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.archive-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.archive-card:hover .archive-card-img {
+  transform: scale(1.04);
+}
+
+.archive-card-body {
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.archive-card-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.archive-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.archive-card-desc {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Card accent colors */
+.archive-card--grn { border-color: rgba(0,255,62,0.2); }
+.archive-card--grn:hover { border-color: var(--neon-2); box-shadow: 0 12px 40px rgba(0,255,62,0.1); }
+.archive-card--grn .archive-card-title { color: var(--neon-2); }
+
+.archive-card--mag { border-color: rgba(255,28,207,0.2); }
+.archive-card--mag:hover { border-color: var(--neon-mag); box-shadow: 0 12px 40px rgba(255,28,207,0.1); }
+.archive-card--mag .archive-card-title { color: var(--neon-mag); }
+
+.archive-card--cyn { border-color: rgba(0,255,247,0.2); }
+.archive-card--cyn:hover { border-color: var(--neon); box-shadow: 0 12px 40px rgba(0,255,247,0.1); }
+.archive-card--cyn .archive-card-title { color: var(--neon); }
+
+.archive-card--pur { border-color: rgba(199,36,255,0.2); }
+.archive-card--pur:hover { border-color: var(--neon-pur); box-shadow: 0 12px 40px rgba(199,36,255,0.1); }
+.archive-card--pur .archive-card-title { color: var(--neon-pur); }
+
+.archive-card--org { border-color: rgba(255,95,31,0.2); }
+.archive-card--org:hover { border-color: var(--neon-org); box-shadow: 0 12px 40px rgba(255,95,31,0.1); }
+.archive-card--org .archive-card-title { color: var(--neon-org); }
+
+.archive-card--blu { border-color: rgba(10,122,255,0.2); }
+.archive-card--blu:hover { border-color: var(--neon-blu); box-shadow: 0 12px 40px rgba(10,122,255,0.1); }
+.archive-card--blu .archive-card-title { color: var(--neon-blu); }
+
+/* INSTAGRAM SECTION */
+.insta-section {
+  padding: 80px 20px;
+  background: #020202;
+  position: relative;
+}
+
+/* EMAIL SIGNUP — at the bottom where it belongs */
+.email-signup-section {
+  padding: 80px 20px;
+  background: #000;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.email-signup-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(0,255,62,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.email-form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-input {
+  flex: 1;
+  min-width: 260px;
+  padding: 13px 16px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,255,62,0.3);
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.email-input:focus {
+  border-color: var(--neon-2);
+  box-shadow: 0 0 12px rgba(0,255,62,0.2);
+}
+
+.email-input::placeholder {
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,247,0.15), transparent);
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner container">
     <a href="/" class="brand">BasicGlitch</a>
     <nav class="nav">
-      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
-      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
-      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
-      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt="About Icon"> About</a>
-      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt=""> Gallery</a>
+      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt=""> Portfolio</a>
+      <a class="nav-link" href="broboticus.html"><img src="assets/icons/about.svg" alt=""> Broboticus</a>
+      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt=""> Commissions</a>
+      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt=""> Apparel</a>
+      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt=""> About</a>
+      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt=""> Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO SECTION -->
-
 <main>
-<!-- EMAIL SIGNUP -->
-<section class="email-signup neon-grid-section bg-tech-noir" id="signup" style="padding: 60px 20px; text-align: center;">
-  <div class="container">
-    <div class="cyber-header">
-       <h2 class="cyber-title"><span class="cyber-text cyber-text-grn" data-text="GET THE ASSET BUNDLE">GET THE ASSET BUNDLE</span></h2>
-       <p class="cyber-subtitle">EXCLUSIVE 4K WALLPAPERS AND PROJECT UPDATES. HIGH-SIGNAL ART, NO FLUFF.</p>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <!-- Guitarbot guardian -->
+    <div class="guardian-container" style="position:absolute;bottom:0;right:2%;z-index:1;opacity:0.7;transition:all 0.6s cubic-bezier(0.16,1,0.3,1);">
+      <img id="guardian-guitarbot" class="section-guardian"
+        src="assets/images/raw/guitarbot_og.webp"
+        alt="Guitarbot — Broboticus playing bass, cyberpunk robot character by BasicGlitch"
+        data-robot-id="guitarbot"
+        style="height:75vh;width:auto;cursor:pointer;transform-origin:bottom center;">
     </div>
-    <form id="signup-form" action="https://formspree.io/f/mbddjdyg" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-       <input type="email" name="email" placeholder="EMAIL_ADDRESS" required style="flex: 1; padding: 12px; background: rgba(0,0,0,0.5); border: 1px solid var(--neon-2); color: white; font-family: 'Share Tech Mono'; min-width: 250px;">
-       <button type="submit" class="btn-neon" style="border-color: var(--neon-2); color: var(--neon-2);">GET_ACCESS</button>
-    </form>
-    <p id="signup-status" style="margin-top: 15px; font-family: 'Share Tech Mono'; height: 20px;"></p>
-  </div>
-</section>
-<section class="hero" id="hero">
 
-  <div class="hero-bg"></div>
-
-  <div class="hero-overlay"></div>
-
-  <!-- Hero Section Guardian -->
-  <div class="guardian-container" style="position: absolute; bottom: 0; right: 2%; z-index: 1; opacity: 0.7; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
-    <img id="guardian-guitarbot" class="section-guardian" src="assets/images/raw/guitarbot_og.webp" alt="Guitarbot - Cyberpunk robot character digital art by BasicGlitch" data-robot-id="guitarbot" style="height: 75vh; width: auto; cursor: pointer; transform-origin: bottom center;">
-  </div>
-
-  <div class="hero-inner container">
-
-    <h1 class="title">BasicGlitch | Cyber-Eclectic Digital Surrealism</h1>
-
-    <p class="subtitle">Digital Surrealism, Tech-Noir Landscapes, and Psychedelic Character Design.</p>
-
-    <div class="cta-row">
-
+    <div class="hero-inner container">
+      <h1 class="title">BasicGlitch</h1>
+      <p class="subtitle">Cyber-Eclectic Digital Surrealism &nbsp;·&nbsp; Tech-Noir &nbsp;·&nbsp; Neon Character Design</p>
+      <div class="cta-row">
         <a href="gallery.html" class="btn-neon">ENTER THE VOID</a>
-
+        <a href="commissions.html" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);box-shadow:0 0 10px rgba(0,255,62,0.2);margin-left:12px;">COMMISSION A PIECE</a>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <div class="section-divider"></div>
 
-</section>
+  <!-- ── THE ARCHIVE ── -->
+  <section class="archive-section" id="archive">
+    <div class="container">
+      <div class="cyber-header">
+        <h2 class="cyber-title">
+          <span class="cyber-text" data-text="THE_ARCHIVE">THE_ARCHIVE</span>
+        </h2>
+        <p class="cyber-subtitle">NINE SERIES. ONE UNIVERSE. ZERO APOLOGIES.</p>
+      </div>
 
-<!-- PORTFOLIO PREVIEW -->
-<section class="section neon-grid-section" id="portfolio-preview">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text" data-text="THE_ARCHIVE">THE_ARCHIVE</span>
-      </h2>
-      <p class="cyber-subtitle">DIGITAL SURREALISM & TECH-NOIR</p>
-    </div>
+      <div class="archive-grid">
 
-    <div class="grid-3">
-      <!-- Broboticus -->
-      <a href="portfolio.html" class="case-card neon-3d-card" style="text-decoration: none;">
-        <img src="assets/images/raw/artist_broboticus_og.webp" alt="Case Study 42: Broboticus" style="width: 100%; object-fit: cover; border-bottom: 1px solid var(--border);">
-        <div style="padding: 15px;">
-          <h3 style="color: var(--neon); font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 5px;">CASE STUDY 42: BROBOTICUS</h3>
-          <p style="color: var(--muted); font-size: 0.85rem;">Robot Leisure & Human Society.</p>
-        </div>
-      </a>
-
-      <!-- Environmental -->
-      <a href="portfolio.html" class="case-card neon-3d-card" style="text-decoration: none;">
-        <img src="assets/images/raw/aesthetic_sangre_de_cristo.webp" alt="Environmental Horizons" style="width: 100%; object-fit: cover; border-bottom: 1px solid var(--border);">
-        <div style="padding: 15px;">
-          <h3 style="color: var(--neon-mag); font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 5px;">ENVIRONMENTAL HORIZONS</h3>
-          <p style="color: var(--muted); font-size: 0.85rem;">Atmospheric tech-noir landscapes.</p>
-        </div>
-      </a>
-
-      <!-- Pup Fiction -->
-      <a href="portfolio.html" class="case-card neon-3d-card" style="text-decoration: none;">
-        <img src="assets/images/raw/pup-fiction-scene1.webp" alt="Pup Fiction" style="width: 100%; object-fit: cover; border-bottom: 1px solid var(--border);">
-        <div style="padding: 15px;">
-          <h3 style="color: var(--neon-blu); font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 5px;">PUP FICTION</h3>
-          <p style="color: var(--muted); font-size: 0.85rem;">Cinematic canine parodies.</p>
-        </div>
-      </a>
-    </div>
-
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="portfolio.html" class="btn-neon">EXPLORE THE FULL ARCHIVE</a>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM SECTION -->
-<section class="section neon-grid-section" id="instagram">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text cyber-text-mag" data-text="INSTAGRAM FEED">INSTAGRAM FEED</span>
-      </h2>
-      <p class="cyber-subtitle">Follow @basic.glitch for incoming transmissions</p>
-    </div>
-    
-    <div class="instagram-row">
-      <div class="instagram-card neon-3d-card" style="padding: 0; overflow: hidden; border: 2px solid var(--neon-mag); width: 100%; max-width: 800px; margin: 0 auto;">
-        <a href="https://www.instagram.com/basic.glitch" target="_blank" style="display: block; position: relative;">
-          <div id="insta-feed-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--bg);">
-            <!-- Random images will be injected here -->
+        <a href="broboticus.html" class="archive-card archive-card--grn">
+          <img src="assets/images/raw/vitruvian_broboticus_og.webp"
+               alt="Vitruvian Broboticus — Case Study 42 robot character by BasicGlitch"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">Case Study 42</span>
+            <h3 class="archive-card-title">Broboticus</h3>
+            <p class="archive-card-desc">A robot acclimating to human society, one leisure activity at a time. 12+ field reports and counting.</p>
           </div>
-          <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
-            <span class="btn-neon">VIEW ON INSTAGRAM</span>
+        </a>
+
+        <a href="gallery.html" class="archive-card archive-card--cyn">
+          <img src="assets/images/raw/aesthetic_sangre_de_cristo.webp"
+               alt="Sangre De Cristos Neon — Colorado mountain range circuit board landscape"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">9 Variants</span>
+            <h3 class="archive-card-title">Sangre De Cristos</h3>
+            <p class="archive-card-desc">The same Colorado mountain range, nine different emotional frequencies. From neon green on black to blazing amber.</p>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="archive-card archive-card--org">
+          <img src="assets/images/raw/pup-fiction-scene1.webp"
+               alt="Pup Fiction Crash — Pulp Fiction diner scene with dogs by BasicGlitch"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">Series in Progress</span>
+            <h3 class="archive-card-title">Pup Fiction</h3>
+            <p class="archive-card-desc">Iconic cinema recast entirely in fur, attitude, and moral ambiguity. The diner goes sideways.</p>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="archive-card archive-card--mag">
+          <img src="assets/images/raw/pachydermis.webp"
+               alt="Pachydermis — psychedelic elephant surrealism by BasicGlitch"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">Cyber Savanna</span>
+            <h3 class="archive-card-title">Savannahmals</h3>
+            <p class="archive-card-desc">African wildlife rendered in cyberpunk and glitch aesthetics. Lion, elephant, giraffe, cheetah, waterbuck.</p>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="archive-card archive-card--pur">
+          <img src="assets/images/raw/spiral_geometry.webp"
+               alt="Spiral Geometry — hand-drawn mandala by BasicGlitch"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">Hand-Drawn + Digital</span>
+            <h3 class="archive-card-title">Spiral Studies</h3>
+            <p class="archive-card-desc">One hand-drawn mandala. Four color treatments. The same geometry in fire, acid, monochrome, and dusk.</p>
+          </div>
+        </a>
+
+        <a href="gallery.html" class="archive-card archive-card--blu">
+          <img src="assets/images/raw/the_screambot_20260226152936.webp"
+               alt="Screambot — Munch's The Scream with Broboticus robot by BasicGlitch"
+               class="archive-card-img">
+          <div class="archive-card-body">
+            <span class="archive-card-label">Masters Remixed</span>
+            <h3 class="archive-card-title">Art History Notified</h3>
+            <p class="archive-card-desc">Munch, Van Gogh, Warhol, Da Vinci, Grant Wood — all run through the Broboticus filter. The proportions check out.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a href="gallery.html" class="btn-neon">VIEW THE FULL GALLERY</a>
+        &nbsp;&nbsp;
+        <a href="portfolio.html" class="btn-neon" style="border-color:var(--neon-pur);color:var(--neon-pur);box-shadow:0 0 10px rgba(199,36,255,0.2);">BROWSE BY SERIES</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── INSTAGRAM ── -->
+  <section class="insta-section" id="instagram">
+    <div class="container">
+      <div class="cyber-header">
+        <h2 class="cyber-title">
+          <span class="cyber-text cyber-text-mag" data-text="FROM_THE_STUDIO">FROM_THE_STUDIO</span>
+        </h2>
+        <p class="cyber-subtitle">
+          RECENT WORK &nbsp;·&nbsp;
+          <a href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"
+             style="color:var(--neon-mag);text-decoration:underline;">
+            FOLLOW @basic.glitch
+          </a>
+        </p>
+      </div>
+
+      <div style="max-width:800px;margin:0 auto;border:1px solid rgba(255,28,207,0.2);border-radius:8px;overflow:hidden;">
+        <a href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"
+           style="display:block;position:relative;">
+          <div id="insta-feed-grid"
+               style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bg);">
+          </div>
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;"
+               onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+            <span class="btn-neon" style="border-color:var(--neon-mag);color:var(--neon-mag);">VIEW ON INSTAGRAM</span>
           </div>
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <div class="section-divider"></div>
+
+  <!-- ── EMAIL SIGNUP — bottom of page where it belongs ── -->
+  <section class="email-signup-section" id="signup">
+    <div class="container">
+      <div class="cyber-header">
+        <h2 class="cyber-title">
+          <span class="cyber-text cyber-text-grn" data-text="JOIN_THE_RESISTANCE">JOIN_THE_RESISTANCE</span>
+        </h2>
+        <p class="cyber-subtitle">EXCLUSIVE 4K WALLPAPERS · DROP ALERTS · HIGH-SIGNAL ART. ZERO NOISE.</p>
+      </div>
+      <form id="signup-form" action="https://formspree.io/f/mbddjdyg" method="POST" class="email-form">
+        <input type="email" name="email" placeholder="YOUR_EMAIL_ADDRESS" required class="email-input">
+        <button type="submit" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);white-space:nowrap;">
+          GET_ACCESS
+        </button>
+      </form>
+      <p id="signup-status" style="margin-top:16px;font-family:'Share Tech Mono',monospace;font-size:0.8rem;color:var(--neon-2);min-height:20px;"></p>
+    </div>
+  </section>
 
 </main>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const rawImages = [
-      'pup-fiction-scene1.webp',
-      'gaia_of_the_wasteland.webp',
-      'guitarbot_og.webp',
-      'spiral_geometry.webp',
-      'artist_broboticus_og.webp',
-      'starbot_waiting_in_the_sky.webp',
-      'a_mycological_phenomenon.webp',
-      'floral.webp',
-      'ranchboticus.webp',
-      'balletboticus.webp',
-      'vitruvian_broboticus_og.webp',
-      'brobotosaurus_wrex.webp',
-      'cubist_chef.webp',
-      'mycology_yourcology.webp',
-      'pachydermis.webp',
-      'karateboticus1.webp',
-      'chefboticus.webp',
-      'aesthetic_sangre_de_cristo.webp',
-      'literal_traphouse.webp',
-      'fishboticus.webp',
-      'aesthetic_laser_colorado.webp',
-      'dust_to_dust.webp',
-      'apex_rendering.webp',
-      'kinetic_latency.webp',
-      'monument_memory.webp',
-      'sentinel_stream.webp',
-      'skyline_reclaimation.webp'
-    ];
-
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
-    const grid = document.getElementById('insta-feed-grid');
-    if (grid) {
-      const selected = shuffle([...rawImages]).slice(0, 6);
-      grid.innerHTML = selected.map(img => `
-        <img src="assets/images/raw/${img}" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-      `).join('');
-    }
-  });
-</script>
-
-
-
+<!-- FOOTER -->
 <footer class="site-footer">
-
   <div class="footer-inner container">
-
-    <p>© 2026 BASICGLITCH | ALL RIGHTS RESERVED</p>
-
+    <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
     <div class="footer-links">
-
-      <a href="terms.html" class="footer-link">Terms & Licensing</a>
-
+      <a href="terms.html" class="footer-link">Terms &amp; Licensing</a>
       <a href="contact.html" class="footer-link">Contact</a>
-
       <a href="about.html" class="footer-link">About the Artist</a>
-
     </div>
-
   </div>
-
 </footer>
 
+<!-- Instagram feed — random from gallery -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const imgs = [
+    'pup-fiction-scene1.webp','gaia_of_the_wasteland.webp','guitarbot_og.webp',
+    'spiral_geometry.webp','artist_broboticus_og.webp','starbot_waiting_in_the_sky.webp',
+    'a_mycological_phenomenon.webp','floral.webp','ranchboticus.webp',
+    'balletboticus.webp','vitruvian_broboticus_og.webp','brobotosaurus_wrex.webp',
+    'cubist_chef.webp','mycology_yourcology.webp','pachydermis.webp',
+    'karateboticus1.webp','chefboticus.webp','aesthetic_sangre_de_cristo.webp',
+    'literal_traphouse.webp','fishboticus.webp','aesthetic_laser_colorado.webp',
+    'dust_to_dust.webp','apex_rendering.webp','monument_memory.webp',
+    'sentinel_stream.webp','skyline_reclaimation.webp'
+  ];
+  const shuffle = a => { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+  const grid = document.getElementById('insta-feed-grid');
+  if(grid){
+    shuffle([...imgs]).slice(0,6).forEach(img => {
+      const el = document.createElement('img');
+      el.src = `assets/images/raw/${img}`;
+      el.alt = 'BasicGlitch recent work';
+      el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
+      grid.appendChild(el);
+    });
+  }
+  // Signup form feedback
+  const form = document.getElementById('signup-form');
+  const status = document.getElementById('signup-status');
+  if(form && status){
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.textContent = 'TRANSMITTING...';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){ status.textContent = 'SIGNAL RECEIVED. YOU\'RE IN THE SYSTEM.'; form.reset(); }
+        else { status.textContent = 'TRANSMISSION ERROR. TRY AGAIN.'; }
+      } catch { status.textContent = 'CONNECTION FAILED. CHECK YOUR SIGNAL.'; }
+    });
+  }
+});
+</script>
 
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
-
-<!-- SVG Filters (Hidden) -->
 <svg class="svg-filter">
   <defs>
     <filter id="glitch-filter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
   </defs>
 </svg>
 </body>
-
 </html>
