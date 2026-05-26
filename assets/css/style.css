@@ -228,8 +228,10 @@ img {
 .header-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:15px 0}
 .brand{font-family:"Orbitron",sans-serif;color:var(--neon);font-weight:700;text-decoration:none;font-size:1.5rem;transition:color 0.3s ease, text-shadow 0.3s ease;}
 .nav{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;max-width:100%;}
-.nav-link{display:flex;align-items:center;gap:6px;color:var(--fg);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600; font-size: 0.9rem; white-space: nowrap;}
-.nav-link:hover{color:var(--neon-2);text-shadow:0 0 8px rgba(0,255,74,0.08)}
+.nav-link{display:flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:600;font-size:0.9rem;white-space:nowrap;transition:color 0.25s ease,text-shadow 0.25s ease,background 0.25s ease;}
+.nav-link:hover{color:var(--neon-2);text-shadow:0 0 10px rgba(0,255,62,0.6),0 0 20px rgba(0,255,62,0.25);background:rgba(0,255,62,0.05);}
+.nav-link img{filter:invert(1) drop-shadow(0 0 4px rgba(0,255,247,0.4));transition:filter 0.25s ease,transform 0.25s ease;}
+.nav-link:hover img{filter:invert(1) drop-shadow(0 0 8px var(--neon-2));transform:scale(1.15);}
 
 /* Brand Color Randomizer Classes */
 .brand-neon-1 { color: var(--neon) !important; text-shadow: 0 0 10px var(--neon); }
@@ -296,11 +298,7 @@ img {
   filter: url('#glitch-filter');
 }
 
-.nav-link:hover {
-  color: var(--neon-2);
-  text-shadow: 0 0 8px rgba(0,255,74,0.08);
-  filter: url('#glitch-filter');
-}
+/* nav-link hover handled above in header block */
 
 /* SCROLL GLITCH ANIMATION */
 @keyframes scrollGlitchAnim {
@@ -996,11 +994,4 @@ img {
   cursor: not-allowed;
   border-color: var(--muted);
   color: var(--muted);
-}
-/* Fix for commission nav alignment */
-.commission-tier-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
 }
