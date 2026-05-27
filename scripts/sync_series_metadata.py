@@ -23,8 +23,6 @@ for item in gallery:
     for series, titles in series_mapping.items():
         if item['title'] in titles:
             item['series'].append(series)
-    
-    # Special flags
     if item['title'] == 'Brobotosaurus Wrex':
         item['series'].append('FIELD REPORT 00')
 
