@@ -3,228 +3,987 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Bungee&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rationale&family=Wallpoet&family=Michroma&family=Monoton&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<!-- Primary SEO -->
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/gallery.html">
 <title>The Archive | Digital Surrealism & Tech-Noir | BasicGlitch</title>
-<meta name="description" content="Explore a curated collection of Neon Surrealism, Geometric Abstractions, and Tech-Noir visions.">
-<meta name="keywords" content="neon surrealism gallery, tech-noir landscapes, psychedelic digital art, geometric abstraction, BasicGlitch">
+<meta name="description" content="Explore the full BasicGlitch collection — Neon Surrealism, Cyberpunk Characters, Tech-Noir Landscapes, and the complete Case Study 42 Broboticus archive.">
+<meta name="keywords" content="neon surrealism gallery, tech-noir landscapes, psychedelic digital art, Broboticus, BasicGlitch art gallery, cyberpunk character design">
 <meta name="author" content="BasicGlitch">
-
-<!-- Social Media / Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/gallery.html">
 <meta property="og:title" content="The Archive | Digital Surrealism & Tech-Noir | BasicGlitch">
-<meta property="og:description" content="Explore a curated collection of Neon Surrealism, Geometric Abstractions, and Tech-Noir visions.">
+<meta property="og:description" content="The full BasicGlitch collection — nine series, one universe.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://basicglitch.art/gallery.html">
-<meta property="twitter:title" content="The Archive | Digital Surrealism & Tech-Noir | BasicGlitch">
-<meta property="twitter:description" content="Explore a curated collection of Neon Surrealism, Geometric Abstractions, and Tech-Noir visions.">
-<meta property="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Stylesheet -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://basicglitch.art/gallery.html">
+<meta name="twitter:title" content="The Archive | BasicGlitch">
+<meta name="twitter:description" content="The full BasicGlitch collection — nine series, one universe.">
+<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
 <link rel="stylesheet" href="assets/css/style.css">
-
-<!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
+
+<style>
+/* ── GALLERY PAGE OVERRIDES ── */
+
+.gallery-hero {
+  padding: 100px 20px 50px;
+  text-align: center;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,247,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,247,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5,5,5,0.96);
+  border-bottom: 1px solid rgba(0,255,247,0.12);
+  backdrop-filter: blur(12px);
+  padding: 14px 20px;
+}
+
+.filter-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+/* DROPDOWN MULTI-SELECT */
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-dropdown-btn {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--fg);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,255,247,0.2);
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.filter-dropdown-btn:hover,
+.filter-dropdown-btn.open {
+  border-color: var(--neon);
+  background: rgba(0,255,247,0.05);
+  color: var(--neon);
+}
+
+.filter-dropdown-btn .arrow {
+  margin-left: auto;
+  font-size: 0.6rem;
+  transition: transform 0.2s;
+}
+
+.filter-dropdown-btn.open .arrow {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown-btn .badge {
+  background: var(--neon);
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.filter-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: rgba(8,8,12,0.98);
+  border: 1px solid rgba(0,255,247,0.2);
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 200;
+  display: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.filter-dropdown-menu.open {
+  display: block;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.filter-option:hover {
+  color: var(--fg);
+  background: rgba(255,255,255,0.03);
+}
+
+.filter-option.selected {
+  color: var(--neon);
+}
+
+.filter-option .check {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(0,255,247,0.3);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.filter-option.selected .check {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: #000;
+}
+
+/* SEARCH */
+.filter-search {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--fg);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,255,247,0.2);
+  border-radius: 4px;
+  padding: 8px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 200px;
+}
+
+.filter-search:focus {
+  border-color: var(--neon);
+  background: rgba(0,255,247,0.04);
+}
+
+.filter-search::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* CLEAR + COUNT */
+.filter-clear {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--neon-mag);
+  background: none;
+  border: 1px solid rgba(255,28,207,0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.filter-clear:hover {
+  border-color: var(--neon-mag);
+  color: #fff;
+}
+
+.filter-count {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.filter-count span {
+  color: var(--neon);
+  font-weight: 700;
+}
+
+/* ── GALLERY GRID ── */
+.gallery-section {
+  padding: 40px 20px 80px;
+  background: var(--bg);
+}
+
+.gallery-section .container {
+  max-width: 1300px;
+}
+
+/* Cleaner cards — image dominant, minimal text */
+.gallery-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1200px) {
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(8,8,12,0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,255,247,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(0,255,247,0.06);
+}
+
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-card-body {
+  padding: 12px 14px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.gallery-card-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 4px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-card-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery-card-price {
+  color: var(--neon-2);
+  font-weight: 600;
+}
+
+/* VIDEO badge */
+.video-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--neon-mag);
+  color: #000;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+/* FOR SALE badge */
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,255,62,0.15);
+  color: var(--neon-2);
+  border: 1px solid rgba(0,255,62,0.3);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+/* Empty state */
+.gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--muted);
+}
+
+.gallery-empty h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon);
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+/* LIGHTBOX upgrades — price + view page button */
+#lb-content .lb-price {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  color: var(--neon-2);
+  margin: 8px 0 4px;
+  text-shadow: 0 0 10px rgba(0,255,62,0.4);
+}
+
+#lb-content .lb-series {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+
+#lb-content .lb-desc {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+#lb-content .lb-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* Active filter tags shown below dropdowns */
+.active-filters {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 0;
+}
+
+.filter-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--neon);
+  background: rgba(0,255,247,0.08);
+  border: 1px solid rgba(0,255,247,0.25);
+  border-radius: 3px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.filter-tag:hover {
+  background: rgba(0,255,247,0.15);
+}
+
+.filter-tag .remove {
+  opacity: 0.6;
+  font-size: 0.8rem;
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner container">
     <a href="index.html" class="brand">BasicGlitch</a>
-        <nav class="nav">
-      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
-      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="broboticus.html"><img src="assets/icons/about.svg" alt="Broboticus Icon"> Broboticus</a>
-      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
-      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
-      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt="About Icon"> About</a>
-      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+    <nav class="nav">
+      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt=""> Gallery</a>
+      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt=""> Portfolio</a>
+      <a class="nav-link" href="broboticus.html"><img src="assets/icons/about.svg" alt=""> Broboticus</a>
+      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt=""> Commissions</a>
+      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt=""> Apparel</a>
+      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt=""> About</a>
+      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt=""> Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- GALLERY SECTION -->
-<section class="section neon-grid-section" id="gallery" style="margin-top: 0; padding-top: 40px;">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text" data-text="THE DIGITAL ARCHIVE">THE DIGITAL ARCHIVE</span>
-      </h2>
-      <p class="cyber-subtitle">Neon Surrealism & Tech-Noir Visions</p>
-    </div>
-    <div class="filters">
-      <div class="filter-group">
-        <div class="filter-column">
-          <label>Style</label>
-          <div id="style-filters"></div>
-        </div>
-        <div class="filter-actions">
-          <button id="clear-filters" class="btn-small">Clear</button>
-        </div>
-      </div>
-    </div>
+<main>
 
-    <div id="gallery-grid" class="gallery-grid">
-      <noscript>
-        <div class="gallery-fallback-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-          <!-- Fallback content for search engines -->
-          <article>
-            <h3>Pumpkin and Honey Puppy and the Diner Robbery</h3>
-            <p>Prologue: Pumpkin and Honey Puppy execute the diner robbery.</p>
-            <img src="assets/images/raw/pup-fiction-scene1.webp" alt="Pumpkin and Honey Puppy and the Diner Robbery - Pup Fiction Parody Art by BasicGlitch">
-          </article>
-          <article>
-            <h3>Gaia of the Wasteland</h3>
-            <p>Fusion of nature and human form.</p>
-            <img src="assets/images/raw/gaia_of_the_wasteland.webp" alt="Gaia of the Wasteland">
-          </article>
-          <article>
-            <h3>Guitarbot</h3>
-            <p>Guitarbot is called on and on across the universe.</p>
-            <img src="assets/images/raw/guitarbot_og.webp" alt="Guitarbot">
-          </article>
-          <article>
-            <h3>Spiral Geometry</h3>
-            <p>Freeform geometry and symmetry.</p>
-            <img src="assets/images/raw/spiral_geometry.webp" alt="Spiral Geometry">
-          </article>
-          <article>
-            <h3>Sangre De Cristos — Neon</h3>
-            <p>Neon mountains inspired by Colorado. Much A E S T H E T I C</p>
-            <img src="assets/images/raw/aesthetic_sangre_de_cristo.webp" alt="Sangre De Cristos — Neon">
-          </article>
-          <article>
-            <h3>Floral</h3>
-            <p>Patterned floral with elegant gradient and flowing form.</p>
-            <img src="assets/images/raw/floral.webp" alt="Floral">
-          </article>
-          <article>
-            <h3>Brobarticus</h3>
-            <p>He's a musician and an artist!?!? Whatta robot!!!</p>
-            <img src="assets/images/raw/artist_broboticus_og.webp" alt="Brobarticus">
-          </article>
-          <article>
-            <h3>A Mycological Phenomenon</h3>
-            <p>Embroidered texture surreal landscape</p>
-            <img src="assets/images/raw/a_mycological_phenomenon.webp" alt="A Mycological Phenomenon">
-          </article>
-          <article>
-            <h3>Sangre De Cristos - Night</h3>
-            <p>Nighttime aesthetic from Colorado</p>
-            <img src="assets/images/raw/aesthetic_laser_colorado.webp" alt="Sangre De Cristos - Night">
-          </article>
-          <article>
-            <h3>The Bolts and Nutcracker</h3>
-            <p>High class Broboticus</p>
-            <img src="assets/images/raw/balletboticus.webp" alt="The Bolts and Nutcracker">
-          </article>
-          <article>
-            <h3>Iron Chef</h3>
-            <p>Welcome to Kitchen Stadium</p>
-            <img src="assets/images/raw/chefboticus.webp" alt="Iron Chef">
-          </article>
-          <article>
-            <h3>Cubist Chef</h3>
-            <p>Cubist Cuisine</p>
-            <img src="assets/images/raw/cubist_chef.webp" alt="Cubist Chef">
-          </article>
-          <article>
-            <h3>Dust to Dust</h3>
-            <p>Mother Earth is hurting</p>
-            <img src="assets/images/raw/dust_to_dust.webp" alt="Dust to Dust">
-          </article>
-          <article>
-            <h3>Night-Fishing the Arkansas River</h3>
-            <p>Calm night-fishing in the Arkansas River</p>
-            <img src="assets/images/raw/fishboticus.webp" alt="Night-Fishing the Arkansas River">
-          </article>
-          <article>
-            <h3>Karateboticus</h3>
-            <p>Sweep the leg!</p>
-            <img src="assets/images/raw/karateboticus1.webp" alt="Karateboticus">
-          </article>
-          <article>
-            <h3>Literal Traphouse</h3>
-            <p>Figurative traphouse</p>
-            <img src="assets/images/raw/literal_traphouse.webp" alt="Literal Traphouse">
-          </article>
-          <article>
-            <h3>Mycology Yourcology</h3>
-            <p>Embroidered texture mushroom landscape</p>
-            <img src="assets/images/raw/mycology_yourcology.webp" alt="Mycology Yourcology">
-          </article>
-          <article>
-            <h3>Pachydermis</h3>
-            <p>Boho elephant with a touch of Timothy Leary</p>
-            <img src="assets/images/raw/pachydermis.webp" alt="Pachydermis">
-          </article>
-          <article>
-            <h3>Rancher Broboticus</h3>
-            <p>Roboto Rancheros</p>
-            <img src="assets/images/raw/ranchboticus.webp" alt="Rancher Broboticus">
-          </article>
-          <article>
-            <h3>There's a Star-Bot Waiting in the Sky</h3>
-            <p>Like David Bowie imagined</p>
-            <img src="assets/images/raw/starbot_waiting_in_the_sky.webp" alt="There's a Star-Bot Waiting in the Sky">
-          </article>
-          <article>
-            <h3>Vitruvian Broboticus</h3>
-            <p>DaVinci's idea of the perfect robot</p>
-            <img src="assets/images/raw/vitruvian_broboticus_og.webp" alt="Vitruvian Broboticus">
-          </article>
-          <article>
-            <h3>Brobotosaurus Wrex</h3>
-            <p>Brobotosaurs never existed</p>
-            <img src="assets/images/raw/brobotosaurus_wrex.webp" alt="Brobotosaurus Wrex">
-          </article>
-        </div>
-      </noscript>
+  <!-- HERO -->
+  <div class="gallery-hero">
+    <div class="cyber-header" style="margin-bottom: 0;">
+      <h1 class="cyber-title">
+        <span class="cyber-text" data-text="THE_ARCHIVE">THE_ARCHIVE</span>
+      </h1>
+      <p class="cyber-subtitle">Nine Series · One Universe · Zero Apologies</p>
     </div>
   </div>
-</section>
 
-<!-- Lightbox -->
+  <!-- STICKY FILTER BAR -->
+  <div class="filter-bar" id="filter-bar">
+    <div class="filter-bar-inner">
+
+      <span class="filter-label">FILTER:</span>
+
+      <!-- Style dropdown -->
+      <div class="filter-dropdown" id="style-dropdown">
+        <button class="filter-dropdown-btn" id="style-btn" type="button">
+          STYLE <span class="arrow">▼</span>
+        </button>
+        <div class="filter-dropdown-menu" id="style-menu"></div>
+      </div>
+
+      <!-- Series/Category dropdown -->
+      <div class="filter-dropdown" id="series-dropdown">
+        <button class="filter-dropdown-btn" id="series-btn" type="button">
+          SERIES <span class="arrow">▼</span>
+        </button>
+        <div class="filter-dropdown-menu" id="series-menu"></div>
+      </div>
+
+      <!-- Search -->
+      <input
+        type="search"
+        id="gallery-search"
+        class="filter-search"
+        placeholder="SEARCH..."
+        autocomplete="off"
+        spellcheck="false"
+      >
+
+      <!-- Clear -->
+      <button class="filter-clear" id="clear-filters" type="button">CLEAR ALL</button>
+
+      <!-- Count -->
+      <div class="filter-count" id="filter-count">
+        <span id="result-count">–</span> PIECES
+      </div>
+
+    </div>
+
+    <!-- Active filter tags -->
+    <div class="active-filters" id="active-filters"></div>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <section class="gallery-section">
+    <div class="container">
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Rendered by gallery-init.js below -->
+        <noscript>
+          <div style="grid-column:1/-1;text-align:center;padding:60px;font-family:'Share Tech Mono',monospace;color:var(--muted);">
+            JavaScript is required to view the gallery. Please enable it in your browser.
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox hidden" aria-hidden="true">
   <div class="lb-content" id="lb-content"></div>
-  <button id="lb-close" class="lb-btn"><img src="assets/icons/close.svg" alt="Close" style="width: 24px; filter: invert(1);"></button>
-  <button id="lb-prev" class="lb-nav" style="left: 20px;"><img src="assets/icons/back.svg" alt="Previous" style="width: 24px; filter: invert(1);"></button>
-  <button id="lb-next" class="lb-nav" style="right: 20px;"><img src="assets/icons/forward.svg" alt="Next" style="width: 24px; filter: invert(1);"></button>
+  <button id="lb-close" class="lb-btn"><img src="assets/icons/close.svg" alt="Close"></button>
+  <button id="lb-prev" class="lb-nav" style="left:20px"><img src="assets/icons/back.svg" alt="Previous"></button>
+  <button id="lb-next" class="lb-nav" style="right:20px"><img src="assets/icons/forward.svg" alt="Next"></button>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner container">
     <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
     <div class="footer-links">
-      <a href="terms.html" class="footer-link">Terms & Licensing</a>
+      <a href="terms.html" class="footer-link">Terms &amp; Licensing</a>
       <a href="contact.html" class="footer-link">Contact</a>
       <a href="about.html" class="footer-link">About the Artist</a>
     </div>
   </div>
 </footer>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script>
 
-<!-- SVG Filters (Hidden) -->
 <svg class="svg-filter">
   <defs>
     <filter id="glitch-filter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
   </defs>
 </svg>
+
+<!-- GALLERY INIT — dropdown filters, clean card render, lightbox wiring -->
+<script>
+(function() {
+  'use strict';
+
+  // ── STATE ──
+  const state = {
+    styles: [],
+    series: [],
+    search: ''
+  };
+
+  // ── HELPERS ──
+  const unique = arr => [...new Set(arr.flat().filter(Boolean))].sort();
+
+  function slugify(title) {
+    return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+  }
+
+  // ── DROPDOWN BUILDER ──
+  function buildDropdown(menuEl, btnEl, items, stateKey, label) {
+    menuEl.innerHTML = '';
+    items.forEach(item => {
+      const opt = document.createElement('div');
+      opt.className = 'filter-option';
+      opt.dataset.value = item;
+      opt.innerHTML = `<span class="check"></span>${item}`;
+      opt.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleFilter(stateKey, item, opt);
+      });
+      menuEl.appendChild(opt);
+    });
+
+    btnEl.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = menuEl.classList.contains('open');
+      // Close all dropdowns
+      document.querySelectorAll('.filter-dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.filter-dropdown-btn').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        menuEl.classList.add('open');
+        btnEl.classList.add('open');
+      }
+    });
+  }
+
+  // Close dropdowns on outside click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.filter-dropdown-menu').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.filter-dropdown-btn').forEach(b => b.classList.remove('open'));
+  });
+
+  // ── FILTER TOGGLE ──
+  function toggleFilter(key, value, optEl) {
+    const arr = state[key];
+    const idx = arr.indexOf(value);
+    if (idx === -1) arr.push(value);
+    else arr.splice(idx, 1);
+    updateDropdownUI(key);
+    applyFilters();
+  }
+
+  function updateDropdownUI(key) {
+    const menuId = key === 'styles' ? 'style-menu' : 'series-menu';
+    const btnId  = key === 'styles' ? 'style-btn'  : 'series-btn';
+    const menu = document.getElementById(menuId);
+    const btn  = document.getElementById(btnId);
+    const arr  = state[key];
+
+    menu.querySelectorAll('.filter-option').forEach(opt => {
+      const selected = arr.includes(opt.dataset.value);
+      opt.classList.toggle('selected', selected);
+      opt.querySelector('.check').textContent = selected ? '✓' : '';
+    });
+
+    // Update badge on button
+    const existing = btn.querySelector('.badge');
+    if (arr.length > 0) {
+      if (existing) existing.textContent = arr.length;
+      else {
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = arr.length;
+        btn.insertBefore(badge, btn.querySelector('.arrow'));
+      }
+    } else {
+      if (existing) existing.remove();
+    }
+  }
+
+  // ── ACTIVE FILTER TAGS ──
+  function renderActiveTags() {
+    const container = document.getElementById('active-filters');
+    container.innerHTML = '';
+    const allActive = [
+      ...state.styles.map(v => ({ key: 'styles', value: v })),
+      ...state.series.map(v => ({ key: 'series', value: v }))
+    ];
+    allActive.forEach(({ key, value }) => {
+      const tag = document.createElement('div');
+      tag.className = 'filter-tag';
+      tag.innerHTML = `${value} <span class="remove">✕</span>`;
+      tag.addEventListener('click', () => {
+        const arr = state[key];
+        arr.splice(arr.indexOf(value), 1);
+        updateDropdownUI(key);
+        applyFilters();
+      });
+      container.appendChild(tag);
+    });
+  }
+
+  // ── APPLY FILTERS ──
+  function applyFilters() {
+    const gallery = window.GALLERY || [];
+    const q = state.search.toLowerCase().trim();
+
+    let items = gallery.filter(item => {
+      const matchStyle  = state.styles.length === 0 || state.styles.some(s => (item.styles || []).includes(s));
+      const matchSeries = state.series.length === 0 || state.series.some(s => (item.categories || []).includes(s));
+      const matchSearch = !q || item.title.toLowerCase().includes(q) || (item.description || '').toLowerCase().includes(q);
+      return matchStyle && matchSeries && matchSearch;
+    });
+
+    renderGalleryCards(items);
+    renderActiveTags();
+
+    const count = document.getElementById('result-count');
+    if (count) count.textContent = items.length;
+  }
+
+  // ── RENDER CARDS ──
+  function renderGalleryCards(items) {
+    const grid = document.getElementById('gallery-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    if (!items.length) {
+      const empty = document.createElement('div');
+      empty.className = 'gallery-empty';
+      empty.innerHTML = '<h3>NO SIGNAL FOUND</h3><p>Adjust filters or clear to see all pieces.</p>';
+      grid.appendChild(empty);
+      return;
+    }
+
+    items.forEach((item, idx) => {
+      const isVideo = item.type === 'video' || (item.file || '').toLowerCase().endsWith('.mp4');
+      const thumbSrc = `assets/images/gallery-thumbs/${item.id}.jpg`;
+      const forSale  = (item.categories || []).includes('Available for Purchase');
+      const series   = (item.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project')[0] || '';
+
+      const card = document.createElement('div');
+      card.className = 'gallery-card';
+      card.dataset.id = item.id;
+
+      // Badges
+      if (isVideo) {
+        const vb = document.createElement('div');
+        vb.className = 'video-badge';
+        vb.textContent = 'MOTION';
+        card.appendChild(vb);
+      }
+      if (forSale && item.price) {
+        const sb = document.createElement('div');
+        sb.className = 'sale-badge';
+        sb.textContent = 'FOR SALE';
+        card.appendChild(sb);
+      }
+
+      // Image
+      const img = document.createElement('img');
+      img.src = thumbSrc;
+      img.alt = item.alt_text || item.title + ' | BasicGlitch';
+      img.loading = 'lazy';
+      card.appendChild(img);
+
+      // Body
+      const body = document.createElement('div');
+      body.className = 'gallery-card-body';
+
+      const title = document.createElement('div');
+      title.className = 'gallery-card-title';
+      title.textContent = item.title || 'Untitled';
+      body.appendChild(title);
+
+      const meta = document.createElement('div');
+      meta.className = 'gallery-card-meta';
+      const seriesSpan = document.createElement('span');
+      seriesSpan.textContent = series || (item.styles || [])[0] || '';
+      meta.appendChild(seriesSpan);
+      if (item.price) {
+        const price = document.createElement('span');
+        price.className = 'gallery-card-price';
+        price.textContent = '$' + item.price;
+        meta.appendChild(price);
+      }
+      body.appendChild(meta);
+      card.appendChild(body);
+
+      // Click — open lightbox
+      card.addEventListener('click', () => openGalleryLightbox(item, items, idx));
+
+      grid.appendChild(card);
+    });
+  }
+
+  // ── LIGHTBOX ──
+  let lbCurrentIdx = 0;
+  let lbCurrentItems = [];
+
+  function openGalleryLightbox(item, items, idx) {
+    lbCurrentItems = items;
+    lbCurrentIdx   = idx;
+
+    const lb      = document.getElementById('lightbox');
+    const content = document.getElementById('lb-content');
+    if (!lb || !content) return;
+
+    content.innerHTML = '';
+
+    const isVideo = item.type === 'video' || (item.file || '').toLowerCase().endsWith('.mp4');
+
+    if (isVideo) {
+      const video = document.createElement('video');
+      video.src = item.file;
+      video.autoplay = true; video.loop = true; video.muted = true;
+      video.playsInline = true; video.controls = true;
+      video.style.cssText = 'max-width:90vw;max-height:65vh;border-radius:8px;box-shadow:0 0 30px rgba(0,255,247,0.2);';
+      content.appendChild(video);
+    } else {
+      const img = document.createElement('img');
+      img.src = item.file;
+      img.alt = item.alt_text || item.title;
+      img.style.cssText = 'max-width:90vw;max-height:65vh;object-fit:contain;border-radius:8px;box-shadow:0 0 30px rgba(0,255,247,0.2);';
+      content.appendChild(img);
+    }
+
+    // Title
+    const title = document.createElement('h3');
+    title.textContent = item.title || '';
+    title.style.cssText = 'margin:18px 0 4px;color:var(--neon);font-family:"Orbitron",sans-serif;font-size:1.1rem;text-align:center;';
+    content.appendChild(title);
+
+    // Price
+    if (item.price) {
+      const price = document.createElement('div');
+      price.className = 'lb-price';
+      price.textContent = '$' + item.price;
+      content.appendChild(price);
+    }
+
+    // Series
+    const seriesCats = (item.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project');
+    if (seriesCats.length) {
+      const series = document.createElement('div');
+      series.className = 'lb-series';
+      series.textContent = seriesCats.join(' · ');
+      content.appendChild(series);
+    }
+
+    // Description (truncated)
+    if (item.description) {
+      const desc = document.createElement('p');
+      desc.className = 'lb-desc';
+      const words = item.description.split(' ');
+      desc.textContent = words.slice(0, 40).join(' ') + (words.length > 40 ? '…' : '');
+      content.appendChild(desc);
+    }
+
+    // Actions
+    const actions = document.createElement('div');
+    actions.className = 'lb-actions';
+
+    const slug = slugify(item.title || '');
+    const viewBtn = document.createElement('a');
+    viewBtn.href = `art/${slug}.html`;
+    viewBtn.className = 'btn-neon';
+    viewBtn.textContent = 'VIEW FULL PAGE';
+    viewBtn.style.cssText = 'font-size:0.8rem;padding:10px 20px;';
+    actions.appendChild(viewBtn);
+
+    if ((item.categories || []).includes('Available for Purchase') && item.price) {
+      const buyBtn = document.createElement('a');
+      buyBtn.href = `contact.html?subject=Purchase Inquiry: ${encodeURIComponent(item.title)}`;
+      buyBtn.className = 'btn-neon';
+      buyBtn.textContent = 'INQUIRE TO PURCHASE';
+      buyBtn.style.cssText = 'font-size:0.8rem;padding:10px 20px;border-color:var(--neon-2);color:var(--neon-2);box-shadow:0 0 10px rgba(0,255,62,0.2);';
+      actions.appendChild(buyBtn);
+    }
+
+    content.appendChild(actions);
+
+    lb.classList.remove('hidden');
+    lb.setAttribute('aria-hidden', 'false');
+
+    // Also update window.GALLERY currentIndex for keyboard nav compatibility
+    window.GALLERY_LB_ITEMS = items;
+    window.GALLERY_LB_IDX   = idx;
+  }
+
+  function closeLb() {
+    const lb = document.getElementById('lightbox');
+    if (lb) { lb.classList.add('hidden'); lb.setAttribute('aria-hidden', 'true'); }
+    const video = document.querySelector('#lb-content video');
+    if (video) { video.pause(); video.src = ''; }
+  }
+
+  function prevLb() {
+    if (lbCurrentIdx > 0) {
+      lbCurrentIdx--;
+      openGalleryLightbox(lbCurrentItems[lbCurrentIdx], lbCurrentItems, lbCurrentIdx);
+    }
+  }
+
+  function nextLb() {
+    if (lbCurrentIdx < lbCurrentItems.length - 1) {
+      lbCurrentIdx++;
+      openGalleryLightbox(lbCurrentItems[lbCurrentIdx], lbCurrentItems, lbCurrentIdx);
+    }
+  }
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb || lb.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') prevLb();
+    if (e.key === 'ArrowRight') nextLb();
+  });
+
+  // Touch swipe
+  let touchStart = 0;
+  document.getElementById('lb-content')?.addEventListener('touchstart', e => { touchStart = e.changedTouches[0].screenX; });
+  document.getElementById('lb-content')?.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStart;
+    if (Math.abs(diff) > 50) diff < 0 ? nextLb() : prevLb();
+  });
+
+  // ── INIT ON GALLERY DATA READY ──
+  function initGallery() {
+    const gallery = window.GALLERY;
+    if (!gallery || !gallery.length) {
+      setTimeout(initGallery, 100);
+      return;
+    }
+
+    const allStyles = unique(gallery.map(i => i.styles || []));
+    const allSeries = unique(gallery.map(i =>
+      (i.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project')
+    ));
+
+    buildDropdown(
+      document.getElementById('style-menu'),
+      document.getElementById('style-btn'),
+      allStyles, 'styles', 'STYLE'
+    );
+
+    buildDropdown(
+      document.getElementById('series-menu'),
+      document.getElementById('series-btn'),
+      allSeries.length ? allSeries : ['Broboticus', 'Pup Fiction', 'Sangre de Cristos'],
+      'series', 'SERIES'
+    );
+
+    // Search
+    const searchEl = document.getElementById('gallery-search');
+    if (searchEl) {
+      searchEl.addEventListener('input', e => {
+        state.search = e.target.value;
+        applyFilters();
+      });
+    }
+
+    // Clear all
+    const clearEl = document.getElementById('clear-filters');
+    if (clearEl) {
+      clearEl.addEventListener('click', () => {
+        state.styles = []; state.series = []; state.search = '';
+        if (searchEl) searchEl.value = '';
+        updateDropdownUI('styles');
+        updateDropdownUI('series');
+        applyFilters();
+      });
+    }
+
+    // Lightbox buttons
+    document.getElementById('lb-close')?.addEventListener('click', closeLb);
+    document.getElementById('lb-prev')?.addEventListener('click', prevLb);
+    document.getElementById('lb-next')?.addEventListener('click', nextLb);
+    document.getElementById('lightbox')?.addEventListener('click', e => {
+      if (e.target === document.getElementById('lightbox')) closeLb();
+    });
+
+    applyFilters();
+  }
+
+  // Wait for app.js to load GALLERY data
+  if (window.GALLERY) {
+    initGallery();
+  } else {
+    window.addEventListener('GALLERY_READY', initGallery);
+    // Fallback poll in case event was missed
+    const poll = setInterval(() => {
+      if (window.GALLERY) { clearInterval(poll); initGallery(); }
+    }, 150);
+  }
+
+})();
+</script>
 </body>
 </html>
