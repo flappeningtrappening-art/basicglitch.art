@@ -124,12 +124,17 @@ function setHeroBackground(){
    --------------------------- */
 async function fetchGallery(){
   try{
-    const res = await fetch(GALLERY_JSON, { cache:'no-store' });
+    const res = await fetch(GALLERY_JSON);
     if(!res.ok){
-      console.error(`gallery.json not found at ${GALLERY_JSON}`);
+      console.error(`gallery.json not found at ${GALLERY_JSON} — status: ${res.status}`);
       return [];
     }
-    return await res.json();
+    const text = await res.text();
+    if(!text || !text.trim()){
+      console.error('gallery.json returned empty response');
+      return [];
+    }
+    return JSON.parse(text);
   }catch(err){
     console.error('Fetch failed:', err);  
     return [];
@@ -270,7 +275,7 @@ function openLightbox(id){
   const content = document.getElementById('lb-content');
   if(!lb || !content) return;
   
-  // TEMPORARILY REMOVE 3D TRANSFORM from clicked card for better lightbox transition
+  // TEMPORARILY REMOVE 3D TRANSFORM from clicked card for better lightbox experience
   const clickedCard = document.querySelector(`.gallery-card[data-id="${id}"]`);
   if (clickedCard) {
     clickedCard.style.transform = 'none';
@@ -501,40 +506,132 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ---------------------------
    Init
    --------------------------- */
-async function init(){
-  const data = await fetchGallery();
-  window.GALLERY = data;
-  
-  if(document.getElementById('gallery-grid')) renderGrid(data);
-  if(document.getElementById('collection-title')) initCollectionPage(data);
-  if(typeof setBrandColor === 'function') setBrandColor();
-  if(typeof setHeroBackground === 'function') setHeroBackground();
-  if(typeof initialize3DCardCompatibility === 'function') initialize3DCardCompatibility();
-}
-init();
+async function runNeuralForge() {
+  const seedInput = document.getElementById('neural-seed');
+  const typeInput = document.getElementById('infusion-type');
+  const status = document.getElementById('forge-status-msg');
+  const placeholder = document.getElementById('forge-placeholder');
+  const img = document.getElementById('forge-result-img');
+  const log = document.getElementById('forensic-log');
 
-// ANTI-SPAM: Decrypt email on interaction
-document.addEventListener('DOMContentLoaded', () => {
-    const emailLinks = document.querySelectorAll('.secure-contact-link');
-    if(emailLinks.length > 0) {
-      emailLinks.forEach(link => {
-        const revealEmail = () => {
-          const u = link.dataset.user;
-          const d = link.dataset.domain;
-          if(!u || !d) return;
-          const addr = `${u}@${d}`;
-          link.href = `mailto:${addr}`;
-          link.textContent = addr;
-          link.classList.remove('glitch-link');
-          // Remove listeners once decrypted
-          link.removeEventListener('mouseover', revealEmail);
-          link.removeEventListener('click', revealEmail);
-        };
-        
-        link.addEventListener('mouseover', revealEmail);
-        link.addEventListener('click', revealEmail);
-        // Also decrypt after 3 seconds automatically for usability
-        setTimeout(revealEmail, 3000);
-      });
+  if (!seedInput || !seedInput.value) {
+    alert("SIGNAL ERROR: Neural Seed required.");
+    return;
+  }
+
+  if(status) status.style.display = 'block';
+  if(placeholder) placeholder.style.display = 'none';
+  if(img) img.style.display = 'none';
+  if(log) log.style.display = 'none';
+
+  try {
+    const response = await fetch(`${FORGE_API}/visualForgeFlow`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        data: {
+          neuralSeed: seedInput.value,
+          infusionType: typeInput.value
+        }
+      })
+    });
+
+    if (!response.ok) throw new Error("TRANSMISSION_FAILED");
+
+    const result = await response.json();
+    const vision = result.result;
+
+    if(img) {
+      // Set source but wait for load
+      img.src = vision.imageUrl;
+      img.onload = () => {
+        img.style.display = 'block';
+        if(status) status.style.display = 'none'; 
+      };
+      img.onerror = () => {
+        console.error("FORGE_IMAGE_LOAD_ERROR: ", vision.imageUrl);
+        if(placeholder) {
+          placeholder.innerHTML = `IMAGE_RENDER_FAILED<br><a href="${vision.imageUrl}" target="_blank" style="color: var(--neon); font-size: 1rem; text-decoration: underline;">VIEW_EXTERNAL_LINK</a>`;
+          placeholder.style.display = 'block';
+        }
+        if(status) status.style.display = 'none';
+      };
     }
-});
+    
+    if(log) {
+      log.innerHTML = `<div style="color: var(--neon); margin-bottom: 10px;">>> FORENSIC_ANALYSIS_COMPLETE</div>` + vision.forensicLog;
+      log.style.display = 'block';
+    }
+
+  } catch (err) {
+    console.error(err);
+    if(placeholder) {
+      placeholder.textContent = "FORGE_FAILURE: " + err.message;
+      placeholder.style.display = 'block';
+    }
+    if(status) status.style.display = 'none';
+  }
+}
+
+/* ---------------------------
+   Email decryption — runs independently, always
+   --------------------------- */
+function initEmailDecryption(){
+  const emailLinks = document.querySelectorAll('.secure-contact-link');
+  if(emailLinks.length === 0) return;
+  emailLinks.forEach(link => {
+    const revealEmail = () => {
+      const u = link.dataset.user;
+      const d = link.dataset.domain;
+      if(!u || !d) return;
+      const addr = `${u}@${d}`;
+      link.href = `mailto:${addr}`;
+      link.textContent = addr;
+      link.classList.remove('glitch-link');
+      link.removeEventListener('mouseover', revealEmail);
+      link.removeEventListener('focus', revealEmail);
+      link.removeEventListener('click', revealEmail);
+    };
+    link.addEventListener('mouseover', revealEmail);
+    link.addEventListener('focus', revealEmail);
+    link.addEventListener('click', revealEmail);
+    // Auto-reveal after 2.5 seconds for usability
+    setTimeout(revealEmail, 2500);
+  });
+}
+
+(async function init(){
+  setBrandColor();
+  setHeroBackground();
+
+  // Email decryption runs unconditionally — not inside gallery try/catch
+  initEmailDecryption();
+
+  // GALLERY + COLLECTION INIT
+  try{
+    const data = await fetchGallery();
+    window.GALLERY = data || [];
+
+    if(!window.GALLERY.length){
+      console.warn('Gallery data empty or failed to load.');
+    }
+
+    // Signal gallery page scripts that data is ready
+    window.dispatchEvent(new Event('GALLERY_READY'));
+
+    // ROUTER LOGIC
+    if(document.getElementById('collection-view')) {
+      initCollectionPage(window.GALLERY);
+      initialize3DCardCompatibility();
+    }
+    else if(document.getElementById('gallery-grid')) {
+      renderFilters(window.GALLERY);
+      renderGrid(window.GALLERY, false);
+      initialize3DCardCompatibility();
+    }
+  }catch(err){
+    console.error('Gallery init error:', err);
+    const grid = document.getElementById('gallery-grid');
+    if(grid) grid.innerHTML = '<div class="card" style="padding:40px; text-align:center; color:var(--muted);">Gallery temporarily unavailable — '+(err.message||err)+'</div>';
+  }
+})();
