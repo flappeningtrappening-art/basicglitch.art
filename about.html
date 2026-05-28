@@ -8,173 +8,775 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#050505">
 <meta name="robots" content="index, follow">
-
-<!-- Primary SEO -->
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
-<title>About | Digital Surrealist | BasicGlitch</title>
-<meta name="description" content="Meet BasicGlitch, a digital surrealist specializing in Neon Surrealism, Tech-Noir, and Psychedelic Character Design.">
-<meta name="keywords" content="BasicGlitch, digital surrealism, tech-noir artist, psychedelic art bio, Newburgh Indiana artist">
+<link rel="canonical" href="https://basicglitch.art/about.html">
+<title>About the Artist | BasicGlitch | Cyber-Eclectic Digital Surrealism</title>
+<meta name="description" content="BasicGlitch is a digital artist, musician, and creative technologist from Tularosa, New Mexico. Creator of Broboticus, the Pup Fiction series, and the Sangre de Cristos landscape collection.">
+<meta name="keywords" content="BasicGlitch artist, digital surrealism, Broboticus creator, Neon Mesa Digital, New Mexico digital artist, tech-noir art, psychedelic digital art">
 <meta name="author" content="BasicGlitch">
-
-<!-- Social Media / Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://basicglitch.art/about.html">
-<meta property="og:title" content="About | Digital Surrealist | BasicGlitch">
-<meta property="og:description" content="Meet the artist behind the glitch. BasicGlitch specializes in Neon Surrealism and Tech-Noir visuals.">
-<meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Twitter -->
+<meta property="og:title" content="About the Artist | BasicGlitch">
+<meta property="og:description" content="Digital artist, musician, creative technologist. Creator of Broboticus and the Cyber-Eclectic Surrealism aesthetic. Based in Tularosa, New Mexico.">
+<meta property="og:image" content="https://basicglitch.art/assets/images/raw/vitruvian_broboticus_og.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://basicglitch.art/about.html">
-<meta name="twitter:title" content="About | Digital Surrealist | BasicGlitch">
-<meta name="twitter:description" content="Meet the artist behind the glitch. BasicGlitch specializes in Neon Surrealism and Tech-Noir visuals.">
-<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
-
-<!-- Stylesheet -->
+<meta name="twitter:title" content="About the Artist | BasicGlitch">
+<meta name="twitter:description" content="Digital artist, musician, creative technologist. Creator of Broboticus and the Cyber-Eclectic Surrealism aesthetic.">
+<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/vitruvian_broboticus_og.webp">
 <link rel="stylesheet" href="assets/css/style.css">
-
-<!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
 <script src="./assets/js/robot.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "BasicGlitch",
+  "alternateName": "Neon Mesa Digital",
+  "description": "Digital artist and musician specializing in Cyber-Eclectic Surrealism, Tech-Noir Landscapes, and original character design. Creator of Broboticus.",
+  "url": "https://basicglitch.art",
+  "image": "https://basicglitch.art/assets/images/raw/vitruvian_broboticus_og.webp",
+  "jobTitle": "Digital Artist",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tularosa",
+    "addressRegion": "New Mexico",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/basic.glitch",
+    "https://github.com/flappeningtrappening-art"
+  ]
+}
+</script>
+
+<style>
+/* ── ABOUT PAGE STYLES ── */
+
+/* HERO */
+.about-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  padding: 100px 20px 60px;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 70% at 0% 50%, rgba(0,255,62,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 100% 30%, rgba(0,255,247,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 50% 100%, rgba(199,36,255,0.04) 0%, transparent 60%);
+}
+
+.about-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,62,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,62,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+.about-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .about-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* AVATAR */
+.about-avatar-wrap {
+  position: relative;
+}
+
+.about-avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(0,255,62,0.25);
+  box-shadow:
+    0 0 0 1px rgba(0,255,62,0.08),
+    0 0 40px rgba(0,255,62,0.12),
+    0 20px 60px rgba(0,0,0,0.5);
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(0,255,62,0.2));
+}
+
+@media (max-width: 800px) {
+  .about-avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+}
+
+.about-avatar-label {
+  margin-top: 14px;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+}
+
+.about-avatar-label span {
+  color: var(--neon-2);
+}
+
+/* HERO TEXT */
+.about-hero-text {}
+
+.about-handle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--neon);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.about-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  color: transparent;
+  background: linear-gradient(135deg, var(--neon-2) 0%, var(--neon) 50%, var(--neon-pur) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(0,255,62,0.2));
+}
+
+.about-tagline {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.about-tagline em {
+  color: var(--fg);
+  font-style: normal;
+}
+
+/* QUICK STATS */
+.about-stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 800px) {
+  .about-stats { justify-content: center; }
+}
+
+.about-stat {
+  text-align: center;
+}
+
+.about-stat-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--neon-2);
+  display: block;
+  text-shadow: 0 0 10px rgba(0,255,62,0.4);
+}
+
+.about-stat-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* SOCIAL LINKS */
+.about-socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .about-socials { justify-content: center; }
+}
+
+.about-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 9px 16px;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.about-social-btn img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+  opacity: 0.5;
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+.about-social-btn--ig:hover {
+  color: var(--neon-mag);
+  border-color: rgba(255,28,207,0.4);
+  box-shadow: 0 0 12px rgba(255,28,207,0.15);
+}
+.about-social-btn--ig:hover img {
+  filter: invert(1) drop-shadow(0 0 4px var(--neon-mag));
+  opacity: 1;
+}
+
+.about-social-btn--kofi:hover {
+  color: var(--neon-org);
+  border-color: rgba(255,95,31,0.4);
+  box-shadow: 0 0 12px rgba(255,95,31,0.15);
+}
+.about-social-btn--kofi:hover img {
+  filter: invert(1) drop-shadow(0 0 4px var(--neon-org));
+  opacity: 1;
+}
+
+.about-social-btn--gh:hover {
+  color: var(--neon);
+  border-color: rgba(0,255,247,0.4);
+  box-shadow: 0 0 12px rgba(0,255,247,0.15);
+}
+.about-social-btn--gh:hover img {
+  filter: invert(1) drop-shadow(0 0 4px var(--neon));
+  opacity: 1;
+}
+
+/* ── BODY SECTIONS ── */
+.about-body {
+  background: var(--bg);
+}
+
+.about-section {
+  padding: 70px 20px;
+  position: relative;
+}
+
+.about-section:nth-child(even) {
+  background: #020202;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--neon-2), transparent);
+  opacity: 0.2;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-section-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: var(--neon-org);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.about-section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 28px;
+  line-height: 1.2;
+}
+
+.about-section-heading.grn { color: var(--neon-2); text-shadow: 0 0 15px rgba(0,255,62,0.3); }
+.about-section-heading.cyn { color: var(--neon);   text-shadow: 0 0 15px rgba(0,255,247,0.3); }
+.about-section-heading.mag { color: var(--neon-mag); text-shadow: 0 0 15px rgba(255,28,207,0.3); }
+.about-section-heading.pur { color: var(--neon-pur); text-shadow: 0 0 15px rgba(199,36,255,0.3); }
+.about-section-heading.org { color: var(--neon-org); text-shadow: 0 0 15px rgba(255,95,31,0.3); }
+
+.about-body-text {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--fg);
+  opacity: 0.88;
+}
+
+.about-body-text p {
+  margin: 0 0 1.4em;
+}
+
+.about-body-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-body-text strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* QUOTE BLOCK */
+.about-quote {
+  border-left: 3px solid var(--neon-2);
+  padding: 18px 26px;
+  margin: 32px 0;
+  background: rgba(0,255,62,0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.about-quote p {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  color: var(--neon);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* DISCIPLINE TAGS */
+.about-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.about-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid;
+}
+
+.about-tag--grn { color: var(--neon-2);   border-color: rgba(0,255,62,0.3);   background: rgba(0,255,62,0.05); }
+.about-tag--cyn { color: var(--neon);     border-color: rgba(0,255,247,0.3);  background: rgba(0,255,247,0.05); }
+.about-tag--mag { color: var(--neon-mag); border-color: rgba(255,28,207,0.3); background: rgba(255,28,207,0.05); }
+.about-tag--pur { color: var(--neon-pur); border-color: rgba(199,36,255,0.3); background: rgba(199,36,255,0.05); }
+.about-tag--org { color: var(--neon-org); border-color: rgba(255,95,31,0.3);  background: rgba(255,95,31,0.05); }
+
+/* PHILOSOPHY GRID */
+.about-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.philosophy-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 22px 20px;
+  transition: border-color 0.3s;
+}
+
+.philosophy-card:hover {
+  border-color: rgba(0,255,247,0.2);
+}
+
+.philosophy-card-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.philosophy-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--neon);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.philosophy-card-text {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* INSTAGRAM STRIP */
+.about-insta-strip {
+  padding: 60px 20px;
+  background: #000;
+  text-align: center;
+}
+
+/* CTA SECTION */
+.about-cta {
+  padding: 80px 20px;
+  background: var(--bg);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,247,0.12), transparent);
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER / NAVIGATION -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner container">
     <a href="index.html" class="brand">BasicGlitch</a>
-        <nav class="nav">
-      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
-      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="broboticus.html"><img src="assets/icons/about.svg" alt="Broboticus Icon"> Broboticus</a>
-      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
-      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
-      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt="About Icon"> About</a>
-      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+    <nav class="nav">
+      <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt=""> Gallery</a>
+      <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt=""> Portfolio</a>
+      <a class="nav-link" href="broboticus.html"><img src="assets/icons/about.svg" alt=""> Broboticus</a>
+      <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt=""> Commissions</a>
+      <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt=""> Apparel</a>
+      <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt=""> About</a>
+      <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt=""> Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-<!-- ABOUT SECTION -->
-<section class="section neon-grid-section" id="about" style="margin-top: 0; padding-top: 40px; position: relative;">
-  <!-- Section Guardian -->
-  <div class="guardian-container" style="position: absolute; bottom: 0; left: 0; z-index: 1; opacity: 0.5;">
-    <img id="guardian-about" class="section-guardian" src="assets/images/raw/artist_broboticus_og.webp" alt="Guardian Bot" data-robot-id="broboticus" style="height: 450px; width: auto; cursor: pointer; transform-origin: bottom left;">
-  </div>
-  
-  <div class="container" style="position: relative; z-index: 2;">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text cyber-text-grn" data-text="ABOUT THE ARTIST">ABOUT THE ARTIST</span>
-      </h2>
-      <p class="cyber-subtitle">The Digital Visionary: BasicGlitch</p>
-    </div>
-    <div class="about-card">
-      <img class="avatar" src="assets/images/about/sailboaticus.jpg" alt="Artist Avatar">
-      <div class="bio-text">
-        <p>
-          For BasicGlitch, the digital canvas began with a simple revelation: the power of the <strong>UNDO</strong>. This freedom to iterate without fear allowed for the evolution of a complex, signature line style that bridges the gap between structured reality and digital chaos. Known in the physical world as Justin Lance, the persona <strong>BasicGlitch</strong> crafts visions that refuse to be boring—rejecting traditional norms in favor of high-saturation Tech-Noir environments and playful cinematic homages.
-        </p>
-        <p>
-          This work is deeply informed by a journey across the American landscape. From roots in Newburgh, Indiana to the life-altering experience of standing before Colorado’s 14ers, BasicGlitch learned that true understanding only comes through experience. This philosophy continues into the New Mexico desert, where beauty is found in the unexpected bloom of a cactus or the stark, bold geometry of a mountain peak.
-        </p>
-        <p>
-          Off-screen, the artist is a musician of 31 years, finding a common frequency between the intricate rhythms of 90s electronic pulses and the vibrant color palettes of the art. Whether cooking to bring people together or hiking into the silence of the high peaks, the mission is to create a positive, introspective experience—a neon light against the world's negativity.
-        </p>
-      </div>
-    </div>
-    <div class="about-icons">
-      <a href="https://instagram.com" target="_blank">
-        <img class="icon" src="assets/icons/instagram.svg" alt="Instagram">
-      </a>
-      <a href="https://ko-fi.com" target="_blank">
-        <img class="icon" src="assets/icons/ko-fi.svg" alt="Ko-fi">
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- INSTAGRAM SECTION -->
-<section class="section neon-grid-section" id="instagram">
-  <div class="container">
-    <div class="cyber-header">
-      <h2 class="cyber-title">
-        <span class="cyber-text cyber-text-mag" data-text="INSTAGRAM FEED">INSTAGRAM FEED</span>
-      </h2>
-      <p class="cyber-subtitle">Follow @basic.glitch for incoming transmissions</p>
-    </div>
-    
-    <div class="instagram-row">
-      <div class="instagram-card neon-3d-card" style="padding: 0; overflow: hidden; border: 2px solid var(--neon-mag); width: 100%; max-width: 800px; margin: 0 auto;">
-        <a href="https://www.instagram.com/basic.glitch" target="_blank" style="display: block; position: relative;">
-          <div id="insta-feed-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--bg);">
-            <!-- Random images will be injected here -->
-          </div>
-          <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
-            <span class="btn-neon">VIEW ON INSTAGRAM</span>
-          </div>
-        </a>
+  <!-- ── HERO ── -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-grid"></div>
+
+    <div class="about-hero-inner">
+
+      <!-- AVATAR -->
+      <div class="about-avatar-wrap">
+        <img
+          class="about-avatar"
+          src="assets/images/raw/artist_broboticus_avatar.webp"
+          alt="Sailboaticus — Broboticus at sea, by BasicGlitch"
+        >
+        <p class="about-avatar-label">
+          BASICGLITCH &nbsp;·&nbsp; <span>NEON MESA DIGITAL</span>
+        </p>
       </div>
+
+      <!-- HERO TEXT -->
+      <div class="about-hero-text">
+        <span class="about-handle">// ARTIST_PROFILE</span>
+        <h1 class="about-name">BasicGlitch</h1>
+        <p class="about-tagline">
+          Digital artist. Musician of <em>31 years</em>. Creative technologist.
+          Operating somewhere between <em>Tularosa, New Mexico</em>
+          and whatever frequency the machines are broadcasting on tonight.
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-val">9</span>
+            <span class="about-stat-label">Series</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-val">31</span>
+            <span class="about-stat-label">Years Music</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-val">28</span>
+            <span class="about-stat-label">Years Drawing</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-val">∞</span>
+            <span class="about-stat-label">Fields Active</span>
+          </div>
+        </div>
+
+        <div class="about-socials">
+          <a href="https://www.instagram.com/basic.glitch"
+             target="_blank" rel="noopener"
+             class="about-social-btn about-social-btn--ig">
+            <img src="assets/icons/instagram.svg" alt=""> @basic.glitch
+          </a>
+          <a href="https://ko-fi.com/basicglitch"
+             target="_blank" rel="noopener"
+             class="about-social-btn about-social-btn--kofi">
+            <img src="assets/icons/ko-fi.svg" alt=""> Ko-fi
+          </a>
+          <a href="https://github.com/flappeningtrappening-art"
+             target="_blank" rel="noopener"
+             class="about-social-btn about-social-btn--gh">
+            <img src="assets/icons/download.svg" alt=""> GitHub
+          </a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── ORIGIN ── -->
+  <div class="about-body">
+
+    <section class="about-section">
+      <div class="about-container">
+        <span class="about-section-label">// ORIGIN_LOG</span>
+        <h2 class="about-section-heading grn">How It Started</h2>
+        <div class="about-body-text">
+          <p>At seventeen, a pencil and a blank page. No plan. Just line following line, each one responding to the last, building something that had no name yet. The style that emerged — fluid, continuous, psychedelic in the original sense — came from letting the hand move without asking permission from the brain. Call it LSD-flow line work. That's what it felt like. The line doesn't stop; it just decides where to go next.</p>
+          <p>The digital tools came later, and they brought a revelation that changed everything: the <strong>UNDO</strong> key. Not as a crutch — as a philosophy. The freedom to try anything without consequence, to push further than you'd dare in ink, to make a mark and then unmake it and make it again differently. Traditional artists will tell you that's cheating. Traditional artists are wrong. UNDO is just iteration at speed.</p>
+          <p>Twenty-eight years of drawing. Thirty-one years of music. The two disciplines inform each other in ways that are hard to explain but easy to hear if you look at the work long enough. Rhythm is visible in the line. Frequency is visible in the color. The Sangre de Cristos series happened because standing before a 14,000-foot peak in Colorado felt like a chord change — something that big and that old doing something structural to the air around it. The circuit board rising from the valley is the signal that mountain is always transmitting. BasicGlitch just found the right filter to see it.</p>
+        </div>
+
+        <div class="about-quote">
+          <p>"The line doesn't stop. It just decides where to go next."</p>
+        </div>
+
+        <div class="about-tags">
+          <span class="about-tag about-tag--grn">LSD-Flow Line Work</span>
+          <span class="about-tag about-tag--cyn">Neon Surrealism</span>
+          <span class="about-tag about-tag--mag">Tech-Noir</span>
+          <span class="about-tag about-tag--pur">Cyber-Eclectic</span>
+          <span class="about-tag about-tag--org">Psychedelic Digital Art</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ── BROBOTICUS ORIGIN ── -->
+    <section class="about-section">
+      <div class="about-container">
+        <span class="about-section-label">// CHARACTER_ORIGIN</span>
+        <h2 class="about-section-heading cyn">The Robot in the Room</h2>
+        <div class="about-body-text">
+          <p>In 2024, an Instagram contest called March of the Robots issued a simple directive: draw a robot. The drawing that came back was Broboticus — beanie on, headphones on, hands at the decks, rendered in single-weight neon green on absolute black. No background. No context. Just a character, fully formed in his first appearance, already doing exactly what he was always going to do.</p>
+          <p>What nobody anticipated, including the artist, was that this robot had things to say. Not in words — in leisure activities. Broboticus took up ballet. He learned karate. He went night fishing on the Arkansas River at midnight and stood there for six hours without moving because he finds the water calming. He rode a Tyrannosaurus Rex through a futurist cityscape with a vintage microphone raised like he was calling the whole thing into the official record.</p>
+          <p>Case Study 42 is the archive of all of it — every field report, every documented instance of a robot acclimating to human society one activity at a time. The study is ongoing. The research team has stopped questioning the order in which the reports arrive.</p>
+          <p>Broboticus is also — quietly, without making a big deal about it — a comment on what it means to be a creative entity navigating a world that wasn't designed for you. A robot doing ballet in a magenta void, fully committed, zero irony. That's the whole argument.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ── LANDSCAPE & PLACE ── -->
+    <section class="about-section">
+      <div class="about-container">
+        <span class="about-section-label">// PLACE_AND_INFLUENCE</span>
+        <h2 class="about-section-heading mag">Tularosa, New Mexico. Colorado's 14ers. The In-Between.</h2>
+        <div class="about-body-text">
+          <p>Geography matters. From Indiana to Colorado to the high desert of New Mexico, the landscape has been doing something to the work the entire time — sharpening the geometry, intensifying the contrast, replacing the soft greens of the Midwest with the stark, unapologetic palette of the American West.</p>
+          <p>Standing before Colorado's Sangre de Cristo range at altitude does something structural to your sense of scale. Those mountains are not backdrop — they are the main event. They have been here for 300 million years and they are completely indifferent to your opinion of them. The Sangre de Cristos series — nine variations of the same mountain range in nine different color states — is an attempt to render that indifference as data. The circuit board rising from the valley is not decoration. It is what those mountains sound like translated into a visual frequency.</p>
+          <p>Tularosa, New Mexico is where the work gets made now. White Sands to the south. The Oscura Mountains to the east. A landscape that is actively hostile to anything soft or ambiguous. The desert has a way of clarifying what matters and burning off everything else. The art got harder here. More committed. Less interested in being liked.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ── MULTIPLE DISCIPLINES ── -->
+    <section class="about-section">
+      <div class="about-container">
+        <span class="about-section-label">// OPERATING_FIELDS</span>
+        <h2 class="about-section-heading pur">Not Just an Artist</h2>
+        <div class="about-body-text">
+          <p>The professional identity of BasicGlitch is deliberately wide. Digital art is the flagship, but it runs alongside music production, bug bounty security research, cryptocurrency analysis, and day trading. These aren't separate lives — they're the same underlying impulse: find the system, understand it deeply, find where it breaks or where it can be pushed into something unexpected.</p>
+          <p>The Basic Glitch Helmet is a physical spray-painted costume helmet with Arduino-controlled LED lighting. The Pup Fiction series is a parody franchise built on the same logic as a high-concept film pitch. The Case Study 42 NFT collection is being built with the same structural rigor as a software project. The Neon Mesa Digital brand operates under a "Win and Keep Winning" philosophy that applies equally to a market trade and a gallery submission.</p>
+          <p>What connects all of it is the same thing that connected the line work at seventeen to the circuit board mountains now: attention to frequency. Everything — art, music, markets, security systems, the Sangre de Cristos at 14,000 feet — is transmitting. The work is about learning to hear it and then translating what you hear into something visible.</p>
+        </div>
+
+        <div class="about-philosophy-grid">
+          <div class="philosophy-card">
+            <span class="philosophy-card-icon">🎨</span>
+            <div class="philosophy-card-title">Digital Art</div>
+            <div class="philosophy-card-text">Cyber-Eclectic Surrealism. Nine active series. Hand-drawn ink to neon circuit landscapes to animated skull loops.</div>
+          </div>
+          <div class="philosophy-card">
+            <span class="philosophy-card-icon">🎵</span>
+            <div class="philosophy-card-title">Music</div>
+            <div class="philosophy-card-text">31 years. 90s electronic. The Dark Wall project at 174 BPM. Pink Floyd × Dieselboy. Project Clockwork DAW.</div>
+          </div>
+          <div class="philosophy-card">
+            <span class="philosophy-card-icon">🔐</span>
+            <div class="philosophy-card-title">Security Research</div>
+            <div class="philosophy-card-text">Bug bounty hunting. HackerOne. The same pattern recognition that builds art finds vulnerabilities in systems.</div>
+          </div>
+          <div class="philosophy-card">
+            <span class="philosophy-card-icon">📡</span>
+            <div class="philosophy-card-title">Creative Tech</div>
+            <div class="philosophy-card-text">Arduino LED helmets. n8n automation. React/Vite builds. Linux. The hardware and software behind the creative output.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ── PHILOSOPHY / UNDO ── -->
+    <section class="about-section">
+      <div class="about-container">
+        <span class="about-section-label">// OPERATING_PHILOSOPHY</span>
+        <h2 class="about-section-heading org">Win and Keep Winning</h2>
+        <div class="about-body-text">
+          <p>The UNDO key is a metaphor that scales. In art it means iterate without fear. In life it means the same thing — most mistakes are reversible, most commitments are renegotiable, and the only creative failure is the one where you stopped moving. BasicGlitch has never stopped moving.</p>
+          <p>The work is not trying to be palatable. Palatable is the enemy of memorable. A robot doing karate in a cyan splatter field, three instances stacked in motion blur, outlined in red and orange and yellow — nobody asked for that. Nobody knew they needed it. That's the point. The job is not to give people what they expect. The job is to show them something they couldn't have imagined and then make them feel like they would have always wanted it.</p>
+          <p>Neon Mesa Digital. BasicGlitch. The same thing, two signals. One is the brand. One is the persona. Both are real. Both are operating. The machines are still running.</p>
+        </div>
+
+        <div class="about-quote" style="border-left-color: var(--neon-org);">
+          <p style="color: var(--neon-org);">"The job is not to give people what they expect. The job is to show them something they couldn't have imagined and then make them feel like they would have always wanted it."</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end about-body -->
+
+  <div class="section-divider"></div>
+
+  <!-- ── INSTAGRAM STRIP ── -->
+  <section class="about-insta-strip">
+    <div class="cyber-header" style="margin-bottom: 30px;">
+      <h2 class="cyber-title" style="font-size: clamp(1.2rem, 4vw, 2rem);">
+        <span class="cyber-text cyber-text-mag" data-text="FROM_THE_STUDIO">FROM_THE_STUDIO</span>
+      </h2>
+      <p class="cyber-subtitle">
+        RECENT WORK &nbsp;·&nbsp;
+        <a href="https://www.instagram.com/basic.glitch"
+           target="_blank" rel="noopener"
+           style="color:var(--neon-mag);text-decoration:underline;">
+          FOLLOW @basic.glitch
+        </a>
+      </p>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto;border:1px solid rgba(255,28,207,0.2);border-radius:8px;overflow:hidden;">
+      <a href="https://www.instagram.com/basic.glitch" target="_blank" rel="noopener"
+         style="display:block;position:relative;">
+        <div id="insta-feed-grid"
+             style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bg);">
+        </div>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;"
+             onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+          <span class="btn-neon" style="border-color:var(--neon-mag);color:var(--neon-mag);">VIEW ON INSTAGRAM</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="about-cta">
+    <div class="cyber-header" style="margin-bottom:28px;">
+      <h2 class="cyber-title" style="font-size:clamp(1.2rem,4vw,2rem);">
+        <span class="cyber-text" data-text="WORK_WITH_BASICGLITCH">WORK_WITH_BASICGLITCH</span>
+      </h2>
+    </div>
+    <p style="font-family:'Chakra Petch',sans-serif;color:var(--muted);max-width:480px;margin:0 auto 30px;line-height:1.7;">
+      Commissions are open. Custom characters, neon landscapes, parody series, NFT art, apparel design.
+      If it can be imagined it can be built.
+    </p>
+    <a href="commissions.html" class="btn-neon">VIEW COMMISSION TIERS</a>
+    &nbsp;&nbsp;
+    <a href="contact.html" class="btn-neon"
+       style="border-color:var(--neon-2);color:var(--neon-2);box-shadow:0 0 10px rgba(0,255,62,0.2);">
+      GET IN TOUCH
+    </a>
+  </section>
+
 </main>
 
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <p>© 2025 BASICGLITCH | ALL RIGHTS RESERVED</p>
+    <div class="footer-links">
+      <a href="terms.html" class="footer-link">Terms &amp; Licensing</a>
+      <a href="contact.html" class="footer-link">Contact</a>
+      <a href="about.html" class="footer-link">About the Artist</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Instagram feed shuffle -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const rawImages = [
-      'pup-fiction-scene1.webp',
-      'gaia_of_the_wasteland.webp',
-      'guitarbot_og.webp',
-      'spiral_geometry.webp',
-      'artist_broboticus_og.webp',
-      'starbot_waiting_in_the_sky.webp',
-      'a_mycological_phenomenon.webp',
-      'floral.webp',
-      'ranchboticus.webp',
-      'balletboticus.webp',
-      'vitruvian_broboticus_og.webp',
-      'brobotosaurus_wrex.webp',
-      'cubist_chef.webp',
-      'mycology_yourcology.webp',
-      'pachydermis.webp',
-      'karateboticus1.webp',
-      'chefboticus.webp',
-      'aesthetic_sangre_de_cristo.webp',
-      'literal_traphouse.webp',
-      'fishboticus.webp',
-      'aesthetic_laser_colorado.webp',
-      'dust_to_dust.webp'
-    ];
-
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
-    const grid = document.getElementById('insta-feed-grid');
-    if (grid) {
-      const selected = shuffle([...rawImages]).slice(0, 6);
-      grid.innerHTML = selected.map(img => `
-        <img src="assets/images/raw/${img}" alt="IG Preview" style="width: 100%; aspect-ratio: 1; object-fit: cover; filter: none;">
-      `).join('');
-    }
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const imgs = [
+    'pup-fiction-scene1.webp','gaia_of_the_wasteland.webp','guitarbot_og.webp',
+    'spiral_geometry.webp','artist_broboticus_og.webp','starbot_waiting_in_the_sky.webp',
+    'a_mycological_phenomenon.webp','floral.webp','ranchboticus.webp',
+    'balletboticus.webp','vitruvian_broboticus_og.webp','brobotosaurus_wrex.webp',
+    'cubist_chef.webp','mycology_yourcology.webp','pachydermis.webp',
+    'karateboticus1.webp','chefboticus.webp','aesthetic_sangre_de_cristo.webp',
+    'literal_traphouse.webp','fishboticus.webp','aesthetic_laser_colorado.webp',
+    'dust_to_dust.webp'
+  ];
+  const shuffle = a => {
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    return a;
+  };
+  const grid = document.getElementById('insta-feed-grid');
+  if(grid){
+    shuffle([...imgs]).slice(0,6).forEach(img => {
+      const el = document.createElement('img');
+      el.src = `assets/images/raw/${img}`;
+      el.alt = 'BasicGlitch recent work';
+      el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
+      grid.appendChild(el);
+    });
+  }
+});
 </script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script>
 
-<!-- SVG Filters (Hidden) -->
 <svg class="svg-filter">
   <defs>
     <filter id="glitch-filter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
   </defs>
 </svg>
