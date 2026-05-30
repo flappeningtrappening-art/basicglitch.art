@@ -30,7 +30,7 @@
   {
     "id": "art-20260226152936",
     "title": "The Screambot",
-    "file": "assets/images/raw/the_screambot_20260226152936.webp",
+    "file": "assets/images/raw/screambot.webp",
     "categories": [
       "Masters Remixed"
     ],
@@ -735,7 +735,7 @@
   {
     "id": "brobot-008",
     "title": "Vitruvian Broboticus",
-    "file": "assets/images/raw/vitruvian_broboticus_og.webp",
+    "file": "assets/images/raw/vitruvian_broboticus.webp",
     "categories": [
       "Broboticus",
       "Case Study 42",
