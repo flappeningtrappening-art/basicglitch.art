@@ -60,7 +60,8 @@ function updateHeaderNeon() {
     const bgType = hero.dataset.bg || 'default';
     const neonVar = headerColors[bgType] || headerColors['default'];
     
-    setCSSVar(headerTitle, 'color', `var(${neonVar})`);
+    const actualColor = getComputedStyle(document.documentElement).getPropertyValue(neonVar).trim(); 
+    setCSSVar(headerTitle, 'color', actualColor);
   }
 }
 
