@@ -912,7 +912,7 @@ function renderGalleryCards(items) {
     }
   }
 
-  // Keyboard
+    // Keyboard
   document.addEventListener('keydown', e => {
     const lb = document.getElementById('lightbox');
     if (!lb || lb.classList.contains('hidden')) return;
@@ -985,6 +985,49 @@ function renderGalleryCards(items) {
     });
 
     applyFilters();
+    
+    // Force populate dropdowns with default values since gallery.json has no styles/categories
+    setTimeout(forcePopulateDropdowns, 500);
+  }
+
+  // Force populate dropdowns with default values since gallery.json has no styles/categories
+  function forcePopulateDropdowns() {
+    console.log('Force populating dropdowns...');
+    
+    const styleMenu = document.getElementById('style-menu');
+    const seriesMenu = document.getElementById('series-menu');
+    
+    if (styleMenu && styleMenu.children.length === 0) {
+      const defaultStyles = ['Character', 'Neon', 'Landscape', 'Glitch', 'Geometric', 'Surrealism', 'Psychedelia'];
+      defaultStyles.forEach(style => {
+        const opt = document.createElement('div');
+        opt.className = 'filter-option';
+        opt.dataset.value = style;
+        opt.innerHTML = `<span class="check"></span>${style}`;
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleFilter('styles', style, opt);
+        });
+        styleMenu.appendChild(opt);
+      });
+      console.log('Added', defaultStyles.length, 'style options');
+    }
+    
+    if (seriesMenu && seriesMenu.children.length === 0) {
+      const defaultSeries = ['Broboticus', 'Sangre de Cristos', 'Pup Fiction', 'Masters Remixed', 'Cyber Savanna', 'Hand-Drawn Ink', 'Spiral Studies'];
+      defaultSeries.forEach(series => {
+        const opt = document.createElement('div');
+        opt.className = 'filter-option';
+        opt.dataset.value = series;
+        opt.innerHTML = `<span class="check"></span>${series}`;
+        opt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleFilter('series', series, opt);
+        });
+        seriesMenu.appendChild(opt);
+      });
+      console.log('Added', defaultSeries.length, 'series options');
+    }
   }
 
   // Wait for app.js to load GALLERY data
