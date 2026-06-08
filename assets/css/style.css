@@ -1020,8 +1020,8 @@ img {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(0,255,247,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,255,247,0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,255,247,0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,247,0.10) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMoveDownRight 40s linear infinite;
   pointer-events: none;
@@ -1033,8 +1033,8 @@ img {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(255,28,207,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,28,207,0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,28,207,0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,28,207,0.10) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMoveUpLeft 35s linear infinite;
   pointer-events: none;
@@ -1046,8 +1046,8 @@ img {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(0,255,62,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,255,62,0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,255,62,0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,62,0.10) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMoveDownRight 30s linear infinite;
   pointer-events: none;
@@ -1073,45 +1073,33 @@ img {
 }
 
 /* ========================================================
-   MOBILE CYBER TEXT FIXES
+   MOBILE CYBER TEXT FIXES - NO SIZE REDUCTION
    ======================================================== */
 @media (max-width: 768px) {
   .cyber-text {
     display: inline-block;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    word-break: break-word;
     white-space: normal;
+    word-break: keep-all;
     text-align: center;
   }
   
-  .cyber-title {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    padding: 0 10px;
-  }
-  
-  /* Fix for the glitch pseudo-element */
+  /* Allow the glitch pseudo-element to wrap properly */
   .cyber-text::before {
     content: attr(data-text);
     white-space: normal;
-    word-break: break-word;
+    word-break: keep-all;
     text-align: center;
-    width: 100%;
+  }
+  
+  /* Keep the original font size */
+  .cyber-title {
+    font-size: clamp(1.5rem, 8vw, 3.5rem) !important;
   }
 }
 
-/* Extra small screens (below 480px) */
-@media (max-width: 480px) {
+/* Only the smallest phones get a slight reduction */
+@media (max-width: 380px) {
   .cyber-text {
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem;
   }
-  
-  .cyber-subtitle {
-    font-size: 0.65rem;
-    padding: 0 10px;
-  }
-}   
+}
