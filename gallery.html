@@ -707,80 +707,95 @@
     if (count) count.textContent = items.length;
   }
 
-  // ── RENDER CARDS ──
-  function renderGalleryCards(items) {
-    const grid = document.getElementById('gallery-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
+// ── RENDER CARDS ──
+function renderGalleryCards(items) {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  
+  if (!items.length) {
+    const empty = document.createElement('div');
+    empty.className = 'gallery-empty';
+    empty.innerHTML = '<h3>NO SIGNAL FOUND</h3><p>Adjust filters or clear to see all pieces.</p>';
+    grid.appendChild(empty);
+    return;
+  }
 
-    if (!items.length) {
-      const empty = document.createElement('div');
-      empty.className = 'gallery-empty';
-      empty.innerHTML = '<h3>NO SIGNAL FOUND</h3><p>Adjust filters or clear to see all pieces.</p>';
-      grid.appendChild(empty);
-      return;
+  items.forEach((item, idx) => {
+    const isVideo = item.type === 'video' || (item.file || '').toLowerCase().endsWith('.mp4');
+    const thumbSrc = `assets/images/gallery-thumbs/${item.id}.jpg`;
+    const forSale  = (item.categories || []).includes('Available for Purchase');
+    const series   = (item.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project')[0] || '';
+    
+    // Create slug for the URL
+    const slug = item.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+
+    const card = document.createElement('div');
+    card.className = 'gallery-card';
+    card.dataset.id = item.id;
+    card.style.position = 'relative'; // Needed for absolute positioning of the link
+
+    // Badges
+    if (isVideo) {
+      const vb = document.createElement('div');
+      vb.className = 'video-badge';
+      vb.textContent = 'MOTION';
+      card.appendChild(vb);
+    }
+    if (forSale && item.price) {
+      const sb = document.createElement('div');
+      sb.className = 'sale-badge';
+      sb.textContent = 'FOR SALE';
+      card.appendChild(sb);
     }
 
-    items.forEach((item, idx) => {
-      const isVideo = item.type === 'video' || (item.file || '').toLowerCase().endsWith('.mp4');
-      const thumbSrc = `assets/images/gallery-thumbs/${item.id}.jpg`;
-      const forSale  = (item.categories || []).includes('Available for Purchase');
-      const series   = (item.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project')[0] || '';
+    // Image
+    const img = document.createElement('img');
+    img.src = thumbSrc;
+    img.alt = item.alt_text || item.title + ' | BasicGlitch';
+    img.loading = 'lazy';
+    card.appendChild(img);
 
-      const card = document.createElement('div');
-      card.className = 'gallery-card';
-      card.dataset.id = item.id;
+    // Body
+    const body = document.createElement('div');
+    body.className = 'gallery-card-body';
 
-      // Badges
-      if (isVideo) {
-        const vb = document.createElement('div');
-        vb.className = 'video-badge';
-        vb.textContent = 'MOTION';
-        card.appendChild(vb);
-      }
-      if (forSale && item.price) {
-        const sb = document.createElement('div');
-        sb.className = 'sale-badge';
-        sb.textContent = 'FOR SALE';
-        card.appendChild(sb);
-      }
+    const title = document.createElement('div');
+    title.className = 'gallery-card-title';
+    title.textContent = item.title || 'Untitled';
+    body.appendChild(title);
 
-      // Image
-      const img = document.createElement('img');
-      img.src = thumbSrc;
-      img.alt = item.alt_text || item.title + ' | BasicGlitch';
-      img.loading = 'lazy';
-      card.appendChild(img);
+    const meta = document.createElement('div');
+    meta.className = 'gallery-card-meta';
+    const seriesSpan = document.createElement('span');
+    seriesSpan.textContent = series || (item.styles || [])[0] || '';
+    meta.appendChild(seriesSpan);
+    if (item.price) {
+      const price = document.createElement('span');
+      price.className = 'gallery-card-price';
+      price.textContent = '$' + item.price;
+      meta.appendChild(price);
+    }
+    body.appendChild(meta);
+    card.appendChild(body);
 
-      // Body
-      const body = document.createElement('div');
-      body.className = 'gallery-card-body';
+    // ADD THIS: Invisible link for Google to crawl
+    const crawlLink = document.createElement('a');
+    crawlLink.href = `art/${slug}.html`;
+    crawlLink.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; text-indent:-9999px; overflow:hidden;';
+    crawlLink.setAttribute('aria-label', `View details for ${item.title}`);
+    card.appendChild(crawlLink);
 
-      const title = document.createElement('div');
-      title.className = 'gallery-card-title';
-      title.textContent = item.title || 'Untitled';
-      body.appendChild(title);
-
-      const meta = document.createElement('div');
-      meta.className = 'gallery-card-meta';
-      const seriesSpan = document.createElement('span');
-      seriesSpan.textContent = series || (item.styles || [])[0] || '';
-      meta.appendChild(seriesSpan);
-      if (item.price) {
-        const price = document.createElement('span');
-        price.className = 'gallery-card-price';
-        price.textContent = '$' + item.price;
-        meta.appendChild(price);
-      }
-      body.appendChild(meta);
-      card.appendChild(body);
-
-      // Click — open lightbox
-      card.addEventListener('click', () => openGalleryLightbox(item, items, idx));
-
-      grid.appendChild(card);
+    // Click — open lightbox (keep this, but prevent it from interfering with the link)
+    card.addEventListener('click', (e) => {
+      // If the click came from the link or its children, don't open lightbox
+      if (crawlLink.contains(e.target)) return;
+      openGalleryLightbox(item, items, idx);
     });
-  }
+
+    grid.appendChild(card);
+  });
+}
 
   // ── LIGHTBOX ──
   let lbCurrentIdx = 0;
