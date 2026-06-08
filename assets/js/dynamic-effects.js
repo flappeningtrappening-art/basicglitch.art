@@ -115,18 +115,32 @@ function updateGalleryBorders() {
    3D CARD COMPATIBILITY HELPERS
 -------------------------------- */
 function initialize3DEffects() {
-  // Glow intensity and color are now handled via CSS for better performance
+  // Add styles for featured card 3D effect
   const style = document.createElement('style');
   style.textContent = `
-    .neon-3d-card {
+    /* Target only the first archive card and first gallery card */
+    .archive-grid .archive-card:first-child,
+    .gallery-grid .gallery-card:first-child {
       --neon-glow-color: var(--neon);
       --neon-glow-intensity: 0.4;
       position: relative;
-      overflow: hidden; /* Clips the racing tracer */
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Override specific colors for Broboticus card (green theme) */
+    .archive-grid .archive-card--grn:first-child {
+      --neon-glow-color: var(--neon-2);
+    }
+    
+    /* Override for gallery first card - use magenta */
+    .gallery-grid .gallery-card:first-child {
+      --neon-glow-color: var(--neon-mag);
     }
     
     /* The Racing Tracer (Tron/Snake Style) */
-    .neon-3d-card::before {
+    .archive-grid .archive-card:first-child::before,
+    .gallery-grid .gallery-card:first-child::before {
       content: '';
       position: absolute;
       width: 200%;
@@ -138,38 +152,67 @@ function initialize3DEffects() {
         var(--neon-glow-color) 85%,
         transparent 100%
       );
-      animation: snake-rotate 1.5s linear infinite;
+      animation: snake-rotate 3s linear infinite;
       z-index: 0;
       pointer-events: none;
       opacity: var(--neon-glow-intensity);
+      transition: opacity 0.3s ease;
     }
-
-    @keyframes snake-rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
+    
     /* Ensure card content is above tracer */
-    .neon-3d-card > * {
+    .archive-grid .archive-card:first-child > *,
+    .gallery-grid .gallery-card:first-child > * {
       position: relative;
       z-index: 2;
     }
-
-    /* Hover State Intensity */
-    .neon-3d-card:hover::before {
-      --neon-glow-intensity: 0.8;
-      animation-duration: 0.8s; /* Faster when hovered */
+    
+    /* Hover State Intensity - tracer speeds up and glows brighter */
+    .archive-grid .archive-card:first-child:hover::before,
+    .gallery-grid .gallery-card:first-child:hover::before {
+      --neon-glow-intensity: 0.9;
+      animation-duration: 1.2s;
+    }
+    
+    /* Hover effect on the card itself */
+    .archive-grid .archive-card:first-child:hover,
+    .gallery-grid .gallery-card:first-child:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px var(--neon-glow-color);
     }
     
     /* Dark overlay to make content readable and tracer look like a border */
-    .neon-3d-card::after {
+    .archive-grid .archive-card:first-child::after,
+    .gallery-grid .gallery-card:first-child::after {
       content: '';
       position: absolute;
       inset: 2px;
-      background: var(--panel);
-      border-radius: calc(var(--card-radius) - 1px);
+      background: rgba(10, 10, 15, 0.95);
+      border-radius: calc(var(--card-radius, 12px) - 2px);
       z-index: 1;
       pointer-events: none;
+    }
+    
+    /* Keep images above the overlay */
+    .archive-grid .archive-card:first-child img,
+    .gallery-grid .gallery-card:first-child img {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Keep card body content above overlay */
+    .archive-grid .archive-card:first-child .archive-card-body,
+    .gallery-grid .gallery-card:first-child .card-info,
+    .gallery-grid .gallery-card:first-child h3,
+    .gallery-grid .gallery-card:first-child p {
+      position: relative;
+      z-index: 2;
+      background: transparent;
+    }
+    
+    /* Animation keyframes */
+    @keyframes snake-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
   `;
   document.head.appendChild(style);
@@ -249,10 +292,19 @@ function enhanceInstagramCards() {
    INITIALIZATION
 -------------------------------- */
 function initDynamicEffects() {
+  // Update header neon color
   updateHeaderNeon();
+  
+  // Update gallery card borders
   updateGalleryBorders();
+  
+  // Initialize 3D card effects (featured card only)
   initialize3DEffects();
+  
+  // Enhance section backgrounds
   enhanceSectionBackgrounds();
+  
+  // Enhance Instagram cards
   enhanceInstagramCards();
   
   // Update effects when gallery filters change
@@ -260,7 +312,11 @@ function initDynamicEffects() {
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       // Small delay to allow gallery to re-render
-      setTimeout(updateGalleryBorders, 100);
+      setTimeout(() => {
+        updateGalleryBorders();
+        // Re-apply any dynamic 3D effect fixes after filter change
+        fixFirstCardAfterFilter();
+      }, 100);
     });
   });
   
@@ -268,36 +324,91 @@ function initDynamicEffects() {
   const clearBtn = document.getElementById('clear-filters');
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
-      setTimeout(updateGalleryBorders, 100);
+      setTimeout(() => {
+        updateGalleryBorders();
+        fixFirstCardAfterFilter();
+      }, 100);
     });
+  }
+  
+  // Observe gallery for dynamic content changes
+  observeGalleryFor3DEffect();
+  
+  // Fix for archive page first card (ensures 3D effect applies)
+  fixArchiveFirstCard();
+}
+
+// Helper function to ensure first card retains 3D effect after filter changes
+function fixFirstCardAfterFilter() {
+  const galleryGrid = document.getElementById('gallery-grid');
+  if (galleryGrid) {
+    const firstCard = galleryGrid.querySelector('.gallery-card:first-child');
+    if (firstCard) {
+      // Force a repaint to ensure CSS picks up the selector
+      firstCard.style.transform = 'translateZ(0)';
+      setTimeout(() => {
+        firstCard.style.transform = '';
+      }, 10);
+    }
   }
 }
 
-/* Run on DOM ready */
-document.addEventListener('DOMContentLoaded', initDynamicEffects);
-
-/* Export functions for use in app.js */
-if (typeof window !== 'undefined') {
-  window.updateGalleryBorders = updateGalleryBorders;
-  window.enhanceSectionBackgrounds = enhanceSectionBackgrounds;
+// Helper function to fix archive first card (runs once on load)
+function fixArchiveFirstCard() {
+  const archiveGrid = document.querySelector('.archive-grid');
+  if (archiveGrid) {
+    const firstCard = archiveGrid.querySelector('.archive-card:first-child');
+    if (firstCard) {
+      // Ensure the card has proper styling
+      firstCard.style.position = 'relative';
+      firstCard.style.overflow = 'hidden';
+    }
+  }
 }
 
-// Mouse movement for gradient shift
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
+// Observer for dynamically loaded gallery content
+function observeGalleryFor3DEffect() {
+  const galleryGrid = document.getElementById('gallery-grid');
+  if (!galleryGrid) return;
+  
+  // Disconnect existing observer if any
+  if (window._galleryObserver) {
+    window._galleryObserver.disconnect();
+  }
+  
+  // Create new observer
+  window._galleryObserver = new MutationObserver((mutations) => {
+    let shouldUpdate = false;
     
-    document.body.style.setProperty('--mouse-x', x);
-    document.body.style.setProperty('--mouse-y', y);
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        shouldUpdate = true;
+      }
+    });
+    
+    if (shouldUpdate) {
+      setTimeout(() => {
+        updateGalleryBorders();
+        // CSS selector will automatically apply to the new first child
+      }, 50);
+    }
+  });
+  
+  window._galleryObserver.observe(galleryGrid, { 
+    childList: true, 
+    subtree: false 
+  });
+}
+
+// Run when DOM is ready, and also when gallery data loads
+document.addEventListener('DOMContentLoaded', () => {
+  initDynamicEffects();
 });
 
-// Scroll Glitch Effect
-let isScrolling;
-window.addEventListener('scroll', () => {
-    document.body.classList.add('scroll-glitch-active');
-    
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(() => {
-        document.body.classList.remove('scroll-glitch-active');
-    }, 150); // Stop glitch 150ms after scrolling stops
-}, { passive: true });
+// Also re-run when gallery data is loaded (for dynamic gallery pages)
+window.addEventListener('GALLERY_READY', () => {
+  setTimeout(() => {
+    updateGalleryBorders();
+    fixFirstCardAfterFilter();
+  }, 100);
+});
