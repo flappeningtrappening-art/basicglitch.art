@@ -1011,6 +1011,68 @@ img {
 }
 
 /* ========================================================
+   GRID BACKGROUND ANIMATIONS FOR ALL SECTIONS
+   ======================================================== */
+
+/* Add animation to archive section */
+.archive-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,255,247,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,247,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMoveDownRight 40s linear infinite;
+  pointer-events: none;
+}
+
+/* Add animation to instagram section */
+.insta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,28,207,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,28,207,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMoveUpLeft 35s linear infinite;
+  pointer-events: none;
+}
+
+/* Add animation to email signup section */
+.email-signup-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,255,62,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,62,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMoveDownRight 30s linear infinite;
+  pointer-events: none;
+}
+
+/* Make sure sections have position relative for pseudo-elements */
+.archive-section,
+.insta-section,
+.email-signup-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Keyframes if missing */
+@keyframes gridMoveDownRight {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 120px 120px; }
+}
+
+@keyframes gridMoveUpLeft {
+  0% { background-position: 30px 30px; }
+  100% { background-position: -90px -90px; }
+}
+
+/* ========================================================
    MOBILE CYBER TEXT FIXES
    ======================================================== */
 @media (max-width: 768px) {
