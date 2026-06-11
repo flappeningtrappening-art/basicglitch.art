@@ -596,6 +596,7 @@
 
   // ── DROPDOWN BUILDER ──
   function buildDropdown(menuEl, btnEl, items, stateKey, label) {
+    // Populate menu with options
     menuEl.innerHTML = '';
     items.forEach(item => {
       const opt = document.createElement('div');
@@ -609,17 +610,35 @@
       menuEl.appendChild(opt);
     });
 
-    btnEl.addEventListener('click', e => {
+    // Clone and replace button to remove any existing event listeners
+    const newBtn = btnEl.cloneNode(true);
+    btnEl.parentNode.replaceChild(newBtn, btnEl);
+    
+    // Add fresh click handler to the new button
+    newBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      const isOpen = menuEl.classList.contains('open');
-      // Close all dropdowns
+      
+      // Close all dropdowns first
       document.querySelectorAll('.filter-dropdown-menu').forEach(m => m.classList.remove('open'));
       document.querySelectorAll('.filter-dropdown-btn').forEach(b => b.classList.remove('open'));
-      if (!isOpen) {
+      
+      // Then open this one if it wasn't open
+      const currentlyOpen = menuEl.classList.contains('open');
+      if (!currentlyOpen) {
         menuEl.classList.add('open');
-        btnEl.classList.add('open');
+        newBtn.classList.add('open');
       }
     });
+    
+    // Update the button element reference for potential future use
+    if (stateKey === 'styles') {
+      document.getElementById('style-btn') && (document.getElementById('style-btn').id = 'old-style-btn');
+      newBtn.id = 'style-btn';
+    } else {
+      document.getElementById('series-btn') && (document.getElementById('series-btn').id = 'old-series-btn');
+      newBtn.id = 'series-btn';
+    }
   }
 
   // Close dropdowns on outside click
