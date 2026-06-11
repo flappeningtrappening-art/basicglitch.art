@@ -641,10 +641,22 @@
     }
   }
 
-  // Close dropdowns on outside click
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.filter-dropdown-menu').forEach(m => m.classList.remove('open'));
-    document.querySelectorAll('.filter-dropdown-btn').forEach(b => b.classList.remove('open'));
+   // Close dropdowns on outside click (but not when clicking inside dropdowns)
+  document.addEventListener('click', (e) => {
+    const styleBtn = document.getElementById('style-btn');
+    const styleMenu = document.getElementById('style-menu');
+    const seriesBtn = document.getElementById('series-btn');
+    const seriesMenu = document.getElementById('series-menu');
+    
+    // Check if click is inside either dropdown
+    const isStyleClick = styleBtn && (styleBtn.contains(e.target) || (styleMenu && styleMenu.contains(e.target)));
+    const isSeriesClick = seriesBtn && (seriesBtn.contains(e.target) || (seriesMenu && seriesMenu.contains(e.target)));
+    
+    // If click is outside both, close all
+    if (!isStyleClick && !isSeriesClick) {
+      document.querySelectorAll('.filter-dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.filter-dropdown-btn').forEach(b => b.classList.remove('open'));
+    }
   });
 
   // ── FILTER TOGGLE ──
