@@ -59,10 +59,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Private Legal Templates
+# Private Legal Templates & Credentials
 legal/
 notes/*
 !notes/*/
 !notes/*/ .gitkeep
 .env
+pod_identity.json
+scripts/pod_identity.json
 assets/videos/basicglitch_neon_1440p_optimized.mp4

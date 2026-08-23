@@ -98,8 +98,8 @@ def build_art_page_html(item, slug):
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
-    .forensic-description p {{ margin-bottom: 22px; }}
-    .forensic-description em {{ color: var(--neon-mag); font-style: normal; font-weight: bold; }}
+    .art-description p {{ margin-bottom: 22px; }}
+    .art-description em {{ color: var(--neon-mag); font-style: normal; font-weight: bold; }}
     .art-details {{ padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; }}
     .back-nav-link {{ display: inline-flex; align-items: center; gap: 8px; color: var(--neon); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; text-decoration: none; margin-bottom: 25px; transition: opacity 0.2s; }}
     .back-nav-link:hover {{ opacity: 0.8; text-decoration: underline; }}
@@ -141,7 +141,7 @@ def build_art_page_html(item, slug):
         </h1>
         <p class="cyber-subtitle" style="color: var(--neon); margin-bottom: 25px; font-family: 'Orbitron'; font-size: 0.95rem;">COLLECTION: {series_str.upper()}</p>
         
-        <div class="forensic-description" style="font-family: 'Share Tech Mono', monospace; color: var(--fg); line-height: 1.8; font-size: 1.02rem; text-align: justify;">
+        <div class="art-description" style="font-family: 'Share Tech Mono', monospace; color: var(--fg); line-height: 1.8; font-size: 1.02rem; text-align: justify;">
 {desc_paragraphs}
         </div>
 
@@ -160,7 +160,7 @@ def build_art_page_html(item, slug):
 
 <footer class="site-footer">
   <div class="footer-inner container">
-    <p>© 2025 BASICGLITCH | FORENSIC ART SYSTEM</p>
+    <p>© 2026 BASICGLITCH | CYBER-ECLECTIC DIGITAL SURREALISM</p>
   </div>
 </footer>
 
