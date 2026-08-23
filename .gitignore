@@ -54,6 +54,11 @@ dkms.conf
 # debug information files
 *.dwo
 
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Private Legal Templates
 legal/
 notes/*

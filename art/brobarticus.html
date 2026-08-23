@@ -6,37 +6,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Rajdhani:wght@300..700&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/art/brobarticus.html">
 <title>Brobarticus | Cyber-Eclectic Digital Surrealism | BasicGlitch</title>
-<meta name="description" content="The official self-portrait of Broboticus. A glitch-infused study of robotic identity, merging wireframe aesthetics with a soulful, digital gaze.">
+<meta name="description" content="Broboticus picks up a brush and discovers something inconvenient: he's painting himself. A recursive loop in neon green. The machine that makes art about the...">
 
-<!-- Social Media -->
+<!-- Social Media / Open Graph -->
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://basicglitch.art/art/brobarticus.html">
 <meta property="og:title" content="Brobarticus | Cyber-Eclectic Digital Surrealism | BasicGlitch">
-<meta property="og:description" content="The official self-portrait of Broboticus. A glitch-infused study of robotic identity, merging wireframe aesthetics with a soulful, digital gaze.">
+<meta property="og:description" content="Broboticus picks up a brush and discovers something inconvenient: he's painting himself. A recursive loop in neon green. The machine that makes art about the...">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/artist_broboticus_avatar.webp">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://basicglitch.art/art/brobarticus.html">
+<meta name="twitter:title" content="Brobarticus | BasicGlitch">
+<meta name="twitter:description" content="Broboticus picks up a brush and discovers something inconvenient: he's painting himself. A recursive loop in neon green. The machine that makes art about the...">
+<meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/artist_broboticus_avatar.webp">
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
-    .forensic-description p { margin-bottom: 25px; }
+    .forensic-description p { margin-bottom: 22px; }
     .forensic-description em { color: var(--neon-mag); font-style: normal; font-weight: bold; }
-    .art-details { padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; }
-    .lore-terminal-btn { margin-top: 20px; font-family: 'Share Tech Mono', monospace; color: var(--muted); cursor: pointer; font-size: 0.8rem; border: none; background: none; }
+    .art-details { padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; }
+    .back-nav-link { display: inline-flex; align-items: center; gap: 8px; color: var(--neon); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; text-decoration: none; margin-bottom: 25px; transition: opacity 0.2s; }
+    .back-nav-link:hover { opacity: 0.8; text-decoration: underline; }
 </style>
-<script src="../assets/js/app.js?v=1.1" defer></script>
-<script src="../assets/js/terminal.js" defer></script>
+<script src="../assets/js/app.js?v=1.2" defer></script>
+<script src="../assets/js/dynamic-effects.js" defer></script>
 </head>
 <body class="bg-tech-noir">
 
 <header class="site-header">
   <div class="header-inner container">
     <a href="../index.html" class="brand">BasicGlitch</a>
-        <nav class="nav">
+    <nav class="nav">
       <a class="nav-link" href="../gallery.html"><img src="../assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
       <a class="nav-link" href="../portfolio.html"><img src="../assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/about.svg" alt="Broboticus Icon"> Broboticus</a>
+      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/robot.svg" alt="Broboticus Icon"> Broboticus</a>
       <a class="nav-link" href="../commissions.html"><img src="../assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
       <a class="nav-link" href="../apparel.html"><img src="../assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
       <a class="nav-link" href="../about.html"><img src="../assets/icons/about.svg" alt="About Icon"> About</a>
@@ -47,41 +57,33 @@
 
 <main class="section neon-grid-section" style="padding-top: 100px;">
   <div class="container art-showcase">
+    <a href="../gallery.html" class="back-nav-link">‹ RETURN TO ARCHIVE</a>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; align-items: start;">
       
       <!-- Image/Video Column -->
-      <div class="art-frame" style="border: 1px solid var(--border); padding: 10px; background: rgba(0,0,0,0.4);">
-        
+      <div class="art-frame" style="border: 1px solid var(--border); padding: 12px; background: rgba(0,0,0,0.5); border-radius: 8px;">
         <picture>
-            <source srcset="../assets/images/raw/artist_broboticus_avatar.webp" type="image/webp">
-            <img src="../assets/images/raw/artist_broboticus_avatar.webp" alt="Brobarticus - Digital Art by BasicGlitch" style="width: 100%; height: auto; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
+          <source srcset="../assets/images/raw/artist_broboticus_avatar.webp" type="image/webp">
+          <img src="../assets/images/raw/artist_broboticus_avatar.webp" alt="Brobarticus - Digital Art by BasicGlitch" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">
         </picture>
-        
-        <button class="lore-terminal-btn" onclick="openTerminal()">ACCESS_TERMINAL_V1.0.4</button>
       </div>
 
       <!-- Content Column -->
       <div class="art-details">
-        <h1 class="cyber-title" style="font-size: 2.5rem; margin-bottom: 10px;">
+        <h1 class="cyber-title" style="font-size: 2.3rem; margin-bottom: 10px;">
             <span class="cyber-text" data-text="BROBARTICUS">BROBARTICUS</span>
         </h1>
-        <p class="cyber-subtitle" style="color: var(--neon); margin-bottom: 30px; font-family: 'Orbitron';">COLLECTION: UNCATEGORIZED</p>
+        <p class="cyber-subtitle" style="color: var(--neon); margin-bottom: 25px; font-family: 'Orbitron'; font-size: 0.95rem;">COLLECTION: BROBOTICUS · CASE STUDY 42</p>
         
-        <div class="forensic-description" style="font-family: 'Share Tech Mono', monospace; color: var(--fg); line-height: 1.8; font-size: 1.05rem; text-align: justify;">
-            
-        <p><strong>Brobarticus</strong> represents a pivotal moment in the <em>Cyber-Eclectic</em> series, serving as a forensic deep-dive into the aesthetics of digital entropy. This work functions as a visual autopsy of the technological sublime, where neon saturations collide with the stark, unforgiving structures of the <em>Tech-Noir</em> tradition. From a technical standpoint, the piece utilizes complex layering and "glitch-artifacts" to simulate a state of quantum superposition—existing simultaneously as a cohesive vision and a fragmented digital signal. This intentional dissonance is designed to provoke a sense of "cyber-eclectic" wonder, challenging the viewer to find order within the meticulously orchestrated chaos.</p>
-        
-        <p>The thematic core of <strong>Brobarticus</strong> explores the intersection of organic form and synthetic architecture. In this specific vision, <strong>BasicGlitch</strong> investigates how light behaves when filtered through the lens of digital decay. The spectral color palette is not merely aesthetic; it is a narrative tool used to highlight the fragility of our digital interfaces. Each pixelated fracture and chromatic aberration serves as a forensic marker, indicating where the "signal" of the original inspiration was compromised and rebuilt into something more resilient and vibrant. This process of destruction and reconstruction is central to the <strong>Foundry</strong> philosophy: taking raw, chaotic data and processing it into high-fidelity artistic intelligence.</p>
-        
-        <p>For collectors and enthusiasts of surrealism, this piece offers a masterclass in modern digital composition. Whether displayed in a high-tech gaming sanctuary, a minimalist modern office, or as a focal point in a curated gallery of "The Resistance," <strong>Brobarticus</strong> commands attention. It is more than wall art; it is a forensic record of a digital dream, rendered with the uncompromising precision that defines the <strong>BasicGlitch</strong> persona. This piece is available for high-end digital licensing or as a premium physical artifact on apparel and large-scale tapestries, ensuring that the vision can be integrated into both digital and physical spaces with equal impact.</p>
-        
+        <div class="forensic-description" style="font-family: 'Share Tech Mono', monospace; color: var(--fg); line-height: 1.8; font-size: 1.02rem; text-align: justify;">
+          <p>Broboticus picks up a brush and discovers something inconvenient: he's painting himself. A recursive loop in neon green. The machine that makes art about the machine that makes art. Lab coat on, palette loaded, record spinning from the turntable mounted in his head — paint splatters across the coat like evidence. He's been at this a while. Case Study 42, Field Report 08.</p>
         </div>
 
-        <div style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
-            <h3 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 20px;">ACQUIRE THIS VISION</h3>
+        <div style="margin-top: 35px; border-top: 1px solid var(--border); padding-top: 25px;">
+            <h3 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 18px; font-size: 1.1rem;">ACQUIRE THIS VISION</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <a href="../commissions.html#standard-rates" class="btn-neon" style="text-align: center;">VIEW RATES</a>
-                <a href="../contact.html?subject=Inquiry: Brobarticus" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag);">SEND INQUIRY</a>
+                <a href="../commissions.html#standard-rates" class="btn-neon" style="text-align: center; font-size: 0.85rem; padding: 12px 20px;">VIEW RATES</a>
+                <a href="../contact.html?subject=Inquiry: Brobarticus" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag); font-size: 0.85rem; padding: 12px 20px;">SEND INQUIRY</a>
             </div>
         </div>
       </div>
@@ -96,5 +98,6 @@
   </div>
 </footer>
 
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

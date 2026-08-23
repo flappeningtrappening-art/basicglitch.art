@@ -245,7 +245,7 @@ function renderGrid(items, simplified = false){
     }, cardChildren);
 
     // Slugify helper for linking
-    const slug = it.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+    const slug = (it.title || '').toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
 
     // Primary click goes to the individual page
     card.addEventListener('click', (e) => {

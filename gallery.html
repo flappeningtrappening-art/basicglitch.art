@@ -591,7 +591,7 @@
   const unique = arr => [...new Set(arr.flat().filter(Boolean))].sort();
 
   function slugify(title) {
-    return title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+    return (title || '').toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
   // ── DROPDOWN BUILDER ──
@@ -759,7 +759,7 @@ function renderGalleryCards(items) {
     const series   = (item.categories || []).filter(c => c !== 'Available for Purchase' && c !== 'New Arrivals' && c !== 'Personal Projects' && c !== 'Personal Project')[0] || '';
     
     // Create slug for the URL
-    const slug = item.title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').trim();
+    const slug = slugify(item.title || '');
 
     const card = document.createElement('div');
     card.className = 'gallery-card';

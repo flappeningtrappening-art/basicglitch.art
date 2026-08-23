@@ -18,8 +18,7 @@ def log(message):
     msg = f"[{timestamp}] {message}"
     print(msg)
     with open(LOG_FILE, "a") as f:
-        f.write(msg + "
-")
+        f.write(msg + "\n")
 
 def check_for_new_signals():
     if not os.path.exists(SHARED_DIR):

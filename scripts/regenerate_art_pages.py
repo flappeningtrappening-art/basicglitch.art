@@ -2,135 +2,210 @@ import json
 import os
 import re
 
-def slugify(text):
-    text = text.lower()
-    text = text.replace(' — ', '-')
-    text = text.replace(' - ', '-')
-    text = text.replace(' —', '-')
-    text = text.replace('— ', '-')
-    text = text.replace('—', '-')
-    text = text.replace(' / ', '-')
-    text = text.replace(' /', '-')
-    text = text.replace('/ ', '-')
-    text = text.replace('/', '-')
-    text = re.sub(r'[^a-z0-9\-]', '', text.replace(' ', '-'))
-    text = re.sub(r'-+', '-', text)
-    return text.strip('-')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GALLERY_JSON = os.path.join(BASE_DIR, 'assets/data/gallery.json')
+ART_DIR = os.path.join(BASE_DIR, 'art')
 
-def main():
-    with open('assets/data/gallery.json', 'r') as f:
-        gallery = json.load(f)
+def slugify(title):
+    s = (title or '').lower()
+    s = re.sub(r'[^\w\s-]', '', s)
+    s = re.sub(r'[\s_\-]+', '-', s)
+    return s.strip('-')
 
-    # Create mapping of slugs to gallery items
-    gallery_map = {}
-    for item in gallery:
-        slug = slugify(item['title'])
-        gallery_map[slug] = item
-        # Also try without some specific replacements if needed
-        # But slugify should be robust enough
+def build_art_page_html(item, slug):
+    title = item.get('title', 'Untitled')
+    file_rel = item.get('file', '')
+    categories = item.get('categories', ['Cyber-Eclectic'])
+    styles = item.get('styles', ['Surrealism'])
+    description = item.get('description', '')
+    date = item.get('date', '2026-01-01')
+    
+    series_cats = [c for c in categories if c not in ('Available for Purchase', 'New Arrivals', 'Personal Projects', 'Personal Project')]
+    series_str = ' · '.join(series_cats) if series_cats else 'CYBER-ECLECTIC'
+    
+    clean_desc = re.sub(r'<[^>]+>', '', description).replace('"', '&quot;').strip()
+    meta_desc = (clean_desc[:157] + '...') if len(clean_desc) > 160 else clean_desc
+    
+    is_video = item.get('type') == 'video' or file_rel.lower().endswith(('.mp4', '.mov', '.webm'))
+    
+    if is_video:
+        media_html = f'''        <div class="video-container" style="position:relative; width:100%; border-radius:4px; overflow:hidden;">
+          <video controls autoplay loop muted playsinline style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,255,247,0.2);">
+            <source src="../{file_rel}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>'''
+    else:
+        base, ext = os.path.splitext(file_rel)
+        webp_rel = base + '.webp'
+        png_rel = base + '.png'
+        jpg_rel = base + '.jpg'
+        
+        has_webp = os.path.exists(os.path.join(BASE_DIR, webp_rel))
+        fallback_rel = file_rel
+        if not os.path.exists(os.path.join(BASE_DIR, fallback_rel)):
+            if os.path.exists(os.path.join(BASE_DIR, png_rel)):
+                fallback_rel = png_rel
+            elif os.path.exists(os.path.join(BASE_DIR, jpg_rel)):
+                fallback_rel = jpg_rel
+        
+        if has_webp:
+            media_html = f'''        <picture>
+          <source srcset="../{webp_rel}" type="image/webp">
+          <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">
+        </picture>'''
+        else:
+            media_html = f'''        <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">'''
 
-    art_dir = 'art'
-    updated_files = []
+    if '<p>' in description:
+        desc_paragraphs = description
+    else:
+        parts = [p.strip() for p in description.split('\n\n') if p.strip()]
+        if not parts:
+            parts = [description]
+        desc_paragraphs = '\n'.join([f'          <p>{p}</p>' for p in parts])
 
-    nav_html = """    <nav class="nav">
+    inquire_subject = f"Inquiry: {title}"
+
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Rajdhani:wght@300..700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050505">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
+<link rel="canonical" href="https://basicglitch.art/art/{slug}.html">
+<title>{title} | Cyber-Eclectic Digital Surrealism | BasicGlitch</title>
+<meta name="description" content="{meta_desc}">
+
+<!-- Social Media / Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://basicglitch.art/art/{slug}.html">
+<meta property="og:title" content="{title} | Cyber-Eclectic Digital Surrealism | BasicGlitch">
+<meta property="og:description" content="{meta_desc}">
+<meta property="og:image" content="https://basicglitch.art/{file_rel}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://basicglitch.art/art/{slug}.html">
+<meta name="twitter:title" content="{title} | BasicGlitch">
+<meta name="twitter:description" content="{meta_desc}">
+<meta name="twitter:image" content="https://basicglitch.art/{file_rel}">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+    .forensic-description p {{ margin-bottom: 22px; }}
+    .forensic-description em {{ color: var(--neon-mag); font-style: normal; font-weight: bold; }}
+    .art-details {{ padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; }}
+    .back-nav-link {{ display: inline-flex; align-items: center; gap: 8px; color: var(--neon); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; text-decoration: none; margin-bottom: 25px; transition: opacity 0.2s; }}
+    .back-nav-link:hover {{ opacity: 0.8; text-decoration: underline; }}
+</style>
+<script src="../assets/js/app.js?v=1.2" defer></script>
+<script src="../assets/js/dynamic-effects.js" defer></script>
+</head>
+<body class="bg-tech-noir">
+
+<header class="site-header">
+  <div class="header-inner container">
+    <a href="../index.html" class="brand">BasicGlitch</a>
+    <nav class="nav">
       <a class="nav-link" href="../gallery.html"><img src="../assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
       <a class="nav-link" href="../portfolio.html"><img src="../assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/about.svg" alt="Broboticus Icon"> Broboticus</a>
+      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/robot.svg" alt="Broboticus Icon"> Broboticus</a>
       <a class="nav-link" href="../commissions.html"><img src="../assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
       <a class="nav-link" href="../apparel.html"><img src="../assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
       <a class="nav-link" href="../about.html"><img src="../assets/icons/about.svg" alt="About Icon"> About</a>
       <a class="nav-link" href="../contact.html"><img src="../assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
-    </nav>"""
+    </nav>
+  </div>
+</header>
 
-    for filename in os.listdir(art_dir):
-        if not filename.endswith('.html'):
-            continue
+<main class="section neon-grid-section" style="padding-top: 100px;">
+  <div class="container art-showcase">
+    <a href="../gallery.html" class="back-nav-link">‹ RETURN TO ARCHIVE</a>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; align-items: start;">
+      
+      <!-- Image/Video Column -->
+      <div class="art-frame" style="border: 1px solid var(--border); padding: 12px; background: rgba(0,0,0,0.5); border-radius: 8px;">
+{media_html}
+      </div>
+
+      <!-- Content Column -->
+      <div class="art-details">
+        <h1 class="cyber-title" style="font-size: 2.3rem; margin-bottom: 10px;">
+            <span class="cyber-text" data-text="{title.upper()}">{title.upper()}</span>
+        </h1>
+        <p class="cyber-subtitle" style="color: var(--neon); margin-bottom: 25px; font-family: 'Orbitron'; font-size: 0.95rem;">COLLECTION: {series_str.upper()}</p>
         
-        file_path = os.path.join(art_dir, filename)
-        slug = filename[:-5] # remove .html
-        
-        item = gallery_map.get(slug)
-        
-        # Fallback: try to find by reading the file and getting the title
-        if not item:
-            with open(file_path, 'r') as f:
-                content = f.read()
-                title_match = re.search(r'<title>(.*?) \|', content)
-                if title_match:
-                    found_title = title_match.group(1).replace(' —', ' —') # normalize
-                    for it in gallery:
-                        if it['title'] == found_title or slugify(it['title']) == slug:
-                            item = it
-                            break
+        <div class="forensic-description" style="font-family: 'Share Tech Mono', monospace; color: var(--fg); line-height: 1.8; font-size: 1.02rem; text-align: justify;">
+{desc_paragraphs}
+        </div>
 
-        if not item:
-            # Special case for some files that might have different naming
-            if slug == 'broboticus-the-original-march-of-the-robots-2024':
-                for it in gallery:
-                    if 'March of the Robots, 2024' in it['title']:
-                        item = it
-                        break
-            if slug == 'sangre-de-cristos-night':
-                for it in gallery:
-                    if it['title'] == 'Sangre De Cristos — Night':
-                        item = it
-                        break
-            if slug == 'sangre-de-cristos-neon':
-                for it in gallery:
-                    if it['title'] == 'Sangre De Cristos — Neon':
-                        item = it
-                        break
+        <div style="margin-top: 35px; border-top: 1px solid var(--border); padding-top: 25px;">
+            <h3 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 18px; font-size: 1.1rem;">ACQUIRE THIS VISION</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <a href="../commissions.html#standard-rates" class="btn-neon" style="text-align: center; font-size: 0.85rem; padding: 12px 20px;">VIEW RATES</a>
+                <a href="../contact.html?subject={inquire_subject}" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag); font-size: 0.85rem; padding: 12px 20px;">SEND INQUIRY</a>
+            </div>
+        </div>
+      </div>
 
-        if item:
-            with open(file_path, 'r') as f:
-                content = f.read()
+    </div>
+  </div>
+</main>
 
-            # RULE 6: Page Title
-            new_title = f"{item['title']} | BasicGlitch"
-            content = re.sub(r'<title>.*?</title>', f"<title>{new_title}</title>", content)
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <p>© 2025 BASICGLITCH | FORENSIC ART SYSTEM</p>
+  </div>
+</footer>
 
-            # RULE 7: Meta Description
-            meta_desc = item['description'][:160]
-            content = re.sub(r'<meta name="description" content=".*?"', f'<meta name="description" content="{meta_desc}"', content)
-            content = re.sub(r'<meta property="og:description" content=".*?"', f'<meta property="og:description" content="{meta_desc}"', content)
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "0793c7934a22436cb1af2c9f24d6d22d"}}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
+'''
+    return html
 
-            # RULE 3: Nav Links
-            content = re.sub(r'<nav class="nav">.*?</nav>', nav_html, content, flags=re.DOTALL)
+def main():
+    if not os.path.exists(GALLERY_JSON):
+        print(f"Error: {GALLERY_JSON} not found!")
+        return
 
-            # RULE 5: Alt Text
-            alt_text = item['alt_text']
-            content = re.sub(r'<img (.*?)alt=".*?"', f'<img \\1alt="{alt_text}"', content)
+    with open(GALLERY_JSON, 'r', encoding='utf-8') as f:
+        gallery = json.load(f)
 
-            # RULE 1/2: Description Field
-            # Populate the forensic-description div
-            # Find the div and replace its content
-            desc_pattern = re.compile(r'(<div class="forensic-description".*?>).*?(</div>)', re.DOTALL)
-            content = desc_pattern.sub(f'\\1\n            {item["description"]}\n        \\2', content)
+    if not os.path.exists(ART_DIR):
+        os.makedirs(ART_DIR)
 
-            # RULE 4: Series/Collection
-            categories = " · ".join(item['categories'])
-            content = re.sub(r'COLLECTION:.*?</p>', f'COLLECTION: {categories.upper()}</p>', content)
+    valid_slugs = set()
+    generated_count = 0
 
-            # Update <h1> title
-            content = re.sub(r'<span class="cyber-text" data-text=".*?">(.*?)</span>', 
-                             f'<span class="cyber-text" data-text="{item["title"].upper()}">{item["title"].upper()}</span>', 
-                             content)
+    for item in gallery:
+        slug = slugify(item.get('title', ''))
+        filename = f"{slug}.html"
+        valid_slugs.add(filename)
+        filepath = os.path.join(ART_DIR, filename)
 
-            # Update SEND INQUIRY link
-            content = re.sub(r'href="\.\./contact\.html\?subject=Inquiry:.*?"', 
-                             f'href="../contact.html?subject=Inquiry: {item["title"]}"', 
-                             content)
+        html_content = build_art_page_html(item, slug)
+        with open(filepath, 'w', encoding='utf-8') as out:
+            out.write(html_content)
+        generated_count += 1
 
-            with open(file_path, 'w') as f:
-                f.write(content)
-            
-            updated_files.append(filename)
-        else:
-            print(f"Skipping {filename}: No matching entry in gallery.json")
+    print(f"Successfully generated {generated_count} art pages in {ART_DIR}")
 
-    print(f"\nTotal files updated: {len(updated_files)}")
-    for f in sorted(updated_files):
-        print(f)
+    removed_count = 0
+    for existing_file in os.listdir(ART_DIR):
+        if existing_file.endswith('.html') and existing_file not in valid_slugs:
+            old_path = os.path.join(ART_DIR, existing_file)
+            os.remove(old_path)
+            print(f"Removed stale / duplicate art page: {existing_file}")
+            removed_count += 1
 
-if __name__ == "__main__":
+    print(f"Cleanup complete: Removed {removed_count} stale files. Total active art pages: {len(valid_slugs)}")
+
+if __name__ == '__main__':
     main()

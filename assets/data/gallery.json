@@ -1,5 +1,22 @@
 [
   {
+    "id": "art-sidepiece-dimepiece",
+    "title": "Sidepiece Dimepiece",
+    "file": "assets/images/raw/sidepiece-dimepiece.webp",
+    "categories": [
+      "Personal",
+      "Cyber-Eclectic"
+    ],
+    "styles": [
+      "Character",
+      "Glitch",
+      "Cyber-Eclectic",
+      "Neon"
+    ],
+    "date": "2026-06-15",
+    "description": "A vibrant exploration of cyber-eclectic character design, blending high-saturation neon portraiture with structured digital glitch artifacts and tech-noir textures. High-contrast neon geometry frames the subject against an atmospheric deep-spectrum void."
+  },
+  {
     "id": "art-20260226153020",
     "title": "Sangre De Cristo Midnight V2",
     "file": "assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp",
