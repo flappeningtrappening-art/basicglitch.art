@@ -1,7 +1,11 @@
 """Phase 5 verification sweep for basicglitch.art (chunked, fast waits).
 
-Usage: python3 verify_sweep.py core|art1|art2|interactions
+Usage: python3 verify_sweep.py core|art1|art2|interactions|mobile|mobileart
 Writes verification_screenshots/results_<chunk>.json
+
+The mobile chunk runs the same functional assertions as `core` but at the
+standard mobile widths, under Fast 4G + 4x CPU throttling, using tap/touch
+events instead of mouse clicks, plus tap-target and swipe checks.
 """
 import json
 import re
@@ -18,6 +22,34 @@ CORE = [
 ]
 DESKTOP = {"width": 1440, "height": 900}
 MOBILE = {"width": 390, "height": 844}
+MOBILE_WIDTHS = [(320, 844), (360, 800), (390, 844), (768, 1024)]
+
+# Fast 4G (Lighthouse mobile presets)
+THROTTLE = {"offline": False, "latency": 150,
+            "downloadThroughput": int(1.6 * 1000 * 1000 / 8),
+            "uploadThroughput": int(750 * 1000 / 8)}
+
+
+def throttle_context(browser, width=390, height=844, cpu_rate=4):
+    """New context with mobile emulation + Fast 4G + CPU throttling."""
+    ctx = browser.new_context(viewport={"width": width, "height": height},
+                              is_mobile=True, has_touch=True, device_scale_factor=2)
+    page = ctx.new_page()
+    try:
+        cdp = ctx.new_cdp_session(page)
+        cdp.send("Network.emulateNetworkConditions", dict(THROTTLE))
+        cdp.send("Emulation.setCPUThrottlingRate", {"rate": cpu_rate})
+    except Exception:
+        pass  # fall back to unthrottled if CDP is unavailable
+    return ctx, page
+
+
+def stub_beacon(page):
+    page.route("**/beacon.min.js*", lambda r: r.fulfill(
+        status=200, content_type="application/javascript", body="/* beacon stub */"))
+    page.route("**/cdn-cgi/rum*", lambda r: r.fulfill(
+        status=200, content_type="application/json",
+        headers={"access-control-allow-origin": "*"}, body="{}"))
 
 
 def art_pages():
@@ -258,6 +290,152 @@ def run_interactions(browser, fails):
     return entries
 
 
+def run_mobile(browser, fails, lo=0, hi=None):
+    """Mobile suite: every core page at 320/360/390/768 under Fast 4G + 4x CPU.
+
+    Per page: 0 console errors, 0 bad responses, 0 horizontal overflow, every
+    tappable element >= 44x44, form controls >= 16px, key interactions driven
+    with tap/touch (not clicks). Swipe navigation is exercised on gallery.
+    """
+    entries = []
+    pages = CORE if hi is None else art_pages()[lo:hi]
+    for p in pages:
+        ctx, page = throttle_context(browser)
+        stub_beacon(page)
+        console_errors, bad = [], []
+        page.on("console", lambda m: console_errors.append(m.text) if m.type == "error" else None)
+        page.on("response", lambda r: bad.append((r.status, r.url)) if r.status >= 400 else None)
+        entry = {"label": p + " [mobile-suite]", "url": f"{BASE}/{p}", "widths": {},
+                 "tap_small": [], "inputs_small": [], "checks": {}}
+        try:
+            page.goto(f"{BASE}/{p}", wait_until="domcontentloaded", timeout=45000)
+            page.wait_for_timeout(700)
+
+            # --- layout at every width ---
+            for w, h in MOBILE_WIDTHS:
+                page.set_viewport_size({"width": w, "height": h})
+                page.wait_for_timeout(200)
+                ovf = page.evaluate(
+                    "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+                entry["widths"][str(w)] = ovf
+                if ovf > 1:
+                    fails.append(f"{p} @{w}px: overflow {ovf}px")
+            page.set_viewport_size({"width": 390, "height": 844})
+            page.wait_for_timeout(200)
+
+            # --- tap targets (real tappability via elementFromPoint) ---
+            small = page.evaluate("""() => {
+              const out = [];
+              document.querySelectorAll('a, button, input, select, textarea, [onclick], [role=button]').forEach(e => {
+                const r = e.getBoundingClientRect();
+                if (r.width === 0 && r.height === 0) return;
+                const probe = document.elementFromPoint(r.x + r.width/2, r.y + r.height/2);
+                if (!probe || (!probe.contains(e) && !e.contains(probe) && probe !== e)) return;
+                if (r.width < 44 || r.height < 44) {
+                  out.push(`${e.tagName}:${(e.textContent||e.name||'').trim().slice(0,20)} ${Math.round(r.width)}x${Math.round(r.height)}`);
+                }
+              });
+              return out.slice(0, 12);
+            }""")
+            entry["tap_small"] = small
+            for s in small:
+                fails.append(f"{p}: tap target < 44px: {s}")
+
+            # --- form control font sizes ---
+            inputs = page.evaluate("""() => {
+              const out = [];
+              document.querySelectorAll('input, select, textarea').forEach(e => {
+                const fs = parseFloat(getComputedStyle(e).fontSize);
+                if (fs < 16) out.push(`${e.tagName}:${e.name || e.id} ${fs}px`);
+              });
+              return out;
+            }""")
+            entry["inputs_small"] = inputs
+            for s in inputs:
+                fails.append(f"{p}: input < 16px: {s}")
+
+            # --- touch-driven interaction spot checks per page type ---
+            if p == "gallery.html":
+                cards = page.locator(".gallery-card")
+                if cards.count() == 0:
+                    fails.append("mobile/gallery: zero cards")
+                else:
+                    cards.first.tap()
+                    page.wait_for_timeout(600)
+                    lb = page.locator("#lightbox")
+                    if "hidden" in (lb.get_attribute("class") or ""):
+                        fails.append("mobile/gallery: tap did not open lightbox")
+                    else:
+                        t0 = page.locator("#lb-content h3").inner_text()
+                        box = page.locator("#lb-content").bounding_box()
+                        cx, cy = box["x"] + box["width"]/2, box["y"] + box["height"]/2
+                        page.evaluate("""([x, y]) => {
+                          const c = document.getElementById('lb-content');
+                          const mk = (t, x2, y2) => new PointerEvent(t, {pointerId: 7, pointerType: 'touch',
+                            clientX: x2, clientY: y2, bubbles: true, cancelable: true, isPrimary: true});
+                          c.dispatchEvent(mk('pointerdown', x, y));
+                          c.dispatchEvent(mk('pointermove', x - 40, y));
+                          c.dispatchEvent(mk('pointerup', x - 80, y));
+                        }""", [cx, cy])
+                        page.wait_for_timeout(600)
+                        t1 = page.locator("#lb-content h3").inner_text()
+                        if t0 != t1:
+                            entry["checks"]["swipe_next"] = "ok"
+                            print(f"  ok: {p} swipe next ({t0[:18]} -> {t1[:18]})")
+                        else:
+                            fails.append("mobile/gallery: swipe left did not advance lightbox")
+                        # close button must be >= 44px and tappable
+                        btn = page.locator("#lb-close")
+                        bb = btn.bounding_box()
+                        if bb and (bb["width"] < 44 or bb["height"] < 44):
+                            fails.append("mobile/gallery: lb-close < 44px")
+                        btn.tap()
+                        page.wait_for_timeout(400)
+                        if "hidden" not in (lb.get_attribute("class") or ""):
+                            fails.append("mobile/gallery: tap on close did not dismiss")
+                        else:
+                            entry["checks"]["tap_close"] = "ok"
+            elif p == "pup-fiction.html":
+                img = page.locator(".card-img").first
+                if img.count():
+                    img.tap()
+                    page.wait_for_timeout(400)
+                    lb = page.locator("#lightbox")
+                    if "hidden" in (lb.get_attribute("class") or ""):
+                        fails.append("mobile/pup-fiction: tap did not open lightbox")
+                    else:
+                        page.locator("#lb-close").tap()
+                        page.wait_for_timeout(300)
+                        entry["checks"]["lightbox"] = "ok"
+            elif p == "index.html":
+                # hero CTA reachable + instagram overlay visible without hover
+                ov = page.evaluate(
+                    "() => { const o = document.querySelector('.insta-hover-overlay'); return o ? getComputedStyle(o).opacity : 'missing'; }")
+                if ov == "missing":
+                    fails.append("mobile/index: insta overlay element missing")
+                elif float(ov) < 0.5:
+                    fails.append(f"mobile/index: overlay opacity {ov} without hover — touch users see nothing")
+                else:
+                    entry["checks"]["overlay_touch_visible"] = "ok"
+
+            real_errs = console_errors
+            real_bad = [(s, u) for s, u in bad if "localhost:8000" in u]
+            for ce in real_errs:
+                fails.append(f"{p} [mobile]: console: {ce[:160]}")
+            for s, u in real_bad:
+                fails.append(f"{p} [mobile]: HTTP {s}: {u}")
+            status = "OK" if not (real_errs or real_bad or small or inputs) else "FAIL"
+            print(f"  [{status}] {p} ovf={entry['widths']} tap_small={len(small)} inputs_small={len(inputs)}")
+        except Exception as e:
+            entry["error"] = str(e)[:300]
+            fails.append(f"{p} [mobile]: nav failure: {str(e)[:200]}")
+            print(f"  [FAIL] {p}: {str(e)[:120]}")
+        finally:
+            ctx.close()
+        entries.append(entry)
+    return entries
+
+
 def main():
     chunk = sys.argv[1]
     fails = []
@@ -271,6 +449,10 @@ def main():
             entries = run_art(browser, fails, 28, 56)
         elif chunk == "interactions":
             entries = run_interactions(browser, fails)
+        elif chunk == "mobile":
+            entries = run_mobile(browser, fails)
+        elif chunk == "mobileart":
+            entries = run_mobile(browser, fails, 0, 56)
         else:
             print("unknown chunk"); sys.exit(2)
         browser.close()

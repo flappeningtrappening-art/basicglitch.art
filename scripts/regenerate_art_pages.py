@@ -118,7 +118,7 @@ def build_art_page_html(item, slug):
     .back-nav-link:hover {{ opacity: 0.8; text-decoration: underline; }}
     /* Mobile: 44px minimum tap targets for back link and CTA buttons */
     @media (max-width: 768px) {{
-      .back-nav-link {{ padding: 12px 0; }}
+      .back-nav-link {{ padding: 15px 0; }}
       .btn-neon {{ padding: 12px 18px; }}
     }}
 </style>
