@@ -73,7 +73,7 @@
     <!-- ITEM 1: DINER ROBBERY (Live) -->
     <article class="series-card">
       <div class="card-img-container">
-        <img src="assets/images/raw/pup-fiction-scene1.webp" alt="Pumpkin and Honey Puppy and the Diner Robbery" class="card-img" onclick="openLightbox(this)">
+        <img src="assets/images/raw/pup-fiction-scene1.webp" alt="Pumpkin and Honey Puppy and the Diner Robbery" class="card-img" onclick="openPupLightbox(this)">
       </div>
       <div class="card-info">
         <h3 class="card-title">Pumpkin and Honey Puppy and the Diner Robbery</h3>
@@ -229,7 +229,7 @@
 </div>
 
 <script>
-  function openLightbox(img) {
+  function openPupLightbox(img) {
     const lb = document.getElementById('lightbox');
     const content = document.getElementById('lb-content');
     content.innerHTML = '';
@@ -237,12 +237,15 @@
     newImg.src = img.src;
     newImg.alt = img.alt;
     content.appendChild(newImg);
+    window.rememberLightboxFocus && window.rememberLightboxFocus();
     lb.classList.remove('hidden');
     lb.setAttribute('aria-hidden','false');
+    document.getElementById('lb-close').focus();
   }
   
   document.getElementById('lb-close').addEventListener('click', () => {
      document.getElementById('lightbox').classList.add('hidden');
+     window.restoreLightboxFocus && window.restoreLightboxFocus();
   });
 </script>
 

@@ -823,7 +823,7 @@ function renderGalleryCards(items) {
     // and no-JS visits navigate natively.
     const crawlLink = document.createElement('a');
     crawlLink.href = `art/${slug}.html`;
-    crawlLink.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; text-indent:-9999px; overflow:hidden;';
+    crawlLink.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; z-index:3; text-indent:-9999px; overflow:hidden;';
     crawlLink.setAttribute('aria-label', `View details for ${item.title}`);
     card.appendChild(crawlLink);
 
