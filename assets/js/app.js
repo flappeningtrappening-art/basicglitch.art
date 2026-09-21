@@ -3,15 +3,14 @@
 /* ---------------------------
    Config - adjust paths if needed
    --------------------------- */
-const FORGE_API = 'https://scene-trust-annotation-significant.trycloudflare.com'; 
-const GALLERY_JSON = 'assets/data/gallery.json';
-const GALLERY_BASE = 'assets/images/raw/'; // full images
-const THUMB_BASE = 'assets/images/gallery-thumbs/'; // thumbnails
+const GALLERY_JSON = '/assets/data/gallery.json';
+const GALLERY_BASE = '/assets/images/raw/'; // full images
+const THUMB_BASE = '/assets/images/gallery-thumbs/'; // thumbnails
 const HERO_CHOICES = [
-  { path: 'assets/images/hero/glitch1.webp', key: 'glitch1' },
-  { path: 'assets/images/hero/glitch2.webp', key: 'glitch2' },
-  { path: 'assets/images/hero/glitch3.jpg', key: 'glitch3' },
-  { path: 'assets/images/hero/glitch4.webp', key: 'glitch-default' }
+  { path: '/assets/images/hero/glitch1.webp', key: 'glitch1' },
+  { path: '/assets/images/hero/glitch2.webp', key: 'glitch2' },
+  { path: '/assets/images/hero/glitch3.jpg', key: 'glitch3' },
+  { path: '/assets/images/hero/glitch4.webp', key: 'glitch-default' }
 ];
 
 /* ---------------------------
