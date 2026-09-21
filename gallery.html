@@ -374,6 +374,13 @@
   color: var(--muted);
 }
 
+/* Keyboard affordance for the crawl-link overlay that covers each card */
+.gallery-card a:focus-visible {
+  outline: 3px solid var(--neon);
+  outline-offset: -3px;
+  border-radius: 10px;
+}
+
 .gallery-empty h3 {
   font-family: 'Orbitron', sans-serif;
   color: var(--neon);
@@ -810,17 +817,32 @@ function renderGalleryCards(items) {
     body.appendChild(meta);
     card.appendChild(body);
 
-    // ADD THIS: Invisible link for Google to crawl
+    // Crawlable link overlay — covers the card so search engines still see a
+    // real link to the art page. Interaction is re-routed below: plain clicks
+    // and Enter open the lightbox, while Ctrl/Cmd/Shift-click, middle-click,
+    // and no-JS visits navigate natively.
     const crawlLink = document.createElement('a');
     crawlLink.href = `art/${slug}.html`;
     crawlLink.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; text-indent:-9999px; overflow:hidden;';
     crawlLink.setAttribute('aria-label', `View details for ${item.title}`);
     card.appendChild(crawlLink);
 
-    // Click — open lightbox (keep this, but prevent it from interfering with the link)
+    crawlLink.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey)) {
+        e.preventDefault();
+        openGalleryLightbox(item, items, idx);
+      }
+    });
+
+    // Click — open the lightbox; let the crawl link carry modified navigation
     card.addEventListener('click', (e) => {
-      // If the click came from the link or its children, don't open lightbox
-      if (crawlLink.contains(e.target)) return;
+      if (crawlLink.contains(e.target)) {
+        // Ctrl/Cmd/Shift-click and middle-click still navigate to the page
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        openGalleryLightbox(item, items, idx);
+        return;
+      }
       openGalleryLightbox(item, items, idx);
     });
 
@@ -914,12 +936,12 @@ function renderGalleryCards(items) {
 
     content.appendChild(actions);
 
+    window.rememberLightboxFocus && window.rememberLightboxFocus();
     lb.classList.remove('hidden');
     lb.setAttribute('aria-hidden', 'false');
-
-    // Also update window.GALLERY currentIndex for keyboard nav compatibility
     window.GALLERY_LB_ITEMS = items;
     window.GALLERY_LB_IDX   = idx;
+    document.getElementById('lb-close')?.focus();
   }
 
   function closeLb() {
@@ -927,6 +949,8 @@ function renderGalleryCards(items) {
     if (lb) { lb.classList.add('hidden'); lb.setAttribute('aria-hidden', 'true'); }
     const video = document.querySelector('#lb-content video');
     if (video) { video.pause(); video.src = ''; }
+    window.GALLERY_LB_ITEMS = null;
+    window.restoreLightboxFocus && window.restoreLightboxFocus();
   }
 
   function prevLb() {
@@ -950,6 +974,7 @@ function renderGalleryCards(items) {
     if (e.key === 'Escape') closeLb();
     if (e.key === 'ArrowLeft') prevLb();
     if (e.key === 'ArrowRight') nextLb();
+    if (e.key === 'Tab' && window.trapLightboxTab) window.trapLightboxTab(e, lb);
   });
 
   // Touch swipe

@@ -266,6 +266,47 @@ function renderGrid(items, simplified = false){
    LIGHTBOX
    --------------------------- */
 let currentIndex = 0;
+let lbLastFocused = null;
+
+/* Lightbox accessibility helpers — shared with page-level lightboxes
+   (gallery.html wires its own lightbox and reuses these via window.*). */
+function getLightboxFocusables(lb) {
+  if (!lb) return [];
+  return Array.from(
+    lb.querySelectorAll('button:not([disabled]), [href], video[controls], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+  ).filter(elm => elm.offsetParent !== null || elm === document.activeElement);
+}
+
+function trapLightboxTab(e, lb) {
+  const focusables = getLightboxFocusables(lb);
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+}
+
+function rememberLightboxFocus() {
+  lbLastFocused = document.activeElement;
+}
+
+function restoreLightboxFocus() {
+  if (lbLastFocused && typeof lbLastFocused.focus === 'function') {
+    try { lbLastFocused.focus(); } catch (err) { /* element may be gone */ }
+  }
+  lbLastFocused = null;
+}
+
+/* Expose for page-level lightbox scripts (gallery.html inline engine) */
+window.rememberLightboxFocus = rememberLightboxFocus;
+window.restoreLightboxFocus = restoreLightboxFocus;
+window.trapLightboxTab = trapLightboxTab;
+
 function openLightbox(id){
   const item = window.GALLERY.find(i => i.id === id);
   if(!item) return;
@@ -314,9 +355,12 @@ function openLightbox(id){
   content.appendChild(title);
   content.appendChild(desc);
   
+  rememberLightboxFocus();
   lb.classList.remove('hidden');
   lb.setAttribute('aria-hidden','false');
   currentIndex = window.GALLERY.indexOf(item);
+  const closeBtn = document.getElementById('lb-close');
+  if (closeBtn) closeBtn.focus();
 }
 function closeLightbox(){
   const lb = document.getElementById('lightbox');
@@ -330,15 +374,22 @@ function closeLightbox(){
       card.style.transition = '';
     });
   }
+  restoreLightboxFocus();
 }
 function prevItem(){ if(currentIndex > 0) openLightbox(window.GALLERY[currentIndex-1].id); }
 function nextItem(){ if(currentIndex < window.GALLERY.length-1) openLightbox(window.GALLERY[currentIndex+1].id); }
 
 /* keyboard & touch */
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape') closeLightbox();
-  if(e.key==='ArrowLeft') prevItem();
-  if(e.key==='ArrowRight') nextItem();
+  const lb = document.getElementById('lightbox');
+  const lbOpen = lb && !lb.classList.contains('hidden');
+  if (e.key === 'Escape' && lbOpen) closeLightbox();
+  /* If a page-level lightbox engine (e.g. gallery.html) owns the open
+     lightbox, let its own handlers manage navigation and tab trapping. */
+  if (!lbOpen || window.GALLERY_LB_ITEMS) return;
+  if (e.key === 'ArrowLeft') prevItem();
+  if (e.key === 'ArrowRight') nextItem();
+  if (e.key === 'Tab') trapLightboxTab(e, lb);
 });
 
 const lbContent = document.getElementById('lb-content');
