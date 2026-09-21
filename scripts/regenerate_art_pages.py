@@ -77,7 +77,7 @@ def build_art_page_html(item, slug):
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#050505">
 <meta name="robots" content="index, follow">
-<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
+<link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/art/{slug}.html">
 <title>{title} | Cyber-Eclectic Digital Surrealism | BasicGlitch</title>
 <meta name="description" content="{meta_desc}">

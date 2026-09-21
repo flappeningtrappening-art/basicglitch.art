@@ -29,7 +29,7 @@ def get_template(item):
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" type="image/png" href="https://basicglitch.art/favicon.webp">
+<link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/art/{slug}.html">
 <title>{title}</title>
 <meta name="description" content="{description}">
