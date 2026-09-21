@@ -98,6 +98,19 @@
   padding-bottom: 80px;
 }
 
+/* The .hero-inner layer spans the full hero width at z-index 2 and used to
+   swallow every click meant for the Guitarbot guardian (z-index 1).
+   Make the text layer click-transparent, re-enabling events only on the
+   interactive elements inside it. */
+.hero-inner {
+  pointer-events: none;
+}
+
+.hero-inner a,
+.hero-inner button {
+  pointer-events: auto;
+}
+
 /* ARCHIVE SECTION — tighter, more intentional */
 .archive-section {
   position: relative;
