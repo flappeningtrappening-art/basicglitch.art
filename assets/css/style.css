@@ -61,6 +61,12 @@ html, body {
   color: var(--fg);
 }
 
+/* FORM CONTROLS — computed font-size must be >= 16px or iOS Safari zooms
+   the viewport on focus. Applies everywhere (no visual change on desktop). */
+input, select, textarea {
+  font-size: 16px;
+}
+
 /* GLOBAL ICON GLOW & SIZE */
 img[src*=".svg"], .icon {
   width: 24px;
@@ -563,7 +569,7 @@ img {
 
 .cyber-button {
   width: 100%;
-  padding: 12px;
+  padding: 16px 12px; /* 44px min tap height */
   background: rgba(0, 255, 247, 0.1);
   border: 1px solid var(--neon);
   color: var(--neon);
@@ -818,6 +824,53 @@ img {
 .bio-text p { margin-bottom: 1.2rem; }
 .about-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
 
+/* Footers and subtitles sit on every page; give their links a modest hit
+   area at every width (desktop padding is transparent — links keep their
+   size, only the clickable box grows). Declared BEFORE the mobile block so
+   the mobile overrides win. */
+.footer-link { display: inline-block; padding: 6px 4px; }
+.cyber-subtitle a { display: inline-block; padding: 6px 4px; }
+
+/* MOBILE TAP TARGETS — 44x44px minimum hit area (WCAG 2.5.5).
+   Desktop rendering untouched: paddings only apply at mobile widths. */
+@media (max-width: 768px) {
+  .nav-link { padding: 13px 16px; }
+  .header-inner { gap: 8px; padding: 10px 0; }
+  .nav { gap: 4px; }
+  .brand { padding: 8px 0; }
+  .footer-link { display: inline-block; padding: 14px 10px; }
+  .cyber-subtitle a { display: inline-block; padding: 14px 10px; }
+  .secure-contact-link { display: inline-block; padding: 13px 0; }
+  .back-link { display: inline-block; padding: 12px 0; }
+  .btn-neon { padding: 13px 18px; }
+  .btn-small { padding: 10px 14px; }
+  .cyber-button { padding: 16px 12px; min-height: 44px; } /* min-height beats flex-shrink inside tier cards */
+  .buy-btn { padding: 16px 10px; min-height: 44px; }
+  .filter-option { padding: 12px 16px; }
+  .filter-tag { padding: 10px 14px; }
+  .lb-actions .btn-neon { padding: 12px 18px; }
+}
+
+/* Hover-revealed overlay ("VIEW ON INSTAGRAM") — needs a touch equivalent.
+   Without hover, the button must be visible inside the clickable tile; with
+   hover (or on pointer-up after a touch), the dimmed reveal still plays. */
+.insta-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+@media (hover: none) {
+  .insta-hover-overlay { opacity: 1; }
+}
+
+.insta-hover-overlay:active { opacity: 1; }
+
 @media (max-width: 768px) {
   .carousel-scene { height: 500px; }
   .carousel { width: 280px; height: 400px; }
@@ -988,7 +1041,7 @@ img {
 .buy-btn {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 16px 10px; /* 44px min tap height */
   background: transparent;
   border: 1px solid var(--neon-blu);
   color: var(--neon-blu);

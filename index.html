@@ -271,6 +271,9 @@
   justify-content: center;
 }
 
+/* Submit button needs the 44px tap height (btn-neon base is shorter) */
+.email-form .btn-neon { padding: 13px 18px; min-height: 44px; }
+
 .email-input {
   flex: 1;
   min-width: 260px;
@@ -279,7 +282,7 @@
   border: 1px solid rgba(0,255,62,0.3);
   color: white;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 1rem; /* 16px — iOS zooms on focus below this */
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
@@ -341,8 +344,8 @@
       <h1 class="title">BasicGlitch</h1>
       <p class="subtitle">Digital Surrealism &nbsp;·&nbsp; Tech-Noir &nbsp;·&nbsp; Neon Character Design</p>
       <div class="cta-row">
-        <a href="gallery.html" class="btn-neon">ENTER THE VOID</a>
-        <a href="commissions.html" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);box-shadow:0 0 10px rgba(0,255,62,0.2);margin-left:12px;">COMMISSION A PIECE</a>
+        <a href="gallery.html" class="btn-neon" style="padding:13px 18px;">ENTER THE VOID</a>
+        <a href="commissions.html" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);box-shadow:0 0 10px rgba(0,255,62,0.2);margin-left:12px;padding:13px 18px;">COMMISSION A PIECE</a>
       </div>
     </div>
   </section>
@@ -463,9 +466,9 @@
       </div>
 
       <div style="text-align:center;margin-top:48px;">
-        <a href="gallery.html" class="btn-neon">VIEW THE FULL GALLERY</a>
+        <a href="gallery.html" class="btn-neon" style="padding:13px 18px;">VIEW THE FULL GALLERY</a>
         &nbsp;&nbsp;
-        <a href="portfolio.html" class="btn-neon" style="border-color:var(--neon-pur);color:var(--neon-pur);box-shadow:0 0 10px rgba(199,36,255,0.2);">BROWSE BY SERIES</a>
+        <a href="portfolio.html" class="btn-neon" style="border-color:var(--neon-pur);color:var(--neon-pur);box-shadow:0 0 10px rgba(199,36,255,0.2);padding:13px 18px;">BROWSE BY SERIES</a>
       </div>
     </div>
   </section>
@@ -494,7 +497,7 @@
           <div id="insta-feed-grid"
                style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bg);">
           </div>
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;"
+          <div class="insta-hover-overlay"
                onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
             <span class="btn-neon" style="border-color:var(--neon-mag);color:var(--neon-mag);">VIEW ON INSTAGRAM</span>
           </div>
@@ -557,8 +560,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if(grid){
     shuffle([...imgs]).slice(0,6).forEach(img => {
       const el = document.createElement('img');
-      el.src = `assets/images/raw/${img}`;
+      // loading set BEFORE src — otherwise the fetch starts immediately
+      el.loading = 'lazy';
+      el.decoding = 'async';
       el.alt = 'BasicGlitch recent work';
+      el.src = `assets/images/raw/${img}`;
       el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
       grid.appendChild(el);
     });

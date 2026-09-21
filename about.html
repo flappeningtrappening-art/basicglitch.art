@@ -245,7 +245,7 @@
   color: var(--muted);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 4px;
-  padding: 9px 16px;
+  padding: 13px 16px; /* 44px min tap height with 0.75rem text */
   text-decoration: none;
   transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
@@ -699,7 +699,7 @@
         <div id="insta-feed-grid"
              style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--bg);">
         </div>
-        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;"
+        <div class="insta-hover-overlay"
              onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
           <span class="btn-neon" style="border-color:var(--neon-mag);color:var(--neon-mag);">VIEW ON INSTAGRAM</span>
         </div>

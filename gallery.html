@@ -191,7 +191,7 @@
 /* SEARCH */
 .filter-search {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 1rem; /* 16px — iOS zooms on focus below this */
   color: var(--fg);
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(0,255,247,0.2);
@@ -423,6 +423,9 @@
   margin-top: 8px;
 }
 
+/* Lightbox action buttons must clear the 44px tap target at every width */
+#lb-content .lb-actions .btn-neon { padding: 12px 20px; }
+
 /* Active filter tags shown below dropdowns */
 .active-filters {
   max-width: 1200px;
@@ -456,6 +459,14 @@
 .filter-tag .remove {
   opacity: 0.6;
   font-size: 0.8rem;
+}
+
+/* Mobile: 44px tap targets on the filter bar (declared after the base rules
+   so the larger paddings win the cascade). */
+@media (max-width: 768px) {
+  .filter-dropdown-btn { padding: 12px 14px; min-height: 44px; }
+  .filter-clear { padding: 12px 12px; min-height: 44px; }
+  .filter-search { padding: 12px 14px; min-height: 44px; font-size: 1rem; }
 }
 </style>
 </head>
@@ -787,11 +798,11 @@ function renderGalleryCards(items) {
       card.appendChild(sb);
     }
 
-    // Image
+    // Image — loading MUST be set before src or the fetch starts immediately
     const img = document.createElement('img');
-    img.src = thumbSrc;
-    img.alt = item.alt_text || item.title + ' | BasicGlitch';
     img.loading = 'lazy';
+    img.alt = item.alt_text || item.title + ' | BasicGlitch';
+    img.src = thumbSrc;
     card.appendChild(img);
 
     // Body
@@ -977,13 +988,10 @@ function renderGalleryCards(items) {
     if (e.key === 'Tab' && window.trapLightboxTab) window.trapLightboxTab(e, lb);
   });
 
-  // Touch swipe
-  let touchStart = 0;
-  document.getElementById('lb-content')?.addEventListener('touchstart', e => { touchStart = e.changedTouches[0].screenX; });
-  document.getElementById('lb-content')?.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].screenX - touchStart;
-    if (Math.abs(diff) > 50) diff < 0 ? nextLb() : prevLb();
-  });
+  // Swipe (pointer events) — shared handler lives in app.js; this page's
+  // engine registers itself as the dispatch target while the lightbox is open.
+  window.__lbNext = nextLb;
+  window.__lbPrev = prevLb;
 
   // ── INIT ON GALLERY DATA READY ──
   function initGallery() {

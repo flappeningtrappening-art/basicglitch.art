@@ -247,6 +247,16 @@
      document.getElementById('lightbox').classList.add('hidden');
      window.restoreLightboxFocus && window.restoreLightboxFocus();
   });
+
+  /* Touch: the shared pointer-swipe handler in app.js is bound to #lb-content;
+     this single-image lightbox has no prev/next, so swipe is a no-op here and
+     the handler never fires. Close on a background tap, matching the gallery. */
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('lightbox')) {
+      document.getElementById('lightbox').classList.add('hidden');
+      window.restoreLightboxFocus && window.restoreLightboxFocus();
+    }
+  });
 </script>
 
 <footer class="site-footer">

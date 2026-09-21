@@ -210,11 +210,11 @@ function renderGrid(items, simplified = false){
     
     // Construct Card Contents
     const cardChildren = [
-      // Image
+      // Image (loading MUST be set before src or the fetch starts immediately)
       el('img', {
-        src: thumbSrc,
-        alt: it.alt_text || `${it.title} | BasicGlitch`,
         loading: 'lazy',
+        alt: it.alt_text || `${it.title} | BasicGlitch`,
+        src: thumbSrc,
         className: 'gallery-image',
         'data-large': largeSrc
       })
@@ -315,6 +315,10 @@ function openLightbox(id){
   const content = document.getElementById('lb-content');
   if(!lb || !content) return;
   
+  // This engine owns swipe navigation while its lightbox is open.
+  window.__lbNext = nextItem;
+  window.__lbPrev = prevItem;
+  
   // TEMPORARILY REMOVE 3D TRANSFORM from clicked card for better lightbox experience
   const clickedCard = document.querySelector(`.gallery-card[data-id="${id}"]`);
   if (clickedCard) {
@@ -404,6 +408,48 @@ if(lbContent){
   }, false);
 }
 
+/* Lightbox swipe — one handler per #lb-content, wired on DOMContentLoaded.
+   Pointer Events cover touch, pen and mouse-drag; a horizontal-only test
+   (|dx| > threshold AND |dx| > |dy|) keeps vertical page scroll working. */
+function attachLightboxSwipe(){
+  const content = document.getElementById('lb-content');
+  if (!content || content.dataset.swipeBound) return;
+  content.dataset.swipeBound = '1';
+  let startX = null, startY = null, tracking = false;
+  const THRESHOLD = 48; // px of intentional horizontal travel
+
+  content.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse') return; // desktop drag-select stays native
+    startX = e.clientX; startY = e.clientY; tracking = true;
+  }, { passive: true });
+
+  content.addEventListener('pointermove', e => {
+    if (!tracking || startX === null) return;
+    const dx = e.clientX - startX, dy = e.clientY - startY;
+    // Once the gesture reads as vertical, release it back to scrolling.
+    if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 12) {
+      tracking = false; startX = startY = null;
+    }
+  }, { passive: true });
+
+  content.addEventListener('pointerup', e => {
+    if (!tracking || startX === null) return;
+    tracking = false;
+    const dx = e.clientX - startX, dy = e.clientY - startY;
+    startX = startY = null;
+    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) <= Math.abs(dy)) return;
+    const lb = document.getElementById('lightbox');
+    if (!lb || lb.classList.contains('hidden')) return;
+    // Dispatch only to the engine that opened the lightbox (set on open).
+    if (dx < 0) { if (typeof window.__lbNext === 'function') window.__lbNext(); }
+    else        { if (typeof window.__lbPrev === 'function') window.__lbPrev(); }
+  }, { passive: true });
+
+  content.addEventListener('pointercancel', () => {
+    tracking = false; startX = startY = null;
+  }, { passive: true });
+}
+
 /* attach lightbox UI controls and mobile nav toggle */
 document.addEventListener('DOMContentLoaded', ()=>{
   const lightbox = document.getElementById('lightbox');
@@ -421,6 +467,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       if(e.target === lightbox) closeLightbox();
     });
   }
+
+  attachLightboxSwipe();
 
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const mainNav = document.getElementById('main-nav');
