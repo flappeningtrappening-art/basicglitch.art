@@ -61,10 +61,21 @@ __pycache__/
 
 # Private Legal Templates & Credentials
 legal/
-notes/*
-!notes/*/
-!notes/*/ .gitkeep
+notes/
 .env
 pod_identity.json
 scripts/pod_identity.json
+
+# Internal automation artifacts — never republish
+GEMINI.md
+gemini_recovery.md
+gemini_recovery2.md
+how*c8d8ede*
+README_PIPELINE.md
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Oversized video asset (exceeds GitHub Pages 100MB cap)
 assets/videos/basicglitch_neon_1440p_optimized.mp4

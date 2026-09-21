@@ -242,8 +242,19 @@ def update_gallery(id, title, file_path, analysis, is_video):
     print(f"Registry Updated: {title}")
 
 def deploy_to_github():
+    # Allowlist mode: only generated/published paths may ever be auto-committed.
+    # Never `git add .` — internal docs/credentials must stay out of the repo.
     os.chdir(BASE_DIR)
-    os.system("git add .")
+    allowlisted = [
+        "art/",
+        "assets/",
+        "sitemap.xml",
+    ]
+    existing = [p for p in allowlisted if os.path.exists(p)]
+    if not existing:
+        print("Deploy skipped: no allowlisted paths present.")
+        return
+    os.system(f"git add {' '.join(existing)}")
     os.system(f"git commit -m 'feat: automated forensic ingestion (motion + stills) of {datetime.datetime.now().isoformat()}'")
     os.system("git push origin main")
     print("Deployment Synchronized.")
