@@ -12,6 +12,19 @@ def slugify(title):
     s = re.sub(r'[\s_\-]+', '-', s)
     return s.strip('-')
 
+def img_dimensions(file_rel):
+    """Return width/height attribute strings for an image path (empty if unknown)."""
+    from PIL import Image
+    full = os.path.join(BASE_DIR, file_rel)
+    if not os.path.exists(full):
+        return ''
+    try:
+        with Image.open(full) as im:
+            w, h = im.size
+        return f' width="{w}" height="{h}"'
+    except Exception:
+        return ''
+
 def build_art_page_html(item, slug):
     title = item.get('title', 'Untitled')
     file_rel = item.get('file', '')
@@ -52,10 +65,10 @@ def build_art_page_html(item, slug):
         if has_webp:
             media_html = f'''        <picture>
           <source srcset="../{webp_rel}" type="image/webp">
-          <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">
+          <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch"{img_dimensions(fallback_rel)} loading="lazy" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">
         </picture>'''
         else:
-            media_html = f'''        <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">'''
+            media_html = f'''        <img src="../{fallback_rel}" alt="{title} - Digital Art by BasicGlitch"{img_dimensions(fallback_rel)} loading="lazy" style="width:100%; height:auto; box-shadow:0 0 30px rgba(0,0,0,0.8); border-radius:4px;">'''
 
     if '<p>' in description:
         desc_paragraphs = description
@@ -113,13 +126,13 @@ def build_art_page_html(item, slug):
   <div class="header-inner container">
     <a href="../index.html" class="brand">BasicGlitch</a>
     <nav class="nav">
-      <a class="nav-link" href="../gallery.html"><img src="../assets/icons/gallery.svg" alt="Gallery Icon"> Gallery</a>
-      <a class="nav-link" href="../portfolio.html"><img src="../assets/icons/grid.svg" alt="Portfolio Icon"> Portfolio</a>
-      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/robot.svg" alt="Broboticus Icon"> Broboticus</a>
-      <a class="nav-link" href="../commissions.html"><img src="../assets/icons/commissions.svg" alt="Commissions Icon"> Commissions</a>
-      <a class="nav-link" href="../apparel.html"><img src="../assets/icons/physical-products.svg" alt="Apparel Icon"> Apparel</a>
-      <a class="nav-link" href="../about.html"><img src="../assets/icons/about.svg" alt="About Icon"> About</a>
-      <a class="nav-link" href="../contact.html"><img src="../assets/icons/contact.svg" alt="Contact Icon"> Contact</a>
+      <a class="nav-link" href="../gallery.html"><img src="../assets/icons/gallery.svg" alt="Gallery Icon" width="18" height="18"> Gallery</a>
+      <a class="nav-link" href="../portfolio.html"><img src="../assets/icons/grid.svg" alt="Portfolio Icon" width="18" height="18"> Portfolio</a>
+      <a class="nav-link" href="../broboticus.html"><img src="../assets/icons/robot.svg" alt="Broboticus Icon" width="18" height="18"> Broboticus</a>
+      <a class="nav-link" href="../commissions.html"><img src="../assets/icons/commissions.svg" alt="Commissions Icon" width="18" height="18"> Commissions</a>
+      <a class="nav-link" href="../apparel.html"><img src="../assets/icons/physical-products.svg" alt="Apparel Icon" width="18" height="18"> Apparel</a>
+      <a class="nav-link" href="../about.html"><img src="../assets/icons/about.svg" alt="About Icon" width="18" height="18"> About</a>
+      <a class="nav-link" href="../contact.html"><img src="../assets/icons/contact.svg" alt="Contact Icon" width="18" height="18"> Contact</a>
     </nav>
   </div>
 </header>
@@ -146,7 +159,7 @@ def build_art_page_html(item, slug):
         </div>
 
         <div style="margin-top: 35px; border-top: 1px solid var(--border); padding-top: 25px;">
-            <h3 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 18px; font-size: 1.1rem;">ACQUIRE THIS VISION</h3>
+            <h2 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 18px; font-size: 1.1rem;">ACQUIRE THIS VISION</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <a href="../commissions.html#standard-rates" class="btn-neon" style="text-align: center; font-size: 0.85rem; padding: 12px 20px;">VIEW RATES</a>
                 <a href="../contact.html?subject={inquire_subject}" class="btn-neon" style="text-align: center; border-color: var(--neon-mag); color: var(--neon-mag); font-size: 0.85rem; padding: 12px 20px;">SEND INQUIRY</a>
