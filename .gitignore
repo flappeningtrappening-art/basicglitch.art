@@ -79,3 +79,4 @@ __pycache__/
 
 # Oversized video asset (exceeds GitHub Pages 100MB cap)
 assets/videos/basicglitch_neon_1440p_optimized.mp4
+verification_screenshots/
