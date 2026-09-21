@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.decoding = 'async';
       el.fetchPriority = 'low';
       el.alt = 'BasicGlitch recent work';
-      el.src = `assets/images/raw/${img}`;
+      el.src = `assets/images/${img}`; // img already carries the card/ prefix
       el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
       grid.appendChild(el);
     });
