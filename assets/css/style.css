@@ -1,5 +1,5 @@
 /* ========================================================
-   Basic.Glitch — style.css
+   Basic.Glitch: style.css
    ======================================================== */
 
 /* Variables */
@@ -61,7 +61,7 @@ html, body {
   color: var(--fg);
 }
 
-/* FORM CONTROLS — computed font-size must be >= 16px or iOS Safari zooms
+/* FORM CONTROLS: computed font-size must be >= 16px or iOS Safari zooms
    the viewport on focus. Applies everywhere (no visual change on desktop). */
 input, select, textarea {
   font-size: 16px;
@@ -825,13 +825,13 @@ img {
 .about-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
 
 /* Footers and subtitles sit on every page; give their links a modest hit
-   area at every width (desktop padding is transparent — links keep their
+   area at every width (desktop padding is transparent: links keep their
    size, only the clickable box grows). Declared BEFORE the mobile block so
    the mobile overrides win. */
 .footer-link { display: inline-block; padding: 6px 4px; }
 .cyber-subtitle a { display: inline-block; padding: 6px 4px; }
 
-/* MOBILE TAP TARGETS — 44x44px minimum hit area (WCAG 2.5.5).
+/* MOBILE TAP TARGETS: 44x44px minimum hit area (WCAG 2.5.5).
    Desktop rendering untouched: paddings only apply at mobile widths. */
 @media (max-width: 768px) {
   .nav-link { padding: 13px 16px; }
@@ -851,7 +851,7 @@ img {
   .lb-actions .btn-neon { padding: 12px 18px; }
 }
 
-/* Hover-revealed overlay ("VIEW ON INSTAGRAM") — needs a touch equivalent.
+/* Hover-revealed overlay ("VIEW ON INSTAGRAM"): needs a touch equivalent.
    Without hover, the button must be visible inside the clickable tile; with
    hover (or on pointer-up after a touch), the dimmed reveal still plays. */
 .insta-hover-overlay {

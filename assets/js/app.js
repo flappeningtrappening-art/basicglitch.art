@@ -1,4 +1,4 @@
-/* app.js — gallery loader, filters, lightbox, hero randomizer */
+/* app.js: gallery loader, filters, lightbox, hero randomizer */
 
 /* ---------------------------
    Config - adjust paths if needed
@@ -130,7 +130,7 @@ async function fetchGallery(){
   try{
     const res = await fetch(GALLERY_JSON);
     if(!res.ok){
-      console.error(`gallery.json not found at ${GALLERY_JSON} — status: ${res.status}`);
+      console.error(`gallery.json not found at ${GALLERY_JSON}: status: ${res.status}`);
       return [];
     }
     const text = await res.text();
@@ -274,7 +274,7 @@ function renderGrid(items, simplified = false){
 let currentIndex = 0;
 let lbLastFocused = null;
 
-/* Lightbox accessibility helpers — shared with page-level lightboxes
+/* Lightbox accessibility helpers: shared with page-level lightboxes
    (gallery.html wires its own lightbox and reuses these via window.*). */
 function getLightboxFocusables(lb) {
   if (!lb) return [];
@@ -414,7 +414,7 @@ if(lbContent){
   }, false);
 }
 
-/* Lightbox swipe — one handler per #lb-content, wired on DOMContentLoaded.
+/* Lightbox swipe: one handler per #lb-content, wired on DOMContentLoaded.
    Pointer Events cover touch, pen and mouse-drag; a horizontal-only test
    (|dx| > threshold AND |dx| > |dy|) keeps vertical page scroll working. */
 function attachLightboxSwipe(){
@@ -532,7 +532,7 @@ function initCollectionPage(data) {
 }
 
 /* ---------------------------
-   Email decryption — runs independently, always
+   Email decryption: runs independently, always
    --------------------------- */
 function initEmailDecryption(){
   const emailLinks = document.querySelectorAll('.secure-contact-link');
@@ -562,7 +562,7 @@ function initEmailDecryption(){
   setBrandColor();
   setHeroBackground();
 
-  // Email decryption runs unconditionally — not inside gallery try/catch
+  // Email decryption runs unconditionally: not inside gallery try/catch
   initEmailDecryption();
 
   // GALLERY + COLLECTION INIT
@@ -595,6 +595,6 @@ function initEmailDecryption(){
   }catch(err){
     console.error('Gallery init error:', err);
     const grid = document.getElementById('gallery-grid');
-    if(grid) grid.innerHTML = '<div class="card" style="padding:40px; text-align:center; color:var(--muted);">Gallery temporarily unavailable — '+(err.message||err)+'</div>';
+    if(grid) grid.innerHTML = '<div class="card" style="padding:40px; text-align:center; color:var(--muted);">Gallery temporarily unavailable: '+(err.message||err)+'</div>';
   }
 })();

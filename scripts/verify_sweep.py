@@ -63,7 +63,7 @@ def sweep_page(browser, url, label, viewport, fails):
     page = ctx.new_page()
     # Stub the Cloudflare Web Analytics beacon so it behaves as it does in
     # production (on the real domain). Against localhost it would otherwise
-    # always log CORS errors — test-environment noise, not site bugs.
+    # always log CORS errors: test-environment noise, not site bugs.
     page.route("**/beacon.min.js*", lambda r: r.fulfill(
         status=200, content_type="application/javascript", body="/* beacon stub */"))
     page.route("**/cdn-cgi/rum*", lambda r: r.fulfill(
@@ -134,7 +134,7 @@ def run_interactions(browser, fails):
             "([x, y]) => { const e = document.elementFromPoint(x, y); return !!e && !!e.closest('#guardian-guitarbot'); }",
             [cx, cy])
         (print("  ok: guardian topmost at center (clickable)") if topmost
-         else fails.append("guardian covered at its center — not clickable"))
+         else fails.append("guardian covered at its center: not clickable"))
         g.click()
         pg.wait_for_timeout(120)
         cls = g.get_attribute("class") or ""
@@ -414,7 +414,7 @@ def run_mobile(browser, fails, lo=0, hi=None):
                 if ov == "missing":
                     fails.append("mobile/index: insta overlay element missing")
                 elif float(ov) < 0.5:
-                    fails.append(f"mobile/index: overlay opacity {ov} without hover — touch users see nothing")
+                    fails.append(f"mobile/index: overlay opacity {ov} without hover: touch users see nothing")
                 else:
                     entry["checks"]["overlay_touch_visible"] = "ok"
 

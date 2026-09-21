@@ -1,4 +1,4 @@
-/* robot.js — Section Guardian interactions 
+/* robot.js: Section Guardian interactions 
    ENHANCED VERSION: Monumental static anchors with glitch effects */
 
 // Config
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function triggerGuardianAction(robotId, config, event) {
-  // Audio — pick only from files confirmed to exist for this character
+  // Audio: pick only from files confirmed to exist for this character
   let file = null;
   if (config && Array.isArray(config.audioFiles) && config.audioFiles.length) {
     const n = Math.floor(Math.random() * config.audioFiles.length);

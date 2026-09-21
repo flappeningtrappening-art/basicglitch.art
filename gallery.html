@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script>
-/* Pick the random hero image in <head> and preload it immediately — app.js
+/* Pick the random hero image in <head> and preload it immediately, app.js
    (deferred) reuses the pick instead of rolling its own, so the LCP image
    (sticky-header background) loads in parallel with CSS instead of after
    JS parse. Same 4 choices, same uniform randomness, same rendering. */
@@ -27,18 +27,18 @@
 <link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/gallery.html">
 <title>The Archive | Digital Surrealism & Tech-Noir | BasicGlitch</title>
-<meta name="description" content="Explore the full BasicGlitch collection — Neon Surrealism, Cyberpunk Characters, Tech-Noir Landscapes, and the complete Case Study 42 Broboticus archive.">
+<meta name="description" content="Explore the full BasicGlitch collection, Neon Surrealism, Cyberpunk Characters, Tech-Noir Landscapes, and the complete Case Study 42 Broboticus archive.">
 <meta name="keywords" content="neon surrealism gallery, tech-noir landscapes, psychedelic digital art, Broboticus, BasicGlitch art gallery, cyberpunk character design">
 <meta name="author" content="BasicGlitch">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://basicglitch.art/gallery.html">
 <meta property="og:title" content="The Archive | Digital Surrealism & Tech-Noir | BasicGlitch">
-<meta property="og:description" content="The full BasicGlitch collection — nine series, one universe.">
+<meta property="og:description" content="The full BasicGlitch collection, nine series, one universe.">
 <meta property="og:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://basicglitch.art/gallery.html">
 <meta name="twitter:title" content="The Archive | BasicGlitch">
-<meta name="twitter:description" content="The full BasicGlitch collection — nine series, one universe.">
+<meta name="twitter:description" content="The full BasicGlitch collection, nine series, one universe.">
 <meta name="twitter:image" content="https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp">
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="./assets/js/app.js" defer></script>
@@ -207,7 +207,7 @@
 /* SEARCH */
 .filter-search {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem; /* 16px — iOS zooms on focus below this */
+  font-size: 1rem; /* 16px, iOS zooms on focus below this */
   color: var(--fg);
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(0,255,247,0.2);
@@ -270,7 +270,7 @@
   max-width: 1300px;
 }
 
-/* Cleaner cards — image dominant, minimal text */
+/* Cleaner cards, image dominant, minimal text */
 .gallery-grid {
   display: grid;
   gap: 16px;
@@ -404,7 +404,7 @@
   font-size: 1.2rem;
 }
 
-/* LIGHTBOX upgrades — price + view page button */
+/* LIGHTBOX upgrades, price + view page button */
 #lb-content .lb-price {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.2rem;
@@ -609,7 +609,7 @@
   </defs>
 </svg>
 
-<!-- GALLERY INIT — dropdown filters, clean card render, lightbox wiring -->
+<!-- GALLERY INIT, dropdown filters, clean card render, lightbox wiring -->
 <script>
 (function() {
   'use strict';
@@ -814,7 +814,7 @@ function renderGalleryCards(items) {
       card.appendChild(sb);
     }
 
-    // Image — loading MUST be set before src or the fetch starts immediately
+    // Image, loading MUST be set before src or the fetch starts immediately
     const img = document.createElement('img');
     img.loading = 'lazy';
     img.fetchPriority = 'low';
@@ -845,7 +845,7 @@ function renderGalleryCards(items) {
     body.appendChild(meta);
     card.appendChild(body);
 
-    // Crawlable link overlay — covers the card so search engines still see a
+    // Crawlable link overlay, covers the card so search engines still see a
     // real link to the art page. Interaction is re-routed below: plain clicks
     // and Enter open the lightbox, while Ctrl/Cmd/Shift-click, middle-click,
     // and no-JS visits navigate natively.
@@ -862,7 +862,7 @@ function renderGalleryCards(items) {
       }
     });
 
-    // Click — open the lightbox; let the crawl link carry modified navigation
+    // Click, open the lightbox; let the crawl link carry modified navigation
     card.addEventListener('click', (e) => {
       if (crawlLink.contains(e.target)) {
         // Ctrl/Cmd/Shift-click and middle-click still navigate to the page
@@ -1005,7 +1005,7 @@ function renderGalleryCards(items) {
     if (e.key === 'Tab' && window.trapLightboxTab) window.trapLightboxTab(e, lb);
   });
 
-  // Swipe (pointer events) — shared handler lives in app.js; this page's
+  // Swipe (pointer events), shared handler lives in app.js; this page's
   // engine registers itself as the dispatch target while the lightbox is open.
   window.__lbNext = nextLb;
   window.__lbPrev = prevLb;

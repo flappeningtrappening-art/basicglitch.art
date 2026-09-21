@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script>
-/* Pick the random hero image in <head> and fetch it immediately — app.js
+/* Pick the random hero image in <head> and fetch it immediately, app.js
    (deferred) reuses the pick instead of rolling its own, so the LCP image
    loads in parallel with CSS instead of after JS parse. Same 4 choices,
    same uniform randomness, same rendering. */
@@ -65,7 +65,7 @@
 <style>
 /* ── INDEX-ONLY OVERRIDES ── */
 
-/* HERO TITLE — fix kerning and gradient wash */
+/* HERO TITLE, fix kerning and gradient wash */
 .hero .title {
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(3.2rem, 10vw, 8rem);
@@ -86,7 +86,7 @@
   filter: drop-shadow(0 0 30px rgba(0,255,247,0.2));
 }
 
-/* HERO SUBTITLE — smaller, cleaner, monospace label not a second headline */
+/* HERO SUBTITLE, smaller, cleaner, monospace label not a second headline */
 .hero .subtitle {
   font-family: 'Share Tech Mono', monospace;
   font-size: clamp(0.8rem, 2vw, 1rem);
@@ -103,12 +103,12 @@
   opacity: 0.85;
 }
 
-/* HERO — taller so it fills viewport properly */
+/* HERO, taller so it fills viewport properly */
 .hero {
   min-height: 92vh;
 }
 
-/* HERO INNER — push content down from top, give Guitarbot room */
+/* HERO INNER, push content down from top, give Guitarbot room */
 .hero-inner {
   padding-bottom: 80px;
 }
@@ -126,7 +126,7 @@
   pointer-events: auto;
 }
 
-/* ARCHIVE SECTION — tighter, more intentional */
+/* ARCHIVE SECTION, tighter, more intentional */
 .archive-section {
   position: relative;
   padding: 80px 20px;
@@ -146,7 +146,7 @@
   pointer-events: none;
 }
 
-/* ARCHIVE CARDS — consistent aspect ratio, proper class-based styling */
+/* ARCHIVE CARDS, consistent aspect ratio, proper class-based styling */
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,7 +260,7 @@
   position: relative;
 }
 
-/* EMAIL SIGNUP — at the bottom where it belongs */
+/* EMAIL SIGNUP, at the bottom where it belongs */
 .email-signup-section {
   padding: 80px 20px;
   background: #000;
@@ -297,7 +297,7 @@
   border: 1px solid rgba(0,255,62,0.3);
   color: white;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem; /* 16px — iOS zooms on focus below this */
+  font-size: 1rem; /* 16px, iOS zooms on focus below this */
   border-radius: 4px;
   outline: none;
   transition: border-color 0.3s;
@@ -349,7 +349,7 @@
   <div style="position:relative;">
     <img id="guardian-guitarbot" class="section-guardian"
       src="assets/images/raw/guitarbot_og.webp" width="2000" height="2000"
-      alt="Guitarbot — Broboticus playing bass, cyberpunk robot character by BasicGlitch"
+      alt="Guitarbot, Broboticus playing bass, cyberpunk robot character by BasicGlitch"
       data-robot-id="guitarbot"
       style="height:75vh;width:auto;cursor:pointer;transform-origin:bottom center; display:block;">    
   </div>
@@ -381,7 +381,7 @@
 
         <a href="broboticus.html" class="archive-card archive-card--grn">
           <img src="assets/images/card/fishboticus.webp" width="800" height="800" loading="lazy"
-               alt="Fishboticus — Case Study 42 robot character by BasicGlitch"
+               alt="Fishboticus, Case Study 42 robot character by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Case Study 42</span>
@@ -392,18 +392,18 @@
 
         <a href="gallery.html" class="archive-card archive-card--blu">
           <img src="assets/images/card/sunflowerboticus.webp" width="800" height="800" loading="lazy"
-               alt="Two Van Gogh pieces at the same time — Sunflowers and a hint of Starry Night starring Broboticus Brobot by BasicGlitch"
+               alt="Two Van Gogh pieces at the same time: Sunflowers and a hint of Starry Night starring Broboticus Brobot by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Masters Remixed</span>
             <h3 class="archive-card-title">Art History vs. Broboticus</h3>
-            <p class="archive-card-desc">Munch, Van Gogh, Warhol, Da Vinci, Grant Wood — Broboticus understands the inspiration and gives his interpretation.</p>
+            <p class="archive-card-desc">Munch, Van Gogh, Warhol, Da Vinci, Grant Wood: Broboticus understands the inspiration and gives his interpretation.</p>
           </div>
         </a>
         
         <a href="gallery.html" class="archive-card archive-card--wht">
           <img src="assets/images/card/pup-fiction-scene1.webp" width="800" height="800" loading="lazy"
-               alt="Pup Fiction Crash — Pulp Fiction diner scene with dogs by BasicGlitch"
+               alt="Pup Fiction Crash, Pulp Fiction diner scene with dogs by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Series in Progress</span>
@@ -414,7 +414,7 @@
         
         <a href="gallery.html" class="archive-card archive-card--cyn">
           <img src="assets/images/card/sangre_de_cristo_dusk.webp" width="653" height="800" loading="lazy"
-               alt="Sangre De Cristos at dusk — Colorado mountain range circuit board landscape"
+               alt="Sangre De Cristos at dusk, Colorado mountain range circuit board landscape"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">9 Variants</span>
@@ -425,7 +425,7 @@
 
         <a href="gallery.html" class="archive-card archive-card--mag">
           <img src="assets/images/card/skyline_reclaimation.webp" width="800" height="800" loading="lazy"
-               alt="Skyline Reclaimation — Surrealist Data Giraffe by BasicGlitch"
+               alt="Skyline Reclaimation, Surrealist Data Giraffe by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Cyber Savanna</span>
@@ -436,7 +436,7 @@
 
         <a href="gallery.html" class="archive-card archive-card--limon">
           <img src="assets/images/card/discworld.webp" width="589" height="800" loading="lazy"
-               alt="The Great A'Tuin — Terry Pratchet's Discworld Reimagined by BasicGlitch"
+               alt="The Great A'Tuin, Terry Pratchet's Discworld Reimagined by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Hand Drawn LSD Inspired Line Work</span>
@@ -447,7 +447,7 @@
 
         <a href="gallery.html" class="archive-card archive-card--org">
           <img src="assets/images/card/dust_to_dust.webp" width="800" height="790" loading="lazy"
-               alt="Dust to Dust — Enviromental Warnings by BasicGlitch"
+               alt="Dust to Dust, Environmental Warnings by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Mother Earth</span>
@@ -458,7 +458,7 @@
 
         <a href="gallery.html" class="archive-card archive-card--yel">
           <img src="assets/images/card/loveofthegame.webp" width="800" height="800" loading="lazy"
-               alt="Love of the Game — The Original Career Path by BasicGlitch"
+               alt="Love of the Game, The Original Career Path by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Personal Life</span>
@@ -469,7 +469,7 @@
         
         <a href="gallery.html" class="archive-card archive-card--pur">
           <img src="assets/images/card/spiral_geometry.webp" width="800" height="800" loading="lazy"
-               alt="Spiral Geometry — hand-drawn mandala by BasicGlitch"
+               alt="Spiral Geometry, hand-drawn mandala by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
             <span class="archive-card-label">Hand-Drawn + Digital</span>
@@ -523,7 +523,7 @@
 
   <div class="section-divider"></div>
 
-  <!-- ── EMAIL SIGNUP — bottom of page where it belongs ── -->
+  <!-- ── EMAIL SIGNUP, bottom of page where it belongs ── -->
   <section class="email-signup-section neon-grid-section" id="signup">
     <div class="container">
       <div class="cyber-header">
@@ -556,7 +556,7 @@
   </div>
 </footer>
 
-<!-- Instagram feed — random from gallery -->
+<!-- Instagram feed, random from gallery -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const imgs = [
@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if(grid){
     shuffle([...imgs]).slice(0,6).forEach(img => {
       const el = document.createElement('img');
-      // loading set BEFORE src — otherwise the fetch starts immediately
+      // loading set BEFORE src, otherwise the fetch starts immediately
       el.loading = 'lazy';
       el.decoding = 'async';
       el.fetchPriority = 'low';

@@ -3,13 +3,13 @@ import json
 # Corrected mapping using exact titles from gallery.json
 series_mapping = {
     "SANGRE DE CRISTOS SERIES": [
-        "Sangre De Cristos — Neon", "Sangre De Cristos — Night", "Sangre De Cristos — Blanca", 
-        "Sangre De Cristos — Blanca at Dusk", "Sangre De Cristos — Colorado", "Sangre De Cristo Midnight V2", 
-        "Sangre De Cristo Dusk", "Sangre De Cristos — Circuits", "Sangre De Cristos — Dreamsicle"
+        "Sangre De Cristos: Neon", "Sangre De Cristos: Night", "Sangre De Cristos: Blanca", 
+        "Sangre De Cristos: Blanca at Dusk", "Sangre De Cristos: Colorado", "Sangre De Cristo Midnight V2", 
+        "Sangre De Cristo Dusk", "Sangre De Cristos: Circuits", "Sangre De Cristos: Dreamsicle"
     ],
-    "CASE STUDY 42 — BROBOTICUS": [
-        "Broboticus — The Original (March of the Robots, 2024)", "Vitruvian Broboticus", 
-        "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus — The Artist", 
+    "CASE STUDY 42: BROBOTICUS": [
+        "Broboticus: The Original (March of the Robots, 2024)", "Vitruvian Broboticus", 
+        "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus: The Artist", 
         "Iron Chef (Chefboticus)", "The Bolts and Nutcracker (Balletboticus)", 
         "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", 
         "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", 
@@ -19,19 +19,19 @@ series_mapping = {
         "Vitruvian Broboticus", "Screambot", "Sunflowerboticus", 
         "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"
     ],
-    "PUP FICTION": ["Pup Fiction — Crash (Diner Robbery Prologue)"],
+    "PUP FICTION": ["Pup Fiction: Crash (Diner Robbery Prologue)"],
     "CYBER SAVANNA": [
         "Lion (Cyber Savanna series)", "Elephant (Cyber Savanna series)", 
         "Giraffey Taffy (Cyber Savanna series)", "Cheetah (Cyber Savanna series)", 
         "Waterbuck (Cyber Savanna series)", "Pachydermis"
     ],
     "PACHYDERMIS TRIPTYCH": [
-        "Pachydermis", "Pachydermis — Phish Edition", 
-        "Pachydermis — Phish Edition Inked"
+        "Pachydermis", "Pachydermis: Phish Edition", 
+        "Pachydermis: Phish Edition Inked"
     ],
     "SPIRAL STUDIES": [
-        "Monopattern (Spiral Studies — Original)", "Spiral Geometry (Fire Variant)", 
-        "Color Pattern (Spiral Studies — Acid)", "Floral (Spiral Studies — Dusk Variant)"
+        "Monopattern (Spiral Studies: Original)", "Spiral Geometry (Fire Variant)", 
+        "Color Pattern (Spiral Studies: Acid)", "Floral (Spiral Studies: Dusk Variant)"
     ],
     "SKULLASTIC ENDEAVOR": ["Psylent Skulls", "Skullastic Endeavor"],
     "MYCOLOGY SERIES": ["A Mycological Phenomenon", "Mycology Yourcology"],
@@ -51,8 +51,8 @@ for item in gallery:
     
     # Ensure all Broboticus-related works are in Case Study 42
     if 'Broboticus' in item['title'] or 'Brobot' in item['title'] or 'Guitarbot' in item['title'] or 'Screambot' in item['title']:
-        if 'CASE STUDY 42 — BROBOTICUS' not in item['series']:
-            item['series'].append('CASE STUDY 42 — BROBOTICUS')
+        if 'CASE STUDY 42: BROBOTICUS' not in item['series']:
+            item['series'].append('CASE STUDY 42: BROBOTICUS')
     
     if item['title'] == 'Brobotosaurus Wrex':
         item['series'].append('FIELD REPORT 00')

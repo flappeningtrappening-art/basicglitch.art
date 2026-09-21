@@ -243,7 +243,7 @@ def update_gallery(id, title, file_path, analysis, is_video):
 
 def deploy_to_github():
     # Allowlist mode: only generated/published paths may ever be auto-committed.
-    # Never `git add .` — internal docs/credentials must stay out of the repo.
+    # Never `git add .`: internal docs/credentials must stay out of the repo.
     os.chdir(BASE_DIR)
     allowlisted = [
         "art/",

@@ -87,7 +87,7 @@ with sync_playwright() as pw:
     closed = "hidden" in (page.locator("#lightbox").get_attribute("class") or "")
     print("pup-fiction lightbox closes by tap:", closed)
 
-    # --- collection cards navigate to art pages by design (app.js) — tap check ---
+    # --- collection cards navigate to art pages by design (app.js): tap check ---
     page.goto(f"{BASE}/collection.html?id=broboticus", wait_until="domcontentloaded")
     page.wait_for_timeout(1600)
     ccard = page.locator(".gallery-card").first

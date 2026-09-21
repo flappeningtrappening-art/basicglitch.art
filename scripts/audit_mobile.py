@@ -1,4 +1,4 @@
-"""Phase 1 mobile audit for basicglitch.art — read-only, quantified findings.
+"""Phase 1 mobile audit for basicglitch.art: read-only, quantified findings.
 
 Usage: python3 scripts/audit_mobile.py [core|art|all]
 Writes verification_screenshots/audit_mobile.json
