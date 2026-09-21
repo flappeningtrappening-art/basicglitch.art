@@ -3,11 +3,14 @@
 
 // Config
 const ROBOT_ASSETS = {
-  'guitarbot': { audioPath: 'assets/audio/guitarbot/', color: 'var(--neon-mag)' },
-  'broboticus': { audioPath: 'assets/audio/broboticus/', color: 'var(--neon)' }
+  // audioFiles whitelists only the files that actually exist on disk,
+  // so the pool never requests missing/corrupted audio.
+  'guitarbot': { audioPath: '/assets/audio/guitarbot/', audioFiles: ['guitarbot_4.mp3'], color: 'var(--neon-mag)' },
+  'broboticus': { audioPath: '/assets/audio/broboticus/', audioFiles: ['broboticus_1.mp3'], color: 'var(--neon)' }
 };
 
-const AUDIO_POOL_COUNT = 3;
+// Legacy constant kept for backwards compatibility; see ROBOT_ASSETS[].audioFiles.
+const AUDIO_POOL_COUNT = 1;
 
 // ✅ ADD ENHANCED GUARDIAN STYLES
 function addGuardianStyles() {
@@ -114,14 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function triggerGuardianAction(robotId, config, event) {
-  // Audio
-  const n = Math.floor(Math.random() * AUDIO_POOL_COUNT) + 1;
-  const file = `${config.audioPath}${robotId}_${n}.mp3`;
-  try {
-    const a = new Audio(file);
-    a.volume = 0.6;
-    a.play().catch(err => console.warn('Audio play blocked/failed', err));
-  } catch(e) { console.warn(e); }
+  // Audio — pick only from files confirmed to exist for this character
+  let file = null;
+  if (config && Array.isArray(config.audioFiles) && config.audioFiles.length) {
+    const n = Math.floor(Math.random() * config.audioFiles.length);
+    file = `${config.audioPath}${config.audioFiles[n]}`;
+  }
+  if (file) {
+    try {
+      const a = new Audio(file);
+      a.volume = 0.6;
+      a.play().catch(err => console.warn('Audio play blocked/failed', err));
+    } catch(e) { console.warn(e); }
+  }
 
   // Ripple
   if (event) createRippleEffect(event, config.color);
