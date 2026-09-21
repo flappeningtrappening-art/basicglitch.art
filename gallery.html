@@ -3,9 +3,25 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+/* Pick the random hero image in <head> and preload it immediately — app.js
+   (deferred) reuses the pick instead of rolling its own, so the LCP image
+   (sticky-header background) loads in parallel with CSS instead of after
+   JS parse. Same 4 choices, same uniform randomness, same rendering. */
+(function () {
+  var choices = ['assets/images/hero/glitch1.webp', 'assets/images/hero/glitch2.webp',
+                 'assets/images/hero/glitch3.jpg', 'assets/images/hero/glitch4.webp'];
+  var pick = choices[Math.floor(Math.random() * choices.length)];
+  window.__heroPath = pick;
+  var l = document.createElement('link');
+  l.rel = 'preload'; l.as = 'image'; l.href = pick;
+  l.setAttribute('fetchpriority', 'high');
+  document.head.appendChild(l);
+})();
+</script>
 <meta name="theme-color" content="#050505">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
@@ -801,6 +817,7 @@ function renderGalleryCards(items) {
     // Image — loading MUST be set before src or the fetch starts immediately
     const img = document.createElement('img');
     img.loading = 'lazy';
+    img.fetchPriority = 'low';
     img.alt = item.alt_text || item.title + ' | BasicGlitch';
     img.src = thumbSrc;
     card.appendChild(img);

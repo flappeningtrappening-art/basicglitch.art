@@ -73,8 +73,13 @@ function setHeroBackground(){
   // Check if there are choices available
   if(HERO_CHOICES.length === 0) return;
 
+  // Reuse the <head> pick when present (index.html preloads it for LCP);
+  // otherwise roll a fresh pick (pages without the inline bootstrap).
+  const prePicked = (typeof window.__heroPath === 'string')
+    ? HERO_CHOICES.find(c => c.path === '/' + window.__heroPath || c.path === window.__heroPath)
+    : null;
   // 1. Pick a random object from the array (e.g., { path: '...', key: 'glitch1' })
-  const pickObject = HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
+  const pickObject = prePicked || HERO_CHOICES[Math.floor(Math.random() * HERO_CHOICES.length)];
   
   // 2. Extract the path and the key from the chosen object
   const pickPath = pickObject.path;
@@ -213,6 +218,7 @@ function renderGrid(items, simplified = false){
       // Image (loading MUST be set before src or the fetch starts immediately)
       el('img', {
         loading: 'lazy',
+        fetchPriority: 'low',
         alt: it.alt_text || `${it.title} | BasicGlitch`,
         src: thumbSrc,
         className: 'gallery-image',
@@ -561,6 +567,11 @@ function initEmailDecryption(){
 
   // GALLERY + COLLECTION INIT
   try{
+    // Only pages that actually render a grid consume gallery.json (~71KB).
+    // Index etc. skip the fetch entirely.
+    if(!document.getElementById('gallery-grid') && !document.getElementById('collection-view')){
+      return;
+    }
     const data = await fetchGallery();
     window.GALLERY = data || [];
 

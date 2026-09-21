@@ -3,12 +3,27 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Michroma&family=Monoton&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&family=Rationale&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Wallpoet&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+/* Pick the random hero image in <head> and fetch it immediately — app.js
+   (deferred) reuses the pick instead of rolling its own, so the LCP image
+   loads in parallel with CSS instead of after JS parse. Same 4 choices,
+   same uniform randomness, same rendering. */
+(function () {
+  var choices = ['assets/images/hero/glitch1.webp', 'assets/images/hero/glitch2.webp',
+                 'assets/images/hero/glitch3.jpg', 'assets/images/hero/glitch4.webp'];
+  var pick = choices[Math.floor(Math.random() * choices.length)];
+  window.__heroPath = pick;
+  var l = document.createElement('link');
+  l.rel = 'preload'; l.as = 'image'; l.href = pick;
+  l.setAttribute('fetchpriority', 'high');
+  document.head.appendChild(l);
+})();
+</script>
 <meta name="theme-color" content="#050505">
 <meta name="robots" content="index, follow">
-<link rel="preload" href="assets/images/raw/guitarbot_og.webp" as="image">
 <link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="https://basicglitch.art/">
 <title>BasicGlitch | Digital Surrealism</title>
@@ -333,7 +348,7 @@
     <div class="guardian-container" style="position:absolute;bottom:0;right:2%;z-index:1;opacity:1.0;transition:all 0.6s cubic-bezier(0.16,1,0.3,1);">
   <div style="position:relative;">
     <img id="guardian-guitarbot" class="section-guardian"
-      src="assets/images/raw/guitarbot_og.webp"
+      src="assets/images/raw/guitarbot_og.webp" width="2000" height="2000"
       alt="Guitarbot — Broboticus playing bass, cyberpunk robot character by BasicGlitch"
       data-robot-id="guitarbot"
       style="height:75vh;width:auto;cursor:pointer;transform-origin:bottom center; display:block;">    
@@ -365,7 +380,7 @@
       <div class="archive-grid">
 
         <a href="broboticus.html" class="archive-card archive-card--grn">
-          <img src="assets/images/raw/fishboticus.webp"
+          <img src="assets/images/card/fishboticus.webp" width="800" height="800" loading="lazy"
                alt="Fishboticus — Case Study 42 robot character by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -376,7 +391,7 @@
         </a>
 
         <a href="gallery.html" class="archive-card archive-card--blu">
-          <img src="assets/images/raw/sunflowerboticus.webp"
+          <img src="assets/images/card/sunflowerboticus.webp" width="800" height="800" loading="lazy"
                alt="Two Van Gogh pieces at the same time — Sunflowers and a hint of Starry Night starring Broboticus Brobot by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -387,7 +402,7 @@
         </a>
         
         <a href="gallery.html" class="archive-card archive-card--wht">
-          <img src="assets/images/raw/pup-fiction-scene1.webp"
+          <img src="assets/images/card/pup-fiction-scene1.webp" width="800" height="800" loading="lazy"
                alt="Pup Fiction Crash — Pulp Fiction diner scene with dogs by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -398,7 +413,7 @@
         </a>
         
         <a href="gallery.html" class="archive-card archive-card--cyn">
-          <img src="assets/images/raw/sangre_de_cristo_dusk.webp"
+          <img src="assets/images/card/sangre_de_cristo_dusk.webp" width="653" height="800" loading="lazy"
                alt="Sangre De Cristos at dusk — Colorado mountain range circuit board landscape"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -409,7 +424,7 @@
         </a>
 
         <a href="gallery.html" class="archive-card archive-card--mag">
-          <img src="assets/images/raw/skyline_reclaimation.webp"
+          <img src="assets/images/card/skyline_reclaimation.webp" width="800" height="800" loading="lazy"
                alt="Skyline Reclaimation — Surrealist Data Giraffe by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -420,7 +435,7 @@
         </a>
 
         <a href="gallery.html" class="archive-card archive-card--limon">
-          <img src="assets/images/raw/discworld.webp"
+          <img src="assets/images/card/discworld.webp" width="589" height="800" loading="lazy"
                alt="The Great A'Tuin — Terry Pratchet's Discworld Reimagined by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -431,7 +446,7 @@
         </a>
 
         <a href="gallery.html" class="archive-card archive-card--org">
-          <img src="assets/images/raw/dust_to_dust.webp"
+          <img src="assets/images/card/dust_to_dust.webp" width="800" height="790" loading="lazy"
                alt="Dust to Dust — Enviromental Warnings by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -442,7 +457,7 @@
         </a>
 
         <a href="gallery.html" class="archive-card archive-card--yel">
-          <img src="assets/images/raw/loveofthegame.webp"
+          <img src="assets/images/card/loveofthegame.webp" width="800" height="800" loading="lazy"
                alt="Love of the Game — The Original Career Path by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -453,7 +468,7 @@
         </a>
         
         <a href="gallery.html" class="archive-card archive-card--pur">
-          <img src="assets/images/raw/spiral_geometry.webp"
+          <img src="assets/images/card/spiral_geometry.webp" width="800" height="800" loading="lazy"
                alt="Spiral Geometry — hand-drawn mandala by BasicGlitch"
                class="archive-card-img">
           <div class="archive-card-body">
@@ -545,15 +560,15 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const imgs = [
-    'pup-fiction-scene1.webp','gaia_of_the_wasteland.webp','guitarbot_og.webp',
-    'spiral_geometry.webp','artist_broboticus_og.webp','starbot_waiting_in_the_sky.webp',
-    'a_mycological_phenomenon.webp','floral.webp','ranchboticus.webp',
-    'balletboticus.webp','vitruvian_broboticus.webp','brobotosaurus_wrex.webp',
-    'cubist_chef.webp','mycology_yourcology.webp','pachydermis.webp',
-    'karateboticus1.webp','chefboticus.webp','aesthetic_sangre_de_cristo.webp',
-    'literal_traphouse.webp','fishboticus.webp','aesthetic_laser_colorado.webp',
-    'dust_to_dust.webp','apex_rendering.webp','monument_memory.webp',
-    'sentinel_stream.webp','skyline_reclaimation.webp'
+    'card/pup-fiction-scene1.webp','card/gaia_of_the_wasteland.webp','card/guitarbot_og.webp',
+    'card/spiral_geometry.webp','card/artist_broboticus_og.webp','card/starbot_waiting_in_the_sky.webp',
+    'card/a_mycological_phenomenon.webp','card/floral.webp','card/ranchboticus.webp',
+    'card/balletboticus.webp','card/vitruvian_broboticus.webp','card/brobotosaurus_wrex.webp',
+    'card/cubist_chef.webp','card/mycology_yourcology.webp','card/pachydermis.webp',
+    'card/karateboticus1.webp','card/chefboticus.webp','card/aesthetic_sangre_de_cristo.webp',
+    'card/literal_traphouse.webp','card/fishboticus.webp','card/aesthetic_laser_colorado.webp',
+    'card/dust_to_dust.webp','card/apex_rendering.webp','card/monument_memory.webp',
+    'card/sentinel_stream.webp','card/skyline_reclaimation.webp'
   ];
   const shuffle = a => { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
   const grid = document.getElementById('insta-feed-grid');
@@ -563,6 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // loading set BEFORE src — otherwise the fetch starts immediately
       el.loading = 'lazy';
       el.decoding = 'async';
+      el.fetchPriority = 'low';
       el.alt = 'BasicGlitch recent work';
       el.src = `assets/images/raw/${img}`;
       el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
