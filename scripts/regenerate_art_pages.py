@@ -107,11 +107,50 @@ def build_art_page_html(item, slug, gallery):
     image_abs = f"{SITE_URL}/{file_rel}"
 
     # ── "More from this series" cross-links (3 siblings, fallback: recent) ──
-    series_items = [it for it in gallery
-                    if it.get('title') != title
-                    and any(c in it.get('categories', []) for c in series_cats)]
-    series_items.sort(key=lambda it: it.get('date', ''), reverse=True)
+    # Deterministic rotation: each member links the next siblings in the
+    # date-ordered family cycle, wrapping around. A plain "3 newest" window
+    # would starve every older member of the family of inlinks (whole pages
+    # orphaned); the rotation gives every piece both outbound links and
+    # inbound links from its family while staying deterministic.
+    #
+    # Family definition, in priority order (all strictly from gallery.json):
+    #   1. series categories (e.g. "Sangre de Cristos")
+    #   2. any other shared category (e.g. "Personal")
+    #   3. the standalone club: pieces sharing no category with any other
+    #      piece keep each other company instead of becoming orphans.
+    def family_of(item, all_items):
+        cats = item.get('categories', [])
+        for scope in (series_cats, cats):
+            if scope:
+                members = [it for it in all_items
+                           if any(c in it.get('categories', []) for c in scope)]
+                if len(members) >= 2:
+                    return members, (scope[0] if scope == series_cats
+                                     else next(c for c in scope
+                                               if any(c in it.get('categories', [])
+                                                      for it in all_items
+                                                      if it is not item)))
+        loners = [it for it in all_items
+                  if not any(any(c in other.get('categories', [])
+                                 for other in all_items if other is not it)
+                             for c in it.get('categories', []))]
+        if len(loners) >= 2 and item in loners:
+            return loners, 'Standalone Works'
+        return [], None
+
+    family, family_label = family_of(item, gallery)
+    if family:
+        family.sort(key=lambda it: it.get('date', ''), reverse=True)
+        k = next((i for i, it in enumerate(family)
+                  if it.get('title') == title), 0)
+        # The other members, ordered starting after the current piece,
+        # wrapping at the end of the cycle.
+        series_items = [family[(k + j) % len(family)]
+                        for j in range(1, len(family))]
+    else:
+        series_items = []
     related = series_items[:3]
+    primary = list(related)
     extra_label = None
     if len(related) < 3:
         # Small series: top the row up with recent pieces under an honest label.
@@ -123,17 +162,18 @@ def build_art_page_html(item, slug, gallery):
         if extra:
             extra_label = 'RECENT FROM THE FOUNDRY'
             related = related + extra
-    if related:
-        related_label = (series_cats[0] if series_cats
-                         else 'Recent from the Foundry').upper()
+    if family_label and len(family) >= 2:
+        related_label = family_label.upper()
     else:
         related_label = 'RECENT FROM THE FOUNDRY'
-    # Heading: "MORE FROM <SERIES>" for series pages; plain label otherwise.
-    related_heading = (f'MORE FROM {related_label}' if series_cats
+    # Heading: "MORE FROM <FAMILY>" when the piece has a family; plain
+    # label otherwise.
+    related_heading = (f'MORE FROM {related_label}'
+                       if family_label and len(family) >= 2
                        else related_label)
     # When the heading itself says "Recent from the Foundry", per-card
     # sub-labels would be redundant.
-    if not series_cats:
+    if not family_label or len(family) < 2:
         extra_label = None
 
     crosslinks_html = ''
@@ -147,7 +187,7 @@ def build_art_page_html(item, slug, gallery):
             if not os.path.exists(os.path.join(BASE_DIR, r_thumb)):
                 r_thumb = r_file
             r_alt = escape((it.get('alt_text') or f"{r_title} - digital art by BasicGlitch"), quote=True)
-            is_extra = extra_label and it not in series_items[:3]
+            is_extra = extra_label and it not in primary
             sub = (f'\n        <span class="series-card-sub">{escape(extra_label)}</span>'
                    if is_extra else '')
             cards.append(

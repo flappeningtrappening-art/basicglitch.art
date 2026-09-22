@@ -73,11 +73,31 @@ def new_page(browser, viewport=None):
 
 
 ART_SAMPLES = [
-    ("art/broboticus-the-original.html", "Broboticus: The Original", "Broboticus"),
-    ("art/sangre-de-cristos-neon.html", "Sangre De Cristos: Neon", "Sangre de Cristos"),
-    ("art/gaia-of-the-wasteland.html", "Gaia of the Wasteland", "Gaia Diptych"),
-    ("art/sidepiece-dimepiece.html", "Sidepiece Dimepiece", "Cyber-Eclectic"),
+    ("art/broboticus-the-original.html", "Broboticus: The Original", "BROBOTICUS"),
+    ("art/sangre-de-cristos-neon.html", "Sangre De Cristos: Neon", "SANGRE DE CRISTOS"),
+    ("art/gaia-of-the-wasteland.html", "Gaia of the Wasteland", "GAIA DIPTYCH"),
+    ("art/sidepiece-dimepiece.html", "Sidepiece Dimepiece", "CYBER-ECLECTIC"),
 ]
+
+
+def check_no_art_orphans():
+    """Indexing-critical: every art page must receive >=1 static <a> inlink
+    from somewhere on the site. Pages linked only from JS are invisible to
+    discovery crawling."""
+    import glob
+    import os
+    from collections import Counter
+    targets = Counter()
+    pages = sorted(glob.glob("*.html")) + sorted(glob.glob("art/*.html"))
+    for p in pages:
+        body = open(p, encoding="utf-8").read().split("</head>", 1)[-1]
+        for href in re.findall(r'<a\b[^>]*href="([^"]+)"', body):
+            m = re.match(r"(?:\.\./|/)?art/([\w-]+)\.html", href.split("#")[0])
+            if m:
+                targets["art/" + m.group(1) + ".html"] += 1
+    files = sorted("art/" + f for f in os.listdir("art") if f.endswith(".html"))
+    orphans = [f for f in files if targets[f] == 0]
+    check(not orphans, f"no zero-inlink art pages (found {len(orphans)}: {orphans[:5]})")
 
 HAND_PAGES = ["index.html", "gallery.html", "portfolio.html", "about.html",
               "commissions.html", "apparel.html", "contact.html",
@@ -85,19 +105,20 @@ HAND_PAGES = ["index.html", "gallery.html", "portfolio.html", "about.html",
 
 
 def run_art(browser):
-    # inner-child.html is one of the two pages with no series: fallback label
-    no_series_path = "art/inner-child.html"
-    print(f"\n— {no_series_path} (no-series fallback)")
+    # literal-traphouse shares no category with any other piece: it must
+    # still link out (standalone club), never sit orphaned.
+    print("\n— art/literal-traphouse.html (standalone club)")
     ctx, page, errors = new_page(browser)
-    page.goto(f"{BASE}/{no_series_path}", wait_until="domcontentloaded")
+    page.goto(f"{BASE}/art/literal-traphouse.html", wait_until="domcontentloaded")
     page.wait_for_timeout(400)
     head_txt = page.locator(".series-crosslinks-title").inner_text()
-    check("RECENT" in head_txt, f"no-series page: recent fallback label ({head_txt!r})")
+    check("STANDALONE" in head_txt,
+          f"standalone page: club label ({head_txt!r})")
     links = page.locator(".series-crosslinks a.series-card-link")
-    check(links.count() == 3, f"no-series page: 3 recent links (found {links.count()})")
+    check(links.count() == 3, f"standalone page: 3 club links (found {links.count()})")
     ctx.close()
 
-    for path, title, series in ART_SAMPLES:
+    for path, title, expected_label in ART_SAMPLES:
         print(f"\n— {path}")
         ctx, page, errors = new_page(browser)
         page.goto(f"{BASE}/{path}", wait_until="domcontentloaded")
@@ -139,14 +160,13 @@ def run_art(browser):
         links = page.locator(".series-crosslinks a.series-card-link")
         check(links.count() == 3, f"{path}: 3 sibling links (found {links.count()})")
         head_txt = page.locator(".series-crosslinks-title").inner_text()
-        if series:
-            check(series.split()[0].upper() in head_txt,
-                  f"{path}: crosslink label mentions series ({head_txt!r})")
-        else:
-            check("RECENT" in head_txt, f"{path}: recent-work fallback label ({head_txt!r})")
+        check(expected_label in head_txt,
+              f"{path}: crosslink label mentions family ({head_txt!r})")
         hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
         check(all(h and h.startswith("../art/") and h.endswith(".html") for h in hrefs),
               f"{path}: crosslink hrefs are art pages")
+        own = path.split("/")[-1]
+        check(own not in hrefs, f"{path}: crosslinks never link to self")
         # lazy thumbnails + real alt
         for i in range(links.count()):
             img = links.nth(i).locator("img")
@@ -259,6 +279,7 @@ def main():
             browser = pw.chromium.launch()
             if group in ("art", "all"):
                 run_art(browser)
+                check_no_art_orphans()
             if group in ("hand", "all"):
                 run_hand(browser)
             browser.close()
