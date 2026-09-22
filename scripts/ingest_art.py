@@ -215,6 +215,10 @@ def process_new_files():
         # Regenerate art pages (VisualArtwork/BreadcrumbList JSON-LD, series
         # crosslinks, sitemap), not the legacy foundry_site_gen template.
         os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/regenerate_art_pages.py')}")
+        # Series pages are pure functions of gallery.json + series.json:
+        # regenerate all so any category assignment (or removal) is reflected
+        # immediately and no series page can go stale.
+        os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/generate_series_pages.py')}")
         os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/update_sitemap.py')}")
         deploy_to_github()
 
@@ -252,6 +256,7 @@ def deploy_to_github():
     os.chdir(BASE_DIR)
     allowlisted = [
         "art/",
+        "series/",
         "assets/",
         "sitemap.xml",
     ]
