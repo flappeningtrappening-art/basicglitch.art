@@ -55,7 +55,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Audiowide", Inter, Arial, sans-serif;
+  font-family: "Orbitron", Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   background: var(--bg);
   color: var(--fg);
@@ -513,7 +513,7 @@ img {
 }
 
 .card-price {
-  font-family: 'Audiowide', cursive;
+  font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   text-align: center;
   color: var(--fg);
