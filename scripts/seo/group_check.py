@@ -1,7 +1,17 @@
 """Per-group verification for the SEO sweep (server + Playwright in one process).
 
-Usage: python3 scripts/seo/group_check.py art|hand
+Usage: python3 scripts/seo/group_check.py art|hand|series
 Exits non-zero on any failure.
+
+The `series` group validates the generated /series/ layer end to end:
+  * every non-flagship series has a page, flagships do not
+  * every portfolio box resolves to an existing page (no gallery.html dumps)
+  * each series page lists exactly its category's pieces and no others
+  * no piece appears as a member on two series pages
+  * crosslinks (flagship <-> Masters Remixed) both work
+  * 0 console errors, 0 internal 404s, 0 overflow, desktop + mobile
+  * all JSON-LD parses with required properties
+  * sitemap contains every series page with an image entry
 """
 import functools
 import http.server
@@ -78,6 +88,15 @@ ART_SAMPLES = [
     ("art/gaia-of-the-wasteland.html", "Gaia of the Wasteland", "GAIA DIPTYCH"),
     ("art/sidepiece-dimepiece.html", "Sidepiece Dimepiece", "CYBER-ECLECTIC"),
 ]
+
+
+def load_series_defs():
+    with open("assets/data/series.json", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def is_flagship_def(d):
+    return bool(d.get("flagship_page") or d.get("page") or d.get("suppress_page"))
 
 
 def check_no_art_orphans():
@@ -268,6 +287,199 @@ def run_hand(browser):
     ctx.close()
 
 
+SERIES_JSONLD_REQUIRED = ("name", "url", "description", "creator", "image")
+
+
+def run_series(browser):
+    import os
+    from collections import Counter
+
+    defs = load_series_defs()
+    generated = [d for d in defs if not is_flagship_def(d)]
+    flagships = [d for d in defs if is_flagship_def(d)]
+
+    with open("assets/data/gallery.json", encoding="utf-8") as f:
+        gallery = json.load(f)
+    by_title = {it["title"]: it for it in gallery}
+
+    # ── structural: every non-flagship series has a generated page ──
+    for d in generated:
+        path = f"series/{d['slug']}.html"
+        check(os.path.exists(path), f"{d['category']}: page exists ({path})")
+    for d in flagships:
+        if d.get("suppress_page"):
+            check(not os.path.exists(f"series/{d['slug']}.html"),
+                  f"{d['category']}: suppressed page absent")
+        else:
+            fp = d.get("flagship_page") or d.get("page")
+            check(os.path.exists(fp),
+                  f"{d['category']}: flagship page exists ({fp})")
+
+    # ── expected membership, replicated from the generator's rule ──
+    expected = {}
+    for d in generated:
+        excl = set(d.get("exclude_categories", []))
+        members = [it["title"] for it in gallery
+                   if d["category"] in it.get("categories", [])
+                   and not any(c in excl for c in it.get("categories", []))]
+        expected[d["slug"]] = members
+
+    # ── no piece on two series pages ──
+    seen = Counter()
+    for members in expected.values():
+        seen.update(members)
+    dupes = {t: n for t, n in seen.items() if n > 1}
+    check(not dupes, f"no piece on two series pages ({dupes or 'clean'})")
+
+    # ── portfolio boxes resolve ──
+    portfolio_html = open("portfolio.html", encoding="utf-8").read()
+    box_hrefs = re.findall(
+        r'<a href="([^"]+)" class="series-card[^"]*">', portfolio_html)
+    for href in box_hrefs:
+        check(not href.endswith("gallery.html"),
+              f"portfolio box no longer dumps to archive: {href}")
+        check(os.path.exists(href), f"portfolio box resolves: {href}")
+    check("broboticus.html" in box_hrefs and "pup-fiction.html" in box_hrefs,
+          "flagship boxes still point at broboticus.html / pup-fiction.html")
+
+    # ── sitemap coverage ──
+    sm = open("sitemap.xml", encoding="utf-8").read()
+    for d in generated:
+        loc = f"https://basicglitch.art/series/{d['slug']}.html"
+        check(loc in sm, f"sitemap contains {loc}")
+        block = sm.split(loc, 1)[1].split("</url>", 1)[0] if loc in sm else ""
+        check("<image:loc>" in block,
+              f"sitemap image entry for {d['slug']}")
+    for d in flagships:
+        if d.get("suppress_page"):
+            continue
+        check(f"https://basicglitch.art/series/{d['slug']}.html" not in sm,
+              f"sitemap excludes flagship/suppressed slug {d['slug']}")
+
+    # ── per-page live checks ──
+    member_pages = set()
+    for d in generated:
+        path = f"series/{d['slug']}.html"
+        print(f"\n— {path}")
+        ctx, page, errors = new_page(browser)
+        page.goto(f"{BASE}/{path}", wait_until="domcontentloaded")
+        page.wait_for_timeout(500)
+
+        # desktop + mobile overflow
+        ovf = page.evaluate(
+            "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+        check(ovf <= 1, f"{path}: no horizontal overflow desktop ({ovf}px)")
+        page.set_viewport_size({"width": 390, "height": 844})
+        page.wait_for_timeout(250)
+        ovf_m = page.evaluate(
+            "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+        check(ovf_m <= 1, f"{path}: no horizontal overflow mobile ({ovf_m}px)")
+        page.set_viewport_size({"width": 1440, "height": 900})
+        page.wait_for_timeout(250)
+
+        # unique title + meta description
+        title = page.title()
+        check(title == f"{d['name']} | BasicGlitch",
+              f"{path}: unique title ({title!r})")
+        meta_desc = page.locator("meta[name='description']").get_attribute("content") or ""
+        check(20 <= len(meta_desc) <= 165, f"{path}: meta description length ({len(meta_desc)})")
+        canon = page.locator("link[rel='canonical']").get_attribute("href") or ""
+        check(canon == f"https://basicglitch.art/{path}", f"{path}: canonical ({canon})")
+        check((page.locator("meta[property='og:image']").get_attribute("content") or "").startswith(
+            "https://basicglitch.art/assets/images/"), f"{path}: OG image absolute")
+
+        # JSON-LD: parses + required properties
+        nodes = load_jsonld(page.content())
+        check(nodes and all(n is not None for n in nodes), f"{path}: all JSON-LD parses")
+        cp = next((n for n in nodes if n and n.get("@type") == "CollectionPage"), {})
+        for req in SERIES_JSONLD_REQUIRED:
+            check(bool(cp.get(req)), f"{path}: CollectionPage.{req} present")
+        crumb = next((n for n in nodes if n and n.get("@type") == "BreadcrumbList"), {})
+        items = crumb.get("itemListElement", [])
+        check([i.get("name") for i in items] == ["BasicGlitch", "Portfolio", d["name"]],
+              f"{path}: breadcrumb Home > Portfolio > Series")
+
+        # grid membership: exactly this category's pieces, no others
+        cards = page.locator(".gallery-card")
+        # text_content() (not inner_text()): style.css uppercases rendered
+        # card titles, and membership must compare against source-case titles.
+        got_titles = [cards.nth(i).locator("h3").text_content().strip()
+                      for i in range(cards.count())]
+        check(sorted(got_titles) == sorted(expected[d["slug"]]),
+              f"{path}: lists exactly its category's pieces "
+              f"(got {len(got_titles)}, want {len(expected[d['slug']])})")
+        hrefs = [cards.nth(i).get_attribute("href") for i in range(cards.count())]
+        check(all(h and h.startswith("../art/") for h in hrefs),
+              f"{path}: all cards link to art pages")
+        for i in range(cards.count()):
+            img = cards.nth(i).locator("img")
+            if img.count():
+                check(img.first.get_attribute("loading") == "lazy",
+                      f"{path}: card img lazy")
+                check(img.first.get_attribute("width") is not None
+                      and img.first.get_attribute("height") is not None,
+                      f"{path}: card img has dimensions")
+                break
+
+        # every card href resolves (no internal 404s from the grid)
+        for h in hrefs:
+            target = h.replace("../", "")
+            member_pages.add(target)
+            check(os.path.exists(target), f"{path}: card target exists ({target})")
+
+        check(not errors, f"{path}: no console/HTTP errors ({errors[:3]})")
+        ctx.close()
+
+    # ── crosslinks both directions ──
+    print("\n— crosslinks")
+    ctx, page, errors = new_page(browser)
+    page.goto(f"{BASE}/broboticus.html", wait_until="domcontentloaded")
+    page.wait_for_timeout(400)
+    strip = page.locator(".series-xref-strip a")
+    check(strip.count() == 1, "broboticus: cross-reference strip present (exactly one)")
+    check(strip.first.get_attribute("href") == "series/masters-remixed.html",
+          "broboticus: strip links to Masters Remixed series page")
+    strip.first.click()
+    page.wait_for_timeout(400)
+    check(page.url.endswith("series/masters-remixed.html"),
+          "broboticus: strip navigates to series page")
+    back = page.locator(".series-xref a.series-xref-link")
+    check(back.count() >= 1, "masters-remixed: reciprocal note present")
+    check(back.first.get_attribute("href") == "../broboticus.html",
+          "masters-remixed: note links back to broboticus.html")
+    back.first.click()
+    page.wait_for_timeout(400)
+    check(page.url.endswith("broboticus.html"),
+          "masters-remixed: note navigates back to flagship")
+    check(not errors, f"crosslinks: no console/HTTP errors ({errors[:3]})")
+    ctx.close()
+
+    # ── flagship pages: crosslink strip is the ONLY visible edit; core gates hold ──
+    for fp in ("broboticus.html", "pup-fiction.html"):
+        ctx, page, errors = new_page(browser)
+        page.goto(f"{BASE}/{fp}", wait_until="domcontentloaded")
+        page.wait_for_timeout(500)
+        ovf = page.evaluate(
+            "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
+        check(ovf <= 1, f"{fp}: no overflow ({ovf}px)")
+        check(not errors, f"{fp}: no console/HTTP errors ({errors[:3]})")
+        ctx.close()
+
+    # ── art-page lightbox gate still green (series cards navigate, not lightbox) ──
+    ctx, page, errors = new_page(browser)
+    page.goto(f"{BASE}/series/sangre-de-cristos.html", wait_until="domcontentloaded")
+    page.wait_for_timeout(500)
+    first = page.locator(".gallery-card").first
+    first.click()
+    page.wait_for_timeout(500)
+    check("/art/" in page.url, f"series card navigates to art page ({page.url})")
+    ctx.close()
+
+    print(f"\n— membership summary")
+    for slug, members in sorted(expected.items()):
+        print(f"  {slug}: {len(members)} pieces")
+
+
 def main():
     group = sys.argv[1] if len(sys.argv) > 1 else "all"
     try:
@@ -282,6 +494,8 @@ def main():
                 check_no_art_orphans()
             if group in ("hand", "all"):
                 run_hand(browser)
+            if group in ("series", "all"):
+                run_series(browser)
             browser.close()
     finally:
         if srv:
