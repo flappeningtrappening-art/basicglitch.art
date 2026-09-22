@@ -20,14 +20,34 @@ CORE_PAGES = [
     {"path": "about.html", "priority": "0.7", "changefreq": "monthly", "images": True},
     {"path": "contact.html", "priority": "0.6", "changefreq": "yearly", "images": False},
     {"path": "download-wallpapers.html", "priority": "0.6", "changefreq": "monthly", "images": True},
-    # collection.html is meta noindex: deliberately NOT listed.
+    # collection.html is meta noindex: filtered out by is_noindex() below.
     {"path": "terms.html", "priority": "0.3", "changefreq": "yearly", "images": False},
 ]
 
+META_TAG = re.compile(r"<meta\b[^>]*>", re.I)
 IMG_TAG = re.compile(r"<img\b[^>]*>", re.I)
 SRC_ATTR = re.compile(r'\bsrc="([^"]+)"', re.I)
 ALT_ATTR = re.compile(r'\balt="([^"]*)"', re.I)
 SKIP_PREFIXES = ("assets/icons/", "assets/fonts/")
+
+
+def is_noindex(file_path):
+    """True when the page's own <meta name=robots> carries noindex.
+
+    Keeps the sitemap in sync with meta robots (e.g. subscriber-only
+    download-wallpapers.html) without a second hand-edited list.
+    """
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        with open(os.path.join(root, file_path or "index.html"), encoding="utf-8") as f:
+            html = f.read()
+    except OSError:
+        return True  # unreadable/missing page: never list it
+    for tag in META_TAG.findall(html):
+        tl = tag.lower()
+        if (f'name="robots"' in tl or f"name='robots'" in tl):
+            return "noindex" in tl
+    return False
 
 
 def harvest_page_images(path):
@@ -100,8 +120,12 @@ def main():
 
     sitemap_content += '  <!-- ── CORE PAGES ── -->\n'
     img_count = 0
+    skipped = []
     for page in CORE_PAGES:
         path = page["path"]
+        if is_noindex(path):
+            skipped.append(path or "index.html")
+            continue
         loc = f"{BASE_URL}/{path}" if path else f"{BASE_URL}/"
         sitemap_content += f'  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>\n'
         sitemap_content += f'    <changefreq>{page["changefreq"]}</changefreq>\n'
@@ -126,6 +150,9 @@ def main():
 
     for filename in art_pages:
         slug = filename[:-len(".html")]
+        if is_noindex(os.path.join("art", filename)):
+            skipped.append(f"art/{filename}")
+            continue
         item = art_by_slug.get(slug, {})
         loc = f"{BASE_URL}/art/{filename}"
         sitemap_content += f'  <url>\n    <loc>{loc}</loc>\n'
@@ -145,8 +172,11 @@ def main():
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_content)
 
-    print(f"Sitemap updated: {len(CORE_PAGES)} core pages, {len(art_pages)} art pages, "
+    print(f"Sitemap updated: {len(CORE_PAGES) - len([s for s in skipped if '/' not in s])} core pages, "
+          f"{len(art_pages) - len([s for s in skipped if s.startswith('art/')] )} art pages, "
           f"{img_count} <image:image> entries.")
+    if skipped:
+        print("Excluded (meta noindex): " + ", ".join(skipped))
 
 
 if __name__ == "__main__":

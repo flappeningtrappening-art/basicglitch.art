@@ -242,7 +242,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://basicglitch.art/assets/images/raw/pup-fiction-scene1.webp</image:loc>
-      <image:caption>Pumpkin and Honey Puppy and the Diner Robbery</image:caption>
+      <image:caption>Pumpkin and Honey Puppy and the Diner Robbery: two dogs hold up a diner in a Pulp Fiction homage, digital art by BasicGlitch</image:caption>
     </image:image>
   </url>
   <url>
@@ -272,28 +272,6 @@
     <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://basicglitch.art/download-wallpapers.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_midnight_v2.webp</image:loc>
-      <image:caption>Sangre De Cristo Midnight</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_dusk.webp</image:loc>
-      <image:caption>Sangre De Cristo Dusk</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/marilyn_monbroe.webp</image:loc>
-      <image:caption>Marilyn Monbroe</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
-      <image:caption>The Screambot</image:caption>
-    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/terms.html</loc>
