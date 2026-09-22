@@ -3,7 +3,7 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Rajdhani:wght@300..700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -32,6 +32,30 @@
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* Live scene cards link their full piece page (in addition to the image
+     lightbox). Static inlink: the Diner Robbery art page's discovery path. */
+  .view-piece-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--neon-2);
+    text-decoration: none;
+    border: 1px dashed rgba(0,255,62,0.3);
+    transition: background 0.2s;
+  }
+  .view-piece-link:hover,
+  .view-piece-link:focus-visible {
+    background: rgba(0,255,62,0.08);
+    text-decoration: underline;
+  }
+</style>
 
 <!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
@@ -79,6 +103,7 @@
         <h3 class="card-title">Pumpkin and Honey Puppy and the Diner Robbery</h3>
         <p class="card-meta">SCENE 001 // PROLOGUE</p>
         <a href="contact.html?subject=Purchase%20Inquiry:%20Diner%20Robbery" class="buy-btn">BUY PRINT / LICENSE</a>
+        <a href="art/pumpkin-and-honey-puppy-and-the-diner-robbery.html" class="view-piece-link">VIEW FULL PIECE PAGE →</a>
       </div>
     </article>
     
