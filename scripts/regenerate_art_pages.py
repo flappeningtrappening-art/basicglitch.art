@@ -271,13 +271,13 @@ def build_art_page_html(item, slug, gallery):
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/webp" href="https://basicglitch.art/favicon.webp">
 <link rel="canonical" href="{canonical_url}">
-<title>{title} | Cyber-Eclectic Digital Surrealism | BasicGlitch</title>
+<title>{title} | BasicGlitch</title>
 <meta name="description" content="{meta_desc}">
 
 <!-- Social Media / Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="{canonical_url}">
-<meta property="og:title" content="{title} | Cyber-Eclectic Digital Surrealism | BasicGlitch">
+<meta property="og:title" content="{title} | BasicGlitch">
 <meta property="og:description" content="{meta_desc}">
 <meta property="og:image" content="{image_abs}">
 <meta property="og:image:alt" content="{img_alt_attr}">
