@@ -280,6 +280,118 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- ── SERIES PAGES (generated) ── -->
+  <url>
+    <loc>https://basicglitch.art/series/masters-remixed.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
+      <image:caption>Masters Remixed - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/sangre-de-cristos.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_laser_colorado.webp</image:loc>
+      <image:caption>Sangre De Cristos - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/gaia-diptych.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/gaia_of_the_wasteland.webp</image:loc>
+      <image:caption>Gaia Diptych - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/mycology-series.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/a_mycological_phenomenon.webp</image:loc>
+      <image:caption>Mycology Series - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/pachydermis-triptych.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis.webp</image:loc>
+      <image:caption>Pachydermis Triptych - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/spiral-studies.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/spiral_geometry.webp</image:loc>
+      <image:caption>Spiral Studies - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/skullastic-endeavor.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/gallery-thumbs/art-20260226115243.jpg</image:loc>
+      <image:caption>Skullastic Endeavor - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/hand-drawn-ink.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/discworld.webp</image:loc>
+      <image:caption>Hand Drawn Ink - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/cyber-eclectic.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/skyline_reclaimation.webp</image:loc>
+      <image:caption>Cyber Eclectic - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/personal.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/innerchild.webp</image:loc>
+      <image:caption>Personal - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/series/standalone.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/literal_traphouse.webp</image:loc>
+      <image:caption>Standalone - digital art series by BasicGlitch</image:caption>
+    </image:image>
+  </url>
+
   <!-- ── INDIVIDUAL ART PAGES ── -->
   <url>
     <loc>https://basicglitch.art/art/a-mycological-phenomenon.html</loc>

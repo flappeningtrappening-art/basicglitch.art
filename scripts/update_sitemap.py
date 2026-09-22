@@ -1,11 +1,17 @@
 import os
 import re
+import sys
 from datetime import datetime
 from xml.sax.saxutils import escape as xml_escape
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_URL = "https://basicglitch.art"
-GALLERY_JSON = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                            "assets/data/gallery.json")
+GALLERY_JSON = os.path.join(BASE_DIR, "assets/data/gallery.json")
+
+# Generated /series/ pages come from the shared series data layer so the
+# sitemap can never drift from what generate_series_pages.py actually emits.
+sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
+from seo.series_lib import series_page_urls  # noqa: E402
 
 # Pages whose static <img> tags are harvested for <image:image> entries.
 # (Art pages take their image data from gallery.json instead.)
@@ -140,6 +146,24 @@ def main():
                 img_count += len(images)
         sitemap_content += '  </url>\n'
 
+    sitemap_content += '\n  <!-- ── SERIES PAGES (generated) ── -->\n'
+    series_pages = series_page_urls()
+    for rel_path, rep_image in series_pages:
+        if is_noindex(rel_path):
+            skipped.append(rel_path)
+            continue
+        loc = f"{BASE_URL}/{rel_path}"
+        sitemap_content += f'  <url>\n    <loc>{loc}</loc>\n'
+        sitemap_content += f'    <lastmod>{lastmod}</lastmod>\n'
+        sitemap_content += '    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n'
+        if rep_image and os.path.exists(os.path.join(BASE_DIR, rep_image)):
+            slug_title = rel_path.split("/")[-1][:-len(".html")].replace("-", " ").title()
+            rep_abs = f"{BASE_URL}/{rep_image}"
+            alt = f"{slug_title} - digital art series by BasicGlitch"
+            sitemap_content += image_xml([(rep_abs, alt)]) + "\n"
+            img_count += 1
+        sitemap_content += '  </url>\n'
+
     sitemap_content += '\n  <!-- ── INDIVIDUAL ART PAGES ── -->\n'
     art_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "art")
     art_pages = []
@@ -172,7 +196,10 @@ def main():
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_content)
 
-    print(f"Sitemap updated: {len(CORE_PAGES) - len([s for s in skipped if '/' not in s])} core pages, "
+    core_skipped = [s for s in skipped if "/" not in s]
+    series_skipped = [s for s in skipped if s.startswith("series/")]
+    print(f"Sitemap updated: {len(CORE_PAGES) - len(core_skipped)} core pages, "
+          f"{len(series_pages) - len(series_skipped)} series pages, "
           f"{len(art_pages) - len([s for s in skipped if s.startswith('art/')] )} art pages, "
           f"{img_count} <image:image> entries.")
     if skipped:
