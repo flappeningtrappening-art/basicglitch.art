@@ -5,14 +5,14 @@ series_mapping = {
     "CASE STUDY 42: BROBOTICUS": ["Broboticus: The Original (March of the Robots, 2024)", "Vitruvian Broboticus", "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus: The Artist", "Iron Chef (Chefboticus)", "Let's Dance! (Balletboticus)", "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", "Brobot Noir"],
     "MASTERS REMIXED": ["Vitruvian Broboticus", "Screambot", "Sunflowerboticus", "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"],
     "PUP FICTION": ["Pup Fiction: Crash (Diner Robbery Prologue)"],
-    "CYBER SAVANNA": ["Lion (Cyber Savanna series)", "Elephant (Cyber Savanna series)", "Giraffey Taffy (Cyber Savanna series)", "Cheetah (Cyber Savanna series)", "Waterbuck (Cyber Savanna series)", "Pachydermis (psychedelic maximalist variant: elephant)"],
+    "SAVANNAHMALS": ["Apex Rendering", "Kinetic Latency", "Monument Memory", "Sentinel Stream", "Skyline Reclamation"],
     "PACHYDERMIS TRIPTYCH": ["Pachydermis (psychedelic maximalist variant: elephant)", "Pachydermis: Phish Edition", "Pachydermis: Phish Edition Inked"],
     "SPIRAL STUDIES": ["Monopattern (Spiral Studies: Original)", "Spiral Geometry (Fire Variant)", "Color Pattern (Spiral Studies: Acid)", "Floral (Spiral Studies: Dusk Variant)"],
     "SKULLASTIC ENDEAVOR": ["Psylent Skulls", "Skullastic Endeavor"],
     "MYCOLOGY SERIES": ["A Mycological Phenomenon", "Mycology Yourcology"],
     "GAIA DIPTYCH": ["Gaia of the Wasteland", "Dust to Dust"],
     "HAND-DRAWN INK": ["Squid", "Henna Tree", "Unfinished Business", "Discworld"],
-    "PERSONAL / AUTOBIOGRAPHICAL": ["Inner Child", "Love of the Game"]
+    "CYBER-ECLECTIC": ["Sidepiece Dimepiece", "Literal Traphouse", "Inner Child", "Love of the Game"]
 }
 
 with open('assets/data/gallery.json', 'r', encoding='utf-8') as f:

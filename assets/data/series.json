@@ -6,7 +6,6 @@
     "label": "Masters Remixed · Art History Notified",
     "card_class": "series-card--blu",
     "sort": "date_desc",
-    "exclude_categories": ["Broboticus", "Case Study 42"],
     "representative_image": "assets/images/raw/screambot.webp",
     "representative_alt": "The Screambot: Broboticus on Munch's bridge with a vinyl player in his chest, digital art by BasicGlitch",
     "cross_references": [
@@ -16,7 +15,7 @@
         "label": "Broboticus flagship"
       }
     ],
-    "description": "Munch, Van Gogh, Warhol, Da Vinci, Grant Wood, and Picasso, all run through the Broboticus filter. The Screambot stands on Munch's bridge receiving too many frequencies at once, a vinyl player where the dread should be. Marilyn Monbroe replaces Warhol's face with a BROBOTICUS chest panel across six panels of oversized multicolor lips. Vitruvian Broboticus holds vinyl and headphones where Da Vinci's man holds nothing, and the proportions check out. American Gothbotic swaps Grant Wood's pitchfork for a wrench; the woman has seen stranger things. Cubist Chef fractures Chefboticus into warm geometric facets with Manhattan flat behind him. Sunflowerboticus collapses Van Gogh's Sunflowers and Starry Night into one broadcast tower. These are not parodies. They are parallel arguments."
+    "description": "Munch, Van Gogh, Warhol, Da Vinci, Grant Wood, and Picasso, all run through the Broboticus filter. The Screambot stands on Munch's bridge receiving too many frequencies at once, a vinyl player where the dread should be. Marilyn Monbroe replaces Warhol's face with a BROBOTICUS chest panel across six panels of oversized multicolor lips. Vitruvian Broboticus holds vinyl and headphones where Da Vinci's man holds nothing, and the proportions check out. American Gothbotic swaps Grant Wood's pitchfork for a wrench; the woman has seen stranger things. Cubist Chef fractures Chefboticus into warm geometric facets with Manhattan flat behind him. Vincent VanBoticus collapses Van Gogh's Sunflowers and Starry Night into one broadcast tower. These are not parodies. They are parallel arguments."
   },
   {
     "category": "Sangre de Cristos",
@@ -103,32 +102,32 @@
     "label": "Cyber-Eclectic · Tech-Noir Signal Capture",
     "card_class": "series-card--blu",
     "sort": "date_desc",
+    "representative_image": "assets/images/raw/sidepiece-dimepiece.webp",
+    "representative_alt": "Sidepiece Dimepiece: high-saturation neon portraiture with structured glitch artifacts and tech-noir textures, digital art by BasicGlitch",
+    "description": "Eclectic by design: the BasicGlitch treatment applied wherever the signal is strongest. Sidepiece Dimepiece: high-saturation neon portraiture with structured glitch artifacts and tech-noir textures, high-contrast neon geometry framing the subject against an atmospheric deep-spectrum void. Literal Traphouse: the word TRAP built into the architecture, neon green on black, integrated into the roofline like a load-bearing pun, executed with the precision of an architectural blueprint. Inner Child: a kid on a bunk bed with a guitar, the ceiling gone red and electric, yellow mountains of sound rising behind him, circuit traces framing the room. Love of the Game: a young baseball player outlined in neon red and gold, a starburst of cyan and yellow light exploding from his chest like something being released. Portraits, photographs, and buildings that share one lens: the BasicGlitch treatment didn't add the light, it revealed it."
+  },
+  {
+    "category": "Savannahmals",
+    "name": "Savannahmals",
+    "slug": "savannahmals",
+    "label": "Savannahmals · Megafauna of the Electric Savanna",
+    "card_class": "series-card--org",
+    "sort": "date_desc",
     "representative_image": "assets/images/raw/skyline_reclaimation.webp",
     "representative_alt": "Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light, digital art by BasicGlitch",
-    "description": "Tech-noir landscapes and character studies at the intersection of organic and synthetic. Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light. Sentinel Stream: something watches from the water's edge where the stream meets the circuit. Monument Memory: classical columns rendered semi-transparent as digital artifacts permeate their surfaces. Apex Rendering: everything the machine can produce pressed to the edge of coherence. Kinetic Latency: the lag made visible, the frame that almost resolved but didn't. Sidepiece Dimepiece: high-saturation neon portraiture with structured glitch artifacts and tech-noir textures. The BasicGlitch cyber-eclectic vision: what cities, monuments, and faces become when nature and technology stop pretending to be opposites."
+    "description": "Savannahmals: the megafauna of the tech-noir savanna, five pieces of the machine's world caught mid-behavior. Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light. Sentinel Stream: something watches from the water's edge where the stream meets the circuit, a sentinel presence mediating between two worlds. Monument Memory: classical columns rendered semi-transparent as digital artifacts permeate their surfaces, a meditation on preserving the past in an age that processes everything into data. Kinetic Latency: the lag made visible, the frame that almost resolved but didn't. Apex Rendering: everything the machine can produce pressed to the edge of coherence. One ecosystem, observed: what cities, monuments, and streams become when nature and technology stop pretending to be opposites."
   },
   {
     "category": "Personal",
     "name": "Personal",
     "slug": "personal",
-    "label": "Personal · Autobiographical",
-    "card_class": "series-card--mag",
-    "sort": "title",
-    "exclude_categories": ["Cyber-Eclectic"],
-    "representative_image": "assets/images/raw/innerchild.webp",
-    "representative_alt": "Inner Child: a kid on a bunk bed with a guitar, the ceiling gone red and electric, glitch-processed personal photograph by BasicGlitch",
-    "description": "Two photographs processed through the BasicGlitch treatment. Inner Child: a kid on a bunk bed with a guitar, the ceiling gone red and electric, yellow mountains of sound rising behind him, circuit traces framing the room. The yellow zigzag reads simultaneously as mountain range and soundwave, which is exactly right for someone who has been a musician for thirty-one years. Love of the Game: a young baseball player outlined in neon red and gold, a starburst of cyan and yellow light exploding from his chest like something being released. The treatment didn't add the light. It revealed it. Two private moments made universal."
+    "redirect_to": "cyber-eclectic"
   },
   {
     "category": "Standalone",
     "name": "Standalone Works",
     "slug": "standalone",
-    "label": "Standalone · One-Off Signals",
-    "card_class": "series-card--org",
-    "sort": "date_desc",
-    "representative_image": "assets/images/raw/literal_traphouse.webp",
-    "representative_alt": "Literal Traphouse: a neon green house with the word TRAP built into the roofline like a load-bearing pun, digital art by BasicGlitch",
-    "description": "Pieces that stand entirely on their own, answering to no series. Literal Traphouse: the word TRAP built into the architecture, neon green on black, integrated into the roofline like a load-bearing pun. The garage door is real. The chimney is real. The wordplay is the foundation, executed with the precision of an architectural blueprint and complete seriousness, which is exactly what makes it the funniest piece in the BasicGlitch archive. Single-weight neon line, no background, no context required. The joke is structural."
+    "redirect_to": "cyber-eclectic"
   },
   {
     "category": "Broboticus",

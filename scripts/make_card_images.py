@@ -23,7 +23,7 @@ MAX_DIM = 800
 # Every raw image referenced as a *preview* by hand-authored pages
 # (index archive cards + insta feed pool + download-wallpapers previews).
 NAMES = [
-    "fishboticus", "sunflowerboticus", "pup-fiction-scene1", "sangre_de_cristo_dusk",
+    "fishboticus", "vincent_vanboticus", "pup-fiction-scene1", "sangre_de_cristo_dusk",
     "skyline_reclaimation", "discworld", "dust_to_dust", "loveofthegame", "spiral_geometry",
     "gaia_of_the_wasteland", "guitarbot_og", "artist_broboticus_og", "starbot_waiting_in_the_sky",
     "a_mycological_phenomenon", "floral", "ranchboticus", "balletboticus", "vitruvian_broboticus",

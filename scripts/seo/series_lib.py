@@ -4,11 +4,15 @@ Single source of truth chain:
   gallery.json categories  ->  series.json presentation config  ->  series/*.html
 
 Design invariants (enforced here, verified in scripts/seo/group_check.py):
-  * One generated page per non-suppressed series category.
+  * One generated page per non-flagship series category.
   * Flagship categories (Broboticus / Case Study 42 / Pup Fiction) keep their
     hand-authored canonical pages; generated /series/ pages are secondary.
-  * A piece appears on exactly ONE series page: categories listed in another
-    series' "exclude_categories" are dropped from that page.
+  * Membership is category-driven: a piece appears on EVERY generated series
+    page whose category it carries. Flagships are curated additions, not
+    exclusions. A piece's primary category is the FIRST entry in its
+    categories array (drives art-page crosslinks).
+  * Retired categories carry a "redirect_to" slug and generate a meta-refresh
+    + canonical stub so old URLs never 404.
   * Page copy derives ONLY from gallery.json data + this config. No invented lore.
 """
 import json
@@ -71,20 +75,11 @@ def raw_dimensions(file_rel):
 def page_members(series_def, gallery):
     """Exact piece list for one series page.
 
-    Members = pieces carrying this category, minus pieces carrying any
-    category in exclude_categories (cross-series dedupe so no piece lands
-    on two series pages).
+    Members = every piece carrying this category. A piece may appear on
+    several series pages; flagships are curated additions, not exclusions.
     """
     cat = series_def["category"]
-    excl = set(series_def.get("exclude_categories", []))
-    members = []
-    for it in gallery:
-        cats = it.get("categories", [])
-        if cat not in cats:
-            continue
-        if any(c in excl for c in cats):
-            continue
-        members.append(it)
+    members = [it for it in gallery if cat in it.get("categories", [])]
     return sort_members(series_def, members)
 
 
@@ -112,6 +107,11 @@ def flagship_page(series_def):
     return series_def.get("flagship_page") or series_def.get("page") or None
 
 
+def redirect_target(series_def):
+    """Slug of the series page a retired category redirects to, if any."""
+    return series_def.get("redirect_to") or None
+
+
 def is_suppressed(series_def):
     """True when the owner has decided this category gets no generated page
     (e.g. all its members live on another series' page pending piece moves)."""
@@ -125,6 +125,40 @@ def representative_image(series_def):
         base = os.path.splitext(os.path.basename(rel))[0]
         rel = f"assets/images/gallery-thumbs/{base}.jpg"
     return rel
+
+
+def build_redirect_stub_html(series_def, all_defs):
+    """Meta refresh + canonical stub for a retired series URL."""
+    name = series_def["name"]
+    target_slug = redirect_target(series_def)
+    target = next((d for d in all_defs if d.get("slug") == target_slug
+                   and not redirect_target(d)), None)
+    target_name = target["name"] if target else target_slug
+    target_url = f"{SITE_URL}/series/{target_slug}.html"
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{name} has moved | BasicGlitch</title>
+<link rel="canonical" href="{target_url}">
+<meta http-equiv="refresh" content="0; url={target_url}">
+<link rel="icon" type="image/webp" href="{SITE_URL}/favicon.webp">
+<style>
+  body {{ background: #050505; color: #e0e0e0; font-family: 'Share Tech Mono', monospace;
+    display: flex; align-items: center; justify-content: center; min-height: 100vh;
+    margin: 0; text-align: center; padding: 20px; }}
+  a {{ color: #00fff7; }}
+</style>
+</head>
+<body>
+<main>
+  <p>The {name} series has moved.</p>
+  <p>Redirecting to <a href="{target_url}">{target_name}</a>…</p>
+</main>
+</body>
+</html>
+'''
 
 
 def build_series_page_html(series_def, gallery, all_defs):
@@ -394,8 +428,12 @@ def generate_all(verbose=True):
         os.makedirs(SERIES_DIR)
     valid = set()
     written = 0
+    stubs = 0
     seen_slugs = set()
     for sd in defs:
+        if sd["slug"] in seen_slugs:
+            continue
+        seen_slugs.add(sd["slug"])
         # Flagship categories keep their hand-authored canonical page;
         # duplicate category entries (Broboticus / Case Study 42) collapse
         # onto one slug. Suppressed categories get no page by owner decision.
@@ -405,11 +443,18 @@ def generate_all(verbose=True):
                        else "suppressed by owner decision")
                 print(f"  skip {sd['category']} ({why})")
             continue
-        if sd["slug"] in seen_slugs:
-            continue
-        seen_slugs.add(sd["slug"])
-        html = build_series_page_html(sd, gallery, defs)
         path = os.path.join(SERIES_DIR, f"{sd['slug']}.html")
+        # Retired categories become redirect stubs (meta refresh + canonical).
+        if redirect_target(sd):
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(build_redirect_stub_html(sd, defs))
+            valid.add(f"{sd['slug']}.html")
+            stubs += 1
+            if verbose:
+                print(f"  series/{sd['slug']}.html  ({sd['category']} -> "
+                      f"redirect stub to {redirect_target(sd)})")
+            continue
+        html = build_series_page_html(sd, gallery, defs)
         with open(path, "w", encoding="utf-8") as f:
             f.write(html)
         valid.add(f"{sd['slug']}.html")
@@ -423,7 +468,7 @@ def generate_all(verbose=True):
             os.remove(os.path.join(SERIES_DIR, existing))
             print(f"  removed stale series page: {existing}")
             removed += 1
-    print(f"Series pages: {written} generated, {removed} removed.")
+    print(f"Series pages: {written} generated, {stubs} redirect stubs, {removed} removed.")
     return written
 
 
@@ -431,9 +476,7 @@ def regenerate_for_category(category, verbose=True):
     """Regenerate every series page affected by a category change."""
     gallery = load_gallery()
     defs = load_series_config()
-    affected = [d for d in defs
-                if d["category"] == category
-                or category in d.get("exclude_categories", [])]
+    affected = [d for d in defs if d["category"] == category]
     if not affected:
         return 0
     if not os.path.exists(SERIES_DIR):
@@ -450,12 +493,12 @@ def regenerate_for_category(category, verbose=True):
 
 def series_page_urls():
     """(path, representative_image) for every sitemap-eligible series page.
-    Flagship and owner-suppressed categories are excluded."""
+    Flagship, owner-suppressed, and retired-redirect categories are excluded."""
     defs = load_series_config()
     out = []
     seen = set()
     for d in defs:
-        if is_suppressed(d) or d["slug"] in seen:
+        if is_suppressed(d) or redirect_target(d) or d["slug"] in seen:
             continue
         seen.add(d["slug"])
         out.append((f"series/{d['slug']}.html", representative_image(d)))

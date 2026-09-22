@@ -4,14 +4,18 @@ Usage: python3 scripts/seo/group_check.py art|hand|series
 Exits non-zero on any failure.
 
 The `series` group validates the generated /series/ layer end to end:
-  * every non-flagship series has a page, flagships do not
-  * every portfolio box resolves to an existing page (no gallery.html dumps)
+  * every non-flagship series has a page, flagships do not, retired
+    categories are redirect stubs
+  * every portfolio box resolves to an existing page (no gallery.html dumps,
+    no links into retired redirect stubs)
   * each series page lists exactly its category's pieces and no others
-  * no piece appears as a member on two series pages
+  * every piece appears on at least one series page or flagship
+  * portfolio boxes: series with 3+ pieces show >=3 showcase images, all of
+    real member pieces of that box's series
   * crosslinks (flagship <-> Masters Remixed) both work
   * 0 console errors, 0 internal 404s, 0 overflow, desktop + mobile
   * all JSON-LD parses with required properties
-  * sitemap contains every series page with an image entry
+  * sitemap contains every series page with an image entry and no retired URLs
 """
 import functools
 import http.server
@@ -99,6 +103,10 @@ def is_flagship_def(d):
     return bool(d.get("flagship_page") or d.get("page") or d.get("suppress_page"))
 
 
+def is_redirect_def(d):
+    return bool(d.get("redirect_to"))
+
+
 def check_no_art_orphans():
     """Indexing-critical: every art page must receive >=1 static <a> inlink
     from somewhere on the site. Pages linked only from JS are invisible to
@@ -124,17 +132,18 @@ HAND_PAGES = ["index.html", "gallery.html", "portfolio.html", "about.html",
 
 
 def run_art(browser):
-    # literal-traphouse shares no category with any other piece: it must
-    # still link out (standalone club), never sit orphaned.
-    print("\n— art/literal-traphouse.html (standalone club)")
+    # literal-traphouse used to be the whole Standalone category; that
+    # category is retired into Cyber-Eclectic, so it now links out to its
+    # Cyber-Eclectic family instead of the old standalone club.
+    print("\n— art/literal-traphouse.html (cyber-eclectic family)")
     ctx, page, errors = new_page(browser)
     page.goto(f"{BASE}/art/literal-traphouse.html", wait_until="domcontentloaded")
     page.wait_for_timeout(400)
     head_txt = page.locator(".series-crosslinks-title").inner_text()
-    check("STANDALONE" in head_txt,
-          f"standalone page: club label ({head_txt!r})")
+    check("CYBER-ECLECTIC" in head_txt,
+          f"traphouse page: cyber-eclectic club label ({head_txt!r})")
     links = page.locator(".series-crosslinks a.series-card-link")
-    check(links.count() == 3, f"standalone page: 3 club links (found {links.count()})")
+    check(links.count() == 3, f"traphouse page: 3 club links (found {links.count()})")
     ctx.close()
 
     for path, title, expected_label in ART_SAMPLES:
@@ -237,6 +246,13 @@ def run_hand(browser):
     check(any(n and n.get("@type") == "CollectionPage" for n in nodes),
           "portfolio: CollectionPage present")
 
+    # Pup Fiction flagship: the live scene card must statically link its art
+    # page — after the Standalone club retired, that link is the Diner
+    # Robbery page's only static inlink (no-orphan gate depends on it).
+    pup = open("pup-fiction.html", encoding="utf-8").read()
+    check('href="art/pumpkin-and-honey-puppy-and-the-diner-robbery.html"' in pup,
+          "pup-fiction: live card links the Diner Robbery art page")
+
     # about: Person completed
     html = open("about.html", encoding="utf-8").read()
     nodes = load_jsonld(html)
@@ -292,20 +308,26 @@ SERIES_JSONLD_REQUIRED = ("name", "url", "description", "creator", "image")
 
 def run_series(browser):
     import os
-    from collections import Counter
+    import posixpath
 
     defs = load_series_defs()
-    generated = [d for d in defs if not is_flagship_def(d)]
+    redirects = [d for d in defs if is_redirect_def(d)]
+    generated = [d for d in defs
+                 if not is_flagship_def(d) and not is_redirect_def(d)]
     flagships = [d for d in defs if is_flagship_def(d)]
 
     with open("assets/data/gallery.json", encoding="utf-8") as f:
         gallery = json.load(f)
     by_title = {it["title"]: it for it in gallery}
 
-    # ── structural: every non-flagship series has a generated page ──
+    # ── structural: every non-flagship series has a generated page, retired
+    # categories have redirect stubs ──
     for d in generated:
         path = f"series/{d['slug']}.html"
         check(os.path.exists(path), f"{d['category']}: page exists ({path})")
+    for d in redirects:
+        path = f"series/{d['slug']}.html"
+        check(os.path.exists(path), f"{d['category']}: redirect stub exists ({path})")
     for d in flagships:
         if d.get("suppress_page"):
             check(not os.path.exists(f"series/{d['slug']}.html"),
@@ -315,32 +337,81 @@ def run_series(browser):
             check(os.path.exists(fp),
                   f"{d['category']}: flagship page exists ({fp})")
 
-    # ── expected membership, replicated from the generator's rule ──
+    # ── expected membership: every piece carrying the category, no dedupe ──
     expected = {}
     for d in generated:
-        excl = set(d.get("exclude_categories", []))
         members = [it["title"] for it in gallery
-                   if d["category"] in it.get("categories", [])
-                   and not any(c in excl for c in it.get("categories", []))]
+                   if d["category"] in it.get("categories", [])]
         expected[d["slug"]] = members
 
-    # ── no piece on two series pages ──
-    seen = Counter()
-    for members in expected.values():
-        seen.update(members)
-    dupes = {t: n for t, n in seen.items() if n > 1}
-    check(not dupes, f"no piece on two series pages ({dupes or 'clean'})")
+    # ── coverage: every piece appears on >=1 series page or flagship ──
+    page_cats = {d["category"] for d in generated} | {d["category"] for d in flagships}
+    uncovered = [it["title"] for it in gallery
+                 if not (set(it.get("categories", [])) & page_cats)]
+    check(not uncovered,
+          f"every piece on a series page or flagship ({uncovered[:5] or 'clean'})")
+    empty = [slug for slug, m in expected.items() if not m]
+    check(not empty, f"no empty series pages ({empty or 'clean'})")
 
     # ── portfolio boxes resolve ──
     portfolio_html = open("portfolio.html", encoding="utf-8").read()
     box_hrefs = re.findall(
         r'<a href="([^"]+)" class="series-card[^"]*">', portfolio_html)
+    redirect_hrefs = {f"series/{d['slug']}.html" for d in redirects}
     for href in box_hrefs:
         check(not href.endswith("gallery.html"),
               f"portfolio box no longer dumps to archive: {href}")
+        check(href not in redirect_hrefs,
+              f"portfolio box does not point at a retired redirect stub: {href}")
         check(os.path.exists(href), f"portfolio box resolves: {href}")
     check("broboticus.html" in box_hrefs and "pup-fiction.html" in box_hrefs,
           "flagship boxes still point at broboticus.html / pup-fiction.html")
+
+    # ── box image audit: every showcase image belongs to a real member of
+    # that box's series, and series with 3+ pieces show >=3 images (4 on
+    # featured boxes) ──
+    def member_asset_basenames(cats):
+        allowed = set()
+        for it in gallery:
+            if not (set(it.get("categories", [])) & cats):
+                continue
+            allowed.add(posixpath.basename(it.get("file", "")))
+            allowed.add(f"{it.get('id', '')}.jpg")
+        return allowed
+
+    box_defs = {}
+    for href in box_hrefs:
+        cats = set()
+        if href.startswith("series/"):
+            slug = href.split("/")[-1][:-len(".html")]
+            d = next((x for x in generated if x["slug"] == slug), None)
+            if d:
+                cats = {d["category"]}
+        else:
+            cats = {x["category"] for x in flagships
+                    if (x.get("flagship_page") or x.get("page")) == href}
+        box_defs[href] = cats
+
+    for m in re.finditer(
+            r'<a href="([^"]+)" class="(series-card[^"]*)">(.*?)</a>',
+            portfolio_html, re.S):
+        href, cls, inner = m.group(1), m.group(2), m.group(3)
+        imgs = re.findall(r'<img src="([^"]+)"', inner)
+        cats = box_defs.get(href, set())
+        if not cats:
+            continue
+        members = [it for it in gallery
+                   if set(it.get("categories", [])) & cats]
+        allowed = member_asset_basenames(cats)
+        foreign = [src for src in imgs
+                   if posixpath.basename(src) not in allowed]
+        check(not foreign,
+              f"box {href}: all showcase images are real member pieces ({foreign[:3] or 'clean'})")
+        want = min(4, len(members)) if "series-card--featured" in cls \
+            else min(3, len(members))
+        check(len(imgs) >= want,
+              f"box {href}: {len(members)} members -> >= {want} showcase images "
+              f"(found {len(imgs)})")
 
     # ── sitemap coverage ──
     sm = open("sitemap.xml", encoding="utf-8").read()
@@ -355,6 +426,9 @@ def run_series(browser):
             continue
         check(f"https://basicglitch.art/series/{d['slug']}.html" not in sm,
               f"sitemap excludes flagship/suppressed slug {d['slug']}")
+    for d in redirects:
+        check(f"https://basicglitch.art/series/{d['slug']}.html" not in sm,
+              f"sitemap excludes retired redirect slug {d['slug']}")
 
     # ── per-page live checks ──
     member_pages = set()
@@ -429,6 +503,24 @@ def run_series(browser):
 
         check(not errors, f"{path}: no console/HTTP errors ({errors[:3]})")
         ctx.close()
+
+    # ── retired categories: stubs carry meta refresh + canonical to target ──
+    for d in redirects:
+        target = d["redirect_to"]
+        path = f"series/{d['slug']}.html"
+        print(f"\n— {path} (redirect stub)")
+        stub = open(path, encoding="utf-8").read()
+        canon = re.search(r'<link rel="canonical" href="([^"]+)"', stub)
+        check(canon is not None
+              and canon.group(1) == f"https://basicglitch.art/series/{target}.html",
+              f"{path}: canonical points at series/{target}.html "
+              f"({canon.group(1) if canon else 'missing'})")
+        refresh = re.search(r'http-equiv="refresh" content="([^"]+)"', stub)
+        check(refresh is not None
+              and f"url=https://basicglitch.art/series/{target}.html" in refresh.group(1),
+              f"{path}: meta refresh targets series/{target}.html")
+        check(os.path.exists(f"series/{target}.html"),
+              f"{path}: redirect target page exists (series/{target}.html)")
 
     # ── crosslinks both directions ──
     print("\n— crosslinks")

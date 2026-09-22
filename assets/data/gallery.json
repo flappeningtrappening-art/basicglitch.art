@@ -4,7 +4,6 @@
     "title": "Sidepiece Dimepiece",
     "file": "assets/images/raw/sidepiece-dimepiece.webp",
     "categories": [
-      "Personal",
       "Cyber-Eclectic"
     ],
     "styles": [
@@ -140,7 +139,7 @@
     "title": "Skyline Reclamation",
     "file": "assets/images/raw/skyline_reclaimation.webp",
     "categories": [
-      "Cyber-Eclectic"
+      "Savannahmals"
     ],
     "styles": [
       "Cyber-Eclectic"
@@ -159,7 +158,7 @@
     "title": "Sentinel Stream",
     "file": "assets/images/raw/sentinel_stream.webp",
     "categories": [
-      "Cyber-Eclectic"
+      "Savannahmals"
     ],
     "styles": [
       "Cyber-Eclectic"
@@ -178,7 +177,7 @@
     "title": "Monument Memory",
     "file": "assets/images/raw/monument_memory.webp",
     "categories": [
-      "Cyber-Eclectic"
+      "Savannahmals"
     ],
     "styles": [
       "Cyber-Eclectic"
@@ -197,7 +196,7 @@
     "title": "Kinetic Latency",
     "file": "assets/images/raw/kinetic_latency.webp",
     "categories": [
-      "Cyber-Eclectic"
+      "Savannahmals"
     ],
     "styles": [
       "Cyber-Eclectic"
@@ -216,7 +215,7 @@
     "title": "Apex Rendering",
     "file": "assets/images/raw/apex_rendering.webp",
     "categories": [
-      "Cyber-Eclectic"
+      "Savannahmals"
     ],
     "styles": [
       "Cyber-Eclectic"
@@ -514,7 +513,9 @@
     "title": "Cubist Chef",
     "file": "assets/images/raw/cubist_chef.webp",
     "categories": [
-      "Masters Remixed"
+      "Masters Remixed",
+      "Broboticus",
+      "Case Study 42"
     ],
     "styles": [
       "Character",
@@ -615,7 +616,7 @@
     "title": "Literal Traphouse",
     "file": "assets/images/raw/literal_traphouse.webp",
     "categories": [
-      "Standalone"
+      "Cyber-Eclectic"
     ],
     "styles": [
       "Neon"
@@ -665,8 +666,7 @@
     "title": "Pachydermis",
     "file": "assets/images/raw/pachydermis.webp",
     "categories": [
-      "Pachydermis Triptych",
-      "Cyber Savanna"
+      "Pachydermis Triptych"
     ],
     "styles": [
       "Psychedelia",
@@ -903,7 +903,7 @@
     "title": "Inner Child",
     "file": "assets/images/raw/innerchild.webp",
     "categories": [
-      "Personal"
+      "Cyber-Eclectic"
     ],
     "styles": [
       "Glitch",
@@ -928,7 +928,7 @@
     "title": "Love of the Game",
     "file": "assets/images/raw/loveofthegame.webp",
     "categories": [
-      "Personal"
+      "Cyber-Eclectic"
     ],
     "styles": [
       "Glitch",
@@ -1138,8 +1138,8 @@
   },
   {
     "id": "sunflowerboticus-001",
-    "title": "Sunflowerboticus",
-    "file": "assets/images/raw/sunflowerboticus.webp",
+    "title": "Vincent VanBoticus",
+    "file": "assets/images/raw/vincent_vanboticus.webp",
     "categories": [
       "Broboticus",
       "Case Study 42",
@@ -1151,7 +1151,7 @@
     ],
     "date": "2025-11-10",
     "description": "Van Gogh painted sunflowers. Van Gogh painted the starry night. BasicGlitch merged both and put Broboticus in the middle with headphones on, an ON AIR sign lit, a telephone receiver in hand, and a record player beside him. He's broadcasting from the most beautiful signal tower ever built. This is the most technically ambitious piece in the Masters Remixed series: two Van Gogh paintings collapsed into one, with Broboticus installed at the intersection. He is not visiting this landscape. He is broadcasting from it.",
-    "alt_text": "Sunflowerboticus: Van Gogh-style digital oil painting depicting Broboticus robot standing in a sunflower field under The Starry Night sky. He wears large headphones, his chest panel reads ON AIR, and he holds a telephone handset. Red glowing eyes. A record player with stacked vinyl records on a wooden side table stands to his right. BasicGlitch Masters Remixed series.",
+    "alt_text": "Vincent VanBoticus: Van Gogh-style digital oil painting depicting Broboticus robot standing in a sunflower field under The Starry Night sky. He wears large headphones, his chest panel reads ON AIR, and he holds a telephone handset. Red glowing eyes. A record player with stacked vinyl records on a wooden side table stands to his right. BasicGlitch Masters Remixed series.",
     "seo_keywords": [
       "Van Gogh robot art",
       "Broboticus sunflowers",
@@ -1193,8 +1193,7 @@
     "title": "Pachydermis: Phish Edition",
     "file": "assets/images/raw/pachydermis-phish-edition.webp",
     "categories": [
-      "Pachydermis Triptych",
-      "Cyber Savanna"
+      "Pachydermis Triptych"
     ],
     "styles": [
       "Psychedelia",
@@ -1216,8 +1215,7 @@
     "title": "Pachydermis: Phish Edition Inked",
     "file": "assets/images/raw/pachydermis_phish_edition_inked.webp",
     "categories": [
-      "Pachydermis Triptych",
-      "Cyber Savanna"
+      "Pachydermis Triptych"
     ],
     "styles": [
       "Psychedelia",

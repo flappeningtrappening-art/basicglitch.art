@@ -17,7 +17,7 @@
       <image:caption>Fishboticus, Case Study 42 robot character by BasicGlitch</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://basicglitch.art/assets/images/card/sunflowerboticus.webp</image:loc>
+      <image:loc>https://basicglitch.art/assets/images/card/vincent_vanboticus.webp</image:loc>
       <image:caption>Two Van Gogh pieces at the same time: Sunflowers and a hint of Starry Night starring Broboticus Brobot by BasicGlitch</image:caption>
     </image:image>
     <image:image>
@@ -30,7 +30,7 @@
     </image:image>
     <image:image>
       <image:loc>https://basicglitch.art/assets/images/card/skyline_reclaimation.webp</image:loc>
-      <image:caption>Skyline Reclaimation, Surrealist Data Giraffe by BasicGlitch</image:caption>
+      <image:caption>Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light, digital art by BasicGlitch</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://basicglitch.art/assets/images/card/discworld.webp</image:loc>
@@ -367,28 +367,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/skyline_reclaimation.webp</image:loc>
+      <image:loc>https://basicglitch.art/assets/images/raw/sidepiece-dimepiece.webp</image:loc>
       <image:caption>Cyber Eclectic - digital art series by BasicGlitch</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://basicglitch.art/series/personal.html</loc>
+    <loc>https://basicglitch.art/series/savannahmals.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/innerchild.webp</image:loc>
-      <image:caption>Personal - digital art series by BasicGlitch</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://basicglitch.art/series/standalone.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/literal_traphouse.webp</image:loc>
-      <image:caption>Standalone - digital art series by BasicGlitch</image:caption>
+      <image:loc>https://basicglitch.art/assets/images/raw/skyline_reclaimation.webp</image:loc>
+      <image:caption>Savannahmals - digital art series by BasicGlitch</image:caption>
     </image:image>
   </url>
 
@@ -904,16 +894,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://basicglitch.art/art/sunflowerboticus.html</loc>
-    <lastmod>2025-11-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://basicglitch.art/assets/images/raw/sunflowerboticus.webp</image:loc>
-      <image:caption>Sunflowerboticus: Van Gogh-style digital oil painting depicting Broboticus robot standing in a sunflower field under The Starry Night sky. He wears large headphones, his chest panel reads ON AIR, and he holds a telephone handset. Red glowing eyes. A record player with stacked vinyl records on a wooden side table stands to his right. BasicGlitch Masters Remixed series.</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://basicglitch.art/art/the-screambot.html</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
@@ -941,6 +921,16 @@
     <image:image>
       <image:loc>https://basicglitch.art/assets/images/raw/unfishished_business.webp</image:loc>
       <image:caption>Unfishished Business: original hand-drawn black ink illustration on white paper showing a partial fish head in profile, filling most of the frame. The form is built from flowing parallel line work, dot patterns, and dense spiral detailing. A highly detailed spiral eye dominates the right portion. Several fin or branch-like forms extend from the upper left edge. The drawing appears deliberately incomplete in areas. Signed Basic Glitch. Traditional ink drawing by BasicGlitch.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://basicglitch.art/art/vincent-vanboticus.html</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/vincent_vanboticus.webp</image:loc>
+      <image:caption>Vincent VanBoticus: Van Gogh-style digital oil painting depicting Broboticus robot standing in a sunflower field under The Starry Night sky. He wears large headphones, his chest panel reads ON AIR, and he holds a telephone handset. Red glowing eyes. A record player with stacked vinyl records on a wooden side table stands to his right. BasicGlitch Masters Remixed series.</image:caption>
     </image:image>
   </url>
   <url>
