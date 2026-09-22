@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /legal/
+Disallow: /scripts/
+Disallow: /assets/data/
 Allow: /
 
 Sitemap: https://basicglitch.art/sitemap.xml
