@@ -1,0 +1,159 @@
+[
+  {
+    "category": "Masters Remixed",
+    "name": "Masters Remixed",
+    "slug": "masters-remixed",
+    "label": "Masters Remixed · Art History Notified",
+    "card_class": "series-card--blu",
+    "sort": "date_desc",
+    "exclude_categories": ["Broboticus", "Case Study 42"],
+    "representative_image": "assets/images/raw/screambot.webp",
+    "representative_alt": "The Screambot: Broboticus on Munch's bridge with a vinyl player in his chest, digital art by BasicGlitch",
+    "cross_references": [
+      {
+        "text": "Broboticus also stars in the Broboticus: Case Study 42 series →",
+        "href": "../broboticus.html",
+        "label": "Broboticus flagship"
+      }
+    ],
+    "description": "Munch, Van Gogh, Warhol, Da Vinci, Grant Wood, and Picasso, all run through the Broboticus filter. The Screambot stands on Munch's bridge receiving too many frequencies at once, a vinyl player where the dread should be. Marilyn Monbroe replaces Warhol's face with a BROBOTICUS chest panel across six panels of oversized multicolor lips. Vitruvian Broboticus holds vinyl and headphones where Da Vinci's man holds nothing, and the proportions check out. American Gothbotic swaps Grant Wood's pitchfork for a wrench; the woman has seen stranger things. Cubist Chef fractures Chefboticus into warm geometric facets with Manhattan flat behind him. Sunflowerboticus collapses Van Gogh's Sunflowers and Starry Night into one broadcast tower. These are not parodies. They are parallel arguments."
+  },
+  {
+    "category": "Sangre de Cristos",
+    "name": "Sangre de Cristos",
+    "slug": "sangre-de-cristos",
+    "label": "Sangre de Cristos · Colorado · Ten Frequencies",
+    "card_class": "series-card--cyn",
+    "sort": "date_asc",
+    "representative_image": "assets/images/raw/aesthetic_laser_colorado.webp",
+    "representative_alt": "Sangre De Cristos: Night, the Colorado range in pure neon green on black with a circuit board rising from the valley, digital art by BasicGlitch",
+    "description": "The same Colorado mountain range rendered ten times, each a different color palette, each a different emotional state. It begins with Sangre De Cristos: Night, pure neon green on absolute black, the piece that proved the concept. Neon, Colorado, Blanca, Blanca at Dusk, Midnight V2, Midnight/Dawn, Circuits, Dreamsicle, and Dusk follow: amber noon, crimson edge-of-night, orange-on-black reduction, lavender dawn with a multicolor transmission tower. A circuit board rises from the valley in every version, growing from faint suggestion to towering antenna across the series. The mountains were always transmitting. This is the range seen through a blacklight at every hour of the day, one place, ten truths."
+  },
+  {
+    "category": "Gaia Diptych",
+    "name": "Gaia Diptych",
+    "slug": "gaia-diptych",
+    "label": "Gaia Diptych · Environmental Surrealism",
+    "card_class": "series-card--yel",
+    "sort": "date_desc",
+    "representative_image": "assets/images/raw/gaia_of_the_wasteland.webp",
+    "representative_alt": "Gaia of the Wasteland: a surreal tree-figure rooted in cracked earth, digital art by BasicGlitch",
+    "description": "Two figures. Same cracked earth. Gaia of the Wasteland stands rooted and sovereign, crowned in canopy, lit from behind like something that refuses to be extinguished. Dust to Dust is mid-dissolution, hair carrying the last green thing into the wind under a low orange sun. Companion pieces that share a world: the moss on her shoulders, the dead tree, the parched ground identical between them. Shown together they tell a fuller story about what Earth looks like when it remembers it is alive, and what it looks like when it isn't sure. Whether the diptych reads as hopeful or devastating depends entirely on what you bring to it."
+  },
+  {
+    "category": "Mycology Series",
+    "name": "Mycology Series",
+    "slug": "mycology-series",
+    "label": "Mycology Series · Embroidered Texture",
+    "card_class": "series-card--grn",
+    "sort": "date_asc",
+    "representative_image": "assets/images/raw/a_mycological_phenomenon.webp",
+    "representative_alt": "A Mycological Phenomenon: a red Amanita under a sleepy-faced moon in an embroidered midnight field, digital art by BasicGlitch",
+    "description": "Two mushroom landscapes rendered in dense embroidered stitch texture. A Mycological Phenomenon: midnight in a field that doesn't exist on any map, one massive Amanita front and center, the moon in the upper right corner watching with heavy-lidded gold eyes, utterly unbothered by what's happening below her. Mycology Yourcology: the sky has gone full Van Gogh, deep blue and purple swirling in response to something the mushroom is transmitting, spiral whorl patterns now on the cap, the mushroom grew eyes while you weren't looking. The two pieces share a world. The first is calm. The second knows you're in it."
+  },
+  {
+    "category": "Pachydermis Triptych",
+    "name": "Pachydermis Triptych",
+    "slug": "pachydermis-triptych",
+    "label": "Pachydermis Triptych · Three Color States",
+    "card_class": "series-card--mag",
+    "sort": "custom",
+    "display_order": ["Pachydermis", "Pachydermis: Phish Edition", "Pachydermis: Phish Edition Inked"],
+    "representative_image": "assets/images/raw/pachydermis.webp",
+    "representative_alt": "Pachydermis: a massive blue-gold elephant with mandala patterns and a lone figure facing it, digital art by BasicGlitch",
+    "description": "One elephant. Three ways of seeing it. Pachydermis: maximum saturation, the animal filling two-thirds of the canvas in impossible blue-gold with mandala patterns orbiting its eye, fractal floral clouds billowing at the crown, a lone figure in a long coat facing all of it. Pachydermis: Phish Edition: the same composition inverted into mint, blush, and lavender, the colossus now a vision rather than an arrival. Pachydermis: Phish Edition Inked: pushed into deep black with neon edge detection, the elephant a ghost of itself under a dark aurora. Noon, dawn, and midnight. Three ways of standing before something enormous. They are not running."
+  },
+  {
+    "category": "Spiral Studies",
+    "name": "Spiral Studies",
+    "slug": "spiral-studies",
+    "label": "Spiral Studies · Hand-Drawn + Digital",
+    "card_class": "series-card--pur",
+    "sort": "date_desc",
+    "representative_image": "assets/images/raw/spiral_geometry.webp",
+    "representative_alt": "Spiral Geometry: a hand-drawn mandala erupting from a yellow point through red petals and violet webbing, digital art by BasicGlitch",
+    "description": "One hand-drawn mandala. Four color treatments. Monopattern is the source: a ten-pointed star in pure black and white, feather forms radiating outward, crescent and eye forms filling every corner, the root of the entire series. Spiral Geometry applies selective fire, red and violet center against a structural grey field. Color Pattern floods the whole composition in acid green and yellow, every frond lit from within like deep-sea bioluminescence. Floral pulls the geometry off-center into blush pink and lavender, a view into one quadrant of the system rather than the whole. The same hand-drawn line work underlies all four. The same geometry approached from four different emotional distances."
+  },
+  {
+    "category": "Skullastic Endeavor",
+    "name": "Skullastic Endeavor",
+    "slug": "skullastic-endeavor",
+    "label": "Skullastic Endeavor · Motion Art",
+    "card_class": "series-card--red",
+    "sort": "date_desc",
+    "representative_image": "assets/images/gallery-thumbs/art-20260226115243.jpg",
+    "representative_alt": "Psylent Skulls: three mirror-symmetrical mosaic skulls cycling through the full spectrum in a four-second loop, motion art by BasicGlitch",
+    "description": "Two skull animations cycling through the full color spectrum. Psylent Skulls: three skulls, mirror-symmetrical, their surfaces dissolved into ten thousand interlocking stained-glass facets, color pulsing in waves from crimson through magenta, green, and electric cyan in a four-second loop. Mountain Soul: the Sangre de Cristos Neon piece set in motion and given twenty seconds to breathe, circuit traces lighting up from the valley floor, stars igniting in sequence, the landscape warming up and remembering what it is. Basicglitch Neon 1440P Optimized: one ornate Celtic filigree skull across fifteen seconds of the full visible spectrum, fractal spiral galaxies pulsing in the corners. The memento mori tradition, made alive."
+  },
+  {
+    "category": "Hand-Drawn Ink",
+    "name": "Hand-Drawn Ink",
+    "slug": "hand-drawn-ink",
+    "label": "Hand-Drawn Ink · Traditional Medium",
+    "card_class": "series-card--cyn",
+    "sort": "title",
+    "representative_image": "assets/images/raw/discworld.webp",
+    "representative_alt": "Discworld: Great A'Tuin swimming through a hand-stippled cosmos carrying four elephants and a disc world, original ink drawing by BasicGlitch",
+    "description": "Before the glitch. Before the neon. Pen on paper, the original medium. Squid: each tentacle filled with its own internal logic of hatching, crosshatch, stipple, and grid. Henna Tree: a tree drawn from the inside out, trunk striped and patterned, branches tapering to decorated tips, somewhere between botanical illustration and fever dream. Unfishished Business: a fish head mid-emergence or mid-dissolution, the spiral eye the most resolved thing in the frame, a drawing about incompleteness. Discworld: Terry Pratchett's cosmology rendered by hand with the devotion of a true believer, Great A'Tuin carrying four elephants carrying a disc world, every surface patterned. The root system of everything else on this site."
+  },
+  {
+    "category": "Cyber-Eclectic",
+    "name": "Cyber-Eclectic",
+    "slug": "cyber-eclectic",
+    "label": "Cyber-Eclectic · Tech-Noir Signal Capture",
+    "card_class": "series-card--blu",
+    "sort": "date_desc",
+    "representative_image": "assets/images/raw/skyline_reclaimation.webp",
+    "representative_alt": "Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light, digital art by BasicGlitch",
+    "description": "Tech-noir landscapes and character studies at the intersection of organic and synthetic. Skyline Reclamation: architecture and root systems entangled, the circuit board and the vine growing toward the same light. Sentinel Stream: something watches from the water's edge where the stream meets the circuit. Monument Memory: classical columns rendered semi-transparent as digital artifacts permeate their surfaces. Apex Rendering: everything the machine can produce pressed to the edge of coherence. Kinetic Latency: the lag made visible, the frame that almost resolved but didn't. Sidepiece Dimepiece: high-saturation neon portraiture with structured glitch artifacts and tech-noir textures. The BasicGlitch cyber-eclectic vision: what cities, monuments, and faces become when nature and technology stop pretending to be opposites."
+  },
+  {
+    "category": "Personal",
+    "name": "Personal",
+    "slug": "personal",
+    "label": "Personal · Autobiographical",
+    "card_class": "series-card--mag",
+    "sort": "title",
+    "exclude_categories": ["Cyber-Eclectic"],
+    "representative_image": "assets/images/raw/innerchild.webp",
+    "representative_alt": "Inner Child: a kid on a bunk bed with a guitar, the ceiling gone red and electric, glitch-processed personal photograph by BasicGlitch",
+    "description": "Two photographs processed through the BasicGlitch treatment. Inner Child: a kid on a bunk bed with a guitar, the ceiling gone red and electric, yellow mountains of sound rising behind him, circuit traces framing the room. The yellow zigzag reads simultaneously as mountain range and soundwave, which is exactly right for someone who has been a musician for thirty-one years. Love of the Game: a young baseball player outlined in neon red and gold, a starburst of cyan and yellow light exploding from his chest like something being released. The treatment didn't add the light. It revealed it. Two private moments made universal."
+  },
+  {
+    "category": "Standalone",
+    "name": "Standalone Works",
+    "slug": "standalone",
+    "label": "Standalone · One-Off Signals",
+    "card_class": "series-card--org",
+    "sort": "date_desc",
+    "representative_image": "assets/images/raw/literal_traphouse.webp",
+    "representative_alt": "Literal Traphouse: a neon green house with the word TRAP built into the roofline like a load-bearing pun, digital art by BasicGlitch",
+    "description": "Pieces that stand entirely on their own, answering to no series. Literal Traphouse: the word TRAP built into the architecture, neon green on black, integrated into the roofline like a load-bearing pun. The garage door is real. The chimney is real. The wordplay is the foundation, executed with the precision of an architectural blueprint and complete seriousness, which is exactly what makes it the funniest piece in the BasicGlitch archive. Single-weight neon line, no background, no context required. The joke is structural."
+  },
+  {
+    "category": "Broboticus",
+    "name": "Broboticus: Case Study 42",
+    "slug": "broboticus-case-study-42",
+    "label": "Case Study 42 · Origin: March of the Robots 2025",
+    "flagship_page": "broboticus.html",
+    "representative_image": "assets/images/card/vitruvian_broboticus.webp",
+    "representative_alt": "Vitruvian Broboticus: a robot figure in Leonardo da Vinci's Vitruvian Man pose, digital art by BasicGlitch"
+  },
+  {
+    "category": "Case Study 42",
+    "name": "Broboticus: Case Study 42",
+    "slug": "broboticus-case-study-42",
+    "flagship_page": "broboticus.html",
+    "representative_image": "assets/images/card/vitruvian_broboticus.webp",
+    "representative_alt": "Vitruvian Broboticus: a robot figure in Leonardo da Vinci's Vitruvian Man pose, digital art by BasicGlitch"
+  },
+  {
+    "category": "Pup Fiction",
+    "name": "Pup Fiction",
+    "slug": "pup-fiction",
+    "label": "Pup Fiction · Series in Progress",
+    "flagship_page": "pup-fiction.html",
+    "representative_image": "assets/images/raw/pup-fiction-scene1.webp",
+    "representative_alt": "Pumpkin and Honey Puppy and the Diner Robbery: a Chihuahua on a diner table with a revolver, digital art by BasicGlitch"
+  }
+]
