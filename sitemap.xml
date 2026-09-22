@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ── CORE PAGES ── -->
   <url>
@@ -7,30 +8,242 @@
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/guitarbot_og.webp</image:loc>
+      <image:caption>Guitarbot, Broboticus playing bass, cyberpunk robot character by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/fishboticus.webp</image:loc>
+      <image:caption>Fishboticus, Case Study 42 robot character by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/sunflowerboticus.webp</image:loc>
+      <image:caption>Two Van Gogh pieces at the same time: Sunflowers and a hint of Starry Night starring Broboticus Brobot by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/pup-fiction-scene1.webp</image:loc>
+      <image:caption>Pup Fiction Crash, Pulp Fiction diner scene with dogs by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/sangre_de_cristo_dusk.webp</image:loc>
+      <image:caption>Sangre De Cristos at dusk, Colorado mountain range circuit board landscape</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/skyline_reclaimation.webp</image:loc>
+      <image:caption>Skyline Reclaimation, Surrealist Data Giraffe by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/discworld.webp</image:loc>
+      <image:caption>The Great A'Tuin, Terry Pratchet's Discworld Reimagined by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/dust_to_dust.webp</image:loc>
+      <image:caption>Dust to Dust, Environmental Warnings by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/loveofthegame.webp</image:loc>
+      <image:caption>Love of the Game, The Original Career Path by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/card/spiral_geometry.webp</image:loc>
+      <image:caption>Spiral Geometry, hand-drawn mandala by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/gallery.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sidepiece-dimepiece.webp</image:loc>
+      <image:caption>Sidepiece Dimepiece - digital art by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp</image:loc>
+      <image:caption>Sangre De Cristo Midnight V2 - digital art by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_dusk_20260226152957.webp</image:loc>
+      <image:caption>Sangre De Cristo Dusk - digital art by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
+      <image:caption>The Screambot - digital art by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/marilyn_monbroe_20260226152914.webp</image:loc>
+      <image:caption>Marilyn Monbroe - digital art by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/videos/psylent_skulls.mp4</image:loc>
+      <image:caption>Psylent Skulls - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/videos/mountain_soul.mp4</image:loc>
+      <image:caption>Mountain Soul - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/gallery-thumbs/art-20260226115130.jpg</image:loc>
+      <image:caption>BasicGlitch Neon 1440p: ornate Celtic skull cycling through the full chromatic spectrum, digital motion art still by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/skyline_reclaimation.webp</image:loc>
+      <image:caption>Skyline Reclamation - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sentinel_stream.webp</image:loc>
+      <image:caption>Sentinel Stream - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/portfolio.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/vitruvian_broboticus.webp</image:loc>
+      <image:caption>Vitruvian Broboticus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/brobotosaurus_wrex.webp</image:loc>
+      <image:caption>Brobotosaurus Wrex</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/guitarbot_og.webp</image:loc>
+      <image:caption>Guitarbot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/fishboticus.webp</image:loc>
+      <image:caption>Night-Fishing the Arkansas River</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
+      <image:caption>Screambot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/marilyn_monbroe_20260226152914.webp</image:loc>
+      <image:caption>Marilyn Monbroe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pup-fiction-scene1.webp</image:loc>
+      <image:caption>Pup Fiction Crash</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_laser_colorado.webp</image:loc>
+      <image:caption>Sangre de Cristos Night</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp</image:loc>
+      <image:caption>Sangre de Cristos Neon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp</image:loc>
+      <image:caption>Sangre de Cristos Midnight</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_dusk_20260226152957.webp</image:loc>
+      <image:caption>Sangre de Cristos Dusk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/gaia_of_the_wasteland.webp</image:loc>
+      <image:caption>Gaia of the Wasteland</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/dust_to_dust.webp</image:loc>
+      <image:caption>Dust to Dust</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/a_mycological_phenomenon.webp</image:loc>
+      <image:caption>A Mycological Phenomenon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/mycology_yourcology.webp</image:loc>
+      <image:caption>Mycology Yourcology</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis.webp</image:loc>
+      <image:caption>Pachydermis</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis-phish-edition.webp</image:loc>
+      <image:caption>Pachydermis Phish Edition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis_phish_edition_inked.webp</image:loc>
+      <image:caption>Pachydermis Inked Edition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/spiral_geometry.webp</image:loc>
+      <image:caption>Spiral Geometry, Fire Variant</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/floral.webp</image:loc>
+      <image:caption>Floral, Dusk Variant</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/broboticus.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/vitruvian_broboticus.webp</image:loc>
+      <image:caption>Vitruvian Broboticus, the proportional diagram of the character</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/artist_broboticus_og.webp</image:loc>
+      <image:caption>Broboticus Original, the first drawing entered in March of the Robots 2025</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/brobotosaurus_wrex.webp</image:loc>
+      <image:caption>Brobotosaurus Wrex, Case Study 42 origin event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/guitarbot_og.webp</image:loc>
+      <image:caption>Guitarbot Brobassicus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/artist_broboticus_avatar.webp</image:loc>
+      <image:caption>Brobarticus, The Artist</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/chefboticus.webp</image:loc>
+      <image:caption>Iron Chef Chefboticus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/balletboticus.webp</image:loc>
+      <image:caption>Let's Dance!, Balletboticus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/karateboticus1.webp</image:loc>
+      <image:caption>Karateboticus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/ranchboticus.webp</image:loc>
+      <image:caption>Rancher Broboticus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/fishboticus.webp</image:loc>
+      <image:caption>Night-Fishing the Arkansas River</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/starbot_waiting_in_the_sky.webp</image:loc>
+      <image:caption>There's a Star-Bot Waiting in the Sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/cubist_chef.webp</image:loc>
+      <image:caption>Cubist Chef</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/pup-fiction.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pup-fiction-scene1.webp</image:loc>
+      <image:caption>Pumpkin and Honey Puppy and the Diner Robbery</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/commissions.html</loc>
@@ -49,6 +262,10 @@
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/artist_broboticus_avatar.webp</image:loc>
+      <image:caption>Sailboaticus, Broboticus at sea, by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/contact.html</loc>
@@ -61,12 +278,22 @@
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://basicglitch.art/collection.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_midnight_v2.webp</image:loc>
+      <image:caption>Sangre De Cristo Midnight</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_dusk.webp</image:loc>
+      <image:caption>Sangre De Cristo Dusk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/marilyn_monbroe.webp</image:loc>
+      <image:caption>Marilyn Monbroe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
+      <image:caption>The Screambot</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/terms.html</loc>
@@ -78,339 +305,563 @@
   <!-- ── INDIVIDUAL ART PAGES ── -->
   <url>
     <loc>https://basicglitch.art/art/a-mycological-phenomenon.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-04-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/a_mycological_phenomenon.webp</image:loc>
+      <image:caption>Digital artwork depicting a large red mushroom with white spots (pixelated texture) set against a night sky with a crescent moon (with a face), white clouds, green grassy area, brown tree trunk, and black rocks.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/american-gothbotic.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/american-gothbotic2.webp</image:loc>
+      <image:caption>American Gothbotic: digital recreation of Grant Wood's American Gothic with the male farmer figure replaced by a robot with a rusted orange face plate and green glowing eyes, wearing the original's dark jacket and white shirt, holding a large wrench instead of a pitchfork. The female figure remains as painted. The white Gothic Revival farmhouse occupies the background. BasicGlitch Masters Remixed series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/apex-rendering.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/apex_rendering.webp</image:loc>
+      <image:caption>Apex Rendering - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/basicglitch-neon-1440p-optimized.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/gallery-thumbs/art-20260226115130.jpg</image:loc>
+      <image:caption>BasicGlitch Neon 1440p: ornate Celtic skull cycling through the full chromatic spectrum, digital motion art still by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/brobarticus.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/artist_broboticus_avatar.webp</image:loc>
+      <image:caption>Close-up portrait of a robot with neon green outlines, wearing headphones and a beanie, set against a dark background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/brobot-noir.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/brobot-noir.webp</image:loc>
+      <image:caption>Brobot Noir: black and white digital illustration with film noir aesthetic of a robot wearing a white trench coat, fedora, and tie, standing in a rain-slicked alley at night. He holds a lit cigarette in one raised hand with smoke curling upward, and a revolver at his side. A pink neon sign glows in the background. Halftone dot texture overlay. BasicGlitch original character art.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/broboticus-the-original.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/broboticus.webp</image:loc>
+      <image:caption>Broboticus Original: the first drawing of the Broboticus character, created for the March of the Robots Instagram contest 2025. Neon green line art on black depicting Broboticus as a DJ robot: rounded beanie head with antenna, large circular headphones, square torso with speaker grille, hands positioned over two turntable platters. BasicGlitch original character.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/brobotosaurus-wrex.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/brobotosaurus_wrex.webp</image:loc>
+      <image:caption>A retro-futuristic robot with red glowing eyes, headphones, and a microphone sits atop a green T-Rex dinosaur in a neon-lit cityscape with skyscrapers, flying vehicles, and a sunset sky.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/color-pattern.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/colorpattern.webp</image:loc>
+      <image:caption>Color Pattern: the Spiral Studies mandala with full color treatment applied throughout. The outer geometric field rendered in vivid acid green and yellow-green, with feather fronds, crescents, and eye forms glowing in high-saturation lime against black. The central star flower retains its red, orange, and violet coloring. Intensely psychedelic and high-contrast. Part of the BasicGlitch Spiral Studies series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/cubist-chef.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/cubist_chef.webp</image:loc>
+      <image:caption>A cubist-style orange robot with antennae stands at a kitchen counter with a rolling pin, flour sack, bowls, and a city skyline of skyscrapers visible through large windows.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/discworld.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/discworld.webp</image:loc>
+      <image:caption>Discworld: original hand-drawn black ink illustration on white paper depicting the Discworld cosmology: a great sea turtle swimming through a star-dotted cosmos, carrying four decorated elephants on its shell, who in turn support a flat disc world with mountains rising from swirling water at its center. Every surface features intricate hand-drawn patterns. Stars, spiral galaxies, dot trails, and celestial symbols surround the composition. Traditional ink drawing by BasicGlitch.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/dust-to-dust.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-02-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/dust_to_dust.webp</image:loc>
+      <image:caption>A surreal digital artwork titled 'Dust to Dust' depicts a woman whose hair is replaced by lush green foliage, and her torso merges with tree roots extending from her hands. She stands on cracked, parched earth with a dead, leafless tree and a sunset in the background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/fishboticus-glitched.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/fishboticus_glitched.webp</image:loc>
+      <image:caption>Fishboticus Glitched: glitch art variant of Night-Fishing the Arkansas River. Broboticus robot outlined in warm gold and cream stands at the water's edge holding a fishing rod against a heavily glitched background of horizontal stripes in red, purple, blue, and cyan with circuit trace overlay patterns and color bleed artifacts. Red border frames the composition. Yellow crescent moon remains. BasicGlitch original character glitch art.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/floral.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-07-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/floral.webp</image:loc>
+      <image:caption>A stylized, neon pink flower with white dotted details at its center, set against a deep purple background with abstract, glitch-like patterns and swirling shapes.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/gaia-of-the-wasteland.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/gaia_of_the_wasteland.webp</image:loc>
+      <image:caption>A surreal figure merges with a tree, its roots forming a dress and a large tree canopy as a headpiece, standing in a cracked, barren desert landscape with sparse vegetation and distant hills. The background features a large tree behind the figure, and the ground is covered in dry, cracked earth.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/guitarbot.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/guitarbot_og.webp</image:loc>
+      <image:caption>A neon green, stylized robot with a beanie, headphones, and antenna, holding and playing an electric guitar. The robot has a rectangular head with circular eyes, a mouth with horizontal lines, and a body with circular buttons and a speaker-like feature. The guitar has a yellow strap, and the entire figure is outlined in bright green against a black background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/henna-tree.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/hennatree.webp</image:loc>
+      <image:caption>Henna Tree: original hand-drawn black ink illustration on white paper of a stylized tree with a heavily patterned trunk featuring vertical stripes, dot sequences, and decorative fills. Branches spread wide and curl at the tips with various organic pattern treatments. Small decorated creature-like forms appear in the upper branches. A minimal mountain range sketch occupies the lower right background. Ground roots spread in flowing decorative lines. Signed Basic Glitch in the lower right corner. Traditional ink drawing by BasicGlitch.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/inner-child.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/innerchild.webp</image:loc>
+      <image:caption>Inner Child: glitch art digital processing of a personal photograph showing a child's silhouette sitting on a bunk bed holding an electric guitar. The image has been treated with high-contrast neon edge detection, glitch color processing, and circuit trace overlays. A dramatic yellow zigzag mountain and soundwave form rises behind the figure against a deep red background. Cyan and magenta neon outlines the room furniture. BasicGlitch personal series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/iron-chef.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/chefboticus.webp</image:loc>
+      <image:caption>A stylized robot wearing a chef's hat holds a rolling pin in one hand and a tray of cookies in the other, standing at a counter with a bowl of ingredients and dough. The entire scene is rendered in a neon green outline against a textured, glitchy green background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/karateboticus.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/karateboticus1.webp</image:loc>
+      <image:caption>Three stylized robots in neon red, yellow, and orange outlines perform a karate kick pose. The background is a bright blue with scattered black, white, and blue dots, creating a glitch effect. The robots have blocky heads with antennas and mechanical limbs.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/kinetic-latency.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/kinetic_latency.webp</image:loc>
+      <image:caption>Kinetic Latency - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/lets-dance.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/balletboticus.webp</image:loc>
+      <image:caption>Two retro-futuristic robots in tree pose (yoga) against a vibrant neon pink, marbled, glitch-textured background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/literal-traphouse.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/literal_traphouse.webp</image:loc>
+      <image:caption>Green neon outline of a house with the letters 'TRA' integrated into the structure, featuring a door, window, and garage door, set against a black background.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/love-of-the-game.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/loveofthegame.webp</image:loc>
+      <image:caption>Love of the Game: glitch art digital processing of a photograph of a young baseball player in full uniform and cap, standing facing the camera against a dark green background. High-contrast neon edge detection treatment renders the figure in vivid red, gold, and orange outlines. A large multi-pointed starburst of cyan, yellow, and green light emanates from the center of the chest. BasicGlitch personal series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/marilyn-monbroe.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/marilyn_monbroe_20260226152914.webp</image:loc>
+      <image:caption>Marilyn Monbroe - digital art by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/monopattern.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/monopattern.webp</image:loc>
+      <image:caption>Monopattern: high-contrast black and white hand-drawn mandala. A ten-pointed star flower radiates from the center with alternating dotted and lattice-filled petals. Dense radiating geometric fields surround it: feather frond forms, crescent shapes, eye-like ovals, and arrowhead patterns fill the composition edge to edge. No color, maximum contrast. Part of the BasicGlitch Spiral Studies series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/monument-memory.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/monument_memory.webp</image:loc>
+      <image:caption>Monument Memory - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/mountain-soul.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/videos/mountain_soul.mp4</image:loc>
+      <image:caption>Mountain Soul - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/mycology-yourcology.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/mycology_yourcology.webp</image:loc>
+      <image:caption>A digital artwork titled 'Mycology Yourcology' featuring a large red mushroom with spiral caps at the center, surrounded by a swirling green landscape, mountain peaks, and a sky with swirling patterns in blue, purple, and gray. The image has a glitchy, pixelated texture.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/night-fishing-the-arkansas-river.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/fishboticus.webp</image:loc>
+      <image:caption>A retro-futuristic robot with glowing red eyes stands in water at night, holding a fishing rod with a line cast into the water under a crescent moon, against a background of horizontal neon blue and purple stripes with stars.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/pachydermis-phish-edition-inked.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis_phish_edition_inked.webp</image:loc>
+      <image:caption>Pachydermis Phish Edition Inked: dark high-contrast variant with black background and neon edge-detection treatment. The elephant in teal and pink neon outlines against black. Cloud formation dark with neon-outlined fractal bloom forms. The lone human silhouette as a small dark figure against a pool of neon green light. BasicGlitch Pachydermis series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/pachydermis-phish-edition.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis-phish-edition.webp</image:loc>
+      <image:caption>Pachydermis Phish Edition: pastel inverted variant of the Pachydermis composition. The massive frontal elephant rendered in soft mint green and pink tones against a predominantly white and pale lavender background. The explosive cloud formation has become a soft bloom of pastel green, pink, yellow, and purple. The lone human silhouette appears in pale lavender at lower right. BasicGlitch Pachydermis series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/pachydermis.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pachydermis.webp</image:loc>
+      <image:caption>A surreal digital artwork titled 'Pachydermis' featuring a large, colorful elephant with blue, yellow, and pink hues at the center. The background is a vibrant, abstract composition of swirling neon patterns in red, green, blue, and purple. A small figure in a pink coat and hat stands to the right of the elephant, holding a circular object.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/psylent-skulls.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/videos/psylent_skulls.mp4</image:loc>
+      <image:caption>Psylent Skulls - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/pumpkin-and-honey-puppy-and-the-diner-robbery.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/pup-fiction-scene1.webp</image:loc>
+      <image:caption>Digital illustration titled 'Pumpkin and Honey Puppy and the Diner Robbery' from the 'Pup Fiction' series. It depicts a chaotic diner robbery with anthropomorphic dogs: a Chihuahua in a red bandana holds a revolver, a Jack Russell in a leather jacket wields a gun, and a bulldog chef holds a pan. The text 'CRASH' appears in bold red dripping letters as a comic-style sound effect. A yellow speech bubble contains the famous movie quote. The scene is rendered in high-saturation neon with glitch art elements.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/rancher-broboticus.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/ranchboticus.webp</image:loc>
+      <image:caption>Neon green line art of a retro-futuristic robot labeled 'Broboticus' riding a galloping horse, wearing a hat and headphones, against a black background with faint city skyline outlines.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristo-dusk.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_dusk_20260226152957.webp</image:loc>
+      <image:caption>Sangre De Cristo Dusk - digital art by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristo-midnight-v2.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp</image:loc>
+      <image:caption>Sangre De Cristo Midnight V2 - digital art by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-blanca-at-dusk.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_blanca_at_dusk.webp</image:loc>
+      <image:caption>Sangre De Cristos Blanca at Dusk: digital landscape of the Sangre de Cristo mountain range with a dramatically fractured crimson sky showing blocky glitch distortion. Mountain ridgelines glow with cyan, magenta, orange and white edge highlighting. Circuit board pattern in the valley and river. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-blanca.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristo_blanca.webp</image:loc>
+      <image:caption>Sangre De Cristos Blanca: high-contrast digital landscape of the Sangre de Cristo mountain range under a deep crimson and maroon night sky. Mountain ridgelines outlined in cyan and magenta. A circuit board trace pattern rises dark red from the central valley. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-circuits.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre-circuits.webp</image:loc>
+      <image:caption>Sangre De Cristos Circuits: stark two-color digital landscape of the Sangre de Cristo mountain range rendered entirely in vivid orange on pure black. Mountain forms are bold flat silhouettes. The foreground river and rocky banks are covered in dense circuit board trace patterns. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-colorado.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo_colorado_20250919114454.webp</image:loc>
+      <image:caption>Sangre De Cristos Colorado: vibrant digital landscape under a saturated amber and golden yellow sky. Mountain peaks in bright cyan and blue against warm orange fills. Lower slopes through hot pink and magenta to the foreground river. White circuit board trace pattern rises subtly from the central valley. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-dreamsicle.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre-dreamsicle.webp</image:loc>
+      <image:caption>Sangre De Cristos Dreamsicle: bold three-color digital landscape under a saturated orange sky. Mountain forms alternate between flat orange and stark white snowfields. A bright cyan river runs through the center foreground. A large white circuit board tower structure rises from the valley into the orange sky. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-midnightdawn.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sangre_de_cristos_midnightdawn.webp</image:loc>
+      <image:caption>Sangre De Cristos Midnight Dawn: digital landscape with mountain forms rendered in flat lavender-purple against a deep black star-dotted sky. A tall multicolor circuit board structure in orange, green, teal, and yellow rises dramatically above the valley. A bright cyan river runs through the foreground with circuit trace patterning. Part of the BasicGlitch Sangre de Cristos series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-neon.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_sangre_de_cristo.webp</image:loc>
+      <image:caption>A stylized digital artwork depicting a surreal landscape with glowing mountains in shades of blue and pink, a winding river with wavy patterns, set against a bright yellow sky with circuit board lines and small white specks. The scene blends natural forms with glitch elements, creating a dreamlike, neon-infused atmosphere.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sangre-de-cristos-night.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/aesthetic_laser_colorado.webp</image:loc>
+      <image:caption>Dark background with bright neon green stylized mountain range. A winding river flows through the valley. Glowing circuit board patterns rise from the mountains, and small circular lights are scattered in the sky.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sentinel-stream.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sentinel_stream.webp</image:loc>
+      <image:caption>Sentinel Stream - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sidepiece-dimepiece.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-06-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sidepiece-dimepiece.webp</image:loc>
+      <image:caption>Sidepiece Dimepiece - digital art by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/skyline-reclamation.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/skyline_reclaimation.webp</image:loc>
+      <image:caption>Skyline Reclamation - digital surrealism by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/spiral-geometry.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/spiral_geometry.webp</image:loc>
+      <image:caption>Abstract digital artwork titled 'Spiral Geometry' featuring a central red and purple spiral with yellow accents, surrounded by intricate black-and-white geometric patterns, including spirals, lines, and circular motifs.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/squid.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/squid.webp</image:loc>
+      <image:caption>Squid: original hand-drawn black ink illustration on white paper of a squid or jellyfish-like cephalopod viewed from above. Eight tentacles extend downward, each filled with intricate hand-drawn texture patterns including crosshatching, grid lines, parallel striping, and stippling. The mantle at top is dense with layered ink work. Signed Basic Glitch in the lower right corner. Traditional ink drawing by BasicGlitch.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/sunflowerboticus.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/sunflowerboticus.webp</image:loc>
+      <image:caption>Sunflowerboticus: Van Gogh-style digital oil painting depicting Broboticus robot standing in a sunflower field under The Starry Night sky. He wears large headphones, his chest panel reads ON AIR, and he holds a telephone handset. Red glowing eyes. A record player with stacked vinyl records on a wooden side table stands to his right. BasicGlitch Masters Remixed series.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/the-screambot.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/screambot.webp</image:loc>
+      <image:caption>The Screambot - digital art by BasicGlitch</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/theres-a-star-bot-waiting-in-the-sky.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-11-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/starbot_waiting_in_the_sky.webp</image:loc>
+      <image:caption>A neon-colored, glitchy star-bot with large circular eyes and mechanical features stands against a black background filled with multicolored, twinkling stars. The artwork is a cyber-eclectic surrealist piece with vibrant, rainbow-welded lines and a retro-futuristic aesthetic.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/unfishished-business.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2023-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/unfishished_business.webp</image:loc>
+      <image:caption>Unfishished Business: original hand-drawn black ink illustration on white paper showing a partial fish head in profile, filling most of the frame. The form is built from flowing parallel line work, dot patterns, and dense spiral detailing. A highly detailed spiral eye dominates the right portion. Several fin or branch-like forms extend from the upper left edge. The drawing appears deliberately incomplete in areas. Signed Basic Glitch. Traditional ink drawing by BasicGlitch.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://basicglitch.art/art/vitruvian-broboticus.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://basicglitch.art/assets/images/raw/vitruvian_broboticus.webp</image:loc>
+      <image:caption>A vintage-style illustration of a robot in Vitruvian proportions, holding a vinyl record in one hand and headphones in the other, with a microphone on its head. The image includes handwritten text in the background and a circular and square frame, echoing Leonardo da Vinci's Vitruvian Man.</image:caption>
+    </image:image>
   </url>
 
 </urlset>
