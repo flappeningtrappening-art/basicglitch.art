@@ -212,7 +212,10 @@ def process_new_files():
 
     if new_art_found:
         print("Regenerating site and syncing mainframe...")
-        os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/foundry_site_gen.py')}")
+        # Regenerate art pages (VisualArtwork/BreadcrumbList JSON-LD, series
+        # crosslinks, sitemap), not the legacy foundry_site_gen template.
+        os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/regenerate_art_pages.py')}")
+        os.system(f"python3 {os.path.join(BASE_DIR, 'scripts/update_sitemap.py')}")
         deploy_to_github()
 
 def update_gallery(id, title, file_path, analysis, is_video):
@@ -230,8 +233,10 @@ def update_gallery(id, title, file_path, analysis, is_video):
         "type": "video" if is_video else "image",
         "date": datetime.date.today().isoformat(),
         "forensic_analysis": analysis,
-        "description": f"New forensic entry: {title}. Deep signal analysis complete.",
-        "alt_text": f"{title} - digital surrealism by BasicGlitch",
+        # Plain-text description feeds meta description + VisualArtwork.description
+        # in regenerate_art_pages.py; strip generator-oriented HTML tags.
+        "description": re.sub(r'<[^>]+>', ' ', analysis or f"New forensic entry: {title}. Deep signal analysis complete.").strip(),
+        "alt_text": f"{title} - digital art by BasicGlitch",
         "seo_keywords": ["new digital art", "basicglitch", "forensic art", "motion art" if is_video else ""]
     }
     
