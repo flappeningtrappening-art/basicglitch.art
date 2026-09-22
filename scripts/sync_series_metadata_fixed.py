@@ -10,7 +10,7 @@ series_mapping = {
     "CASE STUDY 42: BROBOTICUS": [
         "Broboticus: The Original (March of the Robots, 2024)", "Vitruvian Broboticus", 
         "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus: The Artist", 
-        "Iron Chef (Chefboticus)", "The Bolts and Nutcracker (Balletboticus)", 
+        "Iron Chef (Chefboticus)", "Let's Dance! (Balletboticus)", 
         "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", 
         "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", 
         "Brobot Noir", "Screambot", "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"
