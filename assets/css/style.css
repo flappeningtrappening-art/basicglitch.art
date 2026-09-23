@@ -618,7 +618,7 @@ img {
 [data-tier="singularity"] .back-title { color: var(--neon-pur); }
 
 .card-hint {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Share Tech Mono', monospace;
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
   font-size: 0.8rem;

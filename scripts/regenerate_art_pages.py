@@ -264,7 +264,7 @@ def build_art_page_html(item, slug, gallery):
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Rajdhani:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#050505">
@@ -421,6 +421,12 @@ def main():
     for existing_file in os.listdir(ART_DIR):
         if existing_file.endswith('.html') and existing_file not in valid_slugs:
             old_path = os.path.join(ART_DIR, existing_file)
+            # Redirect stubs (meta refresh + canonical to a live art page)
+            # are intentional legacy-URL handlers, not stale junk. Keep them.
+            with open(old_path, encoding='utf-8') as stub_check:
+                head = stub_check.read().split('</head>', 1)[0]
+            if 'http-equiv="refresh"' in head and 'rel="canonical"' in head:
+                continue
             os.remove(old_path)
             print(f"Removed stale / duplicate art page: {existing_file}")
             removed_count += 1

@@ -110,7 +110,8 @@ def is_redirect_def(d):
 def check_no_art_orphans():
     """Indexing-critical: every art page must receive >=1 static <a> inlink
     from somewhere on the site. Pages linked only from JS are invisible to
-    discovery crawling."""
+    discovery crawling. Redirect stubs are exempt: they must NOT be inlinked
+    (the old URL is superseded); they self-verify canonical + meta refresh."""
     import glob
     import os
     from collections import Counter
@@ -124,7 +125,17 @@ def check_no_art_orphans():
                 targets["art/" + m.group(1) + ".html"] += 1
     files = sorted("art/" + f for f in os.listdir("art") if f.endswith(".html"))
     orphans = [f for f in files if targets[f] == 0]
-    check(not orphans, f"no zero-inlink art pages (found {len(orphans)}: {orphans[:5]})")
+    stubs = []
+    live_orphans = []
+    for f in orphans:
+        head = open(f, encoding="utf-8").read().split("</head>", 1)[0]
+        if 'http-equiv="refresh"' in head and 'rel="canonical"' in head:
+            stubs.append(f)
+        else:
+            live_orphans.append(f)
+    check(not live_orphans,
+          f"no zero-inlink art pages (found {len(live_orphans)}: {live_orphans[:5]})")
+    print(f"  ok: {len(stubs)} inlink-exempt redirect stub(s): {stubs or 'none'}")
 
 HAND_PAGES = ["index.html", "gallery.html", "portfolio.html", "about.html",
               "commissions.html", "apparel.html", "contact.html",
