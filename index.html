@@ -305,32 +305,8 @@
   justify-content: center;
 }
 
-/* Submit button needs the 44px tap height (btn-neon base is shorter) */
+/* CTA button needs the 44px tap height (btn-neon base is shorter) */
 .email-form .btn-neon { padding: 13px 18px; min-height: 44px; }
-
-.email-input {
-  flex: 1;
-  min-width: 260px;
-  padding: 13px 16px;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(0,255,62,0.3);
-  color: white;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem; /* 16px, iOS zooms on focus below this */
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.email-input:focus {
-  border-color: var(--neon-2);
-  box-shadow: 0 0 12px rgba(0,255,62,0.2);
-}
-
-.email-input::placeholder {
-  color: var(--muted);
-  letter-spacing: 0.1em;
-}
 
 /* DIVIDER */
 .section-divider {
@@ -551,13 +527,12 @@
         </h2>
         <p class="cyber-subtitle">EXCLUSIVE 4K WALLPAPERS · DROP ALERTS · HIGH-SIGNAL ART.</p>
       </div>
-      <form id="signup-form" action="https://formspree.io/f/mbddjdyg" method="POST" class="email-form">
-        <input type="email" name="email" placeholder="YOUR_EMAIL_ADDRESS" required class="email-input">
-        <button type="submit" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);white-space:nowrap;">
+      <div class="email-form">
+        <a href="https://basicglitch.gumroad.com/l/hmpkzg" target="_blank" rel="noopener" class="btn-neon" style="border-color:var(--neon-2);color:var(--neon-2);white-space:nowrap;text-decoration:none;">
           GET_ACCESS
-        </button>
-      </form>
-      <p id="signup-status" style="margin-top:16px;font-family:'Share Tech Mono',monospace;font-size:0.8rem;color:var(--neon-2);min-height:20px;"></p>
+        </a>
+      </div>
+      <p style="margin-top:16px;font-family:'Share Tech Mono',monospace;font-size:0.8rem;color:var(--neon-2);min-height:20px;">ACCESS IS DELIVERED THROUGH OUR GUMROAD STOREFRONT.</p>
     </div>
   </section>
 
@@ -602,23 +577,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.src = `assets/images/${img}`; // img already carries the card/ prefix
       el.style.cssText = 'width:100%;aspect-ratio:1;object-fit:cover;display:block;';
       grid.appendChild(el);
-    });
-  }
-  // Signup form feedback
-  const form = document.getElementById('signup-form');
-  const status = document.getElementById('signup-status');
-  if(form && status){
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      status.textContent = 'TRANSMITTING...';
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST', body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if(res.ok){ status.textContent = 'SIGNAL RECEIVED. YOU\'RE IN THE SYSTEM.'; form.reset(); }
-        else { status.textContent = 'TRANSMISSION ERROR. TRY AGAIN.'; }
-      } catch { status.textContent = 'CONNECTION FAILED. CHECK YOUR SIGNAL.'; }
     });
   }
 });
