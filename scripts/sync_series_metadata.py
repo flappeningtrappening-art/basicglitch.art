@@ -2,8 +2,8 @@ import json
 
 series_mapping = {
     "SANGRE DE CRISTOS SERIES": ["Sangre De Cristos: Neon", "Sangre De Cristos: Night", "Sangre De Cristos: Blanca", "Sangre De Cristos: Blanca at Dusk", "Sangre De Cristos: Colorado", "Sangre De Cristos: Midnight", "Sangre De Cristos: Midnight/Dawn", "Sangre De Cristos: Circuits", "Sangre De Cristos: Dreamsicle"],
-    "CASE STUDY 42: BROBOTICUS": ["Broboticus: The Original (March of the Robots, 2024)", "Vitruvian Broboticus", "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus: The Artist", "Iron Chef (Chefboticus)", "Let's Dance! (Balletboticus)", "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", "Brobot Noir"],
-    "MASTERS REMIXED": ["Vitruvian Broboticus", "Screambot", "Sunflowerboticus", "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"],
+    "CASE STUDY 42: BROBOTICUS": ["Broboticus: The Original (March of the Robots, 2024)", "Vitruvian Broboticus", "Brobotosaurus Wrex", "Guitarbot (Brobassicus)", "Brobarticus: The Artist", "Iron Chef (Chefboticus)", "Let's Dance! (Balletboticus)", "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", "Brobot Noir", "Cubist Chef"],
+    "MASTERS REMIXED": ["Vitruvian Broboticus", "Screambot", "Sunflowerboticus", "Marilyn Monbroe", "American Gothbotic"],
     "PUP FICTION": ["Pup Fiction: Crash (Diner Robbery Prologue)"],
     "SAVANNAHMALS": ["Apex Rendering", "Kinetic Latency", "Monument Memory", "Sentinel Stream", "Skyline Reclamation"],
     "PACHYDERMIS TRIPTYCH": ["Pachydermis (psychedelic maximalist variant: elephant)", "Pachydermis: Phish Edition", "Pachydermis: Phish Edition Inked"],

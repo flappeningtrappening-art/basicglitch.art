@@ -13,11 +13,11 @@ series_mapping = {
         "Iron Chef (Chefboticus)", "Let's Dance! (Balletboticus)", 
         "Karateboticus", "There's a Star-Bot Waiting in the Sky", "Rancher Broboticus", 
         "Sunflowerboticus", "Night-Fishing the Arkansas River", "Fishboticus Glitched", 
-        "Brobot Noir", "Screambot", "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"
+        "Brobot Noir", "Cubist Chef"
     ],
     "MASTERS REMIXED": [
         "Vitruvian Broboticus", "Screambot", "Sunflowerboticus", 
-        "Marilyn Monbroe", "American Gothbotic", "Cubist Chef"
+        "Marilyn Monbroe", "American Gothbotic"
     ],
     "PUP FICTION": ["Pup Fiction: Crash (Diner Robbery Prologue)"],
     "SAVANNAHMALS": [
