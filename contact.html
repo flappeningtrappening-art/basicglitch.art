@@ -36,6 +36,48 @@
 <!-- JavaScript -->
 <script src="./assets/js/app.js" defer></script>
 <script src="./assets/js/dynamic-effects.js" defer></script>
+
+<!-- TURNSTILE (added 2026-10-02)
+     Implicit rendering: the script scans for .cf-turnstile and renders each one,
+     adding a hidden cf-turnstile-response input to the enclosing form. Formspree
+     verifies that input server-side with the secret key configured in the
+     Formspree dashboard, so a submission with no valid token is never accepted.
+
+     There is no custom verification endpoint on purpose. This site is served by
+     GitHub Pages, and Cloudflare Pages Functions do not run there. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<!-- Honeypot guard. Purely additive: if this script never runs, the form still
+     submits and the Turnstile token is still what actually protects it. -->
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    var trap = document.getElementById('pf-company');
+    if (trap && trap.value) {
+      e.preventDefault();
+      var s = document.getElementById('pf-status');
+      if (s) s.textContent = 'Submission rejected.';
+    }
+  }, true);
+</script>
+
+<style>
+  /* Turnstile. Scoped, so nothing else on the page shifts. */
+  .cf-turnstile { margin: 4px 0 6px; min-height: 65px; }
+  #pf-status {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    min-height: 1.2em;
+    margin-bottom: 10px;
+    color: var(--neon-mag);
+  }
+  /* Honeypot: off-screen but not display:none, which some bots skip. */
+  .pf-trap {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px; height: 1px;
+    overflow: hidden;
+  }
+</style>
 </head>
 <body>
 
@@ -129,7 +171,19 @@
       
       <form id="contact-form" action="https://formspree.io/f/mbddjdyg" method="POST" style="background: rgba(0,0,0,0.4); padding: 30px; border: 1px solid var(--border); border-radius: 12px; backdrop-filter: blur(5px);">
         <div style="display: grid; gap: 20px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      
+          <!-- Honeypot: bots that fill every input trip this and are dropped by
+               the guard script in the head. Off-screen, not display:none. -->
+          <div class="pf-trap" aria-hidden="true">
+            <label for="pf-company">Company (leave blank)</label>
+            <input type="text" id="pf-company" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- The only line that Cloudflare's docs require. Formspree verifies
+               the token it produces, using the secret key set in the dashboard. -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFMAF7INtlwMBNdw"></div>
+          <div id="pf-status" role="status" aria-live="polite"></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <input type="text" name="name" placeholder="CODENAME / NAME" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono';">
             <input type="email" name="email" placeholder="RETURN FREQUENCY (EMAIL)" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono';">
           </div>
