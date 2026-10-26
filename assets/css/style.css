@@ -114,10 +114,10 @@ body {
   height: 200%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.25;
   background-image: 
-    linear-gradient(to right, rgba(0, 255, 247, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 255, 247, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 255, 247, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 247, 0.3) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMoveDownRight 40s linear infinite;
 }
@@ -131,10 +131,10 @@ body {
   height: 200%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.20;
   background-image: 
-    linear-gradient(to right, rgba(255, 28, 207, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 28, 207, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 28, 207, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 28, 207, 0.2) 1px, transparent 1px);
   background-size: 60px 60px;
   background-position: 30px 30px;
   animation: gridMoveUpLeft 35s linear infinite;
