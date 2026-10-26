@@ -108,36 +108,37 @@ body {
 .neon-grid-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
+  top: -60px;
+  left: -60px;
+  width: calc(100% + 120px);
+  height: calc(100% + 120px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.25;
+  opacity: 1;
   background-image: 
-    linear-gradient(to right, rgba(0, 255, 247, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 255, 247, 0.3) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 255, 247, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 247, 0.1) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridMoveDownRight 40s linear infinite;
+  will-change: transform;
 }
 
 .neon-grid-section::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
+  top: -60px;
+  left: -60px;
+  width: calc(100% + 120px);
+  height: calc(100% + 120px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.20;
+  opacity: 1;
   background-image: 
-    linear-gradient(to right, rgba(255, 28, 207, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 28, 207, 0.2) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 255, 247, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 247, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
-  background-position: 30px 30px;
-  animation: gridMoveUpLeft 35s linear infinite;
+  animation: gridMoveUpLeft 60s linear infinite;
+  will-change: transform;
 }
 
 /* 3D CARD */
@@ -913,13 +914,13 @@ img {
 }
 
 @keyframes gridMoveDownRight {
-  0% { background-position: 0px 0px; }
-  100% { background-position: 120px 120px; }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
 }
 
 @keyframes gridMoveUpLeft {
-  0% { background-position: 30px 30px; }
-  100% { background-position: -90px -90px; }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-60px, -60px); }
 }
 
 /* TECH NOIR BACKGROUND */
