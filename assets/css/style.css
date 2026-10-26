@@ -1070,6 +1070,16 @@ img {
    ======================================================== */
 
 /* Add animation to archive section */
+.archive-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 .archive-section::before {
   content: '';
   position: absolute;
@@ -1080,6 +1090,22 @@ img {
   background-size: 60px 60px;
   animation: gridMoveDownRight 40s linear infinite;
   pointer-events: none;
+  z-index: 0;
+  will-change: background-position;
+}
+
+.archive-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,255,247,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,255,247,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMoveUpLeft 60s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  will-change: background-position;
 }
 
 /* Add animation to instagram section */
@@ -1093,6 +1119,7 @@ img {
   background-size: 60px 60px;
   animation: gridMoveUpLeft 35s linear infinite;
   pointer-events: none;
+  will-change: background-position;
 }
 
 /* Add animation to email signup section */
@@ -1106,6 +1133,7 @@ img {
   background-size: 60px 60px;
   animation: gridMoveDownRight 30s linear infinite;
   pointer-events: none;
+  will-change: background-position;
 }
 
 /* Make sure sections have position relative for pseudo-elements */
@@ -1117,15 +1145,6 @@ img {
 }
 
 /* Keyframes if missing */
-@keyframes gridMoveDownRight {
-  0% { background-position: 0px 0px; }
-  100% { background-position: 120px 120px; }
-}
-
-@keyframes gridMoveUpLeft {
-  0% { background-position: 30px 30px; }
-  100% { background-position: -90px -90px; }
-}
 
 /* ========================================================
    MOBILE CYBER TEXT FIXES - NO SIZE REDUCTION

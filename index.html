@@ -153,6 +153,18 @@
   overflow: hidden;
 }
 
+.archive-section {
+  position: relative;
+  padding: 80px 20px;
+  background: #000;
+  overflow: hidden;
+}
+
+.archive-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 .archive-section::before {
   content: '';
   position: absolute;
@@ -163,7 +175,8 @@
   background-size: 60px 60px;
   animation: gridMoveDownRight 40s linear infinite;
   pointer-events: none;
-  z-index: -2;
+  z-index: 0;
+  will-change: background-position;
 }
 
 .archive-section::after {
@@ -176,7 +189,8 @@
   background-size: 60px 60px;
   animation: gridMoveUpLeft 60s linear infinite;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+  will-change: background-position;
 }
 
 /* ARCHIVE CARDS, consistent aspect ratio, proper class-based styling */
