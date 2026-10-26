@@ -6,7 +6,7 @@ series_mapping = {
     "MASTERS REMIXED": ["Vitruvian Broboticus", "Screambot", "Sunflowerboticus", "Marilyn Monbroe", "American Gothbotic"],
     "PUP FICTION": ["Pup Fiction: Crash (Diner Robbery Prologue)"],
     "SAVANNAHMALS": ["Apex Rendering", "Kinetic Latency", "Monument Memory", "Sentinel Stream", "Skyline Reclamation"],
-    "PACHYDERMIS TRIPTYCH": ["Pachydermis (psychedelic maximalist variant: elephant)", "Pachydermis: Phish Edition", "Pachydermis: Phish Edition Inked"],
+    "PACHYDERMIS TRIPTYCH": ["Pachydermis (psychedelic maximalist variant: elephant)", "Effervescing Pachydermis", "Southbound Pachydermis"],
     "SPIRAL STUDIES": ["Monopattern (Spiral Studies: Original)", "Spiral Geometry (Fire Variant)", "Color Pattern (Spiral Studies: Acid)", "Floral (Spiral Studies: Dusk Variant)"],
     "SKULLASTIC ENDEAVOR": ["Psylent Skulls", "Skullastic Endeavor"],
     "MYCOLOGY SERIES": ["A Mycological Phenomenon", "Mycology Yourcology"],

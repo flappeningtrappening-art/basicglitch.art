@@ -195,6 +195,18 @@
             <option value="Other">OTHER</option>
           </select>
           <textarea name="message" rows="5" placeholder="ENCRYPTED MESSAGE CONTENT..." required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; font-family: 'Share Tech Mono'; resize: vertical;"></textarea>
+
+          <!-- Honeypot: bots that fill every input trip this and are dropped by
+               the guard script in the head. Off-screen, not display:none. -->
+          <div class="pf-trap" aria-hidden="true">
+            <label for="pf-company">Company (leave blank)</label>
+            <input type="text" id="pf-company" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- The only line that Cloudflare's docs require. Formspree verifies
+               the token it produces, using the secret key set in the dashboard. -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFMAF7INtlwMBNdw"></div>
+          <div id="pf-status" role="status" aria-live="polite"></div>
           
           <button type="submit" class="cyber-button" style="border-color: var(--neon-blu); color: var(--neon-blu);">TRANSMIT SIGNAL</button>
         </div>

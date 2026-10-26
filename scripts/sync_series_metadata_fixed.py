@@ -25,8 +25,8 @@ series_mapping = {
         "Sentinel Stream", "Skyline Reclamation"
     ],
     "PACHYDERMIS TRIPTYCH": [
-        "Pachydermis", "Pachydermis: Phish Edition", 
-        "Pachydermis: Phish Edition Inked"
+        "Pachydermis", "Effervescing Pachydermis", 
+        "Southbound Pachydermis"
     ],
     "SPIRAL STUDIES": [
         "Monopattern (Spiral Studies: Original)", "Spiral Geometry (Fire Variant)", 

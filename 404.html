@@ -78,6 +78,24 @@
   <h1>404</h1>
   <p>SYSTEM_FAILURE // PAGE_CORRUPTED</p>
   <a href="/" class="btn"><img src="/assets/icons/home.svg" alt="" style="width: 1em; height: 1em; vertical-align: middle; margin-right: 8px; filter: invert(1);"> RETURN_TO_BASE</a>
+<!-- Redirect shims: renamed Pachydermis pages (2026-10-01). The Phish-named URLs
+     were public and listed in sitemap.xml, so old inbound links must still land. -->
+<script>
+(function () {
+  var MAP = {
+    '/art/pachydermis-phish-edition.html': '/art/effervescing-pachydermis.html',
+    '/art/pachydermis-phish-edition-inked.html': '/art/southbound-pachydermis.html',
+    '/art/pachydermis_phish_edition.html': '/art/effervescing-pachydermis.html',
+    '/art/pachydermis_phish_edition_inked.html': '/art/southbound-pachydermis.html',
+    '/art/pachydermis-phish-edition': '/art/effervescing-pachydermis.html',
+    '/art/pachydermis-phish-edition-inked': '/art/southbound-pachydermis.html'
+  };
+  var here = location.pathname.replace(/\/+$/, '') || '/';
+  if (MAP[here]) {
+    location.replace(MAP[here] + location.search + location.hash);
+  }
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0793c7934a22436cb1af2c9f24d6d22d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

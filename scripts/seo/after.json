@@ -772,7 +772,7 @@
    "outlinks": 10
   },
   {
-   "title": "Pachydermis: Phish Edition Inked | Cyber-Eclectic Digital Surrealism | BasicGlitch",
+   "title": "Southbound Pachydermis | Cyber-Eclectic Digital Surrealism | BasicGlitch",
    "title_len": 82,
    "desc_len": 154,
    "canonical": true,
@@ -786,12 +786,12 @@
    ],
    "imgs": 11,
    "imgs_with_alt": 11,
-   "page": "art/pachydermis-phish-edition-inked.html",
+   "page": "art/southbound-pachydermis.html",
    "inlinks": 2,
    "outlinks": 10
   },
   {
-   "title": "Pachydermis: Phish Edition | Cyber-Eclectic Digital Surrealism | BasicGlitch",
+   "title": "Effervescing Pachydermis | Cyber-Eclectic Digital Surrealism | BasicGlitch",
    "title_len": 76,
    "desc_len": 156,
    "canonical": true,
@@ -805,7 +805,7 @@
    ],
    "imgs": 11,
    "imgs_with_alt": 11,
-   "page": "art/pachydermis-phish-edition.html",
+   "page": "art/effervescing-pachydermis.html",
    "inlinks": 2,
    "outlinks": 10
   },
@@ -1300,8 +1300,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1369,8 +1369,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1437,8 +1437,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1507,8 +1507,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1576,8 +1576,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1645,8 +1645,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1723,8 +1723,8 @@
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
    "art/night-fishing-the-arkansas-river.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html",
@@ -1792,8 +1792,8 @@
    "art/monument-memory.html",
    "art/mountain-soul.html",
    "art/mycology-yourcology.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/psylent-skulls.html",
    "art/pumpkin-and-honey-puppy-and-the-diner-robbery.html"
@@ -1979,15 +1979,15 @@
    "art/mycology-yourcology.html"
   ],
   "art/pachydermis.html": [
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html"
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html"
   ],
-  "art/pachydermis-phish-edition.html": [
-   "art/pachydermis-phish-edition-inked.html",
+  "art/effervescing-pachydermis.html": [
+   "art/southbound-pachydermis.html",
    "art/pachydermis.html"
   ],
-  "art/pachydermis-phish-edition-inked.html": [
-   "art/pachydermis-phish-edition.html",
+  "art/southbound-pachydermis.html": [
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html"
   ],
   "art/literal-traphouse.html": [
@@ -2515,10 +2515,10 @@
    "gallery.html",
    "portfolio.html"
   ],
-  "art/pachydermis-phish-edition-inked.html": [
+  "art/southbound-pachydermis.html": [
    "about.html",
    "apparel.html",
-   "art/pachydermis-phish-edition.html",
+   "art/effervescing-pachydermis.html",
    "art/pachydermis.html",
    "art/sidepiece-dimepiece.html",
    "broboticus.html",
@@ -2527,10 +2527,10 @@
    "gallery.html",
    "portfolio.html"
   ],
-  "art/pachydermis-phish-edition.html": [
+  "art/effervescing-pachydermis.html": [
    "about.html",
    "apparel.html",
-   "art/pachydermis-phish-edition-inked.html",
+   "art/southbound-pachydermis.html",
    "art/pachydermis.html",
    "art/sidepiece-dimepiece.html",
    "broboticus.html",
@@ -2542,8 +2542,8 @@
   "art/pachydermis.html": [
    "about.html",
    "apparel.html",
-   "art/pachydermis-phish-edition-inked.html",
-   "art/pachydermis-phish-edition.html",
+   "art/southbound-pachydermis.html",
+   "art/effervescing-pachydermis.html",
    "art/sidepiece-dimepiece.html",
    "broboticus.html",
    "commissions.html",
