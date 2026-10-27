@@ -130,17 +130,14 @@ async function fetchGallery(){
   try{
     const res = await fetch(GALLERY_JSON);
     if(!res.ok){
-      console.error(`gallery.json not found at ${GALLERY_JSON}: status: ${res.status}`);
       return [];
     }
     const text = await res.text();
     if(!text || !text.trim()){
-      console.error('gallery.json returned empty response');
       return [];
     }
     return JSON.parse(text);
   }catch(err){
-    console.error('Fetch failed:', err);  
     return [];
   }
 }
@@ -576,7 +573,7 @@ function initEmailDecryption(){
     window.GALLERY = data || [];
 
     if(!window.GALLERY.length){
-      console.warn('Gallery data empty or failed to load.');
+      // Gallery data empty or failed to load
     }
 
     // Signal gallery page scripts that data is ready
@@ -593,7 +590,6 @@ function initEmailDecryption(){
       initialize3DCardCompatibility();
     }
   }catch(err){
-    console.error('Gallery init error:', err);
     const grid = document.getElementById('gallery-grid');
     if(grid) grid.innerHTML = '<div class="card" style="padding:40px; text-align:center; color:var(--muted);">Gallery temporarily unavailable: '+(err.message||err)+'</div>';
   }

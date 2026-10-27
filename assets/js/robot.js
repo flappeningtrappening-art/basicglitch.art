@@ -29,6 +29,38 @@ function addGuardianStyles() {
     .guardian-active {
       animation: guardianGlitchBurst 0.6s steps(3);
     }
+    
+    .guardian-hint {
+      animation: guardianGlow 3s ease-in-out infinite;
+    }
+    
+    .guardian-hint::after {
+      content: 'TAP/CLICK ME';
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--neon-mag);
+      text-shadow: 0 0 8px var(--neon-mag);
+      opacity: 0.8;
+      pointer-events: none;
+      white-space: nowrap;
+      animation: hintFade 4s ease-in-out forwards;
+      z-index: 10;
+    }
+    
+    @keyframes guardianGlow {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 28, 207, 0.4)); }
+      50% { filter: drop-shadow(0 0 25px rgba(255, 28, 207, 0.7)) brightness(1.05); }
+    }
+    
+    @keyframes hintFade {
+      0% { opacity: 0.8; }
+      70% { opacity: 0.8; }
+      100% { opacity: 0; }
+    }
 
     @keyframes guardianGlitchBurst {
       0% { transform: translate(0) scale(1.02); filter: hue-rotate(0deg) brightness(2); }
@@ -127,8 +159,8 @@ function triggerGuardianAction(robotId, config, event) {
     try {
       const a = new Audio(file);
       a.volume = 0.6;
-      a.play().catch(err => console.warn('Audio play blocked/failed', err));
-    } catch(e) { console.warn(e); }
+      a.play().catch(()=>{});
+    } catch(e) { /* ignore */ }
   }
 
   // Ripple

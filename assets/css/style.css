@@ -99,7 +99,7 @@ body {
 /* REUSABLE NEON GRID SECTION */
 .neon-grid-section {
   position: relative;
-  background: #000 !important;
+  background: #000;
   min-height: 50vh;
   overflow: hidden;
   width: 100%;
@@ -892,6 +892,11 @@ img {
   
   .section-guardian {
     pointer-events: auto; /* Re-enable clicks on the image itself */
+  }
+  
+  .guardian-hint::after {
+    font-size: 0.7rem;
+    bottom: -20px;
   }
 }
 
