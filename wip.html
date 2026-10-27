@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIP | BasicGlitch — Work In Progress</title>
+  <meta name="description" content="A look at the physical art piece currently in progress by BasicGlitch.">
+  <link rel="canonical" href="https://basicglitch.art/wip.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html">
+        <img src="assets/icons/BasicGlitchIcon.svg" alt="BasicGlitch Logo" class="brand-mark">
+        <span class="brand-text">BasicGlitch</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a class="nav-link" href="gallery.html"><img src="assets/icons/gallery.svg" alt=""> Gallery</a>
+        <a class="nav-link" href="portfolio.html"><img src="assets/icons/grid.svg" alt=""> Portfolio</a>
+        <a class="nav-link" href="wip.html"><img src="assets/icons/commissions.svg" alt=""> WIP</a>
+        <a class="nav-link" href="broboticus.html"><img src="assets/icons/robot.svg" alt=""> Broboticus</a>
+        <a class="nav-link" href="commissions.html"><img src="assets/icons/commissions.svg" alt=""> Commissions</a>
+        <a class="nav-link" href="apparel.html"><img src="assets/icons/physical-products.svg" alt=""> Apparel</a>
+        <a class="nav-link" href="about.html"><img src="assets/icons/about.svg" alt=""> About</a>
+        <a class="nav-link" href="contact.html"><img src="assets/icons/contact.svg" alt=""> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="wip-hero">
+      <div class="wip-hero-bg"></div>
+      <div class="wip-hero-grid"></div>
+      <div class="wip-hero-inner container">
+        <div class="wip-header">
+          <p class="wip-kicker">[ CURRENT BUILD ]</p>
+          <h1 class="wip-title">
+            <span class="wip-title-glow">WORK IN PROGRESS</span>
+          </h1>
+          <p class="wip-subtitle">Physical Art Piece — In Development</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- WIP CONTENT -->
+    <section class="wip-section">
+      <div class="container">
+        <div class="wip-intro">
+          <p class="wip-intro-text">
+            Behind the screen, there's always something taking shape in the physical realm. 
+            This space documents the build process of a new mixed-media sculpture — from concept 
+            sketches and armature work to wiring, detailing, and final assembly.
+          </p>
+        </div>
+
+        <div class="wip-gallery">
+          <!-- Add updates as the piece progresses -->
+          <div class="wip-card">
+            <div class="wip-card-media">
+              <div class="wip-placeholder">
+                <div class="wip-placeholder-inner">
+                  <span class="wip-placeholder-icon">◈</span>
+                  <p class="wip-placeholder-text">[ BUILD IN PROGRESS ]</p>
+                  <p class="wip-placeholder-sub">Updates coming soon</p>
+                </div>
+              </div>
+            </div>
+            <div class="wip-card-body">
+              <h3 class="wip-card-title">Current Build</h3>
+              <p class="wip-card-desc">
+                Documentation of materials, progress shots, and build notes will be added here as the piece evolves.
+              </p>
+              <div class="wip-card-meta">
+                <span class="wip-meta-tag">MIXED MEDIA</span>
+                <span class="wip-meta-tag">PHYSICAL SCULPTURE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wip-note">
+          <p class="wip-note-text">
+            [ CHECK BACK FOR UPDATES ] — New progress photos and build details will be posted as work continues.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/icons/BasicGlitchIcon.svg" alt="BasicGlitch" class="footer-mark">
+        <span class="footer-name">BasicGlitch</span>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> BasicGlitch. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

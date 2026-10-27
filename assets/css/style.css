@@ -1183,3 +1183,221 @@ img {
     font-size: 0.9rem;
   }
 }
+
+
+/* ========================================================
+   WIP PAGE
+   ======================================================== */
+.wip-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  padding: 120px 20px 60px;
+}
+
+.wip-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 0%, rgba(0,255,247,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 100%, rgba(199,36,255,0.06) 0%, transparent 60%);
+}
+
+.wip-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,247,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,247,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 60s linear infinite;
+  pointer-events: none;
+}
+
+.wip-hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.wip-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.wip-kicker {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--neon-2);
+  text-shadow: 0 0 12px rgba(0,255,247,0.4);
+}
+
+.wip-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.wip-title-glow {
+  background: linear-gradient(90deg, var(--neon-2) 0%, var(--neon) 50%, var(--neon-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 40px rgba(0,255,247,0.25));
+}
+
+.wip-subtitle {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wip-section {
+  padding: 80px 0 100px;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,255,247,0.04) 0%, transparent 70%);
+}
+
+.wip-intro {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.wip-intro-text {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.8);
+}
+
+.wip-gallery {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.wip-card {
+  max-width: 600px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0,255,247,0.08) 0%, rgba(0,0,0,0.6) 100%);
+  border: 1px solid rgba(0,255,247,0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0,255,247,0.15), 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.wip-card-media {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #050510;
+}
+
+.wip-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0,255,247,0.12) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,247,0.03) 2px, rgba(0,255,247,0.03) 4px);
+}
+
+.wip-placeholder-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.wip-placeholder-icon {
+  font-size: 2rem;
+  color: var(--neon-2);
+  text-shadow: 0 0 30px rgba(0,255,247,0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.wip-placeholder-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--neon-2);
+}
+
+.wip-placeholder-sub {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+}
+
+.wip-card-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wip-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+}
+
+.wip-card-desc {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+.wip-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.wip-meta-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  padding: 6px 12px;
+  border: 1px solid rgba(0,255,247,0.4);
+  color: var(--neon-2);
+  background: rgba(0,255,247,0.08);
+}
+
+.wip-note {
+  text-align: center;
+  padding: 20px;
+}
+
+.wip-note-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+}
