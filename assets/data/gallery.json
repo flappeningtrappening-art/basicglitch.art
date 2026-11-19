@@ -2,7 +2,7 @@
   {
     "id": "art-sidepiece-dimepiece",
     "title": "Sidepiece Dimepiece",
-    "file": "assets/images/raw/sidepiece-dimepiece.webp",
+    "file": "assets/images/raw/sidepiece-dimepiece.png",
     "categories": [
       "Cyber-Eclectic"
     ],
@@ -18,7 +18,7 @@
   {
     "id": "art-20260226153020",
     "title": "Sangre De Cristo Midnight V2",
-    "file": "assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.webp",
+    "file": "assets/images/raw/sangre_de_cristo_midnight_v2_20260226153020.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -32,7 +32,7 @@
   {
     "id": "art-20260226152957",
     "title": "Sangre De Cristo Dusk",
-    "file": "assets/images/raw/sangre_de_cristo_dusk_20260226152957.webp",
+    "file": "assets/images/raw/sangre_de_cristo_dusk_20260226152957.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -46,7 +46,7 @@
   {
     "id": "screambot",
     "title": "The Screambot",
-    "file": "assets/images/raw/screambot.webp",
+    "file": "assets/images/raw/screambot.png",
     "categories": [
       "Masters Remixed"
     ],
@@ -60,7 +60,7 @@
   {
     "id": "art-20260226152914",
     "title": "Marilyn Monbroe",
-    "file": "assets/images/raw/marilyn_monbroe_20260226152914.webp",
+    "file": "assets/images/raw/marilyn_monbroe_20260226152914.png",
     "categories": [
       "Masters Remixed"
     ],
@@ -137,7 +137,7 @@
   {
     "id": "art-20260226102320",
     "title": "Skyline Reclamation",
-    "file": "assets/images/raw/skyline_reclaimation.webp",
+    "file": "assets/images/raw/skyline_reclaimation.png",
     "categories": [
       "Savannahmals"
     ],
@@ -156,7 +156,7 @@
   {
     "id": "art-20260226102319",
     "title": "Sentinel Stream",
-    "file": "assets/images/raw/sentinel_stream.webp",
+    "file": "assets/images/raw/sentinel_stream.png",
     "categories": [
       "Savannahmals"
     ],
@@ -175,7 +175,7 @@
   {
     "id": "art-20260226102235",
     "title": "Monument Memory",
-    "file": "assets/images/raw/monument_memory.webp",
+    "file": "assets/images/raw/monument_memory.png",
     "categories": [
       "Savannahmals"
     ],
@@ -194,7 +194,7 @@
   {
     "id": "art-20260226102211",
     "title": "Kinetic Latency",
-    "file": "assets/images/raw/kinetic_latency.webp",
+    "file": "assets/images/raw/kinetic_latency.png",
     "categories": [
       "Savannahmals"
     ],
@@ -213,7 +213,7 @@
   {
     "id": "art-20260226102100",
     "title": "Apex Rendering",
-    "file": "assets/images/raw/apex_rendering.webp",
+    "file": "assets/images/raw/apex_rendering.png",
     "categories": [
       "Savannahmals"
     ],
@@ -232,7 +232,7 @@
   {
     "id": "pup-001",
     "title": "Pumpkin and Honey Puppy and the Diner Robbery",
-    "file": "assets/images/raw/pup-fiction-scene1.webp",
+    "file": "assets/images/raw/pup-fiction-scene1.png",
     "categories": [
       "Pup Fiction"
     ],
@@ -256,7 +256,7 @@
   {
     "id": "enviro-001",
     "title": "Gaia of the Wasteland",
-    "file": "assets/images/raw/gaia_of_the_wasteland.webp",
+    "file": "assets/images/raw/gaia_of_the_wasteland.png",
     "categories": [
       "Gaia Diptych"
     ],
@@ -283,7 +283,7 @@
   {
     "id": "guitarbot-001",
     "title": "Guitarbot",
-    "file": "assets/images/raw/guitarbot_og.webp",
+    "file": "assets/images/raw/guitarbot_og.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -309,7 +309,7 @@
   {
     "id": "spiral-001",
     "title": "Spiral Geometry",
-    "file": "assets/images/raw/spiral_geometry.webp",
+    "file": "assets/images/raw/spiral_geometry.png",
     "categories": [
       "Spiral Studies"
     ],
@@ -336,7 +336,7 @@
   {
     "id": "aesthetic-001",
     "title": "Sangre De Cristos: Neon",
-    "file": "assets/images/raw/aesthetic_sangre_de_cristo.webp",
+    "file": "assets/images/raw/aesthetic_sangre_de_cristo.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -361,7 +361,7 @@
   {
     "id": "floral-001",
     "title": "Floral",
-    "file": "assets/images/raw/floral.webp",
+    "file": "assets/images/raw/floral.png",
     "categories": [
       "Spiral Studies"
     ],
@@ -385,7 +385,7 @@
   {
     "id": "brobot-001",
     "title": "Brobarticus",
-    "file": "assets/images/raw/artist_broboticus_avatar.webp",
+    "file": "assets/images/raw/artist_broboticus_avatar.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -409,7 +409,7 @@
   {
     "id": "shroom-001",
     "title": "A Mycological Phenomenon",
-    "file": "assets/images/raw/a_mycological_phenomenon.webp",
+    "file": "assets/images/raw/a_mycological_phenomenon.png",
     "categories": [
       "Mycology Series"
     ],
@@ -433,7 +433,7 @@
   {
     "id": "aesthetic-002",
     "title": "Sangre De Cristos - Night",
-    "file": "assets/images/raw/aesthetic_laser_colorado.webp",
+    "file": "assets/images/raw/aesthetic_laser_colorado.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -458,7 +458,7 @@
   {
     "id": "brobot-002",
     "title": "Let's Dance!",
-    "file": "assets/images/raw/balletboticus.webp",
+    "file": "assets/images/raw/balletboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -483,7 +483,7 @@
   {
     "id": "brobot-003",
     "title": "Iron Chef",
-    "file": "assets/images/raw/chefboticus.webp",
+    "file": "assets/images/raw/chefboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -511,7 +511,7 @@
   {
     "id": "cube-001",
     "title": "Cubist Chef",
-    "file": "assets/images/raw/cubist_chef.webp",
+    "file": "assets/images/raw/cubist_chef.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -537,7 +537,7 @@
   {
     "id": "enviro-002",
     "title": "Dust to Dust",
-    "file": "assets/images/raw/dust_to_dust.webp",
+    "file": "assets/images/raw/dust_to_dust.png",
     "categories": [
       "Gaia Diptych"
     ],
@@ -562,7 +562,7 @@
   {
     "id": "brobot-004",
     "title": "Night-Fishing the Arkansas River",
-    "file": "assets/images/raw/fishboticus.webp",
+    "file": "assets/images/raw/fishboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -587,7 +587,7 @@
   {
     "id": "brobot-005",
     "title": "Karateboticus",
-    "file": "assets/images/raw/karateboticus1.webp",
+    "file": "assets/images/raw/karateboticus1.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -613,7 +613,7 @@
   {
     "id": "trap-001",
     "title": "Literal Traphouse",
-    "file": "assets/images/raw/literal_traphouse.webp",
+    "file": "assets/images/raw/literal_traphouse.png",
     "categories": [
       "Cyber-Eclectic"
     ],
@@ -637,7 +637,7 @@
   {
     "id": "shroom-002",
     "title": "Mycology Yourcology",
-    "file": "assets/images/raw/mycology_yourcology.webp",
+    "file": "assets/images/raw/mycology_yourcology.png",
     "categories": [
       "Mycology Series"
     ],
@@ -663,7 +663,7 @@
   {
     "id": "boho-001",
     "title": "Pachydermis",
-    "file": "assets/images/raw/pachydermis.webp",
+    "file": "assets/images/raw/pachydermis.png",
     "categories": [
       "Pachydermis Triptych"
     ],
@@ -690,7 +690,7 @@
   {
     "id": "brobot-006",
     "title": "Rancher Broboticus",
-    "file": "assets/images/raw/ranchboticus.webp",
+    "file": "assets/images/raw/ranchboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -724,7 +724,7 @@
   {
     "id": "brobot-007",
     "title": "There's a Star-Bot Waiting in the Sky",
-    "file": "assets/images/raw/starbot_waiting_in_the_sky.webp",
+    "file": "assets/images/raw/starbot_waiting_in_the_sky.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -751,7 +751,7 @@
   {
     "id": "brobot-008",
     "title": "Vitruvian Broboticus",
-    "file": "assets/images/raw/vitruvian_broboticus.webp",
+    "file": "assets/images/raw/vitruvian_broboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42",
@@ -777,7 +777,7 @@
   {
     "id": "brobot-009",
     "title": "Brobotosaurus Wrex",
-    "file": "assets/images/raw/brobotosaurus_wrex.webp",
+    "file": "assets/images/raw/brobotosaurus_wrex.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -803,7 +803,7 @@
   {
     "id": "squid-001",
     "title": "Squid",
-    "file": "assets/images/raw/squid.webp",
+    "file": "assets/images/raw/squid.png",
     "categories": [
       "Hand-Drawn Ink"
     ],
@@ -827,7 +827,7 @@
   {
     "id": "hennatree-001",
     "title": "Henna Tree",
-    "file": "assets/images/raw/hennatree.webp",
+    "file": "assets/images/raw/hennatree.png",
     "categories": [
       "Hand-Drawn Ink"
     ],
@@ -851,7 +851,7 @@
   {
     "id": "unfishished-001",
     "title": "Unfishished Business",
-    "file": "assets/images/raw/unfishished_business.webp",
+    "file": "assets/images/raw/unfishished_business.png",
     "categories": [
       "Hand-Drawn Ink"
     ],
@@ -875,7 +875,7 @@
   {
     "id": "discworld-001",
     "title": "Discworld",
-    "file": "assets/images/raw/discworld.webp",
+    "file": "assets/images/raw/discworld.png",
     "categories": [
       "Hand-Drawn Ink"
     ],
@@ -900,7 +900,7 @@
   {
     "id": "innerchild-001",
     "title": "Inner Child",
-    "file": "assets/images/raw/innerchild.webp",
+    "file": "assets/images/raw/innerchild.png",
     "categories": [
       "Cyber-Eclectic"
     ],
@@ -925,7 +925,7 @@
   {
     "id": "loveofthegame-001",
     "title": "Love of the Game",
-    "file": "assets/images/raw/loveofthegame.webp",
+    "file": "assets/images/raw/loveofthegame.png",
     "categories": [
       "Cyber-Eclectic"
     ],
@@ -950,7 +950,7 @@
   {
     "id": "sangre-blanca-001",
     "title": "Sangre De Cristos: Blanca",
-    "file": "assets/images/raw/sangre_de_cristo_blanca.webp",
+    "file": "assets/images/raw/sangre_de_cristo_blanca.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -973,7 +973,7 @@
   {
     "id": "sangre-blanca-dusk-001",
     "title": "Sangre De Cristos: Blanca at Dusk",
-    "file": "assets/images/raw/sangre_de_cristo_blanca_at_dusk.webp",
+    "file": "assets/images/raw/sangre_de_cristo_blanca_at_dusk.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -997,7 +997,7 @@
   {
     "id": "sangre-midnightdawn-001",
     "title": "Sangre De Cristos: Midnight/Dawn",
-    "file": "assets/images/raw/sangre_de_cristos_midnightdawn.webp",
+    "file": "assets/images/raw/sangre_de_cristos_midnightdawn.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -1020,7 +1020,7 @@
   {
     "id": "sangre-circuits-001",
     "title": "Sangre De Cristos: Circuits",
-    "file": "assets/images/raw/sangre-circuits.webp",
+    "file": "assets/images/raw/sangre-circuits.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -1043,7 +1043,7 @@
   {
     "id": "sangre-dreamsicle-001",
     "title": "Sangre De Cristos: Dreamsicle",
-    "file": "assets/images/raw/sangre-dreamsicle.webp",
+    "file": "assets/images/raw/sangre-dreamsicle.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -1066,7 +1066,7 @@
   {
     "id": "sangre-colorado-001",
     "title": "Sangre De Cristos: Colorado",
-    "file": "assets/images/raw/aesthetic_sangre_de_cristo_colorado_20250919114454.webp",
+    "file": "assets/images/raw/aesthetic_sangre_de_cristo_colorado_20250919114454.png",
     "categories": [
       "Sangre de Cristos"
     ],
@@ -1089,7 +1089,7 @@
   {
     "id": "broboticus-og-001",
     "title": "Broboticus: The Original",
-    "file": "assets/images/raw/broboticus.webp",
+    "file": "assets/images/raw/broboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -1113,7 +1113,7 @@
   {
     "id": "brobot-noir-001",
     "title": "Brobot Noir",
-    "file": "assets/images/raw/brobot-noir.webp",
+    "file": "assets/images/raw/brobot-noir.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -1138,7 +1138,7 @@
   {
     "id": "sunflowerboticus-001",
     "title": "Vincent VanBoticus",
-    "file": "assets/images/raw/vincent_vanboticus.webp",
+    "file": "assets/images/raw/vincent_vanboticus.png",
     "categories": [
       "Broboticus",
       "Case Study 42",
@@ -1164,7 +1164,7 @@
   {
     "id": "fishboticus-glitched-001",
     "title": "Fishboticus Glitched",
-    "file": "assets/images/raw/fishboticus_glitched.webp",
+    "file": "assets/images/raw/fishboticus_glitched.png",
     "categories": [
       "Broboticus",
       "Case Study 42"
@@ -1190,7 +1190,7 @@
   {
     "id": "effervescing-pachydermis-001",
     "title": "Effervescing Pachydermis",
-    "file": "assets/images/raw/effervescing-pachydermis.webp",
+    "file": "assets/images/raw/effervescing-pachydermis.png",
     "categories": [
       "Pachydermis Triptych"
     ],
@@ -1212,7 +1212,7 @@
   {
     "id": "southbound-pachydermis-001",
     "title": "Southbound Pachydermis",
-    "file": "assets/images/raw/southbound-pachydermis.webp",
+    "file": "assets/images/raw/southbound-pachydermis.png",
     "categories": [
       "Pachydermis Triptych"
     ],
@@ -1236,7 +1236,7 @@
   {
     "id": "american-gothbotic-001",
     "title": "American Gothbotic",
-    "file": "assets/images/raw/american-gothbotic2.webp",
+    "file": "assets/images/raw/american-gothbotic2.png",
     "categories": [
       "Masters Remixed"
     ],
@@ -1260,7 +1260,7 @@
   {
     "id": "monopattern-001",
     "title": "Monopattern",
-    "file": "assets/images/raw/monopattern.webp",
+    "file": "assets/images/raw/monopattern.png",
     "categories": [
       "Spiral Studies"
     ],
@@ -1284,7 +1284,7 @@
   {
     "id": "colorpattern-001",
     "title": "Color Pattern",
-    "file": "assets/images/raw/colorpattern.webp",
+    "file": "assets/images/raw/colorpattern.png",
     "categories": [
       "Spiral Studies"
     ],
